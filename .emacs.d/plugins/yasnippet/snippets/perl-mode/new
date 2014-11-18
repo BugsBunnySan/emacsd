@@ -1,0 +1,11 @@
+# name: sub new { ... }
+# key: new
+# --
+sub new
+{
+    my ($0) = @_;
+
+    my $this = {};
+
+    return bless $this, __PACKAGE__;
+}
