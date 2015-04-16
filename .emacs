@@ -123,8 +123,8 @@
     (yas-global-mode 1)
 
 ; ropemacs
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
+;(require 'pymacs)
+;(pymacs-load "ropemacs" "rope-")
 
 ;; smex
 (global-set-key (kbd "M-x") 'smex)
@@ -151,6 +151,8 @@
     (shell-command cmdStr "*pylint output*")
     ))
 (global-set-key '[f5] 'pylint-current-buffer)
+
+(add-to-list 'load-path "~/.emacs.d/elpa")
 (autoload 'pylint "pylint")
 (add-hook 'python-mode-hook 'pylint-add-menu-items)
 (add-hook 'python-mode-hook 'pylint-add-key-bindings)
