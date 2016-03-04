@@ -1,0 +1,97 @@
+;; Object bbfmrBuffers/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfmrBuffers/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("pymel.internal.plogging" include nil nil [26 67])
+            ("logging" include nil nil [69 83])
+            ("log" variable nil nil [84 117])
+            ("bbfEntity" include nil nil [119 135])
+            ("bbfUtil" include nil nil [136 150])
+            ("bbfUI.bbfUI" include nil nil [151 178])
+            ("__main__" include nil nil [180 207])
+            ("bbfShader" include nil nil [209 225])
+            ("bbfShader.utils" include nil nil [226 248])
+            ("bbfUtil" include nil nil [249 263])
+            ("bbfUI.bbfUI" include nil nil [264 291])
+            ("bbfShader" include nil nil [292 308])
+            ("bbfShader.utils" include nil nil [309 331])
+            ("__main__" include nil nil [333 360])
+            ("getAllEntities" function nil nil [362 549])
+            ("getMaskObjects" function (:arguments 
+              ( ("maskType" variable nil (reparse-symbol function_parameters) [569 577]))              ) nil [550 817])
+            ("getMaskObjectsDict" function nil nil [818 1074])
+            ("getObjectSets" function (:arguments 
+              ( ("setType" variable nil (reparse-symbol function_parameters) [1094 1101]))              ) nil [1076 1281])
+            ("getObjectSetsDict" function nil nil [1282 1453])
+            ("getBuffersObjectSets" function nil nil [1454 2839])
+            ("" code nil nil [2846 2848])
+            ("createObjectSets" function (:decorators 
+              ( ("bbfUtil.preserve_selection" function (:type "decorator") nil nil))              ) nil [2849 4690])
+            ("rebuildPasses" function
+               (:decorators 
+                  ( ("bbfUtil.preserve_selection" function (:type "decorator") nil nil))                  
+                :arguments 
+                  ( ("bufferSelection" variable nil (reparse-symbol function_parameters) [4738 4753]))                  )
+                nil [4692 10485])
+            ("'''
+stringOptionExists(name)
+setStringOption(name, value)
+getStringOption(name)
+removeStringOption(name)
+The usage is pretty simple.  stringOptionExists checks if a string option already exists
+(returning True or False), setStringOption will set a string option value, getStringOption will
+return a string option value, and removeStringOption will delete the string option.
+setStringOption and getStringOption will match string option data types with python data types.
+
+
+# Set unified sampling string options.
+setStringOption(\"unified sampling\", True)
+setStringOption(\"samples quality\", (0.5, 0.5, 0.5, 0.5))
+setStringOption(\"samples min\", 1.0)
+setStringOption(\"samples max\", 100.0)
+setStringOption(\"samples error cutoff\", (0.0, 0.0, 0.0, 0.0))
+
+# Print unified sampling values
+print getStringOption(\"unified sampling\")
+print getStringOption(\"samples quality\")
+print getStringOption(\"samples min\")
+print getStringOption(\"samples max\")
+print getStringOption(\"samples error cutoff\")
+
+# Remove unified sampling string options
+removeStringOption(\"unified sampling\")
+removeStringOption(\"samples quality\")
+removeStringOption(\"samples min\")
+removeStringOption(\"samples max\")
+removeStringOption(\"samples error cutoff\")
+'''" code nil nil [10487 11702])
+            ("maya.cmds" include nil nil [11705 11729])
+            ("valueToStrings" function (:arguments 
+              ( ("value" variable nil (reparse-symbol function_parameters) [11750 11755]))              ) nil [11731 12673])
+            ("stringToValue" function (:arguments 
+              ( ("string_value" variable nil (reparse-symbol function_parameters) [12692 12704])
+                ("string_type" variable nil (reparse-symbol function_parameters) [12706 12717]))              ) nil [12674 13273])
+            ("stringOptionExists" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [13297 13301]))              ) nil [13274 13503])
+            ("findStringOptionIndex" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [13530 13534]))              ) nil [13504 13841])
+            ("setStringOption" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [13862 13866])
+                ("value" variable nil (reparse-symbol function_parameters) [13868 13873]))              ) nil [13842 14243])
+            ("getStringOption" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [14264 14268]))              ) nil [14244 14529])
+            ("removeStringOption" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [14553 14557]))              ) nil [14530 14675]))          
+      :file "__init__.py"
+      :pointmax 14675
+      :fsize 15052
+      :lastmodtime '(21908 61928 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!IFW_PIPELINE!BBF!Maya!Tools!Lighting!bbfmrBuffers!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,639 @@
+;; Object PublishHandler/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "PublishHandler/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.PublishHandler
+   :synopsis: maya specific publish handlers for sgtk
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 166]))          
+      :file "__init__.py"
+      :pointmax 167
+      :fsize 173
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.PublishHandler.base
+   :synopsis: maya specific publish handlers for sgtk
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 171])
+            ("__future__" include nil nil [172 209])
+            ("model" include nil nil [211 223])
+            ("sgtk_alembic" include nil nil [224 243])
+            ("rig" include nil nil [244 254])
+            ("shader" include nil nil [255 268])
+            ("prd" include nil nil [269 279])
+            ("parts" include nil nil [280 292]))          
+      :file "base.py"
+      :pointmax 293
+      :fsize 307
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax '((IMPORT 255 . 261) ($EOI 268 . 268)))
+    (semanticdb-table "model.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.PublishHandler.model
+   :synopsis: maya specific model publishing handler for sgtk
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 180])
+            ("__future__" include nil nil [181 218])
+            ("__all__" variable nil nil [220 253])
+            ("re" include nil nil [255 264])
+            ("PySide" include nil nil [266 290])
+            ("sgtk" include nil nil [292 303])
+            ("sgtk" include nil nil [304 330])
+            ("pymel.core" include nil nil [332 355])
+            ("BBF.Common.Lib.bbf_base.datastructs" include nil nil [357 423])
+            ("BBF.Maya.Lib.bbf_scene_hierarchy.scene_parser" include nil nil [424 496])
+            ("BBF.Common.Lib.BBF_Validation.SceneParser" include nil nil [497 560])
+            ("BBF.Common.Lib.bbf_widgets.OptionListSelector" include nil nil [561 635])
+            ("BBF.Common.Tools.bbfTaskManager.bbfTaskManager" include nil nil [636 707])
+            ("BBF.Maya.Lib.bbfSGTK.stamps" include nil nil [708 760])
+            ("BBF.Common.Lib.bbfSGTK.publish" include nil nil [761 817])
+            ("BBF.Maya.Lib.BBF_Stamp.BBF_Stamp" include nil nil [818 870])
+            ("BBF.Maya.Lib.bbfVariant.bbfAssetVariant" include nil nil [871 936])
+            ("BBF.Maya.Tools.Utilities.PublishConsole.modules.charGeoPublish.modelPublish" include nil nil [938 1036])
+            ("services" include nil nil [1038 1053])
+            ("ModelPublishHandler" type
+               (:superclasses ("services.PublishHandler")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [1111 1181])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1214 1257])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1267 1397]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1199 1203]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1186 1398])
+                    ("_get_pubcon_module" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1426 1430])
+                            ("task" variable nil (reparse-symbol function_parameters) [1432 1436]))                          )
+                        (reparse-symbol indented_block_body) [1403 1668])
+                    ("scan_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1688 1692])
+                            ("hook" variable nil (reparse-symbol function_parameters) [1694 1698]))                          )
+                        (reparse-symbol indented_block_body) [1673 2214])
+                    ("validate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2232 2236])
+                            ("hook" variable nil (reparse-symbol function_parameters) [2238 2242])
+                            ("task" variable nil (reparse-symbol function_parameters) [2244 2248])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [2250 2263])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [2265 2276])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [2278 2287]))                          )
+                        (reparse-symbol indented_block_body) [2219 4302])
+                    ("_do_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4323 4327]))                          )
+                        (reparse-symbol indented_block_body) [4307 7226])
+                    ("publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7243 7247])
+                            ("hook" variable nil (reparse-symbol function_parameters) [7249 7253])
+                            ("task" variable nil (reparse-symbol function_parameters) [7255 7259])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [7261 7274])
+                            ("comment" variable nil (reparse-symbol function_parameters) [7276 7283])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [7285 7299])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [7301 7308])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [7310 7322])
+                            ("primary_publish_path" variable nil (reparse-symbol function_parameters) [7324 7344])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [7346 7357])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [7359 7368]))                          )
+                        (reparse-symbol indented_block_body) [7231 9975]))                  
+                :type "class")
+                nil [1055 9975]))          
+      :file "model.py"
+      :pointmax 10008
+      :fsize 10247
+      :lastmodtime '(22230 50875 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 2868 . 2961) (NEWLINE 2867 . 2868) (COLON 2866 . 2867) (TRY 2723 . 2726) (AS 2862 . 2864) (INDENT_BLOCK 2868 . 2961) (NEWLINE 2867 . 2868) (COLON 2866 . 2867) (TRY 2723 . 2726) (AS 2862 . 2864)))
+    (semanticdb-table "sgtk_alembic.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.PublishHandler.sgtk_alembic
+   :synopsis: conversion of alembic publisher that was stuck into the publish hooks
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 209])
+            ("__future__" include nil nil [210 247])
+            ("__all__" variable nil nil [249 288])
+            ("os" include nil nil [290 299])
+            ("pymel.core" include nil nil [301 324])
+            ("sgtk" include nil nil [326 352])
+            ("BBF.Maya.Lib.bbfSceneCheck.general.shotgunFrameRange" include nil nil [354 434])
+            ("BBF.Common.Lib.bbfS" include nil nil [435 461])
+            ("base" include nil nil [492 492])
+            ("SGTKAlembicPublishHandler" type
+               (:superclasses ("base.PublishHandler")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [509 552]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [628 632]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [615 693])
+                    ("scan_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [713 717])
+                            ("hook" variable nil (reparse-symbol function_parameters) [719 723]))                          )
+                        (reparse-symbol indented_block_body) [698 1025])
+                    ("validate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1043 1047])
+                            ("hook" variable nil (reparse-symbol function_parameters) [1049 1053])
+                            ("task" variable nil (reparse-symbol function_parameters) [1055 1059])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [1061 1074])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [1076 1087])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [1089 1098]))                          )
+                        (reparse-symbol indented_block_body) [1030 1578])
+                    ("publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1595 1599])
+                            ("hook" variable nil (reparse-symbol function_parameters) [1601 1605])
+                            ("task" variable nil (reparse-symbol function_parameters) [1607 1611])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [1613 1626])
+                            ("comment" variable nil (reparse-symbol function_parameters) [1628 1635])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [1637 1651])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [1653 1660])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [1662 1674])
+                            ("primary_publish_path" variable nil (reparse-symbol function_parameters) [1676 1696])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [1698 1709])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [1711 1720]))                          )
+                        (reparse-symbol indented_block_body) [1583 5014]))                  
+                :type "class")
+                nil [510 5014]))          
+      :file "sgtk_alembic.py"
+      :pointmax 5053
+      :fsize 5184
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "services.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.PublishHandler.services
+   :synopsis: services support for publish handlers
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 173])
+            ("__future__" include nil nil [174 211])
+            ("BBF.Common.Lib.bbfSGTK.PublishHandler.base" include nil nil [243 314])
+            ("PublishHandler" type
+               (:superclasses ("PublishHandlerBase.PublishHandler")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [377 381]))                  
+                :type "class")
+                nil [316 382]))          
+      :file "services.py"
+      :pointmax 409
+      :fsize 424
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "rig.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.PublishHandler.rig
+   :synopsis: maya specific rig publishing handler for sgtk
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 176])
+            ("__future__" include nil nil [177 214])
+            ("__all__" variable nil nil [216 247])
+            ("re" include nil nil [249 258])
+            ("PySide" include nil nil [260 284])
+            ("sgtk" include nil nil [286 297])
+            ("sgtk" include nil nil [298 324])
+            ("pymel.core" include nil nil [326 349])
+            ("BBF.Common.Lib.bbf_base.datastructs" include nil nil [351 417])
+            ("BBF.Maya.Lib.bbf_scene_hierarchy.scene_parser" include nil nil [418 490])
+            ("BBF.Common.Lib.BBF_Validation.SceneParser" include nil nil [491 554])
+            ("BBF.Common.Lib.bbf_widgets.OptionListSelector" include nil nil [555 629])
+            ("BBF.Common.Tools.bbfTaskManager.bbfTaskManager" include nil nil [630 701])
+            ("BBF.Maya.Lib.bbfSGTK.stamps" include nil nil [702 754])
+            ("BBF.Common.Lib.bbfSGTK.publish" include nil nil [755 811])
+            ("BBF.Maya.Lib.BBF_Stamp.BBF_Stamp" include nil nil [812 864])
+            ("BBF.Maya.Lib.bbfVariant.bbfAssetVariant" include nil nil [865 930])
+            ("BBF.Maya.Tools.Utilities.PublishConsole.modules.charRigPublish.rigPublish" include nil nil [932 1026])
+            ("services" include nil nil [1028 1043])
+            ("RigPublishHandler" type
+               (:superclasses ("services.PublishHandler")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [1099 1148])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1182 1223])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1233 1293]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1167 1171]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1154 1294])
+                    ("_get_pubcon_module" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1322 1326])
+                            ("task" variable nil (reparse-symbol function_parameters) [1328 1332]))                          )
+                        (reparse-symbol indented_block_body) [1299 1564])
+                    ("scan_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1584 1588])
+                            ("hook" variable nil (reparse-symbol function_parameters) [1590 1594]))                          )
+                        (reparse-symbol indented_block_body) [1569 1857])
+                    ("validate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1875 1879])
+                            ("hook" variable nil (reparse-symbol function_parameters) [1881 1885])
+                            ("task" variable nil (reparse-symbol function_parameters) [1887 1891])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [1893 1906])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [1908 1919])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [1921 1930]))                          )
+                        (reparse-symbol indented_block_body) [1862 3738])
+                    ("_do_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3759 3763]))                          )
+                        (reparse-symbol indented_block_body) [3743 6569])
+                    ("publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6586 6590])
+                            ("hook" variable nil (reparse-symbol function_parameters) [6592 6596])
+                            ("task" variable nil (reparse-symbol function_parameters) [6598 6602])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [6604 6617])
+                            ("comment" variable nil (reparse-symbol function_parameters) [6619 6626])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [6628 6642])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [6644 6651])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [6653 6665])
+                            ("primary_publish_path" variable nil (reparse-symbol function_parameters) [6667 6687])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [6689 6700])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [6702 6711]))                          )
+                        (reparse-symbol indented_block_body) [6574 9416]))                  
+                :type "class")
+                nil [1045 9416]))          
+      :file "rig.py"
+      :pointmax 9447
+      :fsize 9675
+      :lastmodtime '(22230 50691 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 2301 . 2394) (NEWLINE 2300 . 2301) (COLON 2299 . 2300) (TRY 2159 . 2162) (AS 2295 . 2297)))
+    (semanticdb-table "shader.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.PublishHandler.shader
+   :synopsis: shader publishing for maya sgtk
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 165])
+            ("__future__" include nil nil [166 203])
+            ("__all__" variable nil nil [205 239])
+            ("PySide" include nil nil [241 265])
+            ("sgtk" include nil nil [267 278])
+            ("sgtk" include nil nil [279 305])
+            ("pymel.core" include nil nil [307 330])
+            ("BBF.Common.Lib.bbf_base.datastructs" include nil nil [332 410])
+            ("BBF.Maya.Lib.bbf_scene_hierarchy.scene_parser" include nil nil [411 485])
+            ("BBF.Common.Lib.BBF_Validation.SceneParser" include nil nil [486 555])
+            ("BBF.Common.Lib.bbf_widgets.OptionListSelector" include nil nil [556 632])
+            ("BBF.Common.Tools.bbfTaskManager.bbfTaskManager" include nil nil [633 705])
+            ("BBF.Common.Lib.bbfSGTK.templates" include nil nil [706 781])
+            ("BBF.Maya.Lib.bbfVariant.bbfAssetVariant" include nil nil [782 855])
+            ("BBF.Common.Lib.bbfSGTK.publish" include nil nil [856 929])
+            ("BBF.Maya.Lib.bbfUtil" include nil nil [930 995])
+            ("BBF.Maya.Tools.Utilities.PublishConsole.modules.shaderPublish.ShaderPublish" include nil nil [997 1096])
+            ("services" include nil nil [1098 1113])
+            ("ShaderPublishHandler" type
+               (:superclasses ("services.PublishHandler")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [1172 1225])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1258 1302])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1312 1382]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1243 1247]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1230 1383])
+                    ("getShadingGroups" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1409 1413])
+                            ("geoGrp" variable nil (reparse-symbol function_parameters) [1415 1421]))                          
+                        :documentation " return the shadingGroupds associated with this Geo group
+        including the bbfStamp shadingGroup
+        ")
+                        (reparse-symbol indented_block_body) [1388 1961])
+                    ("getStampNode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1983 1987])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [1989 1998]))                          
+                        :documentation " return the bbfStamp SG node, create it if not created already ")
+                        (reparse-symbol indented_block_body) [1966 2452])
+                    ("_get_pubcon_module" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2480 2484])
+                            ("task" variable nil (reparse-symbol function_parameters) [2486 2490]))                          )
+                        (reparse-symbol indented_block_body) [2457 2722])
+                    ("scan_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2742 2746])
+                            ("hook" variable nil (reparse-symbol function_parameters) [2748 2752]))                          )
+                        (reparse-symbol indented_block_body) [2727 3026])
+                    ("validate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3044 3048])
+                            ("hook" variable nil (reparse-symbol function_parameters) [3050 3054])
+                            ("task" variable nil (reparse-symbol function_parameters) [3056 3060])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [3062 3075])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [3077 3088])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [3090 3099]))                          )
+                        (reparse-symbol indented_block_body) [3031 5114])
+                    ("_do_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5135 5139]))                          )
+                        (reparse-symbol indented_block_body) [5119 7629])
+                    ("_get_dependencies" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7656 7660]))                          )
+                        (reparse-symbol indented_block_body) [7634 7834])
+                    ("publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7851 7855])
+                            ("hook" variable nil (reparse-symbol function_parameters) [7857 7861])
+                            ("task" variable nil (reparse-symbol function_parameters) [7863 7867])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [7869 7882])
+                            ("comment" variable nil (reparse-symbol function_parameters) [7884 7891])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [7893 7907])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [7909 7916])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [7918 7930])
+                            ("primary_publish_path" variable nil (reparse-symbol function_parameters) [7932 7952])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [7954 7965])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [7967 7976]))                          )
+                        (reparse-symbol indented_block_body) [7839 10582]))                  
+                :type "class")
+                nil [1115 10582]))          
+      :file "shader.py"
+      :pointmax 10616
+      :fsize 10879
+      :lastmodtime '(22230 51498 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 6011 . 6126) (NEWLINE 6010 . 6011) (COLON 6009 . 6010) (TRY 5893 . 5896) (AS 6005 . 6007) (INDENT_BLOCK 3680 . 3773) (NEWLINE 3679 . 3680) (COLON 3678 . 3679) (TRY 3535 . 3538) (AS 3674 . 3676)))
+    (semanticdb-table "prd.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.PublishHandler.prd
+   :synopsis: prd publishing handler for sgtk/maya
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 167])
+            ("__future__" include nil nil [168 205])
+            ("pprint" include nil nil [207 232])
+            ("__all__" variable nil nil [235 266])
+            ("copy" include nil nil [268 289])
+            ("sgtk" include nil nil [291 302])
+            ("PySide" include nil nil [304 328])
+            ("pymel.core" include nil nil [330 353])
+            ("BBF.Common.Lib.bbf_base.datastructs" include nil nil [355 421])
+            ("BBF.Maya.Lib.bbf_scene_hierarchy.scene_parser" include nil nil [422 494])
+            ("BBF.Common.Lib.BBF_Validation.SceneParser" include nil nil [495 558])
+            ("BBF.Common.Lib.bbf_widgets.OptionListSelector" include nil nil [559 633])
+            ("BBF.Maya.Lib.bbf_base.decorators" include nil nil [634 687])
+            ("BBF.Maya.Lib.bbfVariant.bbfAssetVariant" include nil nil [688 753])
+            ("BBF.Maya.Lib.BBF_Stamp.BBF_Stamp" include nil nil [754 806])
+            ("BBF.Maya.Lib.bbf_base.references" include nil nil [807 869])
+            ("BBF.Common.Lib.bbfSGTK.publish" include nil nil [870 926])
+            ("BBF.Common.Lib.bbfSGTK.context" include nil nil [927 983])
+            ("BBF.Common.Lib.bbfSGTK.templates" include nil nil [984 1044])
+            ("BBF.Maya.Lib.bbfSGTK.references" include nil nil [1045 1105])
+            ("BBF.Common.Tools.bbfTaskManager.bbfTaskManager" include nil nil [1106 1177])
+            ("BBF.Maya.Lib.bbfEntity.scenePartAssets" include nil nil [1178 1242])
+            ("BBF.Maya.Tools.Utilities.PublishConsole.modules.prdPublish.PrdPublish" include nil nil [1244 1334])
+            ("services" include nil nil [1336 1351])
+            ("PRDPublishHandler" type
+               (:superclasses ("services.PublishHandler")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [1407 1445])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1478 1519])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1529 1589]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1463 1467]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1450 1590])
+                    ("_get_pubcon_module" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1618 1622])
+                            ("task" variable nil (reparse-symbol function_parameters) [1624 1628]))                          )
+                        (reparse-symbol indented_block_body) [1595 1860])
+                    ("scan_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1880 1884])
+                            ("hook" variable nil (reparse-symbol function_parameters) [1886 1890]))                          )
+                        (reparse-symbol indented_block_body) [1865 2739])
+                    ("validate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2757 2761])
+                            ("hook" variable nil (reparse-symbol function_parameters) [2763 2767])
+                            ("task" variable nil (reparse-symbol function_parameters) [2769 2773])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [2775 2788])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [2790 2801])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [2803 2812]))                          )
+                        (reparse-symbol indented_block_body) [2744 4844])
+                    ("_do_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6255 6259]))                          )
+                        (reparse-symbol indented_block_body) [6239 7834])
+                    ("register_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7860 7864]))                          )
+                        (reparse-symbol indented_block_body) [7839 9651])
+                    ("publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9669 9673])
+                            ("hook" variable nil (reparse-symbol function_parameters) [9675 9679])
+                            ("task" variable nil (reparse-symbol function_parameters) [9681 9685])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [9687 9700])
+                            ("comment" variable nil (reparse-symbol function_parameters) [9702 9709])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [9711 9725])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [9727 9734])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [9736 9748])
+                            ("primary_publish_path" variable nil (reparse-symbol function_parameters) [9750 9770])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [9772 9783])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [9785 9794]))                          )
+                        (reparse-symbol indented_block_body) [9657 12368]))                  
+                :type "class")
+                nil [1353 12368]))          
+      :file "prd.py"
+      :pointmax 12400
+      :fsize 12689
+      :lastmodtime '(22231 4591 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "parts.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.PublishHandler.parts
+   :synopsis: maya specific parts publishing handler for sgtk
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 180])
+            ("__future__" include nil nil [181 218])
+            ("__all__" variable nil nil [220 253])
+            ("copy" include nil nil [255 276])
+            ("PySide" include nil nil [278 302])
+            ("sgtk" include nil nil [304 315])
+            ("pymel.core" include nil nil [317 340])
+            ("BBF.Maya.Lib.bbfEntity.scenePartAssets" include nil nil [342 406])
+            ("BBF.Maya.Lib.bbf_scene_hierarchy.asset_parts" include nil nil [407 479])
+            ("BBF.Maya.Tools._Common.PartManager.tasks" include nil nil [480 547])
+            ("BBF.Maya.Tools._Common.LODManager.tasks" include nil nil [548 613])
+            ("BBF.Maya.Tools._Common.LODManager.base" include nil nil [614 677])
+            ("BBF.Maya.Lib.bbfVariant.bbfAssetVariant" include nil nil [678 743])
+            ("BBF.Common.Tools.bbfTaskManager.bbfTaskManager" include nil nil [744 806])
+            ("BBF.Common.Lib.BBF_environ" include nil nil [807 855])
+            ("BBF.Common.Lib.ShotgunInterface.ShotgunInterface" include nil nil [856 931])
+            ("BBF.Maya.Lib.bbf_base.decorators" include nil nil [932 989])
+            ("BBF.Maya.Lib.bbfPublish.prdPublish" include nil nil [990 1045])
+            ("BBF.Maya.Tools.Utilities.PublishConsole.modules.prdPublish.PrdPublish" include nil nil [1047 1137])
+            ("services" include nil nil [1139 1154])
+            ("bbfEnv" variable nil nil [1156 1185])
+            ("PartsPublishHandler" type
+               (:superclasses ("services.PublishHandler")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [1243 1348])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1308 1351])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1361 1602]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1367 1371]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1354 1677])
+                    ("_get_pubcon_module" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1705 1709])
+                            ("task" variable nil (reparse-symbol function_parameters) [1711 1715]))                          )
+                        (reparse-symbol indented_block_body) [1682 1947])
+                    ("find_asset_parts" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1973 1977])
+                            ("sceneAsset" variable nil (reparse-symbol function_parameters) [1979 1989]))                          )
+                        (reparse-symbol indented_block_body) [1952 2626])
+                    ("find_asset_lods" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2651 2655])
+                            ("sceneAsset" variable nil (reparse-symbol function_parameters) [2657 2667]))                          )
+                        (reparse-symbol indented_block_body) [2631 4050])
+                    ("scan_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4070 4074])
+                            ("hook" variable nil (reparse-symbol function_parameters) [4076 4080]))                          )
+                        (reparse-symbol indented_block_body) [4055 4834])
+                    ("validate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4852 4856])
+                            ("hook" variable nil (reparse-symbol function_parameters) [4858 4862])
+                            ("task" variable nil (reparse-symbol function_parameters) [4864 4868])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [4870 4883])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [4885 4896])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [4898 4907]))                          )
+                        (reparse-symbol indented_block_body) [4839 4953])
+                    ("publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4970 4974])
+                            ("hook" variable nil (reparse-symbol function_parameters) [4976 4980])
+                            ("task" variable nil (reparse-symbol function_parameters) [4982 4986])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [4988 5001])
+                            ("comment" variable nil (reparse-symbol function_parameters) [5003 5010])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [5012 5026])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [5028 5035])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [5037 5049])
+                            ("primary_publish_path" variable nil (reparse-symbol function_parameters) [5051 5071])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [5073 5084])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [5086 5095]))                          )
+                        (reparse-symbol indented_block_body) [4958 7904])
+                    ("_mk_single_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8732 8736])
+                            ("parent_task" variable nil (reparse-symbol function_parameters) [8738 8749])
+                            ("task" variable nil (reparse-symbol function_parameters) [8751 8755])
+                            ("asset" variable nil (reparse-symbol function_parameters) [8757 8762]))                          )
+                        (reparse-symbol indented_block_body) [8709 9301])
+                    ("_mk_split_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9328 9332])
+                            ("parent_task" variable nil (reparse-symbol function_parameters) [9334 9345])
+                            ("task" variable nil (reparse-symbol function_parameters) [9347 9351])
+                            ("asset" variable nil (reparse-symbol function_parameters) [9353 9358]))                          )
+                        (reparse-symbol indented_block_body) [9306 10086])
+                    ("_mk_assembly_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10116 10120])
+                            ("parent_task" variable nil (reparse-symbol function_parameters) [10122 10133])
+                            ("task" variable nil (reparse-symbol function_parameters) [10135 10139])
+                            ("asset" variable nil (reparse-symbol function_parameters) [10141 10146]))                          )
+                        (reparse-symbol indented_block_body) [10091 10685]))                  
+                :type "class")
+                nil [1187 10685]))          
+      :file "parts.py"
+      :pointmax 10718
+      :fsize 10984
+      :lastmodtime '(22229 49776 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfSGTK!PublishHandler!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

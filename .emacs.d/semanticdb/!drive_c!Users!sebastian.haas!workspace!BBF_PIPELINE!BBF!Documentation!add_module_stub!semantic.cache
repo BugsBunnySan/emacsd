@@ -1,0 +1,736 @@
+;; Object add_module_stub/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "add_module_stub/"
+  :tables
+  (list
+    (semanticdb-table "gui.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BFF.Documentation.add_module_stub.gui
+   :synopsis: GUI class for the module add to document tool
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 174])
+            ("__future__" include nil nil [175 212])
+            ("pprint" include nil nil [214 239])
+            ("__all__" variable nil nil [241 268])
+            ("re" include nil nil [270 279])
+            ("os" include nil nil [280 289])
+            ("sys" include nil nil [290 300])
+            ("shutil" include nil nil [301 314])
+            ("xml.etree.ElementTree" include nil nil [315 349])
+            ("webbrowser" include nil nil [350 367])
+            ("logging" include nil nil [368 382])
+            ("glob" include nil nil [384 405])
+            ("PySide" include nil nil [407 446])
+            ("BBF.Common.Lib.bbf_base" include nil nil [448 490])
+            ("BBF.Common.Lib.bbf_base.qtwidgets" include nil nil [491 544])
+            ("BBF.Common.Lib.bbfContext" include nil nil [545 591])
+            ("add_module_stub_ui" include nil nil [593 628])
+            ("config" include nil nil [630 643])
+            ("admin_tools" include nil nil [644 662])
+            ("log_window" include nil nil [663 680])
+            ("join_strings" function
+               (:documentation " noob like way to join two strings on a common suffix/prefix "
+                :arguments 
+                  ( ("string1" variable nil (reparse-symbol function_parameters) [699 706])
+                    ("string2" variable nil (reparse-symbol function_parameters) [708 715]))                  )
+                nil [682 1015])
+            ("NoEditItemDelegate" type
+               (:documentation " custom item delegate to make cells selectable but not editable
+    "
+                :superclasses ("QtGui.QItemDelegate")
+                :members 
+                  ( ("createEditor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1164 1168])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1170 1176])
+                            ("options" variable nil (reparse-symbol function_parameters) [1178 1185])
+                            ("index" variable nil (reparse-symbol function_parameters) [1187 1192]))                          )
+                        (reparse-symbol indented_block_body) [1147 1292]))                  
+                :type "class")
+                nil [1016 1292])
+            ("AddModuleStub" type
+               (:documentation " GUI to add a module to the documentation
+    "
+                :superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            parent: parent Qt widget
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1469 1535])
+                            ("QtGui" code nil (reparse-symbol indented_block_body) [1544 1591])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1601 1660])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1669 1717])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1726 1774])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1784 1858])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1868 2132])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2142 2178])
+                            ("self" code nil (reparse-symbol indented_block_body) [2187 2209])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2219 2264])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2273 2342])
+                            ("self" code nil (reparse-symbol indented_block_body) [2351 2387])
+                            ("formatter" variable nil (reparse-symbol indented_block_body) [2396 2440])
+                            ("handler" variable nil (reparse-symbol indented_block_body) [2449 2512])
+                            ("handler" code nil (reparse-symbol indented_block_body) [2521 2552])
+                            ("self" code nil (reparse-symbol indented_block_body) [2561 2593])
+                            ("self" code nil (reparse-symbol indented_block_body) [2603 2647])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2657 2769])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2778 2847])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2856 2906])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2916 2944])
+                            ("for" code nil (reparse-symbol indented_block_body) [2953 3794])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3896 4145])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4155 4211])
+                            ("self" code nil (reparse-symbol indented_block_body) [4220 4286])
+                            ("self" code nil (reparse-symbol indented_block_body) [4295 4354])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4364 4422])
+                            ("self" code nil (reparse-symbol indented_block_body) [4431 4494])
+                            ("self" code nil (reparse-symbol indented_block_body) [4503 4534])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4544 4566])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4575 4671])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4680 4775])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4784 4876])
+                            ("self" code nil (reparse-symbol indented_block_body) [4886 4936])
+                            ("self" code nil (reparse-symbol indented_block_body) [4945 4965])
+                            ("self" code nil (reparse-symbol indented_block_body) [4974 5003])
+                            ("self" code nil (reparse-symbol indented_block_body) [5013 5086]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1441 1445])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1447 1453]))                          
+                        :documentation "
+        Args:
+            parent: parent Qt widget
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1428 5087])
+                    ("cleanup" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5104 5108]))                          
+                        :documentation " Cleanup the context before we go ")
+                        (reparse-symbol indented_block_body) [5092 5230])
+                    ("_get_module_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5256 5260]))                          
+                        :documentation " Get the path to the python module currently active
+
+        Returns:
+            path: The path to a python module file or directory
+        ")
+                        (reparse-symbol indented_block_body) [5235 5684])
+                    ("_get_relative_module_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5719 5723]))                          
+                        :documentation " Return the relative module path (relative to repo base)
+
+        Returns:
+            path: The path to the pytohn module, relative to the current repo base
+        ")
+                        (reparse-symbol indented_block_body) [5689 6273])
+                    ("_get_python_module_name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6306 6310]))                          
+                        :documentation " Return the full python module name
+
+        Returns:
+            string: A valid python module name, based at repo base
+        ")
+                        (reparse-symbol indented_block_body) [6278 6565])
+                    ("_get_path_from_python_module_name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6608 6612])
+                            ("module_name" variable nil (reparse-symbol function_parameters) [6614 6625]))                          
+                        :documentation " Turns the a python module name into the path to the module in repo base
+
+        Args:
+            module_name: fully qualified name of a python module in the current repo
+
+        Returns:
+            path: The path to the module
+        ")
+                        (reparse-symbol indented_block_body) [6570 7049])
+                    ("_valid_module_selected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7081 7085]))                          
+                        :documentation " Check whether an existing python module has been selected
+
+        Returns:
+            bool: True if a valid module is selected, else False
+        ")
+                        (reparse-symbol indented_block_body) [7054 7449])
+                    ("_update_action_buttons" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7481 7485]))                          
+                        :documentation " Enable or Disable all the action buttons, depending in :func:`._valid_module_selected` ")
+                        (reparse-symbol indented_block_body) [7454 7824])
+                    ("_update_paths" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7847 7851]))                          
+                        :documentation " update all the paths depending on the selected module ")
+                        (reparse-symbol indented_block_body) [7829 9116])
+                    ("_update_static_item_colors" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9152 9156])
+                            ("row" variable nil (reparse-symbol function_parameters) [9158 9161]))                          
+                        :documentation " Show which items in the static items view exist, are going to be removed, etc... by coloring them in
+
+        Args:
+            row: specify a single row to update, defaults to None meaning all the rows
+        ")
+                        (reparse-symbol indented_block_body) [9121 9965])
+                    ("_update_static_items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9995 9999]))                          
+                        :documentation " refresh view of the static items for the current module ")
+                        (reparse-symbol indented_block_body) [9970 10690])
+                    ("_update_python_paths" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10720 10724]))                          
+                        :documentation " refresh view of the python paths for the current module based on its cofniguration ")
+                        (reparse-symbol indented_block_body) [10695 11211])
+                    ("_setup_static_tv_headers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11261 11265]))                          
+                        :documentation " (re-)setup the headers of the static item view (needed/called after its been cleared) ")
+                        (reparse-symbol indented_block_body) [11232 11777])
+                    ("go_to_le_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11800 11804])
+                            ("le_widget_or_string" variable nil (reparse-symbol function_parameters) [11806 11825]))                          
+                        :documentation " open a file browser, based on either a QLineEdit widget or a string
+
+        Args:
+            le_widget_or_string: either a QLineEdit, in which case its current text is obtained, or a string, both should be a fillepath
+        ")
+                        (reparse-symbol indented_block_body) [11782 12336])
+                    ("select_le_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12360 12364])
+                            ("le_widget" variable nil (reparse-symbol function_parameters) [12366 12375])
+                            ("what" variable nil (reparse-symbol function_parameters) [12377 12381])
+                            ("prev_path" variable nil (reparse-symbol function_parameters) [12383 12392]))                          
+                        :documentation " Using the appropriate QFileDialog, ask the user for a path and fill a QLineEdit with the choice
+
+        Args:
+            le_widget: a QLineEdit, will be filled by the user choice
+            what: either 'dir', 'pyfile' or 'rstfile', determines what the user can select in the QFileDialog
+            prev_path: start the QFileDialog here
+
+        Returns:
+            path: the selected path
+        ")
+                        (reparse-symbol indented_block_body) [12341 13556])
+                    ("add_static_item" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13581 13585])
+                            ("path" variable nil (reparse-symbol function_parameters) [13587 13591])
+                            ("existing" variable nil (reparse-symbol function_parameters) [13593 13601]))                          
+                        :documentation " add a static item to the static items view
+
+        Args:
+            path: the file path to the new static item
+            existing: indicates whether the item was already existing, or whether the user just added it
+        ")
+                        (reparse-symbol indented_block_body) [13561 14675])
+                    ("_abs_custom_docs_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14706 14710])
+                            ("path" variable nil (reparse-symbol function_parameters) [14712 14716]))                          
+                        :documentation " given the relative custom docs path we use, this returns its absolute
+
+        Args:
+            path: a relative path
+
+        Returns:
+            path: corresponding absolute path, based in self._doc_path
+        ")
+                        (reparse-symbol indented_block_body) [14680 15155])
+                    ("_check_custom_docs_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15188 15192])
+                            ("path" variable nil (reparse-symbol function_parameters) [15194 15198]))                          
+                        :documentation " checks that a custom docs path is in the repository at repo root
+
+        Args:
+            path: path to the custom docs
+
+        Returns:
+            path: custom docs path relative to our position in the repository, None if it's outside the repo
+        ")
+                        (reparse-symbol indented_block_body) [15160 16051])
+                    ("_make_module_xml" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16077 16081])
+                            ("module_name" variable nil (reparse-symbol function_parameters) [16083 16094]))                          
+                        :documentation " create initial xml for a module for the per module config
+
+        Args:
+            module_name: fully qualified python module name
+
+        Returns:
+            etree.Element: root of the new module's empty configuration
+        ")
+                        (reparse-symbol indented_block_body) [16056 16570])
+                    ("use_known_module" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16616 16620]))                          
+                        :documentation " called when the known modules refresh button is pressed, fills all things as if the user had chosen the module's path ")
+                        (reparse-symbol indented_block_body) [16595 17194])
+                    ("go_to_base_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17220 17224]))                          
+                        :documentation " called for the jump to base path button, opens file browser at that location ")
+                        (reparse-symbol indented_block_body) [17200 17370])
+                    ("go_to_module_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17397 17401]))                          
+                        :documentation " called for the jump to module path button, opens file browser at that location ")
+                        (reparse-symbol indented_block_body) [17375 17551])
+                    ("go_to_custom_docs_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17583 17587]))                          
+                        :documentation " called for the jump to custom docs path button, opens file browser at that location ")
+                        (reparse-symbol indented_block_body) [17556 17831])
+                    ("go_to_doc_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17855 17859]))                          
+                        :documentation " called for the jump to generated docs button, opens file browser at that location ")
+                        (reparse-symbol indented_block_body) [17836 18009])
+                    ("go_to_static_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18036 18040]))                          
+                        :documentation " called for the jump to static items path button, opens file browser at that location ")
+                        (reparse-symbol indented_block_body) [18014 18196])
+                    ("go_to_web_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18220 18224]))                          
+                        :documentation " called for the jump to web path button, opens webbrowser at that location ")
+                        (reparse-symbol indented_block_body) [18201 18398])
+                    ("select_base_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18424 18428]))                          
+                        :documentation " called to select the base repo path, updates paths ")
+                        (reparse-symbol indented_block_body) [18403 18644])
+                    ("select_module_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18672 18676]))                          
+                        :documentation " called to select the python module path, updates all UI ")
+                        (reparse-symbol indented_block_body) [18649 19298])
+                    ("select_custom_docs_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19331 19335]))                          
+                        :documentation " called to select the custom documentation path ")
+                        (reparse-symbol indented_block_body) [19303 19904])
+                    ("add_python_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19929 19933]))                          
+                        :documentation " called to add a python path element to the python path view ")
+                        (reparse-symbol indented_block_body) [19909 20505])
+                    ("add_static_content" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20533 20537]))                          
+                        :documentation " called to add a new static content to the static content view ")
+                        (reparse-symbol indented_block_body) [20510 20950])
+                    ("remove_python_paths" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20979 20983]))                          
+                        :documentation " called to remove selected python paths from the python path view ")
+                        (reparse-symbol indented_block_body) [20955 21163])
+                    ("remove_static_content" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21194 21198]))                          
+                        :documentation " called to remove selected static content items from the static content view ")
+                        (reparse-symbol indented_block_body) [21168 21627])
+                    ("revert_python_paths" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21656 21660]))                          
+                        :documentation " reset python path view to stored configuration ")
+                        (reparse-symbol indented_block_body) [21632 21762])
+                    ("update_stub_index" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21789 21793]))                          
+                        :documentation " rebuilds the toctree for our python modules docs ")
+                        (reparse-symbol indented_block_body) [21767 22631])
+                    ("update_config" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22654 22658]))                          
+                        :documentation " updates the configuration stored for our python module ")
+                        (reparse-symbol indented_block_body) [22636 23874])
+                    ("generate_stubs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23898 23902]))                          
+                        :documentation " generate the test stubs ")
+                        (reparse-symbol indented_block_body) [23879 25403])
+                    ("extract_autodoc" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25428 25432]))                          
+                        :documentation " run apidocs for out python module and postprocess the output ")
+                        (reparse-symbol indented_block_body) [25408 27563])
+                    ("_cook_raw_sources" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27590 27594])
+                            ("from_dir" variable nil (reparse-symbol function_parameters) [27596 27604])
+                            ("to_dir" variable nil (reparse-symbol function_parameters) [27606 27612])
+                            ("full_module_name" variable nil (reparse-symbol function_parameters) [27614 27630]))                          
+                        :documentation " post process the output generated by apidoc, to use the right pytohn module name and be in the correct place ")
+                        (reparse-symbol indented_block_body) [27568 28823])
+                    ("integrate_module" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28850 28854]))                          
+                        :documentation " called by the integrate button, updates config, generates stubs and runs the apidocs ")
+                        (reparse-symbol indented_block_body) [28829 29048])
+                    ("update_python_paths" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29077 29081]))                          
+                        :documentation " calls update_config to update the python paths config ")
+                        (reparse-symbol indented_block_body) [29053 29183])
+                    ("_add_static_item" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29209 29213])
+                            ("row" variable nil (reparse-symbol function_parameters) [29215 29218]))                          
+                        :documentation " performs the actual adding/copying of a static item into the static item folder
+
+        Args:
+            row: row idx number into the static item model
+        ")
+                        (reparse-symbol indented_block_body) [29188 30069])
+                    ("_remove_static_item" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30098 30102])
+                            ("row" variable nil (reparse-symbol function_parameters) [30104 30107]))                          
+                        :documentation " performs the actual removing/deleting of a static item from the static item folder
+
+        Args:
+            row: row idx number into the static item model
+        ")
+                        (reparse-symbol indented_block_body) [30074 30689])
+                    ("update_static_content" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30720 30724]))                          
+                        :documentation " update the state of the static content, based on the static content view ")
+                        (reparse-symbol indented_block_body) [30694 31389])
+                    ("rescan_static_content" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31420 31424]))                          
+                        :documentation " refresh status of static content from the static content folder ")
+                        (reparse-symbol indented_block_body) [31394 31543])
+                    ("update_all_the_things" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31574 31578]))                          
+                        :documentation " apply everything button, integrates the module, updates python paths and updates static content ")
+                        (reparse-symbol indented_block_body) [31548 31797])
+                    ("show_admin_tools" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31823 31827]))                          
+                        :documentation " opens the admin tools toolbox ")
+                        (reparse-symbol indented_block_body) [31802 31960])
+                    ("jump_to_jenkins" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31985 31989]))                          
+                        :documentation " callback to jump to jenkins webpage ")
+                        (reparse-symbol indented_block_body) [31965 32106])
+                    ("show_log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32124 32128]))                          
+                        :documentation " callback to open the log window ")
+                        (reparse-symbol indented_block_body) [32111 32211])
+                    ("quit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32225 32229]))                          
+                        :documentation " callback to close the tool, ensures cleanup is performed before we go ")
+                        (reparse-symbol indented_block_body) [32216 32362]))                  
+                :type "class")
+                nil [1326 32362]))          
+      :file "gui.py"
+      :pointmax 32389
+      :fsize 33188
+      :lastmodtime '(22182 5394 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 15936 . 16051) (NEWLINE 15935 . 15936) (COLON 15934 . 15935) (TRY 15814 . 15817) (AS 15930 . 15932)))
+    (semanticdb-table "add_module_stub_ui.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("PySide" include nil nil [249 281])
+            ("Ui_AddModuleStub" type
+               (:superclasses ("object")
+                :members 
+                  ( ("setupUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [331 335])
+                            ("AddModuleStub" variable nil (reparse-symbol function_parameters) [337 350]))                          )
+                        (reparse-symbol indented_block_body) [319 19722])
+                    ("retranslateUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19745 19749])
+                            ("AddModuleStub" variable nil (reparse-symbol function_parameters) [19751 19764]))                          )
+                        (reparse-symbol indented_block_body) [19727 29138]))                  
+                :type "class")
+                nil [283 29138])
+            ("add_module_stub_rc" include nil nil [29139 29164]))          
+      :file "add_module_stub_ui.py"
+      :pointmax 29165
+      :fsize 29538
+      :lastmodtime '(22182 5394 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "config.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BFF.Documentation.add_module_stub.config
+   :synopsis: configuration for the add module stub tool
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 174])
+            ("cfg" variable nil nil [175 1003]))          
+      :file "config.py"
+      :pointmax 1004
+      :fsize 934
+      :lastmodtime '(22182 5394 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "admin_tools.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BFF.Documentation.add_module_stub.admin_tools
+   :synopsis: admin toolbox
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 150])
+            ("__future__" include nil nil [151 188])
+            ("__all__" variable nil nil [190 214])
+            ("PySide" include nil nil [216 255])
+            ("admin_tools_ui" include nil nil [257 289])
+            ("AdminTools" type
+               (:documentation " GUI Toolbox for a couple of admin tools
+    "
+                :superclasses ("QtGui.QDialog")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            add_module_stub: main application (and Qt parent widget)
+        \"\"\"" code nil (reparse-symbol indented_block_body) [430 528])
+                            ("QtGui" code nil (reparse-symbol indented_block_body) [537 589])
+                            ("self" variable nil (reparse-symbol indented_block_body) [599 638])
+                            ("self" variable nil (reparse-symbol indented_block_body) [648 682])
+                            ("self" code nil (reparse-symbol indented_block_body) [691 713]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [398 402])
+                            ("add_module_stub" variable nil (reparse-symbol function_parameters) [404 419]))                          
+                        :documentation "
+        Args:
+            add_module_stub: main application (and Qt parent widget)
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [385 714])
+                    ("refresh_apidocs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [739 743]))                          
+                        :documentation " Run the apidoc extraction again for all existing documented modules ")
+                        (reparse-symbol indented_block_body) [719 843])
+                    ("update_toctrees" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [868 872]))                          
+                        :documentation " Check that all the dynamicly generated toctrees match the documented modules that exist ")
+                        (reparse-symbol indented_block_body) [848 992]))                  
+                :type "class")
+                nil [291 992]))          
+      :file "admin_tools.py"
+      :pointmax 1016
+      :fsize 1055
+      :lastmodtime '(22018 30253 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "admin_tools_ui.py"
+      :file "admin_tools_ui.py"
+      :fsize 2798
+      :lastmodtime '(22182 5394 0 0))
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Documentation.add_module_stub
+   :synopsis: A tool to add a python module to the documentation
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 175]))          
+      :file "__init__.py"
+      :pointmax 176
+      :fsize 182
+      :lastmodtime '(22018 30253 0 0)
+      :unmatched-syntax '(($EOI 176 . 176)))
+    (semanticdb-table "__main__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BFF.Documentation.add_moudle_stub.__main__
+   :synopsis: __main__ file to make this module executable
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 178])
+            ("os" include nil nil [179 188])
+            ("sys" include nil nil [189 199])
+            ("sys" code nil nil [225 252])
+            ("BBF" include nil nil [253 263])
+            ("PySide" include nil nil [265 278])
+            ("PySide" include nil nil [279 317])
+            ("gui" include nil nil [319 329])
+            ("if" code nil nil [331 1082]))          
+      :file "__main__.py"
+      :pointmax 1082
+      :fsize 1128
+      :lastmodtime '(22018 30253 0 0)
+      :unmatched-syntax '(($EOI 1082 . 1082) ($EOI 1072 . 1072) ($EOI 1059 . 1059)))
+    (semanticdb-table "add_module_stub_rc.py"
+      :file "add_module_stub_rc.py"
+      :fsize 323042
+      :lastmodtime '(22182 5393 0 0))
+    (semanticdb-table "log_window.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Documentation.add_module_stub.log_window
+   :synopsis: log window
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 146])
+            ("__future__" include nil nil [147 184])
+            ("__all__" variable nil nil [186 209])
+            ("PySide" include nil nil [211 250])
+            ("log_window_ui" include nil nil [252 281])
+            ("LogWindow" type
+               (:documentation " Gui Log Window
+    "
+                :superclasses ("QtGui.QDialog")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            add_module_stub: main application (and Qt parent widget)
+        \"\"\"" code nil (reparse-symbol indented_block_body) [396 494])
+                            ("QtGui" code nil (reparse-symbol indented_block_body) [503 555])
+                            ("self" variable nil (reparse-symbol indented_block_body) [565 604])
+                            ("self" variable nil (reparse-symbol indented_block_body) [614 645])
+                            ("self" code nil (reparse-symbol indented_block_body) [654 676]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [364 368])
+                            ("add_module_stub" variable nil (reparse-symbol function_parameters) [370 385]))                          
+                        :documentation "
+        Args:
+            add_module_stub: main application (and Qt parent widget)
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [351 677])
+                    ("text_edit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [710 714]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [682 748])
+                    ("clear_log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [767 771]))                          )
+                        (reparse-symbol indented_block_body) [753 806]))                  
+                :type "class")
+                nil [283 806]))          
+      :file "log_window.py"
+      :pointmax 829
+      :fsize 867
+      :lastmodtime '(22018 30253 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 692 . 806) (NAME 790 . 794) (NEWLINE 806 . 807) (NAME 790 . 794) (NEWLINE 806 . 807) (NAME 790 . 794) (NEWLINE 806 . 807) (NAME 790 . 794) (NEWLINE 806 . 807) (INDENT_BLOCK 678 . 795)))
+    (semanticdb-table "log_window_ui.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("PySide" include nil nil [244 276])
+            ("Ui_LogWindow" type
+               (:superclasses ("object")
+                :members 
+                  ( ("setupUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [322 326])
+                            ("LogWindow" variable nil (reparse-symbol function_parameters) [328 337]))                          )
+                        (reparse-symbol indented_block_body) [310 2194])
+                    ("retranslateUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2217 2221])
+                            ("LogWindow" variable nil (reparse-symbol function_parameters) [2223 2232]))                          )
+                        (reparse-symbol indented_block_body) [2199 2625]))                  
+                :type "class")
+                nil [278 2625])
+            ("log_window_rc" include nil nil [2626 2646]))          
+      :file "log_window_ui.py"
+      :pointmax 2647
+      :fsize 2698
+      :lastmodtime '(22182 5394 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "log_window_rc.py"
+      :file "log_window_rc.py"
+      :fsize 45648
+      :lastmodtime '(22182 5394 0 0)))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Documentation!add_module_stub!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

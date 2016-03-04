@@ -1,0 +1,605 @@
+;; Object shotgun_data/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "shotgun_data/"
+  :tables
+  (list
+    (semanticdb-table "shotgun_data_retriever.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [448 457])
+            ("urlparse" include nil nil [458 473])
+            ("hashlib" include nil nil [474 488])
+            ("sgtk" include nil nil [490 501])
+            ("sgtk.platform.qt" include nil nil [502 544])
+            ("sgtk" include nil nil [545 571])
+            ("ShotgunDataRetriever" type
+               (:documentation "
+    Asynchronous data retriever class which can be used to retrieve data and 
+    thumbnails from Shotgun and from disk thumbnail cache. Uses the 
+    :class:`~task_manager.BackgroundTaskManager` to run tasks in background 
+    threads and emits signals when each query has either completed or failed.
+    Requests are queued up using for example the :meth:`execute_find()` and 
+    :meth:`request_thumbnail()` methods.
+
+    Requests are executed in the following priority order:
+
+    - First any thumbnails that are already cached on disk are handled.
+    - Next, shotgun find() queries are handled.
+    - Lastly thumbnail downloads are handled.
+    
+    The thread will emit work_completed and work_failure signals when 
+    tasks are completed (or fail). The :meth:`clear()` method will 
+    clear the current queue. The currently processing item will finish 
+    processing and may send out signals even after a clear. Make sure you 
+    call the :meth:`stop()` method prior to destruction in order for the 
+    system to gracefully shut down.    
+    
+    :signal work_completed(uid, request_type, data_dict): Emitted every time 
+        a requested task has completed. ``uid`` is a unique id which matches 
+        the unique id returned by the corresponding request call. 
+        ``request_type`` is a string denoting the type of request this 
+        event is associated with. ``data_dict`` is a dictionary containing 
+        the payload of the request. It will be different depending on what 
+        type of request it is. 
+    
+    :signal work_failure(uid, error_message): Emitted every time a requested 
+        task has failed. ``uid`` is a unique id which matches the unique 
+        id returned by the corresponding request call.
+    
+    
+    "
+                :superclasses ("QtCore.QObject")
+                :members 
+                  ( ("work_completed" variable nil (reparse-symbol indented_block_body) [3255 3301])
+                    ("work_failure" variable nil (reparse-symbol indented_block_body) [3511 3549])
+                    ("_CHECK_THUMB_PRIORITY" variable nil (reparse-symbol indented_block_body) [3855 3891])
+                    ("_SG_DOWNLOAD_SCHEMA_PRIORITY" variable nil (reparse-symbol indented_block_body) [4156 4192])
+                    ("_SG_CALL_PRIORITY" variable nil (reparse-symbol indented_block_body) [4303 4339])
+                    ("_DOWNLOAD_THUMB_PRIORITY" variable nil (reparse-symbol indented_block_body) [4482 4518])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        :param parent: Parent object
+        :type parent: :class:`~PySide.QtGui.QWidget`
+        :param sg: Optional Shotgun API Instance
+        :param bg_task_manager: Optional Task manager
+        :class bg_task_manager: :class:`~task_manager.BackgroundTaskManager`
+        \"\"\"" code nil (reparse-symbol indented_block_body) [4597 4882])
+                            ("QtCore" code nil (reparse-symbol indented_block_body) [4891 4928])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4937 4982])
+                            ("task_manager" variable nil (reparse-symbol indented_block_body) [5038 5095])
+                            ("self" code nil (reparse-symbol indented_block_body) [5104 5206])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5215 5266])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5275 5332])
+                            ("self" code nil (reparse-symbol indented_block_body) [5341 5407])
+                            ("self" code nil (reparse-symbol indented_block_body) [5416 5476])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5486 5514]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4538 4542])
+                            ("parent" variable nil (reparse-symbol function_parameters) [4544 4550])
+                            ("sg" variable nil (reparse-symbol function_parameters) [4557 4559])
+                            ("bg_task_manager" variable nil (reparse-symbol function_parameters) [4566 4581]))                          
+                        :documentation "
+        :param parent: Parent object
+        :type parent: :class:`~PySide.QtGui.QWidget`
+        :param sg: Optional Shotgun API Instance
+        :param bg_task_manager: Optional Task manager
+        :class bg_task_manager: :class:`~task_manager.BackgroundTaskManager`
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4525 5515])
+                    ("download_thumbnail" function
+                       (:typemodifiers ("static")
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("url" variable nil (reparse-symbol function_parameters) [5697 5700])
+                            ("bundle" variable nil (reparse-symbol function_parameters) [5702 5708]))                          
+                        :documentation "
+        Convenience and compatibility method for quick and easy synchrnous thumbnail download.
+        This will retrieve a shotgun thumbnail given a url - if it already exists in the cache,
+        a path to it will be returned instantly. If not, it will be downloaded from Shotgun,
+        placed in the standard cache location on disk and its path will be returned.
+
+        This is a helper method meant to make it easy to port over synchronous legacy
+        code - for a better solution, we recommend using the thumbnail retrieval
+        that runs in a background thread.
+
+        Bcause Shotgun thumbnail urls have an expiry time, make sure to only
+        pass urls to this method that have been very recently retrieved via a Shotgun find call.
+
+        :param url: The thumbnail url string that is associated with this thumbnail. This is
+                    the field value as returned by a Shotgun query.
+        :param bundle: App, Framework or Engine object requesting the download.
+
+        :returns: A path to the thumbnail on disk.
+        ")
+                        (reparse-symbol indented_block_body) [5656 7544])
+                    ("start" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7561 7565]))                          
+                        :documentation "
+        Start the retriever thread.
+
+        :raises:    TankError if there is no :class:`~task_manager.BackgroundTaskManager` associated with this instance
+        ")
+                        (reparse-symbol indented_block_body) [7551 7938])
+                    ("stop" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7952 7956]))                          
+                        :documentation "
+        Gracefully stop the receiver.
+
+        Once stop() has been called, the object needs to be discarded.
+        This is a blocking call. It will synchronously wait
+        until any potential currently processing item has completed.
+
+        Note that once stopped the data retriever can't be restarted as the handle to the
+        :class:`~task_manager.BackgroundTaskManager` instance is released.
+        ")
+                        (reparse-symbol indented_block_body) [7943 9075])
+                    ("clear" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9090 9094]))                          
+                        :documentation "
+        Clears the queue.
+
+        Any currently processing item will complete without interruption, and signals will be
+        sent out for these items.
+        ")
+                        (reparse-symbol indented_block_body) [9080 9447])
+                    ("stop_work" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9466 9470])
+                            ("task_id" variable nil (reparse-symbol function_parameters) [9472 9479]))                          
+                        :documentation "
+        Stop the specified task
+
+        :param task_id: The task to stop
+        ")
+                        (reparse-symbol indented_block_body) [9452 9705])
+                    ("get_schema" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9725 9729])
+                            ("project_id" variable nil (reparse-symbol function_parameters) [9731 9741]))                          
+                        :documentation "
+        Execute the schema_read and schema_entity_read methods asynchronously
+
+        :param project_id:  If specified, the schema listing returned will
+                            be constrained by the schema settings for 
+                            the given project.
+        :returns: A unique identifier representing this request. This
+                  identifier is also part of the payload sent via the
+                  work_completed and work_failure signals, making it
+                  possible to match them up.
+        ")
+                        (reparse-symbol indented_block_body) [9710 10516])
+                    ("execute_find" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10538 10542])
+                            ("args" variable nil (reparse-symbol function_parameters) [10544 10549])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [10551 10559]))                          
+                        :documentation "
+        Executes a Shotgun find query asynchronously.
+
+        This method takes the same parameters as the Shotgun find() call.
+
+        The query will be queued up and once processed, either a
+        work_completed or work_failure signal will be emitted.
+
+        :param ``*args``:       args to be passed to the Shotgun find() call
+        :param ``**kwargs``:    Named parameters to be passed to the Shotgun find() call
+        :returns: A unique identifier representing this request. This
+                  identifier is also part of the payload sent via the
+                  work_completed and work_failure signals, making it
+                  possible to match them up.
+
+        ")
+                        (reparse-symbol indented_block_body) [10521 11503])
+                    ("execute_find_one" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11529 11533])
+                            ("args" variable nil (reparse-symbol function_parameters) [11535 11540])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [11542 11550]))                          
+                        :documentation "
+        Executes a Shotgun find_one query asynchronously.
+
+        This method takes the same parameters as the Shotgun find_one() call.
+
+        The query will be queued up and once processed, either a
+        work_completed or work_failure signal will be emitted.
+
+        :param ``*args``:       args to be passed to the Shotgun find_one() call
+        :param ``**kwargs``:    Named parameters to be passed to the Shotgun find_one() call
+        :returns: A unique identifier representing this request. This
+                  identifier is also part of the payload sent via the
+                  work_completed and work_failure signals, making it
+                  possible to match them up.
+
+        ")
+                        (reparse-symbol indented_block_body) [11508 12514])
+                    ("execute_update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12538 12542])
+                            ("args" variable nil (reparse-symbol function_parameters) [12544 12549])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [12551 12559]))                          
+                        :documentation "
+        Execute a Shotgun update call asynchronously
+
+        This method takes the same parameters as the Shotgun update() call.
+
+        The query will be queued up and once processed, either a
+        work_completed or work_failure signal will be emitted.
+
+        :param ``*args``:       args to be passed to the Shotgun update() call
+        :param ``**kwargs``:    Named parameters to be passed to the Shotgun update() call
+        :returns: A unique identifier representing this request. This
+                  identifier is also part of the payload sent via the
+                  work_completed and work_failure signals, making it
+                  possible to match them up.        
+        ")
+                        (reparse-symbol indented_block_body) [12519 13517])
+                    ("execute_create" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13541 13545])
+                            ("args" variable nil (reparse-symbol function_parameters) [13547 13552])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [13554 13562]))                          
+                        :documentation "
+        Execute a Shotgun create call asynchronously
+
+        The query will be queued up and once processed, either a
+        work_completed or work_failure signal will be emitted.
+
+        This method takes the same parameters as the Shotgun create() call.
+
+        :param ``*args``:       args to be passed to the Shotgun create() call
+        :param ``**kwargs``:    Named parameters to be passed to the Shotgun create() call
+        :returns: A unique identifier representing this request. This
+                  identifier is also part of the payload sent via the
+                  work_completed and work_failure signals, making it
+                  possible to match them up.        
+        ")
+                        (reparse-symbol indented_block_body) [13522 14520])
+                    ("execute_delete" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14544 14548])
+                            ("args" variable nil (reparse-symbol function_parameters) [14550 14555])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [14557 14565]))                          
+                        :documentation "
+        Execute a Shotgun delete call asynchronously
+
+        This method takes the same parameters as the Shotgun delete() call.
+
+        The query will be queued up and once processed, either a
+        work_completed or work_failure signal will be emitted.
+
+        :param ``*args``:       args to be passed to the Shotgun delete() call
+        :param ``**kwargs``:    Named parameters to be passed to the Shotgun delete() call
+        :returns: A unique identifier representing this request. This
+                  identifier is also part of the payload sent via the
+                  work_completed and work_failure signals, making it
+                  possible to match them up.        
+        ")
+                        (reparse-symbol indented_block_body) [14525 15523])
+                    ("execute_method" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15547 15551])
+                            ("method" variable nil (reparse-symbol function_parameters) [15553 15559])
+                            ("args" variable nil (reparse-symbol function_parameters) [15561 15566])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [15568 15576]))                          
+                        :documentation "
+        Executes a generic execution of a method asynchronously.  This is pretty much a
+        wrapper for executing a task through the :class:`~task_manager.BackgroundTaskManager`.
+
+        The specified method will be called on the following form::
+
+            method(sg, data) 
+
+        Where sg is a shotgun API instance. Data is typically
+        a dictionary with specific data that the method needs.
+        The query will be queued up and once processed, either a
+        work_completed or work_failure signal will be emitted.
+
+        :param method:      The method that should be executed.
+        :param ``*args``:       args to be passed to the method
+        :param ``**kwargs``:    Named parameters to be passed to the method
+        :returns: A unique identifier representing this request. This
+                  identifier is also part of the payload sent via the
+                  work_completed and work_failure signals, making it
+                  possible to match them up.        
+        ")
+                        (reparse-symbol indented_block_body) [15528 17109])
+                    ("_add_task" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17128 17132])
+                            ("task_cb" variable nil (reparse-symbol function_parameters) [17134 17141])
+                            ("priority" variable nil (reparse-symbol function_parameters) [17143 17151])
+                            ("task_args" variable nil (reparse-symbol function_parameters) [17153 17162])
+                            ("task_kwargs" variable nil (reparse-symbol function_parameters) [17169 17180]))                          
+                        :documentation "
+        Simplified wrapper to add a task to the task manager.  All tasks get added into
+        the same group (self._bg_tasks_group) and the returned task_id is case to a string
+        to retain backwards compatibility (it used to return a uuid string).
+
+        :param task_cb:     The function to execute for the task
+        :param priority:    The priority the task should be run with
+        :param task_args:   Arguments that should be passed to the task callback
+        :param task_kwargs: Named arguments that should be passed to the task callback
+        :returns:           String representation of the task id
+        :raises:            TankError if there is no task manager available to add the task to!
+        ")
+                        (reparse-symbol indented_block_body) [17114 18422])
+                    ("request_thumbnail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18450 18454])
+                            ("url" variable nil (reparse-symbol function_parameters) [18456 18459])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [18461 18472])
+                            ("entity_id" variable nil (reparse-symbol function_parameters) [18474 18483])
+                            ("field" variable nil (reparse-symbol function_parameters) [18485 18490])
+                            ("load_image" variable nil (reparse-symbol function_parameters) [18492 18502]))                          
+                        :documentation "
+        Downloads a thumbnail form Shotgun asynchronously or returns a cached thumbnail 
+        if found.  Optionally loads the thumbnail into a QImage.
+
+        :param url:         The thumbnail url string that is associated with this thumbnail. This is
+                            the field value as returned by a Shotgun query.
+        :param entity_type: Shotgun entity type with which the thumb is associated.
+        :param entity_id:   Shotgun entity id with which the thumb is associated.
+        :param field:       Thumbnail field. Normally 'image' but could also for example be a deep 
+                            link field such as ``sg_sequence.Sequence.image``
+        :param load_image:  If set to True, the return data structure will contain a QImage object 
+                            with the image data loaded.
+
+        :returns: A unique identifier representing this request. This
+                  identifier is also part of the payload sent via the
+                  work_completed and work_failure signals, making it
+                  possible to match them up.
+        ")
+                        (reparse-symbol indented_block_body) [18428 21762])
+                    ("_get_thumbnail_path" function
+                       (:typemodifiers ("static")
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("url" variable nil (reparse-symbol function_parameters) [21960 21963])
+                            ("bundle" variable nil (reparse-symbol function_parameters) [21965 21971]))                          
+                        :documentation "
+        Returns the location on disk suitable for a thumbnail given its url.
+
+        :param url:     Path to a thumbnail
+        :param bundle:  App, Engine or Framework instance
+        :returns:       Path as a string.
+        ")
+                        (reparse-symbol indented_block_body) [21918 24412])
+                    ("_get_thumbnail_path_old" function
+                       (:typemodifiers ("static")
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("url" variable nil (reparse-symbol function_parameters) [24463 24466])
+                            ("bundle" variable nil (reparse-symbol function_parameters) [24468 24474]))                          
+                        :documentation "
+        March 2015 - Previous implementation of thumbnail caching logic.
+        This has now been replaced by a new, improved sharding algorithm.
+        In the interest of disk management, keep this method around so that
+        the new logic can attempt to over files over into the new scheme 
+        if at all possible.
+
+        :param url:     Path to a thumbnail
+        :param bundle:  App, Engine or Framework instance
+        :returns:       Path as a string.
+        ")
+                        (reparse-symbol indented_block_body) [24417 26750])
+                    ("_task_get_schema" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26777 26781])
+                            ("project_id" variable nil (reparse-symbol function_parameters) [26783 26793]))                          
+                        :documentation "
+        Method that gets executed in a background task/thread to retrieve the fields
+        and types schema from Shotgun
+
+        :param project_id:  The id of the project to query the schema for or None to 
+                            retrieve for all projects
+        :returns:           Dictionary containing the 'action' together with the schema 
+                            fields and types
+        ")
+                        (reparse-symbol indented_block_body) [26756 27762])
+                    ("_task_execute_find" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27790 27794])
+                            ("args" variable nil (reparse-symbol function_parameters) [27796 27801])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [27803 27811]))                          
+                        :documentation "
+        Method that gets executed in a background task/thread to perform a Shotgun
+        find query
+
+        :param ``*args``:       Unnamed arguments to be passed to the find() call
+        :param ``**kwargs``:    Named arguments to be passed to the find() call 
+        :returns:           Dictionary containing the 'action' together with result
+                            returned by the find() call
+        ")
+                        (reparse-symbol indented_block_body) [27767 28357])
+                    ("_task_execute_find_one" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28389 28393])
+                            ("args" variable nil (reparse-symbol function_parameters) [28395 28400])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [28402 28410]))                          
+                        :documentation "
+        Method that gets executed in a background task/thread to perform a Shotgun
+        find_one query
+
+        :param ``*args``:       Unnamed arguments to be passed to the find_one() call
+        :param ``**kwargs``:    Named arguments to be passed to the find_one() call 
+        :returns:           Dictionary containing the 'action' together with result
+                            returned by the find_one() call
+        ")
+                        (reparse-symbol indented_block_body) [28362 28980])
+                    ("_task_execute_update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29010 29014])
+                            ("args" variable nil (reparse-symbol function_parameters) [29016 29021])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [29023 29031]))                          
+                        :documentation "
+        Method that gets executed in a background task/thread to perform a Shotgun
+        update call
+
+        :param ``*args``:       Unnamed arguments to be passed to the update() call
+        :param ``**kwargs``:    Named arguments to be passed to the update() call 
+        :returns:           Dictionary containing the 'action' together with result
+                            returned by the update() call
+        ")
+                        (reparse-symbol indented_block_body) [28985 29588])
+                    ("_task_execute_create" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29618 29622])
+                            ("args" variable nil (reparse-symbol function_parameters) [29624 29629])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [29631 29639]))                          
+                        :documentation "
+        Method that gets executed in a background task/thread to perform a Shotgun
+        create call
+
+        :param ``*args``:       Unnamed arguments to be passed to the create() call
+        :param ``**kwargs``:    Named arguments to be passed to the create() call 
+        :returns:           Dictionary containing the 'action' together with result
+                            returned by the create() call
+        ")
+                        (reparse-symbol indented_block_body) [29593 30196])
+                    ("_task_execute_delete" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30226 30230])
+                            ("args" variable nil (reparse-symbol function_parameters) [30232 30237])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [30239 30247]))                          
+                        :documentation "
+        Method that gets executed in a background task/thread to perform a Shotgun
+        delete call
+
+        :param ``*args``:       Unnamed arguments to be passed to the delete() call
+        :param ``**kwargs``:    Named arguments to be passed to the delete() call 
+        :returns:           Dictionary containing the 'action' together with result
+                            returned by the delete() call
+        ")
+                        (reparse-symbol indented_block_body) [30201 30804])
+                    ("_task_execute_method" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30834 30838])
+                            ("method" variable nil (reparse-symbol function_parameters) [30840 30846])
+                            ("method_args" variable nil (reparse-symbol function_parameters) [30848 30859])
+                            ("method_kwargs" variable nil (reparse-symbol function_parameters) [30861 30874]))                          
+                        :documentation "
+        Method that gets executed in a background task/thread to execute a method
+        with a thread-specific shotgun connection.
+
+        :param method:          The method to be run asynchronously
+        :param method_args:     Arguments to be passed to the method
+        :param method_kwargs:   Named arguments to be passed to the method 
+        :returns:               Dictionary containing the 'action' together with the result
+                                returned by the method
+        ")
+                        (reparse-symbol indented_block_body) [30809 31518])
+                    ("_task_check_thumbnail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31549 31553])
+                            ("url" variable nil (reparse-symbol function_parameters) [31555 31558])
+                            ("load_image" variable nil (reparse-symbol function_parameters) [31560 31570]))                          
+                        :documentation "
+        Check to see if a thumbnail exists for the specified url.  If it does then it is returned.
+
+        :param url:         The url to return the cached path for
+        :param load_image:  If True then if the thumbnail is found in the cache then the file will 
+                            be loaded into a QImage
+        :returns:           A dictionary containing the cached path for the specified url and a QImage
+                            if load_image is True and the thumbnail exists in the cache.
+        ")
+                        (reparse-symbol indented_block_body) [31523 32620])
+                    ("_task_download_thumbnail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32654 32658])
+                            ("thumb_path" variable nil (reparse-symbol function_parameters) [32660 32670])
+                            ("url" variable nil (reparse-symbol function_parameters) [32672 32675])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [32677 32688])
+                            ("entity_id" variable nil (reparse-symbol function_parameters) [32690 32699])
+                            ("field" variable nil (reparse-symbol function_parameters) [32701 32706])
+                            ("load_image" variable nil (reparse-symbol function_parameters) [32708 32718])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [32720 32728]))                          
+                        :documentation "
+        Download the thumbnail for the specified entity type, id and field.  This downloads the
+        thumbnail into the thumbnail cache directory and returns the cached path.
+
+        If thumb_path already contains a path then this method does nothing and just returns the path 
+        without further checking/work.
+
+        :param thumb_path:  Path to an existing thumbnail or None.
+        :param url:         The url for the thumbnail which may or may not still be valid!
+        :param entity_type: Type of the entity to retrieve the thumbnail for
+        :param entity_id:   Id of the entity to retrieve the thumbnail for
+        :param field:       The field on the entity that holds the url for the thumbnail to retrieve
+        :param load_image:  If True then if the thumbnail is downloaded from Shotgun then the file will 
+                            be loaded into a QImage
+        :returns:           A dictionary containing the cached path for the specified url and a QImage
+                            if load_image is True and the thumbnail exists in the cache.
+        ")
+                        (reparse-symbol indented_block_body) [32625 36486])
+                    ("_on_task_completed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36514 36518])
+                            ("task_id" variable nil (reparse-symbol function_parameters) [36520 36527])
+                            ("group" variable nil (reparse-symbol function_parameters) [36529 36534])
+                            ("result" variable nil (reparse-symbol function_parameters) [36536 36542]))                          
+                        :documentation "
+        Slot triggered when a task is completed.
+
+        :param task_id: The id of the task that has completed
+        :param group:   The group the task belongs to
+        :param result:  The task result
+        ")
+                        (reparse-symbol indented_block_body) [36491 38243])
+                    ("_on_task_failed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38268 38272])
+                            ("task_id" variable nil (reparse-symbol function_parameters) [38274 38281])
+                            ("group" variable nil (reparse-symbol function_parameters) [38283 38288])
+                            ("msg" variable nil (reparse-symbol function_parameters) [38290 38293])
+                            ("tb" variable nil (reparse-symbol function_parameters) [38295 38297]))                          
+                        :documentation "
+        Slot triggered when a task fails for some reason
+
+        :param task_id: The id of the task that failed
+        :param msg:     The error/exception message for the failed task
+        :param tb:      The stack trace of the exception raised by the failed task
+        ")
+                        (reparse-symbol indented_block_body) [38248 39149]))                  
+                :type "class")
+                nil [573 39149]))          
+      :file "shotgun_data_retriever.py"
+      :pointmax 39150
+      :fsize 39149
+      :lastmodtime '(22220 36426 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!frameworks!app_store!tk-framework-shotgunutils!v4.0.4!python!shotgun_data!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

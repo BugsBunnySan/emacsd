@@ -1,0 +1,166 @@
+;; Object scene_parse/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "scene_parse/"
+  :tables
+  (list
+    (semanticdb-table "rule.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__future__" include nil nil [1 38])
+            ("collections" include nil nil [40 75])
+            ("re" include nil nil [76 85])
+            ("yaml" include nil nil [87 98])
+            ("pymel.core" include nil nil [101 124])
+            ("readGrammar" function (:arguments 
+              ( ("grammarFile" variable nil (reparse-symbol function_parameters) [142 153])
+                ("startRuleName" variable nil (reparse-symbol function_parameters) [155 168])
+                ("extraTokens" variable nil (reparse-symbol function_parameters) [170 181])
+                ("extraRules" variable nil (reparse-symbol function_parameters) [186 196]))              ) nil [126 1045])
+            ("RuleConstraint" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1071 1086])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1095 1110])
+                            ("self" code nil (reparse-symbol indented_block_body) [1120 1157]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1093 1097])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [1099 1112]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1080 1210])
+                    ("_parse_constraint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1237 1241])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [1243 1256]))                          )
+                        (reparse-symbol indented_block_body) [1215 1584]))                  
+                :type "class")
+                nil [1046 1584])
+            ("RuleAction" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1628 1657])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1666 1709])
+                            ("self" code nil (reparse-symbol indented_block_body) [1718 1761])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1770 1791])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1800 1833]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1628 1632])
+                            ("token_type" variable nil (reparse-symbol function_parameters) [1634 1644])
+                            ("pattern" variable nil (reparse-symbol function_parameters) [1646 1653])
+                            ("next_rule_defs" variable nil (reparse-symbol function_parameters) [1655 1669]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1615 1886])
+                    ("token_type" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1920 1924]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1891 1959])
+                    ("pattern" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1990 1994]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1964 2026])
+                    ("next_rules" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2060 2064]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2031 2099])
+                    ("add_next_rule" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2122 2126])
+                            ("rule" variable nil (reparse-symbol function_parameters) [2128 2132])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [2134 2147]))                          )
+                        (reparse-symbol indented_block_body) [2104 2274])
+                    ("check_constraint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2300 2304])
+                            ("matched_node" variable nil (reparse-symbol function_parameters) [2306 2318])
+                            ("token_type" variable nil (reparse-symbol function_parameters) [2320 2330])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [2332 2342]))                          )
+                        (reparse-symbol indented_block_body) [2279 3644])
+                    ("check_constraints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3671 3675])
+                            ("matched_node" variable nil (reparse-symbol function_parameters) [3677 3689])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [3691 3701]))                          )
+                        (reparse-symbol indented_block_body) [3649 3900]))                  
+                :type "class")
+                nil [1585 3900])
+            ("SceneNode" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [3652 3679])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3688 3727]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3943 3947]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3930 4034])
+                    ("name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4048 4052]))                          )
+                        (reparse-symbol indented_block_body) [4039 4081])
+                    ("getChildren" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4102 4106]))                          )
+                        (reparse-symbol indented_block_body) [4086 4139]))                  
+                :type "class")
+                nil [3901 4139])
+            ("Visitor" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [3902 3933]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4180 4184])
+                            ("actionTable" variable nil (reparse-symbol function_parameters) [4186 4197]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4167 4240])
+                    ("visit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4255 4259])
+                            ("node" variable nil (reparse-symbol function_parameters) [4261 4265])
+                            ("rules" variable nil (reparse-symbol function_parameters) [4267 4272])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [4274 4284]))                          )
+                        (reparse-symbol indented_block_body) [4245 5110]))                  
+                :type "class")
+                nil [4140 5110]))          
+      :file "rule.py"
+      :pointmax 5110
+      :fsize 5243
+      :lastmodtime '(22095 5575 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("rule" include nil nil [1 19]))          
+      :file "__init__.py"
+      :pointmax 20
+      :fsize 20
+      :lastmodtime '(22093 64540 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!scene_parse!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,953 @@
+;; Object gdb-py/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "gdb-py/"
+  :tables
+  (list
+    (semanticdb-table "python-gdb.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+From gdb 7 onwards, gdb's build can be configured --with-python, allowing gdb
+to be extended with Python code e.g. for library-specific data visualizations,
+such as for the C++ STL types.  Documentation on this API can be seen at:
+http://sourceware.org/gdb/current/onlinedocs/gdb/Python-API.html
+
+
+This python module deals with the case when the process being debugged (the
+\"inferior process\" in gdb parlance) is itself python, or more specifically,
+linked against libpython.  In this situation, almost every item of data is a
+(PyObject*), and having the debugger merely print their addresses is not very
+enlightening.
+
+This module embeds knowledge about the implementation details of libpython so
+that we can emit useful visualizations e.g. a string, a list, a dict, a frame
+giving file/line information and the state of local variables
+
+In particular, given a gdb.Value corresponding to a PyObject* in the inferior
+process, we can generate a \"proxy value\" within the gdb process.  For example,
+given a PyObject* in the inferior process that is in fact a PyListObject*
+holding three PyObject* that turn out to be PyStringObject* instances, we can
+generate a proxy value within the gdb process that is a list of strings:
+  [\"foo\", \"bar\", \"baz\"]
+
+Doing so can be expensive for complicated graphs of objects, and could take
+some time, so we also have a \"write_repr\" method that writes a representation
+of the data to a file-like object.  This allows us to stop the traversal by
+having the file-like object raise an exception if it gets too much data.
+
+With both \"proxyval\" and \"write_repr\" we keep track of the set of all addresses
+visited so far in the traversal, to avoid infinite recursion due to cycles in
+the graph of object references.
+
+We try to defer gdb.lookup_type() invocations for python types until as late as
+possible: for a dynamically linked python binary, when the process starts in
+the debugger, the libpython.so hasn't been dynamically loaded yet, so none of
+the type names are known to the debugger
+
+The module also extends gdb with some python-specific commands.
+'''" code nil nil [19 2108])
+            ("gdb" include nil nil [2110 2120])
+            ("_type_char_ptr" variable nil nil [2170 2220])
+            ("_type_unsigned_char_ptr" variable nil nil [2229 2297])
+            ("_type_void_ptr" variable nil nil [2315 2365])
+            ("_type_size_t" variable nil nil [2374 2414])
+            ("SIZEOF_VOID_P" variable nil nil [2416 2453])
+            ("Py_TPFLAGS_HEAPTYPE" variable nil nil [2456 2487])
+            ("Py_TPFLAGS_INT_SUBCLASS" variable nil nil [2489 2530])
+            ("Py_TPFLAGS_LONG_SUBCLASS" variable nil nil [2531 2572])
+            ("Py_TPFLAGS_LIST_SUBCLASS" variable nil nil [2573 2614])
+            ("Py_TPFLAGS_TUPLE_SUBCLASS" variable nil nil [2615 2656])
+            ("Py_TPFLAGS_STRING_SUBCLASS" variable nil nil [2657 2698])
+            ("Py_TPFLAGS_UNICODE_SUBCLASS" variable nil nil [2699 2740])
+            ("Py_TPFLAGS_DICT_SUBCLASS" variable nil nil [2741 2782])
+            ("Py_TPFLAGS_BASE_EXC_SUBCLASS" variable nil nil [2783 2824])
+            ("Py_TPFLAGS_TYPE_SUBCLASS" variable nil nil [2825 2866])
+            ("MAX_OUTPUT_LEN" variable nil nil [2869 2888])
+            ("NullPyObjectPtr" type
+               (:superclasses ("RuntimeError")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [2931 2935]))                  
+                :type "class")
+                nil [2890 2936])
+            ("safety_limit" function (:arguments 
+              ( ("val" variable nil (reparse-symbol function_parameters) [2955 2958]))              ) nil [2938 3223])
+            ("safe_range" function (:arguments 
+              ( ("val" variable nil (reparse-symbol function_parameters) [3240 3243]))              ) nil [3225 3405])
+            ("StringTruncated" type
+               (:superclasses ("RuntimeError")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [3448 3452]))                  
+                :type "class")
+                nil [3407 3453])
+            ("TruncatedStringIO" type
+               (:superclasses ("object")
+                :members 
+                  ( ("'''Similar to cStringIO, but can truncate the output by raising a
+    StringTruncated exception'''" code nil (reparse-symbol indented_block_body) [3491 3589])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [3635 3649])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3658 3678]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3607 3611])
+                            ("maxlen" variable nil (reparse-symbol function_parameters) [3613 3619]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3594 3679])
+                    ("write" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3694 3698])
+                            ("data" variable nil (reparse-symbol function_parameters) [3700 3704]))                          )
+                        (reparse-symbol indented_block_body) [3684 3963])
+                    ("getvalue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3981 3985]))                          )
+                        (reparse-symbol indented_block_body) [3968 4013]))                  
+                :type "class")
+                nil [3454 4013])
+            ("PyObjectPtr" type
+               (:documentation "
+    Class wrapping a gdb.Value that's a either a (PyObject*) within the
+    inferior process, or some subclass pointer e.g. (PyStringObject*)
+
+    There will be a subclass for every refined PyObject type that we care
+    about.
+
+    Note that at every stage the underlying pointer could be NULL, point
+    to corrupt data, etc; this is the debugger, after all.
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [4422 4444])
+                    ("__init__" function
+                       (:suite 
+                          ( ("if" code nil (reparse-symbol indented_block_body) [4500 4612]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4463 4467])
+                            ("gdbval" variable nil (reparse-symbol function_parameters) [4469 4475])
+                            ("cast_to" variable nil (reparse-symbol function_parameters) [4477 4484]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4450 4612])
+                    ("field" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4627 4631])
+                            ("name" variable nil (reparse-symbol function_parameters) [4633 4637]))                          )
+                        (reparse-symbol indented_block_body) [4617 5888])
+                    ("pyop_field" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5908 5912])
+                            ("name" variable nil (reparse-symbol function_parameters) [5914 5918]))                          )
+                        (reparse-symbol indented_block_body) [5893 6149])
+                    ("write_field_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6175 6179])
+                            ("name" variable nil (reparse-symbol function_parameters) [6181 6185])
+                            ("out" variable nil (reparse-symbol function_parameters) [6187 6190])
+                            ("visited" variable nil (reparse-symbol function_parameters) [6192 6199]))                          )
+                        (reparse-symbol indented_block_body) [6154 6424])
+                    ("get_truncated_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6452 6456])
+                            ("maxlen" variable nil (reparse-symbol function_parameters) [6458 6464]))                          )
+                        (reparse-symbol indented_block_body) [6429 6910])
+                    ("type" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6924 6928]))                          )
+                        (reparse-symbol indented_block_body) [6915 6985])
+                    ("is_null" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7002 7006]))                          )
+                        (reparse-symbol indented_block_body) [6990 7048])
+                    ("is_optimized_out" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7074 7078]))                          )
+                        (reparse-symbol indented_block_body) [7053 7457])
+                    ("safe_tp_name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7479 7483]))                          )
+                        (reparse-symbol indented_block_body) [7462 7752])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7770 7774])
+                            ("visited" variable nil (reparse-symbol function_parameters) [7776 7783]))                          )
+                        (reparse-symbol indented_block_body) [7757 9244])
+                    ("write_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9264 9268])
+                            ("out" variable nil (reparse-symbol function_parameters) [9270 9273])
+                            ("visited" variable nil (reparse-symbol function_parameters) [9275 9282]))                          )
+                        (reparse-symbol indented_block_body) [9249 9692])
+                    ("subclass_from_type" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [9737 9740])
+                            ("t" variable nil (reparse-symbol function_parameters) [9742 9743]))                          )
+                        (reparse-symbol indented_block_body) [9697 12253])
+                    ("from_pyobject_ptr" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [12297 12300])
+                            ("gdbval" variable nil (reparse-symbol function_parameters) [12302 12308]))                          )
+                        (reparse-symbol indented_block_body) [12258 12773])
+                    ("get_gdb_type" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [12812 12815]))                          )
+                        (reparse-symbol indented_block_body) [12778 12874])
+                    ("as_address" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12894 12898]))                          )
+                        (reparse-symbol indented_block_body) [12879 12935]))                  
+                :type "class")
+                nil [4014 12935])
+            ("ProxyAlreadyVisited" type
+               (:superclasses ("object")
+                :members 
+                  ( ("'''
+    Placeholder proxy to use when protecting against infinite recursion due to
+    loops in the object graph.
+
+    Analogous to the values emitted by the users of Py_ReprEnter and Py_ReprLeave
+    '''" code nil (reparse-symbol indented_block_body) [12976 13180])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [13218 13233]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13198 13202])
+                            ("rep" variable nil (reparse-symbol function_parameters) [13204 13207]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13185 13234])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13256 13260]))                          )
+                        (reparse-symbol indented_block_body) [13243 13288]))                  
+                :type "class")
+                nil [12937 13288])
+            ("_write_instance_repr" function (:arguments 
+              ( ("out" variable nil (reparse-symbol function_parameters) [13315 13318])
+                ("visited" variable nil (reparse-symbol function_parameters) [13320 13327])
+                ("name" variable nil (reparse-symbol function_parameters) [13329 13333])
+                ("pyop_attrdict" variable nil (reparse-symbol function_parameters) [13335 13348])
+                ("address" variable nil (reparse-symbol function_parameters) [13350 13357]))              ) nil [13290 13996])
+            ("InstanceProxy" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [14088 14110])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14119 14143])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14152 14174]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14045 14049])
+                            ("cl_name" variable nil (reparse-symbol function_parameters) [14051 14058])
+                            ("attrdict" variable nil (reparse-symbol function_parameters) [14060 14068])
+                            ("address" variable nil (reparse-symbol function_parameters) [14070 14077]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [14032 14175])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14193 14197]))                          )
+                        (reparse-symbol indented_block_body) [14180 14635]))                  
+                :type "class")
+                nil [13998 14635])
+            ("_PyObject_VAR_SIZE" function (:arguments 
+              ( ("typeobj" variable nil (reparse-symbol function_parameters) [14663 14670])
+                ("nitems" variable nil (reparse-symbol function_parameters) [14672 14678]))              ) nil [14640 14888])
+            ("HeapTypeObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [14931 14953])
+                    ("get_attr_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14977 14981]))                          )
+                        (reparse-symbol indented_block_body) [14959 16196])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16214 16218])
+                            ("visited" variable nil (reparse-symbol function_parameters) [16220 16227]))                          )
+                        (reparse-symbol indented_block_body) [16201 16905])
+                    ("write_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16925 16929])
+                            ("out" variable nil (reparse-symbol function_parameters) [16931 16934])
+                            ("visited" variable nil (reparse-symbol function_parameters) [16936 16943]))                          )
+                        (reparse-symbol indented_block_body) [16910 17289]))                  
+                :type "class")
+                nil [14889 17289])
+            ("ProxyException" type
+               (:superclasses ("Exception")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [17370 17392])
+                            ("self" variable nil (reparse-symbol indented_block_body) [17401 17417]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17340 17344])
+                            ("tp_name" variable nil (reparse-symbol function_parameters) [17346 17353])
+                            ("args" variable nil (reparse-symbol function_parameters) [17355 17359]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [17327 17418])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17436 17440]))                          )
+                        (reparse-symbol indented_block_body) [17423 17493]))                  
+                :type "class")
+                nil [17290 17493])
+            ("PyBaseExceptionObjectPtr" type
+               (:documentation "
+    Class wrapping a gdb.Value that's a PyBaseExceptionObject* i.e. an exception
+    within the process being debugged.
+    "
+                :superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [17679 17714])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17733 17737])
+                            ("visited" variable nil (reparse-symbol function_parameters) [17739 17746]))                          )
+                        (reparse-symbol indented_block_body) [17720 18071])
+                    ("write_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18091 18095])
+                            ("out" variable nil (reparse-symbol function_parameters) [18097 18100])
+                            ("visited" variable nil (reparse-symbol function_parameters) [18102 18109]))                          )
+                        (reparse-symbol indented_block_body) [18076 18374]))                  
+                :type "class")
+                nil [17494 18374])
+            ("PyBoolObjectPtr" type
+               (:documentation "
+    Class wrapping a gdb.Value that's a PyBoolObject* i.e. one of the two
+    <bool> instances (Py_True/Py_False) within the process being debugged.
+    "
+                :superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [18580 18606])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18625 18629])
+                            ("visited" variable nil (reparse-symbol function_parameters) [18631 18638]))                          )
+                        (reparse-symbol indented_block_body) [18612 18752]))                  
+                :type "class")
+                nil [18375 18752])
+            ("PyClassObjectPtr" type
+               (:documentation "
+    Class wrapping a gdb.Value that's a PyClassObject* i.e. a <classobj>
+    instance within the process being debugged.
+    "
+                :superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [18932 18959]))                  
+                :type "class")
+                nil [18754 18960])
+            ("BuiltInFunctionProxy" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [19039 19061]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19015 19019])
+                            ("ml_name" variable nil (reparse-symbol function_parameters) [19021 19028]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [19002 19062])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19080 19084]))                          )
+                        (reparse-symbol indented_block_body) [19067 19142]))                  
+                :type "class")
+                nil [18962 19142])
+            ("BuiltInMethodProxy" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [19231 19253])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19262 19292]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19194 19198])
+                            ("ml_name" variable nil (reparse-symbol function_parameters) [19200 19207])
+                            ("pyop_m_self" variable nil (reparse-symbol function_parameters) [19209 19220]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [19181 19293])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19319 19323]))                          )
+                        (reparse-symbol indented_block_body) [19306 19546]))                  
+                :type "class")
+                nil [19143 19546])
+            ("PyCFunctionObjectPtr" type
+               (:documentation "
+    Class wrapping a gdb.Value that's a PyCFunctionObject*
+    (see Include/methodobject.h and Objects/methodobject.c)
+    "
+                :superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [19727 19758])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19777 19781])
+                            ("visited" variable nil (reparse-symbol function_parameters) [19783 19790]))                          )
+                        (reparse-symbol indented_block_body) [19764 20103]))                  
+                :type "class")
+                nil [19547 20103])
+            ("PyCodeObjectPtr" type
+               (:documentation "
+    Class wrapping a gdb.Value that's a PyCodeObject* i.e. a <code> instance
+    within the process being debugged.
+    "
+                :superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [20277 20303])
+                    ("addr2line" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20323 20327])
+                            ("addrq" variable nil (reparse-symbol function_parameters) [20329 20334]))                          )
+                        (reparse-symbol indented_block_body) [20309 20999]))                  
+                :type "class")
+                nil [20105 20999])
+            ("PyDictObjectPtr" type
+               (:documentation "
+    Class wrapping a gdb.Value that's a PyDictObject* i.e. a dict instance
+    within the process being debugged.
+    "
+                :superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [21171 21197])
+                    ("iteritems" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21217 21221]))                          )
+                        (reparse-symbol indented_block_body) [21203 21687])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21705 21709])
+                            ("visited" variable nil (reparse-symbol function_parameters) [21711 21718]))                          )
+                        (reparse-symbol indented_block_body) [21692 22148])
+                    ("write_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22168 22172])
+                            ("out" variable nil (reparse-symbol function_parameters) [22174 22177])
+                            ("visited" variable nil (reparse-symbol function_parameters) [22179 22186]))                          )
+                        (reparse-symbol indented_block_body) [22153 22687]))                  
+                :type "class")
+                nil [21001 22687])
+            ("PyInstanceObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [22732 22762])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22781 22785])
+                            ("visited" variable nil (reparse-symbol function_parameters) [22787 22794]))                          )
+                        (reparse-symbol indented_block_body) [22768 23317])
+                    ("write_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23337 23341])
+                            ("out" variable nil (reparse-symbol function_parameters) [23343 23346])
+                            ("visited" variable nil (reparse-symbol function_parameters) [23348 23355]))                          )
+                        (reparse-symbol indented_block_body) [23322 23915]))                  
+                :type "class")
+                nil [22688 23915])
+            ("PyIntObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [23963 23988])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24007 24011])
+                            ("visited" variable nil (reparse-symbol function_parameters) [24013 24020]))                          )
+                        (reparse-symbol indented_block_body) [23994 24098]))                  
+                :type "class")
+                nil [23924 24098])
+            ("PyListObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [24139 24165])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24187 24191])
+                            ("i" variable nil (reparse-symbol function_parameters) [24193 24194]))                          )
+                        (reparse-symbol indented_block_body) [24171 24345])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24363 24367])
+                            ("visited" variable nil (reparse-symbol function_parameters) [24369 24376]))                          )
+                        (reparse-symbol indented_block_body) [24350 24729])
+                    ("write_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24749 24753])
+                            ("out" variable nil (reparse-symbol function_parameters) [24755 24758])
+                            ("visited" variable nil (reparse-symbol function_parameters) [24760 24767]))                          )
+                        (reparse-symbol indented_block_body) [24734 25213]))                  
+                :type "class")
+                nil [24099 25213])
+            ("PyLongObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [25254 25280])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25299 25303])
+                            ("visited" variable nil (reparse-symbol function_parameters) [25305 25312]))                          )
+                        (reparse-symbol indented_block_body) [25286 26370]))                  
+                :type "class")
+                nil [25214 26370])
+            ("PyNoneStructPtr" type
+               (:documentation "
+    Class wrapping a gdb.Value that's a PyObject* pointing to the
+    singleton (we hope) _Py_NoneStruct with ob_type PyNone_Type
+    "
+                :superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [26558 26580])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26599 26603])
+                            ("visited" variable nil (reparse-symbol function_parameters) [26605 26612]))                          )
+                        (reparse-symbol indented_block_body) [26586 26635]))                  
+                :type "class")
+                nil [26372 26635])
+            ("PyFrameObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [26678 26705])
+                    ("__init__" function
+                       (:suite 
+                          ( ("PyObjectPtr" code nil (reparse-symbol indented_block_body) [26756 26799])
+                            ("if" code nil (reparse-symbol indented_block_body) [26809 27338]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26724 26728])
+                            ("gdbval" variable nil (reparse-symbol function_parameters) [26730 26736])
+                            ("cast_to" variable nil (reparse-symbol function_parameters) [26738 26745]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [26711 27338])
+                    ("iter_locals" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27359 27363]))                          )
+                        (reparse-symbol indented_block_body) [27343 27899])
+                    ("iter_globals" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27921 27925]))                          )
+                        (reparse-symbol indented_block_body) [27904 28220])
+                    ("iter_builtins" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28243 28247]))                          )
+                        (reparse-symbol indented_block_body) [28225 28532])
+                    ("get_var_by_name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28557 28561])
+                            ("name" variable nil (reparse-symbol function_parameters) [28563 28567]))                          )
+                        (reparse-symbol indented_block_body) [28537 29269])
+                    ("filename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29287 29291]))                          )
+                        (reparse-symbol indented_block_body) [29274 29507])
+                    ("current_line_num" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29533 29537]))                          )
+                        (reparse-symbol indented_block_body) [29512 30022])
+                    ("current_line" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30114 30118]))                          )
+                        (reparse-symbol indented_block_body) [30097 30537])
+                    ("write_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30557 30561])
+                            ("out" variable nil (reparse-symbol function_parameters) [30563 30566])
+                            ("visited" variable nil (reparse-symbol function_parameters) [30568 30575]))                          )
+                        (reparse-symbol indented_block_body) [30542 31240]))                  
+                :type "class")
+                nil [26637 31240])
+            ("PySetObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [31280 31305])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31324 31328])
+                            ("visited" variable nil (reparse-symbol function_parameters) [31330 31337]))                          )
+                        (reparse-symbol indented_block_body) [31311 32037])
+                    ("write_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32057 32061])
+                            ("out" variable nil (reparse-symbol function_parameters) [32063 32066])
+                            ("visited" variable nil (reparse-symbol function_parameters) [32068 32075]))                          )
+                        (reparse-symbol indented_block_body) [32042 32871]))                  
+                :type "class")
+                nil [31241 32871])
+            ("PyStringObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [32915 32943])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32961 32965]))                          )
+                        (reparse-symbol indented_block_body) [32949 33209])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33227 33231])
+                            ("visited" variable nil (reparse-symbol function_parameters) [33233 33240]))                          )
+                        (reparse-symbol indented_block_body) [33214 33268]))                  
+                :type "class")
+                nil [32873 33268])
+            ("PyTupleObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [33310 33337])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33359 33363])
+                            ("i" variable nil (reparse-symbol function_parameters) [33365 33366]))                          )
+                        (reparse-symbol indented_block_body) [33343 33517])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33535 33539])
+                            ("visited" variable nil (reparse-symbol function_parameters) [33541 33548]))                          )
+                        (reparse-symbol indented_block_body) [33522 33906])
+                    ("write_repr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33926 33930])
+                            ("out" variable nil (reparse-symbol function_parameters) [33932 33935])
+                            ("visited" variable nil (reparse-symbol function_parameters) [33937 33944]))                          )
+                        (reparse-symbol indented_block_body) [33911 34475]))                  
+                :type "class")
+                nil [33269 34475])
+            ("PyTypeObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [34516 34542]))                  
+                :type "class")
+                nil [34476 34543])
+            ("PyUnicodeObjectPtr" type
+               (:superclasses ("PyObjectPtr")
+                :members 
+                  ( ("_typename" variable nil (reparse-symbol indented_block_body) [34588 34617])
+                    ("proxyval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34636 34640])
+                            ("visited" variable nil (reparse-symbol function_parameters) [34642 34649]))                          )
+                        (reparse-symbol indented_block_body) [34623 35296]))                  
+                :type "class")
+                nil [34545 35296])
+            ("int_from_int" function (:arguments 
+              ( ("gdbval" variable nil (reparse-symbol function_parameters) [35315 35321]))              ) nil [35298 35352])
+            ("stringify" function (:arguments 
+              ( ("val" variable nil (reparse-symbol function_parameters) [35368 35371]))              ) nil [35354 35639])
+            ("PyObjectPtrPrinter" type
+               (:members 
+                  ( ("\"Prints a (PyObject*)\"" code nil (reparse-symbol indented_block_body) [35671 35693])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [35736 35756]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35713 35717])
+                            ("gdbval" variable nil (reparse-symbol function_parameters) [35719 35725]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [35699 35757])
+                    ("to_string" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35777 35781]))                          )
+                        (reparse-symbol indented_block_body) [35762 36116]))                  
+                :type "class")
+                nil [35641 36116])
+            ("pretty_printer_lookup" function (:arguments 
+              ( ("gdbval" variable nil (reparse-symbol function_parameters) [36143 36149]))              ) nil [36117 36386])
+            ("\"\"\"
+During development, I've been manually invoking the code in this way:
+(gdb) python
+
+import sys
+sys.path.append('/home/david/coding/python-gdb')
+import libpython
+end
+
+then reloading it after each edit like this:
+(gdb) python reload(libpython)
+
+The following code should ensure that the prettyprinter is registered
+if the code is autoloaded by gdb when visiting libpython.so, provided
+that this python file is installed to the same path as the library (or its
+.debug file) plus a \"-gdb.py\" suffix, e.g:
+  /usr/lib/libpython2.6.so.1.0-gdb.py
+  /usr/lib/debug/usr/lib/libpython2.6.so.1.0.debug-gdb.py
+\"\"\"" code nil nil [36387 36991])
+            ("register" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [37006 37009]))              ) nil [36992 37138])
+            ("register" code nil nil [37139 37172])
+            ("Frame" type
+               (:superclasses ("object")
+                :members 
+                  ( ("'''
+    Wrapper for gdb.Frame, adding various methods 
+    '''" code nil (reparse-symbol indented_block_body) [37200 37262])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [37305 37330]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37280 37284])
+                            ("gdbframe" variable nil (reparse-symbol function_parameters) [37286 37294]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [37267 37331])
+                    ("older" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37346 37350]))                          )
+                        (reparse-symbol indented_block_body) [37336 37480])
+                    ("newer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37495 37499]))                          )
+                        (reparse-symbol indented_block_body) [37485 37629])
+                    ("select" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37645 37649]))                          )
+                        (reparse-symbol indented_block_body) [37634 37684])
+                    ("get_index" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37703 37707]))                          )
+                        (reparse-symbol indented_block_body) [37689 38030])
+                    ("is_evalframeex" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38054 38058]))                          )
+                        (reparse-symbol indented_block_body) [38035 38652])
+                    ("get_pyop" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38670 38674]))                          )
+                        (reparse-symbol indented_block_body) [38657 38843])
+                    ("get_selected_frame" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [38888 38891]))                          )
+                        (reparse-symbol indented_block_body) [38848 39013])
+                    ("get_selected_python_frame" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [39065 39068]))                          )
+                        (reparse-symbol indented_block_body) [39018 39375])
+                    ("print_summary" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39398 39402]))                          )
+                        (reparse-symbol indented_block_body) [39380 39848]))                  
+                :type "class")
+                nil [37175 39848])
+            ("PyList" type
+               (:superclasses ("gdb.Command")
+                :members 
+                  ( ("'''List the current Python source code, if any
+
+    Use
+       py-list START
+    to list at a different line number within the python source.
+    
+    Use
+       py-list START, END
+    to list a specific range of lines within the python source.
+    '''" code nil (reparse-symbol indented_block_body) [39880 40132])
+                    ("__init__" function
+                       (:suite 
+                          ( ("gdb" code nil (reparse-symbol indented_block_body) [40166 40332]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40151 40155]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [40138 40333])
+                    ("invoke" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40350 40354])
+                            ("args" variable nil (reparse-symbol function_parameters) [40356 40360])
+                            ("from_tty" variable nil (reparse-symbol function_parameters) [40362 40370]))                          )
+                        (reparse-symbol indented_block_body) [40339 41694]))                  
+                :type "class")
+                nil [39849 41694])
+            ("PyList" code nil nil [41747 41755])
+            ("move_in_stack" function (:arguments 
+              ( ("move_up" variable nil (reparse-symbol function_parameters) [41775 41782]))              ) nil [41757 42387])
+            ("PyUp" type
+               (:superclasses ("gdb.Command")
+                :members 
+                  ( ("'Select and print the python stack frame that called this one (if any)'" code nil (reparse-symbol indented_block_body) [42417 42488])
+                    ("__init__" function
+                       (:suite 
+                          ( ("gdb" code nil (reparse-symbol indented_block_body) [42521 42685]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [42506 42510]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [42493 42686])
+                    ("invoke" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [42703 42707])
+                            ("args" variable nil (reparse-symbol function_parameters) [42709 42713])
+                            ("from_tty" variable nil (reparse-symbol function_parameters) [42715 42723]))                          )
+                        (reparse-symbol indented_block_body) [42692 42762]))                  
+                :type "class")
+                nil [42388 42762])
+            ("PyUp" code nil nil [42763 42769])
+            ("PyDown" type
+               (:superclasses ("gdb.Command")
+                :members 
+                  ( ("'Select and print the python stack frame called by this one (if any)'" code nil (reparse-symbol indented_block_body) [42802 42871])
+                    ("__init__" function
+                       (:suite 
+                          ( ("gdb" code nil (reparse-symbol indented_block_body) [42904 43070]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [42889 42893]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [42876 43071])
+                    ("invoke" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [43088 43092])
+                            ("args" variable nil (reparse-symbol function_parameters) [43094 43098])
+                            ("from_tty" variable nil (reparse-symbol function_parameters) [43100 43108]))                          )
+                        (reparse-symbol indented_block_body) [43077 43148]))                  
+                :type "class")
+                nil [42771 43148])
+            ("PyDown" code nil nil [43149 43157])
+            ("PyBacktrace" type
+               (:superclasses ("gdb.Command")
+                :members 
+                  ( ("'Display the current python frame and all the frames within its call stack (if any)'" code nil (reparse-symbol indented_block_body) [43195 43279])
+                    ("__init__" function
+                       (:suite 
+                          ( ("gdb" code nil (reparse-symbol indented_block_body) [43312 43476]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [43297 43301]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [43284 43477])
+                    ("invoke" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [43494 43498])
+                            ("args" variable nil (reparse-symbol function_parameters) [43500 43504])
+                            ("from_tty" variable nil (reparse-symbol function_parameters) [43506 43514]))                          )
+                        (reparse-symbol indented_block_body) [43483 43699]))                  
+                :type "class")
+                nil [43159 43699])
+            ("PyBacktrace" code nil nil [43700 43713])
+            ("PyPrint" type
+               (:superclasses ("gdb.Command")
+                :members 
+                  ( ("'Look up the given python variable name, and print it'" code nil (reparse-symbol indented_block_body) [43747 43801])
+                    ("__init__" function
+                       (:suite 
+                          ( ("gdb" code nil (reparse-symbol indented_block_body) [43834 44000]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [43819 43823]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [43806 44001])
+                    ("invoke" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [44018 44022])
+                            ("args" variable nil (reparse-symbol function_parameters) [44024 44028])
+                            ("from_tty" variable nil (reparse-symbol function_parameters) [44030 44038]))                          )
+                        (reparse-symbol indented_block_body) [44007 44649]))                  
+                :type "class")
+                nil [43715 44649])
+            ("PyPrint" code nil nil [44650 44659])
+            ("PyLocals" type
+               (:superclasses ("gdb.Command")
+                :members 
+                  ( ("'Look up the given python variable name, and print it'" code nil (reparse-symbol indented_block_body) [44694 44748])
+                    ("__init__" function
+                       (:suite 
+                          ( ("gdb" code nil (reparse-symbol indented_block_body) [44781 44948]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [44766 44770]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [44753 44949])
+                    ("invoke" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [44966 44970])
+                            ("args" variable nil (reparse-symbol function_parameters) [44972 44976])
+                            ("from_tty" variable nil (reparse-symbol function_parameters) [44978 44986]))                          )
+                        (reparse-symbol indented_block_body) [44955 45516]))                  
+                :type "class")
+                nil [44661 45516])
+            ("PyLocals" code nil nil [45517 45527]))          
+      :file "python-gdb.py"
+      :pointmax 45528
+      :unmatched-syntax nil))
+  :file "!drive_c!gdb-py!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

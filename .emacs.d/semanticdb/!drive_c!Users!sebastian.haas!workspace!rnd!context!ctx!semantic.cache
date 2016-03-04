@@ -1,0 +1,361 @@
+;; Object ctx/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ctx/"
+  :tables
+  (list
+    (semanticdb-table "kvstore.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package ctx.kvstore
+@brief Key Value Store
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 109])
+            ("__future__" include nil nil [110 147])
+            ("__all__" variable nil nil [149 170])
+            ("base" include nil nil [172 183])
+            ("reload" code nil nil [184 196])
+            ("KVStore" type
+               (:documentation " dictionary like key value store with support for key paths "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [324 343])
+                            ("self" variable nil (reparse-symbol indented_block_body) [352 374])
+                            ("self" variable nil (reparse-symbol indented_block_body) [383 402]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [309 313]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [296 403])
+                    ("_resolve_key_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [430 434])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [436 444]))                          )
+                        (reparse-symbol indented_block_body) [408 764])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [785 789])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [791 799]))                          )
+                        (reparse-symbol indented_block_body) [769 885])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [906 910])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [912 920])
+                            ("value" variable nil (reparse-symbol function_parameters) [922 927]))                          )
+                        (reparse-symbol indented_block_body) [890 1200])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1217 1221]))                          )
+                        (reparse-symbol indented_block_body) [1205 1430]))                  
+                :type "class")
+                nil [198 1430]))          
+      :file "kvstore.py"
+      :pointmax 1450
+      :fsize 1503
+      :lastmodtime '(21905 21521 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package ctx.base
+@brief basic support classes used throughout the context implementation
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 155])
+            ("__future__" include nil nil [156 193])
+            ("__all__" variable nil nil [195 241])
+            ("Null" type
+               (:documentation " Class returned by context/kvstore to indicate no value
+        since users could store None as a value "
+                :superclasses ("object")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [382 386]))                  
+                :type "class")
+                nil [243 387])
+            ("IncompleteInterfaceError" type
+               (:documentation " Raised by interface/service implementation if a class
+        claims to implement an interface but does not do so
+        completely "
+                :superclasses ("Exception")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [597 601]))                  
+                :type "class")
+                nil [405 602]))          
+      :file "base.py"
+      :pointmax 639
+      :fsize 661
+      :lastmodtime '(21905 1237 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "service.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package ctx.service
+@brief Interfaces and Services base classes
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 130])
+            ("__future__" include nil nil [131 168])
+            ("__all__" variable nil nil [170 204])
+            ("__main__" include nil nil [206 221])
+            ("IncompleteInterfaceError" include nil nil [234 265])
+            ("ServiceMetaClass" type
+               (:documentation " Registers the Service *class* as an instanciable type in the current context,
+        checks for complete implementation of all interfaces the service claims to implement
+    "
+                :superclasses ("type")
+                :members 
+                  ( ("__new__" function (:arguments 
+                      ( ("mcls" variable nil (reparse-symbol function_parameters) [500 504])
+                        ("cls_name" variable nil (reparse-symbol function_parameters) [506 514])
+                        ("cls_parents" variable nil (reparse-symbol function_parameters) [516 527])
+                        ("cls_attrs" variable nil (reparse-symbol function_parameters) [529 538]))                      ) (reparse-symbol indented_block_body) [488 1469]))                  
+                :type "class")
+                nil [267 1469])
+            ("Interface" type
+               (:documentation " Base class for Interfaces "
+                :superclasses ("object")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [1559 1563]))                  
+                :type "class")
+                nil [1492 1564])
+            ("Service" type
+               (:documentation " Base class for Services, service_id should be unique for all subclasses,
+       __implements__ must contain all interfaces this class implements
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [1775 1807])
+                    ("service_id" variable nil (reparse-symbol indented_block_body) [1812 1829])
+                    ("__implements__" variable nil (reparse-symbol indented_block_body) [1834 1853])
+                    ("__new__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [1871 1874])
+                        ("args" variable nil (reparse-symbol function_parameters) [1876 1881])
+                        ("kwargs" variable nil (reparse-symbol function_parameters) [1883 1891]))                      ) (reparse-symbol indented_block_body) [1859 2090])
+                    ("interfaces" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2124 2128]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2095 2172])
+                    ("interface_names" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2211 2215]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2177 2285]))                  
+                :type "class")
+                nil [1587 2285]))          
+      :file "service.py"
+      :pointmax 2305
+      :fsize 2376
+      :lastmodtime '(21905 23323 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "context.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package ctx.context
+@brief context stack and layer implementation
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 132])
+            ("__future__" include nil nil [133 170])
+            ("__all__" variable nil nil [172 209])
+            ("__main__" include nil nil [211 226])
+            ("base" include nil nil [228 239])
+            ("reload" code nil nil [240 252])
+            ("kvstore" include nil nil [253 267])
+            ("reload" code nil nil [268 283])
+            ("ContextStack" type
+               (:documentation " A stack of Context() layers. Configuration values are resolved top to bottom,
+        services are aggregated over the whole stack. By default config values, interfaces
+        and services register on the TOS "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [567 583]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [552 556]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [539 584])
+                    ("push" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [598 602])
+                            ("layer" variable nil (reparse-symbol function_parameters) [604 609]))                          )
+                        (reparse-symbol indented_block_body) [589 646])
+                    ("pop" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [659 663])
+                            ("layer" variable nil (reparse-symbol function_parameters) [665 670])
+                            ("name" variable nil (reparse-symbol function_parameters) [677 681]))                          )
+                        (reparse-symbol indented_block_body) [651 1365])
+                    ("register_interface" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1393 1397])
+                            ("interface" variable nil (reparse-symbol function_parameters) [1399 1408])
+                            ("cls" variable nil (reparse-symbol function_parameters) [1410 1413]))                          )
+                        (reparse-symbol indented_block_body) [1370 1475])
+                    ("get_interfaces" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1499 1503])
+                            ("interface" variable nil (reparse-symbol function_parameters) [1505 1514])
+                            ("filters" variable nil (reparse-symbol function_parameters) [1516 1523]))                          )
+                        (reparse-symbol indented_block_body) [1480 1903])
+                    ("register_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1929 1933])
+                            ("interface" variable nil (reparse-symbol function_parameters) [1935 1944])
+                            ("service" variable nil (reparse-symbol function_parameters) [1946 1953]))                          )
+                        (reparse-symbol indented_block_body) [1908 2017])
+                    ("make_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2040 2044])
+                            ("interface" variable nil (reparse-symbol function_parameters) [2046 2055])
+                            ("filters" variable nil (reparse-symbol function_parameters) [2057 2064])
+                            ("args" variable nil (reparse-symbol function_parameters) [2066 2071])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [2073 2081]))                          )
+                        (reparse-symbol indented_block_body) [2022 2349])
+                    ("get_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2371 2375])
+                            ("interface" variable nil (reparse-symbol function_parameters) [2377 2386])
+                            ("filters" variable nil (reparse-symbol function_parameters) [2388 2395]))                          )
+                        (reparse-symbol indented_block_body) [2354 2775])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2796 2800])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [2802 2810])
+                            ("value" variable nil (reparse-symbol function_parameters) [2812 2817]))                          )
+                        (reparse-symbol indented_block_body) [2780 2862])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2883 2887])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [2889 2897]))                          )
+                        (reparse-symbol indented_block_body) [2867 3076])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3093 3097]))                          )
+                        (reparse-symbol indented_block_body) [3081 3246]))                  
+                :type "class")
+                nil [285 3246])
+            ("Context" type
+               (:documentation " One layer of context, pushes itself onto the __main__.bbf_context on creation
+        has a registry for interfaces, services and configuration
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__new__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [3471 3474])
+                        ("args" variable nil (reparse-symbol function_parameters) [3476 3481])
+                        ("kwargs" variable nil (reparse-symbol function_parameters) [3483 3491]))                      ) (reparse-symbol indented_block_body) [3459 3669])
+                    ("__del__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3686 3690]))                          )
+                        (reparse-symbol indented_block_body) [3674 3738])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [3772 3793])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3802 3823])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3832 3868])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3878 3895]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3756 3760])
+                            ("name" variable nil (reparse-symbol function_parameters) [3762 3766]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3743 3901])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3918 3922]))                          )
+                        (reparse-symbol indented_block_body) [3906 4734])
+                    ("register_interface" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4762 4766])
+                            ("interface" variable nil (reparse-symbol function_parameters) [4768 4777])
+                            ("cls" variable nil (reparse-symbol function_parameters) [4779 4782]))                          )
+                        (reparse-symbol indented_block_body) [4739 4848])
+                    ("get_interfaces" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4872 4876])
+                            ("interface" variable nil (reparse-symbol function_parameters) [4878 4887]))                          )
+                        (reparse-symbol indented_block_body) [4853 4941])
+                    ("register_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4967 4971])
+                            ("interface" variable nil (reparse-symbol function_parameters) [4973 4982])
+                            ("service" variable nil (reparse-symbol function_parameters) [4984 4991]))                          )
+                        (reparse-symbol indented_block_body) [4946 5059])
+                    ("get_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5081 5085])
+                            ("interface" variable nil (reparse-symbol function_parameters) [5087 5096]))                          )
+                        (reparse-symbol indented_block_body) [5064 5148])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5169 5173])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [5175 5183])
+                            ("value" variable nil (reparse-symbol function_parameters) [5185 5190]))                          )
+                        (reparse-symbol indented_block_body) [5153 5232])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5253 5257])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [5259 5267]))                          )
+                        (reparse-symbol indented_block_body) [5237 5308]))                  
+                :type "class")
+                nil [3272 5308]))          
+      :file "context.py"
+      :pointmax 5328
+      :fsize 5500
+      :lastmodtime '(21905 21762 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package ctx
+@brief
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 85])
+            ("pprint" include nil nil [86 111])
+            ("__main__" include nil nil [113 128])
+            ("if" code nil nil [220 450]))          
+      :file "__init__.py"
+      :pointmax 450
+      :fsize 471
+      :lastmodtime '(21918 35664 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!context!ctx!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

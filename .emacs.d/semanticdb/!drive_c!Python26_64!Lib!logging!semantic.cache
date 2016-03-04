@@ -1,0 +1,1396 @@
+;; Object logging/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "logging/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Logging package for Python. Based on PEP 282 and comments thereto in
+comp.lang.python, and influenced by Apache's log4j system.
+
+Copyright (C) 2001-2010 Vinay Sajip. All Rights Reserved.
+
+To use, simply 'import logging' and log away!
+\"\"\"" code nil nil [988 1229])
+            ("__all__" variable nil nil [1231 1737])
+            ("traceback" include nil nil [1739 1796])
+            ("cStringIO" include nil nil [1739 1796])
+            ("string" include nil nil [1739 1796])
+            ("time" include nil nil [1739 1796])
+            ("types" include nil nil [1739 1796])
+            ("os" include nil nil [1739 1796])
+            ("sys" include nil nil [1739 1796])
+            ("try" code nil nil [1798 1859])
+            ("try" code nil nil [1860 1942])
+            ("__author__" variable nil nil [1943 1997])
+            ("__status__" variable nil nil [1998 2024])
+            ("__version__" variable nil nil [2025 2048])
+            ("__date__" variable nil nil [2049 2081])
+            ("if" code nil nil [2370 2601])
+            ("_srcfile" variable nil nil [2601 2638])
+            ("currentframe" function (:documentation "Return the frame object for the caller's stack frame.") nil [2683 2861])
+            ("if" code nil nil [2862 2932])
+            ("_startTime" variable nil nil [3320 3344])
+            ("raiseExceptions" variable nil nil [3434 3453])
+            ("logThreads" variable nil nil [3530 3544])
+            ("logMultiprocessing" variable nil nil [3627 3649])
+            ("logProcesses" variable nil nil [3724 3740])
+            ("CRITICAL" variable nil nil [4265 4278])
+            ("FATAL" variable nil nil [4279 4295])
+            ("ERROR" variable nil nil [4296 4306])
+            ("WARNING" variable nil nil [4307 4319])
+            ("WARN" variable nil nil [4320 4334])
+            ("INFO" variable nil nil [4335 4344])
+            ("DEBUG" variable nil nil [4345 4355])
+            ("NOTSET" variable nil nil [4356 4366])
+            ("_levelNames" variable nil nil [4368 4679])
+            ("getLevelName" function
+               (:documentation "
+    Return the textual representation of logging level 'level'.
+
+    If the level is one of the predefined levels (CRITICAL, ERROR, WARNING,
+    INFO, DEBUG) then you get the corresponding string. If you have
+    associated levels with names using addLevelName then the name you have
+    associated with 'level' is returned.
+
+    If a numeric value corresponding to one of the defined levels is passed
+    in, the corresponding string representation is returned.
+
+    Otherwise, the string \"Level %s\" % level is returned.
+    "
+                :arguments 
+                  ( ("level" variable nil (reparse-symbol function_parameters) [4698 4703]))                  )
+                nil [4681 5300])
+            ("addLevelName" function
+               (:documentation "
+    Associate 'levelName' with 'level'.
+
+    This is used when converting levels to text during message formatting.
+    "
+                :arguments 
+                  ( ("level" variable nil (reparse-symbol function_parameters) [5318 5323])
+                    ("levelName" variable nil (reparse-symbol function_parameters) [5325 5334]))                  )
+                nil [5301 5669])
+            ("if" code nil nil [6279 6343])
+            ("_acquireLock" function (:documentation "
+    Acquire the module-level lock for serializing access to shared data.
+
+    This should be released with _releaseLock().
+    ") nil [6344 6541])
+            ("_releaseLock" function (:documentation "
+    Release the module-level lock acquired by calling _acquireLock().
+    ") nil [6542 6686])
+            ("LogRecord" type
+               (:documentation "
+    A LogRecord instance represents an event being logged.
+
+    LogRecord instances are created every time something is logged. They
+    contain all the information pertinent to the event being logged. The
+    main information passed in is in msg and args, which are combined
+    using str(msg) % args to create the message field of the record. The
+    record also includes information such as when the record was created,
+    the source line where the logging call was made, and any exception
+    information to be logged.
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initialize a logging record with interesting information.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [7534 7615])
+                            ("ct" variable nil (reparse-symbol indented_block_body) [7624 7640])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7649 7665])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7674 7688])
+                            ("if" code nil (reparse-symbol indented_block_body) [8442 8628])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8636 8652])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8661 8697])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8706 8726])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8735 8759])
+                            ("try" code nil (reparse-symbol indented_block_body) [8768 9025])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9033 9057])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9066 9086])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9135 9155])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9164 9184])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9193 9210])
+                            ("self" code nil (reparse-symbol indented_block_body) [9219 9254])
+                            ("self" code nil (reparse-symbol indented_block_body) [9263 9320])
+                            ("if" code nil (reparse-symbol indented_block_body) [9329 9542])
+                            ("if" code nil (reparse-symbol indented_block_body) [9550 9808])
+                            ("if" code nil (reparse-symbol indented_block_body) [9816 9944]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7439 7443])
+                            ("name" variable nil (reparse-symbol function_parameters) [7445 7449])
+                            ("level" variable nil (reparse-symbol function_parameters) [7451 7456])
+                            ("pathname" variable nil (reparse-symbol function_parameters) [7458 7466])
+                            ("lineno" variable nil (reparse-symbol function_parameters) [7468 7474])
+                            ("msg" variable nil (reparse-symbol function_parameters) [7493 7496])
+                            ("args" variable nil (reparse-symbol function_parameters) [7498 7502])
+                            ("exc_info" variable nil (reparse-symbol function_parameters) [7504 7512])
+                            ("func" variable nil (reparse-symbol function_parameters) [7514 7518]))                          
+                        :documentation "
+        Initialize a logging record with interesting information.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7426 9944])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9961 9965]))                          )
+                        (reparse-symbol indented_block_body) [9949 10095])
+                    ("getMessage" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10115 10119]))                          
+                        :documentation "
+        Return the message for this LogRecord.
+
+        Return the message for this LogRecord after merging any user-supplied
+        arguments with the message.
+        ")
+                        (reparse-symbol indented_block_body) [10100 10764]))                  
+                :type "class")
+                nil [6865 10764])
+            ("makeLogRecord" function
+               (:documentation "
+    Make a LogRecord whose attributes are defined by the specified dictionary,
+    This function is useful for converting a logging event received over
+    a socket connection (which is sent as a dictionary) into a LogRecord
+    instance.
+    "
+                :arguments 
+                  ( ("dict" variable nil (reparse-symbol function_parameters) [10783 10787]))                  )
+                nil [10765 11146])
+            ("Formatter" type
+               (:documentation "
+    Formatter instances are used to convert a LogRecord to text.
+
+    Formatters need to know how a LogRecord is constructed. They are
+    responsible for converting a LogRecord to (usually) a string which can
+    be interpreted by either a human or an external system. The base Formatter
+    allows a formatting string to be specified. If none is supplied, the
+    default value of \"%s(message)\\\\n\" is used.
+
+    The Formatter can be initialized with a format string which makes use of
+    knowledge of the LogRecord attributes - e.g. the default value mentioned
+    above makes use of the fact that the user's message and arguments are pre-
+    formatted into a LogRecord's message attribute. Currently, the useful
+    attributes in a LogRecord are described by:
+
+    %(name)s            Name of the logger (logging channel)
+    %(levelno)s         Numeric logging level for the message (DEBUG, INFO,
+                        WARNING, ERROR, CRITICAL)
+    %(levelname)s       Text logging level for the message (\"DEBUG\", \"INFO\",
+                        \"WARNING\", \"ERROR\", \"CRITICAL\")
+    %(pathname)s        Full pathname of the source file where the logging
+                        call was issued (if available)
+    %(filename)s        Filename portion of pathname
+    %(module)s          Module (name portion of filename)
+    %(lineno)d          Source line number where the logging call was issued
+                        (if available)
+    %(funcName)s        Function name
+    %(created)f         Time when the LogRecord was created (time.time()
+                        return value)
+    %(asctime)s         Textual time when the LogRecord was created
+    %(msecs)d           Millisecond portion of the creation time
+    %(relativeCreated)d Time in milliseconds when the LogRecord was created,
+                        relative to the time the logging module was loaded
+                        (typically at application startup time)
+    %(thread)d          Thread ID (if available)
+    %(threadName)s      Thread name (if available)
+    %(process)d         Process ID (if available)
+    %(message)s         The result of record.getMessage(), computed just as
+                        the record is emitted
+    "
+                :members 
+                  ( ("converter" variable nil (reparse-symbol indented_block_body) [13589 13615])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initialize the formatter with specified format strings.
+
+        Initialize the formatter either with the specified format string, or a
+        default as described above. Allow for specialized date formatting with
+        the optional datefmt argument (if omitted, you get the ISO8601 format).
+        \"\"\"" code nil (reparse-symbol indented_block_body) [13673 13991])
+                            ("if" code nil (reparse-symbol indented_block_body) [14000 14088])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14096 14118]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13634 13638])
+                            ("fmt" variable nil (reparse-symbol function_parameters) [13640 13643])
+                            ("datefmt" variable nil (reparse-symbol function_parameters) [13650 13657]))                          
+                        :documentation "
+        Initialize the formatter with specified format strings.
+
+        Initialize the formatter either with the specified format string, or a
+        default as described above. Allow for specialized date formatting with
+        the optional datefmt argument (if omitted, you get the ISO8601 format).
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13621 14119])
+                    ("formatTime" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14139 14143])
+                            ("record" variable nil (reparse-symbol function_parameters) [14145 14151])
+                            ("datefmt" variable nil (reparse-symbol function_parameters) [14153 14160]))                          
+                        :documentation "
+        Return the creation time of the specified LogRecord as formatted text.
+
+        This method should be called from format() by a formatter which
+        wants to make use of a formatted time. This method can be overridden
+        in formatters to provide for any specific requirement, but the
+        basic behaviour is as follows: if datefmt (a string) is specified,
+        it is used with time.strftime() to format the creation time of the
+        record. Otherwise, the ISO8601 format is used. The resulting
+        string is returned. This function uses a user-configurable function
+        to convert the creation time to a tuple. By default, time.localtime()
+        is used; to change this for a particular formatter instance, set the
+        'converter' attribute to a function with the same signature as
+        time.localtime() or time.gmtime(). To change it for all formatters,
+        for example if you want all logging times to be shown in GMT,
+        set the 'converter' attribute in the Formatter class.
+        ")
+                        (reparse-symbol indented_block_body) [14124 15460])
+                    ("formatException" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15485 15489])
+                            ("ei" variable nil (reparse-symbol function_parameters) [15491 15493]))                          
+                        :documentation "
+        Format and return the specified exception information as a string.
+
+        This default implementation just uses
+        traceback.print_exception()
+        ")
+                        (reparse-symbol indented_block_body) [15465 15893])
+                    ("format" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15909 15913])
+                            ("record" variable nil (reparse-symbol function_parameters) [15915 15921]))                          
+                        :documentation "
+        Format the specified record as text.
+
+        The record's attribute dictionary is used as the operand to a
+        string formatting operation which yields the returned string.
+        Before formatting the dictionary, a couple of preparatory steps
+        are carried out. The message attribute of the record is computed
+        using LogRecord.getMessage(). If the formatting string contains
+        \"%(asctime)\", formatTime() is called to format the event time.
+        If there is exception information, it is formatted using
+        formatException() and appended to the message.
+        ")
+                        (reparse-symbol indented_block_body) [15898 17449]))                  
+                :type "class")
+                nil [11338 17449])
+            ("_defaultFormatter" variable nil nil [17514 17545])
+            ("BufferingFormatter" type
+               (:documentation "
+    A formatter suitable for formatting a number of records.
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Optionally specify a formatter which will be used to format each
+        individual record.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [17696 17811])
+                            ("if" code nil (reparse-symbol indented_block_body) [17820 17926]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17667 17671])
+                            ("linefmt" variable nil (reparse-symbol function_parameters) [17673 17680]))                          
+                        :documentation "
+        Optionally specify a formatter which will be used to format each
+        individual record.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [17654 17926])
+                    ("formatHeader" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17948 17952])
+                            ("records" variable nil (reparse-symbol function_parameters) [17954 17961]))                          
+                        :documentation "
+        Return the header string for the specified records.
+        ")
+                        (reparse-symbol indented_block_body) [17931 18066])
+                    ("formatFooter" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18088 18092])
+                            ("records" variable nil (reparse-symbol function_parameters) [18094 18101]))                          
+                        :documentation "
+        Return the footer string for the specified records.
+        ")
+                        (reparse-symbol indented_block_body) [18071 18206])
+                    ("format" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18222 18226])
+                            ("records" variable nil (reparse-symbol function_parameters) [18228 18235]))                          
+                        :documentation "
+        Format the specified records and return the result as a string.
+        ")
+                        (reparse-symbol indented_block_body) [18211 18584]))                  
+                :type "class")
+                nil [17547 18584])
+            ("Filter" type
+               (:documentation "
+    Filter instances are used to perform arbitrary filtering of LogRecords.
+
+    Loggers and Handlers can optionally use Filter instances to filter
+    records as desired. The base filter class only allows events which are
+    below a certain point in the logger hierarchy. For example, a filter
+    initialized with \"A.B\" will allow events logged by loggers \"A.B\",
+    \"A.B.C\", \"A.B.C.D\", \"A.B.D\" etc. but not \"A.BB\", \"B.A.B\" etc. If
+    initialized with the empty string, all events are passed.
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initialize a filter.
+
+        Initialize with the name of the logger which, together with its
+        children, will have its events allowed through the filter. If no
+        name is specified, allow every event.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [19341 19577])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19586 19602])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19611 19632]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19317 19321])
+                            ("name" variable nil (reparse-symbol function_parameters) [19323 19327]))                          
+                        :documentation "
+        Initialize a filter.
+
+        Initialize with the name of the logger which, together with its
+        children, will have its events allowed through the filter. If no
+        name is specified, allow every event.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [19304 19633])
+                    ("filter" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19649 19653])
+                            ("record" variable nil (reparse-symbol function_parameters) [19655 19661]))                          
+                        :documentation "
+        Determine if the specified record is to be logged.
+
+        Is the specified record to be logged? Returns 0 for no, nonzero for
+        yes. If deemed appropriate, the record may be modified in-place.
+        ")
+                        (reparse-symbol indented_block_body) [19638 20142]))                  
+                :type "class")
+                nil [18773 20142])
+            ("Filterer" type
+               (:documentation "
+    A base class for loggers and handlers which allows them to share
+    common code.
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initialize the list of filters to be an empty list.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [20293 20368])
+                            ("self" variable nil (reparse-symbol indented_block_body) [20377 20394]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20278 20282]))                          
+                        :documentation "
+        Initialize the list of filters to be an empty list.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [20265 20395])
+                    ("addFilter" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20414 20418])
+                            ("filter" variable nil (reparse-symbol function_parameters) [20420 20426]))                          
+                        :documentation "
+        Add the specified filter to this handler.
+        ")
+                        (reparse-symbol indented_block_body) [20400 20584])
+                    ("removeFilter" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20606 20610])
+                            ("filter" variable nil (reparse-symbol function_parameters) [20612 20618]))                          
+                        :documentation "
+        Remove the specified filter from this handler.
+        ")
+                        (reparse-symbol indented_block_body) [20589 20775])
+                    ("filter" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20791 20795])
+                            ("record" variable nil (reparse-symbol function_parameters) [20797 20803]))                          
+                        :documentation "
+        Determine if a record is loggable by consulting all the filters.
+
+        The default is to allow the record to be logged; any filter can veto
+        this and the record is then dropped. Returns a zero value if a record
+        is to be dropped, else non-zero.
+        ")
+                        (reparse-symbol indented_block_body) [20780 21246]))                  
+                :type "class")
+                nil [20143 21246])
+            ("_handlers" variable nil nil [21436 21450])
+            ("_handlerList" variable nil nil [21512 21529])
+            ("Handler" type
+               (:documentation "
+    Handler instances dispatch logging events to specific destinations.
+
+    The base handler class. Acts as a placeholder which defines the Handler
+    interface. Handlers can optionally use Formatter instances to format
+    records as desired. By default, no formatter is specified; in this case,
+    the 'raw' message as determined by record.message is logged.
+    "
+                :superclasses ("Filterer")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initializes the instance - basically setting the formatter to None
+        and the filter list to empty.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [22054 22182])
+                            ("Filterer" code nil (reparse-symbol indented_block_body) [22191 22214])
+                            ("self" variable nil (reparse-symbol indented_block_body) [22223 22241])
+                            ("self" variable nil (reparse-symbol indented_block_body) [22250 22271])
+                            ("_acquireLock" code nil (reparse-symbol indented_block_body) [22353 22367])
+                            ("try" code nil (reparse-symbol indented_block_body) [22376 22556])
+                            ("self" code nil (reparse-symbol indented_block_body) [22564 22581]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22025 22029])
+                            ("level" variable nil (reparse-symbol function_parameters) [22031 22036]))                          
+                        :documentation "
+        Initializes the instance - basically setting the formatter to None
+        and the filter list to empty.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [22012 22582])
+                    ("createLock" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22602 22606]))                          
+                        :documentation "
+        Acquire a thread lock for serializing access to the underlying I/O.
+        ")
+                        (reparse-symbol indented_block_body) [22587 22813])
+                    ("acquire" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22830 22834]))                          
+                        :documentation "
+        Acquire the I/O thread lock.
+        ")
+                        (reparse-symbol indented_block_body) [22818 22952])
+                    ("release" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22969 22973]))                          
+                        :documentation "
+        Release the I/O thread lock.
+        ")
+                        (reparse-symbol indented_block_body) [22957 23091])
+                    ("setLevel" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23109 23113])
+                            ("level" variable nil (reparse-symbol function_parameters) [23115 23120]))                          
+                        :documentation "
+        Set the logging level of this handler.
+        ")
+                        (reparse-symbol indented_block_body) [23096 23221])
+                    ("format" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23237 23241])
+                            ("record" variable nil (reparse-symbol function_parameters) [23243 23249]))                          
+                        :documentation "
+        Format the specified record.
+
+        If a formatter is set, use it. Otherwise, use the default formatter
+        for the module.
+        ")
+                        (reparse-symbol indented_block_body) [23226 23558])
+                    ("emit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23572 23576])
+                            ("record" variable nil (reparse-symbol function_parameters) [23578 23584]))                          
+                        :documentation "
+        Do whatever it takes to actually log the specified logging record.
+
+        This version is intended to be implemented by subclasses and so
+        raises a NotImplementedError.
+        ")
+                        (reparse-symbol indented_block_body) [23563 23921])
+                    ("handle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23937 23941])
+                            ("record" variable nil (reparse-symbol function_parameters) [23943 23949]))                          
+                        :documentation "
+        Conditionally emit the specified logging record.
+
+        Emission depends on filters which may have been added to the handler.
+        Wrap the actual emission of the record with acquisition/release of
+        the I/O thread lock. Returns whether the filter passed the record for
+        emission.
+        ")
+                        (reparse-symbol indented_block_body) [23926 24479])
+                    ("setFormatter" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24501 24505])
+                            ("fmt" variable nil (reparse-symbol function_parameters) [24507 24510]))                          
+                        :documentation "
+        Set the formatter for this handler.
+        ")
+                        (reparse-symbol indented_block_body) [24484 24610])
+                    ("flush" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24625 24629]))                          
+                        :documentation "
+        Ensure all logging output has been flushed.
+
+        This version does nothing and is intended to be implemented by
+        subclasses.
+        ")
+                        (reparse-symbol indented_block_body) [24615 24813])
+                    ("close" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24828 24832]))                          
+                        :documentation "
+        Tidy up any resources used by the handler.
+
+        This version does removes the handler from an internal list
+        of handlers which is closed when shutdown() is called. Subclasses
+        should ensure that this gets called from overridden close()
+        methods.
+        ")
+                        (reparse-symbol indented_block_body) [24818 25498])
+                    ("handleError" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25519 25523])
+                            ("record" variable nil (reparse-symbol function_parameters) [25525 25531]))                          
+                        :documentation "
+        Handle errors which occur during an emit() call.
+
+        This method should be called from handlers when an exception is
+        encountered during an emit() call. If raiseExceptions is false,
+        exceptions get silently ignored. This is what is mostly wanted
+        for a logging system - most users will not care about errors in
+        the logging system, they are more interested in application errors.
+        You could, however, replace this with a custom handler if you wish.
+        The record which was being processed is passed in to this method.
+        ")
+                        (reparse-symbol indented_block_body) [25503 26400]))                  
+                :type "class")
+                nil [21603 26400])
+            ("StreamHandler" type
+               (:documentation "
+    A handler class which writes logging records, appropriately formatted,
+    to a stream. Note that this class does not close the stream, as
+    sys.stdout or sys.stderr may be used.
+    "
+                :superclasses ("Handler")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initialize the handler.
+
+        If strm is not specified, sys.stderr is used.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [26676 26778])
+                            ("Handler" code nil (reparse-symbol indented_block_body) [26787 26809])
+                            ("if" code nil (reparse-symbol indented_block_body) [26818 26865])
+                            ("self" variable nil (reparse-symbol indented_block_body) [26873 26891]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26650 26654])
+                            ("strm" variable nil (reparse-symbol function_parameters) [26656 26660]))                          
+                        :documentation "
+        Initialize the handler.
+
+        If strm is not specified, sys.stderr is used.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [26637 26892])
+                    ("flush" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26907 26911]))                          
+                        :documentation "
+        Flushes the stream.
+        ")
+                        (reparse-symbol indented_block_body) [26897 27056])
+                    ("emit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27070 27074])
+                            ("record" variable nil (reparse-symbol function_parameters) [27076 27082]))                          
+                        :documentation "
+        Emit a record.
+
+        If a formatter is specified, it is used to format the record.
+        The record is then written to the stream with a trailing newline.  If
+        exception information is present, it is formatted using
+        traceback.print_exception and appended to the stream.  If the stream
+        has an 'encoding' attribute, it is used to encode the message before
+        output to the stream.
+        ")
+                        (reparse-symbol indented_block_body) [27061 28946]))                  
+                :type "class")
+                nil [26401 28946])
+            ("FileHandler" type
+               (:documentation "
+    A handler class which writes formatted logging records to disk files.
+    "
+                :superclasses ("StreamHandler")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Open the specified file and use it as the stream for logging.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [29147 29232])
+                            ("if" code nil (reparse-symbol indented_block_body) [29378 29425])
+                            ("self" variable nil (reparse-symbol indented_block_body) [29433 29478])
+                            ("self" variable nil (reparse-symbol indented_block_body) [29487 29503])
+                            ("self" variable nil (reparse-symbol indented_block_body) [29512 29536])
+                            ("if" code nil (reparse-symbol indented_block_body) [29545 29827]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29088 29092])
+                            ("filename" variable nil (reparse-symbol function_parameters) [29094 29102])
+                            ("mode" variable nil (reparse-symbol function_parameters) [29104 29108])
+                            ("encoding" variable nil (reparse-symbol function_parameters) [29114 29122])
+                            ("delay" variable nil (reparse-symbol function_parameters) [29129 29134]))                          
+                        :documentation "
+        Open the specified file and use it as the stream for logging.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [29075 29827])
+                    ("close" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29842 29846]))                          
+                        :documentation "
+        Closes the stream.
+        ")
+                        (reparse-symbol indented_block_body) [29832 30100])
+                    ("_open" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30115 30119]))                          
+                        :documentation "
+        Open the current base file with the (original) mode and encoding.
+        Return the resulting stream.
+        ")
+                        (reparse-symbol indented_block_body) [30105 30461])
+                    ("emit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30475 30479])
+                            ("record" variable nil (reparse-symbol function_parameters) [30481 30487]))                          
+                        :documentation "
+        Emit a record.
+
+        If the stream was not opened because 'delay' was specified in the
+        constructor, open it before calling the superclass's emit.
+        ")
+                        (reparse-symbol indented_block_body) [30466 30791]))                  
+                :type "class")
+                nil [28947 30791])
+            ("PlaceHolder" type
+               (:documentation "
+    PlaceHolder instances are used in the Manager logger hierarchy to take
+    the place of nodes for which no loggers have been defined. This class is
+    intended for internal use only and not as part of the public API.
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initialize with the specified logger being a child of this placeholder.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [31279 31374])
+                            ("self" variable nil (reparse-symbol indented_block_body) [31417 31452]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31255 31259])
+                            ("alogger" variable nil (reparse-symbol function_parameters) [31261 31268]))                          
+                        :documentation "
+        Initialize with the specified logger being a child of this placeholder.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [31242 31453])
+                    ("append" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31469 31473])
+                            ("alogger" variable nil (reparse-symbol function_parameters) [31475 31482]))                          
+                        :documentation "
+        Add the specified logger as a child of this placeholder.
+        ")
+                        (reparse-symbol indented_block_body) [31458 31742]))                  
+                :type "class")
+                nil [30981 31742])
+            ("_loggerClass" variable nil nil [31808 31827])
+            ("setLoggerClass" function
+               (:documentation "
+    Set the class to be used when instantiating a logger. The class should
+    define __init__() such that only a name argument is required, and the
+    __init__() should call Logger.__init__()
+    "
+                :arguments 
+                  ( ("klass" variable nil (reparse-symbol function_parameters) [31848 31853]))                  )
+                nil [31829 32300])
+            ("getLoggerClass" function (:documentation "
+    Return the class to be used when instantiating a logger.
+    ") nil [32301 32425])
+            ("Manager" type
+               (:documentation "
+    There is [under normal circumstances] just one Manager instance, which
+    holds the hierarchy of loggers.
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initialize the manager with the root node of the logger hierarchy.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [32610 32700])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32709 32729])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32738 32754])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32763 32795])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32804 32824]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32585 32589])
+                            ("rootnode" variable nil (reparse-symbol function_parameters) [32591 32599]))                          
+                        :documentation "
+        Initialize the manager with the root node of the logger hierarchy.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [32572 32825])
+                    ("getLogger" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32844 32848])
+                            ("name" variable nil (reparse-symbol function_parameters) [32850 32854]))                          
+                        :documentation "
+        Get a logger with the specified name (channel name), creating it
+        if it doesn't yet exist. This name is a dot-separated hierarchical
+        name, such as \"a\", \"a.b\", \"a.b.c\" or similar.
+
+        If a PlaceHolder existed for the specified name [i.e. the logger
+        didn't exist but a child of it did], replace it with the created
+        logger and fix up the parent/child references which pointed to the
+        placeholder to now point to the logger.
+        ")
+                        (reparse-symbol indented_block_body) [32830 34022])
+                    ("_fixupParents" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34045 34049])
+                            ("alogger" variable nil (reparse-symbol function_parameters) [34051 34058]))                          
+                        :documentation "
+        Ensure that there are either loggers or placeholders all the way
+        from the specified logger to the root of the logger hierarchy.
+        ")
+                        (reparse-symbol indented_block_body) [34027 34863])
+                    ("_fixupChildren" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34887 34891])
+                            ("ph" variable nil (reparse-symbol function_parameters) [34893 34895])
+                            ("alogger" variable nil (reparse-symbol function_parameters) [34897 34904]))                          
+                        :documentation "
+        Ensure that children of the placeholder ph are connected to the
+        specified logger.
+        ")
+                        (reparse-symbol indented_block_body) [34868 35367]))                  
+                :type "class")
+                nil [32426 35367])
+            ("Logger" type
+               (:documentation "
+    Instances of the Logger class represent a single logging channel. A
+    \"logging channel\" indicates an area of an application. Exactly how an
+    \"area\" is defined is up to the application developer. Since an
+    application can have any number of areas, logging channels are identified
+    by a unique string. Application areas can be nested (e.g. an area
+    of \"input processing\" might include sub-areas \"read CSV files\", \"read
+    XLS files\" and \"read Gnumeric files\"). To cater for this natural nesting,
+    channel names are organized into a namespace hierarchy where levels are
+    separated by periods, much like the Java or Python package namespace. So
+    in the instance given above, channel names might be \"input\" for the upper
+    level, and \"input.csv\", \"input.xls\" and \"input.gnu\" for the sub-levels.
+    There is no arbitrary limit to the depth of nesting.
+    "
+                :superclasses ("Filterer")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initialize the logger with a name and an optional level.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [36525 36605])
+                            ("Filterer" code nil (reparse-symbol indented_block_body) [36614 36637])
+                            ("self" variable nil (reparse-symbol indented_block_body) [36646 36662])
+                            ("self" variable nil (reparse-symbol indented_block_body) [36671 36689])
+                            ("self" variable nil (reparse-symbol indented_block_body) [36698 36716])
+                            ("self" variable nil (reparse-symbol indented_block_body) [36725 36743])
+                            ("self" variable nil (reparse-symbol indented_block_body) [36752 36770])
+                            ("self" variable nil (reparse-symbol indented_block_body) [36779 36796]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36490 36494])
+                            ("name" variable nil (reparse-symbol function_parameters) [36496 36500])
+                            ("level" variable nil (reparse-symbol function_parameters) [36502 36507]))                          
+                        :documentation "
+        Initialize the logger with a name and an optional level.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [36477 36797])
+                    ("setLevel" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36815 36819])
+                            ("level" variable nil (reparse-symbol function_parameters) [36821 36826]))                          
+                        :documentation "
+        Set the logging level of this logger.
+        ")
+                        (reparse-symbol indented_block_body) [36802 36926])
+                    ("debug" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36941 36945])
+                            ("msg" variable nil (reparse-symbol function_parameters) [36947 36950])
+                            ("args" variable nil (reparse-symbol function_parameters) [36952 36957])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [36959 36967]))                          
+                        :documentation "
+        Log 'msg % args' with severity 'DEBUG'.
+
+        To pass exception information, use the keyword argument exc_info with
+        a true value, e.g.
+
+        logger.debug(\"Houston, we have a %s\", \"thorny problem\", exc_info=1)
+        ")
+                        (reparse-symbol indented_block_body) [36931 37312])
+                    ("info" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37326 37330])
+                            ("msg" variable nil (reparse-symbol function_parameters) [37332 37335])
+                            ("args" variable nil (reparse-symbol function_parameters) [37337 37342])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [37344 37352]))                          
+                        :documentation "
+        Log 'msg % args' with severity 'INFO'.
+
+        To pass exception information, use the keyword argument exc_info with
+        a true value, e.g.
+
+        logger.info(\"Houston, we have a %s\", \"interesting problem\", exc_info=1)
+        ")
+                        (reparse-symbol indented_block_body) [37317 37698])
+                    ("warning" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37715 37719])
+                            ("msg" variable nil (reparse-symbol function_parameters) [37721 37724])
+                            ("args" variable nil (reparse-symbol function_parameters) [37726 37731])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [37733 37741]))                          
+                        :documentation "
+        Log 'msg % args' with severity 'WARNING'.
+
+        To pass exception information, use the keyword argument exc_info with
+        a true value, e.g.
+
+        logger.warning(\"Houston, we have a %s\", \"bit of a problem\", exc_info=1)
+        ")
+                        (reparse-symbol indented_block_body) [37703 38096])
+                    ("warn" variable nil (reparse-symbol indented_block_body) [38101 38115])
+                    ("error" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38131 38135])
+                            ("msg" variable nil (reparse-symbol function_parameters) [38137 38140])
+                            ("args" variable nil (reparse-symbol function_parameters) [38142 38147])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [38149 38157]))                          
+                        :documentation "
+        Log 'msg % args' with severity 'ERROR'.
+
+        To pass exception information, use the keyword argument exc_info with
+        a true value, e.g.
+
+        logger.error(\"Houston, we have a %s\", \"major problem\", exc_info=1)
+        ")
+                        (reparse-symbol indented_block_body) [38121 38501])
+                    ("exception" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38520 38524])
+                            ("msg" variable nil (reparse-symbol function_parameters) [38526 38529])
+                            ("args" variable nil (reparse-symbol function_parameters) [38531 38536]))                          
+                        :documentation "
+        Convenience method for logging an ERROR with exception information.
+        ")
+                        (reparse-symbol indented_block_body) [38506 38695])
+                    ("critical" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38713 38717])
+                            ("msg" variable nil (reparse-symbol function_parameters) [38719 38722])
+                            ("args" variable nil (reparse-symbol function_parameters) [38724 38729])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [38731 38739]))                          
+                        :documentation "
+        Log 'msg % args' with severity 'CRITICAL'.
+
+        To pass exception information, use the keyword argument exc_info with
+        a true value, e.g.
+
+        logger.critical(\"Houston, we have a %s\", \"major disaster\", exc_info=1)
+        ")
+                        (reparse-symbol indented_block_body) [38700 39096])
+                    ("fatal" variable nil (reparse-symbol indented_block_body) [39101 39117])
+                    ("log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39131 39135])
+                            ("level" variable nil (reparse-symbol function_parameters) [39137 39142])
+                            ("msg" variable nil (reparse-symbol function_parameters) [39144 39147])
+                            ("args" variable nil (reparse-symbol function_parameters) [39149 39154])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [39156 39164]))                          
+                        :documentation "
+        Log 'msg % args' with the integer severity 'level'.
+
+        To pass exception information, use the keyword argument exc_info with
+        a true value, e.g.
+
+        logger.log(level, \"We have a %s\", \"mysterious problem\", exc_info=1)
+        ")
+                        (reparse-symbol indented_block_body) [39123 39695])
+                    ("findCaller" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39715 39719]))                          
+                        :documentation "
+        Find the stack frame of the caller so that we can note the source
+        file name, line number and function name.
+        ")
+                        (reparse-symbol indented_block_body) [39700 40418])
+                    ("makeRecord" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40438 40442])
+                            ("name" variable nil (reparse-symbol function_parameters) [40444 40448])
+                            ("level" variable nil (reparse-symbol function_parameters) [40450 40455])
+                            ("fn" variable nil (reparse-symbol function_parameters) [40457 40459])
+                            ("lno" variable nil (reparse-symbol function_parameters) [40461 40464])
+                            ("msg" variable nil (reparse-symbol function_parameters) [40466 40469])
+                            ("args" variable nil (reparse-symbol function_parameters) [40471 40475])
+                            ("exc_info" variable nil (reparse-symbol function_parameters) [40477 40485])
+                            ("func" variable nil (reparse-symbol function_parameters) [40487 40491])
+                            ("extra" variable nil (reparse-symbol function_parameters) [40498 40503]))                          
+                        :documentation "
+        A factory method which can be overridden in subclasses to create
+        specialized LogRecords.
+        ")
+                        (reparse-symbol indented_block_body) [40423 40993])
+                    ("_log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [41007 41011])
+                            ("level" variable nil (reparse-symbol function_parameters) [41013 41018])
+                            ("msg" variable nil (reparse-symbol function_parameters) [41020 41023])
+                            ("args" variable nil (reparse-symbol function_parameters) [41025 41029])
+                            ("exc_info" variable nil (reparse-symbol function_parameters) [41031 41039])
+                            ("extra" variable nil (reparse-symbol function_parameters) [41046 41051]))                          
+                        :documentation "
+        Low-level logging routine which creates a LogRecord and then calls
+        all the handlers of this logger to handle the record.
+        ")
+                        (reparse-symbol indented_block_body) [40998 41885])
+                    ("handle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [41901 41905])
+                            ("record" variable nil (reparse-symbol function_parameters) [41907 41913]))                          
+                        :documentation "
+        Call the handlers for the specified record.
+
+        This method is used for unpickled records received from a socket, as
+        well as those created locally. Logger-level filtering is applied.
+        ")
+                        (reparse-symbol indented_block_body) [41890 42238])
+                    ("addHandler" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [42258 42262])
+                            ("hdlr" variable nil (reparse-symbol function_parameters) [42264 42268]))                          
+                        :documentation "
+        Add the specified handler to this logger.
+        ")
+                        (reparse-symbol indented_block_body) [42243 42424])
+                    ("removeHandler" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [42447 42451])
+                            ("hdlr" variable nil (reparse-symbol function_parameters) [42453 42457]))                          
+                        :documentation "
+        Remove the specified handler from this logger.
+        ")
+                        (reparse-symbol indented_block_body) [42429 42738])
+                    ("callHandlers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [42760 42764])
+                            ("record" variable nil (reparse-symbol function_parameters) [42766 42772]))                          
+                        :documentation "
+        Pass a record to all relevant handlers.
+
+        Loop through all handlers for this logger and its parents in the
+        logger hierarchy. If no handler was found, output a one-off error
+        message to sys.stderr. Stop searching up the hierarchy whenever a
+        logger with the \"propagate\" attribute set to zero is found - that
+        will be the last logger whose handlers are called.
+        ")
+                        (reparse-symbol indented_block_body) [42743 43797])
+                    ("getEffectiveLevel" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [43824 43828]))                          
+                        :documentation "
+        Get the effective level for this logger.
+
+        Loop through this logger and its parents in the logger hierarchy,
+        looking for a non-zero logging level. Return the first one found.
+        ")
+                        (reparse-symbol indented_block_body) [43802 44219])
+                    ("isEnabledFor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [44241 44245])
+                            ("level" variable nil (reparse-symbol function_parameters) [44247 44252]))                          
+                        :documentation "
+        Is this logger enabled for level 'level'?
+        ")
+                        (reparse-symbol indented_block_body) [44224 44441]))                  
+                :type "class")
+                nil [35556 44441])
+            ("RootLogger" type
+               (:documentation "
+    A root logger is not that different to any other logger, except that
+    it must have a logging level and there is only one instance of it in
+    the hierarchy.
+    "
+                :superclasses ("Logger")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initialize the logger with the name \"root\".
+        \"\"\"" code nil (reparse-symbol indented_block_body) [44688 44755])
+                            ("Logger" code nil (reparse-symbol indented_block_body) [44764 44800]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [44666 44670])
+                            ("level" variable nil (reparse-symbol function_parameters) [44672 44677]))                          
+                        :documentation "
+        Initialize the logger with the name \"root\".
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [44653 44801]))                  
+                :type "class")
+                nil [44442 44801])
+            ("_loggerClass" variable nil nil [44802 44823])
+            ("LoggerAdapter" type
+               (:documentation "
+    An adapter for loggers which makes it easier to specify contextual
+    information in logging output.
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initialize the adapter with a logger and a dict-like object which
+        provides contextual information. This constructor signature allows
+        easy stacking of LoggerAdapters, if so desired.
+
+        You can effectively pass keyword arguments as shown in the
+        following example:
+
+        adapter = LoggerAdapter(someLogger, dict(p1=v1, p2=\"v2\"))
+        \"\"\"" code nil (reparse-symbol indented_block_body) [45016 45398])
+                            ("self" variable nil (reparse-symbol indented_block_body) [45407 45427])
+                            ("self" variable nil (reparse-symbol indented_block_body) [45436 45454]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [44986 44990])
+                            ("logger" variable nil (reparse-symbol function_parameters) [44992 44998])
+                            ("extra" variable nil (reparse-symbol function_parameters) [45000 45005]))                          
+                        :documentation "
+        Initialize the adapter with a logger and a dict-like object which
+        provides contextual information. This constructor signature allows
+        easy stacking of LoggerAdapters, if so desired.
+
+        You can effectively pass keyword arguments as shown in the
+        following example:
+
+        adapter = LoggerAdapter(someLogger, dict(p1=v1, p2=\"v2\"))
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [44973 45455])
+                    ("process" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [45472 45476])
+                            ("msg" variable nil (reparse-symbol function_parameters) [45478 45481])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [45483 45489]))                          
+                        :documentation "
+        Process the logging message and keyword arguments passed in to
+        a logging call to insert contextual information. You can either
+        manipulate the message itself, the keyword args or both. Return
+        the message and kwargs modified (or not) to suit your needs.
+
+        Normally, you'll only need to override this one method in a
+        LoggerAdapter subclass for your specific needs.
+        ")
+                        (reparse-symbol indented_block_body) [45460 45989])
+                    ("debug" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [46004 46008])
+                            ("msg" variable nil (reparse-symbol function_parameters) [46010 46013])
+                            ("args" variable nil (reparse-symbol function_parameters) [46015 46020])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [46022 46030]))                          
+                        :documentation "
+        Delegate a debug call to the underlying logger, after adding
+        contextual information from this adapter instance.
+        ")
+                        (reparse-symbol indented_block_body) [45994 46281])
+                    ("info" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [46295 46299])
+                            ("msg" variable nil (reparse-symbol function_parameters) [46301 46304])
+                            ("args" variable nil (reparse-symbol function_parameters) [46306 46311])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [46313 46321]))                          
+                        :documentation "
+        Delegate an info call to the underlying logger, after adding
+        contextual information from this adapter instance.
+        ")
+                        (reparse-symbol indented_block_body) [46286 46571])
+                    ("warning" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [46588 46592])
+                            ("msg" variable nil (reparse-symbol function_parameters) [46594 46597])
+                            ("args" variable nil (reparse-symbol function_parameters) [46599 46604])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [46606 46614]))                          
+                        :documentation "
+        Delegate a warning call to the underlying logger, after adding
+        contextual information from this adapter instance.
+        ")
+                        (reparse-symbol indented_block_body) [46576 46869])
+                    ("error" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [46884 46888])
+                            ("msg" variable nil (reparse-symbol function_parameters) [46890 46893])
+                            ("args" variable nil (reparse-symbol function_parameters) [46895 46900])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [46902 46910]))                          
+                        :documentation "
+        Delegate an error call to the underlying logger, after adding
+        contextual information from this adapter instance.
+        ")
+                        (reparse-symbol indented_block_body) [46874 47162])
+                    ("exception" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [47181 47185])
+                            ("msg" variable nil (reparse-symbol function_parameters) [47187 47190])
+                            ("args" variable nil (reparse-symbol function_parameters) [47192 47197])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [47199 47207]))                          
+                        :documentation "
+        Delegate an exception call to the underlying logger, after adding
+        contextual information from this adapter instance.
+        ")
+                        (reparse-symbol indented_block_body) [47167 47494])
+                    ("critical" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [47512 47516])
+                            ("msg" variable nil (reparse-symbol function_parameters) [47518 47521])
+                            ("args" variable nil (reparse-symbol function_parameters) [47523 47528])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [47530 47538]))                          
+                        :documentation "
+        Delegate a critical call to the underlying logger, after adding
+        contextual information from this adapter instance.
+        ")
+                        (reparse-symbol indented_block_body) [47499 47795])
+                    ("log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [47808 47812])
+                            ("level" variable nil (reparse-symbol function_parameters) [47814 47819])
+                            ("msg" variable nil (reparse-symbol function_parameters) [47821 47824])
+                            ("args" variable nil (reparse-symbol function_parameters) [47826 47831])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [47833 47841]))                          
+                        :documentation "
+        Delegate a log call to the underlying logger, after adding
+        contextual information from this adapter instance.
+        ")
+                        (reparse-symbol indented_block_body) [47800 48095]))                  
+                :type "class")
+                nil [44825 48095])
+            ("root" variable nil nil [48096 48122])
+            ("Logger" variable nil nil [48123 48141])
+            ("Logger" variable nil nil [48142 48179])
+            ("BASIC_FORMAT" variable nil nil [48374 48425])
+            ("basicConfig" function
+               (:documentation "
+    Do basic configuration for the logging system.
+
+    This function does nothing if the root logger already has handlers
+    configured. It is a convenience method intended for use by simple scripts
+    to do one-shot configuration of the logging package.
+
+    The default behaviour is to create a StreamHandler which writes to
+    sys.stderr, set a formatter using the BASIC_FORMAT format string, and
+    add the handler to the root logger.
+
+    A number of optional keyword arguments may be specified, which can alter
+    the default behaviour.
+
+    filename  Specifies that a FileHandler be created, using the specified
+              filename, rather than a StreamHandler.
+    filemode  Specifies the mode to open the file, if filename is specified
+              (if filemode is unspecified, it defaults to 'a').
+    format    Use the specified format string for the handler.
+    datefmt   Use the specified date/time format.
+    level     Set the root logger level to the specified level.
+    stream    Use the specified stream to initialize the StreamHandler. Note
+              that this argument is incompatible with 'filename' - if both
+              are present, 'stream' is ignored.
+
+    Note that you could specify a stream created using open(filename, mode)
+    rather than passing the filename and mode in. However, it should be
+    remembered that StreamHandler does not close its stream (since it may be
+    using sys.stdout or sys.stderr), whereas FileHandler closes its stream
+    when the handler is closed.
+    "
+                :arguments 
+                  ( ("kwargs" variable nil (reparse-symbol function_parameters) [48443 48451]))                  )
+                nil [48427 50567])
+            ("getLogger" function
+               (:documentation "
+    Return a logger with the specified name, creating it if necessary.
+
+    If no name is specified, return the root logger.
+    "
+                :arguments 
+                  ( ("name" variable nil (reparse-symbol function_parameters) [50826 50830]))                  )
+                nil [50812 51068])
+            ("critical" function
+               (:documentation "
+    Log a message with severity 'CRITICAL' on the root logger.
+    "
+                :arguments 
+                  ( ("msg" variable nil (reparse-symbol function_parameters) [51294 51297])
+                    ("args" variable nil (reparse-symbol function_parameters) [51299 51304])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [51306 51314]))                  )
+                nil [51281 51494])
+            ("fatal" variable nil nil [51495 51511])
+            ("error" function
+               (:documentation "
+    Log a message with severity 'ERROR' on the root logger.
+    "
+                :arguments 
+                  ( ("msg" variable nil (reparse-symbol function_parameters) [51523 51526])
+                    ("args" variable nil (reparse-symbol function_parameters) [51528 51533])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [51535 51543]))                  )
+                nil [51513 51717])
+            ("exception" function
+               (:documentation "
+    Log a message with severity 'ERROR' on the root logger,
+    with exception information.
+    "
+                :arguments 
+                  ( ("msg" variable nil (reparse-symbol function_parameters) [51732 51735])
+                    ("args" variable nil (reparse-symbol function_parameters) [51737 51742]))                  )
+                nil [51718 51898])
+            ("warning" function
+               (:documentation "
+    Log a message with severity 'WARNING' on the root logger.
+    "
+                :arguments 
+                  ( ("msg" variable nil (reparse-symbol function_parameters) [51911 51914])
+                    ("args" variable nil (reparse-symbol function_parameters) [51916 51921])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [51923 51931]))                  )
+                nil [51899 52109])
+            ("warn" variable nil nil [52110 52124])
+            ("info" function
+               (:documentation "
+    Log a message with severity 'INFO' on the root logger.
+    "
+                :arguments 
+                  ( ("msg" variable nil (reparse-symbol function_parameters) [52135 52138])
+                    ("args" variable nil (reparse-symbol function_parameters) [52140 52145])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [52147 52155]))                  )
+                nil [52126 52327])
+            ("debug" function
+               (:documentation "
+    Log a message with severity 'DEBUG' on the root logger.
+    "
+                :arguments 
+                  ( ("msg" variable nil (reparse-symbol function_parameters) [52338 52341])
+                    ("args" variable nil (reparse-symbol function_parameters) [52343 52348])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [52350 52358]))                  )
+                nil [52328 52532])
+            ("log" function
+               (:documentation "
+    Log 'msg % args' with the integer severity 'level' on the root logger.
+    "
+                :arguments 
+                  ( ("level" variable nil (reparse-symbol function_parameters) [52541 52546])
+                    ("msg" variable nil (reparse-symbol function_parameters) [52548 52551])
+                    ("args" variable nil (reparse-symbol function_parameters) [52553 52558])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [52560 52568]))                  )
+                nil [52533 52761])
+            ("disable" function
+               (:documentation "
+    Disable all logging calls less severe than 'level'.
+    "
+                :arguments 
+                  ( ("level" variable nil (reparse-symbol function_parameters) [52774 52779]))                  )
+                nil [52762 52887])
+            ("shutdown" function
+               (:documentation "
+    Perform any cleanup actions in the logging system (e.g. flushing
+    buffers).
+
+    Should be called at application exit.
+    "
+                :arguments 
+                  ( ("handlerList" variable nil (reparse-symbol function_parameters) [52901 52912]))                  )
+                nil [52888 53347])
+            ("try" code nil nil [53436 53689]))          
+      :file "__init__.py"
+      :pointmax 53689
+      :fsize 55222
+      :lastmodtime '(21288 30144 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 26377 . 26400) (NEWLINE 26376 . 26377) (COLON 26375 . 26376) (FINALLY 26368 . 26375))))
+  :file "!drive_c!Python26_64!Lib!logging!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

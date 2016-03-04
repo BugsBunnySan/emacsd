@@ -1,0 +1,551 @@
+;; Object Lib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Lib/"
+  :tables
+  (list
+    (semanticdb-table "bbfDeadlineMaya.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("pymel.core" include nil nil [11 34])
+            ("bbfDeadline" include nil nil [35 53])
+            ("BBF_environ" include nil nil [54 72])
+            ("bbfUtil" include nil nil [73 87])
+            ("bbfPath" include nil nil [88 115])
+            ("datetime" include nil nil [116 131])
+            ("bbfDeadlineMaya" type
+               (:superclasses ("bbfDeadline.bbfDeadline")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("sceneName" variable nil (reparse-symbol indented_block_body) [213 237])
+                            ("jobName" variable nil (reparse-symbol indented_block_body) [246 302])
+                            ("startFrame" variable nil (reparse-symbol indented_block_body) [311 372])
+                            ("endFrame" variable nil (reparse-symbol indented_block_body) [381 438])
+                            ("bbfEnv" variable nil (reparse-symbol indented_block_body) [456 483])
+                            ("bbfDeadline" code nil (reparse-symbol indented_block_body) [492 600])
+                            ("currentRenderer" variable nil (reparse-symbol indented_block_body) [610 681])
+                            ("self" code nil (reparse-symbol indented_block_body) [741 792])
+                            ("self" code nil (reparse-symbol indented_block_body) [801 861])
+                            ("self" code nil (reparse-symbol indented_block_body) [882 968])
+                            ("self" code nil (reparse-symbol indented_block_body) [977 1017])
+                            ("self" code nil (reparse-symbol indented_block_body) [1035 1097])
+                            ("self" code nil (reparse-symbol indented_block_body) [1106 1163])
+                            ("self" code nil (reparse-symbol indented_block_body) [1172 1220])
+                            ("self" code nil (reparse-symbol indented_block_body) [1229 1288])
+                            ("self" code nil (reparse-symbol indented_block_body) [1297 1342])
+                            ("self" code nil (reparse-symbol indented_block_body) [1351 1401])
+                            ("self" code nil (reparse-symbol indented_block_body) [1411 1465])
+                            ("self" code nil (reparse-symbol indented_block_body) [1474 1510])
+                            ("self" code nil (reparse-symbol indented_block_body) [1519 1573])
+                            ("if" code nil (reparse-symbol indented_block_body) [1627 1896]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [198 202]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [185 1896])
+                    ("getRenderLayers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1925 1929]))                          )
+                        (reparse-symbol indented_block_body) [1905 2417])
+                    ("Submit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2437 2441])
+                            ("renderFilename" variable nil (reparse-symbol function_parameters) [2443 2457])
+                            ("suspended" variable nil (reparse-symbol function_parameters) [2464 2473])
+                            ("submitScene" variable nil (reparse-symbol function_parameters) [2481 2492]))                          )
+                        (reparse-symbol indented_block_body) [2426 5971]))                  
+                :type "class")
+                nil [133 5971]))          
+      :file "bbfDeadlineMaya.py"
+      :pointmax 5987
+      :fsize 6236
+      :lastmodtime '(21962 5298 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfUtil.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfUtil
+   :synopsis: colleciton of utilities and convenience functions for Maya
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 170])
+            ("__future__" include nil nil [171 208])
+            ("__all__" variable nil nil [210 967])
+            ("os" include nil nil [969 978])
+            ("cPickle" include nil nil [979 993])
+            ("logging" include nil nil [994 1008])
+            ("sys" include nil nil [1009 1019])
+            ("re" include nil nil [1020 1029])
+            ("pymel.core" include nil nil [1031 1054])
+            ("maya.mel" include nil nil [1055 1077])
+            ("maya.cmds" include nil nil [1078 1102])
+            ("pymel.internal.plogging" include nil nil [1104 1145])
+            ("maya.OpenMaya" include nil nil [1146 1172])
+            ("maya.OpenMayaUI" include nil nil [1173 1203])
+            ("BBF.Maya.Lib.bbf_base.decorators" include nil nil [1205 1258])
+            ("logger" variable nil nil [1260 1296])
+            ("" code nil nil [1304 1306])
+            ("getObjShaders" function (:arguments 
+              ( ("transforms" variable nil (reparse-symbol function_parameters) [1325 1335])
+                ("onlySurfaceShaders" variable nil (reparse-symbol function_parameters) [1337 1355]))              ) nil [1307 2271])
+            ("getPrefix" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [2286 2290]))              ) nil [2272 2967])
+            ("getShaderObjs" function (:arguments 
+              ( ("shader" variable nil (reparse-symbol function_parameters) [2986 2992])
+                ("noIntermediate" variable nil (reparse-symbol function_parameters) [2994 3008])
+                ("returnTransforms" variable nil (reparse-symbol function_parameters) [3016 3032]))              ) nil [2968 3542])
+            ("getFileTextureNodes" function (:arguments 
+              ( ("shader" variable nil (reparse-symbol function_parameters) [3567 3573]))              ) nil [3543 3802])
+            ("isGroup" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [3815 3819]))              ) nil [3803 4154])
+            ("transformType" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [4173 4177]))              ) nil [4155 4404])
+            ("returnOrCreateNode" function (:arguments 
+              ( ("nodename" variable nil (reparse-symbol function_parameters) [4428 4436])
+                ("parent" variable nil (reparse-symbol function_parameters) [4438 4444])
+                ("nodetype" variable nil (reparse-symbol function_parameters) [4451 4459]))              ) nil [4405 4942])
+            ("getAllParents" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [4961 4965])
+                ("includeSelf" variable nil (reparse-symbol function_parameters) [4967 4978]))              ) nil [4943 5249])
+            ("getRenderCameras" function nil nil [5250 5833])
+            ("getPresetPath" function (:arguments 
+              ( ("preset" variable nil (reparse-symbol function_parameters) [5852 5858]))              ) nil [5834 6567])
+            ("" code nil nil [6574 6576])
+            ("bakeAndDeleteConstraints" function (:arguments 
+              ( ("topNodes" variable nil (reparse-symbol function_parameters) [6606 6614])
+                ("fs" variable nil (reparse-symbol function_parameters) [6616 6618])
+                ("fe" variable nil (reparse-symbol function_parameters) [6625 6627])
+                ("bake" variable nil (reparse-symbol function_parameters) [6634 6638])
+                ("delete" variable nil (reparse-symbol function_parameters) [6645 6651])
+                ("ctrlsonly" variable nil (reparse-symbol function_parameters) [6658 6667]))              ) nil [6577 8276])
+            ("pyToAttr" function
+               (:documentation "
+    Write (pickle) Python data to the given Maya obj.attr.  This data can
+    later be read back (unpickled) via attrToPy().
+
+    Arguments:
+    objAttr : string : a valid object.attribute name in the scene.  If the
+        object exists, but the attribute doesn't, the attribute will be added.
+        The if the attribute already exists, it must be of type 'string', so
+        the Python data can be written to it.
+    data : some Python data :  Data that will be pickled to the attribute
+        in question.
+    "
+                :arguments 
+                  ( ("objAttr" variable nil (reparse-symbol function_parameters) [8290 8297])
+                    ("data" variable nil (reparse-symbol function_parameters) [8299 8303]))                  )
+                nil [8277 9581])
+            ("attrToPy" function
+               (:documentation "
+    Take previously stored (pickled) data on a Maya attribute (put there via
+    pyToAttr() ) and read it back (unpickle) to valid Python values.
+
+    Arguments:
+    objAttr : string : A valid object.attribute name in the scene.  And of course,
+        it must have already had valid Python data pickled to it.
+
+    Return : some Python data :  The reconstituted, unpickled Python data.
+    "
+                :arguments 
+                  ( ("objAttr" variable nil (reparse-symbol function_parameters) [9595 9602]))                  )
+                nil [9582 10294])
+            ("shortName" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [10309 10313])
+                ("stripNamespace" variable nil (reparse-symbol function_parameters) [10315 10329]))              ) nil [10295 10534])
+            ("fullScreenOutliner" function (:arguments 
+              ( ("enable" variable nil (reparse-symbol function_parameters) [10558 10564]))              ) nil [10535 11270])
+            ("NoViewport" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__enter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11315 11319]))                          )
+                        (reparse-symbol indented_block_body) [11301 11384])
+                    ("__exit__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11401 11405])
+                            ("_" variable nil (reparse-symbol function_parameters) [11407 11409]))                          )
+                        (reparse-symbol indented_block_body) [11388 11473]))                  
+                :type "class")
+                nil [11271 11473])
+            ("createViewableObjsLocators" function (:arguments 
+              ( ("camera" variable nil (reparse-symbol function_parameters) [11505 11511])
+                ("LODs" variable nil (reparse-symbol function_parameters) [11513 11517])
+                ("camLocal" variable nil (reparse-symbol function_parameters) [11519 11527]))              ) nil [11474 12718])
+            ("" code nil nil [12743 12746])
+            ("prepViewableObjs" function (:arguments 
+              ( ("camera" variable nil (reparse-symbol function_parameters) [12768 12774]))              ) nil [12747 14563])
+            ("cleanupViewableObjs" function (:arguments 
+              ( ("state" variable nil (reparse-symbol function_parameters) [14588 14593]))              ) nil [14564 14994])
+            ("doGetViewableObjs" function (:arguments 
+              ( ("state" variable nil (reparse-symbol function_parameters) [15017 15022])
+                ("camera" variable nil (reparse-symbol function_parameters) [15024 15030])
+                ("invert" variable nil (reparse-symbol function_parameters) [15032 15038]))              ) nil [14995 15395])
+            ("" code nil nil [15509 15511])
+            ("" code nil nil [15536 15539])
+            ("__getViewableObjs" function (:arguments 
+              ( ("camera" variable nil (reparse-symbol function_parameters) [15562 15568])
+                ("invert" variable nil (reparse-symbol function_parameters) [15575 15581]))              ) nil [15540 15744])
+            ("" code nil nil [15751 15753])
+            ("getViewableObjs" function (:arguments 
+              ( ("camera" variable nil (reparse-symbol function_parameters) [15774 15780])
+                ("invert" variable nil (reparse-symbol function_parameters) [15787 15793]))              ) nil [15754 17789])
+            ("getByDistance" function
+               (:documentation " use softselection to get objects within a radius of other objects
+    with falloff=2 (global), useFakeMeshes sometimes fixes the selection
+
+    Args:
+        transforms: origin transforms
+        radius: distance from the origin transforms
+        useFakeMeshes: creates dummy meshes around original transforms to help with selection
+        falloff: 0: volume based, 1: surface based, 2: global (default), 3: object
+
+    Returns:
+        list: the original transforms and all those within `radius` distance of those
+    "
+                :arguments 
+                  ( ("transforms" variable nil (reparse-symbol function_parameters) [17809 17819])
+                    ("radius" variable nil (reparse-symbol function_parameters) [17821 17827])
+                    ("useFakeMeshes" variable nil (reparse-symbol function_parameters) [17835 17848])
+                    ("falloff" variable nil (reparse-symbol function_parameters) [17856 17863]))                  )
+                nil [17791 18625])
+            ("" code nil nil [18632 18634])
+            ("doGetByDistance" function (:arguments 
+              ( ("positions" variable nil (reparse-symbol function_parameters) [18655 18664])
+                ("radius" variable nil (reparse-symbol function_parameters) [18666 18672])
+                ("falloff" variable nil (reparse-symbol function_parameters) [18674 18681]))              ) nil [18635 19664])
+            ("getFrustumObjs" function (:arguments 
+              ( ("cam" variable nil (reparse-symbol function_parameters) [19684 19687])
+                ("distance" variable nil (reparse-symbol function_parameters) [19689 19697]))              ) nil [19665 19907])
+            ("filterByDistance" function (:arguments 
+              ( ("transform" variable nil (reparse-symbol function_parameters) [19929 19938])
+                ("threshold" variable nil (reparse-symbol function_parameters) [19940 19949])
+                ("transforms" variable nil (reparse-symbol function_parameters) [19951 19961]))              ) nil [19908 20601])
+            ("" code nil nil [20626 20634])
+            ("getBoundingBoxDistance" function (:arguments 
+              ( ("objA" variable nil (reparse-symbol function_parameters) [20662 20666])
+                ("objB" variable nil (reparse-symbol function_parameters) [20668 20672]))              ) nil [20635 21725])
+            ("getByDistanceToMesh" function (:arguments 
+              ( ("position" variable nil (reparse-symbol function_parameters) [21750 21758])
+                ("radius" variable nil (reparse-symbol function_parameters) [21760 21766])
+                ("meshes" variable nil (reparse-symbol function_parameters) [21768 21774]))              ) nil [21726 22570])
+            ("classifyObjectsByDistance" function
+               (:documentation " given an object and some shapes, classify the shapes by the given thresholds
+
+    Args:
+        objA: the origin transform
+        objs: shapes to classify
+        thresholds: dictionary mapping distance names to distances
+
+    Returns:
+        dict: mapping distance names to lists of objects <= that distance from objA
+    "
+                :arguments 
+                  ( ("origin" variable nil (reparse-symbol function_parameters) [22601 22607])
+                    ("objs" variable nil (reparse-symbol function_parameters) [22609 22613])
+                    ("thresholds" variable nil (reparse-symbol function_parameters) [22615 22625]))                  )
+                nil [22571 23831])
+            ("getLowestCommonTransform" function (:arguments 
+              ( ("transforms" variable nil (reparse-symbol function_parameters) [23861 23871]))              ) nil [23832 24783])
+            ("filterOutChildren" function (:arguments 
+              ( ("nodes" variable nil (reparse-symbol function_parameters) [24806 24811]))              ) nil [24784 25126])
+            ("collapseTransforms" function (:arguments 
+              ( ("intransforms" variable nil (reparse-symbol function_parameters) [25150 25162])
+                ("filter" variable nil (reparse-symbol function_parameters) [25164 25170]))              ) nil [25127 26193])
+            ("getMayaVersion" function nil nil [26194 26617])
+            ("attrHistory" function (:arguments 
+              ( ("attr" variable nil (reparse-symbol function_parameters) [26634 26638]))              ) nil [26618 26825])
+            ("" code nil nil [26832 26834])
+            ("getMeshesUnder" function (:arguments 
+              ( ("nodes" variable nil (reparse-symbol function_parameters) [26854 26859])
+                ("filters" variable nil (reparse-symbol function_parameters) [26861 26868])
+                ("excludeFilters" variable nil (reparse-symbol function_parameters) [26873 26887])
+                ("allInstances" variable nil (reparse-symbol function_parameters) [26895 26907]))              ) nil [26835 29536])
+            ("DoOverTime" type
+               (:documentation "
+    run the specified functions at several frames in the shot
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [29771 29805])
+                            ("self" variable nil (reparse-symbol indented_block_body) [29814 29834])
+                            ("self" variable nil (reparse-symbol indented_block_body) [29843 29859])
+                            ("self" variable nil (reparse-symbol indented_block_body) [29868 29883]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29658 29662])
+                            ("frames" variable nil (reparse-symbol function_parameters) [29664 29670]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [29645 29794])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29807 29811]))                          )
+                        (reparse-symbol indented_block_body) [29799 30617])
+                    ("addFunction" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30639 30643])
+                            ("funcName" variable nil (reparse-symbol function_parameters) [30645 30653])
+                            ("func" variable nil (reparse-symbol function_parameters) [30655 30659]))                          )
+                        (reparse-symbol indented_block_body) [30623 30897])
+                    ("getResult" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30916 30920])
+                            ("funcName" variable nil (reparse-symbol function_parameters) [30922 30930])
+                            ("frame" variable nil (reparse-symbol function_parameters) [30932 30937]))                          )
+                        (reparse-symbol indented_block_body) [30902 31258])
+                    ("getResults" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31278 31282])
+                            ("funcName" variable nil (reparse-symbol function_parameters) [31284 31292]))                          )
+                        (reparse-symbol indented_block_body) [31263 31480]))                  
+                :type "class")
+                nil [29537 31480])
+            ("resetXform" function (:arguments 
+              ( ("objects" variable nil (reparse-symbol function_parameters) [31496 31503]))              ) nil [31481 31917])
+            ("replaceObjects" function (:arguments 
+              ( ("objects" variable nil (reparse-symbol function_parameters) [31937 31944]))              ) nil [31918 33060])
+            ("compareVertexValues" function (:arguments 
+              ( ("nodes" variable nil (reparse-symbol function_parameters) [33086 33091]))              ) nil [33062 33980])
+            ("undo_chunk" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__enter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34410 34414]))                          )
+                        (reparse-symbol indented_block_body) [34396 34453])
+                    ("__exit__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34470 34474])
+                            ("_" variable nil (reparse-symbol function_parameters) [34476 34478]))                          )
+                        (reparse-symbol indented_block_body) [34457 34518]))                  
+                :type "class")
+                nil [34366 34518])
+            ("chunk_undo" function (:arguments 
+              ( ("func" variable nil (reparse-symbol function_parameters) [34534 34538]))              ) nil [34519 34738])
+            ("close_and_undo" function (:arguments 
+              ( ("defer" variable nil (reparse-symbol function_parameters) [34758 34763]))              ) nil [34739 35008])
+            ("chunk_undo_and_undo" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__enter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35062 35066]))                          )
+                        (reparse-symbol indented_block_body) [35048 35105])
+                    ("__exit__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35122 35126])
+                            ("_" variable nil (reparse-symbol function_parameters) [35128 35130]))                          )
+                        (reparse-symbol indented_block_body) [35109 35168]))                  
+                :type "class")
+                nil [35009 35168])
+            ("preserve_selection" function (:arguments 
+              ( ("func" variable nil (reparse-symbol function_parameters) [35192 35196]))              ) nil [35169 35388])
+            ("undo_on_error" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__enter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35436 35440]))                          )
+                        (reparse-symbol indented_block_body) [35422 35479])
+                    ("__exit__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35496 35500])
+                            ("exc_type" variable nil (reparse-symbol function_parameters) [35502 35510])
+                            ("exc_val" variable nil (reparse-symbol function_parameters) [35512 35519])
+                            ("exc_tb" variable nil (reparse-symbol function_parameters) [35521 35527]))                          )
+                        (reparse-symbol indented_block_body) [35483 35621]))                  
+                :type "class")
+                nil [35389 35621])
+            ("set_file_prompt" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [35782 35800])
+                            ("self" variable nil (reparse-symbol indented_block_body) [35809 35829]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35670 35674])
+                            ("state" variable nil (reparse-symbol function_parameters) [35676 35681]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [35657 35740])
+                    ("__enter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35758 35762]))                          )
+                        (reparse-symbol indented_block_body) [35744 35857])
+                    ("__exit__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35874 35878])
+                            ("_" variable nil (reparse-symbol function_parameters) [35880 35882]))                          )
+                        (reparse-symbol indented_block_body) [35861 35967]))                  
+                :type "class")
+                nil [35622 35967])
+            ("at_time" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [36116 36126])
+                            ("self" variable nil (reparse-symbol indented_block_body) [36135 36151]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36008 36012])
+                            ("t" variable nil (reparse-symbol function_parameters) [36014 36015]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [35995 36062])
+                    ("__enter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36080 36084]))                          )
+                        (reparse-symbol indented_block_body) [36066 36161])
+                    ("__exit__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36178 36182])
+                            ("_" variable nil (reparse-symbol function_parameters) [36184 36186]))                          )
+                        (reparse-symbol indented_block_body) [36165 36264]))                  
+                :type "class")
+                nil [35968 36264])
+            ("getInstances" function
+               (:documentation "get all the instances in a scene"
+                :arguments 
+                  ( ("node_type" variable nil (reparse-symbol function_parameters) [36282 36291]))                  )
+                nil [36265 36402])
+            ("recurseNodes" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [36420 36424])
+                ("type" variable nil (reparse-symbol function_parameters) [36426 36430])
+                ("alreadyVisted" variable nil (reparse-symbol function_parameters) [36437 36450]))              ) nil [36403 37282]))          
+      :file "bbfUtil.py"
+      :pointmax 37282
+      :fsize 38360
+      :lastmodtime '(22194 12566 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [1 15])
+            ("logger" variable nil nil [16 52])
+            ("logger" code nil nil [53 82]))          
+      :file "__init__.py"
+      :pointmax 83
+      :fsize 85
+      :lastmodtime '(21919 61102 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfFurUtil.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("maya.cmds" include nil nil [25 49])
+            ("bbfScene" include nil nil [51 79])
+            ("bbfScene" include nil nil [80 109])
+            ("getFurChars" function nil nil [111 483])
+            ("getShaveNode" function (:arguments 
+              ( ("char" variable nil (reparse-symbol function_parameters) [501 505])
+                ("text" variable nil (reparse-symbol function_parameters) [507 511]))              ) nil [484 607])
+            ("getShaveGlobals" function (:arguments 
+              ( ("text" variable nil (reparse-symbol function_parameters) [628 632]))              ) nil [608 847])
+            ("getShaveDisplayGroup" function (:arguments 
+              ( ("text" variable nil (reparse-symbol function_parameters) [873 877]))              ) nil [848 977])
+            ("getShaveDisplayNode" function (:arguments 
+              ( ("char" variable nil (reparse-symbol function_parameters) [1002 1006])
+                ("text" variable nil (reparse-symbol function_parameters) [1008 1012]))              ) nil [978 1121])
+            ("getFurGeoNode" function (:arguments 
+              ( ("char" variable nil (reparse-symbol function_parameters) [1140 1144])
+                ("text" variable nil (reparse-symbol function_parameters) [1146 1150]))              ) nil [1122 1265])
+            ("getGrowthSetNode" function (:arguments 
+              ( ("char" variable nil (reparse-symbol function_parameters) [1287 1291])
+                ("text" variable nil (reparse-symbol function_parameters) [1293 1297]))              ) nil [1266 1400])
+            ("getAllFurGeoNodes" function nil nil [1401 1607])
+            ("getFurShader" function (:arguments 
+              ( ("char" variable nil (reparse-symbol function_parameters) [1625 1629]))              ) nil [1608 1732])
+            ("savePreset" function nil nil [1733 1838]))          
+      :file "bbfFurUtil.py"
+      :pointmax 1838
+      :fsize 1911
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfPreset.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [2 11])
+            ("path" include nil nil [12 41])
+            ("pymel.core" include nil nil [42 65])
+            ("logging" include nil nil [66 80])
+            ("logger" variable nil nil [81 117])
+            ("setupNodePresets" function nil nil [119 1559])
+            ("getPresetPath" function (:arguments 
+              ( ("preset" variable nil (reparse-symbol function_parameters) [1578 1584]))              ) nil [1560 2290]))          
+      :file "bbfPreset.py"
+      :pointmax 2290
+      :fsize 2348
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "mibox.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [50 85])
+            ("sys" include nil nil [50 85])
+            ("maya.mel" include nil nil [50 85])
+            ("maya.cmds" include nil nil [50 85])
+            ("xml.dom.minidom" include nil nil [86 108])
+            ("miBox" function nil nil [111 3052])
+            ("selectFile" function (:arguments 
+              ( ("fieldName" variable nil (reparse-symbol function_parameters) [3146 3155]))              ) nil [3131 3441])
+            ("returnSelectedFile" function (:arguments 
+              ( ("fileName" variable nil (reparse-symbol function_parameters) [3595 3603])
+                ("fileType" variable nil (reparse-symbol function_parameters) [3605 3613]))              ) nil [3572 3690])
+            ("writeMiBoxSelectionFromUI" function nil nil [3692 4289])
+            ("readMiBox" function (:arguments 
+              ( ("xmlpath" variable nil (reparse-symbol function_parameters) [4382 4389])
+                ("proxy" variable nil (reparse-symbol function_parameters) [4391 4396])
+                ("xbb" variable nil (reparse-symbol function_parameters) [4403 4406]))              ) nil [4368 10539])
+            ("writeMiBoxSelection" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [10568 10572])
+                ("dirpath" variable nil (reparse-symbol function_parameters) [10574 10581])
+                ("start" variable nil (reparse-symbol function_parameters) [10583 10588])
+                ("end" variable nil (reparse-symbol function_parameters) [10590 10593]))              ) nil [10544 10815])
+            ("writeMiBox" function (:arguments 
+              ( ("objects" variable nil (reparse-symbol function_parameters) [10831 10838])
+                ("name" variable nil (reparse-symbol function_parameters) [10840 10844])
+                ("dirpath" variable nil (reparse-symbol function_parameters) [10846 10853])
+                ("start" variable nil (reparse-symbol function_parameters) [10855 10860])
+                ("end" variable nil (reparse-symbol function_parameters) [10862 10865]))              ) nil [10816 11039])
+            ("exportMiFile" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [11060 11064])
+                ("dirpath" variable nil (reparse-symbol function_parameters) [11066 11073])
+                ("start" variable nil (reparse-symbol function_parameters) [11075 11080])
+                ("end" variable nil (reparse-symbol function_parameters) [11082 11085]))              ) nil [11042 12216])
+            ("writeMiBoxXml" function (:arguments 
+              ( ("miBoxXml" variable nil (reparse-symbol function_parameters) [12236 12244])
+                ("name" variable nil (reparse-symbol function_parameters) [12246 12250])
+                ("start" variable nil (reparse-symbol function_parameters) [12252 12257])
+                ("end" variable nil (reparse-symbol function_parameters) [12259 12262])
+                ("objects" variable nil (reparse-symbol function_parameters) [12264 12271]))              ) nil [12218 14070]))          
+      :file "mibox.py"
+      :pointmax 14073
+      :fsize 14423
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

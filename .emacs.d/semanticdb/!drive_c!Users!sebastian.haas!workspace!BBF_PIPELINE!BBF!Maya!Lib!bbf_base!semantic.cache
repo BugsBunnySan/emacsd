@@ -1,0 +1,428 @@
+;; Object bbf_base/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbf_base/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_base
+   :synopsis: basic maya functions
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 133])
+            ("__future__" include nil nil [134 171]))          
+      :file "__init__.py"
+      :pointmax 353
+      :fsize 373
+      :lastmodtime '(21988 35441 0 0)
+      :unmatched-syntax '(($EOI 353 . 353)))
+    (semanticdb-table "references.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_base.references
+   :synopsis: reference handling in Maya
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 150])
+            ("__future__" include nil nil [151 188])
+            ("__all__" variable nil nil [190 519])
+            ("os" include nil nil [521 530])
+            ("pymel.core" include nil nil [532 555])
+            ("maya.mel" include nil nil [556 578])
+            ("BBF.Maya.Lib.bbf_base.decorators" include nil nil [580 633])
+            ("" code nil nil [659 662])
+            ("get_reference_assemblies" function (:arguments 
+              ( ("reference" variable nil (reparse-symbol function_parameters) [692 701]))              ) nil [663 1065])
+            ("" code nil nil [1090 1093])
+            ("rename" function
+               (:documentation " Renames a reference node
+
+    Args:
+        reference: a :class:`PyNode <PyMEL:pymel.core.general.PyNode>` or the name of one
+        new_name: the new name to use for the reference node
+    "
+                :arguments 
+                  ( ("reference" variable nil (reparse-symbol function_parameters) [1105 1114])
+                    ("new_name" variable nil (reparse-symbol function_parameters) [1116 1124]))                  )
+                nil [1094 1405])
+            ("" code nil nil [1430 1433])
+            ("get_reference_proxies" function
+               (:documentation "
+    Args:
+        proxy_manager: the :class:`ProxyManager <PyMEL:pymel.core.nodetypes.ProxyManager>` to query for proxies
+
+    Returns:
+        list: all references (including the original reference) managed by the proxy_manager
+    "
+                :arguments 
+                  ( ("proxy_manager" variable nil (reparse-symbol function_parameters) [1460 1473]))                  )
+                nil [1434 1804])
+            ("" code nil nil [1829 1832])
+            ("get_proxy_manager" function
+               (:documentation "
+    Args:
+        node: a :class:`PyNode <PyMEL:pymel.core.general.PyNode>`, can be a reference node,
+            or from a reference or just a normal node
+
+    Returns:
+        proxy_manager_node: a proxy manager node, or None if the reference node or the nodes reference node
+            are not managed by a proxy manager, or the node doesn't come from a reference
+    "
+                :arguments 
+                  ( ("node" variable nil (reparse-symbol function_parameters) [1855 1859]))                  )
+                nil [1833 2755])
+            ("" code nil nil [2780 2783])
+            ("get_proxy_siblings" function
+               (:documentation "
+    Args:
+        node: a :class:`PyNode <PyMEL:pymel.core.general.PyNode>`
+
+    Returns:
+        list: all references managed by a proxy manager common to node or
+            an empty list if the node doesn't come from a reference or it's reference
+            isn't managed by a proxy manager
+    "
+                :arguments 
+                  ( ("node" variable nil (reparse-symbol function_parameters) [2807 2811]))                  )
+                nil [2784 3409])
+            ("" code nil nil [3434 3437])
+            ("get_proxy_tags" function
+               (:documentation "
+    Get all proxy tags from a common set of references
+
+    Args:
+        node: a :class:`PyNode <PyMEL:pymel.core.general.PyNode>`
+
+    Returns:
+        list: a list of all proxy tags of all references associated with node (can be empty)
+    "
+                :arguments 
+                  ( ("node" variable nil (reparse-symbol function_parameters) [3457 3461]))                  )
+                nil [3438 3839])
+            ("get_proxy_by_tag" function
+               (:documentation "
+    Find a reference by its tag
+
+    Args:
+        proxy_tag: A string (hopefully) acting as a tag on a reference
+
+    Returns:
+        reference: The :class:`Reference Node <PyMEL:pymel.core.nodetypes.Reference>` tagged with proxy_tag, or None
+    "
+                :arguments 
+                  ( ("proxy_tag" variable nil (reparse-symbol function_parameters) [3861 3870]))                  )
+                nil [3840 4321])
+            ("" code nil nil [4346 4349])
+            ("switch_proxy" function
+               (:documentation "
+    Swtich to a proxy, uses the mel command (.../scripts/others/proxySwitch.mel)
+
+    Args:
+        proxy: A reference node to switch to
+    "
+                :arguments 
+                  ( ("proxy" variable nil (reparse-symbol function_parameters) [4367 4372]))                  )
+                nil [4350 4645])
+            ("switch_proxy_by_tag" function
+               (:documentation "
+    Switch to a proxy named by a tag
+
+    Args:
+        proxy_tag: a proxy tag string
+
+    Raises:
+        ValueError: when the given proxy_tag can't be found
+    "
+                :arguments 
+                  ( ("proxy_tag" variable nil (reparse-symbol function_parameters) [4670 4679]))                  )
+                nil [4646 5052])
+            ("" code nil nil [5077 5080])
+            ("load_reference" function
+               (:documentation "
+    Load a reference
+
+    Args:
+        reference: an existing reference node that will be set to loaded
+    "
+                :arguments 
+                  ( ("reference" variable nil (reparse-symbol function_parameters) [5100 5109]))                  )
+                nil [5081 5461])
+            ("" code nil nil [5486 5489])
+            ("unload_reference" function
+               (:documentation "
+    Unload reference
+
+    Args:
+        reference: an existing reference node that will be set to unloaded
+    "
+                :arguments 
+                  ( ("reference" variable nil (reparse-symbol function_parameters) [5511 5520]))                  )
+                nil [5490 5876])
+            ("" code nil nil [5901 5904])
+            ("import_reference" function
+               (:documentation "
+    Imports a reference
+
+    Args:
+        reference: an existing reference node, the contents of which will be imported into the scene
+    "
+                :arguments 
+                  ( ("reference" variable nil (reparse-symbol function_parameters) [5926 5935])
+                    ("removeNamespace" variable nil (reparse-symbol function_parameters) [5937 5952]))                  )
+                nil [5905 6283])
+            ("select_contents" function
+               (:documentation "
+    Select the contents of a reference
+
+    Args:
+        reference: an existing reference node, whose contents will be selected
+        replace: whether to clear the selection first, default True
+    "
+                :arguments 
+                  ( ("reference" variable nil (reparse-symbol function_parameters) [6304 6313])
+                    ("replace" variable nil (reparse-symbol function_parameters) [6315 6322]))                  )
+                nil [6284 6683])
+            ("check_reference_file" function
+               (:documentation "
+    Check if a given path points to a loadable reference file
+
+    Args:
+        path: the path to check
+
+    Raises:
+        IOError: if the path doesn't exist, isn't a file or can't be read
+    "
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [6709 6713]))                  )
+                nil [6684 7296])
+            ("" code nil nil [7321 7324])
+            ("add_proxy_to_reference" function
+               (:documentation "
+    Adds a reference to a file to an existing reference, doing this without the proxyAdd mel script is WIP
+
+    Args:
+        filename: the file to reference
+        reference: an existing reference node that the new reference will be added as a proxy to
+        proxy_tag: the proxyTag to use on the new reference
+
+    Returns:
+        referenceNode: the newly created :class:`Reference Node <PyMEL:pymel.core.nodetypes.Reference>`
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [7352 7360])
+                    ("reference" variable nil (reparse-symbol function_parameters) [7362 7371])
+                    ("proxy_tag" variable nil (reparse-symbol function_parameters) [7373 7382])
+                    ("switch_to" variable nil (reparse-symbol function_parameters) [7384 7393]))                  )
+                nil [7325 8223])
+            ("create_reference" function
+               (:documentation "
+    Create a reference to a file
+
+    Args:
+        file_path: the path to the file to reference
+        namespace: the namespace to use for the reference
+        node_name: if not None rename the reference node to this (ensuring 'RN' at the end)
+        proxy_tag: if not None set this as the proxy tag on the new reference
+        load: one of ['all', 'none', 'topOnly'], see :func:`createReference <PyMEL:pymel.core.system.createReference>`
+
+    Returns:
+        FileReference: the newly created :class:`FileReference <PyMEL:pymel.core.system.FileReference>`
+    "
+                :arguments 
+                  ( ("file_path" variable nil (reparse-symbol function_parameters) [8245 8254])
+                    ("namespace" variable nil (reparse-symbol function_parameters) [8256 8265])
+                    ("node_name" variable nil (reparse-symbol function_parameters) [8271 8280])
+                    ("proxy_tag" variable nil (reparse-symbol function_parameters) [8287 8296])
+                    ("load" variable nil (reparse-symbol function_parameters) [8303 8307]))                  )
+                nil [8224 9274]))          
+      :file "references.py"
+      :pointmax 9274
+      :fsize 9565
+      :lastmodtime '(22212 44466 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ui.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_base.ui
+   :synopsis: ui related Maya base functions
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 146])
+            ("__future__" include nil nil [147 184])
+            ("PySide" include nil nil [242 266])
+            ("shiboken" include nil nil [267 282])
+            ("maya.OpenMayaUI" include nil nil [284 315])
+            ("add_icon_to_menu_item" function
+               (:documentation " add an icon to a maya menu item entry
+
+    Args:
+        menu_item: the menu_item object
+        icon_path: the path to an icon (can be a Qt resource path)
+    "
+                :arguments 
+                  ( ("menu_item" variable nil (reparse-symbol function_parameters) [343 352])
+                    ("icon_path" variable nil (reparse-symbol function_parameters) [354 363]))                  )
+                nil [317 744])
+            ("get_main_window" function (:documentation " Return the main maya window, or None if there isn't one ") nil [745 1028]))          
+      :file "ui.py"
+      :pointmax 1028
+      :fsize 1064
+      :lastmodtime '(22102 1443 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "decorators.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_base.decorators
+   :synopsis: base maya decorators
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 144])
+            ("__future__" include nil nil [145 182])
+            ("__all__" variable nil nil [184 210])
+            ("functools" include nil nil [212 239])
+            ("pymel.core" include nil nil [241 264])
+            ("NthPyNodeArg" type
+               (:documentation "decorator ensuring specified args of a function are PyNode instances, not just names
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Args:
+               args:   list of position indices, args at these positions will be PyNode'ified
+               kwargs: list of keywords, if they're present in the kwargs, their values will be PyNode'ified
+        \"\"\"" code nil (reparse-symbol indented_block_body) [444 667])
+                            ("self" variable nil (reparse-symbol indented_block_body) [676 691])
+                            ("if" code nil (reparse-symbol indented_block_body) [700 807])
+                            ("if" code nil (reparse-symbol indented_block_body) [815 932]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [412 416])
+                            ("args" variable nil (reparse-symbol function_parameters) [418 422])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [424 430]))                          
+                        :documentation "Args:
+               args:   list of position indices, args at these positions will be PyNode'ified
+               kwargs: list of keywords, if they're present in the kwargs, their values will be PyNode'ified
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [399 932])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [950 954])
+                            ("f" variable nil (reparse-symbol function_parameters) [956 957]))                          
+                        :documentation "Args:
+               f: function to wrap
+
+           Returns:
+               function: a wrapped function with the specified arguments turned into PyNodes
+        ")
+                        (reparse-symbol indented_block_body) [937 1774]))                  
+                :type "class")
+                nil [266 1774])
+            ("UndoTransaction" function
+               (:documentation " decorator which undos whatever func does, whether it fails or not "
+                :arguments 
+                  ( ("func" variable nil (reparse-symbol function_parameters) [1821 1825]))                  )
+                nil [1801 2361]))          
+      :file "decorators.py"
+      :pointmax 2361
+      :fsize 2439
+      :lastmodtime '(22213 39507 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "nodes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_base.nodes
+   :synopsis: basic node handling functions
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 148])
+            ("__future__" include nil nil [149 186])
+            ("__all__" variable nil nil [188 274])
+            ("pymel.core" include nil nil [276 299])
+            ("BBF.Common.Lib.bbfContext" include nil nil [301 347])
+            ("NodesKVStore" type
+               (:documentation " A callable KVStore that will list nodes by type "
+                :superclasses ("bbfContext.kvstore.KVStore")
+                :members 
+                  ( ("_default" variable nil (reparse-symbol indented_block_body) [461 474])
+                    ("_setvalue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [494 498])
+                            ("key" variable nil (reparse-symbol function_parameters) [500 503])
+                            ("value" variable nil (reparse-symbol function_parameters) [505 510]))                          
+                        :documentation " disallow setting values
+
+        Raises:
+            TypeError: always
+        ")
+                        (reparse-symbol indented_block_body) [480 683])
+                    ("_getvalue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [702 706])
+                            ("node_type" variable nil (reparse-symbol function_parameters) [708 717])
+                            ("default" variable nil (reparse-symbol function_parameters) [719 726]))                          
+                        :documentation "
+        Args:
+            node_type: the type of node to list
+            default: used in case there's no node of type node_type in the scene
+
+        Returns:
+            list: a list of :class:`PyNode <PyMEL:pymel.core.general.PyNode>` of type node_type (can be empty)
+        ")
+                        (reparse-symbol indented_block_body) [688 1160]))                  
+                :type "class")
+                nil [349 1160])
+            ("deleteInVisible" function (:arguments 
+              ( ("nodeTypes" variable nil (reparse-symbol function_parameters) [1207 1216]))              ) nil [1187 1444])
+            ("getDefaultNodes" function (:documentation " Return all the nodes that Maya creates in a new/empty scene ") nil [1445 1804])
+            ("nonReferencedNodes" function
+               (:documentation " Return all (DAG) nodes that are not default nodes and not from a reference "
+                :arguments 
+                  ( ("ignoreNodes" variable nil (reparse-symbol function_parameters) [1828 1839]))                  )
+                nil [1805 2202]))          
+      :file "nodes.py"
+      :pointmax 2202
+      :fsize 2274
+      :lastmodtime '(22205 45094 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "utils.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_base.utils
+   :synopsis: utility and convenience functions based on functions in this module
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 186])
+            ("__future__" include nil nil [187 224])
+            ("pymel.core" include nil nil [311 334])
+            ("references" include nil nil [336 353])
+            ("unload_all_references" function (:documentation " unload all references ") nil [355 512])
+            ("load_all_references" function (:documentation " load all references ") nil [513 831])
+            ("import_all_references" function
+               (:documentation " imports all (loaded) references
+
+    Args:
+        force: if True, load unloaded references to import them, skip them else
+    "
+                :arguments 
+                  ( ("force" variable nil (reparse-symbol function_parameters) [858 863]))                  )
+                nil [832 1303]))          
+      :file "utils.py"
+      :pointmax 1303
+      :fsize 1344
+      :lastmodtime '(22102 1443 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbf_base!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

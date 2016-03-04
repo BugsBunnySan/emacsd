@@ -1,0 +1,113 @@
+;; Object bbfScene/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfScene/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.internal" include nil nil [1 36])
+            ("logger" variable nil nil [37 74])
+            ("logger" code nil nil [75 105]))          
+      :file "__init__.py"
+      :pointmax 106
+      :fsize 108
+      :lastmodtime '(21919 61102 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfAttr.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("cPickle" include nil nil [1 15])
+            ("maya.cmds" include nil nil [16 40])
+            ("pyToAttr" function
+               (:documentation "
+    Write (pickle) Python data to the given Maya obj.attr.  This data can
+    later be read back (unpickled) via attrToPy().
+
+    Arguments:
+    objAttr : string : a valid object.attribute name in the scene.  If the
+        object exists, but the attribute doesn't, the attribute will be added.
+        The if the attribute already exists, it must be of type 'string', so
+        the Python data can be written to it.
+    data : some Python data :  Data that will be pickled to the attribute
+        in question.
+    "
+                :arguments 
+                  ( ("objAttr" variable nil (reparse-symbol function_parameters) [90 97])
+                    ("data" variable nil (reparse-symbol function_parameters) [99 103]))                  )
+                nil [77 1393])
+            ("attrToPy" function
+               (:documentation "
+    Take previously stored (pickled) data on a Maya attribute (put there via
+    pyToAttr() ) and read it back (unpickle) to valid Python values.
+
+    Arguments:
+    objAttr : string : A valid object.attribute name in the scene.  And of course,
+        it must have already had valid Python data pickled to it.
+
+    Return : some Python data :  The reconstituted, unpickled Python data.
+    "
+                :arguments 
+                  ( ("objAttr" variable nil (reparse-symbol function_parameters) [1407 1414]))                  )
+                nil [1394 2108]))          
+      :file "bbfAttr.py"
+      :pointmax 2108
+      :fsize 2160
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfName.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("pymel.core" include nil nil [12 35])
+            ("getSceneToken" function (:arguments 
+              ( ("asset" variable nil (reparse-symbol function_parameters) [55 60])
+                ("token" variable nil (reparse-symbol function_parameters) [62 67]))              ) nil [37 664])
+            ("getAssetType" function (:arguments 
+              ( ("asset" variable nil (reparse-symbol function_parameters) [682 687]))              ) nil [665 869])
+            ("getAssetName" function (:arguments 
+              ( ("asset" variable nil (reparse-symbol function_parameters) [887 892]))              ) nil [870 1069])
+            ("getAssetFunction" function (:arguments 
+              ( ("asset" variable nil (reparse-symbol function_parameters) [1091 1096]))              ) nil [1070 1289])
+            ("getCharBase" function (:arguments 
+              ( ("char" variable nil (reparse-symbol function_parameters) [1306 1310]))              ) nil [1290 1337])
+            ("getCharGeo" function (:arguments 
+              ( ("char" variable nil (reparse-symbol function_parameters) [1353 1357]))              ) nil [1338 1514])
+            ("getCharRig" function (:arguments 
+              ( ("char" variable nil (reparse-symbol function_parameters) [1530 1534]))              ) nil [1515 1637])
+            ("if" code nil nil [1638 1706]))          
+      :file "bbfName.py"
+      :pointmax 1706
+      :fsize 1781
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfScene.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [1 15])
+            ("logger" variable nil nil [16 52])
+            ("pymel.core" include nil nil [54 77])
+            ("maya.cmds" include nil nil [78 102])
+            ("bbfName" include nil nil [104 118])
+            ("getIBLNode" function nil nil [120 258])
+            ("getChars" function nil nil [259 570])
+            ("getProps" function nil nil [571 596])
+            ("getRenderCameras" function nil nil [597 895])
+            ("getRenderCamera" function nil nil [896 972])
+            ("getShaders" function nil nil [973 1156])
+            ("returnOrCreateNode" function (:arguments 
+              ( ("nodename" variable nil (reparse-symbol function_parameters) [1180 1188])
+                ("parent" variable nil (reparse-symbol function_parameters) [1190 1196])
+                ("nodetype" variable nil (reparse-symbol function_parameters) [1203 1211]))              ) nil [1157 1647])
+            ("createSceneHierarchy" function nil nil [1648 2033])
+            ("getUniqueDag" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [2051 2055])
+                ("parent" variable nil (reparse-symbol function_parameters) [2057 2063]))              ) nil [2034 2356]))          
+      :file "bbfScene.py"
+      :pointmax 2356
+      :fsize 2440
+      :lastmodtime '(21933 2516 0 0)
+      :unmatched-syntax '((DEF 2357 . 2360) ($EOI 2361 . 2361))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfScene!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

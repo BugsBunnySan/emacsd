@@ -1,0 +1,696 @@
+;; Object BBF_Submission/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "BBF_Submission/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(21919 61103 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "AnimationSubmission.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("BaseSubmission" include nil nil [11 52])
+            ("BBF_Validation" include nil nil [53 94])
+            ("bbfSceneCheck.general.sceneName" include nil nil [95 133])
+            ("bbfUI.bbfProgressWindow" include nil nil [134 187])
+            ("maya.cmds" include nil nil [188 210])
+            ("convertVDO" include nil nil [211 236])
+            ("AnimationSubmission" type
+               (:superclasses ("BaseSubmission")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("BaseSubmission" code nil (reparse-symbol indented_block_body) [327 356]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [312 316]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [299 357])
+                    ("createPlayblast" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [484 488])
+                            ("filename" variable nil (reparse-symbol function_parameters) [490 498])
+                            ("renderSize" variable nil (reparse-symbol function_parameters) [500 510])
+                            ("wireframe" variable nil (reparse-symbol function_parameters) [512 521]))                          )
+                        (reparse-symbol indented_block_body) [464 927])
+                    ("generate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1043 1047])
+                            ("camera" variable nil (reparse-symbol function_parameters) [1049 1055])
+                            ("renderSize" variable nil (reparse-symbol function_parameters) [1057 1067])
+                            ("submitComment" variable nil (reparse-symbol function_parameters) [1069 1082]))                          )
+                        (reparse-symbol indented_block_body) [1030 2042]))                  
+                :type "class")
+                nil [252 2042]))          
+      :file "AnimationSubmission.py"
+      :pointmax 2042
+      :fsize 2086
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "BaseSubmission.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("maya.cmds" include nil nil [11 33])
+            ("BBF_environ" include nil nil [34 52])
+            ("ShotgunInterface" include nil nil [53 98])
+            ("BBF_VersionSystem" include nil nil [99 146])
+            ("BaseSubmission" type
+               (:superclasses ("object")
+                :members 
+                  ( ("'''
+    This is a base class for all submissions for approval. It contains common functions for all submissions.
+    '''" code nil (reparse-symbol indented_block_body) [182 302])
+                    ("startFrame" variable nil (reparse-symbol indented_block_body) [307 319])
+                    ("endFrame" variable nil (reparse-symbol indented_block_body) [324 335])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [368 400])
+                            ("self" variable nil (reparse-symbol indented_block_body) [413 461])
+                            ("self" code nil (reparse-symbol indented_block_body) [470 516]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [353 357]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [340 517])
+                    ("createTurnTable" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [546 550])
+                            ("grpname" variable nil (reparse-symbol function_parameters) [552 559])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [561 571])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [578 586])
+                            ("degrees" variable nil (reparse-symbol function_parameters) [593 600]))                          )
+                        (reparse-symbol indented_block_body) [526 1177])
+                    ("getVersionNumber" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1301 1305])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [1307 1316])
+                            ("typ" variable nil (reparse-symbol function_parameters) [1318 1321]))                          )
+                        (reparse-symbol indented_block_body) [1280 1804])
+                    ("getLocalVideoPath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1942 1946])
+                            ("sceneName" variable nil (reparse-symbol function_parameters) [1948 1957])
+                            ("verNo" variable nil (reparse-symbol function_parameters) [1959 1964])
+                            ("suffix" variable nil (reparse-symbol function_parameters) [1966 1972])
+                            ("typ" variable nil (reparse-symbol function_parameters) [1980 1983])
+                            ("output" variable nil (reparse-symbol function_parameters) [2000 2006]))                          )
+                        (reparse-symbol indented_block_body) [1920 2446])
+                    ("deleteAnimation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2570 2574])
+                            ("grpname" variable nil (reparse-symbol function_parameters) [2576 2583]))                          )
+                        (reparse-symbol indented_block_body) [2550 2613])
+                    ("getRenderType" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2734 2738])
+                            ("typ" variable nil (reparse-symbol function_parameters) [2740 2743]))                          )
+                        (reparse-symbol indented_block_body) [2716 3283])
+                    ("uploadToShotgun" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3410 3414])
+                            ("filename" variable nil (reparse-symbol function_parameters) [3416 3424])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [3426 3435])
+                            ("typ" variable nil (reparse-symbol function_parameters) [3437 3440])
+                            ("pStep" variable nil (reparse-symbol function_parameters) [3442 3447])
+                            ("TaskName" variable nil (reparse-symbol function_parameters) [3449 3457])
+                            ("comments" variable nil (reparse-symbol function_parameters) [3459 3467]))                          )
+                        (reparse-symbol indented_block_body) [3390 4040])
+                    ("generate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4156 4160]))                          )
+                        (reparse-symbol indented_block_body) [4143 4221]))                  
+                :type "class")
+                nil [148 4221]))          
+      :file "BaseSubmission.py"
+      :pointmax 4221
+      :fsize 4316
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "BlendshapeSubmission.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("BaseSubmission" include nil nil [1 42])
+            ("BBF_Validation" include nil nil [43 84])
+            ("bbfSceneCheck.general.sceneName" include nil nil [85 123])
+            ("maya.cmds" include nil nil [124 146])
+            ("convertVDO" include nil nil [147 172])
+            ("BlendshapeSubmission" type
+               (:superclasses ("BaseSubmission")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("BaseSubmission" code nil (reparse-symbol indented_block_body) [264 308])
+                            ("self" variable nil (reparse-symbol indented_block_body) [318 763]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [249 253]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [236 764])
+                    ("updateHUDName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [894 898])
+                            ("frames" variable nil (reparse-symbol function_parameters) [900 906]))                          )
+                        (reparse-symbol indented_block_body) [876 1068])
+                    ("createHUD" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1191 1195])
+                            ("frames" variable nil (reparse-symbol function_parameters) [1197 1203]))                          )
+                        (reparse-symbol indented_block_body) [1177 1536])
+                    ("createBSAnim" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1662 1666]))                          )
+                        (reparse-symbol indented_block_body) [1645 2119])
+                    ("generate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2235 2239])
+                            ("camera" variable nil (reparse-symbol function_parameters) [2241 2247])
+                            ("renderSize" variable nil (reparse-symbol function_parameters) [2249 2259])
+                            ("submitComment" variable nil (reparse-symbol function_parameters) [2261 2274]))                          )
+                        (reparse-symbol indented_block_body) [2222 3303]))                  
+                :type "class")
+                nil [188 3303]))          
+      :file "BlendshapeSubmission.py"
+      :pointmax 3307
+      :fsize 3378
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "Deadline.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("bbfUtil" include nil nil [11 25])
+            ("subprocess" include nil nil [26 43])
+            ("BBF_environ" include nil nil [44 62])
+            ("BBF_Validation" include nil nil [63 104])
+            ("Deadline" type
+               (:members 
+                  ( ("_command" variable nil (reparse-symbol indented_block_body) [126 248])
+                    ("_startFrame" variable nil (reparse-symbol indented_block_body) [253 266])
+                    ("_endFrame" variable nil (reparse-symbol indented_block_body) [271 282])
+                    ("_name" variable nil (reparse-symbol indented_block_body) [287 295])
+                    ("_pluginSetting" variable nil (reparse-symbol indented_block_body) [300 317])
+                    ("chunkSize" variable nil (reparse-symbol indented_block_body) [322 333])
+                    ("postJobScript" variable nil (reparse-symbol indented_block_body) [338 356])
+                    ("jobID" variable nil (reparse-symbol indented_block_body) [361 371])
+                    ("result" variable nil (reparse-symbol indented_block_body) [376 387])
+                    ("outputDirectory" variable nil (reparse-symbol indented_block_body) [392 412])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [486 501])
+                            ("self" variable nil (reparse-symbol indented_block_body) [510 539])
+                            ("self" variable nil (reparse-symbol indented_block_body) [548 573])
+                            ("self" variable nil (reparse-symbol indented_block_body) [582 604])
+                            ("pass" code nil (reparse-symbol indented_block_body) [613 617]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [443 447])
+                            ("name" variable nil (reparse-symbol function_parameters) [449 453])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [455 465])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [467 475]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [430 618])
+                    ("addPluginSetting" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [648 652])
+                            ("key" variable nil (reparse-symbol function_parameters) [654 657])
+                            ("value" variable nil (reparse-symbol function_parameters) [659 664]))                          )
+                        (reparse-symbol indented_block_body) [627 715])
+                    ("Submit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [739 743])
+                            ("projectName" variable nil (reparse-symbol function_parameters) [745 756])
+                            ("sceneFilename" variable nil (reparse-symbol function_parameters) [758 771])
+                            ("suspended" variable nil (reparse-symbol function_parameters) [773 782]))                          )
+                        (reparse-symbol indented_block_body) [728 2777])
+                    ("setupUsingFilename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2809 2813])
+                            ("filename" variable nil (reparse-symbol function_parameters) [2815 2823])
+                            ("renderType" variable nil (reparse-symbol function_parameters) [2825 2835])
+                            ("versionNumber" variable nil (reparse-symbol function_parameters) [2837 2850]))                          )
+                        (reparse-symbol indented_block_body) [2786 4119]))                  
+                :type "class")
+                nil [106 4119]))          
+      :file "Deadline.py"
+      :pointmax 4120
+      :fsize 4221
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "deadlinePostJobScript.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("re" include nil nil [1 10])
+            ("sys" include nil nil [11 21])
+            ("System" include nil nil [22 52])
+            ("System.IO" include nil nil [53 76])
+            ("Deadline.Scripting" include nil nil [77 109])
+            ("DosCommand" function (:arguments 
+              ( ("command" variable nil (reparse-symbol function_parameters) [269 276])
+                ("arg" variable nil (reparse-symbol function_parameters) [278 281]))              ) nil [254 661])
+            ("__main__" function nil nil [662 1743]))          
+      :file "deadlinePostJobScript.py"
+      :pointmax 1743
+      :fsize 1793
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ModelLayer.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("Lighting.bbfRenderLayer.bbfBaseLayer" include nil nil [1 53])
+            ("pymel.core" include nil nil [54 77])
+            ("maya.cmds" include nil nil [78 100])
+            ("ModelLayer" type
+               (:superclasses ("basel.MentalRayLayer")
+                :members 
+                  ( ("'''
+    Contact occlusion of the Char and Prop shadows onto the Set. Char and Prop
+    visibility is off
+    '''" code nil (reparse-symbol indented_block_body) [146 258])
+                    ("__init__" function
+                       (:suite 
+                          ( ("members" variable nil (reparse-symbol indented_block_body) [334 348])
+                            ("super" code nil (reparse-symbol indented_block_body) [373 437]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [276 280])
+                            ("name" variable nil (reparse-symbol function_parameters) [282 286])
+                            ("members" variable nil (reparse-symbol function_parameters) [288 295])
+                            ("maintainMembers" variable nil (reparse-symbol function_parameters) [302 317]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [263 438])
+                    ("overrideShaders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [463 467]))                          )
+                        (reparse-symbol indented_block_body) [443 1489])
+                    ("keyContourAplha" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1518 1522])
+                            ("frame" variable nil (reparse-symbol function_parameters) [1524 1529])
+                            ("value" variable nil (reparse-symbol function_parameters) [1531 1536]))                          )
+                        (reparse-symbol indented_block_body) [1498 1640]))                  
+                :type "class")
+                nil [102 1640]))          
+      :file "ModelLayer.py"
+      :pointmax 1640
+      :fsize 1674
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ModelSubmission.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("ShaderSubmission" include nil nil [11 34])
+            ("reload" code nil nil [35 59])
+            ("ModelLayer" include nil nil [60 93])
+            ("bbfUI.bbfProgressWindow" include nil nil [94 147])
+            ("maya.mel" include nil nil [148 163])
+            ("BBF_environ" include nil nil [164 182])
+            ("maya.cmds" include nil nil [183 205])
+            ("pymel.core" include nil nil [206 229])
+            ("BBF_Validation" include nil nil [230 271])
+            ("ShotgunInterface" include nil nil [272 317])
+            ("bbfPath" include nil nil [318 345])
+            ("bbfSceneCheck.general.sceneName" include nil nil [346 384])
+            ("Deadline" include nil nil [385 400])
+            ("reload" code nil nil [401 417])
+            ("ModelSubmission" type
+               (:superclasses ("ShaderSubmission.ShaderSubmission")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("ShaderSubmission" code nil (reparse-symbol indented_block_body) [509 557])
+                            ("pass" code nil (reparse-symbol indented_block_body) [566 570]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [494 498]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [481 571])
+                    ("generate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [691 695])
+                            ("camera" variable nil (reparse-symbol function_parameters) [697 703])
+                            ("renderSize" variable nil (reparse-symbol function_parameters) [705 715])
+                            ("submitComment" variable nil (reparse-symbol function_parameters) [717 730]))                          )
+                        (reparse-symbol indented_block_body) [678 3372]))                  
+                :type "class")
+                nil [419 3372]))          
+      :file "ModelSubmission.py"
+      :pointmax 3372
+      :fsize 3453
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "PluginInfo.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("BBF_environ" include nil nil [11 29])
+            ("__main__" include nil nil [30 45])
+            ("PluginInfo" type
+               (:superclasses ("dict")
+                :members 
+                  ( ("'''
+    Class for reading the information from the deadline submission plugin file.
+    It will also setup the project environment if a project is specified in the plugin file.
+    '''" code nil (reparse-symbol indented_block_body) [75 259])
+                    ("__init__" function
+                       (:suite 
+                          ( ("pluginFile" variable nil (reparse-symbol indented_block_body) [303 364])
+                            ("self" code nil (reparse-symbol indented_block_body) [373 404])
+                            ("if" code nil (reparse-symbol indented_block_body) [462 535]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [277 281])
+                            ("jobFolder" variable nil (reparse-symbol function_parameters) [283 292]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [264 535])
+                    ("loadPluginInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [567 571])
+                            ("pluginFile" variable nil (reparse-symbol function_parameters) [573 583]))                          )
+                        (reparse-symbol indented_block_body) [548 985])
+                    ("setupEnvironment" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1035 1039])
+                            ("projectName" variable nil (reparse-symbol function_parameters) [1041 1052]))                          )
+                        (reparse-symbol indented_block_body) [1014 1297])
+                    ("getValue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1315 1319])
+                            ("key" variable nil (reparse-symbol function_parameters) [1321 1324])
+                            ("default" variable nil (reparse-symbol function_parameters) [1326 1333]))                          )
+                        (reparse-symbol indented_block_body) [1302 1425]))                  
+                :type "class")
+                nil [47 1425]))          
+      :file "PluginInfo.py"
+      :pointmax 1425
+      :fsize 1471
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "postRenderSubmission.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "postRenderSubmission.py"
+      :pointmax 3320
+      :fsize 3407
+      :lastmodtime '(21923 35049 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "RigSubmission.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("BaseSubmission" include nil nil [11 52])
+            ("BBF_Validation" include nil nil [53 94])
+            ("bbfSceneCheck.general.sceneName" include nil nil [95 133])
+            ("bbfUI.bbfProgressWindow" include nil nil [134 187])
+            ("maya.cmds" include nil nil [188 210])
+            ("convertVDO" include nil nil [211 236])
+            ("RigSubmission" type
+               (:superclasses ("BaseSubmission")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("BaseSubmission" code nil (reparse-symbol indented_block_body) [321 350]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [306 310]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [293 351])
+                    ("createPlayblast" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [478 482])
+                            ("filename" variable nil (reparse-symbol function_parameters) [484 492])
+                            ("renderSize" variable nil (reparse-symbol function_parameters) [494 504])
+                            ("wireframe" variable nil (reparse-symbol function_parameters) [506 515]))                          )
+                        (reparse-symbol indented_block_body) [458 921])
+                    ("generate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1037 1041])
+                            ("camera" variable nil (reparse-symbol function_parameters) [1043 1049])
+                            ("renderSize" variable nil (reparse-symbol function_parameters) [1051 1061])
+                            ("submitComment" variable nil (reparse-symbol function_parameters) [1063 1076]))                          )
+                        (reparse-symbol indented_block_body) [1024 2481]))                  
+                :type "class")
+                nil [252 2481]))          
+      :file "RigSubmission.py"
+      :pointmax 2481
+      :fsize 2537
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "SetSubmission.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("BaseSubmission" include nil nil [11 52])
+            ("BBF_Validation" include nil nil [53 94])
+            ("bbfSceneCheck.general.sceneName" include nil nil [95 133])
+            ("bbfUI.bbfProgressWindow" include nil nil [134 187])
+            ("maya.cmds" include nil nil [188 210])
+            ("convertVDO" include nil nil [211 236])
+            ("SetSubmission" type
+               (:superclasses ("BaseSubmission")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("BaseSubmission" code nil (reparse-symbol indented_block_body) [321 350]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [306 310]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [293 351])
+                    ("createPlayblast" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [478 482])
+                            ("filename" variable nil (reparse-symbol function_parameters) [484 492])
+                            ("renderSize" variable nil (reparse-symbol function_parameters) [494 504])
+                            ("wireframe" variable nil (reparse-symbol function_parameters) [506 515]))                          )
+                        (reparse-symbol indented_block_body) [458 921])
+                    ("generate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1037 1041])
+                            ("camera" variable nil (reparse-symbol function_parameters) [1043 1049])
+                            ("renderSize" variable nil (reparse-symbol function_parameters) [1051 1061])
+                            ("submitComment" variable nil (reparse-symbol function_parameters) [1063 1076]))                          )
+                        (reparse-symbol indented_block_body) [1024 2099]))                  
+                :type "class")
+                nil [252 2099]))          
+      :file "SetSubmission.py"
+      :pointmax 2099
+      :fsize 2148
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ShaderSubmission.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("BaseSubmission" include nil nil [11 32])
+            ("reload" code nil nil [33 55])
+            ("ModelLayer" include nil nil [56 89])
+            ("bbfUI.bbfProgressWindow" include nil nil [90 143])
+            ("maya.mel" include nil nil [144 159])
+            ("BBF_environ" include nil nil [160 178])
+            ("maya.cmds" include nil nil [179 201])
+            ("pymel.core" include nil nil [202 225])
+            ("BBF_Validation" include nil nil [226 267])
+            ("ShotgunInterface" include nil nil [268 313])
+            ("bbfPath" include nil nil [314 341])
+            ("bbfSceneCheck.general.sceneName" include nil nil [342 380])
+            ("Deadline" include nil nil [381 410])
+            ("ShaderSubmission" type
+               (:superclasses ("BaseSubmission.BaseSubmission")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("BaseSubmission" code nil (reparse-symbol indented_block_body) [499 543]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [484 488]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [471 544])
+                    ("setRenderSettings" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [673 677])
+                            ("imageFilePrefix" variable nil (reparse-symbol function_parameters) [679 694])
+                            ("camera" variable nil (reparse-symbol function_parameters) [696 702])
+                            ("renderSize" variable nil (reparse-symbol function_parameters) [704 714]))                          )
+                        (reparse-symbol indented_block_body) [651 1742])
+                    ("setupUsingFilename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1876 1880])
+                            ("deadlineClient" variable nil (reparse-symbol function_parameters) [1882 1896])
+                            ("sceneName" variable nil (reparse-symbol function_parameters) [1898 1907])
+                            ("videoFilename" variable nil (reparse-symbol function_parameters) [1909 1922])
+                            ("renderType" variable nil (reparse-symbol function_parameters) [1924 1934]))                          )
+                        (reparse-symbol indented_block_body) [1853 3129])
+                    ("generate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3245 3249])
+                            ("camera" variable nil (reparse-symbol function_parameters) [3251 3257])
+                            ("renderSize" variable nil (reparse-symbol function_parameters) [3259 3269])
+                            ("submitComment" variable nil (reparse-symbol function_parameters) [3271 3284]))                          )
+                        (reparse-symbol indented_block_body) [3232 5780]))                  
+                :type "class")
+                nil [412 5780]))          
+      :file "ShaderSubmission.py"
+      :pointmax 5780
+      :fsize 5898
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "submissionTool.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [432 441])
+            ("re" include nil nil [442 451])
+            ("PyQt4" include nil nil [452 488])
+            ("PyQt4.QtCore" include nil nil [489 523])
+            ("sip" include nil nil [525 535])
+            ("maya.OpenMayaUI" include nil nil [536 565])
+            ("maya.cmds" include nil nil [566 588])
+            ("maya.mel" include nil nil [589 604])
+            ("pymel.core" include nil nil [605 628])
+            ("bbfPath" include nil nil [629 656])
+            ("__main__" include nil nil [672 687])
+            ("bbfException.bbfExceptions" include nil nil [688 742])
+            ("submitUI" include nil nil [743 758])
+            ("ShaderSubmission" include nil nil [777 800])
+            ("ModelSubmission" include nil nil [827 849])
+            ("RigSubmission" include nil nil [875 895])
+            ("AnimationSubmission" include nil nil [919 945])
+            ("SetSubmission" include nil nil [975 995])
+            ("uiPath" variable nil nil [1115 1149])
+            ("getMayaWindow" function nil nil [1246 1357])
+            ("uiFile" variable nil nil [1453 1516])
+            ("form_class, base_class" code nil nil [1517 1564])
+            ("Submission" type
+               (:superclasses ("base_class" "form_class")
+                :members 
+                  ( ("startFrame" variable nil (reparse-symbol indented_block_body) [1612 1624])
+                    ("endFrame" variable nil (reparse-symbol indented_block_body) [1629 1640])
+                    ("renderSize" variable nil (reparse-symbol indented_block_body) [1645 1667])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1821 1861])
+                            ("self" code nil (reparse-symbol indented_block_body) [1870 1888])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1897 1923])
+                            ("gridlayout" variable nil (reparse-symbol indented_block_body) [1933 1993])
+                            ("layout" variable nil (reparse-symbol indented_block_body) [2002 2069])
+                            ("mc" code nil (reparse-symbol indented_block_body) [2078 2098])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2108 2139])
+                            ("if" code nil (reparse-symbol indented_block_body) [2148 2224])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2233 2285])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2294 2353])
+                            ("mc" code nil (reparse-symbol indented_block_body) [2362 2426])
+                            ("mc" code nil (reparse-symbol indented_block_body) [2435 2573])
+                            ("ptr" variable nil (reparse-symbol indented_block_body) [2599 2643])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2652 2711])
+                            ("gridlayout" code nil (reparse-symbol indented_block_body) [2720 2755])
+                            ("self" code nil (reparse-symbol indented_block_body) [2764 2859])
+                            ("self" code nil (reparse-symbol indented_block_body) [2868 2946])
+                            ("self" code nil (reparse-symbol indented_block_body) [2955 3007])
+                            ("self" code nil (reparse-symbol indented_block_body) [3016 3069])
+                            ("self" code nil (reparse-symbol indented_block_body) [3078 3132])
+                            ("self" code nil (reparse-symbol indented_block_body) [3141 3191])
+                            ("self" code nil (reparse-symbol indented_block_body) [3201 3223]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1780 1784])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1786 1792]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1767 3224])
+                    ("setUserDefaults" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3249 3253]))                          )
+                        (reparse-symbol indented_block_body) [3229 3738])
+                    ("storeUserDefaults" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3765 3769]))                          )
+                        (reparse-symbol indented_block_body) [3743 4032])
+                    ("getUserSettings" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4155 4159]))                          )
+                        (reparse-symbol indented_block_body) [4135 4454])
+                    ("submit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4568 4572]))                          )
+                        (reparse-symbol indented_block_body) [4557 6835])
+                    ("setDescription" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6958 6962]))                          )
+                        (reparse-symbol indented_block_body) [6939 8062]))                  
+                :type "class")
+                nil [1566 8062]))          
+      :file "submissionTool.py"
+      :pointmax 8070
+      :fsize 8245
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "submitUI.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("PyQt4" include nil nil [327 358])
+            ("try" code nil nil [360 456])
+            ("Ui_approvalWin" type
+               (:superclasses ("object")
+                :members 
+                  ( ("setupUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [503 507])
+                            ("approvalWin" variable nil (reparse-symbol function_parameters) [509 520]))                          )
+                        (reparse-symbol indented_block_body) [491 4573])
+                    ("retranslateUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4596 4600])
+                            ("approvalWin" variable nil (reparse-symbol function_parameters) [4602 4613]))                          )
+                        (reparse-symbol indented_block_body) [4578 4629]))                  
+                :type "class")
+                nil [457 4629]))          
+      :file "submitUI.py"
+      :pointmax 4630
+      :fsize 4705
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!BBF_Submission!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

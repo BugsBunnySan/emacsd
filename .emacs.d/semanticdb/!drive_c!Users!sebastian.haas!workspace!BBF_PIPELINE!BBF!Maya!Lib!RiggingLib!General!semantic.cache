@@ -1,0 +1,2043 @@
+;; Object General/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "General/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(21919 61104 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_animation_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+bb_animation_UTL.py    -    Python script
+
+DESCRIPTION:
+animation related functions
+
+AUTHORS:
+Eoghan Garvey 
+
+FUNCTIONS:
+getWorldAnimPositions()
+getWorldAnimRotations()
+
+\"\"\"" code nil nil [1 178])
+            ("pickle" include nil nil [181 194])
+            ("pymel.core" include nil nil [195 219])
+            ("pymel.core.datatypes" include nil nil [220 253])
+            ("getWorldAnimPositions" function (:arguments 
+              ( ("sourceNode" variable nil (reparse-symbol function_parameters) [282 292])
+                ("pickleFile" variable nil (reparse-symbol function_parameters) [294 304]))              ) nil [256 1035])
+            ("getWorldAnimRotations" function (:arguments 
+              ( ("sourceNode" variable nil (reparse-symbol function_parameters) [1062 1072])
+                ("pickleFile" variable nil (reparse-symbol function_parameters) [1074 1084]))              ) nil [1036 1740])
+            ("calculateOffset" function
+               (:documentation "
+     A & B will represent the keys of an animation curve
+     as 2 dimensional arrays - [ [time, vec[x,y,z]], [time, vec[x,y,z]].....]
+    "
+                :arguments 
+                  ( ("A" variable nil (reparse-symbol function_parameters) [1761 1762])
+                    ("B" variable nil (reparse-symbol function_parameters) [1764 1765]))                  )
+                nil [1741 2144])
+            ("makeLocal" function (:arguments 
+              ( ("vals" variable nil (reparse-symbol function_parameters) [2159 2163])
+                ("ctrl" variable nil (reparse-symbol function_parameters) [2165 2169]))              ) nil [2145 2872])
+            ("applyOffset" function (:arguments 
+              ( ("referenceVals" variable nil (reparse-symbol function_parameters) [2894 2907])
+                ("control" variable nil (reparse-symbol function_parameters) [2909 2916])
+                ("pos" variable nil (reparse-symbol function_parameters) [2918 2921])
+                ("rot" variable nil (reparse-symbol function_parameters) [2928 2931]))              ) nil [2878 4250])
+            ("saveAnim" function (:arguments 
+              ( ("ctrls" variable nil (reparse-symbol function_parameters) [4268 4273])
+                ("animFolder" variable nil (reparse-symbol function_parameters) [4275 4285]))              ) nil [4255 4411])
+            ("loadAnim" function (:arguments 
+              ( ("animFolder" variable nil (reparse-symbol function_parameters) [4438 4448]))              ) nil [4425 4956]))          
+      :file "bb_animation_UTL.py"
+      :pointmax 6250
+      :fsize 6452
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax '((STRING_LITERAL 5012 . 6248) ($EOI 6250 . 6250)))
+    (semanticdb-table "bb_animationDriven_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+
+animation class
+
+\"\"\"" code nil nil [1 26])
+            ("pymel.core" include nil nil [28 52])
+            ("animation" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [103 117]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [88 92]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [75 120])
+                    ("\"\"\"creates a driven key between a control and child parameter\"\"\"" code nil (reparse-symbol indented_block_body) [125 189])
+                    ("drivenKey" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [209 213])
+                            ("drive" variable nil (reparse-symbol function_parameters) [215 220])
+                            ("driv" variable nil (reparse-symbol function_parameters) [222 226])
+                            ("args" variable nil (reparse-symbol function_parameters) [228 232]))                          )
+                        (reparse-symbol indented_block_body) [195 522]))                  
+                :type "class")
+                nil [54 522]))          
+      :file "bb_animationDriven_UTL.py"
+      :pointmax 522
+      :fsize 548
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_attributes_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+
+class to create control attributes and connect them a destionation control parameter
+
+\"\"\"" code nil nil [1 95])
+            ("pymel.core" include nil nil [97 121])
+            ("attribs" type
+               (:members 
+                  ( ("makeAttr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [153 157])
+                            ("ctrl" variable nil (reparse-symbol function_parameters) [159 163])
+                            ("name" variable nil (reparse-symbol function_parameters) [165 169])
+                            ("typeVal" variable nil (reparse-symbol function_parameters) [171 178])
+                            ("keyable" variable nil (reparse-symbol function_parameters) [180 187])
+                            ("minVal" variable nil (reparse-symbol function_parameters) [189 195])
+                            ("maxVal" variable nil (reparse-symbol function_parameters) [197 203])
+                            ("dv" variable nil (reparse-symbol function_parameters) [205 207])
+                            ("enumVal" variable nil (reparse-symbol function_parameters) [209 216]))                          )
+                        (reparse-symbol indented_block_body) [140 529])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [562 566])
+                            ("attr" variable nil (reparse-symbol function_parameters) [568 572])
+                            ("destination" variable nil (reparse-symbol function_parameters) [574 585]))                          )
+                        (reparse-symbol indented_block_body) [550 656]))                  
+                :type "class")
+                nil [123 656]))          
+      :file "bb_attributes_UTL.py"
+      :pointmax 656
+      :fsize 683
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_build_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+buildUtilities.py    -    Python script
+
+DESCRIPTION:
+contains functions designed for use by builder classes (biped_builder.py etc..)
+
+AUTHORS:
+Eoghan Garvey 
+\"\"\"" code nil nil [2 168])
+            ("PyQt4" include nil nil [171 202])
+            ("pymel.core" include nil nil [203 227])
+            ("pickle" include nil nil [228 241])
+            ("os" include nil nil [242 251])
+            ("fnmatch" include nil nil [252 266])
+            ("RiggingLib.Anatomical.bb_biped_CLS" include nil nil [267 314])
+            ("\"\"\"
+def extract_Extra_Rigs():
+    
+    # search extraRig grp for components
+    
+    extraRig_GRP = ''
+    if objExists(extra_rigs_grp):
+        extraRig_GRP = PyNode('extra_rigs_grp')
+    
+    extraRigs = []
+    for each in extraRig_GRP.getChildren():
+        extraRigs.append(each)
+    
+    # add connectTo attribute
+    
+    for each in extraRigs:
+        
+    
+    
+    # disconnect constraints and export components
+    
+    # save out extra rig script files
+    
+    0
+    \"\"\"" code nil nil [316 798])
+            ("getRigFile" function
+               (:documentation "
+    charDir: Root directory of character, e.g. \\tv\\Hugglewugs\\Chars\\Henry
+    fileDir: directory inside character folder, e.g '/Rig/Data'
+    fileKey: key to search for particular file('s), e.g '*_MDL.ma'
+    isDerivative: flag whether the character is a derivative
+    
+    decription:
+    function looks for files in fileDir folder and returns list of matches found
+    if isDerivative is ON, the function will jump up to upper level character and collect matching files also.
+    "
+                :arguments 
+                  ( ("charDir" variable nil (reparse-symbol function_parameters) [816 823])
+                    ("fileDir" variable nil (reparse-symbol function_parameters) [825 832])
+                    ("fileKey" variable nil (reparse-symbol function_parameters) [834 841])
+                    ("isDerivative" variable nil (reparse-symbol function_parameters) [843 855])
+                    ("blockDuplicate" variable nil (reparse-symbol function_parameters) [857 871]))                  )
+                nil [801 2404])
+            ("getIni" function (:arguments 
+              ( ("charDir" variable nil (reparse-symbol function_parameters) [2416 2423])
+                ("isDerivative" variable nil (reparse-symbol function_parameters) [2425 2437]))              ) nil [2405 2535])
+            ("getModel" function (:arguments 
+              ( ("charDir" variable nil (reparse-symbol function_parameters) [2550 2557])
+                ("isDerivative" variable nil (reparse-symbol function_parameters) [2559 2571]))              ) nil [2537 2679])
+            ("getBlends" function (:arguments 
+              ( ("charDir" variable nil (reparse-symbol function_parameters) [2698 2705])
+                ("isDerivative" variable nil (reparse-symbol function_parameters) [2707 2719]))              ) nil [2684 2826])
+            ("getBuildRig" function (:arguments 
+              ( ("charDir" variable nil (reparse-symbol function_parameters) [2847 2854])
+                ("isDerivative" variable nil (reparse-symbol function_parameters) [2856 2868]))              ) nil [2831 2972])
+            ("getExtraRigs" function
+               (:documentation " 
+    if a derivative is to bin a particular extra rig - include the filename as an empty file in the derivative extraRigs folder 
+    
+    TODO : reduce result array to pop duplicate filenames, prioritising the first found occurance.
+    "
+                :arguments 
+                  ( ("charDir" variable nil (reparse-symbol function_parameters) [2991 2998])
+                    ("isDerivative" variable nil (reparse-symbol function_parameters) [3000 3012]))                  )
+                nil [2974 3397])
+            ("getSkinInfo" function (:arguments 
+              ( ("charDir" variable nil (reparse-symbol function_parameters) [3415 3422])
+                ("isDerivative" variable nil (reparse-symbol function_parameters) [3424 3436]))              ) nil [3399 3540])
+            ("getShapeInfo" function (:arguments 
+              ( ("charDir" variable nil (reparse-symbol function_parameters) [3559 3566])
+                ("isDerivative" variable nil (reparse-symbol function_parameters) [3568 3580]))              ) nil [3542 3684])
+            ("getRG" function (:arguments 
+              ( ("charDir" variable nil (reparse-symbol function_parameters) [3695 3702])
+                ("isDerivative" variable nil (reparse-symbol function_parameters) [3704 3716]))              ) nil [3685 3817])
+            ("getExtraScript" function (:arguments 
+              ( ("charDir" variable nil (reparse-symbol function_parameters) [3838 3845])
+                ("isDerivative" variable nil (reparse-symbol function_parameters) [3847 3859]))              ) nil [3819 3967])
+            ("saveSkins" function (:documentation "
+    searches and filters for geometry in the scene which has a skincluster
+    saves out a file containing the mesh names and their corresponding skin influence names
+    ") nil [3969 5674])
+            ("loadSkins" function
+               (:documentation "
+    loads skin influences file - adding joint influences to their corresponding meshes.
+    copies skin weights from a reference file onto current meshes
+    "
+                :arguments 
+                  ( ("skinFile" variable nil (reparse-symbol function_parameters) [5689 5697])
+                    ("skinRef" variable nil (reparse-symbol function_parameters) [5702 5709]))                  )
+                nil [5675 11782])
+            ("saveShapes" function
+               (:documentation "
+    collect all shapes that end with _CTRL suffix and save out their cv positions to external file
+    "
+                :arguments 
+                  ( ("asSelection" variable nil (reparse-symbol function_parameters) [11799 11810]))                  )
+                nil [11784 13385])
+            ("loadShapes" function
+               (:documentation "
+    load shapes from external file
+    "
+                :arguments 
+                  ( ("shapeFile" variable nil (reparse-symbol function_parameters) [13405 13414]))                  )
+                nil [13390 14091])
+            ("loadExtraRigs" function
+               (:documentation "
+    load extra rigs
+    "
+                :arguments 
+                  ( ("extraRigs" variable nil (reparse-symbol function_parameters) [14119 14128]))                  )
+                nil [14100 15261])
+            ("runExtraScript" function (:arguments 
+              ( ("extraScript" variable nil (reparse-symbol function_parameters) [15296 15307]))              ) nil [15276 16011])
+            ("saveBuild" function (:arguments 
+              ( ("CHAR" variable nil (reparse-symbol function_parameters) [16043 16047]))              ) nil [16029 16545])
+            ("rebuildCharacter" function (:arguments 
+              ( ("rigType" variable nil (reparse-symbol function_parameters) [16581 16588])
+                ("derivativeBool" variable nil (reparse-symbol function_parameters) [16590 16604]))              ) nil [16560 17493])
+            ("makeCharacter" function (:arguments 
+              ( ("char_dir" variable nil (reparse-symbol function_parameters) [17539 17547])
+                ("derivativeBool" variable nil (reparse-symbol function_parameters) [17549 17563])
+                ("saveOverride" variable nil (reparse-symbol function_parameters) [17565 17577]))              ) nil [17521 21608])
+            ("isDerivative" function (:arguments 
+              ( ("charDir" variable nil (reparse-symbol function_parameters) [21635 21642]))              ) nil [21618 21769]))          
+      :file "bb_build_UTL.py"
+      :pointmax 21769
+      :fsize 22361
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_buildNew_UTL.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "bb_buildNew_UTL.py"
+      :pointmax 12956
+      :fsize 13343
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_constraints_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+m_Constraints.py    -    Python script
+
+DESCRIPTION:
+contains constraint functions designed for general use 
+
+AUTHORS:
+Eoghan Garvey 
+\"\"\"" code nil nil [1 142])
+            ("pymel.core" include nil nil [144 168])
+            ("RiggingLib.General.bb_shapes_CLS" include nil nil [169 214])
+            ("skinMorph" function
+               (:documentation "
+    import bb_constraints_UTL as bbc
+    bbc.skinMorph()
+    "
+                :arguments 
+                  ( ("blendChannel" variable nil (reparse-symbol function_parameters) [231 243])
+                    ("driverAtt" variable nil (reparse-symbol function_parameters) [245 254])
+                    ("angleRange" variable nil (reparse-symbol function_parameters) [256 266]))                  )
+                nil [217 803])
+            ("orientBlend" function
+               (:documentation "
+    create an orient constraint using two targets
+    connect the weighting between targets to given control
+    "
+                :arguments 
+                  ( ("firstTarget" variable nil (reparse-symbol function_parameters) [820 831])
+                    ("secondTarget" variable nil (reparse-symbol function_parameters) [833 845])
+                    ("mainNode" variable nil (reparse-symbol function_parameters) [847 855])
+                    ("ctrlAtt" variable nil (reparse-symbol function_parameters) [857 864]))                  )
+                nil [804 1601])
+            ("pointBlend" function
+               (:documentation "
+    create a point constraint using two targets
+    connect the weighting between targets to given control
+    "
+                :arguments 
+                  ( ("firstTarget" variable nil (reparse-symbol function_parameters) [1621 1632])
+                    ("secondTarget" variable nil (reparse-symbol function_parameters) [1634 1646])
+                    ("mainNode" variable nil (reparse-symbol function_parameters) [1648 1656])
+                    ("ctrlAtt" variable nil (reparse-symbol function_parameters) [1658 1665]))                  )
+                nil [1606 2399])
+            ("multiParentBlend" function (:arguments 
+              ( ("targetList" variable nil (reparse-symbol function_parameters) [2421 2431])
+                ("mainNode" variable nil (reparse-symbol function_parameters) [2433 2441])
+                ("ctrlAtt" variable nil (reparse-symbol function_parameters) [2443 2450]))              ) nil [2400 2522])
+            ("isolateCtrl" function (:arguments 
+              ( ("firstTarget" variable nil (reparse-symbol function_parameters) [2540 2551])
+                ("secondTarget" variable nil (reparse-symbol function_parameters) [2553 2565])
+                ("ctrl" variable nil (reparse-symbol function_parameters) [2567 2571])
+                ("uniqueName" variable nil (reparse-symbol function_parameters) [2573 2583]))              ) nil [2524 3481])
+            ("addIkStretch" function (:arguments 
+              ( ("root" variable nil (reparse-symbol function_parameters) [3503 3507])
+                ("startJnt" variable nil (reparse-symbol function_parameters) [3509 3517])
+                ("midJnt" variable nil (reparse-symbol function_parameters) [3519 3525])
+                ("endJnt" variable nil (reparse-symbol function_parameters) [3527 3533])
+                ("CTRL" variable nil (reparse-symbol function_parameters) [3535 3539])
+                ("prefix" variable nil (reparse-symbol function_parameters) [3541 3547]))              ) nil [3486 6830])
+            ("makeTwistJointChain" function (:arguments 
+              ( ("root" variable nil (reparse-symbol function_parameters) [6864 6868])
+                ("startJnt" variable nil (reparse-symbol function_parameters) [6870 6878])
+                ("midJnt" variable nil (reparse-symbol function_parameters) [6880 6886])
+                ("endJnt" variable nil (reparse-symbol function_parameters) [6888 6894])
+                ("jntAmt_start" variable nil (reparse-symbol function_parameters) [6896 6908])
+                ("jntAmt_end" variable nil (reparse-symbol function_parameters) [6912 6922])
+                ("prefix" variable nil (reparse-symbol function_parameters) [6926 6932]))              ) nil [6840 8535])
+            ("ambiBlendEXPR" function
+               (:documentation "
+    connect pair of blend shape to XY CTRL
+    
+    example:
+    ambiBlendEXPR(PyNode('eyes_blink_CTRL'), \"peter_blends.PRB_C_Peter_BlinkFull_LRDownL_BS\", \"L\" )
+    ambiBlendEXPR(PyNode('eyes_blink_CTRL'), \"peter_blends.PRB_C_Peter_BlinkFull_LRDownR_BS\", \"R\" )
+    "
+                :arguments 
+                  ( ("CTRL" variable nil (reparse-symbol function_parameters) [8563 8567])
+                    ("blendChannel" variable nil (reparse-symbol function_parameters) [8569 8581])
+                    ("side" variable nil (reparse-symbol function_parameters) [8583 8587])
+                    ("flipY" variable nil (reparse-symbol function_parameters) [8589 8594]))                  )
+                nil [8545 10956])
+            ("doubleOC" function (:arguments 
+              ( ("main" variable nil (reparse-symbol function_parameters) [10978 10982])
+                ("targetA" variable nil (reparse-symbol function_parameters) [10984 10991])
+                ("targetB" variable nil (reparse-symbol function_parameters) [10993 11000]))              ) nil [10965 11473]))          
+      :file "bb_constraints_UTL.py"
+      :pointmax 11487
+      :fsize 11816
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_shapes_CLS.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: bb_shapes_CLS
+.. moduleauthor:: Eoghan Garvey, Ronan O Neill
+\"\"\"" code nil nil [1 81])
+            ("pymel.core" include nil nil [83 106])
+            ("ctrlShape" type
+               (:documentation "
+    This is a class for creating and placing control shapes at specific location.
+    It contains a makeShape function to create curve shapes based on a selection of argument types.
+    It also contains the applyShape function to transform the node to an argument location.
+    "
+                :members 
+                  ( ("makeShape" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [443 447])
+                            ("ctrlType" variable nil (reparse-symbol function_parameters) [449 457])
+                            ("c_name" variable nil (reparse-symbol function_parameters) [459 465])
+                            ("cSize" variable nil (reparse-symbol function_parameters) [467 472])
+                            ("cOffset" variable nil (reparse-symbol function_parameters) [476 483])
+                            ("multOffset" variable nil (reparse-symbol function_parameters) [495 505])
+                            ("asJoint" variable nil (reparse-symbol function_parameters) [517 524]))                          
+                        :documentation "
+        This function creates control shape of type 'ctrlType' at location 'xForm'.
+
+        Creates control shape of type 'ctrlType' at location 'xForm'.  
+        
+        It's shape can be one of following:
+        cross, square, cube, circle, arrow, circleY, circleX, circleZ, loc, foot, group, ball
+
+        :param ctrlType: The control type.
+        :type ctrlType: str.
+        :param c_name: The control name.
+        :type c_name: str.
+        :param cSize: The control size.
+        :type cSize: int.
+        :param cOffset: float array 3.
+        :type cOffset: float array 3.
+        :param multOffset: float array 3.
+        :type multOffset: float array 3.   
+        :returns:  PyNode object (transform).
+        :raises: StandardError
+        ")
+                        (reparse-symbol indented_block_body) [429 7801])
+                    ("applyShape" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7840 7844])
+                            ("crtlShape" variable nil (reparse-symbol function_parameters) [7846 7855])
+                            ("targetNode" variable nil (reparse-symbol function_parameters) [7857 7867])
+                            ("c_name" variable nil (reparse-symbol function_parameters) [7869 7875])
+                            ("explicitTM" variable nil (reparse-symbol function_parameters) [7885 7895])
+                            ("rot" variable nil (reparse-symbol function_parameters) [7903 7906])
+                            ("size" variable nil (reparse-symbol function_parameters) [7913 7917])
+                            ("offset" variable nil (reparse-symbol function_parameters) [7921 7927])
+                            ("asJoint" variable nil (reparse-symbol function_parameters) [7937 7944]))                          
+                        :documentation "
+        ctrlShape = type of shape (listed in makeshape doc)
+        targetNode = ctrl shape will snap to this nodes transform
+        ")
+                        (reparse-symbol indented_block_body) [7825 8778]))                  
+                :type "class")
+                nil [108 8778])
+            ("applyShape" function
+               (:documentation "
+    This function transforms a control curve to a specified location.
+
+    :param crtlShape: node to move.
+    :type crtlShape: pymel transform.
+    :param targetNode: target destination.
+    :type targetNode: pymel transform.
+    :returns: ctrlNode.
+    :raises: StandardError.
+    "
+                :arguments 
+                  ( ("crtlShape" variable nil (reparse-symbol function_parameters) [8798 8807])
+                    ("targetNode" variable nil (reparse-symbol function_parameters) [8809 8819])
+                    ("c_name" variable nil (reparse-symbol function_parameters) [8821 8827])
+                    ("rot" variable nil (reparse-symbol function_parameters) [8837 8840])
+                    ("size" variable nil (reparse-symbol function_parameters) [8847 8851])
+                    ("offset" variable nil (reparse-symbol function_parameters) [8855 8861])
+                    ("scaleFactor" variable nil (reparse-symbol function_parameters) [8871 8882])
+                    ("asJoint" variable nil (reparse-symbol function_parameters) [8892 8899]))                  )
+                nil [8783 9860]))          
+      :file "bb_shapes_CLS.py"
+      :pointmax 9866
+      :fsize 10099
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_deformers_UTL.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "bb_deformers_UTL.py"
+      :pointmax 3161
+      :fsize 3270
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_edgeToCurve_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("rig" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [34 38])
+                ("spans" variable nil (reparse-symbol function_parameters) [40 45]))              ) nil [26 366]))          
+      :file "bb_edgeToCurve_UTL.py"
+      :pointmax 366
+      :fsize 375
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_facialUI_CLS.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+bb_facialUI_CLS.py    -    Python script
+
+DESCRIPTION:
+Class used to build a user interface for facial animation.
+
+AUTHORS:
+Eoghan Garvey 
+
+NOTES:
+blendShape naming convention = REGION _ SHAPE _ CTRLTYPE _ 'BS'
+(for example - 'Mouth_Smile_LRUpR_BS')
+\"\"\"" code nil nil [1 258])
+            ("RiggingLib.General.bb_shapes_CLS" include nil nil [259 304])
+            ("RiggingLib.General.bb_constraints_UTL" include nil nil [305 355])
+            ("pymel.core" include nil nil [356 380])
+            ("reload" code nil nil [382 392])
+            ("reload" code nil nil [393 403])
+            ("facialUi" type
+               (:documentation "
+    def __init__(self, name='NoName', upperXY_ctrls = [], lowerXY_ctrls = [], joy_ctrls=[],  X_ctrls=[], Y_ctrls=[], borderSize=[10,10]):
+        
+        self.name = name
+        self.upperXY_ctrls = upperXY_ctrls
+        self.lowerXY_ctrls = lowerXY_ctrls
+        self.joy_ctrls = joy_ctrls
+        self.X_ctrls = X_ctrls
+        self.Y_ctrls = Y_ctrls
+        self.borderSize = borderSize
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [903 931])
+                            ("self" variable nil (reparse-symbol indented_block_body) [940 956])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1008 1031])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1040 1063])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1072 1091])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1154 1172])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1181 1201]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [858 862])
+                            ("blendsNode" variable nil (reparse-symbol function_parameters) [864 874])
+                            ("name" variable nil (reparse-symbol function_parameters) [876 880]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [845 1202])
+                    ("sort" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1224 1228]))                          
+                        :documentation " iterates through the blendShape node and filters the channels into the appropriate ctrl type groups")
+                        (reparse-symbol indented_block_body) [1215 5524])
+                    ("make_Up" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5553 5557])
+                            ("verticalOffset" variable nil (reparse-symbol function_parameters) [5559 5573])
+                            ("center" variable nil (reparse-symbol function_parameters) [5577 5583]))                          )
+                        (reparse-symbol indented_block_body) [5541 7702])
+                    ("make_Down" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7733 7737])
+                            ("verticalOffset" variable nil (reparse-symbol function_parameters) [7739 7753])
+                            ("center" variable nil (reparse-symbol function_parameters) [7757 7763]))                          )
+                        (reparse-symbol indented_block_body) [7719 9888])
+                    ("make_joy" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9931 9935])
+                            ("vertical" variable nil (reparse-symbol function_parameters) [9937 9945]))                          )
+                        (reparse-symbol indented_block_body) [9918 10904])
+                    ("\"\"\"
+    def make_XY(self, vertical=0, upper=True):
+        for each in enumerate(self.upperXY_ctrls):
+            num = each[0]
+            each = PyNode(each[1])
+            
+            # get name
+            name = each.name()
+            name = name.rsplit('_')[3]
+            
+            # make border
+            border = cs.ctrlShape()
+            if upper==True : border = border.makeShape('upperXY', (name+'_border'))
+            else : border = border.makeShape('lowerXY', (name+'_border'))
+            
+            #make ctrl
+            ctrl = cs.ctrlShape()
+            ctrl = ctrl.makeShape('circleX', (name+'_ctrl'))
+            ctrlShape = (ctrl.getShape()).inputs()[0]
+            ctrlShape.radius.set(0.15)
+            parent(ctrl, border)
+            
+            transformLimits(ctrl,etx=(1, 1),tx=(-1, 1))
+            if upper==True : transformLimits(ctrl,ety=(1, 1),ty=(0, 1))
+            else: transformLimits(ctrl,ety=(1, 1),ty=(0, -1))
+            transformLimits(ctrl,etz=(1, 1),tz=(0, 0))
+            
+            # position ctrl
+            border.setTranslation([2.5*num,vertical,0])
+            \"\"\"" code nil (reparse-symbol indented_block_body) [10949 12078])
+                    ("make_XY" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12095 12099])
+                            ("vertical" variable nil (reparse-symbol function_parameters) [12101 12109])
+                            ("upper" variable nil (reparse-symbol function_parameters) [12113 12118]))                          )
+                        (reparse-symbol indented_block_body) [12083 14170])
+                    ("make_downXY" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14216 14220])
+                            ("vertical" variable nil (reparse-symbol function_parameters) [14222 14230]))                          )
+                        (reparse-symbol indented_block_body) [14200 16114])
+                    ("make_border" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16165 16169])
+                            ("X" variable nil (reparse-symbol function_parameters) [16171 16172])
+                            ("Y" variable nil (reparse-symbol function_parameters) [16174 16175]))                          )
+                        (reparse-symbol indented_block_body) [16149 16188])
+                    ("setText" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16213 16217])
+                            ("name" variable nil (reparse-symbol function_parameters) [16219 16223])
+                            ("above" variable nil (reparse-symbol function_parameters) [16225 16230])
+                            ("size" variable nil (reparse-symbol function_parameters) [16238 16242]))                          )
+                        (reparse-symbol indented_block_body) [16201 16257]))                  
+                :type "class")
+                nil [405 16257]))          
+      :file "bb_facialUI_CLS.py"
+      :pointmax 16257
+      :fsize 16732
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_general_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+bb_general_UTL.py    -    Python script
+
+DESCRIPTION:
+Collection of general use functions.
+
+AUTHORS:
+Eoghan Garvey 
+\"\"\"" code nil nil [1 124])
+            ("pymel.core" include nil nil [126 150])
+            ("pickle" include nil nil [151 164])
+            ("collectTree" function (:arguments 
+              ( ("each" variable nil (reparse-symbol function_parameters) [182 186])
+                ("array" variable nil (reparse-symbol function_parameters) [188 193]))              ) nil [166 324])
+            ("connectToEclipse" function nil nil [375 494])
+            ("printPickle" function nil nil [516 800])
+            ("\"\"\" mel.eval('namespace -mv \"PRB_C_Peter_PRD\" \":\" -force;')  \"\"\"" code nil nil [810 874]))          
+      :file "bb_general_UTL.py"
+      :pointmax 1740
+      :fsize 1816
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax '((STRING_LITERAL 876 . 1740) ($EOI 1740 . 1740)))
+    (semanticdb-table "bb_geo_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+bb_geo_CLS.py    -    Python script
+
+DESCRIPTION:
+Collection of functions that create geometry.
+
+AUTHORS:
+Eoghan Garvey 
+\"\"\"" code nil nil [1 129])
+            ("pymel.core.datatypes" include nil nil [131 164])
+            ("pymel.core" include nil nil [165 188])
+            ("bridgeSurface" function
+               (:documentation " creates a nurbs plane that bridges two given points "
+                :arguments 
+                  ( ("numPatches" variable nil (reparse-symbol function_parameters) [209 219])
+                    ("startPt" variable nil (reparse-symbol function_parameters) [221 228])
+                    ("endPt" variable nil (reparse-symbol function_parameters) [230 235]))                  )
+                nil [191 1097]))          
+      :file "bb_geo_UTL.py"
+      :pointmax 1097
+      :fsize 1128
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_ikSpline_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("RiggingLib.General.bb_joints_UTL" include nil nil [25 71])
+            ("RiggingLib.General.bb_shapes_CLS" include nil nil [72 117])
+            ("RiggingLib.General.bb_transform_UTL" include nil nil [118 166])
+            ("reload" code nil nil [167 178])
+            ("reload" code nil nil [179 189])
+            ("reload" code nil nil [190 200])
+            ("rig" function (:arguments 
+              ( ("NUMJOINTS" variable nil (reparse-symbol function_parameters) [211 220]))              ) nil [203 419])
+            ("quickIkSpline" function
+               (:documentation "
+    ctrlSize=0.5
+    ctrlType='cube'
+    line = 'string_curve'
+    numJoints = 10
+    name = 'String'
+    "
+                :arguments 
+                  ( ("line" variable nil (reparse-symbol function_parameters) [438 442])
+                    ("numJoints" variable nil (reparse-symbol function_parameters) [444 453])
+                    ("name" variable nil (reparse-symbol function_parameters) [455 459])
+                    ("ctrlType" variable nil (reparse-symbol function_parameters) [461 469])
+                    ("ctrlSize" variable nil (reparse-symbol function_parameters) [478 486]))                  )
+                nil [420 4415]))          
+      :file "bb_ikSpline_UTL.py"
+      :pointmax 4415
+      :fsize 4552
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_joints_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+bb_joints_UTL.py    -    Python script
+
+DESCRIPTION:
+Collection of functions that are used to rig joints.
+
+AUTHORS:
+Eoghan Garvey 
+
+Notes:
+used by modules-
+bb_arm_CLS
+bb_leg_CLS
+bb_ribbonSpline_CLS
+bb_torso_CLS
+bb_wing_CLS
+
+by arm:
+makeTwistJointChain
+makeHingeJoint
+
+by torso:
+segmentedBones
+
+by leg:
+makeTwistJointChain
+addStretch
+makeHingeJoint
+
+by ribbonSpline:
+ribbonSpline
+\"\"\"" code nil nil [1 387])
+            ("pymel.core" include nil nil [390 414])
+            ("pymel.core" include nil nil [415 438])
+            ("RiggingLib.General.bb_math_UTL" include nil nil [439 487])
+            ("RiggingLib.General.bb_shapes_CLS" include nil nil [488 533])
+            ("RiggingLib.General.bb_transform_UTL" include nil nil [534 582])
+            ("segmentScaleToggle" function nil nil [584 865])
+            ("divideJoint" function (:arguments 
+              ( ("jnt" variable nil (reparse-symbol function_parameters) [882 885])
+                ("amount" variable nil (reparse-symbol function_parameters) [887 893])
+                ("vertical" variable nil (reparse-symbol function_parameters) [895 903])
+                ("parented" variable nil (reparse-symbol function_parameters) [910 918]))              ) nil [866 2000])
+            ("segmentedBones" function
+               (:documentation "
+    Creates a sequence of joints between two given points
+    
+    keyword arguments:
+    parented - sets whether the joints created will be parented as a chain, or as seperate unparented joints.
+    asJoints - must be set to false if 'start' / 'end' arguments are passed as coordinates rather than joint nodes.
+    offset - start and end points of the joint sequence will be offset 0.5 of a joint span towards the center.
+    "
+                :arguments 
+                  ( ("start" variable nil (reparse-symbol function_parameters) [2020 2025])
+                    ("end" variable nil (reparse-symbol function_parameters) [2027 2030])
+                    ("amount" variable nil (reparse-symbol function_parameters) [2032 2038])
+                    ("baseName" variable nil (reparse-symbol function_parameters) [2040 2048])
+                    ("parented" variable nil (reparse-symbol function_parameters) [2050 2058])
+                    ("asJoints" variable nil (reparse-symbol function_parameters) [2065 2073])
+                    ("offset" variable nil (reparse-symbol function_parameters) [2080 2086])
+                    ("yDir" variable nil (reparse-symbol function_parameters) [2094 2098]))                  )
+                nil [2001 4421])
+            ("makeStretchJointsExpression" function (:arguments 
+              ( ("jointsArray" variable nil (reparse-symbol function_parameters) [4456 4467])
+                ("theCurve" variable nil (reparse-symbol function_parameters) [4469 4477])
+                ("asScale" variable nil (reparse-symbol function_parameters) [4479 4486]))              ) nil [4423 6241])
+            ("\"\"\"
+def makeStretchySpline(start, end, amount, baseName, curve):
+    sBones = segmentedBones(start, end, amount, baseName)
+    makeStretchJointsExpression(sBones, curve)
+    return sBones
+\"\"\"" code nil nil [6246 6437])
+            ("rigTwistJoints" function (:arguments 
+              ( ("startJoint" variable nil (reparse-symbol function_parameters) [6458 6468])
+                ("endJoint" variable nil (reparse-symbol function_parameters) [6470 6478])
+                ("twistBones" variable nil (reparse-symbol function_parameters) [6480 6490])
+                ("tName" variable nil (reparse-symbol function_parameters) [6492 6497])
+                ("altUpAxis" variable nil (reparse-symbol function_parameters) [6502 6511])
+                ("wigglySpline" variable nil (reparse-symbol function_parameters) [6519 6531]))              ) nil [6439 10863])
+            ("makeTwistJointChain" function
+               (:documentation " function used by character builder to construct arms / legs twistbones "
+                :arguments 
+                  ( ("startJnt" variable nil (reparse-symbol function_parameters) [10890 10898])
+                    ("midJnt" variable nil (reparse-symbol function_parameters) [10900 10906])
+                    ("endJnt" variable nil (reparse-symbol function_parameters) [10908 10914])
+                    ("jntAmt_start" variable nil (reparse-symbol function_parameters) [10916 10928])
+                    ("jntAmt_end" variable nil (reparse-symbol function_parameters) [10932 10942])
+                    ("prefix" variable nil (reparse-symbol function_parameters) [10946 10952])
+                    ("altAxis" variable nil (reparse-symbol function_parameters) [10957 10964])
+                    ("wiggly" variable nil (reparse-symbol function_parameters) [10972 10978]))                  )
+                nil [10866 13445])
+            ("makeTwistJointChain_ARM" function
+               (:documentation " function used by character builder to construct arms / legs twistbones "
+                :arguments 
+                  ( ("startJnt" variable nil (reparse-symbol function_parameters) [13475 13483])
+                    ("midJnt" variable nil (reparse-symbol function_parameters) [13485 13491])
+                    ("endJnt" variable nil (reparse-symbol function_parameters) [13493 13499])
+                    ("jntAmt_start" variable nil (reparse-symbol function_parameters) [13501 13513])
+                    ("jntAmt_end" variable nil (reparse-symbol function_parameters) [13517 13527])
+                    ("prefix" variable nil (reparse-symbol function_parameters) [13531 13537])
+                    ("altAxis" variable nil (reparse-symbol function_parameters) [13542 13549])
+                    ("wiggly" variable nil (reparse-symbol function_parameters) [13557 13563]))                  )
+                nil [13447 15959])
+            ("makeHingeJoint" function (:arguments 
+              ( ("upperJnt" variable nil (reparse-symbol function_parameters) [15980 15988])
+                ("lowerJnt" variable nil (reparse-symbol function_parameters) [15990 15998])
+                ("name" variable nil (reparse-symbol function_parameters) [16000 16004])
+                ("scaleVal" variable nil (reparse-symbol function_parameters) [16006 16014])
+                ("rotateAxis" variable nil (reparse-symbol function_parameters) [16020 16030]))              ) nil [15961 17929])
+            ("addStretch" function
+               (:documentation "
+    Used in leg setup
+    "
+                :arguments 
+                  ( ("name" variable nil (reparse-symbol function_parameters) [17945 17949])
+                    ("jntA" variable nil (reparse-symbol function_parameters) [17951 17955])
+                    ("jntB" variable nil (reparse-symbol function_parameters) [17957 17961])
+                    ("jntC" variable nil (reparse-symbol function_parameters) [17963 17967])
+                    ("ikHndl" variable nil (reparse-symbol function_parameters) [17969 17975])
+                    ("rigHook" variable nil (reparse-symbol function_parameters) [17977 17984])
+                    ("ctrl" variable nil (reparse-symbol function_parameters) [17986 17990])
+                    ("extraLeg" variable nil (reparse-symbol function_parameters) [17992 18000]))                  )
+                nil [17930 22360])
+            ("rigWiggle" function (:arguments 
+              ( ("twistJointChain" variable nil (reparse-symbol function_parameters) [22375 22390])
+                ("side" variable nil (reparse-symbol function_parameters) [22392 22396])
+                ("thighJoint" variable nil (reparse-symbol function_parameters) [22398 22408])
+                ("kneeJoint" variable nil (reparse-symbol function_parameters) [22410 22419])
+                ("shinJoint" variable nil (reparse-symbol function_parameters) [22421 22430])
+                ("heelJoint" variable nil (reparse-symbol function_parameters) [22432 22441])
+                ("wiggleLocs" variable nil (reparse-symbol function_parameters) [22443 22453])
+                ("leg_CTRL" variable nil (reparse-symbol function_parameters) [22455 22463])
+                ("rig_grp" variable nil (reparse-symbol function_parameters) [22465 22472])
+                ("leg" variable nil (reparse-symbol function_parameters) [22474 22477]))              ) nil [22361 27661]))          
+      :file "bb_joints_UTL.py"
+      :pointmax 27661
+      :fsize 28387
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_transform_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+bb_transform_UTL.py    -    Python script
+
+DESCRIPTION:
+Collection of transform related functions 
+
+AUTHORS:
+Eoghan Garvey 
+\"\"\"" code nil nil [1 132])
+            ("pymel.core.datatypes" include nil nil [134 167])
+            ("pymel.core" include nil nil [168 192])
+            ("math" include nil nil [193 204])
+            ("pymel.core" include nil nil [205 228])
+            ("makeMatrix" function (:arguments 
+              ( ("vec" variable nil (reparse-symbol function_parameters) [245 248]))              ) nil [230 615])
+            ("zeroOut" function
+               (:documentation "
+    returnType : parent group of last item in 'sel'
+    "
+                :arguments 
+                  ( ("sel" variable nil (reparse-symbol function_parameters) [629 632]))                  )
+                nil [617 1173])
+            ("snapTo" function (:arguments 
+              ( ("source" variable nil (reparse-symbol function_parameters) [1186 1192])
+                ("target" variable nil (reparse-symbol function_parameters) [1194 1200]))              ) nil [1175 1260])
+            ("snapPos" function (:arguments 
+              ( ("source" variable nil (reparse-symbol function_parameters) [1277 1283])
+                ("target" variable nil (reparse-symbol function_parameters) [1285 1291]))              ) nil [1265 1361])
+            ("getNonPerpendicular" function (:arguments 
+              ( ("currentObject" variable nil (reparse-symbol function_parameters) [1391 1404]))              ) nil [1366 2069]))          
+      :file "bb_transform_UTL.py"
+      :pointmax 2073
+      :fsize 2150
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_math_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+bb_math_UTL.py    -    Python script
+
+DESCRIPTION:
+Collection of functions math functions.
+
+AUTHORS:
+Eoghan Garvey 
+\"\"\"" code nil nil [1 124])
+            ("math" include nil nil [126 137])
+            ("cross" function
+               (:documentation "
+    return cross product of two lists of len(3)
+    "
+                :arguments 
+                  ( ("a" variable nil (reparse-symbol function_parameters) [149 150])
+                    ("b" variable nil (reparse-symbol function_parameters) [152 153]))                  )
+                nil [139 334])
+            ("divideVector" function (:arguments 
+              ( ("start" variable nil (reparse-symbol function_parameters) [354 359])
+                ("end" variable nil (reparse-symbol function_parameters) [361 364])
+                ("amount" variable nil (reparse-symbol function_parameters) [366 372]))              ) nil [337 593])
+            ("vectorLength" function (:arguments 
+              ( ("vec" variable nil (reparse-symbol function_parameters) [613 616]))              ) nil [596 799])
+            ("addVectors" function (:arguments 
+              ( ("vecA" variable nil (reparse-symbol function_parameters) [819 823])
+                ("vecB" variable nil (reparse-symbol function_parameters) [825 829]))              ) nil [804 902])
+            ("subtractVectors" function (:arguments 
+              ( ("vecA" variable nil (reparse-symbol function_parameters) [923 927])
+                ("vecB" variable nil (reparse-symbol function_parameters) [929 933]))              ) nil [903 1006])
+            ("midVector" function (:arguments 
+              ( ("vecA" variable nil (reparse-symbol function_parameters) [1021 1025])
+                ("vecB" variable nil (reparse-symbol function_parameters) [1027 1031]))              ) nil [1007 1109]))          
+      :file "bb_math_UTL.py"
+      :pointmax 1109
+      :fsize 1155
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_ribbonSpline_CLS.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+bb_ribbonSpline_CLS.py    -    Python script
+
+DESCRIPTION:
+creates ribbon twisty spline.
+
+AUTHORS:
+Eoghan Garvey 
+\"\"\"" code nil nil [1 122])
+            ("RiggingLib.Anatomical.bb_rigClass_CLS" include nil nil [124 175])
+            ("RiggingLib.General.bb_joints_UTL" include nil nil [176 221])
+            ("RiggingLib.General.bb_shapes_CLS" include nil nil [222 267])
+            ("RiggingLib.General.bb_geo_UTL" include nil nil [268 311])
+            ("RiggingLib.General.bb_math_UTL" include nil nil [312 355])
+            ("pymel.core" include nil nil [356 380])
+            ("reload" code nil nil [382 393])
+            ("reload" code nil nil [394 405])
+            ("reload" code nil nil [406 417])
+            ("ribbonSpline" type
+               (:superclasses ("rcl.rigClass")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [568 592])
+                            ("self" variable nil (reparse-symbol indented_block_body) [605 633])
+                            ("self" variable nil (reparse-symbol indented_block_body) [642 666])
+                            ("self" variable nil (reparse-symbol indented_block_body) [675 691])
+                            ("self" variable nil (reparse-symbol indented_block_body) [700 727]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [480 484])
+                            ("jointAmt" variable nil (reparse-symbol function_parameters) [486 494])
+                            ("startPoint" variable nil (reparse-symbol function_parameters) [500 510])
+                            ("endPoint" variable nil (reparse-symbol function_parameters) [522 530])
+                            ("name" variable nil (reparse-symbol function_parameters) [543 547]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [467 728])
+                    ("createBones" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [758 762]))                          )
+                        (reparse-symbol indented_block_body) [742 1212])
+                    ("createCTRLS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1241 1245]))                          )
+                        (reparse-symbol indented_block_body) [1225 1544])
+                    ("createRig" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1567 1571]))                          
+                        :documentation "
+        curve_and_IkHandle = jc.rigTwistbones(sBones[:1][0] , sBones[-1:][0],alternateTwistStart='default')
+        twistCurve = curve_and_IkHandle[0]
+        jc.makeStretchJointsExpression (jointsArray, theCurve)
+        return curve_and_IkHandle 
+        ")
+                        (reparse-symbol indented_block_body) [1553 5712])
+                    ("rigCTRLS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5743 5747])
+                            ("bottomCTRL" variable nil (reparse-symbol function_parameters) [5749 5759])
+                            ("topCTRL" variable nil (reparse-symbol function_parameters) [5761 5768])
+                            ("twistCurve" variable nil (reparse-symbol function_parameters) [5770 5780]))                          )
+                        (reparse-symbol indented_block_body) [5730 6037])
+                    ("create" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6057 6061]))                          )
+                        (reparse-symbol indented_block_body) [6046 6181]))                  
+                :type "class")
+                nil [419 6181]))          
+      :file "bb_ribbonSpline_CLS.py"
+      :pointmax 6248
+      :fsize 6419
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_skinning_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+bb_skinnig_UTL.py    -    Python script
+
+DESCRIPTION:
+Collection of skinning related functions 
+
+AUTHORS:
+Eoghan Garvey 
+\"\"\"" code nil nil [1 129])
+            ("pymel.core" include nil nil [130 154])
+            ("pymel.core" include nil nil [155 178])
+            ("pickle" include nil nil [179 192])
+            ("pymel.core" include nil nil [194 217])
+            ("maya.cmds" include nil nil [218 242])
+            ("lockSkinWeights" function (:arguments 
+              ( ("geo" variable nil (reparse-symbol function_parameters) [264 267]))              ) nil [244 624])
+            ("getSkinVertValues" function
+               (:documentation "
+    pass the skinCluster node as an argument
+    select a group of verts with which we want to record skincluster values
+    the function will return a list with values : [vert, influenceJoint(ij), ij-value]
+    "
+                :arguments 
+                  ( ("sCluster" variable nil (reparse-symbol function_parameters) [647 655])
+                    ("asSelection" variable nil (reparse-symbol function_parameters) [657 668]))                  )
+                nil [625 1622])
+            ("setSkinVertValues" function (:arguments 
+              ( ("sCluster" variable nil (reparse-symbol function_parameters) [1646 1654])
+                ("vals" variable nil (reparse-symbol function_parameters) [1656 1660]))              ) nil [1624 1761])
+            ("dumpSkinVertValues" function (:arguments 
+              ( ("sCluster" variable nil (reparse-symbol function_parameters) [1786 1794])
+                ("FILE" variable nil (reparse-symbol function_parameters) [1796 1800]))              ) nil [1763 1924])
+            ("loadSkinVertValues" function (:arguments 
+              ( ("sCluster" variable nil (reparse-symbol function_parameters) [1949 1957])
+                ("FILE" variable nil (reparse-symbol function_parameters) [1959 1963]))              ) nil [1926 2084])
+            ("getSkinCluster" function (:arguments 
+              ( ("source_mesh" variable nil (reparse-symbol function_parameters) [2163 2174]))              ) nil [2144 2312])
+            ("getSkinJoints" function (:arguments 
+              ( ("source_mesh" variable nil (reparse-symbol function_parameters) [2332 2343]))              ) nil [2314 2519])
+            ("transferSkin" function (:arguments 
+              ( ("source_geo" variable nil (reparse-symbol function_parameters) [2538 2548])
+                ("target_geo" variable nil (reparse-symbol function_parameters) [2550 2560]))              ) nil [2521 2848])
+            ("transferSkin_selected" function nil nil [2854 2967])
+            ("transferSkinFromReference" function
+               (:documentation "same as transferSkin but accomodates for a name"
+                :arguments 
+                  ( ("source_geo" variable nil (reparse-symbol function_parameters) [2999 3009])
+                    ("dest_geo" variable nil (reparse-symbol function_parameters) [3011 3019]))                  )
+                nil [2969 4061])
+            ("resetSkins" function (:arguments 
+              ( ("geo_set" variable nil (reparse-symbol function_parameters) [4078 4085]))              ) nil [4063 4440])
+            ("getDeformedMesh" function (:arguments 
+              ( ("tmNode" variable nil (reparse-symbol function_parameters) [4469 4475]))              ) nil [4449 4921])
+            ("hasSkin" function (:arguments 
+              ( ("geo" variable nil (reparse-symbol function_parameters) [4938 4941]))              ) nil [4926 5120])
+            ("extract_skeleton" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [5142 5146])
+                ("namespaceLen" variable nil (reparse-symbol function_parameters) [5160 5172]))              ) nil [5121 5850])
+            ("transferSkin_costume" function (:arguments 
+              ( ("source_mesh" variable nil (reparse-symbol function_parameters) [5876 5887])
+                ("target_mesh" variable nil (reparse-symbol function_parameters) [5889 5900])
+                ("target_joints_group" variable nil (reparse-symbol function_parameters) [5902 5921]))              ) nil [5851 6238])
+            ("optimize_costumeJoints_group" function (:documentation "remove the joints from COSTUME_skeleton group which arent part of a skincluster") nil [6239 6379]))          
+      :file "bb_skinning_UTL.py"
+      :pointmax 6379
+      :fsize 6579
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_spline_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("maya.cmds" include nil nil [26 48])
+            ("spline" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [102 116]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [87 91]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [74 117])
+                    ("\"\"\"makeCurveDynamic\"\"\"" code nil (reparse-symbol indented_block_body) [123 145])
+                    ("makeCurveDynamic" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [180 184])
+                            ("curveName" variable nil (reparse-symbol function_parameters) [186 195]))                          )
+                        (reparse-symbol indented_block_body) [159 357])
+                    ("\"\"\"Create Cluster\"\"\"" code nil (reparse-symbol indented_block_body) [379 399])
+                    ("createCluster" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [427 431])
+                            ("clusterCurve" variable nil (reparse-symbol function_parameters) [433 445]))                          )
+                        (reparse-symbol indented_block_body) [409 641])
+                    ("getClusters" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [799 803])
+                            ("clusterCurve" variable nil (reparse-symbol function_parameters) [805 817]))                          )
+                        (reparse-symbol indented_block_body) [783 1321])
+                    ("splineIk" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1351 1355])
+                            ("joints" variable nil (reparse-symbol function_parameters) [1357 1363])
+                            ("curv" variable nil (reparse-symbol function_parameters) [1365 1369])
+                            ("solType" variable nil (reparse-symbol function_parameters) [1371 1378])
+                            ("name" variable nil (reparse-symbol function_parameters) [1380 1384])
+                            ("ccv" variable nil (reparse-symbol function_parameters) [1386 1389]))                          )
+                        (reparse-symbol indented_block_body) [1338 1730])
+                    ("createBlends" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1769 1773])
+                            ("name" variable nil (reparse-symbol function_parameters) [1775 1779])
+                            ("targets" variable nil (reparse-symbol function_parameters) [1781 1788])
+                            ("source" variable nil (reparse-symbol function_parameters) [1790 1796]))                          )
+                        (reparse-symbol indented_block_body) [1752 1901]))                  
+                :type "class")
+                nil [56 1901]))          
+      :file "bb_spline_UTL.py"
+      :pointmax 1901
+      :fsize 1970
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bb_utilities_UTL.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+
+Generic class that defines common methods
+
+\"\"\"" code nil nil [1 52])
+            ("pymel.core" include nil nil [54 78])
+            ("bb_shapes_CLS" include nil nil [79 105])
+            ("pymel.core" include nil nil [106 129])
+            ("utilities" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [180 194]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [165 169]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [152 202])
+                    ("\"\"\"Constraints\"\"\"" code nil (reparse-symbol indented_block_body) [228 245])
+                    ("constraint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [270 274])
+                            ("par" variable nil (reparse-symbol function_parameters) [276 279])
+                            ("chd" variable nil (reparse-symbol function_parameters) [281 284])
+                            ("type" variable nil (reparse-symbol function_parameters) [286 290])
+                            ("bool" variable nil (reparse-symbol function_parameters) [292 296])
+                            ("weight" variable nil (reparse-symbol function_parameters) [298 304]))                          )
+                        (reparse-symbol indented_block_body) [255 1209])
+                    ("\"\"\"parent arrays of children and parent nodes\"\"\"" code nil (reparse-symbol indented_block_body) [1231 1279])
+                    ("parentArray" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1305 1309])
+                            ("arr" variable nil (reparse-symbol function_parameters) [1311 1314]))                          )
+                        (reparse-symbol indented_block_body) [1289 1480])
+                    ("\"\"\"parent constrain arrays of children and parent nodes using the constraint class above \"\"\"" code nil (reparse-symbol indented_block_body) [1490 1582])
+                    ("conArray" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1606 1610])
+                            ("parArray" variable nil (reparse-symbol function_parameters) [1612 1620])
+                            ("chdArray" variable nil (reparse-symbol function_parameters) [1622 1630])
+                            ("conType" variable nil (reparse-symbol function_parameters) [1632 1639]))                          )
+                        (reparse-symbol indented_block_body) [1593 1872])
+                    ("\"\"\"Make PyNodes\"\"\"" code nil (reparse-symbol indented_block_body) [1895 1913])
+                    ("convertToPynodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1944 1948])
+                            ("selection" variable nil (reparse-symbol function_parameters) [1950 1959]))                          )
+                        (reparse-symbol indented_block_body) [1923 2101])
+                    ("\"\"\"Duplicate selection and rename\"\"\"" code nil (reparse-symbol indented_block_body) [2124 2160])
+                    ("dupSelection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2183 2187])
+                            ("selection" variable nil (reparse-symbol function_parameters) [2189 2198])
+                            ("newName" variable nil (reparse-symbol function_parameters) [2200 2207]))                          )
+                        (reparse-symbol indented_block_body) [2166 2302])
+                    ("\"\"\"Rename selection with chosen strings\"\"\"" code nil (reparse-symbol indented_block_body) [2325 2367])
+                    ("updateNames" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2389 2393])
+                            ("selection" variable nil (reparse-symbol function_parameters) [2395 2404])
+                            ("text1" variable nil (reparse-symbol function_parameters) [2406 2411])
+                            ("text2" variable nil (reparse-symbol function_parameters) [2413 2418]))                          )
+                        (reparse-symbol indented_block_body) [2373 2910])
+                    ("\"\"\"collect nodes by suffix\"\"\"" code nil (reparse-symbol indented_block_body) [2956 2985])
+                    ("collectNodesBySuffix" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3016 3020])
+                            ("typ" variable nil (reparse-symbol function_parameters) [3022 3025])
+                            ("strVal" variable nil (reparse-symbol function_parameters) [3027 3033]))                          )
+                        (reparse-symbol indented_block_body) [2991 3257])
+                    ("\"\"\"Collect nodes by string argument\"\"\"" code nil (reparse-symbol indented_block_body) [3271 3309])
+                    ("collectNodesByString" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3349 3353])
+                            ("typ" variable nil (reparse-symbol function_parameters) [3355 3358])
+                            ("strVal" variable nil (reparse-symbol function_parameters) [3360 3366]))                          )
+                        (reparse-symbol indented_block_body) [3324 3607])
+                    ("\"\"\"create an array of controls\"\"\"" code nil (reparse-symbol indented_block_body) [3617 3650])
+                    ("createControls" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3686 3690])
+                            ("targets" variable nil (reparse-symbol function_parameters) [3692 3699])
+                            ("baseName" variable nil (reparse-symbol function_parameters) [3701 3709])
+                            ("cType" variable nil (reparse-symbol function_parameters) [3711 3716])
+                            ("cSize" variable nil (reparse-symbol function_parameters) [3718 3723]))                          )
+                        (reparse-symbol indented_block_body) [3667 4454]))                  
+                :type "class")
+                nil [131 4454])
+            ("extract_skeleton" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [4480 4484])
+                ("namespaceLen" variable nil (reparse-symbol function_parameters) [4498 4510]))              ) nil [4459 5306])
+            ("connect_costume" function (:arguments 
+              ( ("referece_namespace" variable nil (reparse-symbol function_parameters) [5327 5345]))              ) nil [5307 5815])
+            ("disconnect_costume" function nil nil [5816 6346]))          
+      :file "bb_utilities_UTL.py"
+      :pointmax 6346
+      :fsize 6554
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbf_skinweights.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.cmds" include nil nil [1 25])
+            ("cPickle" include nil nil [26 47])
+            ("os.path" include nil nil [48 62])
+            ("BBF_Validation" include nil nil [63 113])
+            ("pymel.core" include nil nil [114 137])
+            ("BBF_environ" include nil nil [138 156])
+            ("bbfEnv" variable nil nil [157 186])
+            ("getDerivGeo" function nil nil [213 734])
+            ("getSkinVertValues" function
+               (:documentation "
+    pass the skinCluster node as an argument
+    select a group of verts with which we want to record skincluster values
+    the function will return a list with values : [vert, influenceJoint(ij), ij-value]
+    "
+                :arguments 
+                  ( ("mesh" variable nil (reparse-symbol function_parameters) [781 785]))                  )
+                nil [759 1884])
+            ("getWeights" function (:arguments 
+              ( ("mesh" variable nil (reparse-symbol function_parameters) [1919 1923]))              ) nil [1904 2263])
+            ("exportData" function (:arguments 
+              ( ("data" variable nil (reparse-symbol function_parameters) [2280 2284])
+                ("dFile" variable nil (reparse-symbol function_parameters) [2286 2291]))              ) nil [2265 2370])
+            ("\"\"\"
+def saveWeights(dFile):
+    weightsData = []
+    derivative_geo = getDerivGeo()
+    for each in derivative_geo:
+        weightsData.append([each, getWeights(each)])
+    exportData(weightsData, dFile)
+\"\"\"" code nil nil [2371 2578])
+            ("getInfluenceList" function (:arguments 
+              ( ("weights" variable nil (reparse-symbol function_parameters) [2611 2618]))              ) nil [2590 3080])
+            ("addInfluences" function (:arguments 
+              ( ("influenceList" variable nil (reparse-symbol function_parameters) [3100 3113])
+                ("nameSpace" variable nil (reparse-symbol function_parameters) [3115 3124]))              ) nil [3082 3484])
+            ("processWeights" function (:arguments 
+              ( ("weights" variable nil (reparse-symbol function_parameters) [3562 3569])
+                ("geoNamespace" variable nil (reparse-symbol function_parameters) [3571 3583])
+                ("mainRigNS" variable nil (reparse-symbol function_parameters) [3585 3594])
+                ("derivRigNS" variable nil (reparse-symbol function_parameters) [3596 3606]))              ) nil [3543 4982])
+            ("addInfluences" function (:arguments 
+              ( ("influenceList" variable nil (reparse-symbol function_parameters) [5022 5035])
+                ("asSelected" variable nil (reparse-symbol function_parameters) [5037 5047])
+                ("selectedIndexes" variable nil (reparse-symbol function_parameters) [5055 5070]))              ) nil [5004 6828])
+            ("loadPickledFile" function (:arguments 
+              ( ("FILE" variable nil (reparse-symbol function_parameters) [6849 6853]))              ) nil [6829 6949])
+            ("loadWeights" function
+               (:documentation "
+    fullname = pm.ls(sl=True)[0].name()
+    nameSpace = fullname[:fullname.rfind(':')]
+    assetName = fullname.rsplit(':')[1]
+    currentPath = cmds.file(q=1, sn=1)
+    charIndex = currentPath.find('Chars/')
+
+    pathName = '%sChars/%s/Published/%s_C_%s_Weights.wt' % (currentPath[:charIndex], assetName, bbfEnv.project.code, assetName)
+    "
+                :arguments 
+                  ( ("pathName" variable nil (reparse-symbol function_parameters) [6966 6974])
+                    ("geoNS" variable nil (reparse-symbol function_parameters) [6976 6981])
+                    ("mainRigNS" variable nil (reparse-symbol function_parameters) [6983 6992])
+                    ("derivRigNS" variable nil (reparse-symbol function_parameters) [6994 7004])
+                    ("network" variable nil (reparse-symbol function_parameters) [7006 7013]))                  )
+                nil [6950 7822])
+            ("saveWeights" function nil nil [7823 8537])
+            ("replaceGeoName" function (:arguments 
+              ( ("weightFile" variable nil (reparse-symbol function_parameters) [8557 8567])
+                ("oldName" variable nil (reparse-symbol function_parameters) [8569 8576])
+                ("newName" variable nil (reparse-symbol function_parameters) [8578 8585]))              ) nil [8538 9151]))          
+      :file "bbf_skinweights.py"
+      :pointmax 9182
+      :fsize 9439
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bin.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("Dress_MSH" code nil nil [11 20])
+            ("PUB_Dress_MSH" code nil nil [35 48])
+            ("PUB_Dress_MSH" code nil nil [186 199])
+            ("joints" code nil nil [214 220])
+            ("Pocket_MSH" code nil nil [369 379])
+            ("PUB_Pocket_MSH" code nil nil [394 408])
+            ("PUB_Pocket_MSH" code nil nil [547 561])
+            ("joints" code nil nil [576 582])
+            ("Body_MSH" code nil nil [732 740])
+            ("PUB_Body_MSH" code nil nil [755 767])
+            ("PUB_Body_MSH" code nil nil [904 916])
+            ("joints" code nil nil [931 937])
+            ("Jacket_MSH" code nil nil [1085 1095])
+            ("PUB_Jacket_MSH" code nil nil [1110 1124])
+            ("PUB_Jacket_MSH" code nil nil [1263 1277])
+            ("joints" code nil nil [1292 1298])
+            ("Button1_MSH" code nil nil [1448 1459])
+            ("PUB_Button1_MSH" code nil nil [1474 1489])
+            ("PUB_Button1_MSH" code nil nil [1629 1644])
+            ("joints" code nil nil [1659 1665])
+            ("Button2_MSH" code nil nil [1816 1827])
+            ("PUB_Button2_MSH" code nil nil [1842 1857])
+            ("PUB_Button2_MSH" code nil nil [1997 2012])
+            ("joints" code nil nil [2027 2033])
+            ("Button3_MSH" code nil nil [2184 2195])
+            ("PUB_Button3_MSH" code nil nil [2210 2225])
+            ("PUB_Button3_MSH" code nil nil [2365 2380])
+            ("joints" code nil nil [2395 2401])
+            ("ButtonThread3_MSH" code nil nil [2552 2569])
+            ("PUB_ButtonThread3_MSH" code nil nil [2584 2605])
+            ("PUB_ButtonThread3_MSH" code nil nil [2751 2772])
+            ("joints" code nil nil [2787 2793])
+            ("ButtonThread2_MSH" code nil nil [2950 2967])
+            ("PUB_ButtonThread2_MSH" code nil nil [2982 3003])
+            ("PUB_ButtonThread2_MSH" code nil nil [3149 3170])
+            ("joints" code nil nil [3185 3191])
+            ("ButtonThread1_MSH" code nil nil [3348 3365])
+            ("PUB_ButtonThread1_MSH" code nil nil [3380 3401])
+            ("PUB_ButtonThread1_MSH" code nil nil [3547 3568])
+            ("joints" code nil nil [3583 3589])
+            ("L_EyeColor_MSH" code nil nil [3746 3760])
+            ("PUB_L_EyeColor_MSH" code nil nil [3775 3793])
+            ("PUB_L_EyeColor_MSH" code nil nil [3936 3954])
+            ("joints" code nil nil [3969 3975])
+            ("L_EyeColor_MSH1" code nil nil [4129 4144])
+            ("PUB_L_EyeCornea_MSH" code nil nil [4159 4178])
+            ("PUB_L_EyeCornea_MSH" code nil nil [4335 4354])
+            ("joints" code nil nil [4369 4375])
+            ("L_EyeCorneaHiLight_MSH" code nil nil [4530 4552])
+            ("PUB_L_EyeCorneaHiLight_MSH" code nil nil [4567 4593])
+            ("PUB_L_EyeCorneaHiLight_MSH" code nil nil [4744 4770])
+            ("joints" code nil nil [4785 4791])
+            ("R_EyeColor_MSH" code nil nil [4959 4973])
+            ("PUB_R_EyeColor_MSH" code nil nil [4988 5006])
+            ("PUB_R_EyeColor_MSH" code nil nil [5149 5167])
+            ("joints" code nil nil [5182 5188])
+            ("R_EyeCornea_MSH" code nil nil [5342 5357])
+            ("PUB_R_EyeCornea_MSH" code nil nil [5372 5391])
+            ("PUB_R_EyeCornea_MSH" code nil nil [5535 5554])
+            ("joints" code nil nil [5569 5575])
+            ("R_EyeCorneaHiLight_MSH" code nil nil [5730 5752])
+            ("PUB_R_EyeCorneaHiLight_MSH" code nil nil [5767 5793])
+            ("PUB_R_EyeCorneaHiLight_MSH" code nil nil [5944 5970])
+            ("joints" code nil nil [5985 5991])
+            ("Tongue_MSH" code nil nil [6156 6166])
+            ("PUB_Tongue_MSH" code nil nil [6181 6195])
+            ("PUB_Tongue_MSH" code nil nil [6334 6348])
+            ("joints" code nil nil [6363 6369])
+            ("UpperTeeth_MSH" code nil nil [6519 6533])
+            ("PUB_UpperTeeth_MSH" code nil nil [6548 6566])
+            ("PUB_UpperTeeth_MSH" code nil nil [6709 6727])
+            ("joints" code nil nil [6742 6748])
+            ("HeadBandFlower_MSH" code nil nil [6902 6920])
+            ("PUB_HeadBandFlower_MSH" code nil nil [6935 6957])
+            ("PUB_HeadBandFlower_MSH" code nil nil [7104 7126])
+            ("joints" code nil nil [7141 7147])
+            ("HeadBand_MSH" code nil nil [7305 7317])
+            ("PUB_HeadBand_MSH" code nil nil [7332 7348])
+            ("PUB_HeadBand_MSH" code nil nil [7489 7505])
+            ("joints" code nil nil [7520 7526])
+            ("Whisker01_MSH" code nil nil [7678 7691])
+            ("PUB_Whisker01_MSH" code nil nil [7706 7723])
+            ("PUB_Whisker01_MSH" code nil nil [7865 7882])
+            ("joints" code nil nil [7897 7903])
+            ("Whisker02_MSH" code nil nil [8056 8069])
+            ("PUB_Whisker02_MSH" code nil nil [8084 8101])
+            ("PUB_Whisker02_MSH" code nil nil [8243 8260])
+            ("joints" code nil nil [8275 8281])
+            ("Whisker03_MSH" code nil nil [8434 8447])
+            ("PUB_Whisker03_MSH" code nil nil [8462 8479])
+            ("PUB_Whisker03_MSH" code nil nil [8621 8638])
+            ("joints" code nil nil [8653 8659])
+            ("Whisker04_MSH" code nil nil [8812 8825])
+            ("PUB_Whisker04_MSH" code nil nil [8840 8857])
+            ("PUB_Whisker04_MSH" code nil nil [8999 9016])
+            ("joints" code nil nil [9031 9037])
+            ("Whisker05_MSH" code nil nil [9190 9203])
+            ("PUB_Whisker05_MSH" code nil nil [9218 9235])
+            ("PUB_Whisker05_MSH" code nil nil [9377 9394])
+            ("joints" code nil nil [9409 9415])
+            ("Whisker06_MSH" code nil nil [9568 9581])
+            ("PUB_Whisker06_MSH" code nil nil [9596 9613])
+            ("PUB_Whisker06_MSH" code nil nil [9755 9772])
+            ("joints" code nil nil [9787 9793])
+            ("Whisker07_MSH" code nil nil [9946 9959])
+            ("PUB_Whisker07_MSH" code nil nil [9974 9991])
+            ("PUB_Whisker07_MSH" code nil nil [10133 10150])
+            ("joints" code nil nil [10165 10171])
+            ("Whisker08_MSH" code nil nil [10324 10337])
+            ("PUB_Whisker08_MSH" code nil nil [10352 10369])
+            ("PUB_Whisker08_MSH" code nil nil [10511 10528])
+            ("joints" code nil nil [10543 10549])
+            ("Whisker09_MSH" code nil nil [10702 10715])
+            ("PUB_Whisker09_MSH" code nil nil [10730 10747])
+            ("PUB_Whisker09_MSH" code nil nil [10889 10906])
+            ("joints" code nil nil [10921 10927])
+            ("Whisker10_MSH" code nil nil [11080 11093])
+            ("PUB_Whisker10_MSH" code nil nil [11108 11125])
+            ("PUB_Whisker10_MSH" code nil nil [11267 11284])
+            ("joints" code nil nil [11299 11305])
+            ("mel" code nil nil [11450 12377])
+            ("\"\"\"
+select -cl  ;\\n\\
+select -r Body_MSH ;\\n\\
+reorderDeformers \"Lips_Wire_Upper\" \"Peter_BS\" \"All|Geo|Body|Body_MSH\";\\n\\
+select -cl  ;'
+\"\"\"" code nil nil [12380 12517])
+            ("mel" code nil nil [12522 12612])
+            ("mel" code nil nil [12613 12703])
+            ("connectAttr" code nil nil [12719 12798])
+            ("connectAttr" code nil nil [12799 12878])
+            ("connectAttr" code nil nil [12887 12952])
+            ("connectAttr" code nil nil [12953 13016])
+            ("connectAttr" code nil nil [13017 13082])
+            ("connectAttr" code nil nil [13083 13146])
+            ("connectAttr" code nil nil [13147 13212])
+            ("connectAttr" code nil nil [13213 13276])
+            ("connectAttr" code nil nil [13284 13354])
+            ("connectAttr" code nil nil [13355 13425])
+            ("connectAttr" code nil nil [13426 13500])
+            ("connectAttr" code nil nil [13501 13575])
+            ("connectAttr" code nil nil [13584 13658])
+            ("connectAttr" code nil nil [13659 13733])
+            ("connectAttr" code nil nil [13734 13802])
+            ("connectAttr" code nil nil [13803 13871])
+            ("connectAttr" code nil nil [13872 13944])
+            ("connectAttr" code nil nil [13945 14017])
+            ("connectAttr" code nil nil [14018 14096])
+            ("connectAttr" code nil nil [14097 14175])
+            ("connectAttr" code nil nil [14176 14246])
+            ("connectAttr" code nil nil [14247 14317])
+            ("connectAttr" code nil nil [14318 14382])
+            ("connectAttr" code nil nil [14383 14447])
+            ("bb_constraints_UTL" include nil nil [14450 14483])
+            ("bcon" code nil nil [14485 14583])
+            ("bcon" code nil nil [14584 14682])
+            ("bcon" code nil nil [14684 14779])
+            ("bcon" code nil nil [14780 14875])
+            ("bcon" code nil nil [14878 14970])
+            ("bcon" code nil nil [14971 15063])
+            ("bcon" code nil nil [15065 15162])
+            ("bcon" code nil nil [15163 15260])
+            ("pymel.core" include nil nil [15305 15329])
+            ("bb_deformers_UTL" include nil nil [15330 15361])
+            ("buildExtra" function nil nil [15363 37390]))          
+      :file "bin.py"
+      :pointmax 37390
+      :fsize 38254
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax '((punctuation 11430 . 11431) (NAME 11397 . 11412) (punctuation 11417 . 11418) (NAME 11377 . 11394) (BACKQUOTE 11394 . 11395) (SEMICOLON 11395 . 11396) (NAME 11332 . 11338) (punctuation 11339 . 11340) (NAME 11286 . 11292) (punctuation 11298 . 11299) (NUMBER_LITERAL 11225 . 11226) (NUMBER_LITERAL 11230 . 11231) (BACKQUOTE 11254 . 11255) (SEMICOLON 11255 . 11256) (NAME 11186 . 11192) (punctuation 11193 . 11194) (NAME 11170 . 11183) (BACKQUOTE 11183 . 11184) (SEMICOLON 11184 . 11185) (NAME 11128 . 11134) (punctuation 11135 . 11136) (punctuation 11052 . 11053) (NAME 11019 . 11034) (punctuation 11039 . 11040) (NAME 10999 . 11016) (BACKQUOTE 11016 . 11017) (SEMICOLON 11017 . 11018) (NAME 10954 . 10960) (punctuation 10961 . 10962) (NAME 10908 . 10914) (punctuation 10920 . 10921) (NUMBER_LITERAL 10847 . 10848) (NUMBER_LITERAL 10852 . 10853) (BACKQUOTE 10876 . 10877) (SEMICOLON 10877 . 10878) (NAME 10808 . 10814) (punctuation 10815 . 10816) (NAME 10792 . 10805) (BACKQUOTE 10805 . 10806) (SEMICOLON 10806 . 10807) (NAME 10750 . 10756) (punctuation 10757 . 10758) (punctuation 10674 . 10675) (NAME 10641 . 10656) (punctuation 10661 . 10662) (NAME 10621 . 10638) (BACKQUOTE 10638 . 10639) (SEMICOLON 10639 . 10640) (NAME 10576 . 10582) (punctuation 10583 . 10584) (NAME 10530 . 10536) (punctuation 10542 . 10543) (NUMBER_LITERAL 10469 . 10470) (NUMBER_LITERAL 10474 . 10475) (BACKQUOTE 10498 . 10499) (SEMICOLON 10499 . 10500) (NAME 10430 . 10436) (punctuation 10437 . 10438) (NAME 10414 . 10427) (BACKQUOTE 10427 . 10428) (SEMICOLON 10428 . 10429) (NAME 10372 . 10378) (punctuation 10379 . 10380) (punctuation 10296 . 10297) (NAME 10263 . 10278) (punctuation 10283 . 10284) (NAME 10243 . 10260) (BACKQUOTE 10260 . 10261) (SEMICOLON 10261 . 10262) (NAME 10198 . 10204) (punctuation 10205 . 10206) (NAME 10152 . 10158) (punctuation 10164 . 10165) (NUMBER_LITERAL 10091 . 10092) (NUMBER_LITERAL 10096 . 10097) (BACKQUOTE 10120 . 10121) (SEMICOLON 10121 . 10122) (NAME 10052 . 10058) (punctuation 10059 . 10060) (NAME 10036 . 10049) (BACKQUOTE 10049 . 10050) (SEMICOLON 10050 . 10051) (NAME 9994 . 10000) (punctuation 10001 . 10002) (punctuation 9918 . 9919) (NAME 9885 . 9900) (punctuation 9905 . 9906) (NAME 9865 . 9882) (BACKQUOTE 9882 . 9883) (SEMICOLON 9883 . 9884) (NAME 9820 . 9826) (punctuation 9827 . 9828) (NAME 9774 . 9780) (punctuation 9786 . 9787) (NUMBER_LITERAL 9713 . 9714) (NUMBER_LITERAL 9718 . 9719) (BACKQUOTE 9742 . 9743) (SEMICOLON 9743 . 9744) (NAME 9674 . 9680) (punctuation 9681 . 9682) (NAME 9658 . 9671) (BACKQUOTE 9671 . 9672) (SEMICOLON 9672 . 9673) (NAME 9616 . 9622) (punctuation 9623 . 9624) (punctuation 9540 . 9541) (NAME 9507 . 9522) (punctuation 9527 . 9528) (NAME 9487 . 9504) (BACKQUOTE 9504 . 9505) (SEMICOLON 9505 . 9506) (NAME 9442 . 9448) (punctuation 9449 . 9450) (NAME 9396 . 9402) (punctuation 9408 . 9409) (NUMBER_LITERAL 9335 . 9336) (NUMBER_LITERAL 9340 . 9341) (BACKQUOTE 9364 . 9365) (SEMICOLON 9365 . 9366) (NAME 9296 . 9302) (punctuation 9303 . 9304) (NAME 9280 . 9293) (BACKQUOTE 9293 . 9294) (SEMICOLON 9294 . 9295) (NAME 9238 . 9244) (punctuation 9245 . 9246) (punctuation 9162 . 9163) (NAME 9129 . 9144) (punctuation 9149 . 9150) (NAME 9109 . 9126) (BACKQUOTE 9126 . 9127) (SEMICOLON 9127 . 9128) (NAME 9064 . 9070) (punctuation 9071 . 9072) (NAME 9018 . 9024) (punctuation 9030 . 9031) (NUMBER_LITERAL 8957 . 8958) (NUMBER_LITERAL 8962 . 8963) (BACKQUOTE 8986 . 8987) (SEMICOLON 8987 . 8988) (NAME 8918 . 8924) (punctuation 8925 . 8926) (NAME 8902 . 8915) (BACKQUOTE 8915 . 8916) (SEMICOLON 8916 . 8917) (NAME 8860 . 8866) (punctuation 8867 . 8868) (punctuation 8784 . 8785) (NAME 8751 . 8766) (punctuation 8771 . 8772) (NAME 8731 . 8748) (BACKQUOTE 8748 . 8749) (SEMICOLON 8749 . 8750) (NAME 8686 . 8692) (punctuation 8693 . 8694) (NAME 8640 . 8646) (punctuation 8652 . 8653) (NUMBER_LITERAL 8579 . 8580) (NUMBER_LITERAL 8584 . 8585) (BACKQUOTE 8608 . 8609) (SEMICOLON 8609 . 8610) (NAME 8540 . 8546) (punctuation 8547 . 8548) (NAME 8524 . 8537) (BACKQUOTE 8537 . 8538) (SEMICOLON 8538 . 8539) (NAME 8482 . 8488) (punctuation 8489 . 8490) (punctuation 8406 . 8407) (NAME 8373 . 8388) (punctuation 8393 . 8394) (NAME 8353 . 8370) (BACKQUOTE 8370 . 8371) (SEMICOLON 8371 . 8372) (NAME 8308 . 8314) (punctuation 8315 . 8316) (NAME 8262 . 8268) (punctuation 8274 . 8275) (NUMBER_LITERAL 8201 . 8202) (NUMBER_LITERAL 8206 . 8207) (BACKQUOTE 8230 . 8231) (SEMICOLON 8231 . 8232) (NAME 8162 . 8168) (punctuation 8169 . 8170) (NAME 8146 . 8159) (BACKQUOTE 8159 . 8160) (SEMICOLON 8160 . 8161) (NAME 8104 . 8110) (punctuation 8111 . 8112) (punctuation 8028 . 8029) (NAME 7995 . 8010) (punctuation 8015 . 8016) (NAME 7975 . 7992) (BACKQUOTE 7992 . 7993) (SEMICOLON 7993 . 7994) (NAME 7930 . 7936) (punctuation 7937 . 7938) (NAME 7884 . 7890) (punctuation 7896 . 7897) (NUMBER_LITERAL 7823 . 7824) (NUMBER_LITERAL 7828 . 7829) (BACKQUOTE 7852 . 7853) (SEMICOLON 7853 . 7854) (NAME 7784 . 7790) (punctuation 7791 . 7792) (NAME 7768 . 7781) (BACKQUOTE 7781 . 7782) (SEMICOLON 7782 . 7783) (NAME 7726 . 7732) (punctuation 7733 . 7734) (punctuation 7650 . 7651) (NAME 7617 . 7632) (punctuation 7637 . 7638) (NAME 7598 . 7614) (BACKQUOTE 7614 . 7615) (SEMICOLON 7615 . 7616) (NAME 7553 . 7559) (punctuation 7560 . 7561) (NAME 7507 . 7513) (punctuation 7519 . 7520) (NUMBER_LITERAL 7447 . 7448) (NUMBER_LITERAL 7452 . 7453) (BACKQUOTE 7476 . 7477) (SEMICOLON 7477 . 7478) (NAME 7408 . 7414) (punctuation 7415 . 7416) (NAME 7393 . 7405) (BACKQUOTE 7405 . 7406) (SEMICOLON 7406 . 7407) (NAME 7351 . 7357) (punctuation 7358 . 7359) (punctuation 7277 . 7278) (NAME 7244 . 7259) (punctuation 7264 . 7265) (NAME 7219 . 7241) (BACKQUOTE 7241 . 7242) (SEMICOLON 7242 . 7243) (NAME 7174 . 7180) (punctuation 7181 . 7182) (NAME 7128 . 7134) (punctuation 7140 . 7141) (NUMBER_LITERAL 7062 . 7063) (NUMBER_LITERAL 7067 . 7068) (BACKQUOTE 7091 . 7092) (SEMICOLON 7092 . 7093) (NAME 7023 . 7029) (punctuation 7030 . 7031) (NAME 7002 . 7020) (BACKQUOTE 7020 . 7021) (SEMICOLON 7021 . 7022) (NAME 6960 . 6966) (punctuation 6967 . 6968) (punctuation 6874 . 6875) (NAME 6841 . 6856) (punctuation 6861 . 6862) (NAME 6820 . 6838) (BACKQUOTE 6838 . 6839) (SEMICOLON 6839 . 6840) (NAME 6775 . 6781) (punctuation 6782 . 6783) (NAME 6729 . 6735) (punctuation 6741 . 6742) (NUMBER_LITERAL 6667 . 6668) (NUMBER_LITERAL 6672 . 6673) (BACKQUOTE 6696 . 6697) (SEMICOLON 6697 . 6698) (NAME 6628 . 6634) (punctuation 6635 . 6636) (NAME 6611 . 6625) (BACKQUOTE 6625 . 6626) (SEMICOLON 6626 . 6627) (NAME 6569 . 6575) (punctuation 6576 . 6577) (punctuation 6491 . 6492) (NAME 6458 . 6473) (punctuation 6478 . 6479) (NAME 6441 . 6455) (BACKQUOTE 6455 . 6456) (SEMICOLON 6456 . 6457) (NAME 6396 . 6402) (punctuation 6403 . 6404) (NAME 6350 . 6356) (punctuation 6362 . 6363) (NUMBER_LITERAL 6292 . 6293) (NUMBER_LITERAL 6297 . 6298) (BACKQUOTE 6321 . 6322) (SEMICOLON 6322 . 6323) (NAME 6253 . 6259) (punctuation 6260 . 6261) (NAME 6240 . 6250) (BACKQUOTE 6250 . 6251) (SEMICOLON 6251 . 6252) (NAME 6198 . 6204) (punctuation 6205 . 6206) (punctuation 6125 . 6126) (NAME 6092 . 6107) (punctuation 6112 . 6113) (NAME 6063 . 6089) (BACKQUOTE 6089 . 6090) (SEMICOLON 6090 . 6091) (NAME 6018 . 6024) (punctuation 6025 . 6026) (NAME 5972 . 5978) (punctuation 5984 . 5985) (NUMBER_LITERAL 5902 . 5903) (NUMBER_LITERAL 5907 . 5908) (BACKQUOTE 5931 . 5932) (SEMICOLON 5932 . 5933) (NAME 5863 . 5869) (punctuation 5870 . 5871) (NAME 5838 . 5860) (BACKQUOTE 5860 . 5861) (SEMICOLON 5861 . 5862) (NAME 5796 . 5802) (punctuation 5803 . 5804) (punctuation 5702 . 5703) (NAME 5669 . 5684) (punctuation 5689 . 5690) (NAME 5647 . 5666) (BACKQUOTE 5666 . 5667) (SEMICOLON 5667 . 5668) (NAME 5602 . 5608) (punctuation 5609 . 5610) (NAME 5556 . 5562) (punctuation 5568 . 5569) (NUMBER_LITERAL 5493 . 5494) (NUMBER_LITERAL 5498 . 5499) (BACKQUOTE 5522 . 5523) (SEMICOLON 5523 . 5524) (NAME 5454 . 5460) (punctuation 5461 . 5462) (NAME 5436 . 5451) (BACKQUOTE 5451 . 5452) (SEMICOLON 5452 . 5453) (NAME 5394 . 5400) (punctuation 5401 . 5402) (punctuation 5314 . 5315) (NAME 5281 . 5296) (punctuation 5301 . 5302) (NAME 5260 . 5278) (BACKQUOTE 5278 . 5279) (SEMICOLON 5279 . 5280) (NAME 5215 . 5221) (punctuation 5222 . 5223) (NAME 5169 . 5175) (punctuation 5181 . 5182) (NUMBER_LITERAL 5107 . 5108) (NUMBER_LITERAL 5112 . 5113) (BACKQUOTE 5136 . 5137) (SEMICOLON 5137 . 5138) (NAME 5068 . 5074) (punctuation 5075 . 5076) (NAME 5051 . 5065) (BACKQUOTE 5065 . 5066) (SEMICOLON 5066 . 5067) (NAME 5009 . 5015) (punctuation 5016 . 5017) (punctuation 4925 . 4926) (NAME 4892 . 4907) (punctuation 4912 . 4913) (NAME 4863 . 4889) (BACKQUOTE 4889 . 4890) (SEMICOLON 4890 . 4891) (NAME 4818 . 4824) (punctuation 4825 . 4826) (NAME 4772 . 4778) (punctuation 4784 . 4785) (NUMBER_LITERAL 4702 . 4703) (NUMBER_LITERAL 4707 . 4708) (BACKQUOTE 4731 . 4732) (SEMICOLON 4732 . 4733) (NAME 4663 . 4669) (punctuation 4670 . 4671) (NAME 4638 . 4660) (BACKQUOTE 4660 . 4661) (SEMICOLON 4661 . 4662) (NAME 4596 . 4602) (punctuation 4603 . 4604) (punctuation 4502 . 4503) (NAME 4469 . 4484) (punctuation 4489 . 4490) (NAME 4447 . 4466) (BACKQUOTE 4466 . 4467) (SEMICOLON 4467 . 4468) (NAME 4402 . 4408) (punctuation 4409 . 4410) (NAME 4356 . 4362) (punctuation 4368 . 4369) (NUMBER_LITERAL 4293 . 4294) (NUMBER_LITERAL 4298 . 4299) (BACKQUOTE 4322 . 4323) (SEMICOLON 4323 . 4324) (NAME 4254 . 4260) (punctuation 4261 . 4262) (NAME 4236 . 4251) (BACKQUOTE 4251 . 4252) (SEMICOLON 4252 . 4253) (NAME 4181 . 4187) (punctuation 4188 . 4189) (punctuation 4101 . 4102) (NAME 4068 . 4083) (punctuation 4088 . 4089) (NAME 4047 . 4065) (BACKQUOTE 4065 . 4066) (SEMICOLON 4066 . 4067) (NAME 4002 . 4008) (punctuation 4009 . 4010) (NAME 3956 . 3962) (punctuation 3968 . 3969) (NUMBER_LITERAL 3894 . 3895) (NUMBER_LITERAL 3899 . 3900) (BACKQUOTE 3923 . 3924) (SEMICOLON 3924 . 3925) (NAME 3855 . 3861) (punctuation 3862 . 3863) (NAME 3838 . 3852) (BACKQUOTE 3852 . 3853) (SEMICOLON 3853 . 3854) (NAME 3796 . 3802) (punctuation 3803 . 3804) (punctuation 3718 . 3719) (NAME 3685 . 3700) (punctuation 3705 . 3706) (NAME 3661 . 3682) (BACKQUOTE 3682 . 3683) (SEMICOLON 3683 . 3684) (NAME 3616 . 3622) (punctuation 3623 . 3624) (NAME 3570 . 3576) (punctuation 3582 . 3583) (NUMBER_LITERAL 3505 . 3506) (NUMBER_LITERAL 3510 . 3511) (BACKQUOTE 3534 . 3535) (SEMICOLON 3535 . 3536) (NAME 3466 . 3472) (punctuation 3473 . 3474) (NAME 3446 . 3463) (BACKQUOTE 3463 . 3464) (SEMICOLON 3464 . 3465) (NAME 3404 . 3410) (punctuation 3411 . 3412) (punctuation 3320 . 3321) (NAME 3287 . 3302) (punctuation 3307 . 3308) (NAME 3263 . 3284) (BACKQUOTE 3284 . 3285) (SEMICOLON 3285 . 3286) (NAME 3218 . 3224) (punctuation 3225 . 3226) (NAME 3172 . 3178) (punctuation 3184 . 3185) (NUMBER_LITERAL 3107 . 3108) (NUMBER_LITERAL 3112 . 3113) (BACKQUOTE 3136 . 3137) (SEMICOLON 3137 . 3138) (NAME 3068 . 3074) (punctuation 3075 . 3076) (NAME 3048 . 3065) (BACKQUOTE 3065 . 3066) (SEMICOLON 3066 . 3067) (NAME 3006 . 3012) (punctuation 3013 . 3014) (punctuation 2922 . 2923) (NAME 2889 . 2904) (punctuation 2909 . 2910) (NAME 2865 . 2886) (BACKQUOTE 2886 . 2887) (SEMICOLON 2887 . 2888) (NAME 2820 . 2826) (punctuation 2827 . 2828) (NAME 2774 . 2780) (punctuation 2786 . 2787) (NUMBER_LITERAL 2709 . 2710) (NUMBER_LITERAL 2714 . 2715) (BACKQUOTE 2738 . 2739) (SEMICOLON 2739 . 2740) (NAME 2670 . 2676) (punctuation 2677 . 2678) (NAME 2650 . 2667) (BACKQUOTE 2667 . 2668) (SEMICOLON 2668 . 2669) (NAME 2608 . 2614) (punctuation 2615 . 2616) (punctuation 2524 . 2525) (NAME 2491 . 2506) (punctuation 2511 . 2512) (NAME 2473 . 2488) (BACKQUOTE 2488 . 2489) (SEMICOLON 2489 . 2490) (NAME 2428 . 2434) (punctuation 2435 . 2436) (NAME 2382 . 2388) (punctuation 2394 . 2395) (NUMBER_LITERAL 2323 . 2324) (NUMBER_LITERAL 2328 . 2329) (BACKQUOTE 2352 . 2353) (SEMICOLON 2353 . 2354) (NAME 2284 . 2290) (punctuation 2291 . 2292) (NAME 2270 . 2281) (BACKQUOTE 2281 . 2282) (SEMICOLON 2282 . 2283) (NAME 2228 . 2234) (punctuation 2235 . 2236) (punctuation 2156 . 2157) (NAME 2123 . 2138) (punctuation 2143 . 2144) (NAME 2105 . 2120) (BACKQUOTE 2120 . 2121) (SEMICOLON 2121 . 2122) (NAME 2060 . 2066) (punctuation 2067 . 2068) (NAME 2014 . 2020) (punctuation 2026 . 2027) (NUMBER_LITERAL 1955 . 1956) (NUMBER_LITERAL 1960 . 1961) (BACKQUOTE 1984 . 1985) (SEMICOLON 1985 . 1986) (NAME 1916 . 1922) (punctuation 1923 . 1924) (NAME 1902 . 1913) (BACKQUOTE 1913 . 1914) (SEMICOLON 1914 . 1915) (NAME 1860 . 1866) (punctuation 1867 . 1868) (punctuation 1788 . 1789) (NAME 1755 . 1770) (punctuation 1775 . 1776) (NAME 1737 . 1752) (BACKQUOTE 1752 . 1753) (SEMICOLON 1753 . 1754) (NAME 1692 . 1698) (punctuation 1699 . 1700) (NAME 1646 . 1652) (punctuation 1658 . 1659) (NUMBER_LITERAL 1587 . 1588) (NUMBER_LITERAL 1592 . 1593) (BACKQUOTE 1616 . 1617) (SEMICOLON 1617 . 1618) (NAME 1548 . 1554) (punctuation 1555 . 1556) (NAME 1534 . 1545) (BACKQUOTE 1545 . 1546) (SEMICOLON 1546 . 1547) (NAME 1492 . 1498) (punctuation 1499 . 1500) (punctuation 1420 . 1421) (NAME 1387 . 1402) (punctuation 1407 . 1408) (NAME 1370 . 1384) (BACKQUOTE 1384 . 1385) (SEMICOLON 1385 . 1386) (NAME 1325 . 1331) (punctuation 1332 . 1333) (NAME 1279 . 1285) (punctuation 1291 . 1292) (NUMBER_LITERAL 1221 . 1222) (NUMBER_LITERAL 1226 . 1227) (BACKQUOTE 1250 . 1251) (SEMICOLON 1251 . 1252) (NAME 1182 . 1188) (punctuation 1189 . 1190) (NAME 1169 . 1179) (BACKQUOTE 1179 . 1180) (SEMICOLON 1180 . 1181) (NAME 1127 . 1133) (punctuation 1134 . 1135) (punctuation 1057 . 1058) (NAME 1024 . 1039) (punctuation 1044 . 1045) (NAME 1009 . 1021) (BACKQUOTE 1021 . 1022) (SEMICOLON 1022 . 1023) (NAME 964 . 970) (punctuation 971 . 972) (NAME 918 . 924) (punctuation 930 . 931) (NUMBER_LITERAL 862 . 863) (NUMBER_LITERAL 867 . 868) (BACKQUOTE 891 . 892) (SEMICOLON 892 . 893) (NAME 823 . 829) (punctuation 830 . 831) (NAME 812 . 820) (BACKQUOTE 820 . 821) (SEMICOLON 821 . 822) (NAME 770 . 776) (punctuation 777 . 778) (punctuation 704 . 705) (NAME 671 . 686) (punctuation 691 . 692) (NAME 654 . 668) (BACKQUOTE 668 . 669) (SEMICOLON 669 . 670) (NAME 609 . 615) (punctuation 616 . 617) (NAME 563 . 569) (punctuation 575 . 576) (NUMBER_LITERAL 505 . 506) (NUMBER_LITERAL 510 . 511) (BACKQUOTE 534 . 535) (SEMICOLON 535 . 536) (NAME 466 . 472) (punctuation 473 . 474) (NAME 453 . 463) (BACKQUOTE 463 . 464) (SEMICOLON 464 . 465) (NAME 411 . 417) (punctuation 418 . 419) (punctuation 341 . 342) (NAME 308 . 323) (punctuation 328 . 329) (NAME 292 . 305) (BACKQUOTE 305 . 306) (SEMICOLON 306 . 307) (NAME 247 . 253) (punctuation 254 . 255) (NAME 201 . 207) (punctuation 213 . 214) (NUMBER_LITERAL 144 . 145) (NUMBER_LITERAL 149 . 150) (BACKQUOTE 173 . 174) (SEMICOLON 174 . 175) (NAME 105 . 111) (punctuation 112 . 113) (NAME 93 . 102) (BACKQUOTE 102 . 103) (SEMICOLON 103 . 104) (NAME 51 . 57) (punctuation 58 . 59)))
+    (semanticdb-table "Connect_FacialUI.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("RiggingLib.General.facial" include nil nil [1 41])
+            ("pymel.core" include nil nil [42 65])
+            ("maya.cmds" include nil nil [66 90])
+            ("RiggingLib.General.facial" include nil nil [91 131])
+            ("os" include nil nil [132 141])
+            ("reload" code nil nil [142 154])
+            ("importUI" function (:arguments 
+              ( ("facialUI_path" variable nil (reparse-symbol function_parameters) [170 183]))              ) nil [157 442])
+            ("addBlends" function (:arguments 
+              ( ("template" variable nil (reparse-symbol function_parameters) [458 466])
+                ("Blend_NS" variable nil (reparse-symbol function_parameters) [468 476]))              ) nil [444 1598])
+            ("connect" function (:arguments 
+              ( ("json_path" variable nil (reparse-symbol function_parameters) [1612 1621])
+                ("Blend_NS" variable nil (reparse-symbol function_parameters) [1623 1631]))              ) nil [1600 1912])
+            ("run" function (:arguments 
+              ( ("facialUI_path" variable nil (reparse-symbol function_parameters) [1922 1935])
+                ("json_path" variable nil (reparse-symbol function_parameters) [1937 1946]))              ) nil [1914 2532]))          
+      :file "Connect_FacialUI.py"
+      :pointmax 2532
+      :fsize 2611
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "CostumeRigging_Utilities.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("create_skeleton" function
+               (:documentation " creates a copy of the source objects skeleton and  "
+                :arguments 
+                  ( ("source" variable nil (reparse-symbol function_parameters) [47 53])
+                    ("target" variable nil (reparse-symbol function_parameters) [55 61]))                  )
+                nil [27 731])
+            ("connect_skeleton" function
+               (:documentation "  constrains target skeleton to the source skeleton"
+                :arguments 
+                  ( ("source_skeleton" variable nil (reparse-symbol function_parameters) [754 769])
+                    ("target_skeleton" variable nil (reparse-symbol function_parameters) [771 786]))                  )
+                nil [733 1236])
+            ("disconnect_skeleton" function
+               (:documentation " disconnects a wardrobe skeleton from its parent character "
+                :arguments 
+                  ( ("skeleton_group" variable nil (reparse-symbol function_parameters) [1262 1276]))                  )
+                nil [1238 1664])
+            ("transferSkin" function
+               (:documentation " adds a skinCluster using group of joints, then copies over skin weights"
+                :arguments 
+                  ( ("source_mesh" variable nil (reparse-symbol function_parameters) [1683 1694])
+                    ("target_mesh" variable nil (reparse-symbol function_parameters) [1696 1707])
+                    ("target_joints_group" variable nil (reparse-symbol function_parameters) [1709 1728]))                  )
+                nil [1666 2280])
+            ("deleteUnusedJoints" function
+               (:documentation "deletes unused joints"
+                :arguments 
+                  ( ("geo_node" variable nil (reparse-symbol function_parameters) [2305 2313]))                  )
+                nil [2282 2700]))          
+      :file "CostumeRigging_Utilities.py"
+      :pointmax 2700
+      :fsize 2770
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "DisconnectDressingRig.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("json" include nil nil [25 36])
+            ("getData" function (:arguments 
+              ( ("constraints" variable nil (reparse-symbol function_parameters) [50 61]))              ) nil [38 1137])
+            ("recordConstraints" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [1161 1165]))              ) nil [1139 1475])
+            ("deleteConstraints" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [1498 1502]))              ) nil [1476 1612])
+            ("disconnect_skeleton" function (:arguments 
+              ( ("skeleton_group" variable nil (reparse-symbol function_parameters) [1637 1651]))              ) nil [1613 2090])
+            ("run" function (:arguments 
+              ( ("_namespace" variable nil (reparse-symbol function_parameters) [2099 2109]))              ) nil [2091 2625]))          
+      :file "DisconnectDressingRig.py"
+      :pointmax 2625
+      :fsize 2695
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "DynamicControl.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("RiggingLib.General.bb_shapes_CLS" include nil nil [1 47])
+            ("pymel.core" include nil nil [48 71])
+            ("maya.cmds" include nil nil [72 96])
+            ("RiggingLib.General.bb_constraints_UTL" include nil nil [97 148])
+            ("reload" code nil nil [149 160])
+            ("\"\"\"
+
+Build hierarchy
+Build individual
+
+\"\"\"" code nil nil [161 203])
+            ("dynamic_control" function (:arguments 
+              ( ("root" variable nil (reparse-symbol function_parameters) [225 229])
+                ("target" variable nil (reparse-symbol function_parameters) [231 237]))              ) nil [205 2651])
+            ("run" function nil nil [2653 2722])
+            ("createSkinJoint" function (:arguments 
+              ( ("ctrl_1" variable nil (reparse-symbol function_parameters) [2744 2750])
+                ("ctrl_2" variable nil (reparse-symbol function_parameters) [2752 2758]))              ) nil [2724 3093])
+            ("if" code nil nil [3094 3658]))          
+      :file "DynamicControl.py"
+      :pointmax 3658
+      :fsize 3765
+      :lastmodtime '(21923 39153 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "facial.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+use case:
+
+1 user runs tool
+2 tool loads JSON file using bbfEnv to resolve path
+    2.1 user manually JSON file
+3 read JSON file and try to connect each shape to a control using associated arguments
+
+
+import RiggingLib.General.facial as face
+reload(face)
+blendShapeNode = 'Head_BS_Deformer'
+jsonFile = r\"C:\\Users\\Eoghan Garvey\\Documents\\BrownBag\\Pipeline\\Tools\\BBF_PIPELINE\\BBF\\MAYA\\Lib\\RiggingLib\\Projects\\BNG\\facialmap.json\"
+bs_namespace = 'PUB'
+fc = face.facialRig(blendShapeNode, jsonFile, bs_namespace)
+fc.getblendshapeMap()
+fc.connect(blends=True, multipliers=True, correctives=True)
+\"\"\"" code nil nil [3 600])
+            ("json" include nil nil [602 613])
+            ("pymel.core" include nil nil [614 637])
+            ("RiggingLib.General.bb_constraints_UTL" include nil nil [638 688])
+            ("maya.cmds" include nil nil [689 713])
+            ("facialRig" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [830 854])
+                            ("self" variable nil (reparse-symbol indented_block_body) [863 899])
+                            ("self" variable nil (reparse-symbol indented_block_body) [908 940])
+                            ("self" variable nil (reparse-symbol indented_block_body) [949 985])
+                            ("self" variable nil (reparse-symbol indented_block_body) [994 1013])
+                            ("if" code nil (reparse-symbol indented_block_body) [1022 1087])
+                            ("if" code nil (reparse-symbol indented_block_body) [1095 1164])
+                            ("return" code nil (reparse-symbol indented_block_body) [1172 1183]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [753 757])
+                            ("blendShapeNode" variable nil (reparse-symbol function_parameters) [759 773])
+                            ("jsonFile" variable nil (reparse-symbol function_parameters) [775 783])
+                            ("bs_namespace" variable nil (reparse-symbol function_parameters) [785 797])
+                            ("ctrl_namespace" variable nil (reparse-symbol function_parameters) [802 816]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [740 1184])
+                    ("getblendshapeMap" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1210 1214]))                          )
+                        (reparse-symbol indented_block_body) [1189 1392])
+                    ("rig_linear" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1412 1416])
+                            ("blendShape_channel" variable nil (reparse-symbol function_parameters) [1418 1436])
+                            ("control" variable nil (reparse-symbol function_parameters) [1438 1445])
+                            ("axis" variable nil (reparse-symbol function_parameters) [1447 1451])
+                            ("sign" variable nil (reparse-symbol function_parameters) [1457 1461]))                          )
+                        (reparse-symbol indented_block_body) [1397 1936])
+                    ("rig_xyPos" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1955 1959])
+                            ("blendShape_channel" variable nil (reparse-symbol function_parameters) [1961 1979])
+                            ("control" variable nil (reparse-symbol function_parameters) [1981 1988])
+                            ("dirX" variable nil (reparse-symbol function_parameters) [1990 1994]))                          )
+                        (reparse-symbol indented_block_body) [1941 2194])
+                    ("rig_xyNeg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2213 2217])
+                            ("blendShape_channel" variable nil (reparse-symbol function_parameters) [2219 2237])
+                            ("control" variable nil (reparse-symbol function_parameters) [2239 2246])
+                            ("dirX" variable nil (reparse-symbol function_parameters) [2248 2252]))                          )
+                        (reparse-symbol indented_block_body) [2199 2451])
+                    ("rig_xy" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2467 2471])
+                            ("blendShape_channel" variable nil (reparse-symbol function_parameters) [2473 2491])
+                            ("control" variable nil (reparse-symbol function_parameters) [2493 2500])
+                            ("dirX" variable nil (reparse-symbol function_parameters) [2502 2506])
+                            ("dirY" variable nil (reparse-symbol function_parameters) [2508 2512]))                          )
+                        (reparse-symbol indented_block_body) [2456 2782])
+                    ("rig_xyOpen" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2802 2806])
+                            ("blendShape_channel" variable nil (reparse-symbol function_parameters) [2808 2826])
+                            ("control" variable nil (reparse-symbol function_parameters) [2828 2835])
+                            ("dirX" variable nil (reparse-symbol function_parameters) [2837 2841])
+                            ("dirY" variable nil (reparse-symbol function_parameters) [2843 2847]))                          )
+                        (reparse-symbol indented_block_body) [2787 2868])
+                    ("addCorrective" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2891 2895])
+                            ("corrective" variable nil (reparse-symbol function_parameters) [2897 2907])
+                            ("targetA" variable nil (reparse-symbol function_parameters) [2909 2916])
+                            ("targetB" variable nil (reparse-symbol function_parameters) [2918 2925])
+                            ("override" variable nil (reparse-symbol function_parameters) [2927 2935]))                          )
+                        (reparse-symbol indented_block_body) [2873 4151])
+                    ("addInbetween" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4173 4177])
+                            ("target" variable nil (reparse-symbol function_parameters) [4179 4185])
+                            ("inbetween" variable nil (reparse-symbol function_parameters) [4187 4196])
+                            ("value" variable nil (reparse-symbol function_parameters) [4198 4203])
+                            ("indices" variable nil (reparse-symbol function_parameters) [4205 4212]))                          )
+                        (reparse-symbol indented_block_body) [4156 4748])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4765 4769])
+                            ("blends" variable nil (reparse-symbol function_parameters) [4771 4777])
+                            ("multipliers" variable nil (reparse-symbol function_parameters) [4784 4795])
+                            ("correctives" variable nil (reparse-symbol function_parameters) [4802 4813])
+                            ("inbetweens" variable nil (reparse-symbol function_parameters) [4820 4830]))                          )
+                        (reparse-symbol indented_block_body) [4753 6894]))                  
+                :type "class")
+                nil [716 6894]))          
+      :file "facial.py"
+      :pointmax 6894
+      :fsize 7062
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "DynamicUtils.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("maya.cmds" include nil nil [25 49])
+            ("RiggingLib.General.bb_shapes_CLS" include nil nil [50 96])
+            ("RiggingLib.General.bb_constraints_UTL" include nil nil [97 148])
+            ("RiggingLib.General.bb_transform_UTL" include nil nil [149 197])
+            ("createControls" function (:arguments 
+              ( ("locs" variable nil (reparse-symbol function_parameters) [243 247])
+                ("name" variable nil (reparse-symbol function_parameters) [249 253]))              ) nil [224 1465])
+            ("createJoints" function (:arguments 
+              ( ("locs" variable nil (reparse-symbol function_parameters) [1484 1488])
+                ("name" variable nil (reparse-symbol function_parameters) [1490 1494])
+                ("type" variable nil (reparse-symbol function_parameters) [1496 1500]))              ) nil [1467 1825])
+            ("connectSkinJoints" function (:arguments 
+              ( ("skinJoints" variable nil (reparse-symbol function_parameters) [1853 1863])
+                ("controls" variable nil (reparse-symbol function_parameters) [1865 1873])
+                ("aimV" variable nil (reparse-symbol function_parameters) [1875 1879])
+                ("upV" variable nil (reparse-symbol function_parameters) [1881 1884]))              ) nil [1831 2167])
+            ("createCurves" function (:arguments 
+              ( ("locs" variable nil (reparse-symbol function_parameters) [2186 2190])
+                ("name" variable nil (reparse-symbol function_parameters) [2192 2196]))              ) nil [2169 2668])
+            ("makeCurveDynamic" function (:arguments 
+              ( ("crv" variable nil (reparse-symbol function_parameters) [2692 2695])
+                ("name" variable nil (reparse-symbol function_parameters) [2697 2701])
+                ("rootControl" variable nil (reparse-symbol function_parameters) [2703 2714]))              ) nil [2671 4071])
+            ("makeIkChain" function (:arguments 
+              ( ("ikJoints" variable nil (reparse-symbol function_parameters) [4089 4097])
+                ("ikCurve" variable nil (reparse-symbol function_parameters) [4099 4106])
+                ("name" variable nil (reparse-symbol function_parameters) [4108 4112]))              ) nil [4073 4436])
+            ("createStaticLocs" function (:arguments 
+              ( ("controls" variable nil (reparse-symbol function_parameters) [4459 4467])
+                ("name" variable nil (reparse-symbol function_parameters) [4469 4473]))              ) nil [4438 4771])
+            ("run" function (:arguments 
+              ( ("locs" variable nil (reparse-symbol function_parameters) [4780 4784])
+                ("rigRoot" variable nil (reparse-symbol function_parameters) [4786 4793])
+                ("dyn_name" variable nil (reparse-symbol function_parameters) [4795 4803])
+                ("aimV" variable nil (reparse-symbol function_parameters) [4805 4809])
+                ("upV" variable nil (reparse-symbol function_parameters) [4811 4814]))              ) nil [4772 7864]))          
+      :file "DynamicUtils.py"
+      :pointmax 7865
+      :fsize 8053
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "fixDuplicateNames.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("name_registry" variable nil nil [8 26])
+            ("namespaced_all" variable nil nil [44 76])
+            ("stripped_all" variable nil nil [77 135])
+            ("duplicate_nodes" variable nil nil [154 174])
+            ("for" code nil nil [175 344])
+            ("for" code nil nil [365 625])
+            ("tempfile" include nil nil [633 661])
+            ("shutil" include nil nil [662 685])
+            ("os" include nil nil [686 714])
+            ("replace" function (:arguments 
+              ( ("file_path" variable nil (reparse-symbol function_parameters) [728 737])
+                ("name_registry" variable nil (reparse-symbol function_parameters) [739 752]))              ) nil [716 1201]))          
+      :file "fixDuplicateNames.py"
+      :pointmax 1293
+      :fsize 1342
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "headStretch.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("RiggingLib.General.bb_shapes_CLS" include nil nil [1 47])
+            ("RiggingLib.General.bb_transform_UTL" include nil nil [48 96])
+            ("pymel.core" include nil nil [97 120])
+            ("createHeadStretch" function nil nil [123 2748]))          
+      :file "headStretch.py"
+      :pointmax 2748
+      :fsize 2815
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "hippy_spine.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "hippy_spine.py"
+      :pointmax 6973
+      :fsize 7159
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "MDL_FacialUI.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("RiggingLib.General.facial" include nil nil [1 41])
+            ("pymel.core" include nil nil [42 65])
+            ("maya.cmds" include nil nil [66 90])
+            ("RiggingLib.General.facial" include nil nil [91 131])
+            ("os" include nil nil [132 141])
+            ("importUI" function (:arguments 
+              ( ("facialUI_path" variable nil (reparse-symbol function_parameters) [157 170]))              ) nil [144 429])
+            ("addBlends" function (:arguments 
+              ( ("template" variable nil (reparse-symbol function_parameters) [445 453]))              ) nil [431 1162])
+            ("connect" function (:arguments 
+              ( ("json_path" variable nil (reparse-symbol function_parameters) [1176 1185]))              ) nil [1164 1430])
+            ("run" function (:arguments 
+              ( ("facialUI_path" variable nil (reparse-symbol function_parameters) [1440 1453])
+                ("json_path" variable nil (reparse-symbol function_parameters) [1455 1464]))              ) nil [1432 1637]))          
+      :file "MDL_FacialUI.py"
+      :pointmax 1637
+      :fsize 1691
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ProjectSpecific.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__main__" include nil nil [1 16])
+            ("pymel.core" include nil nil [17 40])
+            ("maya.cmds" include nil nil [41 65])
+            ("os" include nil nil [66 75])
+            ("run" function nil nil [77 494])
+            ("restructure_wardrobe_hierarchy" function nil nil [496 897])
+            ("remove_rigGoup_NS" function nil nil [898 1809])
+            ("lockAndHideNodes" function (:documentation "
+    sel = pm.ls(sl=True)
+    lockAndHideNodesRig = pm.ls('skeleton_grp', 'nonScale_rig_grp', 'Spine_FK_jnts',
+    'Spine_Rig', 'eye_rig_spaceLocs_grp', 
+    'R_leg_upper_twistbones_rig', 'R_leg_lower_twistbones_rig', 
+    'R_leglegStretch_start_loc', 'R_leglegStretch_end_loc', 'R_leg_heel_loc_RG', 'L_leg_upper_twistbones_rig', 
+    
+    'L_leg_lower_twistbones_rig', 'L_leglegStretch_start_loc', 'L_leglegStretch_end_loc', 'L_leg_heel_loc_RG',
+    'L_leg_lower_twistbones_rig', 'R_leglegStretch_start_loc', 'R_leglegStretch_end_loc', 'R_leg_heel_loc_RG',
+    
+    'L_armRoot_loc', 'L_arm_ik_stretch_start_loc', 'L_arm_ik_stretch_end_loc', 'L_Arm_IkHanle_RG', 'L_wristTwist_root_loc', 
+    'L_hand_IkCTRL_hook_loc','L_armSpace_torso_rgLoc', 'L_armSpace_shoulder_rgLoc', 'L_Arm_upper_twistbones_rig', 'L_Arm_lower_twistbones_rig',
+    
+    'R_armaRoot_loc', 'R_arm_ik_stretch_start_loc', 'R_arm_ik_stretch_end_loc', 'R_Arm_IkHanle_RG', 'R_wristTwist_root_loc',
+     
+    'R_hand_IkCTRL_hook_loc','R_armSpace_torso_rgLoc', 'R_armSpace_shoulder_rgLoc', 'R_Arm_upper_twistbones_rig', 'R_Arm_lower_twistbones_rig',
+    
+    'Eye_L_loc', 'Eye_R_loc', 'Isolate_Target2_loc', 'IsolateHead_Target2_loc', 'IsolateHead_Target1_loc', 'IsolateTail_Target2_loc',
+    'L_rotate_root_loc', 'L_shoulder_fk_default_loc', 'L_shoulder_ik_aim_loc',
+    'R_rotate_root_loc', 'R_shoulder_fk_default_loc', 'R_shoulder_ik_aim_loc',
+    'chest_orient_rg', 'hip_orient_rg', 'R_InnerMouthLatticeRotate_grp', 'L_InnerMouthLatticeRotate_grp')
+
+    for o in lockAndHideNodesRig:
+        try:
+            pm.setAttr(o.v, 0, lock=True, channelBox=True, keyable=False)
+        except:
+            pass
+
+    lockAndHideNodesExtra = pm.ls('squashStretch_Head_grp', 'eyeball_L_Lattice', 'eyeball_R_Lattice',
+    'L_Wing_rig_grp', 'R_Wing_rig_grp', 'L_Horn_rig_grp', 'R_Horn_rig_grp', 'eyeJoints_grp',
+    'Tongue01_skJnt', 'Tonsil_01_skJnt', 'R_Horn_Rivet_RG', 'L_Horn_Rivet_RG', 'L_Horn_root_skJnt', 
+    'R_Horn_root_skJnt', 'R_Eyelid_Rivet_RG', 'L_Eyelid_Rivet_RG','dynamic_build_grp', 'Necklace_SetUP_grp', 'R_shoulder_rig',
+    'L_shoulder_rig', 'L_shoulder_IkHanle_RG', 'R_shoulder_IkHanle_RG', 'Collar_rig_grp','Collar_Rivet_RG', 
+    'Beard_Rig', 'Hair_rig_grp', 'Hair_Rivet_RG', 'R_hornLower_root_skJnt', 'L_hornLower_root_skJnt', 'L_hornLower_rig_grp',
+    'R_hornLower_rig_grp', 'L_eyelid_Rivet_RG', 'R_eyelid_Rivet_RG', 'L_hornLower_Rivet_RG', 'R_hornLower_Rivet_RG',
+    'L_eyelid_RivetMid_RG', 'R_eyelid_RivetMid_RG', 'R_Bow_Rivet_RG', 'L_Bow_Rivet_RG', 'L_eyelid_RivetRight_RG', 'R_eyelid_RivetRight_RG',
+    'L_eyelid_RivetLeft_RG', 'R_eyelid_RivetLeft_RG', 'L_topHorn_rig_grp', 'L_botHorn_rig_grp', 'R_botHorn_rig_grp',
+    'R_topHorn_rig_grp', 'R_Horn01_Rivet_RG', 'L_Horn01_Rivet_RG', 'L_topHorn_root_skJnt','L_botHorn_root_skJnt',
+    'R_topHorn_root_skJnt', 'R_botHorn_root_skJnt', 'L_Moustache_root_skJnt', 'R_Moustache_root_skJnt', 'L_Moustache_rig_grp',
+    'R_Moustache_rig_grp', 'L_Bow_rig_grp', 'R_Bow_rig_grp', 'L_Moustache_Rivet_RG', 'L_Moustache_Rivet_RG', 'L_Hair_Rivet_RG',
+    'R_Hair_Rivet_RG', 'Bow_Rivet_RG', 'L_Hair_root_skJnt', 'R_Hair_root_skJnt', 'R_Hair_rig_grp', 'L_Hair_rig_grp', 'L_Bow_root_skJnt',
+    'R_Bow_root_skJnt', 'L_Wing_root_skJnt', 'R_Wing_root_skJnt', 'L_Eyelid_Rivet_skJnt', 'R_Eyelid_Rivet_skJnt',
+    'L_InnerMouthLattice_grp', 'R_InnerMouthLattice_grp','R_eyeLid_Rivet_RG', 'L_eyeLid_Rivet_RG', 'L_HornLower_rig_grp',
+    'L_HornMid_rig_grp', 'L_HornTop_rig_grp', 'R_HornLower_rig_grp', 'R_HornMid_rig_grp', 'R_HornTop_rig_grp',
+    'L_HornLower_Rivet_RG', 'L_HornMid_Rivet_RG', 'L_HornTop_Rivet_RG', 'R_HornLower_Rivet_RG', 'R_HornMid_Rivet_RG',
+    'R_HornTop_Rivet_RG', 'R_HornTop_root_skJnt', 'R_HornMid_root_skJnt', 'R_HornLower_root_skJnt', 'L_HornTop_root_skJnt',
+    'L_HornMid_root_skJnt', 'L_HornLower_root_skJnt', 'Hat_skJnt', 'BookCover_01_skJnt_grp', 'Pouch_Holder_rivet', 'Cap_Rivet_RG',
+    'Eyelashes_L_RG', 'Eyelashes_R_RG', 'Eyelashes_L_skJnt', 'Eyelashes_R_skJnt', 'R_pupil_aimVec_RG', 'L_pupil_aimVec_RG')
+
+
+    for o in lockAndHideNodesExtra:
+        try:
+            pm.setAttr(o.v, 0, lock=True, channelBox=True, keyable=False)
+        except:
+            pass
+
+
+    lockNodesExtra = pm.ls('Geo', 'Eyeball_R_MSH', 'Eyeball_L_MSH', 'L_Horn_1_ctrl_zero_rg', 'R_Horn_1_ctrl_zero_rg', 'horns_rig_grp')
+    for o in lockNodesExtra:
+        try:
+            pm.setAttr(o.v, 1, lock=True, channelBox=True, keyable=False)
+        except:
+            pass
+
+    hideShapes = pm.ls('L_armSpace_Main_rgLocShape', 'R_armSpace_Main_rgLocShape', 'L_Arm_Orient_CTRL_TargetShape', 'R_Arm_Orient_CTRL_TargetShape',
+    'L_wristTwist_root_locShape', 'L_wristTwist_IK_orient_locShape', 'L_wristTwist_orient_locShape',
+    'R_wristTwist_root_locShape', 'R_wristTwist_IK_orient_locShape', 'R_wristTwist_orient_locShape','Neck_01_CTRLShape',
+    'L_InnerMouth_LocatorShape', 'R_InnerMouth_LocatorShape' )
+
+    for o in hideShapes:
+        try:
+            pm.setAttr(o.v, 0, lock=True, channelBox=True, keyable=False)
+        except:
+            pass
+    ") nil [1810 7200]))          
+      :file "ProjectSpecific.py"
+      :pointmax 7200
+      :fsize 7342
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "rigData.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("BBF_environ" include nil nil [25 43])
+            ("bbfEnv" variable nil nil [44 73])
+            ("os" include nil nil [74 83])
+            ("get_transform" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [103 107])
+                ("filename" variable nil (reparse-symbol function_parameters) [109 117]))              ) nil [85 1119])
+            ("get_network_paths" function (:arguments 
+              ( ("char_list" variable nil (reparse-symbol function_parameters) [1143 1152]))              ) nil [1121 1512])
+            ("get_character_tm" function (:arguments 
+              ( ("char" variable nil (reparse-symbol function_parameters) [1534 1538])
+                ("tm_node" variable nil (reparse-symbol function_parameters) [1540 1547]))              ) nil [1513 1727])
+            ("\"\"\"
+chars = ['Henry', 'Daddo', 'Summer']     
+paths = get_rigPaths(chars)
+
+for char, path in zip(chars, paths):
+    tm = get_transform('Cog_CTRL_zero_rg', path)
+    ty = tm[\"translate\"][1]
+    print \"%s's height is: %f\" % (char, ty)
+\"\"\"" code nil nil [1765 2001]))          
+      :file "rigData.py"
+      :pointmax 2002
+      :fsize 2062
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "WardrobeUtils.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("json" include nil nil [1 12])
+            ("pymel.core" include nil nil [13 36])
+            ("parseDataString" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [59 63]))              ) nil [39 211])
+            ("resolveTargets" function (:arguments 
+              ( ("targets" variable nil (reparse-symbol function_parameters) [231 238]))              ) nil [212 247])
+            ("applyConstraints" function (:arguments 
+              ( ("parent_char" variable nil (reparse-symbol function_parameters) [273 284])
+                ("wardrobeName" variable nil (reparse-symbol function_parameters) [286 298]))              ) nil [252 1615])
+            ("wardrobe_aimConstraint" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [1644 1648])
+                ("constraint" variable nil (reparse-symbol function_parameters) [1650 1660]))              ) nil [1617 2054])
+            ("wardrobe_pointOnPolyConstraint" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [2091 2095])
+                ("constraint" variable nil (reparse-symbol function_parameters) [2097 2107]))              ) nil [2056 2476])
+            ("getData" function (:arguments 
+              ( ("constraints" variable nil (reparse-symbol function_parameters) [2490 2501]))              ) nil [2478 3617])
+            ("recordConstraints" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [3641 3645]))              ) nil [3619 3955])
+            ("deleteConstraints" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [3979 3983]))              ) nil [3957 4093])
+            ("disconnectWardrobeItem" function (:arguments 
+              ( ("_namespace" variable nil (reparse-symbol function_parameters) [4122 4132]))              ) nil [4095 4648])
+            ("create_skeleton" function
+               (:documentation " creates a copy of the source objects skeleton and  "
+                :arguments 
+                  ( ("source" variable nil (reparse-symbol function_parameters) [4780 4786])
+                    ("target" variable nil (reparse-symbol function_parameters) [4788 4794]))                  )
+                nil [4760 5548])
+            ("connect_skeleton" function
+               (:documentation "  constrains target skeleton to the source skeleton"
+                :arguments 
+                  ( ("source_skeleton" variable nil (reparse-symbol function_parameters) [5571 5586])
+                    ("target_skeleton" variable nil (reparse-symbol function_parameters) [5588 5603]))                  )
+                nil [5550 6120])
+            ("disconnect_skeleton" function
+               (:documentation " disconnects a wardrobe skeleton from its parent character "
+                :arguments 
+                  ( ("skeleton_group" variable nil (reparse-symbol function_parameters) [6146 6160]))                  )
+                nil [6122 6934])
+            ("transferSkin" function
+               (:documentation " adds a skinCluster using group of joints, then copies over skin weights"
+                :arguments 
+                  ( ("source_mesh" variable nil (reparse-symbol function_parameters) [6953 6964])
+                    ("target_mesh" variable nil (reparse-symbol function_parameters) [6966 6977])
+                    ("target_joints_group" variable nil (reparse-symbol function_parameters) [6979 6998]))                  )
+                nil [6936 7524])
+            ("deleteUnusedJoints" function
+               (:documentation "deletes unused joints"
+                :arguments 
+                  ( ("geo_node" variable nil (reparse-symbol function_parameters) [7549 7557]))                  )
+                nil [7526 7940]))          
+      :file "WardrobeUtils.py"
+      :pointmax 7940
+      :fsize 8155
+      :lastmodtime '(21896 15488 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!RiggingLib!General!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

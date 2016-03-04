@@ -1,0 +1,80 @@
+;; Object libbogos/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libbogos/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.module2.lib.libbogos
+   :synopsis: handles bogosity of objects across applications
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 163])
+            ("__future__" include nil nil [164 201])
+            ("base" include nil nil [203 214])
+            ("reload" code nil nil [215 227]))          
+      :file "__init__.py"
+      :pointmax 228
+      :fsize 238
+      :lastmodtime '(21947 40173 0 0)
+      :unmatched-syntax '(($EOI 228 . 228) ($EOI 229 . 229) ($EOI 228 . 228)))
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.module2.lib.libbogos
+   :synopsis:
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 115])
+            ("__future__" include nil nil [116 153])
+            ("__all__" variable nil nil [155 214])
+            ("getMaximumBogosity" function (:documentation " Return maximum allowed bogosity for any object ") nil [216 319])
+            ("getBogosity" function
+               (:documentation " Calculate the bogosity of an obj
+
+    Args:
+        obj: the obj whose bogosity should be calculated
+
+    Returns:
+       float: the calculated bogosity
+    "
+                :arguments 
+                  ( ("obj" variable nil (reparse-symbol function_parameters) [336 339]))                  )
+                nil [320 582])
+            ("Bogosity" type
+               (:documentation " Class representing the bogosity of an obj. Updates dinamycally "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Args:
+               obj: the object to encapsulate
+        \"\"\"" code nil (reparse-symbol indented_block_body) [719 785]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [699 703])
+                            ("obj" variable nil (reparse-symbol function_parameters) [705 708]))                          
+                        :documentation "Args:
+               obj: the object to encapsulate
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [686 786])
+                    ("getBogosity" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [807 811]))                          
+                        :documentation " calculates our objects bogosity based on bogon count and size ")
+                        (reparse-symbol indented_block_body) [791 950]))                  
+                :type "class")
+                nil [583 950]))          
+      :file "base.py"
+      :pointmax 972
+      :fsize 1010
+      :lastmodtime '(21947 40206 0 0)
+      :unmatched-syntax '(($EOI 972 . 972) ($EOI 972 . 972))))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!sphinx!BBF!module2!lib!libbogos!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

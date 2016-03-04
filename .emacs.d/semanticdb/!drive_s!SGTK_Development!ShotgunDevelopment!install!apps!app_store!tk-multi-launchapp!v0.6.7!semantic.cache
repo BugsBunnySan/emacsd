@@ -1,0 +1,346 @@
+;; Object v0.6.7/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "v0.6.7/"
+  :tables
+  (list
+    (semanticdb-table "app.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+App that launches applications.
+
+\"\"\"" code nil nil [448 488])
+            ("os" include nil nil [489 498])
+            ("re" include nil nil [499 508])
+            ("sys" include nil nil [509 519])
+            ("tank" include nil nil [521 532])
+            ("tank" include nil nil [533 559])
+            ("LaunchApplication" type
+               (:documentation "
+    Multi App to launch applications.
+    "
+                :superclasses ("tank.platform.Application")
+                :members 
+                  ( ("HELP_DOC_URL" variable nil (reparse-symbol indented_block_body) [733 837])
+                    ("init_app" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [856 860]))                          )
+                        (reparse-symbol indented_block_body) [843 2975])
+                    ("_init_app_internal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3003 3007])
+                            ("raw_icon" variable nil (reparse-symbol function_parameters) [3009 3017])
+                            ("raw_menu_name" variable nil (reparse-symbol function_parameters) [3019 3032])
+                            ("version" variable nil (reparse-symbol function_parameters) [3034 3041]))                          )
+                        (reparse-symbol indented_block_body) [2980 4934])
+                    ("launch_from_path_and_context" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4973 4977])
+                            ("path" variable nil (reparse-symbol function_parameters) [4979 4983])
+                            ("context" variable nil (reparse-symbol function_parameters) [4985 4992])
+                            ("version" variable nil (reparse-symbol function_parameters) [4994 5001]))                          
+                        :documentation "
+        Extended version of launch_from_path. This method takes an additional
+        context parameter which is useful if you want to seed the launch context
+        with more context data than is available in the path itself. Typically
+        paths may not contain a task, so this may need to be pushed through
+        separately via the context.
+
+        Entry point if you want to launch an app given a particular path.
+        Note that there are no checks that the path passed is actually compatible
+        with the app that is being launched. This should be handled in logic
+        which is external to this app.
+        ")
+                        (reparse-symbol indented_block_body) [4940 5934])
+                    ("launch_from_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5961 5965])
+                            ("path" variable nil (reparse-symbol function_parameters) [5967 5971])
+                            ("version" variable nil (reparse-symbol function_parameters) [5973 5980]))                          
+                        :documentation "
+        Entry point if you want to launch an app given a particular path.
+        Note that there are no checks that the path passed is actually compatible
+        with the app that is being launched. This should be handled in logic
+        which is external to this app.
+        ")
+                        (reparse-symbol indented_block_body) [5940 6393])
+                    ("launch_from_entity" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6421 6425])
+                            ("version" variable nil (reparse-symbol function_parameters) [6427 6434]))                          
+                        :documentation "
+        Default app command. Launches an app based on the current context and settings.
+        ")
+                        (reparse-symbol indented_block_body) [6398 8444])
+                    ("_get_clean_version_string" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8479 8483])
+                            ("version" variable nil (reparse-symbol function_parameters) [8485 8492]))                          
+                        :documentation "
+        Returns version string used for current app launch stripped of any ()'s defining 
+        additional version tokens. For example, if the version setting is \"(8.4)v6\" this will 
+        return \"8.4v6\"
+
+        :param version: version of the application being launched specified by the value from 
+                        'versions' settings. If no 'versions' were defined in the settings, then 
+                        this will be None.
+        ")
+                        (reparse-symbol indented_block_body) [8449 9097])
+                    ("_translate_version_tokens" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9132 9136])
+                            ("raw_string" variable nil (reparse-symbol function_parameters) [9138 9148])
+                            ("version" variable nil (reparse-symbol function_parameters) [9150 9157]))                          
+                        :documentation "
+        Returns string with version tokens replaced by their values. Replaces 
+        {version} and {v0}, {v1}, etc. tokens in raw_string with their values. The {v} 
+        tokens are created by using groups defined by () within the version string.
+        For example, if the version setting is \"(9.0)v4(beta1)\"
+            {version} = \"9.0v4\"
+            {v0} = \"9.0\"
+            {v1} = \"beta1\" 
+        :param raw_string: raw string with un-translated tokens 
+        :param version: version string to use for replacement tokens
+        ")
+                        (reparse-symbol indented_block_body) [9102 10194])
+                    ("_get_app_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10217 10221])
+                            ("version" variable nil (reparse-symbol function_parameters) [10223 10230]))                          
+                        :documentation " Return the platform specific app path, performing version substitution. ")
+                        (reparse-symbol indented_block_body) [10199 11134])
+                    ("_launch_app" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11155 11159])
+                            ("context" variable nil (reparse-symbol function_parameters) [11161 11168])
+                            ("file_to_open" variable nil (reparse-symbol function_parameters) [11170 11182])
+                            ("version" variable nil (reparse-symbol function_parameters) [11189 11196]))                          
+                        :documentation "
+        Launches an application. No environment variable change is leaked to the outside world.
+        :param context: Toolkit context we will opening the app in.
+        :param file_to_open: Optional file to open when the app launches. Can be None.
+        :param version: Version of the app to launch. Specifying None means the default version will
+                        be picked.
+        ")
+                        (reparse-symbol indented_block_body) [11139 12170])
+                    ("_launch_app_internal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12200 12204])
+                            ("context" variable nil (reparse-symbol function_parameters) [12206 12213])
+                            ("file_to_open" variable nil (reparse-symbol function_parameters) [12215 12227])
+                            ("version" variable nil (reparse-symbol function_parameters) [12234 12241]))                          
+                        :documentation "
+        Launches an application. This method may have side-effects in the environment variables table.
+        Call the _launch_app method instead.
+        :param context: Toolkit context we will opening the app in.
+        :param file_to_open: Optional file to open when the app launches. Can be None.
+        :param version: Version of the app to launch. Specifying None means the default version will
+                        be picked.
+        ")
+                        (reparse-symbol indented_block_body) [12175 17962])
+                    ("_clear_dll_directory" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17992 17996]))                          
+                        :documentation "
+        Push current Dll Directory
+
+        There are two cases that can happen related to setting a dll directory.
+        
+        1: Project is using different python then Desktop, in which case the desktop will set the dll 
+           directory to none for the project's python interpreter. In this case, the following code is
+           redundant and not needed.
+        2: Desktop is using same python as Project. In which case we need to keep the desktop dll directory.
+        ")
+                        (reparse-symbol indented_block_body) [17967 19287])
+                    ("_restore_dll_directory" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19331 19335]))                          
+                        :documentation "
+        Pop the previously pushed DLL Directory
+        ")
+                        (reparse-symbol indented_block_body) [19304 19779])
+                    ("_register_event_log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19808 19812])
+                            ("ctx" variable nil (reparse-symbol function_parameters) [19814 19817])
+                            ("command_executed" variable nil (reparse-symbol function_parameters) [19819 19835])
+                            ("version" variable nil (reparse-symbol function_parameters) [19837 19844]))                          
+                        :documentation "
+        Writes an event log entry to the shotgun event log, informing
+        about the app launch
+        ")
+                        (reparse-symbol indented_block_body) [19784 20680])
+                    ("prepare_generic_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20712 20716])
+                            ("engine_name" variable nil (reparse-symbol function_parameters) [20718 20729])
+                            ("context" variable nil (reparse-symbol function_parameters) [20731 20738])
+                            ("app_path" variable nil (reparse-symbol function_parameters) [20740 20748])
+                            ("app_args" variable nil (reparse-symbol function_parameters) [20750 20758]))                          
+                        :documentation "
+        Generic engine launcher.
+
+        This method will look for a bootstrap method in the engine's
+        python/startup/bootstrap.py file if it exists.  That bootstrap will be
+        called if possible.
+
+        :param engine_name: The name of the engine being launched
+        :param context: The context that the application is being launched in
+        :param app_path: Path to DCC executable or launch script
+        :param app_args: External app arguments
+
+        :returns: extra arguments to pass to launch
+        ")
+                        (reparse-symbol indented_block_body) [20685 23096])
+                    ("prepare_nuke_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23125 23129])
+                            ("file_to_open" variable nil (reparse-symbol function_parameters) [23131 23143])
+                            ("app_args" variable nil (reparse-symbol function_parameters) [23145 23153]))                          
+                        :documentation "
+        Nuke specific pre-launch environment setup.
+        ")
+                        (reparse-symbol indented_block_body) [23101 23826])
+                    ("prepare_maya_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23855 23859])
+                            ("app_path" variable nil (reparse-symbol function_parameters) [23861 23869]))                          
+                        :documentation "
+        Maya specific pre-launch environment setup.
+        ")
+                        (reparse-symbol indented_block_body) [23831 25460])
+                    ("prepare_softimage_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25495 25499]))                          
+                        :documentation "
+        Softimage specific pre-launch environment setup.
+        ")
+                        (reparse-symbol indented_block_body) [25466 26739])
+                    ("prepare_motionbuilder_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26778 26782])
+                            ("app_args" variable nil (reparse-symbol function_parameters) [26784 26792]))                          
+                        :documentation "
+        Maya specific pre-launch environment setup.
+        ")
+                        (reparse-symbol indented_block_body) [26745 27134])
+                    ("prepare_3dsmax_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27165 27169])
+                            ("app_args" variable nil (reparse-symbol function_parameters) [27171 27179]))                          
+                        :documentation "
+        3DSMax specific pre-launch environment setup.
+
+        Make sure launch args include a maxscript to load the python engine:
+        3dsmax.exe somefile.max -U MAXScript somescript.ms
+        ")
+                        (reparse-symbol indented_block_body) [27139 27823])
+                    ("prepare_3dsmaxplus_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27859 27863])
+                            ("context" variable nil (reparse-symbol function_parameters) [27865 27872])
+                            ("app_args" variable nil (reparse-symbol function_parameters) [27874 27882]))                          
+                        :documentation "
+        3DSMax Plus specific pre-launch environment setup.
+
+        Make sure launch args include a bootstrap to load the python engine:
+        3dsmax.exe somefile.max -U PythonHost somescript.py
+        ")
+                        (reparse-symbol indented_block_body) [27829 28628])
+                    ("prepare_hiero_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28659 28663]))                          
+                        :documentation "
+        Hiero specific pre-launch environment setup.
+        ")
+                        (reparse-symbol indented_block_body) [28634 28921])
+                    ("prepare_houdini_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28953 28957])
+                            ("context" variable nil (reparse-symbol function_parameters) [28959 28966]))                          
+                        :documentation "
+        Houdini specific pre-launch environment setup.
+        ")
+                        (reparse-symbol indented_block_body) [28926 29671])
+                    ("prepare_flame_flare_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29707 29711])
+                            ("engine_name" variable nil (reparse-symbol function_parameters) [29713 29724])
+                            ("context" variable nil (reparse-symbol function_parameters) [29726 29733])
+                            ("app_path" variable nil (reparse-symbol function_parameters) [29735 29743])
+                            ("app_args" variable nil (reparse-symbol function_parameters) [29745 29753]))                          
+                        :documentation "
+        Flame specific pre-launch environment setup.
+
+        :param engine_name: The name of the engine being launched (tk-flame or tk-flare)
+        :param context: The context that the application is being launched in
+        :param app_path: Path to DCC executable or launch script
+        :param app_args: External app arguments
+        
+        :returns: extra arguments to pass to launch
+        ")
+                        (reparse-symbol indented_block_body) [29676 31719])
+                    ("prepare_mari_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31748 31752])
+                            ("engine_name" variable nil (reparse-symbol function_parameters) [31754 31765])
+                            ("context" variable nil (reparse-symbol function_parameters) [31767 31774]))                          
+                        :documentation "
+        Mari specific pre-launch environment setup.
+
+        :param engine_name: The name of the Mari engine being launched
+        :param context:     The context that the application is being launched in
+        ")
+                        (reparse-symbol indented_block_body) [31724 32525])
+                    ("prepare_photoshop_launch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32567 32571])
+                            ("context" variable nil (reparse-symbol function_parameters) [32573 32580]))                          
+                        :documentation "
+        Photoshop specific pre-launch environment setup.
+        ")
+                        (reparse-symbol indented_block_body) [32538 35623])
+                    ("_get_app_specific_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35656 35660])
+                            ("app_dir" variable nil (reparse-symbol function_parameters) [35662 35669]))                          
+                        :documentation "
+        Get the path for application specific files for a given application.
+        ")
+                        (reparse-symbol indented_block_body) [35629 35847]))                  
+                :type "class")
+                nil [562 35847]))          
+      :file "app.py"
+      :pointmax 35847
+      :fsize 35846
+      :lastmodtime '(22182 15176 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 31646 . 31674) (NEWLINE 31600 . 31601) (COLON 31599 . 31600) (FINALLY 31592 . 31599) (INDENT_BLOCK 23031 . 23059) (NEWLINE 22985 . 22986) (COLON 22984 . 22985) (FINALLY 22977 . 22984))))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!apps!app_store!tk-multi-launchapp!v0.6.7!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

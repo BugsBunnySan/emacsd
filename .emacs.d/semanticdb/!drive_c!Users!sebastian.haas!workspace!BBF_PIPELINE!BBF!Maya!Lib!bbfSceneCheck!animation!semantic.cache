@@ -1,0 +1,135 @@
+;; Object animation/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "animation/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [1 15])
+            ("logger" variable nil nil [16 52])
+            ("os" include nil nil [54 63])
+            ("glob" include nil nil [64 75])
+            ("sys" include nil nil [76 86])
+            ("for" code nil nil [88 352]))          
+      :file "__init__.py"
+      :pointmax 352
+      :fsize 363
+      :lastmodtime '(21919 61102 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkInWip.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("__main__" include nil nil [11 26])
+            ("maya.cmds" include nil nil [27 51])
+            ("bbfException.bbfExceptions" include nil nil [52 106])
+            ("logging" include nil nil [107 121])
+            ("logger" variable nil nil [122 158])
+            ("BBF_Validation" include nil nil [159 209])
+            ("BBF_Stamp" include nil nil [210 250])
+            ("shotCommentBox" function nil nil [333 1319])
+            ("getComment" function nil nil [1320 1595])
+            ("check" function (:arguments 
+              ( ("shotgunVer" variable nil (reparse-symbol function_parameters) [1687 1697])
+                ("checkinComments" variable nil (reparse-symbol function_parameters) [1699 1714]))              ) nil [1677 2075]))          
+      :file "checkInWip.py"
+      :pointmax 2076
+      :fsize 2121
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shotgunContents.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfException.bbfExceptions" include nil nil [1 55])
+            ("pymel.core" include nil nil [56 79])
+            ("__main__" include nil nil [80 107])
+            ("ShotgunInterface" include nil nil [109 154])
+            ("shotgun" variable nil nil [155 198])
+            ("shotgun" code nil nil [199 235])
+            ("check" function nil nil [237 271])
+            ("fix" function nil nil [272 302]))          
+      :file "shotgunContents.py"
+      :pointmax 302
+      :fsize 314
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "subframeJumps.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("logging" include nil nil [25 39])
+            ("bbfUtil" include nil nil [40 54])
+            ("log" variable nil nil [55 88])
+            ("bbfException.bbfExceptions" include nil nil [89 143])
+            ("math" include nil nil [144 155])
+            ("CurveJump" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [238 266])
+                            ("self" variable nil (reparse-symbol indented_block_body) [275 303]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [199 203])
+                            ("anim_curve" variable nil (reparse-symbol function_parameters) [205 215])
+                            ("start_time" variable nil (reparse-symbol function_parameters) [217 227]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [186 304])
+                    ("fix" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [317 321]))                          )
+                        (reparse-symbol indented_block_body) [309 617])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [634 638]))                          )
+                        (reparse-symbol indented_block_body) [622 702]))                  
+                :type "class")
+                nil [157 702])
+            ("get_curve_jumps" function
+               (:documentation "Find if there are 2 consecutive keyframes on the curve.
+    threshold is the difference in value between the 2 keys
+    to be considered as a 'jump'. ie 2 keys with the same
+    value would not be considered as a jump"
+                :arguments 
+                  ( ("anim_curve" variable nil (reparse-symbol function_parameters) [723 733])
+                    ("threshold" variable nil (reparse-symbol function_parameters) [735 744]))                  )
+                nil [703 1546])
+            ("get_curve_jump_at_time" function (:arguments 
+              ( ("anim_curve" variable nil (reparse-symbol function_parameters) [1574 1584])
+                ("time" variable nil (reparse-symbol function_parameters) [1586 1590]))              ) nil [1547 1698])
+            ("get_pairblend_curves" function
+               (:documentation "return the curves that drive the pairblend.
+    These curves are likely to have jumps"
+                :arguments 
+                  ( ("pairblend" variable nil (reparse-symbol function_parameters) [1724 1733])
+                    ("weight" variable nil (reparse-symbol function_parameters) [1735 1741]))                  )
+                nil [1699 2704])
+            ("doit" function
+               (:documentation "
+    Dialing in a pairblend weight over the course of a full frame can cause 
+    wild interpolation to happen across the subframes. This gets picked up by
+    3d motion blur as flips/smears that last for 1 frame. To get around it
+    we can push the blend keyframes closer together. This is not considered
+    by forward looking motion blur so the motion appears continuous
+    eg    blend_start : 5     >       blend_start : 5.999
+          blend_end   : 6     >       blend_end   : 6
+    "
+                :arguments 
+                  ( ("fix" variable nil (reparse-symbol function_parameters) [2734 2737]))                  
+                :decorators 
+                  ( ("bbfUtil.chunk_undo" function (:type "decorator") nil nil))                  )
+                nil [2705 4695])
+            ("check" function nil nil [4696 4720])
+            ("fix" function nil nil [4721 4750]))          
+      :file "subframeJumps.py"
+      :pointmax 4750
+      :fsize 4861
+      :lastmodtime '(21916 2137 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfSceneCheck!animation!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

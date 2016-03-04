@@ -1,0 +1,226 @@
+;; Object bbfHooks/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfHooks/"
+  :tables
+  (list
+    (semanticdb-table "PostPlayblastHook.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfHooks" include nil nil [1 16])
+            ("logging" include nil nil [17 31])
+            ("log" variable nil nil [32 65])
+            ("bbfPath" include nil nil [66 93])
+            ("shutil" include nil nil [94 107])
+            ("pymel.core" include nil nil [108 131])
+            ("BBF_Validation.BBF_Validation" include nil nil [132 177])
+            ("PostPlayblastHook" type
+               (:documentation "
+    External studios may already have a place where they store playblasts.
+    Or they may need to trigger their own internal review mechanism for,
+    example sending an email to animation supervisor or putting in their own
+    internal review system
+
+    Here we pass in the just created playblast path (probably called 
+    something like /temp/RWL_EP101_SH002.00_ANM_V005.mov) and 
+    "
+                :superclasses ("bbfHooks.Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [637 641])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [643 651]))                          )
+                        (reparse-symbol indented_block_body) [625 1564]))                  
+                :type "class")
+                nil [179 1564]))          
+      :file "PostPlayblastHook.py"
+      :pointmax 1564
+      :fsize 1597
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+Hooks provide a way for a show or studio to customize tool functionality
+
+Hooks can live in different places but to stop things getting too scattered it
+would be nice to have them in one of these places
+    - in bbfHooks (here) for studio wide hooks for a tool. This is mainly
+        to give external studios a place to hook into our tools.
+    - in bbfShowHooks in the show's code area. These are for providing show
+        specific functionality
+
+The reason the hook packages have 2 names (bbfHooks and bbfShowHooks) is so that
+they are different packages. Otherwise the show level package would override the
+studio level package, and studio level hooks could never be imported
+
+A Custom Hook must inherit from the Hook class and override the execute method
+eg
+
+# in the bbfHook or bbfShowHooks area create a new hook:
+
+class MyHook(bbfHooks.Hook):
+    def execute(self, blah, **kwargs):
+        app = self.parent
+        print(\"Doing stuff with %(blah)s on %(app)s\" % locals())
+...
+...
+
+# in the tool, import this hook and execute it
+import MyHook
+myhook = MyHook(self)
+myhook.execute(\"stuff\")
+
+# if you want to let the Hook system dynamically pick up your hook from one of
+# the hook areas (bbfHooks or bbfShowHooks) then you call execute_hook_by_name()
+# and it takes care of finding the right hook and importing and executing it
+eg
+execute_hook_by_name('MyHook', self, 'show', \"stuff\")
+execute_hook_by_name('MyHook', self, 'studio', \"stuff\")
+
+'''" code nil nil [1 1458])
+            ("sys" include nil nil [1459 1469])
+            ("imp" include nil nil [1470 1480])
+            ("traceback" include nil nil [1481 1497])
+            ("os" include nil nil [1498 1507])
+            ("logging" include nil nil [1508 1522])
+            ("inspect" include nil nil [1523 1537])
+            ("log" variable nil nil [1538 1571])
+            ("bbfPath" include nil nil [1573 1600])
+            ("BBF_environ" include nil nil [1601 1619])
+            ("bbfEnv" variable nil nil [1620 1649])
+            ("_HOOKS_CACHE" variable nil nil [1651 1668])
+            ("Hook" type
+               (:documentation "
+    The \"parent\" of the hook is the object that executed the hook
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1817 1839]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1789 1793])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1795 1801]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1776 1840])
+                    ("parent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1870 1874]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1845 1906])
+                    ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1923 1927]))                          )
+                        (reparse-symbol indented_block_body) [1911 1950]))                  
+                :type "class")
+                nil [1670 1950])
+            ("execute_hook_by_name" function
+               (:documentation "
+    Execute an arbitrary hook located in the hooks folder for this project.
+    The hook_name is the name of the python file in which the hook resides,
+    without the file extension.
+
+    In most use cases, the execute_hook method is the preferred way to
+    access a hook from an app.
+
+    This method is typically only used when you want to execute an arbitrary
+    list of hooks, for example if you want to run a series of arbitrary
+    user defined pre-publish validation hooks.
+    "
+                :arguments 
+                  ( ("hook_name" variable nil (reparse-symbol function_parameters) [1976 1985])
+                    ("parent" variable nil (reparse-symbol function_parameters) [1987 1993])
+                    ("hook_type" variable nil (reparse-symbol function_parameters) [1995 2004])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [2013 2021]))                  )
+                nil [1951 3013])
+            ("execute_hook" function (:arguments 
+              ( ("hook_path" variable nil (reparse-symbol function_parameters) [3031 3040])
+                ("parent" variable nil (reparse-symbol function_parameters) [3042 3048])
+                ("kwargs" variable nil (reparse-symbol function_parameters) [3050 3058]))              ) nil [3014 3425])
+            ("_get_hook_class" function
+               (:documentation "
+    Returns a hook class given its path
+    "
+                :arguments 
+                  ( ("hook_path" variable nil (reparse-symbol function_parameters) [3446 3455]))                  )
+                nil [3426 3803])
+            ("load_plugin" function
+               (:documentation "
+    Load a plugin into memory and extract its single interface class.
+    "
+                :arguments 
+                  ( ("plugin_file" variable nil (reparse-symbol function_parameters) [3820 3831])
+                    ("valid_base_class" variable nil (reparse-symbol function_parameters) [3833 3849]))                  )
+                nil [3804 5761])
+            ("TestTool" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [5876 5892]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5855 5859])
+                            ("data" variable nil (reparse-symbol function_parameters) [5861 5865]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5842 5893]))                  
+                :type "class")
+                nil [5814 5893])
+            ("test" function nil nil [5894 7412]))          
+      :file "__init__.py"
+      :pointmax 7412
+      :fsize 7617
+      :lastmodtime '(22109 57369 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "PublishConsoleHook.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfHooks" include nil nil [1 16])
+            ("logging" include nil nil [17 31])
+            ("log" variable nil nil [32 65])
+            ("PublishConsoleHook" type
+               (:superclasses ("bbfHooks.Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [125 129])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [131 139]))                          )
+                        (reparse-symbol indented_block_body) [113 1542]))                  
+                :type "class")
+                nil [67 1542]))          
+      :file "PublishConsoleHook.py"
+      :pointmax 1542
+      :fsize 1582
+      :lastmodtime '(22102 1443 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "TestHook.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfHooks" include nil nil [1 16])
+            ("MyHook" type
+               (:documentation "docstring for TestHook"
+                :superclasses ("bbfHooks.Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [96 100])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [102 110]))                          )
+                        (reparse-symbol indented_block_body) [84 201]))                  
+                :type "class")
+                nil [18 201]))          
+      :file "TestHook.py"
+      :pointmax 201
+      :fsize 207
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfHooks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

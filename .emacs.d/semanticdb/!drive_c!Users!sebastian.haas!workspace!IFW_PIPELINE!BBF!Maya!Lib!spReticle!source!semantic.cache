@@ -1,0 +1,1373 @@
+;; Object source/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "source/"
+  :tables
+  (list
+    (semanticdb-table "spReticleLoc.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [2424 2443])
+            ("vector" include (:system-flag t) nil [2444 2461])
+            ("algorithm" include (:system-flag t) nil [2462 2482])
+            ("cmath" include (:system-flag t) nil [2483 2499])
+            ("maya/MPxLocatorNode.h" include (:system-flag t) nil [2501 2533])
+            ("maya/MString.h" include (:system-flag t) nil [2534 2559])
+            ("maya/MTypeId.h" include (:system-flag t) nil [2560 2585])
+            ("maya/MPlug.h" include (:system-flag t) nil [2586 2609])
+            ("maya/MDataBlock.h" include (:system-flag t) nil [2610 2638])
+            ("maya/MDataHandle.h" include (:system-flag t) nil [2639 2668])
+            ("maya/MColor.h" include (:system-flag t) nil [2669 2693])
+            ("maya/M3dView.h" include (:system-flag t) nil [2694 2719])
+            ("maya/MFnPlugin.h" include (:system-flag t) nil [2720 2747])
+            ("maya/MFnNumericAttribute.h" include (:system-flag t) nil [2748 2785])
+            ("maya/MFnEnumAttribute.h" include (:system-flag t) nil [2786 2820])
+            ("maya/MFnCompoundAttribute.h" include (:system-flag t) nil [2821 2859])
+            ("maya/MFnUnitAttribute.h" include (:system-flag t) nil [2860 2894])
+            ("maya/MFnTypedAttribute.h" include (:system-flag t) nil [2895 2930])
+            ("maya/MFnDependencyNode.h" include (:system-flag t) nil [2931 2966])
+            ("maya/MIOStream.h" include (:system-flag t) nil [2967 2994])
+            ("maya/MDagPath.h" include (:system-flag t) nil [2995 3021])
+            ("maya/MFnCamera.h" include (:system-flag t) nil [3022 3049])
+            ("maya/MVector.h" include (:system-flag t) nil [3050 3075])
+            ("maya/MMatrix.h" include (:system-flag t) nil [3076 3101])
+            ("maya/MFnMatrixData.h" include (:system-flag t) nil [3102 3133])
+            ("maya/MFnStringData.h" include (:system-flag t) nil [3134 3165])
+            ("maya/MTime.h" include (:system-flag t) nil [3166 3189])
+            ("maya/MGlobal.h" include (:system-flag t) nil [3190 3215])
+            ("maya/MFileIO.h" include (:system-flag t) nil [3216 3241])
+            ("maya/MFileObject.h" include (:system-flag t) nil [3242 3271])
+            ("spReticleLoc.h" include nil nil [3273 3298])
+            ("McheckStatus" variable (:constant-flag t) nil [3308 3320])
+            ("McheckVoid" variable (:constant-flag t) nil [3451 3461])
+            ("id" function
+               (:prototype-flag t
+                :parent "spReticleLoc"
+                :type ("MTypeId" type (:type "class") nil nil))
+                nil [3586 3625])
+            ("spReticleLoc::DrawingEnabled" variable (:type ("MObject" type (:type "class") nil nil)) nil [3626 3663])
+            ("spReticleLoc::FilmbackAperture" variable (:type ("MObject" type (:type "class") nil nil)) nil [3664 3703])
+            ("spReticleLoc::HorizontalFilmAperture" variable (:type ("MObject" type (:type "class") nil nil)) nil [3704 3749])
+            ("spReticleLoc::VerticalFilmAperture" variable (:type ("MObject" type (:type "class") nil nil)) nil [3750 3793])
+            ("spReticleLoc::SoundTrackWidth" variable (:type ("MObject" type (:type "class") nil nil)) nil [3794 3832])
+            ("spReticleLoc::DisplayFilmGate" variable (:type ("MObject" type (:type "class") nil nil)) nil [3833 3871])
+            ("spReticleLoc::ProjectionGate" variable (:type ("MObject" type (:type "class") nil nil)) nil [3872 3909])
+            ("spReticleLoc::HorizontalProjectionGate" variable (:type ("MObject" type (:type "class") nil nil)) nil [3910 3957])
+            ("spReticleLoc::VerticalProjectionGate" variable (:type ("MObject" type (:type "class") nil nil)) nil [3958 4003])
+            ("spReticleLoc::DisplayProjectionGate" variable (:type ("MObject" type (:type "class") nil nil)) nil [4004 4048])
+            ("spReticleLoc::SafeAction" variable (:type ("MObject" type (:type "class") nil nil)) nil [4049 4082])
+            ("spReticleLoc::HorizontalSafeAction" variable (:type ("MObject" type (:type "class") nil nil)) nil [4083 4126])
+            ("spReticleLoc::VerticalSafeAction" variable (:type ("MObject" type (:type "class") nil nil)) nil [4127 4168])
+            ("spReticleLoc::DisplaySafeAction" variable (:type ("MObject" type (:type "class") nil nil)) nil [4169 4209])
+            ("spReticleLoc::SafeTitle" variable (:type ("MObject" type (:type "class") nil nil)) nil [4210 4242])
+            ("spReticleLoc::HorizontalSafeTitle" variable (:type ("MObject" type (:type "class") nil nil)) nil [4243 4285])
+            ("spReticleLoc::VerticalSafeTitle" variable (:type ("MObject" type (:type "class") nil nil)) nil [4286 4326])
+            ("spReticleLoc::DisplaySafeTitle" variable (:type ("MObject" type (:type "class") nil nil)) nil [4327 4366])
+            ("spReticleLoc::AspectRatios" variable (:type ("MObject" type (:type "class") nil nil)) nil [4367 4402])
+            ("spReticleLoc::AspectRatio" variable (:type ("MObject" type (:type "class") nil nil)) nil [4403 4437])
+            ("spReticleLoc::DisplayMode" variable (:type ("MObject" type (:type "class") nil nil)) nil [4438 4472])
+            ("spReticleLoc::AspectMaskColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [4473 4511])
+            ("spReticleLoc::AspectMaskTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [4512 4550])
+            ("spReticleLoc::AspectLineColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [4551 4589])
+            ("spReticleLoc::AspectLineTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [4590 4628])
+            ("spReticleLoc::AspectDisplaySafeAction" variable (:type ("MObject" type (:type "class") nil nil)) nil [4629 4675])
+            ("spReticleLoc::AspectDisplaySafeTitle" variable (:type ("MObject" type (:type "class") nil nil)) nil [4676 4721])
+            ("spReticleLoc::PanScanAttr" variable (:type ("MObject" type (:type "class") nil nil)) nil [4722 4756])
+            ("spReticleLoc::PanScanAspectRatio" variable (:type ("MObject" type (:type "class") nil nil)) nil [4757 4798])
+            ("spReticleLoc::PanScanDisplayMode" variable (:type ("MObject" type (:type "class") nil nil)) nil [4799 4840])
+            ("spReticleLoc::PanScanDisplaySafeTitle" variable (:type ("MObject" type (:type "class") nil nil)) nil [4841 4887])
+            ("spReticleLoc::PanScanDisplaySafeAction" variable (:type ("MObject" type (:type "class") nil nil)) nil [4888 4935])
+            ("spReticleLoc::PanScanRatio" variable (:type ("MObject" type (:type "class") nil nil)) nil [4936 4971])
+            ("spReticleLoc::PanScanOffset" variable (:type ("MObject" type (:type "class") nil nil)) nil [4972 5008])
+            ("spReticleLoc::PanScanMaskColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [5009 5048])
+            ("spReticleLoc::PanScanMaskTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [5049 5088])
+            ("spReticleLoc::PanScanLineColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [5089 5128])
+            ("spReticleLoc::PanScanLineTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [5129 5168])
+            ("spReticleLoc::FilmGateColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [5169 5205])
+            ("spReticleLoc::FilmGateTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [5206 5242])
+            ("spReticleLoc::ProjGateColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [5243 5279])
+            ("spReticleLoc::ProjGateTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [5280 5316])
+            ("spReticleLoc::HideLocator" variable (:type ("MObject" type (:type "class") nil nil)) nil [5317 5351])
+            ("spReticleLoc::UseSpReticle" variable (:type ("MObject" type (:type "class") nil nil)) nil [5352 5387])
+            ("spReticleLoc::DisplayLineH" variable (:type ("MObject" type (:type "class") nil nil)) nil [5388 5423])
+            ("spReticleLoc::DisplayLineV" variable (:type ("MObject" type (:type "class") nil nil)) nil [5424 5459])
+            ("spReticleLoc::DisplayThirdsH" variable (:type ("MObject" type (:type "class") nil nil)) nil [5460 5497])
+            ("spReticleLoc::DisplayThirdsV" variable (:type ("MObject" type (:type "class") nil nil)) nil [5498 5535])
+            ("spReticleLoc::DisplayCrosshair" variable (:type ("MObject" type (:type "class") nil nil)) nil [5536 5575])
+            ("spReticleLoc::MiscTextColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [5576 5612])
+            ("spReticleLoc::MiscTextTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [5613 5649])
+            ("spReticleLoc::LineColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [5650 5682])
+            ("spReticleLoc::LineTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [5683 5715])
+            ("spReticleLoc::Time" variable (:type ("MObject" type (:type "class") nil nil)) nil [5716 5743])
+            ("spReticleLoc::DriveCameraAperture" variable (:type ("MObject" type (:type "class") nil nil)) nil [5744 5786])
+            ("spReticleLoc::MaximumDistance" variable (:type ("MObject" type (:type "class") nil nil)) nil [5787 5825])
+            ("spReticleLoc::UseOverscan" variable (:type ("MObject" type (:type "class") nil nil)) nil [5826 5860])
+            ("spReticleLoc::Pad" variable (:type ("MObject" type (:type "class") nil nil)) nil [5861 5887])
+            ("spReticleLoc::UsePad" variable (:type ("MObject" type (:type "class") nil nil)) nil [5888 5917])
+            ("spReticleLoc::PadAmount" variable (:type ("MObject" type (:type "class") nil nil)) nil [5918 5950])
+            ("spReticleLoc::PadAmountX" variable (:type ("MObject" type (:type "class") nil nil)) nil [5951 5984])
+            ("spReticleLoc::PadAmountY" variable (:type ("MObject" type (:type "class") nil nil)) nil [5985 6018])
+            ("spReticleLoc::PadDisplayMode" variable (:type ("MObject" type (:type "class") nil nil)) nil [6019 6056])
+            ("spReticleLoc::PadMaskColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [6057 6092])
+            ("spReticleLoc::PadMaskTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [6093 6128])
+            ("spReticleLoc::PadLineColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [6129 6164])
+            ("spReticleLoc::PadLineTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [6165 6200])
+            ("spReticleLoc::Text" variable (:type ("MObject" type (:type "class") nil nil)) nil [6201 6228])
+            ("spReticleLoc::TextType" variable (:type ("MObject" type (:type "class") nil nil)) nil [6229 6260])
+            ("spReticleLoc::TextStr" variable (:type ("MObject" type (:type "class") nil nil)) nil [6261 6291])
+            ("spReticleLoc::TextAlign" variable (:type ("MObject" type (:type "class") nil nil)) nil [6292 6324])
+            ("spReticleLoc::TextPos" variable (:type ("MObject" type (:type "class") nil nil)) nil [6325 6355])
+            ("spReticleLoc::TextPosX" variable (:type ("MObject" type (:type "class") nil nil)) nil [6356 6387])
+            ("spReticleLoc::TextPosY" variable (:type ("MObject" type (:type "class") nil nil)) nil [6388 6419])
+            ("spReticleLoc::TextPosRel" variable (:type ("MObject" type (:type "class") nil nil)) nil [6420 6453])
+            ("spReticleLoc::TextLevel" variable (:type ("MObject" type (:type "class") nil nil)) nil [6454 6486])
+            ("spReticleLoc::TextARLevel" variable (:type ("MObject" type (:type "class") nil nil)) nil [6487 6521])
+            ("spReticleLoc::TextColor" variable (:type ("MObject" type (:type "class") nil nil)) nil [6522 6554])
+            ("spReticleLoc::TextTrans" variable (:type ("MObject" type (:type "class") nil nil)) nil [6555 6587])
+            ("spReticleLoc::Tag" variable (:type ("MObject" type (:type "class") nil nil)) nil [6588 6614])
+            ("spReticleLoc" function
+               (:constructor-flag t
+                :parent "spReticleLoc"
+                :type ("spReticleLoc" type (:type "class") nil nil))
+                nil [6616 6647])
+            ("spReticleLoc" function
+               (:destructor-flag t
+                :parent "spReticleLoc"
+                :type "void")
+                nil [6648 6680])
+            ("getPoint" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("x" variable (:type "float") (reparse-symbol arg-sub-list) [6830 6838])
+                    ("y" variable (:type "float") (reparse-symbol arg-sub-list) [6839 6847])
+                    ("view" variable
+                       (:reference 1
+                        :type ("M3dView" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6848 6863]))                  
+                :type ("MPoint" type (:type "class") nil nil))
+                nil [6800 7026])
+            ("getColor" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("colorObj" variable (:type ("MObject" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7187 7204])
+                    ("transObj" variable (:type ("MObject" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7205 7222])
+                    ("color" variable
+                       (:reference 1
+                        :type ("MColor" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7223 7238]))                  
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [7156 8192])
+            ("getMatrix" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("matrixStr" variable (:type ("MString" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8273 8291]))                  
+                :type ("MMatrix" type (:type "class") nil nil))
+                nil [8241 9830])
+            ("printAspectRatio" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("ar" variable
+                       (:reference 1
+                        :type ("Aspect_Ratio" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9955 9973]))                  
+                :type "void")
+                nil [9919 10316])
+            ("printPanScan" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("ps" variable
+                       (:reference 1
+                        :type ("PanScan" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10429 10442]))                  
+                :type "void")
+                nil [10397 10737])
+            ("printText" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("td" variable
+                       (:reference 1
+                        :type ("TextData" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10848 10862]))                  
+                :type "void")
+                nil [10819 11381])
+            ("printGeom" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("g" variable
+                       (:reference 1
+                        :type ("Geom" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11488 11497]))                  
+                :type "void")
+                nil [11459 11924])
+            ("printOptions" function
+               (:parent "spReticleLoc"
+                :type "void")
+                nil [12006 12759])
+            ("getPadData" function
+               (:parent "spReticleLoc"
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [12798 14093])
+            ("getFilmbackData" function
+               (:parent "spReticleLoc"
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [14186 15304])
+            ("getProjectionData" function
+               (:parent "spReticleLoc"
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [15490 16546])
+            ("getSafeActionData" function
+               (:parent "spReticleLoc"
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [16627 17470])
+            ("getSafeTitleData" function
+               (:parent "spReticleLoc"
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [17551 18376])
+            ("getAspectRatioChildren" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("arPlug" variable (:type ("MPlug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18620 18633])
+                    ("ar" variable
+                       (:reference 1
+                        :type ("Aspect_Ratio" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18634 18652]))                  
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [18575 20707])
+            ("aspectRatioSortPredicate" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("lhs" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Aspect_Ratio" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20753 20778])
+                    ("rhs" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Aspect_Ratio" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20824 20849]))                  
+                :type "bool")
+                nil [20709 20900])
+            ("getAspectRatioData" function
+               (:parent "spReticleLoc"
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [20970 21800])
+            ("needToUpdateAspectRatios" function
+               (:parent "spReticleLoc"
+                :type "bool")
+                nil [21802 21955])
+            ("getPanScanData" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("ps" variable
+                       (:reference 1
+                        :type ("PanScan" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22058 22072]))                  
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [22019 22655])
+            ("getTextChildren" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("tPlug" variable (:type ("MPlug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22870 22882])
+                    ("td" variable
+                       (:reference 1
+                        :type ("TextData" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22883 22897]))                  
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [22832 24547])
+            ("getTextData" function
+               (:parent "spReticleLoc"
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [24549 25166])
+            ("needToUpdateTextData" function
+               (:parent "spReticleLoc"
+                :type "bool")
+                nil [25168 25299])
+            ("getOptions" function
+               (:parent "spReticleLoc"
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [25358 27926])
+            ("calcPortGeom" function
+               (:parent "spReticleLoc"
+                :type "void")
+                nil [28049 28282])
+            ("calcFilmbackGeom" function
+               (:parent "spReticleLoc"
+                :type "void")
+                nil [28554 33608])
+            ("calcFilmbackSafeActionGeom" function
+               (:parent "spReticleLoc"
+                :type "void")
+                nil [33678 33957])
+            ("calcFilmbackSafeTitleGeom" function
+               (:parent "spReticleLoc"
+                :type "void")
+                nil [34026 34299])
+            ("calcMaskGeom" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("g" variable
+                       (:reference 1
+                        :type ("Geom" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34419 34428])
+                    ("w" variable (:type "double") (reparse-symbol arg-sub-list) [34429 34438])
+                    ("h" variable (:type "double") (reparse-symbol arg-sub-list) [34439 34448])
+                    ("gSrc" variable
+                       (:reference 1
+                        :type ("Geom" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34449 34461])
+                    ("wSrc" variable (:type "double") (reparse-symbol arg-sub-list) [34495 34507])
+                    ("hSrc" variable (:type "double") (reparse-symbol arg-sub-list) [34508 34520]))                  
+                :type "void")
+                nil [34387 34776])
+            ("calcSafeActionGeom" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("ar" variable
+                       (:reference 1
+                        :type ("Aspect_Ratio" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34880 34899]))                  
+                :type "void")
+                nil [34841 35171])
+            ("calcSafeTitleGeom" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("ar" variable
+                       (:reference 1
+                        :type ("Aspect_Ratio" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35273 35292]))                  
+                :type "void")
+                nil [35235 35558])
+            ("calcAspectGeom" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("ar" variable
+                       (:reference 1
+                        :type ("Aspect_Ratio" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35686 35705]))                  
+                :type "void")
+                nil [35651 36256])
+            ("calcPanScanGeom" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("ps" variable
+                       (:reference 1
+                        :type ("PanScan" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [36344 36358]))                  
+                :type "void")
+                nil [36308 37132])
+            ("setInternalValueInContext" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("plug" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MPlug" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37179 37199])
+                    ("dataHandle" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MDataHandle" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37208 37239])
+                    ("ctx" variable
+                       (:reference 1
+                        :type ("MDGContext" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37241 37258]))                  
+                :type "bool")
+                nil [37134 37387])
+            ("drawMask" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("g1" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37494 37502])
+                    ("g2" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37503 37511])
+                    ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37512 37525])
+                    ("sides" variable (:type "bool") (reparse-symbol arg-sub-list) [37526 37538]))                  
+                :type "void")
+                nil [37465 38645])
+            ("drawLine" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("x1" variable (:type "double") (reparse-symbol arg-sub-list) [38736 38746])
+                    ("x2" variable (:type "double") (reparse-symbol arg-sub-list) [38747 38757])
+                    ("y1" variable (:type "double") (reparse-symbol arg-sub-list) [38758 38768])
+                    ("y2" variable (:type "double") (reparse-symbol arg-sub-list) [38769 38779])
+                    ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38809 38822])
+                    ("stipple" variable (:type "bool") (reparse-symbol arg-sub-list) [38823 38836]))                  
+                :type "void")
+                nil [38708 39361])
+            ("drawLines" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("g" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39653 39660])
+                    ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39661 39674])
+                    ("sides" variable (:type "bool") (reparse-symbol arg-sub-list) [39675 39686])
+                    ("stipple" variable (:type "bool") (reparse-symbol arg-sub-list) [39687 39700]))                  
+                :type "void")
+                nil [39623 40358])
+            ("drawText" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("text" variable (:type ("MString" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40509 40522])
+                    ("tx" variable (:type "double") (reparse-symbol arg-sub-list) [40523 40533])
+                    ("ty" variable (:type "double") (reparse-symbol arg-sub-list) [40534 40544])
+                    ("textColor" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40574 40591])
+                    ("textAlign" variable (:type ("M3dView::TextPosition" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40592 40624])
+                    ("view" variable
+                       (:reference 1
+                        :type ("M3dView" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [40654 40669]))                  
+                :type "void")
+                nil [40481 41027])
+            ("drawCustomTextElements" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("view" variable
+                       (:reference 1
+                        :type ("M3dView" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41071 41086]))                  
+                :type "void")
+                nil [41029 53453])
+            ("draw" function
+               (:parent "spReticleLoc"
+                :arguments 
+                  ( ("view" variable
+                       (:reference 1
+                        :type ("M3dView" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [53602 53617])
+                    ("path" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MDagPath" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [53618 53640])
+                    ("style" variable (:type ("M3dView::DisplayStyle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53666 53694])
+                    ("status" variable (:type ("M3dView::DisplayStatus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53720 53750]))                  
+                :type "void")
+                nil [53578 65582])
+            ("boundingBox" function
+               (:parent "spReticleLoc"
+                :type ("MBoundingBox" type (:type "class") nil nil))
+                nil [65615 65783])
+            ("excludeAsLocator" function
+               (:parent "spReticleLoc"
+                :type "bool")
+                nil [65944 66311])
+            ("postConstructor" function
+               (:parent "spReticleLoc"
+                :type "void")
+                nil [66706 67013])
+            ("creator" function
+               (:pointer 1
+                :parent "spReticleLoc"
+                :type "void")
+                nil [67015 67080])
+            ("initialize" function
+               (:parent "spReticleLoc"
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [67082 89103])
+            ("initializePlugin" function
+               (:arguments 
+                  ( ("obj" variable (:type ("MObject" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [89130 89142]))                  
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [89105 89508])
+            ("uninitializePlugin" function
+               (:arguments 
+                  ( ("obj" variable (:type ("MObject" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [89537 89549]))                  
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [89510 89760]))          
+      :file "spReticleLoc.cpp"
+      :pointmax 89761
+      :fsize 92335
+      :lastmodtime '(21897 10028 0 0)
+      :unmatched-syntax '((number 3612 . 3622) (semantic-list 2365 . 2386) (symbol 2358 . 2365) (string 2371 . 2385) (symbol 2351 . 2357) (string 2371 . 2385) (punctuation 2350 . 2351))
+      :lexical-table 
+        '(("McheckVoid" (spp-arg-list ("stat" "msg") 3461 . 3471) . 
+              ((IF "if" 3481 . 3483) (semantic-list "(!stat)" 3484 . 3491) (semantic-list "{                \\
+        stat.perror(msg);       \\
+        return;                 \\
+    }" 3492 . 3584)))
+          ("McheckStatus" (spp-arg-list ("stat" "msg") 3320 . 3330) . 
+              ((IF "if" 3338 . 3340) (semantic-list "(!stat)" 3341 . 3348) (semantic-list "{                \\
+        stat.perror(msg);       \\
+        return stat;            \\
+    }" 3349 . 3441)))
+          )
+)
+    (semanticdb-table "spReticleLoc.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("spReticleLoc" type
+               (:superclasses 
+                  ( ("MPxLocatorNode" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [1785 1792])
+                    ("spReticleLoc" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :type ("spReticleLoc" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1797 1812])
+                    ("spReticleLoc" function
+                       (:prototype-flag t
+                        :destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [1817 1857])
+                    ("draw" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("view" variable
+                               (:reference 1
+                                :type ("M3dView" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1893 1908])
+                            ("path" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MDagPath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1909 1931])
+                            ("style" variable (:type ("M3dView::DisplayStyle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1960 1988])
+                            ("status" variable (:type ("M3dView::DisplayStatus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2017 2048]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1863 2049])
+                    ("setInternalValueInContext" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MPlug" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2106 2120])
+                            ("" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MDataHandle" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2176 2196])
+                            ("" variable
+                               (:reference 1
+                                :type ("MDGContext" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2252 2265]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2055 2266])
+                    ("creator" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :typemodifiers ("static")
+                        :type "void")
+                        (reparse-symbol classsubparts) [2272 2307])
+                    ("initialize" function
+                       (:prototype-flag t
+                        :typemodifiers ("static")
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2312 2349])
+                    ("excludeAsLocator" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2355 2404])
+                    ("postConstructor" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [2409 2451])
+                    ("isTransparent" function
+                       (:typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2457 2517])
+                    ("drawLast" function
+                       (:typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2522 2582])
+                    ("isBounded" function
+                       (:typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2587 2647])
+                    ("boundingBox" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type ("MBoundingBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2652 2696])
+                    ("public" label nil (reparse-symbol classsubparts) [2698 2705])
+                    ("id" variable
+                       (:typemodifiers ("static")
+                        :type ("MTypeId" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2710 2728])
+                    ("DrawingEnabled" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2733 2763])
+                    ("FilmbackAperture" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2768 2800])
+                    ("HorizontalFilmAperture" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2805 2843])
+                    ("VerticalFilmAperture" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2848 2884])
+                    ("SoundTrackWidth" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2889 2920])
+                    ("DisplayFilmGate" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2925 2956])
+                    ("ProjectionGate" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2961 2991])
+                    ("HorizontalProjectionGate" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2996 3036])
+                    ("VerticalProjectionGate" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3041 3079])
+                    ("DisplayProjectionGate" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3084 3121])
+                    ("SafeAction" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3126 3152])
+                    ("HorizontalSafeAction" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3157 3193])
+                    ("VerticalSafeAction" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3198 3232])
+                    ("DisplaySafeAction" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3237 3270])
+                    ("SafeTitle" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3275 3300])
+                    ("HorizontalSafeTitle" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3305 3340])
+                    ("VerticalSafeTitle" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3345 3378])
+                    ("DisplaySafeTitle" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3383 3415])
+                    ("AspectRatios" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3420 3448])
+                    ("AspectRatio" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3453 3480])
+                    ("DisplayMode" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3485 3512])
+                    ("AspectMaskColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3517 3548])
+                    ("AspectMaskTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3553 3584])
+                    ("AspectLineColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3589 3620])
+                    ("AspectLineTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3625 3656])
+                    ("AspectDisplaySafeAction" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3661 3700])
+                    ("AspectDisplaySafeTitle" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3705 3743])
+                    ("PanScanAttr" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3748 3775])
+                    ("PanScanAspectRatio" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3780 3814])
+                    ("PanScanDisplayMode" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3819 3853])
+                    ("PanScanDisplaySafeTitle" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3858 3897])
+                    ("PanScanDisplaySafeAction" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3902 3942])
+                    ("PanScanRatio" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3947 3975])
+                    ("PanScanOffset" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3980 4009])
+                    ("PanScanMaskColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4014 4046])
+                    ("PanScanMaskTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4051 4083])
+                    ("PanScanLineColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4088 4120])
+                    ("PanScanLineTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4125 4157])
+                    ("FilmGateColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4162 4191])
+                    ("FilmGateTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4196 4225])
+                    ("ProjGateColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4230 4259])
+                    ("ProjGateTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4264 4293])
+                    ("HideLocator" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4298 4325])
+                    ("UseSpReticle" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4330 4358])
+                    ("DisplayLineH" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4363 4391])
+                    ("DisplayLineV" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4396 4424])
+                    ("DisplayThirdsH" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4429 4459])
+                    ("DisplayThirdsV" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4464 4494])
+                    ("DisplayCrosshair" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4499 4531])
+                    ("MiscTextColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4536 4565])
+                    ("MiscTextTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4570 4599])
+                    ("LineColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4604 4629])
+                    ("LineTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4634 4659])
+                    ("Time" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4664 4684])
+                    ("DriveCameraAperture" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4689 4724])
+                    ("MaximumDistance" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4729 4760])
+                    ("UseOverscan" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4765 4792])
+                    ("Pad" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4797 4816])
+                    ("UsePad" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4821 4843])
+                    ("PadAmount" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4848 4873])
+                    ("PadAmountX" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4878 4904])
+                    ("PadAmountY" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4909 4935])
+                    ("PadDisplayMode" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4940 4970])
+                    ("PadMaskColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4975 5003])
+                    ("PadMaskTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5008 5036])
+                    ("PadLineColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5041 5069])
+                    ("PadLineTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5074 5102])
+                    ("Text" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5107 5127])
+                    ("TextType" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5132 5156])
+                    ("TextStr" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5161 5184])
+                    ("TextAlign" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5189 5214])
+                    ("TextPos" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5219 5242])
+                    ("TextPosX" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5247 5271])
+                    ("TextPosY" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5276 5300])
+                    ("TextPosRel" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5305 5331])
+                    ("TextLevel" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5336 5361])
+                    ("TextARLevel" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5366 5393])
+                    ("TextColor" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5398 5423])
+                    ("TextTrans" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5428 5453])
+                    ("Tag" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5458 5477])
+                    ("private" label nil (reparse-symbol classsubparts) [5479 5487])
+                    ("Geom" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [5517 5524])
+                            ("x1" variable (:type "double") (reparse-symbol classsubparts) [5537 5552])
+                            ("x2" variable (:type "double") (reparse-symbol classsubparts) [5537 5552])
+                            ("y1" variable (:type "double") (reparse-symbol classsubparts) [5565 5580])
+                            ("y2" variable (:type "double") (reparse-symbol classsubparts) [5565 5580])
+                            ("x" variable (:type "double") (reparse-symbol classsubparts) [5593 5606])
+                            ("y" variable (:type "double") (reparse-symbol classsubparts) [5593 5606])
+                            ("lineColor" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5619 5637])
+                            ("maskColor" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5650 5668])
+                            ("isValid" variable (:type "bool") (reparse-symbol classsubparts) [5681 5697]))                          
+                        :type "class")
+                        (reparse-symbol classsubparts) [5492 5704])
+                    ("Aspect_Ratio" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [5743 5750])
+                            ("aspectRatio" variable (:type "double") (reparse-symbol classsubparts) [5763 5782])
+                            ("displayMode" variable (:type "int") (reparse-symbol classsubparts) [5795 5814])
+                            ("displaySafeAction" variable (:type "bool") (reparse-symbol classsubparts) [5827 5852])
+                            ("displaySafeTitle" variable (:type "bool") (reparse-symbol classsubparts) [5865 5889])
+                            ("aspectGeom" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5903 5921])
+                            ("safeActionGeom" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5934 5956])
+                            ("safeTitleGeom" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5969 5990]))                          
+                        :type "class")
+                        (reparse-symbol classsubparts) [5710 5997])
+                    ("PanScan" type
+                       (:superclasses 
+                          ( ("Aspect_Ratio" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [6053 6060])
+                            ("panScanRatio" variable (:type "double") (reparse-symbol classsubparts) [6073 6093])
+                            ("panScanOffset" variable (:type "double") (reparse-symbol classsubparts) [6106 6127]))                          
+                        :type "class")
+                        (reparse-symbol classsubparts) [6003 6134])
+                    ("Filmback" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [6169 6176])
+                            ("horizontalFilmAperture" variable (:type "double") (reparse-symbol classsubparts) [6189 6219])
+                            ("verticalFilmAperture" variable (:type "double") (reparse-symbol classsubparts) [6232 6260])
+                            ("soundTrackWidth" variable (:type "double") (reparse-symbol classsubparts) [6273 6296])
+                            ("horizontalImageAperture" variable (:type "double") (reparse-symbol classsubparts) [6309 6340])
+                            ("verticalImageAperture" variable (:type "double") (reparse-symbol classsubparts) [6353 6382])
+                            ("displayFilmGate" variable (:type "double") (reparse-symbol classsubparts) [6395 6418])
+                            ("horizontalProjectionGate" variable (:type "double") (reparse-symbol classsubparts) [6431 6463])
+                            ("verticalProjectionGate" variable (:type "double") (reparse-symbol classsubparts) [6476 6506])
+                            ("horizontalSafeAction" variable (:type "double") (reparse-symbol classsubparts) [6519 6547])
+                            ("verticalSafeAction" variable (:type "double") (reparse-symbol classsubparts) [6560 6586])
+                            ("horizontalSafeTitle" variable (:type "double") (reparse-symbol classsubparts) [6599 6626])
+                            ("verticalSafeTitle" variable (:type "double") (reparse-symbol classsubparts) [6639 6664])
+                            ("displayProjGate" variable (:type "double") (reparse-symbol classsubparts) [6677 6700])
+                            ("displaySafeAction" variable (:type "bool") (reparse-symbol classsubparts) [6713 6738])
+                            ("displaySafeTitle" variable (:type "bool") (reparse-symbol classsubparts) [6751 6775])
+                            ("filmbackGeom" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6789 6809])
+                            ("imageGeom" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6822 6839])
+                            ("projGeom" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6852 6868])
+                            ("safeActionGeom" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6881 6903])
+                            ("safeTitleGeom" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6916 6937]))                          
+                        :type "class")
+                        (reparse-symbol classsubparts) [6140 6944])
+                    ("PadOptions" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [6981 6988])
+                            ("usePad" variable (:type "bool") (reparse-symbol classsubparts) [7001 7015])
+                            ("isPadded" variable (:type "bool") (reparse-symbol classsubparts) [7028 7044])
+                            ("padAmountX" variable (:type "double") (reparse-symbol classsubparts) [7057 7075])
+                            ("padAmountY" variable (:type "double") (reparse-symbol classsubparts) [7088 7106])
+                            ("displayMode" variable (:type "int") (reparse-symbol classsubparts) [7119 7138])
+                            ("padGeom" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7152 7167]))                          
+                        :type "class")
+                        (reparse-symbol classsubparts) [6950 7174])
+                    ("Options" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [7208 7215])
+                            ("drawingEnabled" variable (:type "bool") (reparse-symbol classsubparts) [7228 7250])
+                            ("useSpRet" variable (:type "bool") (reparse-symbol classsubparts) [7263 7279])
+                            ("displayLineH" variable (:type "bool") (reparse-symbol classsubparts) [7292 7312])
+                            ("displayLineV" variable (:type "bool") (reparse-symbol classsubparts) [7325 7345])
+                            ("displayThirdsH" variable (:type "bool") (reparse-symbol classsubparts) [7358 7380])
+                            ("displayThirdsV" variable (:type "bool") (reparse-symbol classsubparts) [7393 7415])
+                            ("displayCrosshair" variable (:type "bool") (reparse-symbol classsubparts) [7428 7452])
+                            ("driveCameraAperture" variable (:type "bool") (reparse-symbol classsubparts) [7465 7492])
+                            ("useOverscan" variable (:type "bool") (reparse-symbol classsubparts) [7505 7524])
+                            ("maximumDistance" variable (:type "double") (reparse-symbol classsubparts) [7537 7560])
+                            ("textColor" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7573 7590])
+                            ("lineColor" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7603 7620]))                          
+                        :type "class")
+                        (reparse-symbol classsubparts) [7180 7627])
+                    ("TextData" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [7662 7669])
+                            ("textType" variable (:type "int") (reparse-symbol classsubparts) [7682 7699])
+                            ("textStr" variable (:type ("MString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7712 7728])
+                            ("textAlign" variable (:type "int") (reparse-symbol classsubparts) [7741 7759])
+                            ("textPosX" variable (:type "double") (reparse-symbol classsubparts) [7772 7788])
+                            ("textPosY" variable (:type "double") (reparse-symbol classsubparts) [7801 7817])
+                            ("textPosRel" variable (:type "int") (reparse-symbol classsubparts) [7830 7848])
+                            ("textLevel" variable (:type "int") (reparse-symbol classsubparts) [7861 7878])
+                            ("textARLevel" variable (:type "int") (reparse-symbol classsubparts) [7891 7910])
+                            ("textColor" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7923 7940]))                          
+                        :type "class")
+                        (reparse-symbol classsubparts) [7633 7947])
+                    ("getPadData" function
+                       (:prototype-flag t
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7953 7974])
+                    ("getFilmbackData" function
+                       (:prototype-flag t
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7979 8005])
+                    ("getProjectionData" function
+                       (:prototype-flag t
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8010 8038])
+                    ("getSafeActionData" function
+                       (:prototype-flag t
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8043 8071])
+                    ("getSafeTitleData" function
+                       (:prototype-flag t
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8076 8103])
+                    ("getAspectRatioChildren" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("arPlug" variable (:type ("MPlug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8141 8154])
+                            ("ar" variable
+                               (:reference 1
+                                :type ("Aspect_Ratio" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8155 8174]))                          
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8108 8175])
+                    ("aspectRatioSortPredicate" function
+                       (:prototype-flag t
+                        :typemodifiers ("static")
+                        :arguments 
+                          ( ("" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Aspect_Ratio" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8218 8239])
+                            ("" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Aspect_Ratio" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8240 8261]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [8180 8262])
+                    ("getAspectRatioData" function
+                       (:prototype-flag t
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8267 8297])
+                    ("needToUpdateAspectRatios" function
+                       (:prototype-flag t
+                        :type "bool")
+                        (reparse-symbol classsubparts) [8302 8334])
+                    ("getPanScanData" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("ps" variable
+                               (:reference 1
+                                :type ("PanScan" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8364 8378]))                          
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8339 8379])
+                    ("getTextChildren" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("tPlug" variable (:type ("MPlug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8410 8422])
+                            ("td" variable
+                               (:reference 1
+                                :type ("TextData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8423 8438]))                          
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8384 8439])
+                    ("getTextData" function
+                       (:prototype-flag t
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8444 8466])
+                    ("needToUpdateTextData" function
+                       (:prototype-flag t
+                        :type "bool")
+                        (reparse-symbol classsubparts) [8471 8499])
+                    ("getOptions" function
+                       (:prototype-flag t
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8504 8525])
+                    ("getPoint" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("x" variable (:type "float") (reparse-symbol arg-sub-list) [8548 8556])
+                            ("y" variable (:type "float") (reparse-symbol arg-sub-list) [8557 8565])
+                            ("view" variable
+                               (:reference 1
+                                :type ("M3dView" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8566 8581]))                          
+                        :type ("MPoint" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8531 8582])
+                    ("getColor" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("colorObj" variable (:type ("MObject" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8606 8623])
+                            ("transObj" variable (:type ("MObject" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8624 8641])
+                            ("color" variable
+                               (:reference 1
+                                :type ("MColor" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8642 8658]))                          
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8587 8659])
+                    ("getMatrix" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("matrixStr" variable (:type ("MString" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8683 8702]))                          
+                        :type ("MMatrix" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8664 8703])
+                    ("printAspectRatio" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("ar" variable
+                               (:reference 1
+                                :type ("Aspect_Ratio" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8732 8751]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [8708 8752])
+                    ("printPanScan" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("ps" variable
+                               (:reference 1
+                                :type ("PanScan" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8777 8791]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [8757 8792])
+                    ("printText" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("td" variable
+                               (:reference 1
+                                :type ("TextData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8814 8829]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [8797 8830])
+                    ("printGeom" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("g" variable
+                               (:reference 1
+                                :type ("Geom" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8852 8862]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [8835 8863])
+                    ("printOptions" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [8868 8889])
+                    ("calcPortGeom" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [8894 8914])
+                    ("calcFilmbackGeom" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [8919 8943])
+                    ("calcMaskGeom" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("g" variable
+                               (:reference 1
+                                :type ("Geom" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8967 8976])
+                            ("w" variable (:type "double") (reparse-symbol arg-sub-list) [8977 8986])
+                            ("h" variable (:type "double") (reparse-symbol arg-sub-list) [8987 8996])
+                            ("gSrc" variable
+                               (:reference 1
+                                :type ("Geom" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8997 9009])
+                            ("wSrc" variable (:type "double") (reparse-symbol arg-sub-list) [9010 9022])
+                            ("hSrc" variable (:type "double") (reparse-symbol arg-sub-list) [9023 9036]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [8948 9037])
+                    ("calcFilmbackSafeActionGeom" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [9042 9076])
+                    ("calcFilmbackSafeTitleGeom" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [9081 9114])
+                    ("calcSafeActionGeom" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("ar" variable
+                               (:reference 1
+                                :type ("Aspect_Ratio" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9144 9163]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9119 9164])
+                    ("calcSafeTitleGeom" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("ar" variable
+                               (:reference 1
+                                :type ("Aspect_Ratio" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9193 9212]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9169 9213])
+                    ("calcAspectGeom" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("ar" variable
+                               (:reference 1
+                                :type ("Aspect_Ratio" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9239 9257]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9218 9258])
+                    ("calcPanScanGeom" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("ps" variable
+                               (:reference 1
+                                :type ("PanScan" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9285 9299]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9263 9300])
+                    ("drawMask3D" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("g1" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9322 9330])
+                            ("g2" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9331 9339])
+                            ("z" variable (:type "double") (reparse-symbol arg-sub-list) [9340 9349])
+                            ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9350 9363])
+                            ("sides" variable (:type "bool") (reparse-symbol arg-sub-list) [9364 9376]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9305 9377])
+                    ("drawLine3D" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("x1" variable (:type "double") (reparse-symbol arg-sub-list) [9399 9409])
+                            ("x2" variable (:type "double") (reparse-symbol arg-sub-list) [9410 9420])
+                            ("y1" variable (:type "double") (reparse-symbol arg-sub-list) [9421 9431])
+                            ("y2" variable (:type "double") (reparse-symbol arg-sub-list) [9432 9442])
+                            ("z" variable (:type "double") (reparse-symbol arg-sub-list) [9443 9452])
+                            ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9453 9466])
+                            ("stipple" variable (:type "bool") (reparse-symbol arg-sub-list) [9467 9481]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9382 9482])
+                    ("drawLines3D" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("g" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9505 9512])
+                            ("z" variable (:type "double") (reparse-symbol arg-sub-list) [9513 9522])
+                            ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9523 9536])
+                            ("sides" variable (:type "bool") (reparse-symbol arg-sub-list) [9537 9548])
+                            ("stipple" variable (:type "bool") (reparse-symbol arg-sub-list) [9549 9563]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9487 9564])
+                    ("drawMask" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("g1" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9584 9592])
+                            ("g2" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9593 9601])
+                            ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9602 9615])
+                            ("sides" variable (:type "bool") (reparse-symbol arg-sub-list) [9616 9628]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9569 9629])
+                    ("drawLine" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("x1" variable (:type "double") (reparse-symbol arg-sub-list) [9649 9659])
+                            ("x2" variable (:type "double") (reparse-symbol arg-sub-list) [9660 9670])
+                            ("y1" variable (:type "double") (reparse-symbol arg-sub-list) [9671 9681])
+                            ("y2" variable (:type "double") (reparse-symbol arg-sub-list) [9682 9692])
+                            ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9693 9706])
+                            ("stipple" variable (:type "bool") (reparse-symbol arg-sub-list) [9707 9721]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9634 9722])
+                    ("drawLines" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("g" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9743 9750])
+                            ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9751 9764])
+                            ("sides" variable (:type "bool") (reparse-symbol arg-sub-list) [9765 9776])
+                            ("stipple" variable (:type "bool") (reparse-symbol arg-sub-list) [9777 9791]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9727 9792])
+                    ("drawText" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("text" variable (:type ("MString" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9812 9825])
+                            ("tx" variable (:type "double") (reparse-symbol arg-sub-list) [9826 9836])
+                            ("ty" variable (:type "double") (reparse-symbol arg-sub-list) [9837 9847])
+                            ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9848 9861])
+                            ("" variable (:type ("M3dView::TextPosition" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9862 9884])
+                            ("view" variable
+                               (:reference 1
+                                :type ("M3dView" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9885 9901]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9797 9902])
+                    ("drawInternalTextElements" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("view" variable
+                               (:reference 1
+                                :type ("M3dView" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9937 9952]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9907 9953])
+                    ("drawCustomTextElements" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("view" variable
+                               (:reference 1
+                                :type ("M3dView" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [9986 10001]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9958 10002])
+                    ("oFilmback" variable (:type ("Filmback" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10008 10038])
+                    ("filmback" variable (:type ("Filmback" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10008 10038])
+                    ("pad" variable (:type ("PadOptions" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10043 10058])
+                    ("panScan" variable (:type ("PanScan" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10063 10082])
+                    ("portGeom" variable (:type ("Geom" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10087 10107])
+                    ("options" variable (:type ("Options" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10112 10131])
+                    ("portWidth" variable (:type "double") (reparse-symbol classsubparts) [10137 10157])
+                    ("portHeight" variable (:type "double") (reparse-symbol classsubparts) [10162 10183])
+                    ("overscan" variable (:type "double") (reparse-symbol classsubparts) [10188 10207])
+                    ("ncp" variable (:type "double") (reparse-symbol classsubparts) [10212 10226])
+                    ("wim" variable (:type ("MMatrix" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10231 10245])
+                    ("camera" variable (:type ("MFnCamera" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10250 10267])
+                    ("thisNode" variable (:type ("MObject" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10272 10291])
+                    ("numAspectRatios" variable (:type "int") (reparse-symbol classsubparts) [10297 10320])
+                    ("loadDefault" variable (:type "double") (reparse-symbol classsubparts) [10325 10344])
+                    ("maximumDist" variable (:type "double") (reparse-symbol classsubparts) [10349 10368])
+                    ("needRefresh" variable (:type "bool") (reparse-symbol classsubparts) [10373 10392])
+                    ("ars" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("Aspect_Ratio" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [10398 10428])
+                    ("text" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("TextData" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [10433 10464]))                  
+                :type "class")
+                nil [1740 10467]))          
+      :file "spReticleLoc.h"
+      :pointmax 10469
+      :fsize 10776
+      :lastmodtime '(21897 10028 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!IFW_PIPELINE!BBF!Maya!Lib!spReticle!source!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

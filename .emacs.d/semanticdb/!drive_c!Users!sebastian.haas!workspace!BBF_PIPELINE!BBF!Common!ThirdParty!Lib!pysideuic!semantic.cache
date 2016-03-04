@@ -1,0 +1,106 @@
+;; Object pysideuic/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pysideuic/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+    How to load a user interface dynamically with PySide.
+
+    .. moduleauthor::  Sebastian Wiesner  <lunaryorn@gmail.com>
+\"\"\"" code nil nil [1218 1348])
+            ("" code nil nil [1373 1458])
+            ("os" include nil nil [1460 1469])
+            ("sys" include nil nil [1470 1480])
+            ("inspect" include nil nil [1481 1495])
+            ("PySide.QtCore" include nil nil [1497 1540])
+            ("PySide.QtUiTools" include nil nil [1541 1579])
+            ("PySide.QtGui" include nil nil [1580 1617])
+            ("__version__" variable nil nil [1620 1641])
+            ("UiLoader" type
+               (:documentation "
+    Subclass :class:`~PySide.QtUiTools.QUiLoader` to create the user interface
+    in a base instance.
+
+    Unlike :class:`~PySide.QtUiTools.QUiLoader` itself this class does not
+    create a new instance of the top-level widget, but creates the user
+    interface in an existing instance of the top-level class.
+
+    This mimics the behaviour of :func:`PyQt4.uic.loadUi`.
+    "
+                :superclasses ("QUiLoader")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Create a loader for the given ``baseinstance``.
+
+        The user interface is created in ``baseinstance``, which must be an
+        instance of the top-level class in the user interface to load, or a
+        subclass thereof.
+
+        ``parent`` is the parent object of this loader.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [2107 2414])
+                            ("QUiLoader" code nil (reparse-symbol indented_block_body) [2423 2461])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2470 2502]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2078 2082])
+                            ("baseinstance" variable nil (reparse-symbol function_parameters) [2084 2096]))                          
+                        :documentation "
+        Create a loader for the given ``baseinstance``.
+
+        The user interface is created in ``baseinstance``, which must be an
+        instance of the top-level class in the user interface to load, or a
+        subclass thereof.
+
+        ``parent`` is the parent object of this loader.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2065 2503])
+                    ("createWidget" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2525 2529])
+                            ("class_name" variable nil (reparse-symbol function_parameters) [2531 2541])
+                            ("parent" variable nil (reparse-symbol function_parameters) [2543 2549])
+                            ("name" variable nil (reparse-symbol function_parameters) [2556 2560]))                          )
+                        (reparse-symbol indented_block_body) [2508 3146]))                  
+                :type "class")
+                nil [1644 3146])
+            ("loadUi" function
+               (:documentation "
+    Dynamically load a user interface from the given ``uifile``.
+
+    ``uifile`` is a string containing a file name of the UI file to load.
+
+    If ``baseinstance`` is ``None``, the a new instance of the top-level widget
+    will be created.  Otherwise, the user interface is created within the given
+    ``baseinstance``.  In this case ``baseinstance`` must be an instance of the
+    top-level widget class in the UI file to load, or a subclass thereof.  In
+    other words, if you've created a ``QMainWindow`` interface in the designer,
+    ``baseinstance`` must be a ``QMainWindow`` or a subclass thereof, too.  You
+    cannot load a ``QMainWindow`` UI file with a plain
+    :class:`~PySide.QtGui.QWidget` as ``baseinstance``.
+
+    :method:`~PySide.QtCore.QMetaObject.connectSlotsByName()` is called on the
+    created user interface, so you can implemented your slots according to its
+    conventions in your widget class.
+
+    Return ``baseinstance``, if ``baseinstance`` is not ``None``.  Otherwise
+    return the newly created instance of the user interface.
+    "
+                :arguments 
+                  ( ("uifile" variable nil (reparse-symbol function_parameters) [3159 3165])
+                    ("baseinstance" variable nil (reparse-symbol function_parameters) [3167 3179]))                  )
+                nil [3148 4692]))          
+      :file "__init__.py"
+      :pointmax 4692
+      :fsize 4810
+      :lastmodtime '(22008 12840 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!ThirdParty!Lib!pysideuic!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

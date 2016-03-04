@@ -1,0 +1,484 @@
+;; Object bbfShotBuilder/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfShotBuilder/"
+  :tables
+  (list
+    (semanticdb-table "ShotBuilder.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotBuilder.ShotBuilder
+   :synopsis: Shotbuilder UI base
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 149])
+            ("__future__" include nil nil [150 187])
+            ("pprint" include nil nil [189 214])
+            ("__all__" variable nil nil [216 241])
+            ("os" include nil nil [243 252])
+            ("PySide" include nil nil [254 286])
+            ("PySide.QtCore" include nil nil [287 322])
+            ("logging" include nil nil [324 338])
+            ("__main__" include nil nil [340 367])
+            ("BBF.Common.Lib.bbfPath" include nil nil [369 409])
+            ("BBF.Common.Lib.BBF_Validation.BBF_Validation" include nil nil [410 479])
+            ("BBF.Maya.Lib.bbfUI.bbfUI" include nil nil [480 520])
+            ("BBF.Common.Lib.ShotgunInterface.ShotgunInterface" include nil nil [521 596])
+            ("BBF.Common.Lib.bbf_base.qtwidgets" include nil nil [597 659])
+            ("log" variable nil nil [661 694])
+            ("log" code nil nil [695 722])
+            ("ShotBuilder" type
+               (:documentation " GUI tool to setup a shot, brings in assets from the project,
+    can query shotgun as to which assets should be in a shot
+    Note that this is the base class, needs to be extended for apps (e.g. maya)
+    "
+                :superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("_TVASSETS_ASSET_IDX" variable nil (reparse-symbol indented_block_body) [984 1007])
+                    ("_TVASSETS_COUNT_IDX" variable nil (reparse-symbol indented_block_body) [1012 1035])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            parent: a QWidget
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1082 1141])
+                            ("parent" code nil (reparse-symbol indented_block_body) [1150 1190])
+                            ("QtGui" code nil (reparse-symbol indented_block_body) [1200 1247])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1257 1274])
+                            ("self, self, self" code nil (reparse-symbol indented_block_body) [1343 1412])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1422 1484])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1494 1547])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1556 1576])
+                            ("self" code nil (reparse-symbol indented_block_body) [1645 1664])
+                            ("self" code nil (reparse-symbol indented_block_body) [1674 1722])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1731 1797])
+                            ("self" code nil (reparse-symbol indented_block_body) [1807 1834])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1844 1892])
+                            ("if" code nil (reparse-symbol indented_block_body) [1901 2080])
+                            ("self" code nil (reparse-symbol indented_block_body) [2089 2113])
+                            ("self" code nil (reparse-symbol indented_block_body) [2123 2145])
+                            ("self" code nil (reparse-symbol indented_block_body) [2195 2241])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2250 2270])
+                            ("self" code nil (reparse-symbol indented_block_body) [2280 2341]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1054 1058])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1060 1066]))                          
+                        :documentation "
+        Args:
+            parent: a QWidget
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1041 2342])
+                    ("populateEpisodeCB" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2369 2373]))                          
+                        :documentation " gets the episodes and shots from the project on disk and puts them in the combo boxes ")
+                        (reparse-symbol indented_block_body) [2347 3378])
+                    ("setRefHeader" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3400 3404]))                          
+                        :documentation " (re)-creates the labels for the assets-to-add list ")
+                        (reparse-symbol indented_block_body) [3383 3549])
+                    ("setUserDefaults" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3574 3578]))                          
+                        :documentation " Checks for user specific default settings and sets them if they exist. ")
+                        (reparse-symbol indented_block_body) [3554 4049])
+                    ("storeUserDefaults" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4076 4080]))                          
+                        :documentation " Stores the user default settings. ")
+                        (reparse-symbol indented_block_body) [4054 4324])
+                    ("getAssetType" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4346 4350])
+                            ("assetCode" variable nil (reparse-symbol function_parameters) [4352 4361]))                          
+                        :documentation " return a string describing an asset code
+
+        Args:
+            assetCode: asset code string
+
+        Returns:
+            list: list of asset type string
+        ")
+                        (reparse-symbol indented_block_body) [4329 4672])
+                    ("setShotBuilderFrames" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4702 4706]))                          
+                        :documentation " set start/end frames in the GUI ")
+                        (reparse-symbol indented_block_body) [4677 4970])
+                    ("listAllAsset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4992 4996])
+                            ("assetType" variable nil (reparse-symbol function_parameters) [4998 5007]))                          
+                        :documentation " list all the assets of a given type from shotgun
+
+        Args:
+            assetType: asset type string
+
+        Returns:
+            dict: dictionary mapping asset names to their type
+        ")
+                        (reparse-symbol indented_block_body) [4975 5582])
+                    ("feedList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5600 5604])
+                            ("listW" variable nil (reparse-symbol function_parameters) [5606 5611])
+                            ("assetType" variable nil (reparse-symbol function_parameters) [5613 5622]))                          
+                        :documentation " update internal list of assets of a given type and add them all to the list widget
+
+        Args:
+            listW: a QListWidget to add items to
+            assetType: type string of asset to populate the list widget with
+        ")
+                        (reparse-symbol indented_block_body) [5587 6189])
+                    ("getAssetItem" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6303 6307])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [6309 6318]))                          
+                        :documentation " return the qt modelitem for an assetName
+
+        Args:
+            assetName: the name of an asset on the list
+
+        Returns:
+            QModelItem: the qmodel item representing the asset in the list (or None if not found)
+
+        Raises:
+            Value Error: if there's multiple items representing the same assetName
+        ")
+                        (reparse-symbol indented_block_body) [6286 7074])
+                    ("setAssetInAssetModel" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7104 7108])
+                            ("assetInfo" variable nil (reparse-symbol function_parameters) [7110 7119]))                          
+                        :documentation " ensures that the treeview of ShotAssets is uptodate for one asset
+        this function prevents the assetmodel from emitting dataChanged(), since that would recursivly call this function
+
+        Args:
+            assetInfo: a dict with 'asset' => ShotgunAsset and 'count' => number of times this asset is supposed to be referenced in
+        ")
+                        (reparse-symbol indented_block_body) [7079 10710])
+                    ("addAssetToAssetList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10739 10743])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [10745 10754]))                          
+                        :documentation " add an assetName to the list (it's not an error if the asset is already on the list)
+
+        Args:
+            assetName: name of an Asset
+
+        Returns:
+            dict: asset information for the asset with the given name
+        ")
+                        (reparse-symbol indented_block_body) [10715 11555])
+                    ("removeAssetFromAssetList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11589 11593])
+                            ("assetInfo" variable nil (reparse-symbol function_parameters) [11595 11604]))                          
+                        :documentation " remove an asset from the list and our internal data
+
+        Args:
+            assetInfo: an asset information dictionary, as returned by addAssetToAssetList
+        ")
+                        (reparse-symbol indented_block_body) [11560 12357])
+                    ("decrementAssetListCounter" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12392 12396])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [12398 12407]))                          
+                        :documentation " decrements the counter of an asset on the list, if the counter is 0, the asset is removed
+
+        Args:
+            assetName: the name of an asset to decrement the counter for
+        ")
+                        (reparse-symbol indented_block_body) [12362 12843])
+                    ("addAssetsToAssetList" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("bbf_base_qtwidgets.WithQWaitCursor" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12973 12977])
+                            ("assetList" variable nil (reparse-symbol function_parameters) [12979 12988])
+                            ("assetType" variable nil (reparse-symbol function_parameters) [12990 12999]))                          
+                        :documentation " adds or updates Assets on the Asset list
+
+        Args:
+            assetList: a list of assetNames to add to the list
+            assetType: the types of Assets in the assetList
+
+        Returns:
+            list: possibly empty list of items newly added to the Asset list
+
+        Raises:
+            ValueError: if an item in assetList is on the asset list multiple times
+        ")
+                        (reparse-symbol indented_block_body) [12848 13700])
+                    ("assetsToLoad" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13722 13726]))                          
+                        :documentation " return information about whic assets to load and how to load them
+
+        Returns:
+            dict:
+                missing: these assets do not exists on disk
+                load: these assets need only be loaded into the shot
+                parts: these assets are parts of an asset and need the APM mechanism to load them
+        ")
+                        (reparse-symbol indented_block_body) [13705 14680])
+                    ("selectedAssetType" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14770 14774]))                          
+                        :documentation " return string describing the type of asset selected in the stacked widget
+
+        Returns:
+            str: asset type list visible
+        ")
+                        (reparse-symbol indented_block_body) [14748 15157])
+                    ("search" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15173 15177])
+                            ("searchText" variable nil (reparse-symbol function_parameters) [15179 15189])
+                            ("listField" variable nil (reparse-symbol function_parameters) [15191 15200])
+                            ("assetType" variable nil (reparse-symbol function_parameters) [15202 15211]))                          
+                        :documentation " search for an asset in the list of available assets
+
+        Args:
+            searchText: string to search for
+            listField: the list widget to display the results in
+            assetType: search in assets of this type
+        ")
+                        (reparse-symbol indented_block_body) [15162 15910])
+                    ("" code nil (reparse-symbol indented_block_body) [15983 16023])
+                    ("refAssetEdited" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16047 16051])
+                            ("topLeft" variable nil (reparse-symbol function_parameters) [16053 16060])
+                            ("bottomRight" variable nil (reparse-symbol function_parameters) [16062 16073]))                          
+                        :documentation " callback called when the to-reference asset list is edited, i.e. the count is entered directly
+
+        Args:
+            topLeft: idx of top left widget of the rows that got changed
+            bottomRight: idx of bottom right widget of the rows that got changed
+        ")
+                        (reparse-symbol indented_block_body) [16028 16996])
+                    ("" code nil (reparse-symbol indented_block_body) [17013 17018])
+                    ("onEpisodeChanged" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17044 17048])
+                            ("episode" variable nil (reparse-symbol function_parameters) [17050 17057]))                          
+                        :documentation " when the episode is changed we need to refresh the shot list
+
+        Args:
+            edisode: the name of the episode that was changed to
+        ")
+                        (reparse-symbol indented_block_body) [17023 17467])
+                    ("" code nil (reparse-symbol indented_block_body) [17484 17486])
+                    ("onGetFromShotgun" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17512 17516]))                          
+                        :documentation " called when the pull from shotgun button is pressed, queries shotgun based on selected
+        episode and shot and add the returned assets to the to-reference list
+
+        TODO: this currently increments the count of assets already there, might not be what's expected
+        ")
+                        (reparse-symbol indented_block_body) [17491 19931])
+                    ("" code nil (reparse-symbol indented_block_body) [19948 19953])
+                    ("onChangeAssetList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19980 19984])
+                            ("index" variable nil (reparse-symbol function_parameters) [19986 19991]))                          
+                        :documentation " called when the stacked tab is changed
+
+        Args:
+            index: integer index of the tab shown
+        ")
+                        (reparse-symbol indented_block_body) [19958 20601])
+                    ("" code nil (reparse-symbol indented_block_body) [20618 20620])
+                    ("onAddAsset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20640 20644]))                          
+                        :documentation " called when the add asset button is pressed ")
+                        (reparse-symbol indented_block_body) [20625 21364])
+                    ("" code nil (reparse-symbol indented_block_body) [21381 21404])
+                    ("onAddAssetFromList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21432 21436])
+                            ("item" variable nil (reparse-symbol function_parameters) [21438 21442]))                          
+                        :documentation " double-click add asset support
+
+        Args:
+            item: the list widget item that was clicked in the available assets list
+        ")
+                        (reparse-symbol indented_block_body) [21409 21749])
+                    ("" code nil (reparse-symbol indented_block_body) [21766 21768])
+                    ("onRemoveAsset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21791 21795])
+                            ("args" variable nil (reparse-symbol function_parameters) [21797 21802]))                          
+                        :documentation " callback when the remove asset button is pressed ")
+                        (reparse-symbol indented_block_body) [21773 22320])
+                    ("" code nil (reparse-symbol indented_block_body) [22337 22342])
+                    ("onCharLookUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22364 22368])
+                            ("searchText" variable nil (reparse-symbol function_parameters) [22370 22380]))                          
+                        :documentation " callback for the character list search box ")
+                        (reparse-symbol indented_block_body) [22347 22507])
+                    ("" code nil (reparse-symbol indented_block_body) [22524 22529])
+                    ("onPropLookUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22551 22555])
+                            ("searchText" variable nil (reparse-symbol function_parameters) [22557 22567]))                          
+                        :documentation " callback for the prop list search box ")
+                        (reparse-symbol indented_block_body) [22534 22684])
+                    ("" code nil (reparse-symbol indented_block_body) [22701 22706])
+                    ("onSetLookUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22727 22731])
+                            ("searchText" variable nil (reparse-symbol function_parameters) [22733 22743]))                          
+                        :documentation " callback for the set list search box ")
+                        (reparse-symbol indented_block_body) [22711 22857])
+                    ("" code nil (reparse-symbol indented_block_body) [22874 22876])
+                    ("onReferAll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22896 22900]))                          
+                        :documentation " callback when the 'ok' button is pressed, loads the assets into the scene ")
+                        (reparse-symbol indented_block_body) [22881 23316])
+                    ("getAssetPath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23338 23342])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [23344 23353]))                          
+                        :documentation " return the path to an asset
+
+        Args:
+            assetName: the name of the asset to generate the path for
+
+        Returns:
+            str: a path string
+        ")
+                        (reparse-symbol indented_block_body) [23321 23763])
+                    ("displayMsg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23783 23787])
+                            ("title" variable nil (reparse-symbol function_parameters) [23789 23794])
+                            ("msg" variable nil (reparse-symbol function_parameters) [23796 23799]))                          
+                        :documentation " show a message to the user
+
+        Args:
+            title: the title of the window displating the message
+            msg: the message string to show
+        ")
+                        (reparse-symbol indented_block_body) [23768 24123])
+                    ("getOpenFilename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24148 24152]))                          
+                        :documentation " The child class will overwrite the functionality of this function,
+        returning the filename currently open in the application ")
+                        (reparse-symbol indented_block_body) [24128 24392])
+                    ("getPlaybackStartTime" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24422 24426]))                          
+                        :documentation " The child class will overwrite the functionality of this function,
+        returning the playback start time
+        ")
+                        (reparse-symbol indented_block_body) [24397 24656])
+                    ("getPlaybackEndTime" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24684 24688]))                          
+                        :documentation " The child class will overwrite the functionality of this function,
+        returning the playback end time
+        ")
+                        (reparse-symbol indented_block_body) [24661 24914])
+                    ("addAssetsToScene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24940 24944]))                          
+                        :documentation " The child class will overwrite the functionality of this function,
+        adding assets to the opened scene
+        ")
+                        (reparse-symbol indented_block_body) [24919 25170]))                  
+                :type "class")
+                nil [724 25170])
+            ("run" function nil nil [25196 25342]))          
+      :file "ShotBuilder.py"
+      :pointmax 25342
+      :fsize 25997
+      :lastmodtime '(22182 6026 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfShotBuilder
+   :synopsis: GUI tool to bring in assets into a shot
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 160]))          
+      :file "__init__.py"
+      :pointmax 161
+      :fsize 167
+      :lastmodtime '(22182 5408 0 0)
+      :unmatched-syntax '(($EOI 161 . 161) ($EOI 249 . 249) ($EOI 225 . 225) ($EOI 212 . 212) (IMPORT 188 . 194) (MULT 195 . 196) (FROM 162 . 166) (PERIOD 182 . 183)))
+    (semanticdb-table "shotBuilderUI.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("PyQt4" include nil nil [361 392])
+            ("try" code nil nil [394 490])
+            ("Ui_shotBuilder" type
+               (:superclasses ("object")
+                :members 
+                  ( ("setupUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [537 541])
+                            ("shotBuilder" variable nil (reparse-symbol function_parameters) [543 554]))                          )
+                        (reparse-symbol indented_block_body) [525 9677])
+                    ("retranslateUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9700 9704])
+                            ("shotBuilder" variable nil (reparse-symbol function_parameters) [9706 9717]))                          )
+                        (reparse-symbol indented_block_body) [9682 12472]))                  
+                :type "class")
+                nil [491 12472]))          
+      :file "shotBuilderUI.py"
+      :pointmax 12473
+      :fsize 12655
+      :lastmodtime '(21896 15463 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!bbfShotBuilder!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,177 @@
+;; Object context/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "context/"
+  :tables
+  (list
+    (semanticdb-table "ctx_ifcs.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("ctx" include nil nil [1 11])
+            ("IBar" type
+               (:superclasses ("ctx.Interface")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [78 95]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [57 61])
+                            ("name" variable nil (reparse-symbol function_parameters) [63 67]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [44 96])
+                    ("do_it" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [111 115]))                          )
+                        (reparse-symbol indented_block_body) [101 131]))                  
+                :type "class")
+                nil [13 131])
+            ("IPub" type
+               (:superclasses ("ctx.Interface")
+                :members 
+                  ( ("foo_bar" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [192 196]))                          )
+                        (reparse-symbol indented_block_body) [180 212]))                  
+                :type "class")
+                nil [149 212])
+            ("IStorage" type
+               (:superclasses ("ctx.Interface")
+                :members 
+                  ( ("_instance" variable nil (reparse-symbol indented_block_body) [265 281])
+                    ("_storage" variable nil (reparse-symbol indented_block_body) [286 299])
+                    ("__new__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [316 319])
+                        ("args" variable nil (reparse-symbol function_parameters) [321 326])
+                        ("kwargs" variable nil (reparse-symbol function_parameters) [328 336]))                      ) (reparse-symbol indented_block_body) [304 482])
+                    ("add" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [495 499])
+                            ("thing" variable nil (reparse-symbol function_parameters) [501 506]))                          )
+                        (reparse-symbol indented_block_body) [487 522])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [535 539]))                          )
+                        (reparse-symbol indented_block_body) [527 555]))                  
+                :type "class")
+                nil [230 555])
+            ("ISceneCheck" type
+               (:superclasses ("ctx.Interface")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [666 693]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [630 634])
+                            ("parent_ui" variable nil (reparse-symbol function_parameters) [636 645])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [647 655]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [617 694])
+                    ("check" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [709 713]))                          )
+                        (reparse-symbol indented_block_body) [699 729])
+                    ("fix" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [742 746]))                          )
+                        (reparse-symbol indented_block_body) [734 762]))                  
+                :type "class")
+                nil [579 762]))          
+      :file "ctx_ifcs.py"
+      :pointmax 787
+      :fsize 830
+      :lastmodtime '(21905 22944 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 737 . 804) (INDENT_BLOCK 695 . 728) ($EOI 733 . 733)))
+    (semanticdb-table "ctx_srvs.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("ctx" include nil nil [1 11])
+            ("ctx_ifcs" include nil nil [13 28])
+            ("FooService" type
+               (:superclasses ("ctx.Service")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [65 83])
+                    ("__implements__" variable nil (reparse-symbol indented_block_body) [88 120])
+                    ("do_it" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [136 140]))                          )
+                        (reparse-symbol indented_block_body) [126 213]))                  
+                :type "class")
+                nil [30 213])
+            ("BazService" type
+               (:superclasses ("ctx.Service")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [272 290])
+                    ("__implements__" variable nil (reparse-symbol indented_block_body) [295 342])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [382 399]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [361 365])
+                            ("name" variable nil (reparse-symbol function_parameters) [367 371]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [348 400])
+                    ("do_it" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [415 419]))                          )
+                        (reparse-symbol indented_block_body) [405 491])
+                    ("foo_bar" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [508 512]))                          )
+                        (reparse-symbol indented_block_body) [496 536]))                  
+                :type "class")
+                nil [237 536])
+            ("StorageService" type
+               (:superclasses ("ctx.Service")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [599 621])
+                    ("__implements__" variable nil (reparse-symbol indented_block_body) [626 662])
+                    ("add" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [676 680])
+                            ("thing" variable nil (reparse-symbol function_parameters) [682 687]))                          )
+                        (reparse-symbol indented_block_body) [668 726])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [739 743]))                          )
+                        (reparse-symbol indented_block_body) [731 775]))                  
+                :type "class")
+                nil [560 775])
+            ("SceneNameCheckService" type
+               (:superclasses ("ctx.Service")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [849 878])
+                    ("help_string" variable nil (reparse-symbol indented_block_body) [883 924])
+                    ("__implements__" variable nil (reparse-symbol indented_block_body) [929 968])
+                    ("check" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [984 988]))                          )
+                        (reparse-symbol indented_block_body) [974 1056])
+                    ("fix" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1069 1073]))                          )
+                        (reparse-symbol indented_block_body) [1061 1089]))                  
+                :type "class")
+                nil [803 1089]))          
+      :file "ctx_srvs.py"
+      :pointmax 1089
+      :fsize 1137
+      :lastmodtime '(21905 25705 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!context!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

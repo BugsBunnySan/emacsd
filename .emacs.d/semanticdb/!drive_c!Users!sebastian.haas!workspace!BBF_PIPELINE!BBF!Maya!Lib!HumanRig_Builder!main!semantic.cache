@@ -1,0 +1,496 @@
+;; Object main/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "main/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(21919 61103 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "buildUtilities.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+buildUtilities.pY
+brownbagfilms
+
+
+DESCRIPTION:
+contains functions designed for use by builder classes (biped_builder.py etc..)
+
+AUTHORS:
+Eoghan Garvey 
+
+\"\"\"" code nil nil [2 162])
+            ("PyQt4" include nil nil [165 196])
+            ("pymel.core" include nil nil [197 221])
+            ("pickle" include nil nil [222 235])
+            ("os" include nil nil [236 245])
+            ("fnmatch" include nil nil [246 260])
+            ("saveSkins" function (:documentation "
+    searches and filters for geometry in the scene which has a skincluster
+    saves out a file containing the mesh names and their corresponding skin influence names
+    ") nil [264 1515])
+            ("loadSkins" function
+               (:documentation "
+    loads skin influences file - adding joint influences to their corresponding meshes.
+    copies skin weights from a reference file onto current meshes
+    "
+                :arguments 
+                  ( ("data_dir" variable nil (reparse-symbol function_parameters) [1538 1546]))                  )
+                nil [1524 3586])
+            ("saveShapes" function (:documentation "
+    collect all shapes that end with _CTRL suffix and save out their cv positions to external file
+    ") nil [3591 4599])
+            ("loadShapes" function
+               (:documentation "
+    load shapes from external file
+    "
+                :arguments 
+                  ( ("shapeFile" variable nil (reparse-symbol function_parameters) [4619 4628]))                  )
+                nil [4604 5310])
+            ("loadExtraRig" function
+               (:documentation "
+    load shapes from external file
+    "
+                :arguments 
+                  ( ("extraFile" variable nil (reparse-symbol function_parameters) [5345 5354]))                  )
+                nil [5327 6167])
+            ("saveBuild" function (:arguments 
+              ( ("CHAR" variable nil (reparse-symbol function_parameters) [6204 6208]))              ) nil [6190 6702])
+            ("rebuildCharacter" function
+               (:documentation "
+    files needed:
+    skeleton .ma
+    model .ma
+    skin ref
+    skin data
+    shape data
+    
+    optional:
+    extra rig script
+    extra rigs
+    
+    rigType - 'biped' / 'quadruped'
+    
+    "
+                :arguments 
+                  ( ("CHAR" variable nil (reparse-symbol function_parameters) [6729 6733])
+                    ("rigType" variable nil (reparse-symbol function_parameters) [6735 6742]))                  )
+                nil [6708 9897]))          
+      :file "buildUtilities.py"
+      :pointmax 9906
+      :fsize 10197
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "controlShapes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+
+CLASS:
+ctrlShape
+
+FUNCTIONS:
+makeShape(self, ctrlType, c_name)
+applyShape(self, crtlShape, targetNode ,c_name='CTRL#')
+
+\"\"\"" code nil nil [1 129])
+            ("pymel.core" include nil nil [132 156])
+            ("ctrlShape" type
+               (:members 
+                  ( ("makeShape" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [203 207])
+                            ("ctrlType" variable nil (reparse-symbol function_parameters) [209 217])
+                            ("c_name" variable nil (reparse-symbol function_parameters) [219 225])
+                            ("cSize" variable nil (reparse-symbol function_parameters) [227 232])
+                            ("cOffset" variable nil (reparse-symbol function_parameters) [236 243])
+                            ("multOffset" variable nil (reparse-symbol function_parameters) [255 265]))                          
+                        :documentation "
+        Creates control shape of type 'ctrlType' at location 'xForm'.  
+        
+        It's shape can be one of following:
+        cross, square, cube, circle, arrow, circleY, circleX, circleZ, loc, foot, group
+        
+        Returns: CTRL_shape transform node
+        ")
+                        (reparse-symbol indented_block_body) [189 4875])
+                    ("applyShape" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4914 4918])
+                            ("crtlShape" variable nil (reparse-symbol function_parameters) [4920 4929])
+                            ("targetNode" variable nil (reparse-symbol function_parameters) [4931 4941])
+                            ("c_name" variable nil (reparse-symbol function_parameters) [4943 4949])
+                            ("explicitTM" variable nil (reparse-symbol function_parameters) [4959 4969])
+                            ("rot" variable nil (reparse-symbol function_parameters) [4977 4980])
+                            ("size" variable nil (reparse-symbol function_parameters) [4987 4991])
+                            ("offset" variable nil (reparse-symbol function_parameters) [4995 5001]))                          
+                        :documentation "
+        ctrlShape = type of shape (listed in makeshape doc)
+        targetNode = ctrl shape will snap to this nodes transform
+        ")
+                        (reparse-symbol indented_block_body) [4899 5664]))                  
+                :type "class")
+                nil [158 5664]))          
+      :file "controlShapes.py"
+      :pointmax 5664
+      :fsize 5798
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "facialUI.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("controlShapes" include nil nil [1 27])
+            ("pymel.core" include nil nil [28 52])
+            ("reload" code nil nil [54 64])
+            ("facialUiShape" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [249 265])
+                            ("self" variable nil (reparse-symbol indented_block_body) [274 308])
+                            ("self" variable nil (reparse-symbol indented_block_body) [317 351])
+                            ("self" variable nil (reparse-symbol indented_block_body) [360 386])
+                            ("self" variable nil (reparse-symbol indented_block_body) [395 417])
+                            ("self" variable nil (reparse-symbol indented_block_body) [426 448])
+                            ("self" variable nil (reparse-symbol indented_block_body) [457 485]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [111 115])
+                            ("name" variable nil (reparse-symbol function_parameters) [117 121])
+                            ("upperXY_ctrls" variable nil (reparse-symbol function_parameters) [132 145])
+                            ("lowerXY_ctrls" variable nil (reparse-symbol function_parameters) [152 165])
+                            ("joy_ctrls" variable nil (reparse-symbol function_parameters) [172 181])
+                            ("X_ctrls" variable nil (reparse-symbol function_parameters) [187 194])
+                            ("Y_ctrls" variable nil (reparse-symbol function_parameters) [199 206])
+                            ("borderSize" variable nil (reparse-symbol function_parameters) [211 221]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [98 486])
+                    ("make_X" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [506 510])
+                            ("horizontal" variable nil (reparse-symbol function_parameters) [512 522])
+                            ("center" variable nil (reparse-symbol function_parameters) [526 532]))                          )
+                        (reparse-symbol indented_block_body) [495 1705])
+                    ("make_Y" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1738 1742])
+                            ("verticalOffset" variable nil (reparse-symbol function_parameters) [1744 1758])
+                            ("center" variable nil (reparse-symbol function_parameters) [1762 1768]))                          )
+                        (reparse-symbol indented_block_body) [1727 2945])
+                    ("make_joy" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2997 3001])
+                            ("vertical" variable nil (reparse-symbol function_parameters) [3003 3011]))                          )
+                        (reparse-symbol indented_block_body) [2984 3970])
+                    ("make_XY" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4027 4031])
+                            ("vertical" variable nil (reparse-symbol function_parameters) [4033 4041])
+                            ("upper" variable nil (reparse-symbol function_parameters) [4045 4050]))                          )
+                        (reparse-symbol indented_block_body) [4015 5121])
+                    ("make_border" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5180 5184])
+                            ("X" variable nil (reparse-symbol function_parameters) [5186 5187])
+                            ("Y" variable nil (reparse-symbol function_parameters) [5189 5190]))                          )
+                        (reparse-symbol indented_block_body) [5164 5203])
+                    ("setText" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5228 5232])
+                            ("name" variable nil (reparse-symbol function_parameters) [5234 5238])
+                            ("above" variable nil (reparse-symbol function_parameters) [5240 5245])
+                            ("size" variable nil (reparse-symbol function_parameters) [5253 5257]))                          )
+                        (reparse-symbol indented_block_body) [5216 5272]))                  
+                :type "class")
+                nil [66 5272]))          
+      :file "facialUI.py"
+      :pointmax 5275
+      :fsize 5427
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "jointCmds.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+To-Do: figure out how to extract naming Conventions into seperate Module
+\"\"\"" code nil nil [1 81])
+            ("pymel.core" include nil nil [83 107])
+            ("m_Maths" include nil nil [108 122])
+            ("controlShapes" include nil nil [123 149])
+            ("transformCmds" include nil nil [170 196])
+            ("segmentedBones" function (:arguments 
+              ( ("start" variable nil (reparse-symbol function_parameters) [217 222])
+                ("end" variable nil (reparse-symbol function_parameters) [224 227])
+                ("amount" variable nil (reparse-symbol function_parameters) [229 235])
+                ("baseName" variable nil (reparse-symbol function_parameters) [237 245])
+                ("parented" variable nil (reparse-symbol function_parameters) [247 255])
+                ("asJoints" variable nil (reparse-symbol function_parameters) [262 270])
+                ("offset" variable nil (reparse-symbol function_parameters) [277 283]))              ) nil [198 1965])
+            ("makeStretchJointsExpression" function (:arguments 
+              ( ("jointsArray" variable nil (reparse-symbol function_parameters) [2003 2014])
+                ("theCurve" variable nil (reparse-symbol function_parameters) [2016 2024])
+                ("asScale" variable nil (reparse-symbol function_parameters) [2026 2033]))              ) nil [1970 3789])
+            ("makeStretchySpline" function (:arguments 
+              ( ("start" variable nil (reparse-symbol function_parameters) [3818 3823])
+                ("end" variable nil (reparse-symbol function_parameters) [3825 3828])
+                ("amount" variable nil (reparse-symbol function_parameters) [3830 3836])
+                ("baseName" variable nil (reparse-symbol function_parameters) [3838 3846])
+                ("curve" variable nil (reparse-symbol function_parameters) [3848 3853]))              ) nil [3795 3979])
+            ("rigTwistJoints" function (:arguments 
+              ( ("startJoint" variable nil (reparse-symbol function_parameters) [3999 4009])
+                ("endJoint" variable nil (reparse-symbol function_parameters) [4011 4019])
+                ("twistBones" variable nil (reparse-symbol function_parameters) [4021 4031])
+                ("tName" variable nil (reparse-symbol function_parameters) [4033 4038])
+                ("altUpAxis" variable nil (reparse-symbol function_parameters) [4043 4052]))              ) nil [3980 6137])
+            ("makeTwistJointChain" function (:arguments 
+              ( ("startJnt" variable nil (reparse-symbol function_parameters) [6162 6170])
+                ("midJnt" variable nil (reparse-symbol function_parameters) [6172 6178])
+                ("endJnt" variable nil (reparse-symbol function_parameters) [6180 6186])
+                ("jntAmt_start" variable nil (reparse-symbol function_parameters) [6188 6200])
+                ("jntAmt_end" variable nil (reparse-symbol function_parameters) [6204 6214])
+                ("prefix" variable nil (reparse-symbol function_parameters) [6218 6224])
+                ("altAxis" variable nil (reparse-symbol function_parameters) [6229 6236]))              ) nil [6138 7970])
+            ("makeHingeJoint" function (:arguments 
+              ( ("upperJnt" variable nil (reparse-symbol function_parameters) [7990 7998])
+                ("lowerJnt" variable nil (reparse-symbol function_parameters) [8000 8008])
+                ("name" variable nil (reparse-symbol function_parameters) [8010 8014])
+                ("scaleVal" variable nil (reparse-symbol function_parameters) [8016 8024])
+                ("rotateAxis" variable nil (reparse-symbol function_parameters) [8030 8040]))              ) nil [7971 9939])
+            ("addStretch" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [9955 9959])
+                ("jntA" variable nil (reparse-symbol function_parameters) [9961 9965])
+                ("jntB" variable nil (reparse-symbol function_parameters) [9967 9971])
+                ("jntC" variable nil (reparse-symbol function_parameters) [9973 9977])
+                ("ikHndl" variable nil (reparse-symbol function_parameters) [9979 9985])
+                ("rigHook" variable nil (reparse-symbol function_parameters) [9987 9994])
+                ("ctrl" variable nil (reparse-symbol function_parameters) [9996 10000])
+                ("extraLeg" variable nil (reparse-symbol function_parameters) [10002 10010]))              ) nil [9940 14336]))          
+      :file "jointCmds.py"
+      :pointmax 14336
+      :fsize 14710
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "m_Maths.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+extra maths functions
+\"\"\"" code nil nil [2 31])
+            ("math" include nil nil [32 43])
+            ("cross" function
+               (:documentation "
+    return cross product of two lists of len(3)
+    "
+                :arguments 
+                  ( ("a" variable nil (reparse-symbol function_parameters) [55 56])
+                    ("b" variable nil (reparse-symbol function_parameters) [58 59]))                  )
+                nil [45 240])
+            ("divideVector" function (:arguments 
+              ( ("start" variable nil (reparse-symbol function_parameters) [260 265])
+                ("end" variable nil (reparse-symbol function_parameters) [267 270])
+                ("amount" variable nil (reparse-symbol function_parameters) [272 278]))              ) nil [243 499])
+            ("vectorLength" function (:arguments 
+              ( ("vec" variable nil (reparse-symbol function_parameters) [519 522]))              ) nil [502 705])
+            ("addVectors" function (:arguments 
+              ( ("vecA" variable nil (reparse-symbol function_parameters) [725 729])
+                ("vecB" variable nil (reparse-symbol function_parameters) [731 735]))              ) nil [710 808])
+            ("subtractVectors" function (:arguments 
+              ( ("vecA" variable nil (reparse-symbol function_parameters) [829 833])
+                ("vecB" variable nil (reparse-symbol function_parameters) [835 839]))              ) nil [809 912])
+            ("midVector" function (:arguments 
+              ( ("vecA" variable nil (reparse-symbol function_parameters) [927 931])
+                ("vecB" variable nil (reparse-symbol function_parameters) [933 937]))              ) nil [913 1015]))          
+      :file "m_Maths.py"
+      :pointmax 1015
+      :fsize 1055
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "transformCmds.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core.datatypes" include nil nil [2 35])
+            ("pymel.core" include nil nil [36 60])
+            ("math" include nil nil [61 72])
+            ("makeMatrix" function (:arguments 
+              ( ("vec" variable nil (reparse-symbol function_parameters) [89 92]))              ) nil [74 459])
+            ("zeroOut" function
+               (:documentation "
+    returnType : parent group of last item in 'sel'
+    "
+                :arguments 
+                  ( ("sel" variable nil (reparse-symbol function_parameters) [472 475]))                  )
+                nil [460 909])
+            ("snapTo" function (:arguments 
+              ( ("source" variable nil (reparse-symbol function_parameters) [925 931])
+                ("target" variable nil (reparse-symbol function_parameters) [933 939]))              ) nil [914 999])
+            ("snapPos" function (:arguments 
+              ( ("source" variable nil (reparse-symbol function_parameters) [1016 1022])
+                ("target" variable nil (reparse-symbol function_parameters) [1024 1030]))              ) nil [1004 1100])
+            ("getNonPerpendicular" function (:arguments 
+              ( ("currentObject" variable nil (reparse-symbol function_parameters) [1130 1143]))              ) nil [1105 1808]))          
+      :file "transformCmds.py"
+      :pointmax 1812
+      :fsize 1874
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "m_Constraints.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+m_Constraints.py
+brownbagfilms
+
+
+DESCRIPTION:
+contains constraint functions designed for general use 
+
+AUTHORS:
+Eoghan Garvey 
+
+\"\"\"" code nil nil [1 136])
+            ("pymel.core" include nil nil [138 162])
+            ("controlShapes" include nil nil [163 189])
+            ("orientBlend" function
+               (:documentation "
+    create an orient constraint using two targets
+    connect the weighting between targets to given control
+    "
+                :arguments 
+                  ( ("firstTarget" variable nil (reparse-symbol function_parameters) [207 218])
+                    ("secondTarget" variable nil (reparse-symbol function_parameters) [220 232])
+                    ("mainNode" variable nil (reparse-symbol function_parameters) [234 242])
+                    ("ctrlAtt" variable nil (reparse-symbol function_parameters) [244 251]))                  )
+                nil [191 988])
+            ("pointBlend" function
+               (:documentation "
+    create a point constraint using two targets
+    connect the weighting between targets to given control
+    "
+                :arguments 
+                  ( ("firstTarget" variable nil (reparse-symbol function_parameters) [1008 1019])
+                    ("secondTarget" variable nil (reparse-symbol function_parameters) [1021 1033])
+                    ("mainNode" variable nil (reparse-symbol function_parameters) [1035 1043])
+                    ("ctrlAtt" variable nil (reparse-symbol function_parameters) [1045 1052]))                  )
+                nil [993 1786])
+            ("isolateCtrl" function (:arguments 
+              ( ("firstTarget" variable nil (reparse-symbol function_parameters) [1803 1814])
+                ("secondTarget" variable nil (reparse-symbol function_parameters) [1816 1828])
+                ("ctrl" variable nil (reparse-symbol function_parameters) [1830 1834])
+                ("uniqueName" variable nil (reparse-symbol function_parameters) [1836 1846]))              ) nil [1787 2744])
+            ("addIkStretch" function (:arguments 
+              ( ("root" variable nil (reparse-symbol function_parameters) [2766 2770])
+                ("startJnt" variable nil (reparse-symbol function_parameters) [2772 2780])
+                ("midJnt" variable nil (reparse-symbol function_parameters) [2782 2788])
+                ("endJnt" variable nil (reparse-symbol function_parameters) [2790 2796])
+                ("CTRL" variable nil (reparse-symbol function_parameters) [2798 2802])
+                ("prefix" variable nil (reparse-symbol function_parameters) [2804 2810]))              ) nil [2749 5973])
+            ("makeTwistJointChain" function (:arguments 
+              ( ("root" variable nil (reparse-symbol function_parameters) [6007 6011])
+                ("startJnt" variable nil (reparse-symbol function_parameters) [6013 6021])
+                ("midJnt" variable nil (reparse-symbol function_parameters) [6023 6029])
+                ("endJnt" variable nil (reparse-symbol function_parameters) [6031 6037])
+                ("jntAmt_start" variable nil (reparse-symbol function_parameters) [6039 6051])
+                ("jntAmt_end" variable nil (reparse-symbol function_parameters) [6055 6065])
+                ("prefix" variable nil (reparse-symbol function_parameters) [6069 6075]))              ) nil [5983 7678])
+            ("ambiBlendEXPR" function
+               (:documentation "
+    connect pair of blend shape to XY CTRL
+    
+    example:
+    ambiBlendEXPR(PyNode('eyes_blink_CTRL'), \"peter_blends.PRB_C_Peter_BlinkFull_LRDownL_BS\", \"L\" )
+    ambiBlendEXPR(PyNode('eyes_blink_CTRL'), \"peter_blends.PRB_C_Peter_BlinkFull_LRDownR_BS\", \"R\" )
+    "
+                :arguments 
+                  ( ("CTRL" variable nil (reparse-symbol function_parameters) [7701 7705])
+                    ("blendChannel" variable nil (reparse-symbol function_parameters) [7707 7719])
+                    ("side" variable nil (reparse-symbol function_parameters) [7721 7725]))                  )
+                nil [7683 9487]))          
+      :file "m_Constraints.py"
+      :pointmax 9487
+      :fsize 9746
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "m_geometry.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core.datatypes" include nil nil [2 35])
+            ("pymel.core" include nil nil [36 59])
+            ("bridgeSurface" function (:arguments 
+              ( ("numPatches" variable nil (reparse-symbol function_parameters) [80 90])
+                ("startPt" variable nil (reparse-symbol function_parameters) [92 99])
+                ("endPt" variable nil (reparse-symbol function_parameters) [101 106]))              ) nil [62 962]))          
+      :file "m_geometry.py"
+      :pointmax 962
+      :fsize 982
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "m_utilities.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("collectTree" function (:arguments 
+              ( ("each" variable nil (reparse-symbol function_parameters) [43 47])
+                ("array" variable nil (reparse-symbol function_parameters) [49 54]))              ) nil [27 184]))          
+      :file "m_utilities.py"
+      :pointmax 184
+      :fsize 188
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "maya_connect.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("connectToEclipse" function nil nil [1 120])
+            ("connectToEclipse" code nil nil [121 139])
+            ("maya.cmds" include nil nil [142 166])
+            ("sys" include nil nil [167 177])
+            ("sys" code nil nil [178 278])
+            ("biped_builder" include nil nil [279 299])
+            ("reload" code nil nil [300 321])
+            ("socket" include nil nil [428 441])
+            ("HOST" variable nil nil [484 502])
+            ("PORT" variable nil nil [520 532])
+            ("ADDR" variable nil nil [571 587])
+            ("SendCommand" function nil nil [589 934])
+            ("if" code nil nil [937 979]))          
+      :file "maya_connect.py"
+      :pointmax 979
+      :fsize 1019
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "skinCmds.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pickle" include nil nil [1 14])
+            ("getSkinVertValues" function (:arguments 
+              ( ("sCluster" variable nil (reparse-symbol function_parameters) [38 46]))              ) nil [16 426])
+            ("setSkinVertValues" function (:arguments 
+              ( ("sCluster" variable nil (reparse-symbol function_parameters) [449 457])
+                ("vals" variable nil (reparse-symbol function_parameters) [459 463]))              ) nil [427 565])
+            ("dumpSkinVertValues" function (:arguments 
+              ( ("sCluster" variable nil (reparse-symbol function_parameters) [589 597])
+                ("FILE" variable nil (reparse-symbol function_parameters) [599 603]))              ) nil [566 727])
+            ("loadSkinVertValues" function (:arguments 
+              ( ("sCluster" variable nil (reparse-symbol function_parameters) [755 763])
+                ("FILE" variable nil (reparse-symbol function_parameters) [765 769]))              ) nil [732 890]))          
+      :file "skinCmds.py"
+      :pointmax 899
+      :fsize 926
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!HumanRig_Builder!main!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

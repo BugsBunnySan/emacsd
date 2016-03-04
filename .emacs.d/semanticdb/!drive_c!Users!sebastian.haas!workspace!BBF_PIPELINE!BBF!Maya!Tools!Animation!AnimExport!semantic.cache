@@ -1,0 +1,889 @@
+;; Object AnimExport/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "AnimExport/"
+  :tables
+  (list
+    (semanticdb-table "AnimImport.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__author__" variable nil nil [1 28])
+            ("__main__" include nil nil [29 44])
+            ("os" include nil nil [46 55])
+            ("cPickle" include nil nil [56 80])
+            ("json" include nil nil [81 92])
+            ("logging" include nil nil [93 107])
+            ("log" variable nil nil [108 141])
+            ("PyQt4" include nil nil [156 192])
+            ("pymel.core" include nil nil [208 231])
+            ("BBF_environ" include nil nil [246 264])
+            ("bbfEnv" variable nil nil [265 294])
+            ("bbfUI" include nil nil [295 318])
+            ("bbfPath" include nil nil [319 346])
+            ("bbfException.bbfExceptions" include nil nil [347 401])
+            ("core" include nil nil [402 413])
+            ("reload" code nil nil [414 426])
+            ("bbfMapping.Mapping" include nil nil [428 464])
+            ("BBF_Validation" include nil nil [465 515])
+            ("getJson" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [530 538]))              ) nil [518 707])
+            ("exportFormat" variable nil nil [709 730])
+            ("uiFile" variable nil nil [809 873])
+            ("form_class, base_class" code nil nil [874 921])
+            ("AnimImport" type
+               (:superclasses ("base_class" "form_class" "core.Import" "mapping.Mapping")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1056 1096])
+                            ("self" code nil (reparse-symbol indented_block_body) [1105 1123])
+                            ("mapping" code nil (reparse-symbol indented_block_body) [1132 1162])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1201 1219])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1328 1348])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1357 1371])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1380 1399])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1408 1426])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1435 1453])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1462 1496])
+                            ("self" code nil (reparse-symbol indented_block_body) [1505 1540])
+                            ("self" code nil (reparse-symbol indented_block_body) [1549 1580])
+                            ("self" code nil (reparse-symbol indented_block_body) [1589 1685])
+                            ("self" code nil (reparse-symbol indented_block_body) [1703 1791])
+                            ("self" code nil (reparse-symbol indented_block_body) [1800 1882])
+                            ("self" code nil (reparse-symbol indented_block_body) [1891 1970])
+                            ("self" code nil (reparse-symbol indented_block_body) [2001 2080])
+                            ("self" code nil (reparse-symbol indented_block_body) [2089 2252])
+                            ("self" code nil (reparse-symbol indented_block_body) [2261 2435])
+                            ("self" code nil (reparse-symbol indented_block_body) [2444 2580])
+                            ("self" code nil (reparse-symbol indented_block_body) [2589 2731])
+                            ("self" code nil (reparse-symbol indented_block_body) [2740 2882])
+                            ("self" code nil (reparse-symbol indented_block_body) [2891 2970])
+                            ("self" code nil (reparse-symbol indented_block_body) [2986 3119])
+                            ("self" code nil (reparse-symbol indented_block_body) [3128 3271])
+                            ("self" code nil (reparse-symbol indented_block_body) [3280 3431])
+                            ("self" code nil (reparse-symbol indented_block_body) [3486 3612])
+                            ("self" code nil (reparse-symbol indented_block_body) [3621 3777])
+                            ("self" code nil (reparse-symbol indented_block_body) [3786 3901])
+                            ("self" code nil (reparse-symbol indented_block_body) [3911 4021])
+                            ("self" code nil (reparse-symbol indented_block_body) [4030 4141])
+                            ("self" code nil (reparse-symbol indented_block_body) [4150 4260])
+                            ("self" code nil (reparse-symbol indented_block_body) [4269 4379])
+                            ("self" code nil (reparse-symbol indented_block_body) [4388 4499])
+                            ("self" code nil (reparse-symbol indented_block_body) [4508 4618])
+                            ("self" code nil (reparse-symbol indented_block_body) [4627 4746])
+                            ("self" code nil (reparse-symbol indented_block_body) [4755 4874])
+                            ("self" code nil (reparse-symbol indented_block_body) [4883 5002])
+                            ("self" code nil (reparse-symbol indented_block_body) [5011 5130])
+                            ("self" code nil (reparse-symbol indented_block_body) [5139 5258])
+                            ("self" code nil (reparse-symbol indented_block_body) [5267 5386])
+                            ("self" code nil (reparse-symbol indented_block_body) [5404 5509])
+                            ("self" code nil (reparse-symbol indented_block_body) [5518 5617])
+                            ("self" code nil (reparse-symbol indented_block_body) [5626 5723])
+                            ("self" code nil (reparse-symbol indented_block_body) [5733 5831])
+                            ("self" code nil (reparse-symbol indented_block_body) [5840 5937])
+                            ("self" code nil (reparse-symbol indented_block_body) [5955 6044])
+                            ("self" code nil (reparse-symbol indented_block_body) [6053 6142])
+                            ("self" code nil (reparse-symbol indented_block_body) [6153 6243])
+                            ("self" code nil (reparse-symbol indented_block_body) [6252 6342])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6352 6392])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6401 6437])
+                            ("if" code nil (reparse-symbol indented_block_body) [6446 6793]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1011 1015])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1017 1023]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [998 6793])
+                    ("loadMap" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6822 6826]))                          )
+                        (reparse-symbol indented_block_body) [6810 6926])
+                    ("addHeight" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6953 6957]))                          )
+                        (reparse-symbol indented_block_body) [6939 8556])
+                    ("process_control_names" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8608 8612]))                          )
+                        (reparse-symbol indented_block_body) [8582 8771])
+                    ("getMapFilePath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8795 8799]))                          )
+                        (reparse-symbol indented_block_body) [8776 9176])
+                    ("scaleKeys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9196 9200]))                          )
+                        (reparse-symbol indented_block_body) [9182 10727])
+                    ("fillUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10744 10748]))                          )
+                        (reparse-symbol indented_block_body) [10733 10972])
+                    ("setCurrent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10993 10997]))                          )
+                        (reparse-symbol indented_block_body) [10978 11321])
+                    ("searchCtrls" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11424 11428])
+                            ("txtField" variable nil (reparse-symbol function_parameters) [11430 11438])
+                            ("lwName" variable nil (reparse-symbol function_parameters) [11440 11446]))                          )
+                        (reparse-symbol indented_block_body) [11408 11787])
+                    ("loadSelected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11903 11907])
+                            ("lwName" variable nil (reparse-symbol function_parameters) [11909 11915])
+                            ("dataDict" variable nil (reparse-symbol function_parameters) [11917 11925]))                          )
+                        (reparse-symbol indented_block_body) [11886 12162])
+                    ("deleteSelected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12268 12272])
+                            ("lwName" variable nil (reparse-symbol function_parameters) [12274 12280])
+                            ("dataDict" variable nil (reparse-symbol function_parameters) [12282 12290])
+                            ("typ" variable nil (reparse-symbol function_parameters) [12292 12295]))                          )
+                        (reparse-symbol indented_block_body) [12249 13045])
+                    ("onMapChecked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13150 13154]))                          )
+                        (reparse-symbol indented_block_body) [13133 14354])
+                    ("setServer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14463 14467]))                          )
+                        (reparse-symbol indented_block_body) [14449 14617])
+                    ("setLocal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14717 14721]))                          )
+                        (reparse-symbol indented_block_body) [14704 15488])
+                    ("loadThumbNail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15595 15599])
+                            ("filepath" variable nil (reparse-symbol function_parameters) [15601 15609]))                          )
+                        (reparse-symbol indented_block_body) [15577 15809])
+                    ("feedAssetList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16174 16178])
+                            ("path" variable nil (reparse-symbol function_parameters) [16180 16184]))                          )
+                        (reparse-symbol indented_block_body) [16156 16305])
+                    ("cleanAssetList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16419 16423])
+                            ("path" variable nil (reparse-symbol function_parameters) [16425 16429])
+                            ("aType" variable nil (reparse-symbol function_parameters) [16431 16436]))                          )
+                        (reparse-symbol indented_block_body) [16400 17326])
+                    ("getClipName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17429 17433])
+                            ("name" variable nil (reparse-symbol function_parameters) [17435 17439]))                          )
+                        (reparse-symbol indented_block_body) [17413 17495])
+                    ("getScrollArea" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17601 17605])
+                            ("tabName" variable nil (reparse-symbol function_parameters) [17607 17614]))                          )
+                        (reparse-symbol indented_block_body) [17583 17771])
+                    ("unwrapTagFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17885 17889])
+                            ("tagFile" variable nil (reparse-symbol function_parameters) [17891 17898]))                          )
+                        (reparse-symbol indented_block_body) [17867 18352])
+                    ("feedOtherTabs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18458 18462])
+                            ("location" variable nil (reparse-symbol function_parameters) [18464 18472]))                          )
+                        (reparse-symbol indented_block_body) [18440 19656])
+                    ("feedClipList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19769 19773]))                          )
+                        (reparse-symbol indented_block_body) [19752 20768])
+                    ("deleteOldButtons" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20876 20880])
+                            ("parent" variable nil (reparse-symbol function_parameters) [20882 20888]))                          )
+                        (reparse-symbol indented_block_body) [20855 21258])
+                    ("getServer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21359 21363]))                          )
+                        (reparse-symbol indented_block_body) [21345 21438])
+                    ("readFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21539 21543])
+                            ("filename" variable nil (reparse-symbol function_parameters) [21545 21553]))                          )
+                        (reparse-symbol indented_block_body) [21526 21710])
+                    ("validateData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21816 21820]))                          )
+                        (reparse-symbol indented_block_body) [21799 22621])
+                    ("getClipType" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22724 22728]))                          )
+                        (reparse-symbol indented_block_body) [22708 22892])
+                    ("getImportData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23103 23107]))                          )
+                        (reparse-symbol indented_block_body) [23085 23519])
+                    ("getMappedCtrls" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23625 23629]))                          )
+                        (reparse-symbol indented_block_body) [23606 23755])
+                    ("importAnimation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23862 23866])
+                            ("filename" variable nil (reparse-symbol function_parameters) [23868 23876]))                          )
+                        (reparse-symbol indented_block_body) [23842 24335])
+                    ("getAllItemInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24440 24444])
+                            ("lwName" variable nil (reparse-symbol function_parameters) [24446 24452]))                          )
+                        (reparse-symbol indented_block_body) [24421 24637])
+                    ("save" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24734 24738]))                          )
+                        (reparse-symbol indented_block_body) [24725 24986])
+                    ("getTransformInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25094 25098]))                          )
+                        (reparse-symbol indented_block_body) [25073 25308])
+                    ("unckeckAll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25415 25419]))                          )
+                        (reparse-symbol indented_block_body) [25400 26148])
+                    ("refreshRadioButtons" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26268 26272])
+                            ("rb" variable nil (reparse-symbol function_parameters) [26274 26276]))                          )
+                        (reparse-symbol indented_block_body) [26244 26377])
+                    ("blockUnblockSignals" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26488 26492])
+                            ("block" variable nil (reparse-symbol function_parameters) [26494 26499]))                          )
+                        (reparse-symbol indented_block_body) [26464 26633])
+                    ("onListItemSelected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26743 26747]))                          )
+                        (reparse-symbol indented_block_body) [26720 27613])
+                    ("onCheckBoxSelected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27723 27727]))                          )
+                        (reparse-symbol indented_block_body) [27700 28077])
+                    ("onRadioButtonSelected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28191 28195])
+                            ("rbName" variable nil (reparse-symbol function_parameters) [28197 28203]))                          )
+                        (reparse-symbol indented_block_body) [28165 28767])
+                    ("negateCurve" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28869 28873])
+                            ("curveName" variable nil (reparse-symbol function_parameters) [28875 28884]))                          )
+                        (reparse-symbol indented_block_body) [28853 29313])
+                    ("SwapAnimUndoable" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29420 29424])
+                            ("CtrlName" variable nil (reparse-symbol function_parameters) [29426 29434])
+                            ("swapAxis" variable nil (reparse-symbol function_parameters) [29436 29444])
+                            ("Transform" variable nil (reparse-symbol function_parameters) [29446 29455]))                          )
+                        (reparse-symbol indented_block_body) [29399 29614])
+                    ("SwapAnim" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29729 29733])
+                            ("CtrlName" variable nil (reparse-symbol function_parameters) [29735 29743])
+                            ("swapAxis" variable nil (reparse-symbol function_parameters) [29745 29753])
+                            ("Transform" variable nil (reparse-symbol function_parameters) [29755 29764]))                          )
+                        (reparse-symbol indented_block_body) [29716 32376])
+                    ("swapSelected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32479 32483]))                          )
+                        (reparse-symbol indented_block_body) [32462 32886])
+                    ("swapAnimAll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32988 32992])
+                            ("data" variable nil (reparse-symbol function_parameters) [32994 32998]))                          )
+                        (reparse-symbol indented_block_body) [32972 33296])
+                    ("saveSwapping" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33399 33403]))                          )
+                        (reparse-symbol indented_block_body) [33382 33580])
+                    ("loadSwapping" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33683 33687]))                          )
+                        (reparse-symbol indented_block_body) [33666 34201])
+                    ("createIconButtons" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34340 34344])
+                            ("clipFiles" variable nil (reparse-symbol function_parameters) [34346 34355])
+                            ("parent" variable nil (reparse-symbol function_parameters) [34357 34363]))                          )
+                        (reparse-symbol indented_block_body) [34318 35111])
+                    ("createDetails" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35246 35250])
+                            ("filepath" variable nil (reparse-symbol function_parameters) [35252 35260]))                          )
+                        (reparse-symbol indented_block_body) [35228 36899])
+                    ("createButton" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37031 37035])
+                            ("name" variable nil (reparse-symbol function_parameters) [37037 37041])
+                            ("filepath" variable nil (reparse-symbol function_parameters) [37043 37051]))                          )
+                        (reparse-symbol indented_block_body) [37014 37278])
+                    ("getIconPath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37382 37386])
+                            ("filepath" variable nil (reparse-symbol function_parameters) [37388 37396]))                          )
+                        (reparse-symbol indented_block_body) [37366 37587]))                  
+                :type "class")
+                nil [922 37587])
+            ("ImgButton" type
+               (:superclasses ("QtGui.QLabel")
+                :members 
+                  ( ("clicked" variable nil (reparse-symbol indented_block_body) [37708 37737])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [37879 37928])
+                            ("self" variable nil (reparse-symbol indented_block_body) [37937 37991])
+                            ("self" code nil (reparse-symbol indented_block_body) [38000 38040])
+                            ("self" code nil (reparse-symbol indented_block_body) [38049 38095])
+                            ("self" code nil (reparse-symbol indented_block_body) [38104 38127])
+                            ("self" code nil (reparse-symbol indented_block_body) [38136 38152])
+                            ("self" code nil (reparse-symbol indented_block_body) [38161 38176])
+                            ("self" variable nil (reparse-symbol indented_block_body) [38185 38204]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37841 37845])
+                            ("iconPath" variable nil (reparse-symbol function_parameters) [37847 37855])
+                            ("parent" variable nil (reparse-symbol function_parameters) [37857 37863]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [37828 38205])
+                    ("mouseDoubleClickEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38317 38321])
+                            ("event" variable nil (reparse-symbol function_parameters) [38323 38328]))                          )
+                        (reparse-symbol indented_block_body) [38291 38382])
+                    ("mousePressEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38488 38492])
+                            ("event" variable nil (reparse-symbol function_parameters) [38494 38499]))                          )
+                        (reparse-symbol indented_block_body) [38468 38847]))                  
+                :type "class")
+                nil [37672 38847]))          
+      :file "AnimImport.py"
+      :pointmax 38847
+      :fsize 39738
+      :lastmodtime '(21896 15496 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 16607 . 16668) (NEWLINE 16606 . 16607) (COLON 16605 . 16606) (TRY 16528 . 16531) (AS 16599 . 16601)))
+    (semanticdb-table "core.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [356 365])
+            ("cPickle" include nil nil [366 390])
+            ("pymel.core" include nil nil [391 414])
+            ("maya.cmds" include nil nil [415 437])
+            ("BBF_environ" include nil nil [438 456])
+            ("bbfEnv" variable nil nil [457 486])
+            ("logging" include nil nil [487 501])
+            ("log" variable nil nil [502 535])
+            ("'''
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    File Structure
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{'header':
+    {
+    'startframe':			[####],
+    'clipLength':   		[####],
+
+    'framerate':    		'##',
+
+    'filetype':        		'anim/pose',
+    'exportedBy':   		[user],
+    'dataOfExport': 		'09:40-26/03/07',
+    }
+
+'Anm':
+    {'CTRL':
+        {'translateX':
+            {
+             'static': {'preInfinity':'' , 'postInfinity':'' , 'weightedTangents': ''},
+             'time'  : {value = 0
+                        inAngle=True,
+                        outAngle=True,
+                        inWeight=True,
+                        outWeight=True,
+                        inTangentType=True,
+                        outTangentType=True,
+                        lock=True,
+                        weightLock=True
+                        'breakdown'
+                        },
+            'time'  : {value = 0
+                        inAngle=True,
+                        outAngle=True,
+                        inWeight=True,
+                        outWeight=True,
+                        inTangentType=True,
+                        outTangentType=True,
+                        lock=True,
+                        weightLock=True
+                        'breakdown'
+                        }
+            }
+        }
+    }
+
+'Pose':
+    {'CTRL':
+        {'translateX': 0 },
+        }
+    }
+}
+'''" code nil nil [537 1982])
+            ("Data" type
+               (:members 
+                  ( ("getSelection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2180 2184]))                          )
+                        (reparse-symbol indented_block_body) [2163 2299])
+                    ("isController" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2403 2407])
+                            ("objName" variable nil (reparse-symbol function_parameters) [2409 2416]))                          )
+                        (reparse-symbol indented_block_body) [2386 2655])
+                    ("getAllCtrls" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2758 2762])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [2764 2773]))                          )
+                        (reparse-symbol indented_block_body) [2742 3096])
+                    ("createHeader" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3203 3207])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [3209 3217])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [3219 3229])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [3231 3239]))                          )
+                        (reparse-symbol indented_block_body) [3186 3704])
+                    ("getKeyframeDict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3812 3816])
+                            ("Ctrl" variable nil (reparse-symbol function_parameters) [3818 3822])
+                            ("keyFrameCount" variable nil (reparse-symbol function_parameters) [3824 3837])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [3839 3849])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [3851 3859]))                          )
+                        (reparse-symbol indented_block_body) [3792 5669])
+                    ("getAttrDict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5773 5777])
+                            ("ctrl" variable nil (reparse-symbol function_parameters) [5779 5783])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [5785 5795])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [5797 5805])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [5807 5815]))                          )
+                        (reparse-symbol indented_block_body) [5757 6432])
+                    ("getRefName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6535 6539])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [6541 6550]))                          )
+                        (reparse-symbol indented_block_body) [6520 6717])
+                    ("removeRefPrefx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6824 6828])
+                            ("refName" variable nil (reparse-symbol function_parameters) [6830 6837])
+                            ("Ctrl" variable nil (reparse-symbol function_parameters) [6839 6843]))                          )
+                        (reparse-symbol indented_block_body) [6805 7033])
+                    ("keyAtFirstFrame" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7141 7145])
+                            ("allCtrls" variable nil (reparse-symbol function_parameters) [7147 7155])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [7157 7167]))                          )
+                        (reparse-symbol indented_block_body) [7121 7345])
+                    ("getCtrlDict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7448 7452])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [7454 7463])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [7465 7475])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [7477 7485])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [7487 7495]))                          )
+                        (reparse-symbol indented_block_body) [7432 7984])
+                    ("getAnimData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8088 8092])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [8094 8102])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [8104 8113])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [8115 8125])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [8127 8135]))                          )
+                        (reparse-symbol indented_block_body) [8072 8488]))                  
+                :type "class")
+                nil [2066 8488])
+            ("Export" type
+               (:superclasses ("Data")
+                :members 
+                  ( ("Export" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8687 8691])
+                            ("filepath" variable nil (reparse-symbol function_parameters) [8693 8701])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [8703 8711])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [8713 8723])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [8725 8733]))                          )
+                        (reparse-symbol indented_block_body) [8676 8963]))                  
+                :type "class")
+                nil [8571 8963])
+            ("Import" type
+               (:superclasses ("Data")
+                :members 
+                  ( ("isOverlappingKeys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9173 9177])
+                            ("allCtrls" variable nil (reparse-symbol function_parameters) [9179 9187])
+                            ("sFrame" variable nil (reparse-symbol function_parameters) [9189 9195])
+                            ("eFrame" variable nil (reparse-symbol function_parameters) [9197 9203]))                          )
+                        (reparse-symbol indented_block_body) [9151 9398])
+                    ("doImport" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9416 9420])
+                            ("anmdata" variable nil (reparse-symbol function_parameters) [9422 9429])
+                            ("offset" variable nil (reparse-symbol function_parameters) [9431 9437])
+                            ("allCtrls" variable nil (reparse-symbol function_parameters) [9439 9447])
+                            ("cycles" variable nil (reparse-symbol function_parameters) [9454 9460]))                          )
+                        (reparse-symbol indented_block_body) [9403 10839])
+                    ("importClip" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10940 10944])
+                            ("anmdata" variable nil (reparse-symbol function_parameters) [10946 10953])
+                            ("offset" variable nil (reparse-symbol function_parameters) [10955 10961])
+                            ("allCtrls" variable nil (reparse-symbol function_parameters) [10963 10971])
+                            ("namespace" variable nil (reparse-symbol function_parameters) [10976 10985]))                          )
+                        (reparse-symbol indented_block_body) [10925 15584]))                  
+                :type "class")
+                nil [9045 15584])
+            ("ExportSelectedAnim" type
+               (:superclasses ("Data")
+                :members 
+                  ( ("getCtrlDict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15800 15804])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [15806 15815])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [15817 15827])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [15829 15837])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [15839 15847]))                          )
+                        (reparse-symbol indented_block_body) [15784 16206])
+                    ("getAnimData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16310 16314])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [16316 16324])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [16326 16335])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [16337 16347])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [16349 16357]))                          )
+                        (reparse-symbol indented_block_body) [16294 16710])
+                    ("Export" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16807 16811])
+                            ("filepath" variable nil (reparse-symbol function_parameters) [16813 16821])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [16823 16831])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [16833 16843])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [16845 16853]))                          )
+                        (reparse-symbol indented_block_body) [16796 17098]))                  
+                :type "class")
+                nil [15666 17098]))          
+      :file "core.py"
+      :pointmax 17100
+      :fsize 17510
+      :lastmodtime '(22036 57364 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "core_fullpath.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [356 365])
+            ("cPickle" include nil nil [366 390])
+            ("maya.cmds" include nil nil [391 413])
+            ("maya.mel" include nil nil [414 436])
+            ("__main__" include nil nil [437 452])
+            ("bbfException.bbfExceptions" include nil nil [453 507])
+            ("bbfAssetZip" include nil nil [508 542])
+            ("'''
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    File Structure
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{'header':
+    {
+    'startframe':			[####],
+    'clipLength':   		[####],
+
+    'framerate':    		'##',
+
+    'filetype':        		'anim/pose',
+    'exportedBy':   		[user],
+    'dataOfExport': 		'09:40-26/03/07',
+    }
+
+'Anm':
+    {'CTRL':
+        {'translateX':
+            {
+             'static': {'preInfinity':'' , 'postInfinity':'' , 'weightedTangents': ''},
+             'time'  : {value = 0
+                        inAngle=True,
+                        outAngle=True,
+                        inWeight=True,
+                        outWeight=True,
+                        inTangentType=True,
+                        outTangentType=True,
+                        lock=True,
+                        weightLock=True
+                        'breakdown'
+                        },
+            'time'  : {value = 0
+                        inAngle=True,
+                        outAngle=True,
+                        inWeight=True,
+                        outWeight=True,
+                        inTangentType=True,
+                        outTangentType=True,
+                        lock=True,
+                        weightLock=True
+                        'breakdown'
+                        }
+            }
+        }
+    }
+
+'Pose':
+    {'CTRL':
+        {'translateX': 0 },
+        }
+    }
+}
+'''" code nil nil [565 2010])
+            ("Data" type
+               (:members 
+                  ( ("getSelection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2208 2212]))                          )
+                        (reparse-symbol indented_block_body) [2191 2340])
+                    ("isController" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2444 2448])
+                            ("objName" variable nil (reparse-symbol function_parameters) [2450 2457]))                          )
+                        (reparse-symbol indented_block_body) [2427 2696])
+                    ("getAllCtrls" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2799 2803])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [2805 2814]))                          )
+                        (reparse-symbol indented_block_body) [2783 3159])
+                    ("createHeader" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3266 3270])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [3272 3280])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [3282 3292])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [3294 3302]))                          )
+                        (reparse-symbol indented_block_body) [3249 3776])
+                    ("getKeyframeDict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3884 3888])
+                            ("Ctrl" variable nil (reparse-symbol function_parameters) [3890 3894])
+                            ("keyFrameCount" variable nil (reparse-symbol function_parameters) [3896 3909])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [3911 3921])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [3923 3931]))                          )
+                        (reparse-symbol indented_block_body) [3864 5764])
+                    ("getAttrDict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5868 5872])
+                            ("ctrl" variable nil (reparse-symbol function_parameters) [5874 5878])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [5880 5890])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [5892 5900])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [5902 5910]))                          )
+                        (reparse-symbol indented_block_body) [5852 6527])
+                    ("getRefName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6630 6634])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [6636 6645]))                          )
+                        (reparse-symbol indented_block_body) [6615 6812])
+                    ("removeRefPrefx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6919 6923])
+                            ("refName" variable nil (reparse-symbol function_parameters) [6925 6932])
+                            ("Ctrl" variable nil (reparse-symbol function_parameters) [6934 6938]))                          )
+                        (reparse-symbol indented_block_body) [6900 6982])
+                    ("keyAtFirstFrame" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7090 7094])
+                            ("allCtrls" variable nil (reparse-symbol function_parameters) [7096 7104])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [7106 7116]))                          )
+                        (reparse-symbol indented_block_body) [7070 7291])
+                    ("getCtrlDict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7394 7398])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [7400 7409])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [7411 7421])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [7423 7431])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [7433 7441]))                          )
+                        (reparse-symbol indented_block_body) [7378 7871])
+                    ("getAnimData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7975 7979])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [7981 7989])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [7991 8000])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [8002 8012])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [8014 8022]))                          )
+                        (reparse-symbol indented_block_body) [7959 8375]))                  
+                :type "class")
+                nil [2094 8375])
+            ("Export" type
+               (:superclasses ("Data")
+                :members 
+                  ( ("Export" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8574 8578])
+                            ("filepath" variable nil (reparse-symbol function_parameters) [8580 8588])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [8590 8598])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [8600 8610])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [8612 8620]))                          )
+                        (reparse-symbol indented_block_body) [8563 9209]))                  
+                :type "class")
+                nil [8458 9209])
+            ("Import" type
+               (:superclasses ("Data")
+                :members 
+                  ( ("getValues" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9411 9415])
+                            ("data" variable nil (reparse-symbol function_parameters) [9417 9421])
+                            ("key" variable nil (reparse-symbol function_parameters) [9423 9426]))                          )
+                        (reparse-symbol indented_block_body) [9397 9579])
+                    ("deleteOldKeys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9684 9688])
+                            ("allCtrls" variable nil (reparse-symbol function_parameters) [9690 9698])
+                            ("sFrame" variable nil (reparse-symbol function_parameters) [9700 9706])
+                            ("eFrame" variable nil (reparse-symbol function_parameters) [9708 9714]))                          )
+                        (reparse-symbol indented_block_body) [9666 9804])
+                    ("isOverlappingKeys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9913 9917])
+                            ("allCtrls" variable nil (reparse-symbol function_parameters) [9919 9927])
+                            ("sFrame" variable nil (reparse-symbol function_parameters) [9929 9935])
+                            ("eFrame" variable nil (reparse-symbol function_parameters) [9937 9943]))                          )
+                        (reparse-symbol indented_block_body) [9891 10138])
+                    ("Import" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10236 10240])
+                            ("anmdata" variable nil (reparse-symbol function_parameters) [10242 10249])
+                            ("offset" variable nil (reparse-symbol function_parameters) [10251 10257])
+                            ("allCtrls" variable nil (reparse-symbol function_parameters) [10259 10267]))                          )
+                        (reparse-symbol indented_block_body) [10225 15440]))                  
+                :type "class")
+                nil [9292 15440])
+            ("ExportSelectedAnim" type
+               (:superclasses ("Data")
+                :members 
+                  ( ("getCtrlDict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15658 15662])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [15664 15673])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [15675 15685])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [15687 15695])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [15697 15705]))                          )
+                        (reparse-symbol indented_block_body) [15642 16064])
+                    ("getAnimData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16168 16172])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [16174 16182])
+                            ("groupName" variable nil (reparse-symbol function_parameters) [16184 16193])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [16195 16205])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [16207 16215]))                          )
+                        (reparse-symbol indented_block_body) [16152 16568])
+                    ("Export" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16669 16673])
+                            ("filepath" variable nil (reparse-symbol function_parameters) [16675 16683])
+                            ("filetype" variable nil (reparse-symbol function_parameters) [16685 16693])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [16695 16705])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [16707 16715]))                          )
+                        (reparse-symbol indented_block_body) [16658 16960]))                  
+                :type "class")
+                nil [15524 16960]))          
+      :file "core_fullpath.py"
+      :pointmax 16962
+      :fsize 17371
+      :lastmodtime '(21896 15496 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Tools!Animation!AnimExport!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,229 @@
+;; Object scripts/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "scripts/"
+  :tables
+  (list
+    (semanticdb-table "performDuplicate.mel"
+      :major-mode 'c-mode
+      :tags 
+        '( ("duplicateHelp" function (:type ("string" type (:type "class") nil nil)) nil [1546 1670])
+            ("assembleCmd" function (:type ("string" type (:type "class") nil nil)) nil [1842 3006])
+            ("checkForClipDuplicate" function (:type "int") nil [3297 3769])
+            ("performDuplicate" function
+               (:arguments 
+                  ( ("$action" variable (:type "int") (reparse-symbol arg-sub-list) [4047 4059]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [4022 4729]))          
+      :file "performDuplicate.mel"
+      :pointmax 4731
+      :fsize 4942
+      :lastmodtime '(21896 15496 0 0)
+      :unmatched-syntax '((symbol 4017 . 4021) (symbol 4010 . 4016) (symbol 3292 . 3296) (symbol 1837 . 1841) (symbol 1541 . 1545)))
+    (semanticdb-table "cleanUpScene.mel"
+      :major-mode 'c-mode
+      :tags 
+        '( ("listEmptyGroups" function
+               (:arguments 
+                  ( ("$uiString" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5644 5662]))                  
+                :type "int")
+                nil [5627 7869])
+            ("deleteEmptyGroups" function (:type "int") nil [7884 9697])
+            ("deleteEmptyLayers" function
+               (:arguments 
+                  ( ("$type" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9733 9746]))                  
+                :type "int")
+                nil [9711 12097])
+            ("getAllParents" function
+               (:arguments 
+                  ( ("$node" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12119 12132])
+                    ("$resultParents" variable
+                       (:dereference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12133 12157]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [12100 12739])
+            ("deleteUnusedNurbsSurfaces" function (:type "int") nil [12753 15414])
+            ("deleteUnusedConstraints" function (:type "int") nil [15429 17506])
+            ("deleteUnusedPairBlends" function (:type "int") nil [17521 18800])
+            ("deleteUnusedLocators" function (:type "int") nil [18814 21729])
+            ("cleanUpScene" function
+               (:arguments 
+                  ( ("$option" variable (:type "int") (reparse-symbol arg-sub-list) [21939 21951]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [21920 22315])
+            ("cleanUp_Initialize" function (:type ("proc" type (:type "class") nil nil)) nil [22325 22530])
+            ("cleanUp_GetSummary" function
+               (:arguments 
+                  ( ("$summary" variable
+                       (:dereference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22564 22582])
+                    ("$steps" variable
+                       (:dereference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22583 22600]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [22539 22730])
+            ("cleanUp_EnableProgressReporting" function
+               (:arguments 
+                  ( ("$enable" variable (:type "int") (reparse-symbol arg-sub-list) [22777 22790]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [22739 22953])
+            ("performCleanUpScene" function (:type ("proc" type (:type "class") nil nil)) nil [23033 39403])
+            ("performCleanUpSceneForEverything" function (:type ("proc" type (:type "class") nil nil)) nil [39563 48340])
+            ("cleanUpOptions" function (:type ("proc" type (:type "class") nil nil)) nil [48388 49710])
+            ("createCleanUpSceneTabUI" function
+               (:arguments 
+                  ( ("$tabLayout" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49750 49768]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [49720 58719])
+            ("setOptionVars" function
+               (:arguments 
+                  ( ("$forceFactorySettings" variable (:type "int") (reparse-symbol arg-sub-list) [58790 58816]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [58771 61899])
+            ("cleanUpSceneCallback" function
+               (:arguments 
+                  ( ("$parent" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [61998 62013])
+                    ("$doIt" variable (:type "int") (reparse-symbol arg-sub-list) [62014 62024]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [61972 66025])
+            ("cleanUpSceneSetup" function
+               (:arguments 
+                  ( ("$parent" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [66090 66105])
+                    ("$forceFactorySettings" variable (:type "int") (reparse-symbol arg-sub-list) [66106 66132]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [66067 70433])
+            ("isNodeUsed" function
+               (:arguments 
+                  ( ("$node" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70544 70557])
+                    ("$minVal" variable (:type "int") (reparse-symbol arg-sub-list) [70558 70570]))                  
+                :type "int")
+                nil [70529 71537])
+            ("deleteUnusedCommon" function
+               (:arguments 
+                  ( ("$typ" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [71575 71587])
+                    ("$minVal" variable (:type "int") (reparse-symbol arg-sub-list) [71588 71600])
+                    ("$uiString" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [71601 71619]))                  
+                :type "int")
+                nil [71551 71689])
+            ("deleteUnusedCommon_Multi" function
+               (:arguments 
+                  ( ("$typ" variable
+                       (:dereference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [71733 71747])
+                    ("$minVal" variable (:type "int") (reparse-symbol arg-sub-list) [71760 71772])
+                    ("$uiString" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [71785 71802]))                  
+                :type "int")
+                nil [71703 72764])
+            ("deleteUnusedSets" function (:type "int") nil [72808 74102])
+            ("deleteUnusedExpressions" function (:type "int") nil [75160 76480])
+            ("deleteUnusedInUnusedHierarchy_Multi" function
+               (:arguments 
+                  ( ("$typ" variable
+                       (:dereference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [76535 76549])
+                    ("$minVal" variable (:type "int") (reparse-symbol arg-sub-list) [76550 76562])
+                    ("$uiString" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [76580 76598]))                  
+                :type "int")
+                nil [76494 78083])
+            ("deleteUnusedInUnusedHierarchy" function
+               (:arguments 
+                  ( ("$typ" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [78131 78143])
+                    ("$minVal" variable (:type "int") (reparse-symbol arg-sub-list) [78144 78156])
+                    ("$uiString" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [78157 78174]))                  
+                :type "int")
+                nil [78097 79048])
+            ("deleteUnknownNodes" function (:type "int") nil [79062 79893])
+            ("scOpt_allCleanUpOptionVars" function (:type "int") nil [80474 81262])
+            ("scOpt_saveAndClearOptionVars" function
+               (:arguments 
+                  ( ("$clear" variable (:type "int") (reparse-symbol arg-sub-list) [81306 81318]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [81271 82344])
+            ("scOpt_setOptionVars" function
+               (:arguments 
+                  ( ("$which" variable
+                       (:dereference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [82379 82396]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [82353 82462])
+            ("scOpt_performOneCleanup" function
+               (:arguments 
+                  ( ("$which" variable
+                       (:dereference 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [82501 82518]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [82471 82644])
+            ("userCleanUp_GetNumCleanUps" function (:type "int") nil [84154 84445])
+            ("userCleanUp_GetOptionVarName" function
+               (:arguments 
+                  ( ("$cleanUpNum" variable (:type "int") (reparse-symbol arg-sub-list) [84496 84513]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [84459 84898])
+            ("userCleanUp_GetDefaultValue" function
+               (:arguments 
+                  ( ("$cleanUpNum" variable (:type "int") (reparse-symbol arg-sub-list) [84945 84962]))                  
+                :type "int")
+                nil [84912 85170])
+            ("userCleanUp_GetControlName" function
+               (:arguments 
+                  ( ("$cleanUpNum" variable (:type "int") (reparse-symbol arg-sub-list) [85219 85236]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [85184 85692])
+            ("userCleanUp_GetLabel" function
+               (:arguments 
+                  ( ("$cleanUpNum" variable (:type "int") (reparse-symbol arg-sub-list) [85735 85752]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [85706 86007])
+            ("userCleanUp_GetCommand" function
+               (:arguments 
+                  ( ("$cleanUpNum" variable (:type "int") (reparse-symbol arg-sub-list) [86052 86069]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [86021 86302])
+            ("userCleanUp_ListCleanUps" function (:type ("proc" type (:type "class") nil nil)) nil [86311 87460])
+            ("userCleanUp_GetOptionVars" function (:type "int") nil [87483 87849])
+            ("userCleanUp_SetOptionVars" function
+               (:arguments 
+                  ( ("$forceFactorySettings" variable (:type "int") (reparse-symbol arg-sub-list) [87890 87917]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [87858 88619])
+            ("userCleanUp_CleanUpSceneSetup" function
+               (:arguments 
+                  ( ("$parent" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [88664 88679])
+                    ("$forceFactorySettings" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [88694 88724]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [88628 89306])
+            ("userCleanUp_CleanUpSceneCallback" function
+               (:arguments 
+                  ( ("$parent" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [89354 89369])
+                    ("$doIt" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [89370 89384]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [89315 89892])
+            ("userCleanUp_CreateUI" function (:type ("proc" type (:type "class") nil nil)) nil [89901 90987])
+            ("userCleanUp_PerformCleanUpScene" function (:type "int") nil [91001 91687]))          
+      :file "cleanUpScene.mel"
+      :pointmax 91775
+      :fsize 94830
+      :lastmodtime '(21896 15496 0 0)
+      :unmatched-syntax '((symbol 90996 . 91000) (symbol 90989 . 90995) (symbol 89894 . 89900) (symbol 89308 . 89314) (symbol 88621 . 88627) (symbol 87851 . 87857) (semantic-list 87480 . 87482) (symbol 87474 . 87480) (symbol 87469 . 87473) (symbol 87462 . 87468) (symbol 86304 . 86310) (symbol 86016 . 86020) (symbol 86009 . 86015) (symbol 85701 . 85705) (symbol 85694 . 85700) (symbol 85179 . 85183) (symbol 85172 . 85178) (symbol 84907 . 84911) (symbol 84900 . 84906) (symbol 84454 . 84458) (symbol 84447 . 84453) (symbol 84149 . 84153) (symbol 84142 . 84148) (symbol 82464 . 82470) (symbol 82346 . 82352) (symbol 81264 . 81270) (semantic-list 80471 . 80473) (symbol 80464 . 80470) (symbol 80459 . 80463) (symbol 80452 . 80458) (symbol 79057 . 79061) (symbol 79050 . 79056) (symbol 78092 . 78096) (symbol 78085 . 78091) (symbol 76489 . 76493) (symbol 76482 . 76488) (symbol 75155 . 75159) (symbol 75148 . 75154) (symbol 72803 . 72807) (symbol 72796 . 72802) (symbol 71698 . 71702) (symbol 71691 . 71697) (symbol 71546 . 71550) (symbol 71539 . 71545) (symbol 70524 . 70528) (symbol 66060 . 66066) (symbol 61965 . 61971) (symbol 58764 . 58770) (symbol 49713 . 49719) (symbol 48381 . 48387) (symbol 39556 . 39562) (symbol 23026 . 23032) (symbol 22732 . 22738) (symbol 22532 . 22538) (symbol 22318 . 22324) (symbol 21913 . 21919) (symbol 18809 . 18813) (symbol 18802 . 18808) (symbol 17516 . 17520) (symbol 17509 . 17515) (symbol 15424 . 15428) (symbol 15417 . 15423) (symbol 12748 . 12752) (symbol 12741 . 12747) (symbol 9706 . 9710) (symbol 9699 . 9705) (symbol 7879 . 7883) (symbol 7872 . 7878) (semantic-list 5624 . 5626) (symbol 5618 . 5624) (symbol 5613 . 5617) (symbol 5606 . 5612)))
+    (semanticdb-table "onModelChange3dc.mel"
+      :major-mode 'c-mode
+      :tags 
+        '( ("onModelChange3dc" function
+               (:arguments 
+                  ( ("$modelPanel" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30 49]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [8 142]))          
+      :file "onModelChange3dc.mel"
+      :pointmax 143
+      :fsize 146
+      :lastmodtime '(22043 33755 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!StartUp!Override!2015!scripts!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,179 @@
+;; Object bbf_scene_hierarchy/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbf_scene_hierarchy/"
+  :tables
+  (list
+    (semanticdb-table "groups.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_scene_hierarchy.groups
+   :synopsis: get and create standard scene hierarchy groups
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 177])
+            ("__future__" include nil nil [178 215])
+            ("__all__" variable nil nil [217 326])
+            ("re" include nil nil [328 337])
+            ("pymel.core" include nil nil [339 362])
+            ("get_top_level_groups" function
+               (:documentation " lists all the top level groups, pontentially under a specified root, potentially matching some filter function
+
+    Args:
+        top_level_regex: a (compiled) regular expresion that will be applied to the name of groups found
+        root: a maya node, directly underneath which groups will be searched for, default: None, meaning scene root
+        node_filter: if not None (default), must be a function (bool f(node)) applied to each node, if it returns False, the node is skipped
+
+    Returns:
+        list: list of Maya transforms
+    "
+                :arguments 
+                  ( ("top_level_regex" variable nil (reparse-symbol function_parameters) [445 460])
+                    ("root" variable nil (reparse-symbol function_parameters) [467 471])
+                    ("node_filter" variable nil (reparse-symbol function_parameters) [478 489]))                  )
+                nil [420 1455])
+            ("_get_child_groups" function
+               (:documentation " lists all groups that are direct children of a bunch of nodes and match a regex
+
+    Args:
+        parent_nodes: a list of parent_nodes
+        child_regex: a compiled RegexObject used to filter child groups
+
+    Returns:
+        list: list of Maya transforms
+    "
+                :arguments 
+                  ( ("parent_nodes" variable nil (reparse-symbol function_parameters) [1478 1490])
+                    ("child_regex" variable nil (reparse-symbol function_parameters) [1492 1503]))                  )
+                nil [1456 2056])
+            ("get_geo_groups" function
+               (:documentation " lists all the Geo groups
+
+    Returns:
+        list: list of Maya transforms
+    "
+                :arguments 
+                  ( ("root" variable nil (reparse-symbol function_parameters) [2076 2080]))                  )
+                nil [2057 2350])
+            ("get_lights_groups" function (:documentation " lists all the lights groups
+
+    Returns:
+        list: list of Maya transforms
+    ") nil [2351 2635])
+            ("get_rig_groups" function (:documentation " lists all the rig groups
+
+    Returns:
+        list: list of Maya transforms
+    ") nil [2636 2911])
+            ("get_lod_groups" function
+               (:documentation " lists all the LOD groups
+
+    Args:
+        lod_names: list of LOD names to look for
+
+    Returns:
+        dict: list of Maya transforms, keyed by lodname
+    "
+                :arguments 
+                  ( ("lod_names" variable nil (reparse-symbol function_parameters) [2931 2940])
+                    ("root" variable nil (reparse-symbol function_parameters) [2942 2946]))                  )
+                nil [2912 3377]))          
+      :file "groups.py"
+      :pointmax 3377
+      :fsize 3490
+      :lastmodtime '(22101 54568 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "asset_parts.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_scene_hierarchy.asset_parts
+   :synopsis: Finding parts, lods, etc... in a maya scene
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 179])
+            ("__future__" include nil nil [180 217])
+            ("__all__" variable nil nil [219 356])
+            ("re" include nil nil [358 367])
+            ("BBF.Common.Lib.bbf_base.datastructs" include nil nil [369 433])
+            ("scene_parser" include nil nil [435 454])
+            ("get_lod_group_names" function (:documentation " return list of LOD names for the current project/context ") nil [465 613])
+            ("find_all_lods" function
+               (:documentation " find all the LOD groups in the scene or under a specified root node
+
+    Args:
+        root: optionally constrain results to those underneath this node
+
+    Returns:
+        dict: maps LOD group names to lists of LOD nodes
+    "
+                :arguments 
+                  ( ("root" variable nil (reparse-symbol function_parameters) [632 636])
+                    ("scene_type" variable nil (reparse-symbol function_parameters) [643 653])
+                    ("start_rule_name" variable nil (reparse-symbol function_parameters) [663 678])
+                    ("relax" variable nil (reparse-symbol function_parameters) [688 693]))                  )
+                nil [614 1369])
+            ("has_part_stamp_attr" function
+               (:documentation " check if a node has an asset part stamp
+
+    Args:
+        node: a pm.PyNode to check
+        attr_value: if not None, check the attribute has this value
+
+    Returns:
+        bool: True if the node has the attribute and, if not None the attribute has the value, False else
+    "
+                :arguments 
+                  ( ("node" variable nil (reparse-symbol function_parameters) [1404 1408])
+                    ("attr_value" variable nil (reparse-symbol function_parameters) [1410 1420]))                  )
+                nil [1380 1852])
+            ("find_all_parts" function
+               (:documentation " find all the asset parts in the scene
+
+    Args:
+        part_name: only find the part with the given name, only makes sense if `stamped` is also True
+        stamped: filter the parts found by being stamped correctly
+        scene_type: any of the SCENE_TYPES defined in scene_parser
+
+    Returns:
+        list: list of groups representing parts in the scene
+
+    Raises:
+        Exception: if the scene does not conform to the rules defined by scene_type
+    "
+                :arguments 
+                  ( ("part_name" variable nil (reparse-symbol function_parameters) [1872 1881])
+                    ("stamped" variable nil (reparse-symbol function_parameters) [1888 1895])
+                    ("scene_type" variable nil (reparse-symbol function_parameters) [1903 1913])
+                    ("start_rule_name" variable nil (reparse-symbol function_parameters) [1923 1938])
+                    ("relax" variable nil (reparse-symbol function_parameters) [1948 1953]))                  )
+                nil [1853 3238])
+            ("find_top_asset_group" function
+               (:documentation " return the top level asset group for a given scene type
+
+    Args:
+        scene_type: any of the SCENE_TYPES defined in scene_parser
+
+    Returns:
+       node_list: a list of top asset groups, currently will have only one element
+
+    Raises:
+        Exception: if the scene does not conform to the rules defined by scene_type
+    "
+                :arguments 
+                  ( ("scene_type" variable nil (reparse-symbol function_parameters) [3279 3289])
+                    ("start_rule_name" variable nil (reparse-symbol function_parameters) [3299 3314])
+                    ("relax" variable nil (reparse-symbol function_parameters) [3324 3329]))                  )
+                nil [3254 3923]))          
+      :file "asset_parts.py"
+      :pointmax 3923
+      :fsize 4047
+      :lastmodtime '(22112 20899 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "scene_parser.py"
+      :file "scene_parser.py"
+      :fsize 2428
+      :lastmodtime '(22112 20899 0 0)))
+  :file "!drive_s!BBF_PIPELINE!BBF!Maya!Lib!bbf_scene_hierarchy!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

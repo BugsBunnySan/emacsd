@@ -1,0 +1,125 @@
+;; Object Tagger/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Tagger/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.internal" include nil nil [1 36])
+            ("pymel.core" include nil nil [39 62])
+            ("bbfException.bbfExceptions" include nil nil [63 117])
+            ("bbfEntity" include nil nil [118 134])
+            ("bbfUtil" include nil nil [135 160])
+            ("bbfUI" include nil nil [161 184])
+            ("logging" include nil nil [185 199])
+            ("sys" include nil nil [200 210])
+            ("logger" variable nil nil [211 247])
+            ("logger" code nil nil [248 278])
+            ("os" include nil nil [279 288])
+            ("PyQt4" include nil nil [289 325])
+            ("Lighting.bbfmrBuffers" include nil nil [326 370])
+            ("functools" include nil nil [371 400])
+            ("try" code nil nil [402 507])
+            ("tagLight" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [521 525])
+                ("tag" variable nil (reparse-symbol function_parameters) [527 530])
+                ("tagValue" variable nil (reparse-symbol function_parameters) [532 540]))              ) nil [508 691])
+            ("tagGeoForRender" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [712 716])
+                ("tag" variable nil (reparse-symbol function_parameters) [718 721])
+                ("tagValue" variable nil (reparse-symbol function_parameters) [723 731]))              ) nil [692 1004])
+            ("isfloat" function (:arguments 
+              ( ("value" variable nil (reparse-symbol function_parameters) [1017 1022]))              ) nil [1005 1119])
+            ("doRenderTag" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [1136 1140])
+                ("tag" variable nil (reparse-symbol function_parameters) [1142 1145])
+                ("tagValue" variable nil (reparse-symbol function_parameters) [1147 1155]))              ) nil [1120 2127])
+            ("selectGeoByTagValue" function (:arguments 
+              ( ("tag" variable nil (reparse-symbol function_parameters) [2153 2156])
+                ("tagValue" variable nil (reparse-symbol function_parameters) [2158 2166])
+                ("selectUntagged" variable nil (reparse-symbol function_parameters) [2171 2185]))              ) nil [2129 3382])
+            ("removeRenderTag" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [3405 3409])
+                ("tag" variable nil (reparse-symbol function_parameters) [3411 3414])
+                ("tagValue" variable nil (reparse-symbol function_parameters) [3416 3424]))              ) nil [3385 3920])
+            ("subDivNodesUpdate" function nil nil [3921 7969])
+            ("uiFile" variable nil nil [7970 8031])
+            ("form_class, base_class" code nil nil [8032 8079])
+            ("TaggerUI" type
+               (:superclasses ("base_class" "form_class")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [8183 8223])
+                            ("self" code nil (reparse-symbol indented_block_body) [8232 8250])
+                            ("pix" variable nil (reparse-symbol indented_block_body) [8259 8330])
+                            ("self" code nil (reparse-symbol indented_block_body) [8339 8364])
+                            ("'''
+        # regular dictinary - to be replaced with ordered dictionary
+        self.tags={ \"renderPass\" : ([\"sky\",\"plate\",\"FG\",\"glow\",\"glow2\",\"glow3\",\"objectMaskA\",\"objectMaskB\",\"objectMaskC\"], 0),
+                    \"subdivision\" : ([\"0\",\"1\", \"2\", \"3\"], 2),
+                    \"displacement\" : ([\"0\",\"1\", \"2\", \"3\"], 2),
+                    \"lights\" : ([\"key\",\"shadow\"], 0),
+                    \"occlusion\" : ([\"1\", \"2\", \"5\"], 0),
+                    \"outlines\" : ([\"intersections\", \"profiles\"], 0),
+                    \"outlines width\" : ([\"0.1\", \"0.5\", \"0.8\", \"1.0\", \"1.2\", \"1.5\", \"2\"], 3) }
+        '''" code nil (reparse-symbol indented_block_body) [8374 8983])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9102 9682])
+                            ("self" code nil (reparse-symbol indented_block_body) [9692 9741])
+                            ("self" code nil (reparse-symbol indented_block_body) [9750 9824])
+                            ("self" code nil (reparse-symbol indented_block_body) [9833 9855])
+                            ("self" code nil (reparse-symbol indented_block_body) [9865 9931])
+                            ("self" code nil (reparse-symbol indented_block_body) [9941 9986])
+                            ("self" code nil (reparse-symbol indented_block_body) [9995 10044])
+                            ("self" code nil (reparse-symbol indented_block_body) [10053 10104])
+                            ("self" code nil (reparse-symbol indented_block_body) [10113 10180])
+                            ("self" code nil (reparse-symbol indented_block_body) [10189 10255]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8137 8141])
+                            ("parent" variable nil (reparse-symbol function_parameters) [8143 8149])
+                            ("winName" variable nil (reparse-symbol function_parameters) [8151 8158]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8124 10256])
+                    ("tagTypeSelected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10281 10285]))                          )
+                        (reparse-symbol indented_block_body) [10261 10513])
+                    ("getNodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10531 10535]))                          )
+                        (reparse-symbol indented_block_body) [10518 10832])
+                    ("doTag" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10847 10851]))                          )
+                        (reparse-symbol indented_block_body) [10837 11672])
+                    ("doUnTag" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11822 11826]))                          )
+                        (reparse-symbol indented_block_body) [11810 12665])
+                    ("doSelect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12683 12687]))                          )
+                        (reparse-symbol indented_block_body) [12670 13565])
+                    ("doSelectUntagged" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13592 13596]))                          )
+                        (reparse-symbol indented_block_body) [13571 14364]))                  
+                :type "class")
+                nil [8080 14364])
+            ("ui" function nil nil [14366 14626]))          
+      :file "__init__.py"
+      :pointmax 14626
+      :fsize 14996
+      :lastmodtime '(22019 49361 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 6795 . 6900) (NEWLINE 6794 . 6795) (COLON 6793 . 6794) (TRY 6654 . 6657) (AS 6787 . 6789))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Tools!Lighting!Tagging!Tagger!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

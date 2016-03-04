@@ -1,0 +1,552 @@
+;; Object tk_desktop/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "tk_desktop/"
+  :tables
+  (list
+    (semanticdb-table "desktop_engine_project_implementation.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [448 457])
+            ("sys" include nil nil [458 468])
+            ("fnmatch" include nil nil [469 483])
+            ("logging" include nil nil [484 498])
+            ("traceback" include nil nil [499 515])
+            ("rpc" include nil nil [524 534])
+            ("sgtk" include nil nil [535 546])
+            ("DesktopEngineProjectImplementation" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [639 660])
+                            ("self" variable nil (reparse-symbol indented_block_body) [670 687])
+                            ("self" variable nil (reparse-symbol indented_block_body) [696 718])
+                            ("self" variable nil (reparse-symbol indented_block_body) [727 749]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [616 620])
+                            ("engine" variable nil (reparse-symbol function_parameters) [622 628]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [603 750])
+                    ("init_engine" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [771 775]))                          )
+                        (reparse-symbol indented_block_body) [755 2270])
+                    ("post_app_init" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2293 2297]))                          )
+                        (reparse-symbol indented_block_body) [2275 2994])
+                    ("register_qapplication" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3025 3029])
+                            ("app" variable nil (reparse-symbol function_parameters) [3031 3034]))                          )
+                        (reparse-symbol indented_block_body) [2999 3139])
+                    ("start_rpc" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3158 3162]))                          )
+                        (reparse-symbol indented_block_body) [3144 3604])
+                    ("destroy_engine" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3628 3632]))                          )
+                        (reparse-symbol indented_block_body) [3609 4022])
+                    ("trigger_callback" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4048 4052])
+                            ("namespace" variable nil (reparse-symbol function_parameters) [4054 4063])
+                            ("command" variable nil (reparse-symbol function_parameters) [4065 4072])
+                            ("args" variable nil (reparse-symbol function_parameters) [4074 4079])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [4081 4089]))                          )
+                        (reparse-symbol indented_block_body) [4027 4384])
+                    ("signal_disconnect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4411 4415]))                          )
+                        (reparse-symbol indented_block_body) [4389 5127])
+                    ("open_project_locations" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5159 5163]))                          
+                        :documentation " Open the project locations in an os specific browser window ")
+                        (reparse-symbol indented_block_body) [5132 5955])
+                    ("_initialize_logging" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5984 5988]))                          )
+                        (reparse-symbol indented_block_body) [5960 6147])
+                    ("log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6160 6164])
+                            ("level" variable nil (reparse-symbol function_parameters) [6166 6171])
+                            ("msg" variable nil (reparse-symbol function_parameters) [6173 6176])
+                            ("args" variable nil (reparse-symbol function_parameters) [6178 6183]))                          )
+                        (reparse-symbol indented_block_body) [6152 6616])
+                    ("_get_groups" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6637 6641])
+                            ("name" variable nil (reparse-symbol function_parameters) [6643 6647])
+                            ("properties" variable nil (reparse-symbol function_parameters) [6649 6659]))                          )
+                        (reparse-symbol indented_block_body) [6621 7262]))                  
+                :type "class")
+                nil [549 7262]))          
+      :file "desktop_engine_project_implementation.py"
+      :pointmax 7262
+      :fsize 7261
+      :lastmodtime '(22182 16162 0 0)
+      :unmatched-syntax '((FROM 517 . 521) (PERIOD 522 . 523)))
+    (semanticdb-table "rpc.py"
+      :file "rpc.py"
+      :fsize 8892
+      :lastmodtime '(22182 16163 0 0))
+    (semanticdb-table "error_dialog.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sgtk.platform.qt" include nil nil [448 482])
+            ("error_dialog" include nil nil [493 512])
+            ("ErrorDialog" type
+               (:documentation " Simple error dialog with a text edit to handle displaying large messages. "
+                :superclasses ("QtGui.QDialog")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("QtGui" code nil (reparse-symbol indented_block_body) [696 732])
+                            ("self" variable nil (reparse-symbol indented_block_body) [742 781])
+                            ("self" code nil (reparse-symbol indented_block_body) [790 811])
+                            ("style" code nil (reparse-symbol indented_block_body) [860 910])
+                            ("iconSize" variable nil (reparse-symbol indented_block_body) [919 995])
+                            ("icon" variable nil (reparse-symbol indented_block_body) [1004 1077])
+                            ("pixmap" variable nil (reparse-symbol indented_block_body) [1086 1126])
+                            ("self" code nil (reparse-symbol indented_block_body) [1135 1165])
+                            ("self" code nil (reparse-symbol indented_block_body) [1201 1229])
+                            ("self" code nil (reparse-symbol indented_block_body) [1238 1270]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [652 656])
+                            ("title" variable nil (reparse-symbol function_parameters) [658 663])
+                            ("message" variable nil (reparse-symbol function_parameters) [665 672])
+                            ("parent" variable nil (reparse-symbol function_parameters) [674 680]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [639 1271]))                  
+                :type "class")
+                nil [515 1271]))          
+      :file "error_dialog.py"
+      :pointmax 1271
+      :fsize 1270
+      :lastmodtime '(22182 16162 0 0)
+      :unmatched-syntax '((FROM 484 . 488) (PERIOD 489 . 490)))
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("get_engine_implementation" function (:arguments 
+              ( ("implementation_type" variable nil (reparse-symbol function_parameters) [479 498]))              ) nil [449 942]))          
+      :file "__init__.py"
+      :pointmax 942
+      :fsize 941
+      :lastmodtime '(22182 16162 0 0)
+      :unmatched-syntax '((FROM 723 . 727) (PERIOD 728 . 729) (FROM 547 . 551) (PERIOD 552 . 553)))
+    (semanticdb-table "desktop_window.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [473 482])
+            ("sys" include nil nil [483 493])
+            ("tempfile" include nil nil [494 509])
+            ("subprocess" include nil nil [510 527])
+            ("cPickle" include nil nil [528 552])
+            ("tank.platform.qt" include nil nil [554 596])
+            ("sgtk" include nil nil [598 609])
+            ("sgtk.util" include nil nil [610 639])
+            ("sgtk" include nil nil [640 661])
+            ("sgtk.platform" include nil nil [662 697])
+            ("tank_vendor" include nil nil [698 755])
+            ("sgtk" include nil nil [756 793])
+            ("resources_rc" include nil nil [804 823])
+            ("desktop_window" include nil nil [833 854])
+            ("Console" include nil nil [870 884])
+            ("ConsoleLogHandler" include nil nil [899 923])
+            ("SystrayWindow" include nil nil [938 958])
+            ("AboutScreen" include nil nil [978 996])
+            ("SetupProject" include nil nil [1017 1036])
+            ("SetupNewOS" include nil nil [1056 1073])
+            ("SgProjectModel" include nil nil [1094 1115])
+            ("SgProjectModelProxy" include nil nil [1136 1162])
+            ("SgProjectDelegate" include nil nil [1186 1210])
+            ("UpdateProjectConfig" include nil nil [1239 1265])
+            ("ProjectCommandModel" include nil nil [1296 1322])
+            ("ProjectCommandProxyModel" include nil nil [1352 1383])
+            ("ProjectCommandDelegate" include nil nil [1414 1443])
+            ("try" code nil nil [1445 1523])
+            ("shotgun_model" variable nil nil [1548 1640])
+            ("overlay_widget" variable nil nil [1641 1732])
+            ("settings" variable nil nil [1733 1815])
+            ("ShotgunModel" variable nil nil [1817 1858])
+            ("DesktopWindow" type
+               (:documentation " Dockable window for the Shotgun system tray "
+                :superclasses ("SystrayWindow")
+                :members 
+                  ( ("ORGANIZATION" variable nil (reparse-symbol indented_block_body) [1958 1991])
+                    ("APPLICATION" variable nil (reparse-symbol indented_block_body) [1996 2022])
+                    ("__init__" function
+                       (:suite 
+                          ( ("SystrayWindow" code nil (reparse-symbol indented_block_body) [2069 2105])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2153 2180])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2189 2220])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2229 2275])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2284 2362])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2399 2442])
+                            ("self" code nil (reparse-symbol indented_block_body) [2451 2472])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2481 2565])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2574 2640])
+                            ("self" code nil (reparse-symbol indented_block_body) [2649 2722])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2731 2812])
+                            ("self" code nil (reparse-symbol indented_block_body) [2821 2904])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2913 2976])
+                            ("self" code nil (reparse-symbol indented_block_body) [3019 3065])
+                            ("self" code nil (reparse-symbol indented_block_body) [3074 3129])
+                            ("self" code nil (reparse-symbol indented_block_body) [3139 3208])
+                            ("QtGui" code nil (reparse-symbol indented_block_body) [3217 3279])
+                            ("self" code nil (reparse-symbol indented_block_body) [3320 3367])
+                            ("self" code nil (reparse-symbol indented_block_body) [3376 3433])
+                            ("self" code nil (reparse-symbol indented_block_body) [3442 3497])
+                            ("engine" variable nil (reparse-symbol indented_block_body) [3507 3546])
+                            ("connection" variable nil (reparse-symbol indented_block_body) [3556 3617])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3655 3681])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3690 3748])
+                            ("engine" code nil (reparse-symbol indented_block_body) [3757 3807])
+                            ("user" variable nil (reparse-symbol indented_block_body) [3873 3906])
+                            ("current_user" variable nil (reparse-symbol indented_block_body) [3915 4034])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4043 4077])
+                            ("thumbnail_url" variable nil (reparse-symbol indented_block_body) [4086 4127])
+                            ("if" code nil (reparse-symbol indented_block_body) [4136 4708])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4746 4780])
+                            ("name_action" variable nil (reparse-symbol indented_block_body) [4789 4849])
+                            ("url_action" variable nil (reparse-symbol indented_block_body) [4858 4932])
+                            ("self" code nil (reparse-symbol indented_block_body) [4941 4970])
+                            ("self" code nil (reparse-symbol indented_block_body) [4979 5030])
+                            ("self" code nil (reparse-symbol indented_block_body) [5039 5090])
+                            ("self" code nil (reparse-symbol indented_block_body) [5099 5151])
+                            ("self" code nil (reparse-symbol indented_block_body) [5160 5216])
+                            ("about_action" variable nil (reparse-symbol indented_block_body) [5225 5276])
+                            ("self" code nil (reparse-symbol indented_block_body) [5285 5314])
+                            ("self" code nil (reparse-symbol indented_block_body) [5323 5371])
+                            ("self" code nil (reparse-symbol indented_block_body) [5380 5424])
+                            ("name_action" code nil (reparse-symbol indented_block_body) [5434 5490])
+                            ("url_action" code nil (reparse-symbol indented_block_body) [5499 5554])
+                            ("about_action" code nil (reparse-symbol indented_block_body) [5563 5612])
+                            ("QtGui" code nil (reparse-symbol indented_block_body) [5622 5696])
+                            ("self" code nil (reparse-symbol indented_block_body) [5706 5769])
+                            ("self" code nil (reparse-symbol indented_block_body) [5778 5846])
+                            ("self" code nil (reparse-symbol indented_block_body) [5855 5930])
+                            ("self" code nil (reparse-symbol indented_block_body) [5939 6023])
+                            ("self" code nil (reparse-symbol indented_block_body) [6032 6087])
+                            ("self" code nil (reparse-symbol indented_block_body) [6096 6157])
+                            ("self" code nil (reparse-symbol indented_block_body) [6167 6210])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6277 6332])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6341 6401])
+                            ("self" code nil (reparse-symbol indented_block_body) [6410 6481])
+                            ("self" code nil (reparse-symbol indented_block_body) [6490 6525])
+                            ("self" code nil (reparse-symbol indented_block_body) [6534 6596])
+                            ("self" code nil (reparse-symbol indented_block_body) [6657 6705])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6715 6796])
+                            ("self" code nil (reparse-symbol indented_block_body) [6805 6877])
+                            ("self" code nil (reparse-symbol indented_block_body) [6886 6981])
+                            ("self" code nil (reparse-symbol indented_block_body) [7104 7231])
+                            ("self" code nil (reparse-symbol indented_block_body) [7241 7335])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7391 7451])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7460 7507])
+                            ("self" code nil (reparse-symbol indented_block_body) [7557 7612])
+                            ("self" code nil (reparse-symbol indented_block_body) [7621 7648])
+                            ("self" code nil (reparse-symbol indented_block_body) [7657 7703])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7789 7887])
+                            ("self" code nil (reparse-symbol indented_block_body) [7896 7952])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8004 8069])
+                            ("self" code nil (reparse-symbol indented_block_body) [8078 8160])
+                            ("self" code nil (reparse-symbol indented_block_body) [8208 8285])
+                            ("self" code nil (reparse-symbol indented_block_body) [8295 8410])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8451 8521])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8530 8610])
+                            ("self" code nil (reparse-symbol indented_block_body) [8619 8684])
+                            ("self" code nil (reparse-symbol indented_block_body) [8693 8758])
+                            ("self" code nil (reparse-symbol indented_block_body) [8767 8795])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8805 8868])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8877 8944])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8953 9012])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9021 9082])
+                            ("self" code nil (reparse-symbol indented_block_body) [9092 9164])
+                            ("self" code nil (reparse-symbol indented_block_body) [9174 9194])
+                            ("self" code nil (reparse-symbol indented_block_body) [9204 9269])
+                            ("self" code nil (reparse-symbol indented_block_body) [9278 9365])
+                            ("self" code nil (reparse-symbol indented_block_body) [9375 9459])
+                            ("self" code nil (reparse-symbol indented_block_body) [9469 9490]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2041 2045])
+                            ("parent" variable nil (reparse-symbol function_parameters) [2047 2053]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2028 9491])
+                    ("_load_settings" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9515 9519]))                          )
+                        (reparse-symbol indented_block_body) [9496 10259])
+                    ("_save_setting" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10282 10286])
+                            ("key" variable nil (reparse-symbol function_parameters) [10288 10291])
+                            ("value" variable nil (reparse-symbol function_parameters) [10293 10298])
+                            ("site_specific" variable nil (reparse-symbol function_parameters) [10300 10313]))                          )
+                        (reparse-symbol indented_block_body) [10264 10497])
+                    ("_load_setting" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10520 10524])
+                            ("key" variable nil (reparse-symbol function_parameters) [10526 10529])
+                            ("default_value" variable nil (reparse-symbol function_parameters) [10531 10544])
+                            ("site_specific" variable nil (reparse-symbol function_parameters) [10546 10559]))                          )
+                        (reparse-symbol indented_block_body) [10502 10797])
+                    ("_push_dll_state" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10822 10826]))                          )
+                        (reparse-symbol indented_block_body) [10802 11460])
+                    ("_pop_dll_state" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11484 11488]))                          )
+                        (reparse-symbol indented_block_body) [11465 11893])
+                    ("contextMenuEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12043 12047])
+                            ("event" variable nil (reparse-symbol function_parameters) [12049 12054]))                          )
+                        (reparse-symbol indented_block_body) [12022 12105])
+                    ("handle_project_command_expanded_changed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12154 12158])
+                            ("group_key" variable nil (reparse-symbol function_parameters) [12160 12169])
+                            ("expanded" variable nil (reparse-symbol function_parameters) [12171 12179]))                          )
+                        (reparse-symbol indented_block_body) [12110 12395])
+                    ("handle_project_thumbnail_updated" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12437 12441])
+                            ("item" variable nil (reparse-symbol function_parameters) [12443 12447]))                          )
+                        (reparse-symbol indented_block_body) [12400 12755])
+                    ("handle_systray_state_changed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12793 12797])
+                            ("state" variable nil (reparse-symbol function_parameters) [12799 12804]))                          )
+                        (reparse-symbol indented_block_body) [12760 13016])
+                    ("handle_quit_action" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13044 13048]))                          )
+                        (reparse-symbol indented_block_body) [13021 13424])
+                    ("handle_hotkey_triggered" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13457 13461]))                          )
+                        (reparse-symbol indented_block_body) [13429 13495])
+                    ("set_activation_hotkey" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13526 13530])
+                            ("shortcut" variable nil (reparse-symbol function_parameters) [13532 13540])
+                            ("native_modifiers" variable nil (reparse-symbol function_parameters) [13542 13558])
+                            ("native_key" variable nil (reparse-symbol function_parameters) [13560 13570]))                          )
+                        (reparse-symbol indented_block_body) [13500 14369])
+                    ("handle_auto_start_changed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14404 14408])
+                            ("state" variable nil (reparse-symbol function_parameters) [14410 14415]))                          )
+                        (reparse-symbol indented_block_body) [14374 14639])
+                    ("handle_project_refresh_action" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14678 14682]))                          
+                        :documentation "
+        Force a reload of the project model.
+        Clear cache and reload if shift is held down.
+        ")
+                        (reparse-symbol indented_block_body) [14644 15025])
+                    ("search_button_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15056 15060]))                          )
+                        (reparse-symbol indented_block_body) [15030 16635])
+                    ("search_text_changed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16664 16668])
+                            ("text" variable nil (reparse-symbol function_parameters) [16670 16674]))                          )
+                        (reparse-symbol indented_block_body) [16640 16724])
+                    ("on_project_filesystem_folder_triggered" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16772 16776]))                          )
+                        (reparse-symbol indented_block_body) [16729 16921])
+                    ("sign_out" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16939 16943]))                          )
+                        (reparse-symbol indented_block_body) [16926 17926])
+                    ("is_on_top" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17945 17949]))                          )
+                        (reparse-symbol indented_block_body) [17931 18021])
+                    ("set_on_top" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18041 18045])
+                            ("value" variable nil (reparse-symbol function_parameters) [18047 18052]))                          )
+                        (reparse-symbol indented_block_body) [18026 18596])
+                    ("toggle_keep_on_top" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18624 18628]))                          )
+                        (reparse-symbol indented_block_body) [18601 18701])
+                    ("get_app_widget" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18837 18841])
+                            ("namespace" variable nil (reparse-symbol function_parameters) [18843 18852]))                          )
+                        (reparse-symbol indented_block_body) [18818 18900])
+                    ("add_to_project_menu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18929 18933])
+                            ("action" variable nil (reparse-symbol function_parameters) [18935 18941]))                          )
+                        (reparse-symbol indented_block_body) [18905 19032])
+                    ("_handle_project_data_changed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19070 19074]))                          )
+                        (reparse-symbol indented_block_body) [19037 19200])
+                    ("_on_back_to_projects_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19238 19242]))                          )
+                        (reparse-symbol indented_block_body) [19205 19612])
+                    ("set_groups" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19632 19636])
+                            ("groups" variable nil (reparse-symbol function_parameters) [19638 19644])
+                            ("show_recents" variable nil (reparse-symbol function_parameters) [19646 19658]))                          )
+                        (reparse-symbol indented_block_body) [19617 20022])
+                    ("clear_app_uis" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20045 20049]))                          )
+                        (reparse-symbol indented_block_body) [20027 20759])
+                    ("show_update_project_config" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20795 20799]))                          )
+                        (reparse-symbol indented_block_body) [20764 20887])
+                    ("__populate_pipeline_configurations_menu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20936 20940])
+                            ("pipeline_configurations" variable nil (reparse-symbol function_parameters) [20942 20965])
+                            ("selected" variable nil (reparse-symbol function_parameters) [20967 20975]))                          )
+                        (reparse-symbol indented_block_body) [20892 22811])
+                    ("__set_project_just_accessed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22848 22852])
+                            ("project" variable nil (reparse-symbol function_parameters) [22854 22861]))                          )
+                        (reparse-symbol indented_block_body) [22816 22930])
+                    ("_on_project_selection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22961 22965])
+                            ("selected" variable nil (reparse-symbol function_parameters) [22967 22975])
+                            ("deselected" variable nil (reparse-symbol function_parameters) [22977 22987]))                          )
+                        (reparse-symbol indented_block_body) [22935 23321])
+                    ("__set_project_from_id" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23352 23356])
+                            ("project_id" variable nil (reparse-symbol function_parameters) [23358 23368]))                          )
+                        (reparse-symbol indented_block_body) [23326 24185])
+                    ("__get_icon_pixmap" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24212 24216])
+                            ("icon" variable nil (reparse-symbol function_parameters) [24218 24222])
+                            ("size" variable nil (reparse-symbol function_parameters) [24224 24228]))                          )
+                        (reparse-symbol indented_block_body) [24190 24375])
+                    ("__set_project_from_item" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24408 24412])
+                            ("item" variable nil (reparse-symbol function_parameters) [24414 24418]))                          )
+                        (reparse-symbol indented_block_body) [24380 24938])
+                    ("_on_project_menu_triggered" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24974 24978])
+                            ("action" variable nil (reparse-symbol function_parameters) [24980 24986]))                          )
+                        (reparse-symbol indented_block_body) [24943 25157])
+                    ("_on_setup_finished" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25185 25189])
+                            ("success" variable nil (reparse-symbol function_parameters) [25191 25198]))                          )
+                        (reparse-symbol indented_block_body) [25162 25291])
+                    ("_on_update_finished" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25320 25324])
+                            ("success" variable nil (reparse-symbol function_parameters) [25326 25333]))                          )
+                        (reparse-symbol indented_block_body) [25296 25426])
+                    ("__launch_app_proxy_for_project" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25466 25470])
+                            ("project" variable nil (reparse-symbol function_parameters) [25472 25479])
+                            ("pipeline_configuration_id" variable nil (reparse-symbol function_parameters) [25481 25506]))                          )
+                        (reparse-symbol indented_block_body) [25431 34194])
+                    ("slide_view" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34214 34218])
+                            ("new_page" variable nil (reparse-symbol function_parameters) [34220 34228])
+                            ("from_direction" variable nil (reparse-symbol function_parameters) [34230 34244]))                          )
+                        (reparse-symbol indented_block_body) [34199 35631])
+                    ("open_site_in_browser" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35661 35665]))                          )
+                        (reparse-symbol indented_block_body) [35636 35886])
+                    ("handle_about" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35908 35912]))                          )
+                        (reparse-symbol indented_block_body) [35891 37110]))                  
+                :type "class")
+                nil [1861 37110]))          
+      :file "desktop_window.py"
+      :pointmax 37110
+      :fsize 37109
+      :lastmodtime '(22182 16162 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 4582 . 4708) (NEWLINE 4581 . 4582) (COLON 4580 . 4581) (FINALLY 4573 . 4580) (FROM 1454 . 1458) (PERIOD 1459 . 1460) (FROM 1384 . 1388) (PERIOD 1389 . 1390) (FROM 1323 . 1327) (PERIOD 1328 . 1329) (FROM 1267 . 1271) (PERIOD 1272 . 1273) (FROM 1211 . 1215) (PERIOD 1216 . 1217) (FROM 1163 . 1167) (PERIOD 1168 . 1169) (FROM 1116 . 1120) (PERIOD 1121 . 1122) (FROM 1074 . 1078) (PERIOD 1079 . 1080) (FROM 1037 . 1041) (PERIOD 1042 . 1043) (FROM 997 . 1001) (PERIOD 1002 . 1003) (FROM 959 . 963) (PERIOD 964 . 965) (FROM 924 . 928) (PERIOD 929 . 930) (FROM 885 . 889) (PERIOD 890 . 891) (FROM 856 . 860) (PERIOD 861 . 862) (FROM 824 . 828) (PERIOD 829 . 830) (FROM 795 . 799) (PERIOD 800 . 801)))
+    (semanticdb-table "Console.py"
+      :file "Console.py"
+      :fsize 4513
+      :lastmodtime '(22182 16162 0 0)))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!engines!app_store!tk-desktop!v2.0.9!python!tk_desktop!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

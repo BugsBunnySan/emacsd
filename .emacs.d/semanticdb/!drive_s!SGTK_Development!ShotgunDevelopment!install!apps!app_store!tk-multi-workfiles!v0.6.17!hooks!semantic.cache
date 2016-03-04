@@ -1,0 +1,76 @@
+;; Object hooks/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hooks/"
+  :tables
+  (list
+    (semanticdb-table "scene_operation_tk-maya.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [453 462])
+            ("maya.cmds" include nil nil [463 487])
+            ("tank" include nil nil [489 500])
+            ("tank" include nil nil [501 522])
+            ("tank" include nil nil [523 549])
+            ("tank.platform.qt" include nil nil [550 584])
+            ("SceneOperation" type
+               (:documentation "
+    Hook called to perform an operation with the 
+    current scene
+    "
+                :superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [719 723])
+                            ("operation" variable nil (reparse-symbol function_parameters) [725 734])
+                            ("file_path" variable nil (reparse-symbol function_parameters) [736 745])
+                            ("context" variable nil (reparse-symbol function_parameters) [747 754])
+                            ("parent_action" variable nil (reparse-symbol function_parameters) [756 769])
+                            ("file_version" variable nil (reparse-symbol function_parameters) [771 783])
+                            ("read_only" variable nil (reparse-symbol function_parameters) [785 794])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [796 804]))                          
+                        :documentation "
+        Main hook entry point
+        
+        :param operation:       String
+                                Scene operation to perform
+        
+        :param file_path:       String
+                                File path to use if the operation
+                                requires it (e.g. open)
+                    
+        :param context:         Context
+                                The context the file operation is being
+                                performed in.
+                    
+        :param parent_action:   This is the action that this scene operation is
+                                being executed for.  This can be one of:
+                                - open_file
+                                - new_file
+                                - save_file_as 
+                                - version_up
+                        
+        :param file_version:    The version/revision of the file to be opened.  If this is 'None'
+                                then the latest version should be opened.
+        
+        :param read_only:       Specifies if the file should be opened read-only or not
+                            
+        :returns:               Depends on operation:
+                                'current_path' - Return the current scene
+                                                 file path as a String
+                                'reset'        - True if scene was reset to an empty 
+                                                 state, otherwise False
+                                all others     - None
+        ")
+                        (reparse-symbol indented_block_body) [707 4738]))                  
+                :type "class")
+                nil [586 4738]))          
+      :file "scene_operation_tk-maya.py"
+      :pointmax 4740
+      :fsize 4739
+      :lastmodtime '(22182 15194 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!apps!app_store!tk-multi-workfiles!v0.6.17!hooks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

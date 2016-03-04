@@ -1,0 +1,355 @@
+;; Object bbf_base/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbf_base/"
+  :tables
+  (list
+    (semanticdb-table "qtwidgets.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbf_base.qtwidgets
+   :synopsis: custom widgets
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 139])
+            ("__future__" include nil nil [140 177])
+            ("__all__" variable nil nil [179 392])
+            ("os" include nil nil [394 403])
+            ("logging" include nil nil [404 418])
+            ("functools" include nil nil [419 435])
+            ("reload" code nil nil [437 452])
+            ("PySide" include nil nil [454 485])
+            ("WithQWaitCursor" type
+               (:documentation " Decorator that makes a Qt WaitCursor display while running a function
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            func: a python callable
+        \"\"\"" code nil (reparse-symbol indented_block_body) [643 708])
+                            ("self" variable nil (reparse-symbol indented_block_body) [717 734]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [622 626])
+                            ("func" variable nil (reparse-symbol function_parameters) [628 632]))                          
+                        :documentation "
+        Args:
+            func: a python callable
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [609 735])
+                    ("__get__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [752 756])
+                            ("obj" variable nil (reparse-symbol function_parameters) [758 761])
+                            ("objtype" variable nil (reparse-symbol function_parameters) [763 770]))                          
+                        :documentation " Support instance methods ")
+                        (reparse-symbol indented_block_body) [740 867])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [885 889])
+                            ("args" variable nil (reparse-symbol function_parameters) [891 896])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [898 906]))                          
+                        :documentation " calls our func wrapped in a Qt wait cursors ")
+                        (reparse-symbol indented_block_body) [872 1169]))                  
+                :type "class")
+                nil [487 1169])
+            ("BlockedSignals" type
+               (:documentation " Context Manager that blocks signals for the given widgets while running a function
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            widgets: a widget or list of widgets
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1368 1446])
+                            ("if" code nil (reparse-symbol indented_block_body) [1455 1577]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1344 1348])
+                            ("widgets" variable nil (reparse-symbol function_parameters) [1350 1357]))                          
+                        :documentation "
+        Args:
+            widgets: a widget or list of widgets
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1331 1577])
+                    ("__enter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1596 1600]))                          
+                        :documentation " block signals ")
+                        (reparse-symbol indented_block_body) [1582 1708])
+                    ("__exit__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1726 1730])
+                            ("exc_type" variable nil (reparse-symbol function_parameters) [1732 1740])
+                            ("exc" variable nil (reparse-symbol function_parameters) [1742 1745])
+                            ("exc_tb" variable nil (reparse-symbol function_parameters) [1747 1753]))                          
+                        :documentation " unblock signals ")
+                        (reparse-symbol indented_block_body) [1713 1864]))                  
+                :type "class")
+                nil [1198 1864])
+            ("set_combo_text" function
+               (:documentation " set a combo box to a given text, if it is found in the combo box
+
+    Args:
+        cb: a QComboBox
+        text: the text to search for in the combo box and to set the current index too
+    "
+                :arguments 
+                  ( ("cb" variable nil (reparse-symbol function_parameters) [1916 1918])
+                    ("text" variable nil (reparse-symbol function_parameters) [1920 1924]))                  )
+                nil [1897 2283])
+            ("remove_selected_from_view" function
+               (:parent "dummy"
+                :arguments 
+                  ( ("self" variable nil (reparse-symbol function_parameters) [2314 2318])
+                    ("model" variable nil (reparse-symbol function_parameters) [2320 2325])
+                    ("view" variable nil (reparse-symbol function_parameters) [2327 2331]))                  
+                :documentation " remove all items from a model that are selected in a corresponding view
+
+    Args:
+        model: subclass of a QAbstractItemModel
+        view: view fitting model
+    ")
+                nil [2284 2677])
+            ("process_pending_events" function (:documentation " processes all pending qt events, useful from inside longer running
+    processes that want to give user feedback
+    ") nil [2678 2930])
+            ("get_all_treemodel_data" function
+               (:documentation " get all the data (for a specific role) from a treemodel
+
+    Args:
+        model: a standarditem model (or similar)
+        columns: list of columns to get (defaults to empty list meaning all available columns)
+        role: the data role to query for (defaults to DisplayRole)
+        parent: the parent index to start from (defaults to root of model)
+
+    Returns:
+        list: a list of tuples containing the data of each row of the model
+    "
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [2958 2963])
+                    ("columns" variable nil (reparse-symbol function_parameters) [2965 2972])
+                    ("role" variable nil (reparse-symbol function_parameters) [2977 2981])
+                    ("parent" variable nil (reparse-symbol function_parameters) [3005 3011]))                  )
+                nil [2931 4101])
+            ("CSSQComboBox" type
+               (:documentation " QCombobox that reacts to certain dynamic property changes with a style update "
+                :superclasses ("QtGui.QComboBox")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        \"\"\"" code nil (reparse-symbol indented_block_body) [4297 4481])
+                            ("super" code nil (reparse-symbol indented_block_body) [4490 4539])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4549 4590]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4246 4250])
+                            ("dynamic_property" variable nil (reparse-symbol function_parameters) [4252 4268])
+                            ("parent" variable nil (reparse-symbol function_parameters) [4275 4281]))                          
+                        :documentation "
+        Args:
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4233 4591])
+                    ("event" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4606 4610])
+                            ("qevent" variable nil (reparse-symbol function_parameters) [4612 4618]))                          )
+                        (reparse-symbol indented_block_body) [4596 4965]))                  
+                :type "class")
+                nil [4102 4965])
+            ("CSSQLabel" type
+               (:documentation " QLabel that reacts to certain dynamic property changes with a style update "
+                :superclasses ("QtGui.QLabel")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            label_text: optional text to use as the QLabel's text
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        \"\"\"" code nil (reparse-symbol indented_block_body) [5194 5444])
+                            ("if" code nil (reparse-symbol indented_block_body) [5453 5624])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5633 5674]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5126 5130])
+                            ("label_text" variable nil (reparse-symbol function_parameters) [5132 5142])
+                            ("dynamic_property" variable nil (reparse-symbol function_parameters) [5149 5165])
+                            ("parent" variable nil (reparse-symbol function_parameters) [5172 5178]))                          
+                        :documentation "
+        Args:
+            label_text: optional text to use as the QLabel's text
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5113 5675])
+                    ("event" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5690 5694])
+                            ("qevent" variable nil (reparse-symbol function_parameters) [5696 5702]))                          )
+                        (reparse-symbol indented_block_body) [5680 6046]))                  
+                :type "class")
+                nil [4991 6046])
+            ("CSSQCheckBox" type
+               (:documentation " QCheckBox that reacts to certain dynamic property changes with a style update "
+                :superclasses ("QtGui.QCheckBox")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            button_text: optional text to use as the QCheckBox label
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        \"\"\"" code nil (reparse-symbol indented_block_body) [6282 6535])
+                            ("if" code nil (reparse-symbol indented_block_body) [6544 6723])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6732 6773]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6213 6217])
+                            ("button_text" variable nil (reparse-symbol function_parameters) [6219 6230])
+                            ("dynamic_property" variable nil (reparse-symbol function_parameters) [6237 6253])
+                            ("parent" variable nil (reparse-symbol function_parameters) [6260 6266]))                          
+                        :documentation "
+        Args:
+            button_text: optional text to use as the QCheckBox label
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6200 6774])
+                    ("event" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6789 6793])
+                            ("qevent" variable nil (reparse-symbol function_parameters) [6795 6801]))                          )
+                        (reparse-symbol indented_block_body) [6779 7148]))                  
+                :type "class")
+                nil [6069 7148])
+            ("LOG_WINDOW_UI" variable nil nil [7223 7319])
+            ("LOG_WINDOW_RCC" variable nil nil [7320 7416])
+            ("DebugHandler" type
+               (:documentation " testing handler can be used to debug logging formatters "
+                :superclasses ("logging.Handler")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            level: a logging module logging level
+        \"\"\"" code nil (reparse-symbol indented_block_body) [7577 7656])
+                            ("logging" code nil (reparse-symbol indented_block_body) [7665 7708]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7540 7544])
+                            ("level" variable nil (reparse-symbol function_parameters) [7546 7551]))                          
+                        :documentation "
+        Args:
+            level: a logging module logging level
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7527 7709])
+                    ("emit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7723 7727])
+                            ("record" variable nil (reparse-symbol function_parameters) [7729 7735]))                          
+                        :documentation " print the messsage made by our formatting setup
+
+        Args:
+            record: a logging record to output
+        ")
+                        (reparse-symbol indented_block_body) [7714 7964]))                  
+                :type "class")
+                nil [7418 7964])
+            ("HTMLLoggingFormatter" type
+               (:documentation " a logging Formatter outputting html/css formatted records "
+                :superclasses ("logging.Formatter")
+                :members 
+                  ( ("LEVEL_FORMATS" variable nil (reparse-symbol indented_block_body) [8086 8570])
+                    ("DEFAULT_FORMAT" variable nil (reparse-symbol indented_block_body) [8576 8620])
+                    ("format" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8636 8640])
+                            ("record" variable nil (reparse-symbol function_parameters) [8642 8648]))                          
+                        :documentation " format record based on our css formats and the record's level
+
+        Args:
+            record: a logging record to format
+
+        Returns:
+            text/html: a string containing the css styled msg of the `record`
+        ")
+                        (reparse-symbol indented_block_body) [8625 9154]))                  
+                :type "class")
+                nil [7965 9154])
+            ("QLoggingHandler" type
+               (:documentation "a custom logging handler outputing to a qt text edit
+    "
+                :superclasses ("logging.Handler")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            text_edit: a QTextEdit that will have our logging appended to it
+            level: a logging module logging level
+        \"\"\"" code nil (reparse-symbol indented_block_body) [9363 9519])
+                            ("logging" code nil (reparse-symbol indented_block_body) [9528 9571])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9581 9608]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9315 9319])
+                            ("text_edit" variable nil (reparse-symbol function_parameters) [9321 9330])
+                            ("level" variable nil (reparse-symbol function_parameters) [9332 9337]))                          
+                        :documentation "
+        Args:
+            text_edit: a QTextEdit that will have our logging appended to it
+            level: a logging module logging level
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [9302 9609])
+                    ("emit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9623 9627])
+                            ("record" variable nil (reparse-symbol function_parameters) [9629 9635]))                          
+                        :documentation " emit record to our text_edit widget
+
+        Args:
+            record: a logging record to format and output to our text_edit widget
+        ")
+                        (reparse-symbol indented_block_body) [9614 9973]))                  
+                :type "class")
+                nil [9189 9973]))          
+      :file "qtwidgets.py"
+      :pointmax 10002
+      :fsize 10293
+      :lastmodtime '(22182 7853 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!BBF_PIPELINE!BBF!Common!Lib!bbf_base!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

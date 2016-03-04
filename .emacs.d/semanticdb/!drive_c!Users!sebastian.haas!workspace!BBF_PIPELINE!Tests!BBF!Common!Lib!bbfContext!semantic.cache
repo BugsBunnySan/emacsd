@@ -1,0 +1,192 @@
+;; Object bbfContext/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfContext/"
+  :tables
+  (list
+    (semanticdb-table "kvstore.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("unittest" include nil nil [1 16])
+            ("__main__" include nil nil [18 33])
+            ("__main__" variable nil nil [34 59])
+            ("sys" include nil nil [61 71])
+            ("sys" code nil nil [72 92])
+            ("BBF.Common.Lib.bbfContext" include nil nil [94 140])
+            ("TestKVStore" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("setUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [194 198]))                          )
+                        (reparse-symbol indented_block_body) [184 241])
+                    ("test_init" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [260 264]))                          
+                        :documentation " Test initialization of empty KVStore ")
+                        (reparse-symbol indented_block_body) [246 514])
+                    ("test_single_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [541 545]))                          
+                        :documentation " Test non-dict/list value store and retrieve ")
+                        (reparse-symbol indented_block_body) [519 689])
+                    ("test_dict_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [714 718]))                          
+                        :documentation " Test dictionary value store and retrieve ")
+                        (reparse-symbol indented_block_body) [694 1238])
+                    ("test_list_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1263 1267]))                          
+                        :documentation " test list value store and retrieve ")
+                        (reparse-symbol indented_block_body) [1243 1505])
+                    ("test_default_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1533 1537]))                          
+                        :documentation " test default value for non existing key ")
+                        (reparse-symbol indented_block_body) [1510 1700]))                  
+                :type "class")
+                nil [142 1700])
+            ("test_suite" variable nil nil [1701 1770])
+            ("unittest" code nil nil [1771 1823]))          
+      :file "kvstore.py"
+      :pointmax 1824
+      :fsize 1873
+      :lastmodtime '(21914 23495 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "service.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pprint" include nil nil [1 26])
+            ("unittest" include nil nil [28 43])
+            ("__main__" include nil nil [45 60])
+            ("__main__" variable nil nil [107 132])
+            ("BBF.Common.Lib.bbfContext" include nil nil [134 180])
+            ("TestInterfaceService" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("setUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [244 248]))                          )
+                        (reparse-symbol indented_block_body) [234 530])
+                    ("test_implements_ok" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [558 562]))                          )
+                        (reparse-symbol indented_block_body) [535 808])
+                    ("test_implements_fail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [838 842]))                          )
+                        (reparse-symbol indented_block_body) [813 1128])
+                    ("test_interface_register" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1161 1165]))                          )
+                        (reparse-symbol indented_block_body) [1133 1522])
+                    ("test_service_register" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1553 1557]))                          )
+                        (reparse-symbol indented_block_body) [1527 1911]))                  
+                :type "class")
+                nil [183 1911])
+            ("test_suite" variable nil nil [1912 1990])
+            ("unittest" code nil nil [1991 2043]))          
+      :file "service.py"
+      :pointmax 2044
+      :fsize 2118
+      :lastmodtime '(21914 20627 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "context.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("unittest" include nil nil [1 16])
+            ("__main__" include nil nil [18 33])
+            ("__main__" variable nil nil [80 105])
+            ("BBF.Common.Lib.bbfContext" include nil nil [107 153])
+            ("TestContextStack" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("setUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [212 216]))                          )
+                        (reparse-symbol indented_block_body) [202 277])
+                    ("test_init_stack" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [302 306]))                          
+                        :documentation " Test creation of __main__.bbf_context context stack ")
+                        (reparse-symbol indented_block_body) [282 426])
+                    ("test_create_delete_context" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [462 466]))                          
+                        :documentation " Test creation and deletion of a context layer on the stack ")
+                        (reparse-symbol indented_block_body) [431 718])
+                    ("_test_config" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [740 744]))                          )
+                        (reparse-symbol indented_block_body) [723 1043])
+                    ("test_config" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1064 1068]))                          
+                        :documentation " Test config values handling with multiple layers ")
+                        (reparse-symbol indented_block_body) [1048 1451]))                  
+                :type "class")
+                nil [155 1451])
+            ("test_suite" variable nil nil [1453 1527]))          
+      :file "context.py"
+      :pointmax 1581
+      :fsize 1630
+      :lastmodtime '(21914 23409 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("unittest" include nil nil [1 16])
+            ("__main__" include nil nil [18 33])
+            ("__main__" variable nil nil [80 105])
+            ("BBF.Common.Lib.bbfContext" include nil nil [107 153])
+            ("TestBase" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("test_null" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [208 212]))                          
+                        :documentation " Test the 'no value for key' marker class ")
+                        (reparse-symbol indented_block_body) [194 400])
+                    ("test_import" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [421 425]))                          
+                        :documentation " Test import of base.py directly ")
+                        (reparse-symbol indented_block_body) [405 619])
+                    ("test_reload" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [640 644]))                          
+                        :documentation " Test reload of directly imported base ")
+                        (reparse-symbol indented_block_body) [624 898]))                  
+                :type "class")
+                nil [155 898])
+            ("test_suite" variable nil nil [899 965])
+            ("unittest" code nil nil [966 1018]))          
+      :file "base.py"
+      :pointmax 1019
+      :fsize 1063
+      :lastmodtime '(21914 23323 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!Tests!BBF!Common!Lib!bbfContext!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

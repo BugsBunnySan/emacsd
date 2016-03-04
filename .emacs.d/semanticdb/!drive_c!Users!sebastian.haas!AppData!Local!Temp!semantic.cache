@@ -1,0 +1,46 @@
+;; Object Temp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Temp/"
+  :tables
+  (list
+    (semanticdb-table "menu_shelf_setup.mel"
+      :major-mode 'c-mode
+      :tags 
+        '( ("LogCommandCall" function
+               (:arguments 
+                  ( ("$toolname" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [62 79])
+                    ("$toolpath" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [80 98]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [41 165])
+            ("$isDevMode" variable
+               (:default-value "true"
+                :type "int")
+                nil [106525 106541]))          
+      :file "menu_shelf_setup.mel"
+      :pointmax 106542
+      :fsize 104209
+      :lastmodtime '(22001 18988 0 0)
+      :unmatched-syntax '((semantic-list 186 . 106497) (semantic-list 168 . 185) (IF 166 . 168) (symbol 34 . 40)))
+
+    (semanticdb-table "PySide_loadUiType.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pysideuic" include nil nil [1 17])
+            ("xml.etree.ElementTree" include nil nil [18 53])
+            ("cStringIO" include nil nil [54 84])
+            ("loadUiType" function
+               (:documentation "
+		Pyside lacks the \"loadUiType\" command, so we have to convert the ui file to py code in-memory first
+		and then execute it in a special frame to retrieve the form_class.
+		"
+                :arguments 
+                  ( ("uiFile" variable nil (reparse-symbol function_parameters) [101 107]))                  )
+                nil [86 803]))          
+      :file "PySide_loadUiType.py"
+      :pointmax 803
+      :fsize 826
+      :lastmodtime '(22001 45987 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!AppData!Local!Temp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,300 @@
+;; Object bbfMenu/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfMenu/"
+  :tables
+  (list
+    (semanticdb-table "bbfMenu.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfMenu.bbfMenu
+   :synopsis: builds the Maya BBF Tools menu
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 150])
+            ("__future__" include nil nil [151 188])
+            ("__all__" variable nil nil [190 212])
+            ("os" include nil nil [214 223])
+            ("re" include nil nil [224 233])
+            ("maya.mel" include nil nil [235 250])
+            ("pymel.all" include nil nil [251 276])
+            ("pymel.core" include nil nil [277 300])
+            ("BBF.Common.Lib.BBF_environ" include nil nil [302 350])
+            ("PySide" include nil nil [352 376])
+            ("deprecation" include nil nil [378 396])
+            ("ToolInfo" include nil nil [397 412])
+            ("ToolMenu" type
+               (:superclasses ("pymel.SubMenuItem")
+                :members 
+                  ( ("__new__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [466 469])
+                        ("name" variable nil (reparse-symbol function_parameters) [471 475])
+                        ("rootFolder" variable nil (reparse-symbol function_parameters) [477 487])
+                        ("projectFolder" variable nil (reparse-symbol function_parameters) [489 502])
+                        ("parent" variable nil (reparse-symbol function_parameters) [504 510]))                      ) (reparse-symbol indented_block_body) [454 829])
+                    ("generateMenuId" function
+                       (:typemodifiers ("static")
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("name" variable nil (reparse-symbol function_parameters) [871 875]))                          
+                        :documentation " Converts the menu name into a string which can be used as the menu identifier.
+
+        Args:
+            name: the name of the menu item
+
+        Returns:
+            str: an alphanumeric str to use as a menu id
+        ")
+                        (reparse-symbol indented_block_body) [834 1265])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            rootFolder: root of the pipeline repo
+            projectFolder: project folder in the pipeline repo
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1396 1538])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1547 1575])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1584 1618])
+                            ("self" code nil (reparse-symbol indented_block_body) [1836 1870]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1283 1287])
+                            ("rootFolder" variable nil (reparse-symbol function_parameters) [1289 1299])
+                            ("projectFolder" variable nil (reparse-symbol function_parameters) [1301 1314])
+                            ("name" variable nil (reparse-symbol function_parameters) [1316 1320])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1327 1333]))                          
+                        :documentation "
+        Args:
+            rootFolder: root of the pipeline repo
+            projectFolder: project folder in the pipeline repo
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1270 1824])
+                    ("refresh" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1841 1845])
+                            ("args" variable nil (reparse-symbol function_parameters) [1847 1852]))                          
+                        :documentation " Updates the items in the menu when it has been highlighted.
+        ")
+                        (reparse-symbol indented_block_body) [1829 1997])
+                    ("refreshMenu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2018 2022]))                          
+                        :documentation " rebuilds the menu ")
+                        (reparse-symbol indented_block_body) [2002 2176])
+                    ("loadCommandFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2201 2205])
+                            ("tool" variable nil (reparse-symbol function_parameters) [2207 2211]))                          
+                        :documentation " Load the mel commands and tidy them up. This includes putting a slash in front of double quotes and concatenating
+            multiple lines.
+
+        Args:
+            tool: a ToolInfo object describing a tool
+
+        Returns:
+            tuple(bool, str/callable): whether the tool was loaded or not, and either a str or a callable object
+        ")
+                        (reparse-symbol indented_block_body) [2181 4025])
+                    ("createMenu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4045 4049])
+                            ("tool" variable nil (reparse-symbol function_parameters) [4051 4055])
+                            ("parent" variable nil (reparse-symbol function_parameters) [4057 4063]))                          
+                        :documentation " Creates the menu for the specified tool using the parent specified.
+
+        Args:
+            tool: a ToolInfo object describing a tool to build a menu entry for
+            parent: the menu/submenu to parent the menu item under
+        ")
+                        (reparse-symbol indented_block_body) [4030 5831])
+                    ("buildMenu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5851 5855])
+                            ("parent" variable nil (reparse-symbol function_parameters) [5857 5863])
+                            ("root" variable nil (reparse-symbol function_parameters) [5865 5869]))                          
+                        :documentation " Searches the root folder for tools and folders. These are added
+        to the parent menu and sorted.
+
+        Args:
+            parent: parent menu item to add items to
+            root: find tools starting in this folder
+        ")
+                        (reparse-symbol indented_block_body) [5837 7520]))                  
+                :type "class")
+                nil [414 7520])
+            ("LogCommandCall" function
+               (:documentation " Logs the usage of a tool in the database for stats
+
+    Args:
+        toolName: the name of the tool being started
+        toolPath: the path to where the tool was started from
+    "
+                :arguments 
+                  ( ("toolName" variable nil (reparse-symbol function_parameters) [7540 7548])
+                    ("toolPath" variable nil (reparse-symbol function_parameters) [7550 7558]))                  )
+                nil [7521 8109])
+            ("registerLogCommandCall" function (:documentation " make LogCommandCall visible without importing bbfMenu in python and mel
+    ") nil [8110 8567])
+            ("createMenus" function
+               (:documentation " setup menu creation for tools in a folder and its subfolders
+
+    Args:
+        rootFolder: path to the start of a folder structure with tool infos in them
+    "
+                :arguments 
+                  ( ("rootFolder" variable nil (reparse-symbol function_parameters) [8584 8594]))                  )
+                nil [8568 9317]))          
+      :file "bbfMenu.py"
+      :pointmax 9317
+      :fsize 9560
+      :lastmodtime '(22067 42901 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ToolInfo.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "ToolInfo.py"
+      :pointmax 7547
+      :fsize 8856
+      :lastmodtime '(22067 42901 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "deprecation.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfMenu.deprecation
+   :synopsis: deprecation UI
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 138])
+            ("__future__" include nil nil [139 176])
+            ("__all__" variable nil nil [178 209])
+            ("os" include nil nil [211 220])
+            ("webbrowser" include nil nil [221 238])
+            ("PySide" include nil nil [254 286])
+            ("maya.mel" include nil nil [288 303])
+            ("pymel.core" include nil nil [304 327])
+            ("BBF.Maya.Lib.bbfUI.bbfUI" include nil nil [329 369])
+            ("BBF.Maya.Lib.bbf_base.ui" include nil nil [370 416])
+            ("markItemDeprecated" function (:arguments 
+              ( ("menuItem" variable nil (reparse-symbol function_parameters) [441 449]))              ) nil [418 529])
+            ("DeprecationDialog" type
+               (:documentation " GUI inserted between a deprecated tool's menu entry and the tool itself "
+                :superclasses ("QtGui.QDialog")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            toolName: the name of the tool being deprecated
+            deprecationMsg: message explaining why the tool is being deprecated
+            parent: QWidget that acts as the parent to this dialog (default: None -> Maya main window)
+        \"\"\"" code nil (reparse-symbol indented_block_body) [711 983])
+                            ("self" variable nil (reparse-symbol indented_block_body) [992 1017])
+                            ("parent" code nil (reparse-symbol indented_block_body) [1026 1075])
+                            ("super" code nil (reparse-symbol indented_block_body) [1085 1139])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1149 1212])
+                            ("warningIcon" variable nil (reparse-symbol indented_block_body) [1222 1310])
+                            ("self" code nil (reparse-symbol indented_block_body) [1319 1454])
+                            ("self" code nil (reparse-symbol indented_block_body) [1464 1550])
+                            ("bgRole" variable nil (reparse-symbol indented_block_body) [1560 1617])
+                            ("bgColor" variable nil (reparse-symbol indented_block_body) [1626 1690])
+                            ("self" code nil (reparse-symbol indented_block_body) [1700 1790])
+                            ("self" code nil (reparse-symbol indented_block_body) [1799 1838]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [671 675])
+                            ("toolName" variable nil (reparse-symbol function_parameters) [677 685])
+                            ("deprecationMsg" variable nil (reparse-symbol function_parameters) [687 701])
+                            ("parent" variable nil (reparse-symbol function_parameters) [703 709]))                          
+                        :documentation "
+        Args:
+            toolName: the name of the tool being deprecated
+            deprecationMsg: message explaining why the tool is being deprecated
+            parent: QWidget that acts as the parent to this dialog (default: None -> Maya main window)
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [658 1853])
+                    ("reason" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1883 1887]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1858 1938])
+                    ("" code nil (reparse-symbol indented_block_body) [1955 1957])
+                    ("tellPipeline" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1979 1983]))                          
+                        :documentation " open a webbrowser tab with the pipeline ticket page ")
+                        (reparse-symbol indented_block_body) [1962 2968]))                  
+                :type "class")
+                nil [530 2968])
+            ("WithDeprecationUI" type
+               (:documentation " Runs a deprecation UI before calling the actual function "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            command: the command to 'exec' to run the tool
+            toolName: the name of the tool being deprecated
+            deprecationMsg: message explaining why the tool is being deprecated
+            isMenuMel: if the tool's menu entry is driven by a menu.mel file, this must be True (default: False)
+        \"\"\"" code nil (reparse-symbol indented_block_body) [2270 2611])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2620 2650])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2659 2690])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2699 2736])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2745 2781]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3088 3092])
+                            ("command" variable nil (reparse-symbol function_parameters) [3094 3101])
+                            ("toolName" variable nil (reparse-symbol function_parameters) [3103 3111])
+                            ("deprecationMsg" variable nil (reparse-symbol function_parameters) [3113 3127])
+                            ("isMenuMel" variable nil (reparse-symbol function_parameters) [3129 3138]))                          
+                        :documentation "
+        Args:
+            command: the command to 'exec' to run the tool
+            toolName: the name of the tool being deprecated
+            deprecationMsg: message explaining why the tool is being deprecated
+            isMenuMel: if the tool's menu entry is driven by a menu.mel file, this must be True (default: False)
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3075 3667])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3685 3689])
+                            ("args" variable nil (reparse-symbol function_parameters) [3691 3696])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [3698 3706]))                          
+                        :documentation " show the deprecation dialog and act on user's choice ")
+                        (reparse-symbol indented_block_body) [3672 4299]))                  
+                :type "class")
+                nil [2969 4299]))          
+      :file "deprecation.py"
+      :pointmax 4299
+      :fsize 4402
+      :lastmodtime '(22071 17006 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.internal" include nil nil [1 36])
+            ("logger" variable nil nil [37 74]))          
+      :file "__init__.py"
+      :pointmax 105
+      :fsize 106
+      :lastmodtime '(22047 27006 0 0)
+      :unmatched-syntax '((NAME 75 . 81) ($EOI 105 . 105))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfMenu!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

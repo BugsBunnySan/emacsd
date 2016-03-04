@@ -1,0 +1,298 @@
+;; Object BBF_VersionSystem/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "BBF_VersionSystem/"
+  :tables
+  (list
+    (semanticdb-table "BBF_VersionSystem.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [422 431])
+            ("shutil" include nil nil [432 445])
+            ("time" include nil nil [446 457])
+            ("bbfPath" include nil nil [458 485])
+            ("__main__" include nil nil [486 501])
+            ("verDir" variable nil nil [503 521])
+            ("bbfDir" variable nil nil [522 536])
+            ("cFile" variable nil nil [537 559])
+            ("lockExt" variable nil nil [560 577])
+            ("renderDrive" variable nil nil [578 597])
+            ("projectName" variable nil nil [598 637])
+            ("addComment" function (:arguments 
+              ( ("comment" variable nil (reparse-symbol function_parameters) [737 744])
+                ("srvrPath" variable nil (reparse-symbol function_parameters) [746 754])
+                ("verNumber" variable nil (reparse-symbol function_parameters) [756 765]))              ) nil [722 1247])
+            ("getServerPath" function (:arguments 
+              ( ("filepath" variable nil (reparse-symbol function_parameters) [1349 1357]))              ) nil [1331 1440])
+            ("createVerFilename" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [1774 1782])
+                ("verPath" variable nil (reparse-symbol function_parameters) [1784 1791]))              ) nil [1752 1965])
+            ("createVersion" function (:arguments 
+              ( ("srvrPath" variable nil (reparse-symbol function_parameters) [2067 2075]))              ) nil [2049 2361])
+            ("checkIN" function (:arguments 
+              ( ("filepath" variable nil (reparse-symbol function_parameters) [2457 2465])
+                ("comments" variable nil (reparse-symbol function_parameters) [2467 2475]))              ) nil [2445 2972])
+            ("isLocked" function (:arguments 
+              ( ("filepath" variable nil (reparse-symbol function_parameters) [3069 3077]))              ) nil [3056 3252])
+            ("lockFile" function (:arguments 
+              ( ("filepath" variable nil (reparse-symbol function_parameters) [3349 3357]))              ) nil [3336 3495])
+            ("unlock" function (:arguments 
+              ( ("filepath" variable nil (reparse-symbol function_parameters) [3590 3598]))              ) nil [3579 3761])
+            ("checkOut" function (:arguments 
+              ( ("filepath" variable nil (reparse-symbol function_parameters) [3858 3866]))              ) nil [3845 4170]))          
+      :file "BBF_VersionSystem.py"
+      :pointmax 4171
+      :fsize 4309
+      :lastmodtime '(21896 15463 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "playblastPublish.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.BBF_VersionSystem.playblastPublish
+   :synopsis: create and publish a pipeline conforming playblast
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 191])
+            ("__future__" include nil nil [192 229])
+            ("__all__" variable nil nil [231 404])
+            ("os" include nil nil [406 415])
+            ("logging" include nil nil [416 430])
+            ("re" include nil nil [431 440])
+            ("shutil" include nil nil [441 454])
+            ("tempfile" include nil nil [455 470])
+            ("PySide" include nil nil [483 507])
+            ("pymel.core" include nil nil [509 532])
+            ("BBF_environ" include nil nil [534 552])
+            ("bbfException.bbfExceptions" include nil nil [554 608])
+            ("Red9.core.Red9_General" include nil nil [609 663])
+            ("BBF_Validation" include nil nil [664 714])
+            ("bbfPath" include nil nil [715 742])
+            ("convertVDO" include nil nil [743 760])
+            ("bbfHooks" include nil nil [761 776])
+            ("bbfUtil" include nil nil [777 791])
+            ("bbfUI" include nil nil [792 815])
+            ("log" variable nil nil [817 850])
+            ("bbfEnv" variable nil nil [851 880])
+            ("scenecontext" variable nil nil [881 917])
+            ("SPRETICLETYPENAMES" variable nil nil [1017 1820])
+            ("SPRETICLETYPES" variable nil nil [1847 1929])
+            ("ConfirmSubmit" type
+               (:documentation " GUI to ask user for type of playblast submitted and whether to continue at all "
+                :superclasses ("QtGui.QDialog")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            stage: Animation stage this playblast is coming from
+            parent: QWidget (or None) used as a parent to this Dialog
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1935 2099])
+                            ("super" code nil (reparse-symbol indented_block_body) [2108 2151])
+                            ("bbfUI" code nil (reparse-symbol indented_block_body) [2160 2198])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2207 2229])
+                            ("self" code nil (reparse-symbol indented_block_body) [2238 2276])
+                            ("self" code nil (reparse-symbol indented_block_body) [2285 2345]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2075 2079])
+                            ("stage" variable nil (reparse-symbol function_parameters) [2081 2086])
+                            ("parent" variable nil (reparse-symbol function_parameters) [2099 2105]))                          
+                        :documentation "
+        Args:
+            stage: Animation stage this playblast is coming from
+            parent: QWidget (or None) used as a parent to this Dialog
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2062 2532])
+                    ("doContinue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2552 2556]))                          
+                        :documentation " callback for the accept button of the QDialog ")
+                        (reparse-symbol indented_block_body) [2537 2651]))                  
+                :type "class")
+                nil [1931 2651])
+            ("getVisiblePanel" function (:documentation " Returns a visible model panel which we can use for playblast.
+
+    Returns:
+        modelPanel: a visible ModelPanel (or None if none are found)
+    ") nil [2652 3128])
+            ("captureScreen" function
+               (:documentation " make a playblast of the first visible panel found
+
+    Args:
+        videoFilename: store the playblast in this file
+        fs: start at this frame, None(default) => get from playback options
+        fe: end frame, None(default) => get from playback options
+
+    Returns:
+        str, str: full path to movie file and animation stage name
+    "
+                :arguments 
+                  ( ("videoFilename" variable nil (reparse-symbol function_parameters) [3147 3160])
+                    ("fs" variable nil (reparse-symbol function_parameters) [3162 3164])
+                    ("fe" variable nil (reparse-symbol function_parameters) [3171 3173]))                  )
+                nil [3129 7959])
+            ("preCapture" function
+               (:documentation " setup a modelpanel for playblasting through a camera
+
+    Args:
+        cam: Name of a camera in the scene
+        panel: name of a model panel in the scene
+
+    Raises:
+        Exception: if the camera can't be adjusted for playblasting
+    "
+                :arguments 
+                  ( ("cam" variable nil (reparse-symbol function_parameters) [7975 7978])
+                    ("panel" variable nil (reparse-symbol function_parameters) [7980 7985]))                  )
+                nil [7960 9457])
+            ("setupReticle" function
+               (:documentation " use spReticle plugin for Heads Up Display burnins
+    It's more flexible than maya huds and includes safe frames
+
+    Args:
+        version: version burned into the playblast
+        fs: start frame to burn in
+        fe: end frame, burned in
+
+    Returns:
+        PyNode: pymel node of the reticle created
+    "
+                :arguments 
+                  ( ("version" variable nil (reparse-symbol function_parameters) [9475 9482])
+                    ("fs" variable nil (reparse-symbol function_parameters) [9489 9491])
+                    ("fe" variable nil (reparse-symbol function_parameters) [9498 9500]))                  )
+                nil [9458 11661])
+            ("disableReticleItems" function
+               (:documentation " for a given reticle, disable the given items, based on SPRETICLETYPENAMES
+
+    Args:
+        reticle: a PyNode of a spReticle
+        disableItems: list of names of reticle burnin fields to disable
+    "
+                :arguments 
+                  ( ("reticle" variable nil (reparse-symbol function_parameters) [11686 11693])
+                    ("disableItems" variable nil (reparse-symbol function_parameters) [11695 11707]))                  )
+                nil [11662 12185])
+            ("deleteReticle" function (:documentation " deletes all reticles in the scene ") nil [12186 12354])
+            ("postCapture" function
+               (:documentation " cleanup playblast
+
+    Args:
+        cam: camera playblasted (currently ignored)
+        panel: panel used during playblast (currently ignored)
+    "
+                :arguments 
+                  ( ("cam" variable nil (reparse-symbol function_parameters) [12371 12374])
+                    ("panel" variable nil (reparse-symbol function_parameters) [12376 12381]))                  )
+                nil [12355 12564])
+            ("publishPlayblast" function
+               (:documentation " create and publish a playblast looking through a camera
+
+    Args:
+        cam: name of a camera in the scene
+        verNumber: version stamp of the shot's ANM
+
+    Returns:
+        (str, str): the movie filename and the
+    "
+                :arguments 
+                  ( ("cam" variable nil (reparse-symbol function_parameters) [12586 12589])
+                    ("verNumber" variable nil (reparse-symbol function_parameters) [12591 12600]))                  )
+                nil [12565 13944]))          
+      :file "playblastPublish.py"
+      :pointmax 13944
+      :fsize 14347
+      :lastmodtime '(22182 19534 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.BBF_VersionSystem
+   :synopsis: handles some stuff
+
+Author: Luke Harris
+Created: 31/08/2012
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 182])
+            ("logging" include nil nil [184 198])
+            ("logger" variable nil nil [199 235]))          
+      :file "__init__.py"
+      :pointmax 236
+      :fsize 247
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shotCameraPublish.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "shotCameraPublish.py"
+      :pointmax 4307
+      :fsize 4422
+      :lastmodtime '(21896 15463 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shotGeoPublish.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "shotGeoPublish.py"
+      :pointmax 7445
+      :fsize 7602
+      :lastmodtime '(21896 15463 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shotHUD.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [406 415])
+            ("time" include nil nil [416 427])
+            ("BBF_Validation" include nil nil [428 478])
+            ("maya.cmds" include nil nil [479 501])
+            ("pymel.core" include nil nil [502 525])
+            ("logging" include nil nil [526 540])
+            ("log" variable nil nil [541 574])
+            ("hudNames" variable nil nil [576 672])
+            ("getEpShotName" function (:arguments 
+              ( ("args" variable nil (reparse-symbol function_parameters) [792 797]))              ) nil [774 987])
+            ("getFrameCount" function (:arguments 
+              ( ("args" variable nil (reparse-symbol function_parameters) [1106 1111]))              ) nil [1088 1205])
+            ("getAuthor" function (:arguments 
+              ( ("args" variable nil (reparse-symbol function_parameters) [1320 1325]))              ) nil [1306 1362])
+            ("getDateTime" function (:arguments 
+              ( ("args" variable nil (reparse-symbol function_parameters) [1479 1484]))              ) nil [1463 1540])
+            ("frameNo" function (:arguments 
+              ( ("args" variable nil (reparse-symbol function_parameters) [1654 1659]))              ) nil [1642 1696])
+            ("toggleBBFHUD" function (:arguments 
+              ( ("verNumber" variable nil (reparse-symbol function_parameters) [1814 1823])
+                ("show" variable nil (reparse-symbol function_parameters) [1825 1829]))              ) nil [1797 2693])
+            ("removeHud" function nil nil [2694 3564])
+            ("restoreHud" function (:arguments 
+              ( ("hudState" variable nil (reparse-symbol function_parameters) [3580 3588]))              ) nil [3565 3716]))          
+      :file "shotHUD.py"
+      :pointmax 3716
+      :fsize 3815
+      :lastmodtime '(21896 15463 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shotPath.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [409 418])
+            ("__main__" include nil nil [419 434])
+            ("BBF_Validation" include nil nil [435 485])
+            ("getPublishShotPath" function (:arguments 
+              ( ("fullpath" variable nil (reparse-symbol function_parameters) [851 859])
+                ("publishType" variable nil (reparse-symbol function_parameters) [861 872]))              ) nil [828 1268])
+            ("getPublishShotFilename" function (:arguments 
+              ( ("fullpath" variable nil (reparse-symbol function_parameters) [1379 1387])
+                ("assetCode" variable nil (reparse-symbol function_parameters) [1389 1398])
+                ("assetName" variable nil (reparse-symbol function_parameters) [1400 1409])
+                ("publishType" variable nil (reparse-symbol function_parameters) [1411 1422]))              ) nil [1352 1776])
+            ("getEpisodeNumber" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [1880 1888]))              ) nil [1859 1977]))          
+      :file "shotPath.py"
+      :pointmax 1979
+      :fsize 2029
+      :lastmodtime '(21896 15463 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!BBF_VersionSystem!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

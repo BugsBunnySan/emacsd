@@ -1,0 +1,132 @@
+;; Object ZvParentMaster/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ZvParentMaster/"
+  :tables
+  (list
+    (semanticdb-table "ZvParentMaster.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+ZV Parent Master is an animation tool that helps you to animate objects in mutual contact or interaction with ease.
+
+Usage:
+import ZvParentMaster
+ZvParentMaster.ZvParentMaster()
+'''" code nil nil [1 186])
+            ("__author__" variable nil nil [188 243])
+            ("__version__" variable nil nil [244 265])
+            ("__date__" variable nil nil [266 289])
+            ("__copyright__" variable nil nil [290 346])
+            ("maya" include nil nil [348 374])
+            ("math" include nil nil [375 395])
+            ("sys" include nil nil [375 395])
+            ("os" include nil nil [375 395])
+            ("PARENT_HANDLE_SUFFIX" variable nil nil [688 716])
+            ("SNAP_GROUP_SUFFIX" variable nil nil [717 742])
+            ("PARENT_CONSTRAINT_SUFFIX" variable nil nil [743 775])
+            ("REMOVE_CONTROL_SUFFIX" variable nil nil [960 989])
+            ("CONTROL_SUFFIX" variable nil nil [1053 1077])
+            ("ALLOW_REFERENCE_ROOT" variable nil nil [1350 1377])
+            ("_isQt" code nil nil [1400 1482])
+            ("_defaultSize" code nil nil [1483 1530])
+            ("_locSfx" variable nil nil [1531 1550])
+            ("_timeWinSfx" variable nil nil [1551 1571])
+            ("_timeFormDiv" variable nil nil [1572 1592])
+            ("_timeFormSfx" variable nil nil [1593 1616])
+            ("_labelSfx" variable nil nil [1617 1647])
+            ("_timelineHsvCols" variable nil nil [1648 1857])
+            ("_pmpath" variable nil nil [1930 1998])
+            ("try" code nil nil [2019 2141])
+            ("_getObjName" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [2158 2161]))              ) nil [2142 2290])
+            ("_getObjNameFromSnapGroup" function (:arguments 
+              ( ("snGrp" variable nil (reparse-symbol function_parameters) [2320 2325]))              ) nil [2291 2584])
+            ("_getParentHandle" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [2606 2609]))              ) nil [2585 2790])
+            ("_getSnapGroup" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [2809 2812]))              ) nil [2791 2989])
+            ("_getParentConstraint" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [3015 3018]))              ) nil [2990 3225])
+            ("_getWorldLocation" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [3248 3251]))              ) nil [3226 3412])
+            ("_setWorldLocation" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [3435 3438])
+                ("posRot" variable nil (reparse-symbol function_parameters) [3440 3446]))              ) nil [3413 3755])
+            ("_getActiveAttachTarget" function (:arguments 
+              ( ("constrName" variable nil (reparse-symbol function_parameters) [3783 3793]))              ) nil [3756 4110])
+            ("_cleanCurves" function (:arguments 
+              ( ("animCurves" variable nil (reparse-symbol function_parameters) [4128 4138]))              ) nil [4111 5943])
+            ("_printParents" function (:arguments 
+              ( ("constrNames" variable nil (reparse-symbol function_parameters) [5962 5973]))              ) nil [5944 6107])
+            ("_getCtrlsFromSelection" function (:arguments 
+              ( ("postfix" variable nil (reparse-symbol function_parameters) [6135 6142]))              ) nil [6108 6976])
+            ("_getRigidBody" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [6995 6998]))              ) nil [6977 7117])
+            ("_setRigidBodyState" function (:arguments 
+              ( ("rb" variable nil (reparse-symbol function_parameters) [7141 7143])
+                ("val" variable nil (reparse-symbol function_parameters) [7145 7148]))              ) nil [7118 7333])
+            ("_rbDetach" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [7348 7351]))              ) nil [7334 7454])
+            ("_rbAttach" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [7469 7472]))              ) nil [7455 8026])
+            ("_resetRigidBody" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [8047 8050]))              ) nil [8027 8510])
+            ("_createParentMaster" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [8535 8538])
+                ("translation" variable nil (reparse-symbol function_parameters) [8540 8551])
+                ("rotation" variable nil (reparse-symbol function_parameters) [8558 8566]))              ) nil [8511 9943])
+            ("_fixThis" function (:arguments 
+              ( ("ctrl" variable nil (reparse-symbol function_parameters) [9957 9961])
+                ("timeRange" variable nil (reparse-symbol function_parameters) [9963 9972]))              ) nil [9944 11659])
+            ("_bakeObj" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [11673 11676]))              ) nil [11660 13552])
+            ("_applyBakedAnimation" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [13578 13581]))              ) nil [13553 15199])
+            ("_createParentConstraint" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [15228 15231])
+                ("target" variable nil (reparse-symbol function_parameters) [15233 15239])
+                ("constrName" variable nil (reparse-symbol function_parameters) [15241 15251]))              ) nil [15200 16045])
+            ("_addTarget" function (:arguments 
+              ( ("cns" variable nil (reparse-symbol function_parameters) [16061 16064])
+                ("target" variable nil (reparse-symbol function_parameters) [16066 16072]))              ) nil [16046 16936])
+            ("createParentGroups" function (:arguments 
+              ( ("translation" variable nil (reparse-symbol function_parameters) [16960 16971])
+                ("rotation" variable nil (reparse-symbol function_parameters) [16978 16986]))              ) nil [16937 17754])
+            ("attach" function nil nil [17755 21365])
+            ("detach" function nil nil [21366 22801])
+            ("destroy" function nil nil [22802 24997])
+            ("fixSnap" function (:arguments 
+              ( ("timeRange" variable nil (reparse-symbol function_parameters) [25010 25019]))              ) nil [24998 25391])
+            ("selectConstraintNodes" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [25418 25421]))              ) nil [25392 26872])
+            ("navigate" function (:arguments 
+              ( ("direction" variable nil (reparse-symbol function_parameters) [26886 26895]))              ) nil [26873 27490])
+            ("ZvParentMaster" function (:arguments 
+              ( ("posX" variable nil (reparse-symbol function_parameters) [27510 27514])
+                ("posY" variable nil (reparse-symbol function_parameters) [27519 27523])
+                ("width" variable nil (reparse-symbol function_parameters) [27529 27534])
+                ("height" variable nil (reparse-symbol function_parameters) [27552 27558]))              ) nil [27491 29688])
+            ("timeline" function nil nil [29750 30994])
+            ("_refrTimeForm" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [31013 31016]))              ) nil [30995 34398])
+            ("pmScriptJob" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [34415 34418])
+                ("parent" variable nil (reparse-symbol function_parameters) [34420 34426]))              ) nil [34399 34984])
+            ("pmScriptJobCmd" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [35004 35007]))              ) nil [34985 35080])
+            ("_crop" function (:arguments 
+              ( ("val" variable nil (reparse-symbol function_parameters) [35091 35094])
+                ("minVal" variable nil (reparse-symbol function_parameters) [35096 35102])
+                ("maxVal" variable nil (reparse-symbol function_parameters) [35104 35110]))              ) nil [35081 35203])
+            ("_getColor" function (:arguments 
+              ( ("idx" variable nil (reparse-symbol function_parameters) [35218 35221])
+                ("sat" variable nil (reparse-symbol function_parameters) [35223 35226]))              ) nil [35204 35494])
+            ("_getTimelineWinSize" function nil nil [35495 35836]))          
+      :file "ZvParentMaster.py"
+      :pointmax 35836
+      :fsize 36857
+      :lastmodtime '(21896 15496 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Tools!Animation!ZvParentMaster!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

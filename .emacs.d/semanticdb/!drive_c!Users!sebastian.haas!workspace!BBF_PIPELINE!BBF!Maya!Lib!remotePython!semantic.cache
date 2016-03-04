@@ -1,0 +1,171 @@
+;; Object remotePython/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "remotePython/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(21919 61104 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "finishPythonScript.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("try" code nil nil [1 350]))          
+      :file "finishPythonScript.py"
+      :pointmax 375
+      :fsize 385
+      :lastmodtime '(21923 38697 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 359 . 375) (COLON 357 . 358) (FINALLY 350 . 357)))
+    (semanticdb-table "setupPythonScript.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("traceback" include nil nil [1 17])
+            ("sys" include nil nil [18 28])
+            ("types" include nil nil [29 41])
+            ("packages" variable nil nil [59 70])
+            ("logLevel" variable nil nil [71 81])
+            ("log" function (:arguments 
+              ( ("level" variable nil (reparse-symbol function_parameters) [90 95])
+                ("message" variable nil (reparse-symbol function_parameters) [96 103]))              ) nil [82 153])
+            ("decodeScript" function (:arguments 
+              ( ("coded" variable nil (reparse-symbol function_parameters) [171 176]))              ) nil [154 694])
+            ("loadPackage" function (:arguments 
+              ( ("packagename" variable nil (reparse-symbol function_parameters) [711 722])
+                ("packagelocation" variable nil (reparse-symbol function_parameters) [724 739]))              ) nil [695 1949]))          
+      :file "setupPythonScript.py"
+      :pointmax 2063
+      :fsize 2130
+      :lastmodtime '(21896 15494 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "PythonCommand.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("python2.6/Python.h" include (:system-flag t) nil [1 30])
+            ("maya/MGlobal.h" include (:system-flag t) nil [31 56])
+            ("maya/MSimple.h" include (:system-flag t) nil [57 82])
+            ("stdio.h" include (:system-flag t) nil [83 101])
+            ("stdlib.h" include (:system-flag t) nil [102 121])
+            ("string" include (:system-flag t) nil [122 139])
+            ("list" include (:system-flag t) nil [140 155])
+            ("vector" include (:system-flag t) nil [156 173])
+            ("time.h" include (:system-flag t) nil [174 191])
+            ("DeclareSimpleCommand" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("remotePython" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [215 228]))                  
+                :type "int")
+                nil [193 240])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [242 262])
+            ("encryption_key" variable
+               (:pointer 1
+                :default-value "\"46672E44A61648A38DA771B24E162615\""
+                :type "char")
+                nil [264 320])
+            ("toolsRootPath" variable (:type ("string" type (:type "class") nil nil)) nil [321 342])
+            ("commonRootPath" variable (:type ("string" type (:type "class") nil nil)) nil [343 365])
+            ("pluginFolder" function
+               (:prototype-flag t
+                :type ("string" type (:type "class") nil nil))
+                nil [366 411])
+            ("toolsFolder" function
+               (:prototype-flag t
+                :type ("string" type (:type "class") nil nil))
+                nil [412 444])
+            ("libFolder" function
+               (:prototype-flag t
+                :type ("string" type (:type "class") nil nil))
+                nil [445 473])
+            ("convertToHEX" function
+               (:arguments 
+                  ( ("line" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [495 507]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [475 812])
+            ("trimSpaces" function
+               (:arguments 
+                  ( ("t" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [833 849])
+                    ("ws" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [850 867]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [815 1157])
+            ("packages" variable (:type ("list" type
+                 (:template-specifier 
+                    ( ("string" type nil nil nil))                    
+                  :type "class")
+                  nil nil)) nil [1159 1181])
+            ("packagesLoaded" variable (:type ("list" type
+                 (:template-specifier 
+                    ( ("string" type nil nil nil))                    
+                  :type "class")
+                  nil nil)) nil [1182 1210])
+            ("GetPackageFilename" function
+               (:arguments 
+                  ( ("basePath" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1238 1254])
+                    ("packageName" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1255 1274])
+                    ("useLibraryFolder" variable
+                       (:default-value "false"
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [1275 1302])
+                    ("encrypted" variable
+                       (:default-value "false"
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [1304 1324]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [1212 1783])
+            ("file_exists" function
+               (:arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1802 1824]))                  
+                :type "bool")
+                nil [1785 1982])
+            ("FindFile" function
+               (:arguments 
+                  ( ("pythonScriptFile" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2116 2140]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [2100 2999])
+            ("LoadPythonFile" function
+               (:arguments 
+                  ( ("pythonScriptFile" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3023 3047])
+                    ("packageName" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3048 3067]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [3001 5810])
+            ("LoadPythonScript" function
+               (:arguments 
+                  ( ("pythonScriptFile" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5836 5860]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [5812 6641])
+            ("CheckTicket" function (:type "bool") nil [6643 8448])
+            ("doIt" function
+               (:parent "remotePython"
+                :arguments 
+                  ( ("args" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MArgList" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8551 8573]))                  
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [8523 10028]))          
+      :file "PythonCommand.cpp"
+      :pointmax 10028
+      :fsize 10450
+      :lastmodtime '(21896 15494 0 0)
+      :unmatched-syntax '((string 462 . 471) (string 431 . 442) (string 386 . 409) (string 233 . 238) (string 229 . 231))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!remotePython!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

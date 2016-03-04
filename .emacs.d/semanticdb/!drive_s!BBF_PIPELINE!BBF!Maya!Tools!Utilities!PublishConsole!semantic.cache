@@ -1,0 +1,143 @@
+;; Object PublishConsole/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "PublishConsole/"
+  :tables
+  (list
+    (semanticdb-table "publishConsole.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Tools.Utilities.PublishConsole.publishConsole
+   :synopsis:
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 145])
+            ("__future__" include nil nil [146 183])
+            ("__all__" variable nil nil [185 213])
+            ("os" include nil nil [215 224])
+            ("glob" include nil nil [226 237])
+            ("logging" include nil nil [238 252])
+            ("functools" include nil nil [253 282])
+            ("maya.mel" include nil nil [284 306])
+            ("pymel.core" include nil nil [307 330])
+            ("BBF.Common.Lib.BBF_environ" include nil nil [332 380])
+            ("BBF.Common.Lib.bbfContext" include nil nil [381 427])
+            ("BBF.Common.Tools.bbfTaskManager" include nil nil [428 486])
+            ("BBF.Common.Lib.BBF_Validation" include nil nil [487 552])
+            ("BBF.Common.Lib.bbfException.bbfExceptions" include nil nil [553 622])
+            ("BBF.Common.Lib.bbfPath" include nil nil [623 665])
+            ("BBF.Maya.Lib.bbfUI.bbfUI" include nil nil [666 706])
+            ("BBF.Maya.Lib.bbfHooks" include nil nil [829 869])
+            ("BBF.Maya.Lib.bbfPublish" include nil nil [870 914])
+            ("PySide" include nil nil [916 948])
+            ("__main__" include nil nil [950 983])
+            ("ui.thumbs_rc" include nil nil [985 1004])
+            ("bbfEnv" variable nil nil [1006 1035])
+            ("logger" variable nil nil [1036 1072])
+            ("PublishConsole" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("attachGraphSig" variable nil (reparse-symbol indented_block_body) [1119 1157])
+                    ("pubTypeFunction" variable nil (reparse-symbol indented_block_body) [1163 1694])
+                    ("__init__" function
+                       (:suite 
+                          ( ("parent" code nil (reparse-symbol indented_block_body) [1741 1790])
+                            ("super" code nil (reparse-symbol indented_block_body) [1799 1850])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1859 1914])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1924 1947])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1979 2009])
+                            ("try" code nil (reparse-symbol indented_block_body) [2019 2192])
+                            ("if" code nil (reparse-symbol indented_block_body) [2201 2329])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2338 2396])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2405 2453])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2463 2485])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2494 2516])
+                            ("mel" code nil (reparse-symbol indented_block_body) [2572 2605])
+                            ("for" code nil (reparse-symbol indented_block_body) [2615 3155])
+                            ("try" code nil (reparse-symbol indented_block_body) [3275 3445])
+                            ("qcOnlyTasks" variable nil (reparse-symbol indented_block_body) [3578 3595])
+                            ("if" code nil (reparse-symbol indented_block_body) [3604 4084])
+                            ("self" code nil (reparse-symbol indented_block_body) [4093 4147]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1713 1717])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1719 1725]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1700 4148])
+                    ("onBrowseButton" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4172 4176]))                          )
+                        (reparse-symbol indented_block_body) [4153 4206])
+                    ("isolatePublishButton" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4236 4240])
+                            ("btn" variable nil (reparse-symbol function_parameters) [4242 4245])
+                            ("state" variable nil (reparse-symbol function_parameters) [4247 4252]))                          )
+                        (reparse-symbol indented_block_body) [4211 4846])
+                    ("publishSettingsForCurrentScene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4886 4890]))                          )
+                        (reparse-symbol indented_block_body) [4851 6126])
+                    ("displayMsg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6146 6150])
+                            ("title" variable nil (reparse-symbol function_parameters) [6152 6157])
+                            ("msg" variable nil (reparse-symbol function_parameters) [6159 6162]))                          )
+                        (reparse-symbol indented_block_body) [6131 6310])
+                    ("getPublishType" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6334 6338]))                          )
+                        (reparse-symbol indented_block_body) [6315 6601])
+                    ("refreshTaskList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6626 6630]))                          )
+                        (reparse-symbol indented_block_body) [6606 6720])
+                    ("getPubTypeFunction" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6748 6752])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [6754 6765]))                          )
+                        (reparse-symbol indented_block_body) [6725 6817])
+                    ("setModel" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6835 6839])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [6841 6852])
+                            ("args" variable nil (reparse-symbol function_parameters) [6854 6859]))                          )
+                        (reparse-symbol indented_block_body) [6822 7436])
+                    ("loadPublisher" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7459 7463])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [7465 7476]))                          )
+                        (reparse-symbol indented_block_body) [7441 12474])
+                    ("getAssetPath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12496 12500])
+                            ("asset_type" variable nil (reparse-symbol function_parameters) [12502 12512])
+                            ("asset_name" variable nil (reparse-symbol function_parameters) [12514 12524])
+                            ("function_dir" variable nil (reparse-symbol function_parameters) [12526 12538]))                          )
+                        (reparse-symbol indented_block_body) [12479 13904])
+                    ("checkOutAndOpen" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13929 13933]))                          )
+                        (reparse-symbol indented_block_body) [13909 15563]))                  
+                :type "class")
+                nil [1074 15563])
+            ("run" function nil nil [15564 15807]))          
+      :file "publishConsole.py"
+      :pointmax 15807
+      :fsize 16190
+      :lastmodtime '(22064 56600 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 15722 . 15754) (NEWLINE 15721 . 15722) (COLON 15720 . 15721) (TRY 15655 . 15658) (AS 15714 . 15716) (INDENT_BLOCK 820 . 829) (COLON 818 . 819) (TRY 708 . 711) (AS 812 . 814) (INDENT_BLOCK 820 . 829) (COLON 818 . 819) (TRY 708 . 711) (AS 812 . 814))))
+  :file "!drive_s!BBF_PIPELINE!BBF!Maya!Tools!Utilities!PublishConsole!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

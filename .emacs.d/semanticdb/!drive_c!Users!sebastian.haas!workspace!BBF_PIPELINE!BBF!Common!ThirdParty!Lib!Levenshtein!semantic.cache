@@ -1,0 +1,2442 @@
+;; Object Levenshtein/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Levenshtein/"
+  :tables
+  (list
+    (semanticdb-table "_levenshtein.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_LEV_STATIC_PY" variable (:constant-flag t) nil [4119 4133])
+            ("lev_wchar" variable (:constant-flag t) nil [4149 4158])
+            ("Python.h" include (:system-flag t) nil [4170 4189])
+            ("PY_INIT_MOD" variable (:constant-flag t) nil [4947 4958])
+            ("PY_MOD_INIT_FUNC_DEF" variable (:constant-flag t) nil [5049 5069])
+            ("assert.h" include (:system-flag t) nil [5129 5148])
+            ("_levenshtein.h" include nil nil [5149 5174])
+            ("inline" variable (:constant-flag t) nil [5428 5434])
+            ("__attribute__" variable (:constant-flag t) nil [5460 5473])
+            ("LEV_EPSILON" variable (:constant-flag t) nil [5499 5510])
+            ("LEV_INFINITY" variable (:constant-flag t) nil [5525 5537])
+            ("PYARGCFIX" variable (:constant-flag t) nil [5711 5720])
+            ("munkers_blackman" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5790 5800])
+                    ("n2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5818 5828])
+                    ("dists" variable
+                       (:pointer 1
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [5846 5860]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [5758 5861])
+            ("TAUS113_LCG" variable (:constant-flag t) nil [5871 5882])
+            ("TAUS113_MASK" variable (:constant-flag t) nil [5925 5937])
+            ("taus113_state_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("z1" variable (:type "unsigned long int") (reparse-symbol classsubparts) [5971 6004])
+                          ("z2" variable (:type "unsigned long int") (reparse-symbol classsubparts) [5971 6004])
+                          ("z3" variable (:type "unsigned long int") (reparse-symbol classsubparts) [5971 6004])
+                          ("z4" variable (:type "unsigned long int") (reparse-symbol classsubparts) [5971 6004]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [5952 6023])
+            ("taus113_get" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("taus113_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6069 6092]))                  
+                :type "unsigned long int")
+                nil [6025 6093])
+            ("taus113_set" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("taus113_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6119 6142])
+                    ("s" variable (:type "unsigned long int") (reparse-symbol arg-sub-list) [6155 6175]))                  
+                :type "void")
+                nil [6095 6176])
+            ("distance_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6299 6314])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6315 6330]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6270 6331])
+            ("ratio_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6358 6373])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6374 6389]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6332 6390])
+            ("hamming_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6419 6434])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6435 6450]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6391 6451])
+            ("jaro_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6477 6492])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6493 6508]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6452 6509])
+            ("jaro_winkler_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6543 6558])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6559 6574]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6510 6575])
+            ("median_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6603 6618])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6619 6634]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6576 6635])
+            ("median_improve_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6671 6686])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6687 6702]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6636 6703])
+            ("quickmedian_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6736 6751])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6752 6767]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6704 6768])
+            ("setmedian_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6799 6814])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6815 6830]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6769 6831])
+            ("seqratio_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6861 6876])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6877 6892]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6832 6893])
+            ("setratio_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6923 6938])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6939 6954]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6894 6955])
+            ("editops_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6984 6999])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7000 7015]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [6956 7016])
+            ("opcodes_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7045 7060])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7061 7076]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [7017 7077])
+            ("inverse_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7106 7121])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7122 7137]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [7078 7138])
+            ("apply_edit_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7170 7185])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7186 7201]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [7139 7202])
+            ("matching_blocks_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7239 7254])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7255 7270]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [7203 7271])
+            ("subtract_edit_py" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7306 7321])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7322 7337]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [7272 7338])
+            ("Levenshtein_DESC" variable (:constant-flag t) nil [7348 7364])
+            ("distance_DESC" variable (:constant-flag t) nil [8016 8029])
+            ("ratio_DESC" variable (:constant-flag t) nil [8515 8525])
+            ("hamming_DESC" variable (:constant-flag t) nil [9061 9073])
+            ("jaro_DESC" variable (:constant-flag t) nil [9459 9468])
+            ("jaro_winkler_DESC" variable (:constant-flag t) nil [10006 10023])
+            ("median_DESC" variable (:constant-flag t) nil [10889 10900])
+            ("median_improve_DESC" variable (:constant-flag t) nil [11791 11810])
+            ("quickmedian_DESC" variable (:constant-flag t) nil [12941 12957])
+            ("setmedian_DESC" variable (:constant-flag t) nil [13547 13561])
+            ("seqratio_DESC" variable (:constant-flag t) nil [14066 14079])
+            ("setratio_DESC" variable (:constant-flag t) nil [14583 14596])
+            ("editops_DESC" variable (:constant-flag t) nil [15232 15244])
+            ("opcodes_DESC" variable (:constant-flag t) nil [16289 16301])
+            ("inverse_DESC" variable (:constant-flag t) nil [17234 17246])
+            ("apply_edit_DESC" variable (:constant-flag t) nil [17800 17815])
+            ("matching_blocks_DESC" variable (:constant-flag t) nil [18991 19011])
+            ("subtract_edit_DESC" variable (:constant-flag t) nil [20133 20151])
+            ("METHODS_ITEM" variable (:constant-flag t) nil [21263 21275])
+            ("methods" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+  METHODS_ITEM(distance),
+  METHODS_ITEM(ratio),
+  METHODS_ITEM(hamming),
+  METHODS_ITEM(jaro),
+  METHODS_ITEM(jaro_winkler),
+  METHODS_ITEM(median),
+  METHODS_ITEM(median_improve),
+  METHODS_ITEM(quickmedian),
+  METHODS_ITEM(setmedian),
+  METHODS_ITEM(seqratio),
+  METHODS_ITEM(setratio),
+  METHODS_ITEM(editops),
+  METHODS_ITEM(opcodes),
+  METHODS_ITEM(inverse),
+  METHODS_ITEM(apply_edit),
+  METHODS_ITEM(matching_blocks),
+  METHODS_ITEM(subtract_edit),
+  { NULL, NULL, 0, NULL },
+}"
+                :type ("PyMethodDef" type (:type "class") nil nil))
+                nil [21318 21837])
+            ("opcode_names" variable
+               (:dereference 1
+                :default-value "{
+  { NULL, \"equal\", 0 },
+  { NULL, \"replace\", 0 },
+  { NULL, \"insert\", 0 },
+  { NULL, \"delete\", 0 },
+}"
+                :type ("" type
+                     (:members 
+                        ( ("pystring" variable
+                             (:pointer 1
+                              :type ("PyObject" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [21949 21968])
+                          ("cstring" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [21971 21991])
+                          ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [21994 22005]))                        
+                      :type "struct")
+                      nil nil))
+                nil [21938 22136])
+            ("N_OPCODE_NAMES" variable (:constant-flag t) nil [22145 22159])
+            ("MedianFuncString" function
+               (:prototype-flag t
+                :pointer 1
+                :function-pointer t
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22248 22257])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22296 22318])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22357 22383])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [22422 22444])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22483 22501]))                  
+                :type ("lev_byte" type (:type "class") nil nil))
+                nil [22218 22502])
+            ("MedianFuncUnicode" function
+               (:prototype-flag t
+                :pointer 1
+                :function-pointer t
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22544 22553])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22595 22617])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22659 22687])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [22729 22751])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22793 22811]))                  
+                :type ("Py_UNICODE" type (:type "class") nil nil))
+                nil [22511 22812])
+            ("MedianFuncs" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("s" variable (:type ("MedianFuncString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22832 22851])
+                          ("u" variable (:type ("MedianFuncUnicode" type (:type "class") nil nil)) (reparse-symbol classsubparts) [22854 22874]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [22813 22889])
+            ("MedianImproveFuncString" function
+               (:prototype-flag t
+                :pointer 1
+                :function-pointer t
+                :arguments 
+                  ( ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22936 22947])
+                    ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22948 22966])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23012 23021])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23067 23089])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23135 23161])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [23207 23229])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23275 23293]))                  
+                :type ("lev_byte" type (:type "class") nil nil))
+                nil [22899 23294])
+            ("MedianImproveFuncUnicode" function
+               (:prototype-flag t
+                :pointer 1
+                :function-pointer t
+                :arguments 
+                  ( ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23343 23354])
+                    ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23355 23375])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23424 23433])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23482 23504])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23553 23581])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [23630 23652])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23701 23719]))                  
+                :type ("Py_UNICODE" type (:type "class") nil nil))
+                nil [23303 23720])
+            ("MedianImproveFuncs" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("s" variable (:type ("MedianImproveFuncString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [23740 23766])
+                          ("u" variable (:type ("MedianImproveFuncUnicode" type (:type "class") nil nil)) (reparse-symbol classsubparts) [23769 23796]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [23721 23818])
+            ("SetSeqFuncString" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("n1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23855 23865])
+                    ("lengths1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23901 23924])
+                    ("strings1" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23960 23987])
+                    ("n2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24023 24033])
+                    ("lengths2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24069 24092])
+                    ("strings2" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24128 24155]))                  
+                :type "double")
+                nil [23828 24156])
+            ("SetSeqFuncUnicode" function
+               (:prototype-flag t
+                :function-pointer t
+                :arguments 
+                  ( ("n1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24193 24203])
+                    ("lengths1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24240 24263])
+                    ("strings1" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24300 24329])
+                    ("n2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24366 24376])
+                    ("lengths2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24413 24436])
+                    ("strings2" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24473 24502]))                  
+                :type "double")
+                nil [24165 24503])
+            ("SetSeqFuncs" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("s" variable (:type ("SetSeqFuncString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [24524 24543])
+                          ("u" variable (:type ("SetSeqFuncUnicode" type (:type "class") nil nil)) (reparse-symbol classsubparts) [24546 24566]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [24505 24581])
+            ("levenshtein_common" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24618 24633])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [24653 24670])
+                    ("xcost" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24690 24703])
+                    ("lensum" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24723 24738]))                  
+                :type "long int")
+                nil [24583 24739])
+            ("extract_stringlist" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24771 24786])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [24806 24823])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24843 24852])
+                    ("sizelist" variable
+                       (:pointer 2
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24872 24890])
+                    ("strlist" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [24910 24924]))                  
+                :type "int")
+                nil [24741 24925])
+            ("extract_weightlist" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("wlist" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24961 24977])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [24997 25014])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25034 25043]))                  
+                :type "double")
+                nil [24927 25044])
+            ("median_common" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25077 25092])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25107 25124])
+                    ("foo" variable (:type ("MedianFuncs" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25139 25155]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [25046 25156])
+            ("median_improve_common" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25197 25212])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25235 25252])
+                    ("foo" variable (:type ("MedianImproveFuncs" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25275 25298]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [25158 25299])
+            ("setseq_common" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25329 25344])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25359 25376])
+                    ("foo" variable (:type ("SetSeqFuncs" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25391 25407])
+                    ("lensum" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25422 25437]))                  
+                :type "double")
+                nil [25301 25438])
+            ("levenshtein_common" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25695 25710])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [25711 25728])
+                    ("xcost" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25729 25742])
+                    ("lensum" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25762 25777]))                  
+                :type "long int")
+                nil [25660 27063])
+            ("distance_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27094 27109])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27110 27125]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [27065 27291])
+            ("ratio_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27319 27334])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27335 27350]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [27293 27595])
+            ("hamming_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27625 27640])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27641 27656]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [27597 29068])
+            ("jaro_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29095 29110])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29111 29126]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [29070 30175])
+            ("jaro_winkler_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [30210 30225])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [30226 30241]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [30177 31936])
+            ("median_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [31965 31980])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [31981 31996]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [31938 32117])
+            ("median_improve_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32154 32169])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32170 32185]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [32119 32331])
+            ("quickmedian_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32365 32380])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32381 32396]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [32333 32520])
+            ("setmedian_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32552 32567])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32568 32583]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [32522 32701])
+            ("median_common" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32734 32749])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [32750 32767])
+                    ("foo" variable (:type ("MedianFuncs" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32768 32784]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [32703 34367])
+            ("median_improve_common" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34408 34423])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [34424 34441])
+                    ("foo" variable (:type ("MedianImproveFuncs" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34442 34465]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [34369 36620])
+            ("extract_weightlist" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("wlist" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [36656 36672])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [36673 36690])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36691 36700]))                  
+                :type "double")
+                nil [36622 38156])
+            ("extract_stringlist" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38306 38321])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [38322 38339])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38359 38368])
+                    ("sizelist" variable
+                       (:pointer 2
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38369 38387])
+                    ("strlist" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [38388 38402]))                  
+                :type "int")
+                nil [38276 41053])
+            ("seqratio_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41084 41099])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41100 41115]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [41055 41411])
+            ("setratio_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41442 41457])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41458 41473]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [41413 41759])
+            ("setseq_common" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41789 41804])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [41805 41822])
+                    ("foo" variable (:type ("SetSeqFuncs" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41823 41839])
+                    ("lensum" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41854 41869]))                  
+                :type "double")
+                nil [41761 43851])
+            ("string_to_edittype" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("string" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43898 43915]))                  
+                :type ("LevEditType" type (:type "class") nil nil))
+                nil [43853 44813])
+            ("extract_editops" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [44849 44864]))                  
+                :type ("LevEditOp" type (:type "class") nil nil))
+                nil [44815 45762])
+            ("extract_opcodes" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [45798 45813]))                  
+                :type ("LevOpCode" type (:type "class") nil nil))
+                nil [45764 47050])
+            ("editops_to_tuple_list" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47091 47100])
+                    ("ops" variable
+                       (:pointer 1
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [47101 47116]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [47052 47543])
+            ("matching_blocks_to_tuple_list" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47592 47604])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47605 47617])
+                    ("nmb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47648 47659])
+                    ("mblocks" variable
+                       (:pointer 1
+                        :type ("LevMatchingBlock" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [47660 47686]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [47545 48325])
+            ("get_length_of_anything" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("object" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [48364 48381]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [48327 48608])
+            ("editops_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [48638 48653])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [48654 48669]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [48610 51591])
+            ("opcodes_to_tuple_list" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("nb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [51632 51642])
+                    ("bops" variable
+                       (:pointer 1
+                        :type ("LevOpCode" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [51643 51659]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [51593 52224])
+            ("opcodes_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [52254 52269])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [52270 52285]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [52226 55267])
+            ("inverse_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [55297 55312])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [55313 55328]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [55269 56070])
+            ("apply_edit_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [56103 56118])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [56119 56134]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [56072 59941])
+            ("matching_blocks_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [59979 59994])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [59995 60010]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [59943 61985])
+            ("subtract_edit_py" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [62021 62036])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [62037 62052]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [61987 63273])
+            ("init_levenshtein" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [63276 63915])
+            ("taus113_get" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("taus113_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [64697 64720]))                  
+                :type "unsigned long")
+                nil [64657 65395])
+            ("taus113_set" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("taus113_state_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [65421 65444])
+                    ("s" variable (:type "unsigned long int") (reparse-symbol arg-sub-list) [65457 65477]))                  
+                :type "void")
+                nil [65397 66163])
+            ("lev_init_rng" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("seed" variable (:type "unsigned long int") (reparse-symbol arg-sub-list) [66447 66470]))                  
+                :type "void")
+                nil [66414 66536])
+            ("lev_edit_distance" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [67270 67282])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [67283 67307])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [67326 67338])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [67339 67363])
+                    ("xcost" variable (:type "int") (reparse-symbol arg-sub-list) [67382 67392]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [67230 70549])
+            ("lev_edit_distance_sod" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70595 70606])
+                    ("string" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70607 70630])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70653 70662])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70663 70685])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [70708 70734])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [70757 70779])
+                    ("xcost" variable (:type "int") (reparse-symbol arg-sub-list) [70802 70812]))                  
+                :type "double")
+                nil [70551 71038])
+            ("lev_u_edit_distance" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [71615 71627])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [71628 71653])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [71674 71686])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [71687 71712])
+                    ("xcost" variable (:type "int") (reparse-symbol arg-sub-list) [71733 71743]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [71573 74923])
+            ("lev_u_edit_distance_sod" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [74971 74982])
+                    ("string" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [74983 75007])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [75032 75041])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [75042 75064])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [75089 75116])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [75141 75163])
+                    ("xcost" variable (:type "int") (reparse-symbol arg-sub-list) [75188 75198]))                  
+                :type "double")
+                nil [74925 75426])
+            ("lev_hamming_distance" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [76076 76087])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [76109 76133])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [76155 76179]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [76033 76312])
+            ("lev_u_hamming_distance" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [76779 76790])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [76814 76839])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [76863 76888]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [76734 77021])
+            ("lev_jaro_ratio" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [77430 77442])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [77443 77467])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [77483 77495])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [77496 77520]))                  
+                :type "double")
+                nil [77393 79358])
+            ("lev_u_jaro_ratio" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [79831 79843])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [79844 79869])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [79887 79899])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [79900 79925]))                  
+                :type "double")
+                nil [79792 81280])
+            ("lev_jaro_winkler_ratio" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [81928 81940])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [81941 81965])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [81989 82001])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [82002 82026])
+                    ("pfweight" variable (:type "double") (reparse-symbol arg-sub-list) [82050 82066]))                  
+                :type "double")
+                nil [81883 82319])
+            ("lev_u_jaro_winkler_ratio" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83031 83043])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [83044 83069])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83095 83107])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [83108 83133])
+                    ("pfweight" variable (:type "double") (reparse-symbol arg-sub-list) [83159 83175]))                  
+                :type "double")
+                nil [82984 83430])
+            ("make_symlist" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83907 83916])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [83917 83939])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [83953 83979])
+                    ("symlistlen" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [83980 83999]))                  
+                :type ("lev_byte" type (:type "class") nil nil))
+                nil [83877 85030])
+            ("lev_greedy_median" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [85811 85820])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [85821 85843])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [85862 85888])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [85907 85929])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [85948 85966]))                  
+                :type ("lev_byte" type (:type "class") nil nil))
+                nil [85768 91840])
+            ("finish_distance_computations" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [92021 92033])
+                    ("string1" variable
+                       (:pointer 1
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [92034 92052])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [92082 92091])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [92092 92114])
+                    ("strings" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [92144 92169])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [92199 92221])
+                    ("rows" variable
+                       (:pointer 2
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [92222 92236])
+                    ("row" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [92266 92278]))                  
+                :type "double")
+                nil [91978 93856])
+            ("lev_median_improve" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [94736 94747])
+                    ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [94748 94766])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [94786 94795])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [94796 94818])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [94838 94864])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [94884 94906])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [94926 94944]))                  
+                :type ("lev_byte" type (:type "class") nil nil))
+                nil [94692 101429])
+            ("HItem" type
+               (:typedef ("_HItem" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [101470 101498])
+            ("_HItem" type
+               (:members 
+                  ( ("c" variable (:type ("Py_UNICODE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [101517 101529])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("HItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [101532 101541]))                  
+                :type "struct")
+                nil [101499 101544])
+            ("free_usymlist_hash" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("symmap" variable
+                       (:pointer 1
+                        :type ("HItem" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [101675 101689]))                  
+                :type "void")
+                nil [101644 101928])
+            ("make_usymlist" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [102153 102162])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [102163 102185])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [102200 102227])
+                    ("symlistlen" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [102228 102247]))                  
+                :type ("Py_UNICODE" type (:type "class") nil nil))
+                nil [102121 104201])
+            ("lev_u_greedy_median" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [104987 104996])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [104997 105019])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [105040 105067])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [105088 105110])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [105131 105149]))                  
+                :type ("Py_UNICODE" type (:type "class") nil nil))
+                nil [104941 111038])
+            ("finish_udistance_computations" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [111220 111232])
+                    ("string1" variable
+                       (:pointer 1
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [111233 111252])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [111282 111291])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [111292 111314])
+                    ("strings" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [111344 111370])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [111400 111422])
+                    ("rows" variable
+                       (:pointer 2
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [111423 111437])
+                    ("row" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [111467 111479]))                  
+                :type "double")
+                nil [111176 113060])
+            ("lev_u_median_improve" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [113945 113956])
+                    ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [113957 113976])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [113998 114007])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [114008 114030])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [114052 114079])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [114101 114123])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [114145 114163]))                  
+                :type ("Py_UNICODE" type (:type "class") nil nil))
+                nil [113898 120674])
+            ("make_symlistset" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [121226 121235])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121236 121258])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121275 121301])
+                    ("symlistlen" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [121302 121321])
+                    ("symset" variable
+                       (:pointer 1
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [121338 121353]))                  
+                :type ("lev_byte" type (:type "class") nil nil))
+                nil [121193 122217])
+            ("lev_quick_median" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [122261 122270])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [122288 122310])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [122328 122354])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [122372 122394])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [122412 122430]))                  
+                :type ("lev_byte" type (:type "class") nil nil))
+                nil [122219 124473])
+            ("HQItem" type
+               (:typedef ("_HQItem" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [124517 124547])
+            ("_HQItem" type
+               (:members 
+                  ( ("c" variable (:type ("Py_UNICODE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [124567 124579])
+                    ("s" variable (:type "double") (reparse-symbol classsubparts) [124582 124591])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("HQItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [124594 124604]))                  
+                :type "struct")
+                nil [124548 124607])
+            ("free_usymlistset_hash" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("symmap" variable
+                       (:pointer 1
+                        :type ("HQItem" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [124744 124759]))                  
+                :type "void")
+                nil [124710 125000])
+            ("make_usymlistset" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [125344 125353])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [125354 125376])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [125394 125421])
+                    ("symlistlen" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [125422 125441])
+                    ("symmap" variable
+                       (:pointer 1
+                        :type ("HQItem" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [125459 125474]))                  
+                :type ("Py_UNICODE" type (:type "class") nil nil))
+                nil [125309 127117])
+            ("lev_u_quick_median" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [127164 127173])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [127193 127215])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [127235 127262])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [127282 127304])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [127324 127342]))                  
+                :type ("Py_UNICODE" type (:type "class") nil nil))
+                nil [127119 130360])
+            ("lev_set_median_index" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [131094 131103])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [131104 131126])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [131148 131174])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [131196 131218]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [131051 132598])
+            ("lev_u_set_median_index" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [133137 133146])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [133147 133169])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [133193 133220])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [133244 133266]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [133092 134653])
+            ("lev_set_median" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [135288 135297])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [135298 135320])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [135336 135362])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [135378 135400])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [135416 135434]))                  
+                :type ("lev_byte" type (:type "class") nil nil))
+                nil [135248 135855])
+            ("lev_u_set_median" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [136495 136504])
+                    ("lengths" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [136505 136527])
+                    ("strings" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [136545 136572])
+                    ("weights" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [136590 136612])
+                    ("medlength" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [136630 136648]))                  
+                :type ("Py_UNICODE" type (:type "class") nil nil))
+                nil [136452 137077])
+            ("lev_edit_seq_distance" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [138035 138045])
+                    ("lengths1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [138046 138069])
+                    ("strings1" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [138092 138119])
+                    ("n2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [138142 138152])
+                    ("lengths2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [138153 138176])
+                    ("strings2" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [138199 138226]))                  
+                :type "double")
+                nil [137991 140326])
+            ("lev_u_edit_seq_distance" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [141077 141087])
+                    ("lengths1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [141088 141111])
+                    ("strings1" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [141136 141164])
+                    ("n2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [141189 141199])
+                    ("lengths2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [141200 141223])
+                    ("strings2" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [141248 141276]))                  
+                :type "double")
+                nil [141031 143399])
+            ("lev_set_distance" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [144158 144168])
+                    ("lengths1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [144169 144192])
+                    ("strings1" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [144210 144237])
+                    ("n2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [144255 144265])
+                    ("lengths2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [144266 144289])
+                    ("strings2" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [144307 144334]))                  
+                :type "double")
+                nil [144119 146050])
+            ("lev_u_set_distance" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [146815 146825])
+                    ("lengths1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [146826 146849])
+                    ("strings1" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [146869 146897])
+                    ("n2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [146917 146927])
+                    ("lengths2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [146928 146951])
+                    ("strings2" variable
+                       (:pointer 1
+                        :dereference 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [146971 146999]))                  
+                :type "double")
+                nil [146774 148724])
+            ("munkers_blackman" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [148796 148806])
+                    ("n2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [148807 148817])
+                    ("dists" variable
+                       (:pointer 1
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [148818 148832]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [148764 153459])
+            ("lev_editops_check_errors" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [154166 154178])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [154179 154191])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [154217 154226])
+                    ("ops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [154227 154248]))                  
+                :type "int")
+                nil [154122 154897])
+            ("lev_opcodes_check_errors" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [155385 155397])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [155398 155410])
+                    ("nb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [155436 155446])
+                    ("bops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevOpCode" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [155447 155469]))                  
+                :type "int")
+                nil [155341 156590])
+            ("lev_editops_invert" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [156933 156942])
+                    ("ops" variable
+                       (:pointer 1
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [156943 156958]))                  
+                :type "void")
+                nil [156894 157135])
+            ("lev_editops_apply" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [157780 157792])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [157793 157817])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [157860 157872])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [157873 157897])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [157916 157925])
+                    ("ops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [157926 157947])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [157966 157978]))                  
+                :type ("lev_byte" type (:type "class") nil nil))
+                nil [157737 159204])
+            ("lev_u_editops_apply" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [159854 159866])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [159867 159892])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [159937 159949])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [159970 159995])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [160016 160025])
+                    ("ops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [160026 160047])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [160068 160080]))                  
+                :type ("Py_UNICODE" type (:type "class") nil nil))
+                nil [159808 161316])
+            ("editops_from_cost_matrix" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [162074 162086])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [162087 162111])
+                    ("off1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [162112 162124])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [162150 162162])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [162163 162187])
+                    ("off2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [162188 162200])
+                    ("matrix" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [162226 162241])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [162242 162252]))                  
+                :type ("LevEditOp" type (:type "class") nil nil))
+                nil [162031 164239])
+            ("lev_editops_find" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [164959 164971])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [164972 164996])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [165014 165026])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [165027 165051])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [165069 165079]))                  
+                :type ("LevEditOp" type (:type "class") nil nil))
+                nil [164916 166426])
+            ("ueditops_from_cost_matrix" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [167186 167198])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [167199 167224])
+                    ("o1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [167225 167235])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [167262 167274])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [167275 167300])
+                    ("o2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [167301 167311])
+                    ("matrix" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [167338 167353])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [167354 167364]))                  
+                :type ("LevEditOp" type (:type "class") nil nil))
+                nil [167142 169331])
+            ("lev_u_editops_find" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [170055 170067])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [170068 170093])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [170113 170125])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [170126 170151])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [170171 170181]))                  
+                :type ("LevEditOp" type (:type "class") nil nil))
+                nil [170010 171533])
+            ("lev_opcodes_to_editops" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("nb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [172106 172116])
+                    ("bops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevOpCode" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [172117 172139])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [172163 172173])
+                    ("keepkeep" variable (:type "int") (reparse-symbol arg-sub-list) [172174 172187]))                  
+                :type ("LevEditOp" type (:type "class") nil nil))
+                nil [172057 173834])
+            ("lev_editops_to_opcodes" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [174460 174469])
+                    ("ops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [174470 174491])
+                    ("nb" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [174492 174503])
+                    ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [174527 174539])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [174540 174552]))                  
+                :type ("LevOpCode" type (:type "class") nil nil))
+                nil [174411 177194])
+            ("lev_opcodes_apply" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [177873 177885])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [177886 177910])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [177929 177941])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("lev_byte" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [177942 177966])
+                    ("nb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [177985 177995])
+                    ("bops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevOpCode" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [177996 178018])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [178037 178049]))                  
+                :type ("lev_byte" type (:type "class") nil nil))
+                nil [177830 179074])
+            ("lev_u_opcodes_apply" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [179758 179770])
+                    ("string1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [179771 179796])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [179817 179829])
+                    ("string2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Py_UNICODE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [179830 179855])
+                    ("nb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [179876 179886])
+                    ("bops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevOpCode" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [179887 179909])
+                    ("len" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [179930 179942]))                  
+                :type ("Py_UNICODE" type (:type "class") nil nil))
+                nil [179712 180974])
+            ("lev_opcodes_invert" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [181321 181331])
+                    ("bops" variable
+                       (:pointer 1
+                        :type ("LevOpCode" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [181332 181348]))                  
+                :type "void")
+                nil [181282 181602])
+            ("lev_editops_matching_blocks" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [182120 182132])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [182161 182173])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [182202 182211])
+                    ("ops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [182240 182261])
+                    ("nmblocks" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [182290 182307]))                  
+                :type ("LevMatchingBlock" type (:type "class") nil nil))
+                nil [182059 184833])
+            ("lev_opcodes_matching_blocks" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("len1" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [185363 185375])
+                    ("len2" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [185428 185440])
+                    ("nb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [185469 185479])
+                    ("bops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevOpCode" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [185508 185530])
+                    ("nmblocks" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [185559 185576]))                  
+                :type ("LevMatchingBlock" type (:type "class") nil nil))
+                nil [185302 186637])
+            ("lev_editops_total_cost" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [186930 186939])
+                    ("ops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [186963 186984]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [186885 187078])
+            ("lev_editops_normalize" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [187536 187545])
+                    ("ops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [187568 187589])
+                    ("nnorm" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [187612 187626]))                  
+                :type ("LevEditOp" type (:type "class") nil nil))
+                nil [187488 188111])
+            ("lev_opcodes_total_cost" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("nb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [188411 188421])
+                    ("bops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevOpCode" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [188445 188467]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [188366 188798])
+            ("lev_editops_subtract" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [189540 189549])
+                    ("ops" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [189571 189592])
+                    ("ns" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [189614 189624])
+                    ("sub" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("LevEditOp" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [189646 189667])
+                    ("nrem" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [189689 189702]))                  
+                :type ("LevEditOp" type (:type "class") nil nil))
+                nil [189493 191213]))          
+      :file "_levenshtein.c"
+      :pointmax 191854
+      :fsize 191853
+      :lastmodtime '(22048 57072 0 0)
+      :unmatched-syntax '((TYPEDEF 24157 . 24164) (TYPEDEF 23820 . 23827) (TYPEDEF 23295 . 23302) (TYPEDEF 22891 . 22898) (TYPEDEF 22503 . 22510) (TYPEDEF 22210 . 22217))
+      :lexical-table 
+        '(("_LEV_STATIC_PY" . ((STATIC "static" 4134 . 4140)))
+          ("lev_wchar" . ((symbol "Py_UNICODE" 4159 . 4169)))
+          ("PYARGCFIX" (spp-arg-list ("x") 5720 . 5723) . ((semantic-list "(char*)" 5724 . 5731) (semantic-list "(x)" 5731 . 5734)))
+          ("setratio_DESC" . 
+              ((string "\"Compute similarity ratio of two strings sets (passed as sequences).\\n\"" 14601 . 14672) (string "\"\\n\"" 14677 . 14681) (string "\"setratio(string_sequence1, string_sequence2)\\n\"" 14686 . 14734) (string "\"\\n\"" 14739 . 14743) (string "\"The best match between any strings in the first set and the second\\n\"" 14748 . 14818) (string "\"set (passed as sequences) is attempted.  I.e., the order doesn't\\n\"" 14823 . 14891) (string "\"matter here.\\n\"" 14896 . 14912) (string "\"\\n\"" 14917 . 14921) (string "\"Examples:\\n\"" 14926 . 14939) (string "\"\\n\"" 14944 . 14948) (string "\">>> setratio(['newspaper', 'litter bin', 'tinny', 'antelope'],\\n\"" 14953 . 15019) (string "\"...          ['caribou', 'sausage', 'gorn', 'woody'])  # doctest: +ELLIPSIS\\n\"" 15024 . 15103) (string "\"0.281845...\\n\"" 15108 . 15123) (string "\"\\n\"" 15128 . 15132) (string "\"No, even reordering doesn't help the tinny words to match the\\n\"" 15137 . 15202) (string "\"woody ones.\\n\"" 15207 . 15222)))
+          ("apply_edit_DESC" . 
+              ((string "\"Apply a sequence of edit operations to a string.\\n\"" 17820 . 17872) (string "\"\\n\"" 17877 . 17881) (string "\"apply_edit(edit_operations, source_string, destination_string)\\n\"" 17886 . 17952) (string "\"\\n\"" 17957 . 17961) (string "\"In the case of editops, the sequence can be arbitrary ordered subset\\n\"" 17966 . 18038) (string "\"of the edit sequence transforming source_string to destination_string.\\n\"" 18043 . 18117) (string "\"\\n\"" 18122 . 18126) (string "\"Examples:\\n\"" 18131 . 18144) (string "\"\\n\"" 18149 . 18153) (string "\">>> e = editops('man', 'scotsman')\\n\"" 18158 . 18196) (string "\">>> apply_edit(e, 'man', 'scotsman')\\n\"" 18201 . 18241) (string "\"'scotsman'\\n\"" 18246 . 18260) (string "\">>> apply_edit(e[:3], 'man', 'scotsman')\\n\"" 18265 . 18309) (string "\"'scoman'\\n\"" 18314 . 18326) (string "\"\\n\"" 18331 . 18335) (string "\"The other form of edit operations, opcodes, is not very suitable for\\n\"" 18340 . 18412) (string "\"such a tricks, because it has to always span over complete strings,\\n\"" 18417 . 18488) (string "\"subsets can be created by carefully replacing blocks with 'equal'\\n\"" 18493 . 18562) (string "\"blocks, or by enlarging 'equal' block at the expense of other blocks\\n\"" 18567 . 18639) (string "\"and adjusting the other blocks accordingly.\\n\"" 18644 . 18691) (string "\"\\n\"" 18696 . 18700) (string "\"Examples:\\n\"" 18705 . 18718) (string "\">>> a, b = 'spam and eggs', 'foo and bar'\\n\"" 18723 . 18768) (string "\">>> e = opcodes(a, b)\\n\"" 18773 . 18798) (string "\">>> apply_edit(inverse(e), b, a)\\n\"" 18803 . 18839) (string "\"'spam and eggs'\\n\"" 18844 . 18863) (string "\">>> e[4] = ('equal', 10, 13, 8, 11)\\n\"" 18868 . 18907) (string "\">>> a, b, e\\n\"" 18912 . 18927) (string "\">>> apply_edit(e, a, b)\\n\"" 18932 . 18959) (string "\"'foo and ggs'\\n\"" 18964 . 18981)))
+          ("METHODS_ITEM" (spp-arg-list ("x") 21275 . 21278) . ((semantic-list "{ #x, x##_py, METH_VARARGS, x##_DESC }" 21279 . 21317)))
+          ("__attribute__" (spp-arg-list ("x") 5473 . 5476))
+          ("TAUS113_LCG" (spp-arg-list ("n") 5882 . 5885) . ((semantic-list "((69069UL * n) & 0xffffffffUL)" 5886 . 5916)))
+          ("PY_MOD_INIT_FUNC_DEF" (spp-arg-list ("name") 5069 . 5075) . 
+              ((VOID "void" 5076 . 5080) (spp-symbol-merge ((symbol "init" 5081 . 5085) (symbol "name" 5087 . 5091)) 5081 . 5091) (semantic-list "(void)" 5091 . 5097)))
+          ("inline")
+          ("LEV_INFINITY" . ((number "1e100" 5538 . 5543)))
+          ("inverse_DESC" . 
+              ((string "\"Invert the sense of an edit operation sequence.\\n\"" 17251 . 17302) (string "\"\\n\"" 17307 . 17311) (string "\"inverse(edit_operations)\\n\"" 17316 . 17344) (string "\"\\n\"" 17349 . 17353) (string "\"In other words, it returns a list of edit operations transforming the\\n\"" 17358 . 17431) (string "\"second (destination) string to the first (source).  It can be used\\n\"" 17436 . 17506) (string "\"with both editops and opcodes.\\n\"" 17511 . 17545) (string "\"\\n\"" 17550 . 17554) (string "\"Examples:\\n\"" 17559 . 17572) (string "\"\\n\"" 17577 . 17581) (string "\">>> inverse(editops('spam', 'park'))\\n\"" 17586 . 17626) (string "\"[('insert', 0, 0), ('delete', 2, 3), ('replace', 3, 3)]\\n\"" 17631 . 17690) (string "\">>> editops('park', 'spam')\\n\"" 17695 . 17726) (string "\"[('insert', 0, 0), ('delete', 2, 3), ('replace', 3, 3)]\\n\"" 17731 . 17790)))
+          ("Levenshtein_DESC" . 
+              ((string "\"A C extension module for fast computation of:\\n\"" 7369 . 7418) (string "\"- Levenshtein (edit) distance and edit sequence manipulation\\n\"" 7423 . 7487) (string "\"- string similarity\\n\"" 7492 . 7515) (string "\"- approximate median strings, and generally string averaging\\n\"" 7520 . 7584) (string "\"- string sequence and set similarity\\n\"" 7589 . 7629) (string "\"\\n\"" 7634 . 7638) (string "\"Levenshtein has a some overlap with difflib (SequenceMatcher).  It\\n\"" 7643 . 7713) (string "\"supports only strings, not arbitrary sequence types, but on the\\n\"" 7718 . 7785) (string "\"other hand it's much faster.\\n\"" 7790 . 7822) (string "\"\\n\"" 7827 . 7831) (string "\"It supports both normal and Unicode strings, but can't mix them, all\\n\"" 7836 . 7908) (string "\"arguments to a function (method) have to be of the same type (or its\\n\"" 7913 . 7985) (string "\"subclasses).\\n\"" 7990 . 8006)))
+          ("ratio_DESC" . 
+              ((string "\"Compute similarity of two strings.\\n\"" 8530 . 8568) (string "\"\\n\"" 8573 . 8577) (string "\"ratio(string1, string2)\\n\"" 8582 . 8609) (string "\"\\n\"" 8614 . 8618) (string "\"The similarity is a number between 0 and 1, it's usually equal or\\n\"" 8623 . 8692) (string "\"somewhat higher than difflib.SequenceMatcher.ratio(), because it's\\n\"" 8697 . 8767) (string "\"based on real minimal edit distance.\\n\"" 8772 . 8812) (string "\"\\n\"" 8817 . 8821) (string "\"Examples:\\n\"" 8826 . 8839) (string "\"\\n\"" 8844 . 8848) (string "\">>> ratio('Hello world!', 'Holly grail!')  # doctest: +ELLIPSIS\\n\"" 8853 . 8920) (string "\"0.583333...\\n\"" 8925 . 8940) (string "\">>> ratio('Brian', 'Jesus')\\n\"" 8945 . 8976) (string "\"0.0\\n\"" 8981 . 8988) (string "\"\\n\"" 8993 . 8997) (string "\"Really?  I thought there was some similarity.\\n\"" 9002 . 9051)))
+          ("jaro_winkler_DESC" . 
+              ((string "\"Compute Jaro string similarity metric of two strings.\\n\"" 10028 . 10085) (string "\"\\n\"" 10090 . 10094) (string "\"jaro_winkler(string1, string2[, prefix_weight])\\n\"" 10099 . 10150) (string "\"\\n\"" 10155 . 10159) (string "\"The Jaro-Winkler string similarity metric is a modification of Jaro\\n\"" 10164 . 10235) (string "\"metric giving more weight to common prefix, as spelling mistakes are\\n\"" 10240 . 10312) (string "\"more likely to occur near ends of words.\\n\"" 10317 . 10361) (string "\"\\n\"" 10366 . 10370) (string "\"The prefix weight is inverse value of common prefix length sufficient\\n\"" 10375 . 10448) (string "\"to consider the strings *identical*.  If no prefix weight is\\n\"" 10453 . 10517) (string "\"specified, 1/10 is used.\\n\"" 10522 . 10550) (string "\"\\n\"" 10555 . 10559) (string "\"Examples:\\n\"" 10564 . 10577) (string "\"\\n\"" 10582 . 10586) (string "\">>> jaro_winkler('Brian', 'Jesus')\\n\"" 10591 . 10629) (string "\"0.0\\n\"" 10634 . 10641) (string "\">>> jaro_winkler('Thorkel', 'Thorgier')  # doctest: +ELLIPSIS\\n\"" 10646 . 10711) (string "\"0.867857...\\n\"" 10716 . 10731) (string "\">>> jaro_winkler('Dinsdale', 'D')  # doctest: +ELLIPSIS\\n\"" 10736 . 10795) (string "\"0.7375...\\n\"" 10800 . 10813) (string "\">>> jaro_winkler('Thorkel', 'Thorgier', 0.25)\\n\"" 10818 . 10867) (string "\"1.0\\n\"" 10872 . 10879)))
+          ("opcodes_DESC" . 
+              ((string "\"Find sequence of edit operations transforming one string to another.\\n\"" 16306 . 16378) (string "\"\\n\"" 16383 . 16387) (string "\"opcodes(source_string, destination_string)\\n\"" 16392 . 16438) (string "\"opcodes(edit_operations, source_length, destination_length)\\n\"" 16443 . 16506) (string "\"\\n\"" 16511 . 16515) (string "\"The result is a list of 5-tuples with the same meaning as in\\n\"" 16520 . 16584) (string "\"SequenceMatcher's get_opcodes() output.  But since the algorithms\\n\"" 16589 . 16658) (string "\"differ, the actual sequences from Levenshtein and SequenceMatcher\\n\"" 16663 . 16732) (string "\"may differ too.\\n\"" 16737 . 16756) (string "\"\\n\"" 16761 . 16765) (string "\"Examples:\\n\"" 16770 . 16783) (string "\"\\n\"" 16788 . 16792) (string "\">>> for x in opcodes('spam', 'park'):\\n\"" 16797 . 16838) (string "\"...     print(x)\\n\"" 16843 . 16863) (string "\"...\\n\"" 16868 . 16875) (string "\"('delete', 0, 1, 0, 0)\\n\"" 16880 . 16906) (string "\"('equal', 1, 3, 0, 2)\\n\"" 16911 . 16936) (string "\"('insert', 3, 3, 2, 3)\\n\"" 16941 . 16967) (string "\"('replace', 3, 4, 3, 4)\\n\"" 16972 . 16999) (string "\"\\n\"" 17004 . 17008) (string "\"The alternate form opcodes(editops, source_string, destination_string)\\n\"" 17013 . 17087) (string "\"can be used for conversion from editops (triples) to opcodes (you can\\n\"" 17092 . 17165) (string "\"pass strings or their lengths, it doesn't matter).\\n\"" 17170 . 17224)))
+          ("matching_blocks_DESC" . 
+              ((string "\"Find identical blocks in two strings.\\n\"" 19016 . 19057) (string "\"\\n\"" 19062 . 19066) (string "\"matching_blocks(edit_operations, source_length, destination_length)\\n\"" 19071 . 19142) (string "\"\\n\"" 19147 . 19151) (string "\"The result is a list of triples with the same meaning as in\\n\"" 19156 . 19219) (string "\"SequenceMatcher's get_matching_blocks() output.  It can be used with\\n\"" 19224 . 19296) (string "\"both editops and opcodes.  The second and third arguments don't\\n\"" 19301 . 19368) (string "\"have to be actually strings, their lengths are enough.\\n\"" 19373 . 19431) (string "\"\\n\"" 19436 . 19440) (string "\"Examples:\\n\"" 19445 . 19458) (string "\"\\n\"" 19463 . 19467) (string "\">>> a, b = 'spam', 'park'\\n\"" 19472 . 19501) (string "\">>> matching_blocks(editops(a, b), a, b)\\n\"" 19506 . 19550) (string "\"[(1, 0, 2), (4, 4, 0)]\\n\"" 19555 . 19581) (string "\">>> matching_blocks(editops(a, b), len(a), len(b))\\n\"" 19586 . 19640) (string "\"[(1, 0, 2), (4, 4, 0)]\\n\"" 19645 . 19671) (string "\"\\n\"" 19676 . 19680) (string "\"The last zero-length block is not an error, but it's there for\\n\"" 19685 . 19751) (string "\"compatibility with difflib which always emits it.\\n\"" 19756 . 19809) (string "\"\\n\"" 19814 . 19818) (string "\"One can join the matching blocks to get two identical strings:\\n\"" 19823 . 19889) (string "\">>> a, b = 'dog kennels', 'mattresses'\\n\"" 19894 . 19936) (string "\">>> mb = matching_blocks(editops(a,b), a, b)\\n\"" 19941 . 19989) (string "\">>> ''.join([a[x[0]:x[0]+x[2]] for x in mb])\\n\"" 19994 . 20042) (string "\"'ees'\\n\"" 20047 . 20056) (string "\">>> ''.join([b[x[1]:x[1]+x[2]] for x in mb])\\n\"" 20061 . 20109) (string "\"'ees'\\n\"" 20114 . 20123)))
+          ("PY_INIT_MOD" (spp-arg-list ("module" "name" "doc" "methods") 4958 . 4986) . 
+              ((symbol "Py_InitModule3" 5001 . 5015) (semantic-list "(name, methods, doc)" 5015 . 5035) (punctuation ";" 5035 . 5036)))
+          ("hamming_DESC" . 
+              ((string "\"Compute Hamming distance of two strings.\\n\"" 9078 . 9122) (string "\"\\n\"" 9127 . 9131) (string "\"hamming(string1, string2)\\n\"" 9136 . 9165) (string "\"\\n\"" 9170 . 9174) (string "\"The Hamming distance is simply the number of differing characters.\\n\"" 9179 . 9249) (string "\"That means the length of the strings must be the same.\\n\"" 9254 . 9312) (string "\"\\n\"" 9317 . 9321) (string "\"Examples:\\n\"" 9326 . 9339) (string "\">>> hamming('Hello world!', 'Holly grail!')\\n\"" 9344 . 9391) (string "\"7\\n\"" 9396 . 9401) (string "\">>> hamming('Brian', 'Jesus')\\n\"" 9406 . 9439) (string "\"5\\n\"" 9444 . 9449)))
+          ("median_improve_DESC" . 
+              ((string "\"Improve an approximate generalized median string by perturbations.\\n\"" 11815 . 11885) (string "\"\\n\"" 11890 . 11894) (string "\"median_improve(string, string_sequence[, weight_sequence])\\n\"" 11899 . 11961) (string "\"\\n\"" 11966 . 11970) (string "\"The first argument is the estimated generalized median string you\\n\"" 11975 . 12044) (string "\"want to improve, the others are the same as in median().  It returns\\n\"" 12049 . 12121) (string "\"a string with total distance less or equal to that of the given string.\\n\"" 12126 . 12201) (string "\"\\n\"" 12206 . 12210) (string "\"Note this is much slower than median().  Also note it performs only\\n\"" 12215 . 12286) (string "\"one improvement step, calling median_improve() again on the result\\n\"" 12291 . 12361) (string "\"may improve it further, though this is unlikely to happen unless the\\n\"" 12366 . 12438) (string "\"given string was not very similar to the actual generalized median.\\n\"" 12443 . 12514) (string "\"\\n\"" 12519 . 12523) (string "\"Examples:\\n\"" 12528 . 12541) (string "\"\\n\"" 12546 . 12550) (string "\">>> fixme = ['Levnhtein', 'Leveshein', 'Leenshten',\\n\"" 12555 . 12610) (string "\"...          'Leveshtei', 'Lenshtein', 'Lvenstein',\\n\"" 12615 . 12670) (string "\"...          'Levenhtin', 'evenshtei']\\n\"" 12675 . 12717) (string "\">>> median_improve('spam', fixme)\\n\"" 12722 . 12759) (string "\"'enhtein'\\n\"" 12764 . 12777) (string "\">>> median_improve(median_improve('spam', fixme), fixme)\\n\"" 12782 . 12842) (string "\"'Levenshtein'\\n\"" 12847 . 12864) (string "\"\\n\"" 12869 . 12873) (string "\"It takes some work to change spam to Levenshtein.\\n\"" 12878 . 12931)))
+          ("LEV_EPSILON" . ((number "1e-14" 5511 . 5516)))
+          ("jaro_DESC" . 
+              ((string "\"Compute Jaro string similarity metric of two strings.\\n\"" 9473 . 9530) (string "\"\\n\"" 9535 . 9539) (string "\"jaro(string1, string2)\\n\"" 9544 . 9570) (string "\"\\n\"" 9575 . 9579) (string "\"The Jaro string similarity metric is intended for short strings like\\n\"" 9584 . 9656) (string "\"personal last names.  It is 0 for completely different strings and\\n\"" 9661 . 9731) (string "\"1 for identical strings.\\n\"" 9736 . 9764) (string "\"\\n\"" 9769 . 9773) (string "\"Examples:\\n\"" 9778 . 9791) (string "\">>> jaro('Brian', 'Jesus')\\n\"" 9796 . 9826) (string "\"0.0\\n\"" 9831 . 9838) (string "\">>> jaro('Thorkel', 'Thorgier')  # doctest: +ELLIPSIS\\n\"" 9843 . 9900) (string "\"0.779761...\\n\"" 9905 . 9920) (string "\">>> jaro('Dinsdale', 'D')  # doctest: +ELLIPSIS\\n\"" 9925 . 9976) (string "\"0.708333...\\n\"" 9981 . 9996)))
+          ("setmedian_DESC" . 
+              ((string "\"Find set median of a string set (passed as a sequence).\\n\"" 13566 . 13625) (string "\"\\n\"" 13630 . 13634) (string "\"setmedian(string[, weight_sequence])\\n\"" 13639 . 13679) (string "\"\\n\"" 13684 . 13688) (string "\"See median() for argument description.\\n\"" 13693 . 13735) (string "\"\\n\"" 13740 . 13744) (string "\"The returned string is always one of the strings in the sequence.\\n\"" 13749 . 13818) (string "\"\\n\"" 13823 . 13827) (string "\"Examples:\\n\"" 13832 . 13845) (string "\"\\n\"" 13850 . 13854) (string "\">>> setmedian(['ehee', 'cceaes', 'chees', 'chreesc',\\n\"" 13859 . 13915) (string "\"...            'chees', 'cheesee', 'cseese', 'chetese'])\\n\"" 13920 . 13980) (string "\"'chees'\\n\"" 13985 . 13996) (string "\"\\n\"" 14001 . 14005) (string "\"You haven't asked me about Limburger, sir.\\n\"" 14010 . 14056)))
+          ("subtract_edit_DESC" . 
+              ((string "\"Subtract an edit subsequence from a sequence.\\n\"" 20156 . 20205) (string "\"\\n\"" 20210 . 20214) (string "\"subtract_edit(edit_operations, subsequence)\\n\"" 20219 . 20266) (string "\"\\n\"" 20271 . 20275) (string "\"The result is equivalent to\\n\"" 20280 . 20311) (string "\"editops(apply_edit(subsequence, s1, s2), s2), except that is\\n\"" 20316 . 20380) (string "\"constructed directly from the edit operations.  That is, if you apply\\n\"" 20385 . 20458) (string "\"it to the result of subsequence application, you get the same final\\n\"" 20463 . 20534) (string "\"string as from application complete edit_operations.  It may be not\\n\"" 20539 . 20610) (string "\"identical, though (in amibuous cases, like insertion of a character\\n\"" 20615 . 20686) (string "\"next to the same character).\\n\"" 20691 . 20723) (string "\"\\n\"" 20728 . 20732) (string "\"The subtracted subsequence must be an ordered subset of\\n\"" 20737 . 20796) (string "\"edit_operations.\\n\"" 20801 . 20821) (string "\"\\n\"" 20826 . 20830) (string "\"Note this function does not accept difflib-style opcodes as no one in\\n\"" 20835 . 20908) (string "\"his right mind wants to create subsequences from them.\\n\"" 20913 . 20971) (string "\"\\n\"" 20976 . 20980) (string "\"Examples:\\n\"" 20985 . 20998) (string "\"\\n\"" 21003 . 21007) (string "\">>> e = editops('man', 'scotsman')\\n\"" 21012 . 21050) (string "\">>> e1 = e[:3]\\n\"" 21055 . 21073) (string "\">>> bastard = apply_edit(e1, 'man', 'scotsman')\\n\"" 21078 . 21129) (string "\">>> bastard\\n\"" 21134 . 21149) (string "\"'scoman'\\n\"" 21154 . 21166) (string "\">>> apply_edit(subtract_edit(e, e1), bastard, 'scotsman')\\n\"" 21171 . 21232) (string "\"'scotsman'\\n\"" 21237 . 21251)))
+          ("TAUS113_MASK" . ((symbol "0xffffffffUL" 5938 . 5950)))
+          ("quickmedian_DESC" . 
+              ((string "\"Find a very approximate generalized median string, but fast.\\n\"" 12962 . 13026) (string "\"\\n\"" 13031 . 13035) (string "\"quickmedian(string[, weight_sequence])\\n\"" 13040 . 13082) (string "\"\\n\"" 13087 . 13091) (string "\"See median() for argument description.\\n\"" 13096 . 13138) (string "\"\\n\"" 13143 . 13147) (string "\"This method is somewhere between setmedian() and picking a random\\n\"" 13152 . 13221) (string "\"string from the set; both speedwise and quality-wise.\\n\"" 13226 . 13283) (string "\"\\n\"" 13288 . 13292) (string "\"Examples:\\n\"" 13297 . 13310) (string "\"\\n\"" 13315 . 13319) (string "\">>> fixme = ['Levnhtein', 'Leveshein', 'Leenshten',\\n\"" 13324 . 13379) (string "\"...          'Leveshtei', 'Lenshtein', 'Lvenstein',\\n\"" 13384 . 13439) (string "\"...          'Levenhtin', 'evenshtei']\\n\"" 13444 . 13486) (string "\">>> quickmedian(fixme)\\n\"" 13491 . 13517) (string "\"'Levnshein'\\n\"" 13522 . 13537)))
+          ("distance_DESC" . 
+              ((string "\"Compute absolute Levenshtein distance of two strings.\\n\"" 8034 . 8091) (string "\"\\n\"" 8096 . 8100) (string "\"distance(string1, string2)\\n\"" 8105 . 8135) (string "\"\\n\"" 8140 . 8144) (string "\"Examples (it's hard to spell Levenshtein correctly):\\n\"" 8149 . 8205) (string "\"\\n\"" 8210 . 8214) (string "\">>> distance('Levenshtein', 'Lenvinsten')\\n\"" 8219 . 8264) (string "\"4\\n\"" 8269 . 8274) (string "\">>> distance('Levenshtein', 'Levensthein')\\n\"" 8279 . 8325) (string "\"2\\n\"" 8330 . 8335) (string "\">>> distance('Levenshtein', 'Levenshten')\\n\"" 8340 . 8385) (string "\"1\\n\"" 8390 . 8395) (string "\">>> distance('Levenshtein', 'Levenshtein')\\n\"" 8400 . 8446) (string "\"0\\n\"" 8451 . 8456) (string "\"\\n\"" 8461 . 8465) (string "\"Yeah, we've managed it at last.\\n\"" 8470 . 8505)))
+          ("median_DESC" . 
+              ((string "\"Find an approximate generalized median string using greedy algorithm.\\n\"" 10905 . 10978) (string "\"\\n\"" 10983 . 10987) (string "\"median(string_sequence[, weight_sequence])\\n\"" 10992 . 11038) (string "\"\\n\"" 11043 . 11047) (string "\"You can optionally pass a weight for each string as the second\\n\"" 11052 . 11118) (string "\"argument.  The weights are interpreted as item multiplicities,\\n\"" 11123 . 11189) (string "\"although any non-negative real numbers are accepted.  Use them to\\n\"" 11194 . 11263) (string "\"improve computation speed when strings often appear multiple times\\n\"" 11268 . 11338) (string "\"in the sequence.\\n\"" 11343 . 11363) (string "\"\\n\"" 11368 . 11372) (string "\"Examples:\\n\"" 11377 . 11390) (string "\"\\n\"" 11395 . 11399) (string "\">>> median(['SpSm', 'mpamm', 'Spam', 'Spa', 'Sua', 'hSam'])\\n\"" 11404 . 11467) (string "\"'Spam'\\n\"" 11472 . 11482) (string "\">>> fixme = ['Levnhtein', 'Leveshein', 'Leenshten',\\n\"" 11487 . 11542) (string "\"...          'Leveshtei', 'Lenshtein', 'Lvenstein',\\n\"" 11547 . 11602) (string "\"...          'Levenhtin', 'evenshtei']\\n\"" 11607 . 11649) (string "\">>> median(fixme)\\n\"" 11654 . 11675) (string "\"'Levenshtein'\\n\"" 11680 . 11697) (string "\"\\n\"" 11702 . 11706) (string "\"Hm.  Even a computer program can spell Levenshtein better than me.\\n\"" 11711 . 11781)))
+          ("N_OPCODE_NAMES" . ((semantic-list "((sizeof(opcode_names)/sizeof(opcode_names[0])))" 22160 . 22208)))
+          ("seqratio_DESC" . 
+              ((string "\"Compute similarity ratio of two sequences of strings.\\n\"" 14084 . 14141) (string "\"\\n\"" 14146 . 14150) (string "\"seqratio(string_sequence1, string_sequence2)\\n\"" 14155 . 14203) (string "\"\\n\"" 14208 . 14212) (string "\"This is like ratio(), but for string sequences.  A kind of ratio()\\n\"" 14217 . 14287) (string "\"is used to to measure the cost of item change operation for the\\n\"" 14292 . 14359) (string "\"strings.\\n\"" 14364 . 14376) (string "\"\\n\"" 14381 . 14385) (string "\"Examples:\\n\"" 14390 . 14403) (string "\"\\n\"" 14408 . 14412) (string "\">>> seqratio(['newspaper', 'litter bin', 'tinny', 'antelope'],\\n\"" 14417 . 14483) (string "\"...          ['caribou', 'sausage', 'gorn', 'woody'])\\n\"" 14488 . 14545) (string "\"0.21517857142857144\\n\"" 14550 . 14573)))
+          ("editops_DESC" . 
+              ((string "\"Find sequence of edit operations transforming one string to another.\\n\"" 15249 . 15321) (string "\"\\n\"" 15326 . 15330) (string "\"editops(source_string, destination_string)\\n\"" 15335 . 15381) (string "\"editops(edit_operations, source_length, destination_length)\\n\"" 15386 . 15449) (string "\"\\n\"" 15454 . 15458) (string "\"The result is a list of triples (operation, spos, dpos), where\\n\"" 15463 . 15529) (string "\"operation is one of 'equal', 'replace', 'insert', or 'delete';  spos\\n\"" 15534 . 15606) (string "\"and dpos are position of characters in the first (source) and the\\n\"" 15611 . 15680) (string "\"second (destination) strings.  These are operations on signle\\n\"" 15685 . 15750) (string "\"characters.  In fact the returned list doesn't contain the 'equal',\\n\"" 15755 . 15826) (string "\"but all the related functions accept both lists with and without\\n\"" 15831 . 15899) (string "\"'equal's.\\n\"" 15904 . 15917) (string "\"\\n\"" 15922 . 15926) (string "\"Examples:\\n\"" 15931 . 15944) (string "\"\\n\"" 15949 . 15953) (string "\">>> editops('spam', 'park')\\n\"" 15958 . 15989) (string "\"[('delete', 0, 0), ('insert', 3, 2), ('replace', 3, 3)]\\n\"" 15994 . 16053) (string "\"\\n\"" 16058 . 16062) (string "\"The alternate form editops(opcodes, source_string, destination_string)\\n\"" 16067 . 16141) (string "\"can be used for conversion from opcodes (5-tuples) to editops (you can\\n\"" 16146 . 16220) (string "\"pass strings or their lengths, it doesn't matter).\\n\"" 16225 . 16279)))
+          )
+)
+    (semanticdb-table "_levenshtein.h"
+      :file "_levenshtein.h"
+      :fsize 11227
+      :lastmodtime '(22048 57072 0 0))
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("_levenshtein" include nil nil [1 20])
+            ("__doc__" variable nil nil [50 80]))          
+      :file "__init__.py"
+      :pointmax 81
+      :fsize 80
+      :lastmodtime '(22048 57922 0 0)
+      :unmatched-syntax '((IMPORT 40 . 46) (MULT 47 . 48) (FROM 21 . 25) (PERIOD 26 . 27))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!ThirdParty!Lib!Levenshtein!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

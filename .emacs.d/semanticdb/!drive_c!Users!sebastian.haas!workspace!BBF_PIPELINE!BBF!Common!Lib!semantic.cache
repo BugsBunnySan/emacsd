@@ -1,0 +1,938 @@
+;; Object Lib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Lib/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib
+   :synopsis: library functions independant of applications
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 151])
+            ("__future__" include nil nil [151 151])
+            ("__all__" variable nil nil [151 151]))          
+      :file "__init__.py"
+      :pointmax 234
+      :fsize 243
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "BBF_environ.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "BBF_environ.py"
+      :pointmax 18771
+      :fsize 19330
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "BBF_XML.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.BBF_XML
+   :synopsis: XML to dict support
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 133])
+            ("__future__" include nil nil [134 171])
+            ("__all__" variable nil nil [173 318])
+            ("BBF.COmmon.Lib.BBF_XML.base" include nil nil [319 319])
+            ("XmlDictObject" type
+               (:documentation " Adds object like functionality to the standard dictionary.
+    "
+                :superclasses ("dict")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            initdict: if not None(default), fill the dictionary with values from this dict
+        \"\"\"" code nil (reparse-symbol indented_block_body) [519 639])
+                            ("if" code nil (reparse-symbol indented_block_body) [648 695])
+                            ("dict" code nil (reparse-symbol indented_block_body) [703 732]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [475 479])
+                            ("initdict" variable nil (reparse-symbol function_parameters) [481 489]))                          
+                        :documentation "
+        Args:
+            initdict: if not None(default), fill the dictionary with values from this dict
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [462 719])
+                    ("__getattr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [740 744])
+                            ("item" variable nil (reparse-symbol function_parameters) [746 750]))                          
+                        :documentation " map getattr to getitem
+
+        Args:
+            item: attr name
+
+        Returns:
+            value: value for attr name
+        ")
+                        (reparse-symbol indented_block_body) [724 938])
+                    ("__setattr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [959 963])
+                            ("item" variable nil (reparse-symbol function_parameters) [965 969])
+                            ("value" variable nil (reparse-symbol function_parameters) [971 976]))                          
+                        :documentation " map setattr to setitem
+
+        Args:
+            item: attr name
+            value: value to set
+        ")
+                        (reparse-symbol indented_block_body) [943 1139])
+                    ("\"\"\"
+    def __str__(self):
+        if self.has_key('_text'):
+            return self.__getitem__('_text')
+        else:
+            return ''
+    \"\"\"" code nil (reparse-symbol indented_block_body) [1208 1357])
+                    ("UnWrap" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2337 2341]))                          
+                        :documentation " Recursively converts this XmlDictObject to a standard dictionary and returns the result.
+
+        Returns:
+             dict: what we unwrap to
+        ")
+                        (reparse-symbol indented_block_body) [2326 2555]))                  
+                :type "class")
+                nil [355 2555])
+            ("_ConvertDictToXmlRecurse" function
+               (:documentation " recursivly convert a dict to XML
+
+    Args:
+        parent: XML node
+        dictitem: dictionary item to convert to XML
+    "
+                :arguments 
+                  ( ("parent" variable nil (reparse-symbol function_parameters) [2612 2618])
+                    ("dictitem" variable nil (reparse-symbol function_parameters) [2620 2628]))                  )
+                nil [2583 3467])
+            ("ConvertDictToXml" function
+               (:documentation " Converts a dictionary to an XML ElementTree Element
+
+    Args:
+        xmldict: a dictionary
+
+    Returns:
+       Element: XML root node
+    "
+                :arguments 
+                  ( ("xmldict" variable nil (reparse-symbol function_parameters) [3489 3496]))                  )
+                nil [3468 3794])
+            ("_ConvertXmlToDictRecurse" function
+               (:documentation " recursivly convert node into dictionary
+
+    Args:
+        node: XML node
+        dictclass: dictionary like class to convert into
+
+    Returns:
+        dictclass: instance of dictclass filled with converted node
+    "
+                :arguments 
+                  ( ("node" variable nil (reparse-symbol function_parameters) [3824 3828])
+                    ("dictclass" variable nil (reparse-symbol function_parameters) [3830 3839]))                  )
+                nil [3795 5206])
+            ("ConvertXmlToDict" function
+               (:documentation " Converts an XML file or ElementTree Element to a dictionary
+
+    Args:
+        root: either a filename string, or an XML Element
+        dictclass: a dictionary class to instanciate and fill with values
+
+    Returns:
+        dictclass: instance of dictclass filled with XML values
+
+    Raises:
+        TypeError: if root is neither instance of str not ElementTree Element
+    "
+                :arguments 
+                  ( ("root" variable nil (reparse-symbol function_parameters) [5228 5232])
+                    ("dictclass" variable nil (reparse-symbol function_parameters) [5234 5243]))                  )
+                nil [5207 6018])
+            ("if" code nil nil [6020 6056]))          
+      :file "BBF_XML.py"
+      :pointmax 6788
+      :fsize 7016
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "toolStats.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.toolStats
+   :synopsis: tool usage logger
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 133])
+            ("__future__" include nil nil [134 171])
+            ("__all__" variable nil nil [173 199])
+            ("datetime" include nil nil [201 216])
+            ("os" include nil nil [217 226])
+            ("logToolUsage" function
+               (:documentation " Logs the usage of a tool in the database for stats purposes
+
+    Args:
+        projectName: name of the project the tool was used in
+        username: user using the tool
+        toolName: name of th etool that was used
+        misc: additional info (defualts to empty)
+    "
+                :arguments 
+                  ( ("projectName" variable nil (reparse-symbol function_parameters) [245 256])
+                    ("username" variable nil (reparse-symbol function_parameters) [258 266])
+                    ("toolName" variable nil (reparse-symbol function_parameters) [268 276])
+                    ("misc" variable nil (reparse-symbol function_parameters) [278 282]))                  )
+                nil [228 1174]))          
+      :file "toolStats.py"
+      :pointmax 1174
+      :fsize 1213
+      :lastmodtime '(22182 5408 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "convertVDO.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.convertVDO
+   :synopsis: create/encode videos
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 137])
+            ("__future__" include nil nil [138 175])
+            ("__all__" variable nil nil [177 229])
+            ("os" include nil nil [231 240])
+            ("subprocess" include nil nil [241 258])
+            ("distutils" include nil nil [260 287])
+            ("bbfPath" include nil nil [289 316])
+            ("BBF_environ" include nil nil [317 335])
+            ("convertVDO" function
+               (:documentation " these settings are taken from shotgun's recommendation:
+    https://support.shotgunsoftware.com/entries/26303513-Transcoding
+    except we change the -vprofile high to -crf 15 based this recommendation:
+    https://trac.ffmpeg.org/wiki/Encode/VFX which appears slightly higher quality.
+    -pix_fmt yuv420p destroys colour saturation but is necessary
+    to play in crappy quicktime player which some people insist on :(
+
+    Args:
+        inputVdo: filename of video file
+        outputVdo: if not None(default), filename to encode to
+
+    Returns:
+        bbfPath: path to generated video
+    "
+                :arguments 
+                  ( ("inputVdo" variable nil (reparse-symbol function_parameters) [352 360])
+                    ("outputVdo" variable nil (reparse-symbol function_parameters) [362 371]))                  )
+                nil [337 1796])
+            ("combineVDOs" function
+               (:documentation " concatenate videos into one
+
+    Args:
+        inputVdos: list of input filenames
+        outputVdo: encode output into this filename
+
+    Returns:
+        str: output filename
+    "
+                :arguments 
+                  ( ("inputVdos" variable nil (reparse-symbol function_parameters) [1813 1822])
+                    ("outputVdo" variable nil (reparse-symbol function_parameters) [1824 1833]))                  )
+                nil [1797 3655])
+            ("imgsToVDO" function
+               (:documentation " convert image sequence to video
+
+    Args:
+        inputImg: ffmpeg input sequence spec (using %04d and such for filenames)
+
+    Returns:
+        str: filename of output video
+    "
+                :arguments 
+                  ( ("inputImg" variable nil (reparse-symbol function_parameters) [3670 3678])
+                    ("outputVdo" variable nil (reparse-symbol function_parameters) [3680 3689]))                  )
+                nil [3656 4421]))          
+      :file "convertVDO.py"
+      :pointmax 4421
+      :fsize 4531
+      :lastmodtime '(22182 5408 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfPath.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "bbfPath.py"
+      :pointmax 19962
+      :fsize 20471
+      :lastmodtime '(22182 5408 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "BBF_getConfig.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.BBF_getConfig
+   :synopsis: 1. Config file locations are defined here 2. Path should be defined here for new config files
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 213])
+            ("__future__" include nil nil [214 251])
+            ("__all__" variable nil nil [253 277])
+            ("os" include nil nil [279 288])
+            ("ConfigParser" include nil nil [289 308])
+            ("ConfigInfo" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [372 400]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [345 349])
+                            ("configPath" variable nil (reparse-symbol function_parameters) [351 361]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [332 401])
+                    ("readConfig" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [421 425])
+                            ("confFile" variable nil (reparse-symbol function_parameters) [427 435]))                          
+                        :documentation " Read config file
+
+        Args:
+            confFile: filename of a configuration file
+
+        Returns:
+            ConfigParser: instance of a ConfigParser
+        ")
+                        (reparse-symbol indented_block_body) [406 815])
+                    ("cleanWhiteSpace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [840 844])
+                            ("namelist" variable nil (reparse-symbol function_parameters) [846 854]))                          
+                        :documentation " Split at comma and clean white spaces from the info extracted from config file
+
+        Args:
+            namelist: comma separated list of strings
+
+        Returns:
+            list/str: either a list of strings whitespace stripped extracted from a string, or just a string
+        ")
+                        (reparse-symbol indented_block_body) [820 1314])
+                    ("checkProjectName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1340 1344])
+                            ("conf" variable nil (reparse-symbol function_parameters) [1346 1350])
+                            ("projName" variable nil (reparse-symbol function_parameters) [1352 1360]))                          
+                        :documentation " Check if its a valid project name
+
+        Args:
+            conf: a ConfigParser instance
+            projName: a project Name
+
+        Returns:
+           None: if the projName is empty or exists in the ConfigParser object
+           -1: if the projName isn't in the ConfigParser object
+        ")
+                        (reparse-symbol indented_block_body) [1319 1808])
+                    ("getInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1825 1829])
+                            ("title" variable nil (reparse-symbol function_parameters) [1831 1836])
+                            ("projectName" variable nil (reparse-symbol function_parameters) [1838 1849])
+                            ("cFile" variable nil (reparse-symbol function_parameters) [1854 1859]))                          
+                        :documentation " Extract and return information read from config file
+
+        Args:
+            title: which part of the config file to return
+            projectName: name of a project to get info for
+            cFile: name, without extension, of the config file to read
+
+        Returns:
+            list/str: list of strings or string representing the information retrieved, None if info can't be found
+        ")
+                        (reparse-symbol indented_block_body) [1813 3005])
+                    ("getProjects" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3026 3030]))                          
+                        :documentation " retrieve all project names
+
+        Returns:
+            list: list of projects
+        ")
+                        (reparse-symbol indented_block_body) [3010 3177])
+                    ("getDepts" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3195 3199])
+                            ("projectName" variable nil (reparse-symbol function_parameters) [3200 3211]))                          
+                        :documentation " retrieve all department names
+
+        Returns:
+            list: list of departments
+        ")
+                        (reparse-symbol indented_block_body) [3182 3373])
+                    ("getApps" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3390 3394])
+                            ("projectName" variable nil (reparse-symbol function_parameters) [3395 3406]))                          
+                        :documentation " retrive all app names
+
+        Returns:
+            list: list of apps
+        ")
+                        (reparse-symbol indented_block_body) [3378 3553])
+                    ("getShelves" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3573 3577])
+                            ("shelves" variable nil (reparse-symbol function_parameters) [3578 3585])
+                            ("projectName" variable nil (reparse-symbol function_parameters) [3587 3598]))                          
+                        :documentation " retrieve shelves in a project
+
+        Args:
+            shelves: name of shelves config section in the config file
+            projectName: name of a project
+
+        Returns:
+            list: list of shelves info
+        ")
+                        (reparse-symbol indented_block_body) [3558 3900])
+                    ("getShelfPath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3922 3926])
+                            ("projectName" variable nil (reparse-symbol function_parameters) [3927 3938]))                          
+                        :documentation " retrieve path to shelves
+
+        Args:
+            projectName: name of a project
+
+        Returns:
+            str: path to shelves
+        ")
+                        (reparse-symbol indented_block_body) [3905 4153]))                  
+                :type "class")
+                nil [310 4153])
+            ("if" code nil nil [4178 4240]))          
+      :file "BBF_getConfig.py"
+      :pointmax 4265
+      :fsize 4418
+      :lastmodtime '(22182 6865 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "BBF_myDocDir.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.BBF_myDocDir
+   :synopsis: return location of Documents Dir on windows
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 162])
+            ("__future__" include nil nil [163 200])
+            ("__all__" variable nil nil [202 230])
+            ("ctypes" include nil nil [232 245])
+            ("ctypes.wintypes" include nil nil [246 282])
+            ("getDocumentDir" function (:documentation " Returns document dir path
+
+    Returns:
+        str: path to Document path or 'Failure!' if it can't be found
+    ") nil [284 642]))          
+      :file "BBF_myDocDir.py"
+      :pointmax 642
+      :fsize 667
+      :lastmodtime '(22182 6946 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfAssetManager.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "bbfAssetManager.py"
+      :pointmax 6081
+      :fsize 6280
+      :lastmodtime '(22182 7439 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfAssetRepo.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__future__" include nil nil [167 204])
+            ("__all__" variable nil nil [206 232])
+            ("package.base" include nil nil [233 233])
+            ("os" include nil nil [234 243])
+            ("bbfPath" include nil nil [244 244])
+            ("subprocess" include nil nil [244 261])
+            ("xml.dom.minidom" include nil nil [262 284])
+            ("base64" include nil nil [285 298])
+            ("sys" include nil nil [299 309])
+            ("filecmp" include nil nil [310 324])
+            ("time" include nil nil [325 336])
+            ("datetime" include nil nil [337 352])
+            ("bbfAssetRepo" type
+               (:members 
+                  ( ("'''
+    Class to give access to the BrownBagFilms asset repositories.
+    '''" code nil (reparse-symbol indented_block_body) [407 476])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [464 482])
+                            ("if" code nil (reparse-symbol indented_block_body) [552 925])
+                            ("self" variable nil (reparse-symbol indented_block_body) [979 1021])
+                            ("if" code nil (reparse-symbol indented_block_body) [1030 1308]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [494 498]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [481 1329])
+                    ("log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1342 1346])
+                            ("message" variable nil (reparse-symbol function_parameters) [1348 1355]))                          )
+                        (reparse-symbol indented_block_body) [1334 1522])
+                    ("__execDOSCmd" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1544 1548])
+                            ("argList" variable nil (reparse-symbol function_parameters) [1550 1557])
+                            ("cwd" variable nil (reparse-symbol function_parameters) [1559 1562]))                          )
+                        (reparse-symbol indented_block_body) [1527 2677])
+                    ("__execSvnApp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2699 2703])
+                            ("svnCommand" variable nil (reparse-symbol function_parameters) [2705 2715])
+                            ("args" variable nil (reparse-symbol function_parameters) [2717 2722]))                          )
+                        (reparse-symbol indented_block_body) [2682 4240])
+                    ("__hasError" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4260 4264])
+                            ("stdio" variable nil (reparse-symbol function_parameters) [4266 4271])
+                            ("stderr" variable nil (reparse-symbol function_parameters) [4273 4279]))                          )
+                        (reparse-symbol indented_block_body) [4245 4555])
+                    ("__createFilelistFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4585 4589])
+                            ("filelist" variable nil (reparse-symbol function_parameters) [4591 4599]))                          )
+                        (reparse-symbol indented_block_body) [4560 5324])
+                    ("__createCommentFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5353 5357])
+                            ("comment" variable nil (reparse-symbol function_parameters) [5359 5366]))                          )
+                        (reparse-symbol indented_block_body) [5329 5943])
+                    ("checkout" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5961 5965])
+                            ("filename" variable nil (reparse-symbol function_parameters) [5967 5975])
+                            ("destination" variable nil (reparse-symbol function_parameters) [5977 5988])
+                            ("depth" variable nil (reparse-symbol function_parameters) [5995 6000]))                          )
+                        (reparse-symbol indented_block_body) [5948 6567])
+                    ("update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6583 6587])
+                            ("filename" variable nil (reparse-symbol function_parameters) [6589 6597]))                          )
+                        (reparse-symbol indented_block_body) [6572 6986])
+                    ("add" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6999 7003])
+                            ("filename" variable nil (reparse-symbol function_parameters) [7005 7013]))                          )
+                        (reparse-symbol indented_block_body) [6991 7411])
+                    ("lock" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7425 7429])
+                            ("filename" variable nil (reparse-symbol function_parameters) [7431 7439]))                          )
+                        (reparse-symbol indented_block_body) [7416 7817])
+                    ("commit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7833 7837])
+                            ("filename" variable nil (reparse-symbol function_parameters) [7839 7847])
+                            ("comment" variable nil (reparse-symbol function_parameters) [7849 7856]))                          )
+                        (reparse-symbol indented_block_body) [7822 8430])
+                    ("exists" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8446 8450])
+                            ("filename" variable nil (reparse-symbol function_parameters) [8452 8460]))                          )
+                        (reparse-symbol indented_block_body) [8435 8694])
+                    ("status" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8710 8714])
+                            ("filename" variable nil (reparse-symbol function_parameters) [8716 8724]))                          )
+                        (reparse-symbol indented_block_body) [8699 9232])
+                    ("delete" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9248 9252])
+                            ("filename" variable nil (reparse-symbol function_parameters) [9254 9262]))                          )
+                        (reparse-symbol indented_block_body) [9237 9849])
+                    ("getLatestFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9872 9876])
+                            ("filename" variable nil (reparse-symbol function_parameters) [9878 9886])
+                            ("destination" variable nil (reparse-symbol function_parameters) [9888 9899]))                          )
+                        (reparse-symbol indented_block_body) [9854 11155])
+                    ("updateFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11175 11179])
+                            ("filename" variable nil (reparse-symbol function_parameters) [11181 11189])
+                            ("comment" variable nil (reparse-symbol function_parameters) [11191 11198]))                          )
+                        (reparse-symbol indented_block_body) [11160 15560]))                  
+                :type "class")
+                nil [383 15560]))          
+      :file "bbfAssetRepo.py"
+      :pointmax 15586
+      :fsize 16042
+      :lastmodtime '(22182 5408 0 0)
+      :unmatched-syntax '((NEWLINE 11946 . 11947) (COLON 11945 . 11946) (RPAREN 11944 . 11945) (DEDENT 11887 . 11891) (DEF 11891 . 11894) (LPAREN 11907 . 11908) (NEWLINE 11103 . 11104) (COLON 11102 . 11103) (RPAREN 11101 . 11102) (DEDENT 11060 . 11064) (DEF 11064 . 11067) (LPAREN 11085 . 11086)))
+    (semanticdb-table "bbfConvenience.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfConvenience
+   :synopsis: convenience functions
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 142])
+            ("__future__" include nil nil [143 180])
+            ("__all__" variable nil nil [182 262])
+            ("collections" include nil nil [264 299])
+            ("inspect" include nil nil [300 314])
+            ("invertDict" function
+               (:documentation " invert k -> v mapping to v -> k mapping in a dict
+
+    Args:
+        dictionary: a dictionary to invert
+
+    Returns:
+        dict: reversed dictionary
+    "
+                :arguments 
+                  ( ("dictionary" variable nil (reparse-symbol function_parameters) [331 341]))                  )
+                nil [316 617])
+            ("invert_dict_nonunique" function
+               (:documentation " invert k -> v mapping to v -> k mapping in a dict,
+    if v is not unique, map it to a list keys
+
+    Args:
+        dictionary: a dictionary to invert
+
+    Returns:
+        dict: reversed dictionary
+    "
+                :arguments 
+                  ( ("d" variable nil (reparse-symbol function_parameters) [644 645]))                  )
+                nil [618 974])
+            ("flatten" function
+               (:documentation " flatten a list of lists into one list
+
+    Args:
+        multiDimensionalList: list of lists
+
+    Returns:
+        list: a flattened list
+    "
+                :arguments 
+                  ( ("multiDimensionalList" variable nil (reparse-symbol function_parameters) [987 1007]))                  )
+                nil [975 1238])
+            ("funcname" function (:documentation " return name of function on the python call stack
+
+    Returns:
+        str: name of python callable
+    ") nil [1239 1404])
+            ("enum" function
+               (:documentation " implement an Enumeration type
+
+    Examples:
+        >>> Numbers = enum('ZERO', 'ONE', 'TWO')
+        >>> Numbers.ZERO
+        0
+        >>> Numbers.ONE
+        1
+
+    Args:
+        sequenential: enumeration values to auto index
+        named: add values with explicit mapping to index
+
+    Returns:
+        Enum: an enumeration
+    "
+                :arguments 
+                  ( ("sequential" variable nil (reparse-symbol function_parameters) [1414 1425])
+                    ("named" variable nil (reparse-symbol function_parameters) [1427 1434]))                  )
+                nil [1405 1884]))          
+      :file "bbfConvenience.py"
+      :pointmax 1884
+      :fsize 1964
+      :lastmodtime '(22182 5408 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfDeadline.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("subprocess" include nil nil [11 28])
+            ("BBF_environ" include nil nil [29 47])
+            ("datetime" include nil nil [48 63])
+            ("BBF_Validation" include nil nil [64 105])
+            ("bbfDeadlineFile" type
+               (:members 
+                  ( ("'''
+    Simple object for handling the deadline JOB or PLUGIN key
+    value pairs.
+    '''" code nil (reparse-symbol indented_block_body) [134 224])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [257 272]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [242 246]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [229 273])
+                    ("set" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [286 290])
+                            ("key" variable nil (reparse-symbol function_parameters) [292 295])
+                            ("value" variable nil (reparse-symbol function_parameters) [297 302]))                          )
+                        (reparse-symbol indented_block_body) [278 417])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [434 438])
+                            ("key" variable nil (reparse-symbol function_parameters) [440 443]))                          )
+                        (reparse-symbol indented_block_body) [426 606])
+                    ("remove" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [622 626])
+                            ("key" variable nil (reparse-symbol function_parameters) [628 631]))                          )
+                        (reparse-symbol indented_block_body) [611 777])
+                    ("writeToFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [798 802])
+                            ("filepath" variable nil (reparse-symbol function_parameters) [804 812]))                          )
+                        (reparse-symbol indented_block_body) [782 1109]))                  
+                :type "class")
+                nil [107 1109])
+            ("bbfDeadline" type
+               (:members 
+                  ( ("_name" variable nil (reparse-symbol indented_block_body) [1137 1145])
+                    ("jobID" variable nil (reparse-symbol indented_block_body) [1150 1160])
+                    ("jobResult" variable nil (reparse-symbol indented_block_body) [1165 1179])
+                    ("outputDirectory" variable nil (reparse-symbol indented_block_body) [1184 1204])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1346 1380])
+                            ("self" code nil (reparse-symbol indented_block_body) [1389 1434])
+                            ("self" code nil (reparse-symbol indented_block_body) [1443 1505])
+                            ("self" code nil (reparse-symbol indented_block_body) [1514 1547])
+                            ("self" code nil (reparse-symbol indented_block_body) [1556 1591])
+                            ("self" code nil (reparse-symbol indented_block_body) [1600 1633])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1780 1817]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1235 1239])
+                            ("name" variable nil (reparse-symbol function_parameters) [1241 1245])
+                            ("deadlinePlugin" variable nil (reparse-symbol function_parameters) [1247 1261])
+                            ("startFrame" variable nil (reparse-symbol function_parameters) [1263 1273])
+                            ("endFrame" variable nil (reparse-symbol function_parameters) [1275 1283])
+                            ("pool" variable nil (reparse-symbol function_parameters) [1285 1289]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1222 1818])
+                    ("Submit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1838 1842])
+                            ("renderFilename" variable nil (reparse-symbol function_parameters) [1844 1858])
+                            ("suspended" variable nil (reparse-symbol function_parameters) [1860 1869]))                          )
+                        (reparse-symbol indented_block_body) [1827 3565]))                  
+                :type "class")
+                nil [1114 3565]))          
+      :file "bbfDeadline.py"
+      :pointmax 3565
+      :fsize 3670
+      :lastmodtime '(21896 15463 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfGraphvizQt.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "bbfGraphvizQt.py"
+      :pointmax 15355
+      :fsize 16197
+      :lastmodtime '(22182 5408 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "edlParser.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("xml.etree.cElementTree" include nil nil [1 36])
+            ("re" include nil nil [37 46])
+            ("shotInfo" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [122 138])
+                            ("self" variable nil (reparse-symbol indented_block_body) [147 165])
+                            ("self" variable nil (reparse-symbol indented_block_body) [174 188]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [89 93])
+                            ("name" variable nil (reparse-symbol function_parameters) [95 99])
+                            ("start" variable nil (reparse-symbol function_parameters) [101 106])
+                            ("end" variable nil (reparse-symbol function_parameters) [108 111]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [76 189])
+                    ("frameCount" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [227 231]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [198 375]))                  
+                :type "class")
+                nil [48 375])
+            ("_edlParser" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [446 466])
+                            ("self" variable nil (reparse-symbol indented_block_body) [476 489])
+                            ("self" variable nil (reparse-symbol indented_block_body) [498 525])
+                            ("self" variable nil (reparse-symbol indented_block_body) [534 563])
+                            ("self" variable nil (reparse-symbol indented_block_body) [572 585]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [423 427])
+                            ("xmlPath" variable nil (reparse-symbol function_parameters) [428 435]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [410 586])
+                    ("loadShots" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [609 613]))                          )
+                        (reparse-symbol indented_block_body) [595 771])
+                    ("checkValid" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [795 799]))                          )
+                        (reparse-symbol indented_block_body) [780 966])
+                    ("validShotName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [989 993])
+                            ("shotName" variable nil (reparse-symbol function_parameters) [995 1003]))                          )
+                        (reparse-symbol indented_block_body) [971 1154])
+                    ("orderShots" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1174 1178]))                          )
+                        (reparse-symbol indented_block_body) [1159 1234]))                  
+                :type "class")
+                nil [380 1234])
+            ("edlParserAvid" type
+               (:superclasses ("_edlParser")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1340 1383]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1316 1320])
+                            ("xmlPath" variable nil (reparse-symbol function_parameters) [1322 1329]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1303 1384])
+                    ("checkValid" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1408 1412]))                          )
+                        (reparse-symbol indented_block_body) [1393 1555])
+                    ("loadShots" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1574 1578]))                          )
+                        (reparse-symbol indented_block_body) [1560 2407]))                  
+                :type "class")
+                nil [1266 2407])
+            ("edlParserPremierePro" type
+               (:superclasses ("_edlParser")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2527 2577]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2504 2508])
+                            ("xmlPath" variable nil (reparse-symbol function_parameters) [2509 2516]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2491 2578])
+                    ("checkValid" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2602 2606]))                          )
+                        (reparse-symbol indented_block_body) [2587 3097])
+                    ("loadShots" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3116 3120]))                          )
+                        (reparse-symbol indented_block_body) [3102 3922]))                  
+                :type "class")
+                nil [2447 3922])
+            ("edlParserFinalCutPro" type
+               (:superclasses ("_edlParser")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [4042 4092]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4019 4023])
+                            ("xmlPath" variable nil (reparse-symbol function_parameters) [4024 4031]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4006 4093])
+                    ("checkValid" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4117 4121]))                          )
+                        (reparse-symbol indented_block_body) [4102 4255])
+                    ("loadShots" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4274 4278]))                          )
+                        (reparse-symbol indented_block_body) [4260 5407]))                  
+                :type "class")
+                nil [3962 5407])
+            ("_get_subclasses" function (:arguments 
+              ( ("cls" variable nil (reparse-symbol function_parameters) [5436 5439]))              ) nil [5416 5657])
+            ("getParser" function (:arguments 
+              ( ("xmlPath" variable nil (reparse-symbol function_parameters) [5672 5679]))              ) nil [5658 5930]))          
+      :file "edlParser.py"
+      :pointmax 5930
+      :fsize 7551
+      :lastmodtime '(22220 14151 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

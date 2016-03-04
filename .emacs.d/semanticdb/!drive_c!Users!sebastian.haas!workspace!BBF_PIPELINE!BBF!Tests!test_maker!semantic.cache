@@ -1,0 +1,243 @@
+;; Object test_maker/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "test_maker/"
+  :tables
+  (list
+    (semanticdb-table "gui.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Tests.test_maker
+   :synopsis: test maker GUI
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 126])
+            ("__future__" include nil nil [127 164])
+            ("__all__" variable nil nil [166 178])
+            ("os" include nil nil [180 189])
+            ("sys" include nil nil [190 200])
+            ("subprocess" include nil nil [201 218])
+            ("shutil" include nil nil [219 232])
+            ("logging" include nil nil [233 247])
+            ("PySide" include nil nil [249 273])
+            ("BBF.Common.Lib.bbfContext" include nil nil [275 321])
+            ("BBF.Common.Lib.bbf_base" include nil nil [322 364])
+            ("BBF.Common.Lib.bbf_base.qtwidgets" include nil nil [365 427])
+            ("base" include nil nil [429 440])
+            ("version" include nil nil [441 455])
+            ("test_maker_ui" include nil nil [457 477])
+            ("TestMaker" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("QtGui" code nil (reparse-symbol indented_block_body) [560 607])
+                            ("self" variable nil (reparse-symbol indented_block_body) [617 672])
+                            ("self" variable nil (reparse-symbol indented_block_body) [681 717])
+                            ("self" variable nil (reparse-symbol indented_block_body) [726 770])
+                            ("self" variable nil (reparse-symbol indented_block_body) [780 854])
+                            ("self" variable nil (reparse-symbol indented_block_body) [864 903])
+                            ("self" code nil (reparse-symbol indented_block_body) [912 926])
+                            ("self" variable nil (reparse-symbol indented_block_body) [936 991])
+                            ("formatter" variable nil (reparse-symbol indented_block_body) [1000 1053])
+                            ("handler" variable nil (reparse-symbol indented_block_body) [1062 1144])
+                            ("handler" code nil (reparse-symbol indented_block_body) [1153 1184])
+                            ("self" code nil (reparse-symbol indented_block_body) [1193 1224])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1234 1286])
+                            ("self" code nil (reparse-symbol indented_block_body) [1295 1346])
+                            ("self" code nil (reparse-symbol indented_block_body) [1357 1523]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [532 536])
+                            ("parent" variable nil (reparse-symbol function_parameters) [538 544]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [519 1524])
+                    ("setupUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1541 1545]))                          )
+                        (reparse-symbol indented_block_body) [1529 1725])
+                    ("set_enable_make_buttons" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1758 1762])
+                            ("enable" variable nil (reparse-symbol function_parameters) [1764 1770]))                          )
+                        (reparse-symbol indented_block_body) [1730 1879])
+                    ("query_overwrite" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1904 1908])
+                            ("msg" variable nil (reparse-symbol function_parameters) [1910 1913]))                          )
+                        (reparse-symbol indented_block_body) [1884 2262])
+                    ("show_msg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2280 2284])
+                            ("msg" variable nil (reparse-symbol function_parameters) [2286 2289]))                          )
+                        (reparse-symbol indented_block_body) [2267 2322])
+                    ("get_output_paths" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2348 2352]))                          )
+                        (reparse-symbol indented_block_body) [2327 2852])
+                    ("select_start" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2874 2878]))                          )
+                        (reparse-symbol indented_block_body) [2857 3429])
+                    ("add_fixtures" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3451 3455]))                          )
+                        (reparse-symbol indented_block_body) [3434 3698])
+                    ("remove_fixtures" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3723 3727]))                          )
+                        (reparse-symbol indented_block_body) [3703 3876])
+                    ("copy_fixtures" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3899 3903]))                          )
+                        (reparse-symbol indented_block_body) [3881 4378])
+                    ("go_to_fixtures" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4402 4406]))                          )
+                        (reparse-symbol indented_block_body) [4383 4496])
+                    ("go_to_stubs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4517 4521]))                          )
+                        (reparse-symbol indented_block_body) [4501 4608])
+                    ("go_to_module" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4630 4634]))                          )
+                        (reparse-symbol indented_block_body) [4613 4711])
+                    ("generate_stubs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4735 4739]))                          )
+                        (reparse-symbol indented_block_body) [4716 5326])
+                    ("update_paths" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5348 5352]))                          )
+                        (reparse-symbol indented_block_body) [5331 5578])
+                    ("quit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5592 5596]))                          )
+                        (reparse-symbol indented_block_body) [5583 5620]))                  
+                :type "class")
+                nil [479 5620]))          
+      :file "gui.py"
+      :pointmax 5620
+      :fsize 5796
+      :lastmodtime '(22018 30267 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: generate_test_stub
+   :synopsis:
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 109])
+            ("__future__" include nil nil [110 147])
+            ("re" include nil nil [149 158])
+            ("os" include nil nil [159 168])
+            ("__base_dir" variable nil nil [170 225])
+            ("templates_dir" variable nil nil [226 279])
+            ("BBF" include nil nil [281 291])
+            ("BBF.Tests" include nil nil [292 308])
+            ("code_base_dir" variable nil nil [310 372])
+            ("tests_base_dir" variable nil nil [373 442])
+            ("user_tests_base_dir" variable nil nil [443 502])
+            ("fixtures_base_dir" variable nil nil [503 580])
+            ("get_template_choices" function nil nil [582 904])
+            ("get_template_path" function (:arguments 
+              ( ("template_class" variable nil (reparse-symbol function_parameters) [927 941]))              ) nil [905 1107])
+            ("get_output_info" function (:arguments 
+              ( ("mod_path" variable nil (reparse-symbol function_parameters) [1128 1136])
+                ("mod_file" variable nil (reparse-symbol function_parameters) [1138 1146]))              ) nil [1108 2038])
+            ("generate" function (:arguments 
+              ( ("template" variable nil (reparse-symbol function_parameters) [2053 2061])
+                ("start" variable nil (reparse-symbol function_parameters) [2063 2068])
+                ("force" variable nil (reparse-symbol function_parameters) [2070 2075])
+                ("interactive" variable nil (reparse-symbol function_parameters) [2077 2088])
+                ("controller" variable nil (reparse-symbol function_parameters) [2090 2100]))              ) nil [2040 2372])
+            ("generate_for_dir" function (:arguments 
+              ( ("template_path" variable nil (reparse-symbol function_parameters) [2395 2408])
+                ("start" variable nil (reparse-symbol function_parameters) [2410 2415])
+                ("force" variable nil (reparse-symbol function_parameters) [2417 2422])
+                ("interactive" variable nil (reparse-symbol function_parameters) [2424 2435])
+                ("controller" variable nil (reparse-symbol function_parameters) [2437 2447]))              ) nil [2374 2780])
+            ("generate_for_file" function (:arguments 
+              ( ("template_path" variable nil (reparse-symbol function_parameters) [2803 2816])
+                ("start" variable nil (reparse-symbol function_parameters) [2818 2823])
+                ("force" variable nil (reparse-symbol function_parameters) [2825 2830])
+                ("interactive" variable nil (reparse-symbol function_parameters) [2832 2843])
+                ("controller" variable nil (reparse-symbol function_parameters) [2845 2855]))              ) nil [2781 3034])
+            ("generate_test_stub" function (:arguments 
+              ( ("template_path" variable nil (reparse-symbol function_parameters) [3058 3071])
+                ("mod_path" variable nil (reparse-symbol function_parameters) [3073 3081])
+                ("mod_file" variable nil (reparse-symbol function_parameters) [3083 3091])
+                ("force" variable nil (reparse-symbol function_parameters) [3093 3098])
+                ("interactive" variable nil (reparse-symbol function_parameters) [3100 3111])
+                ("controller" variable nil (reparse-symbol function_parameters) [3113 3123]))              ) nil [3035 4406]))          
+      :file "base.py"
+      :pointmax 4406
+      :fsize 4524
+      :lastmodtime '(22018 30267 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "test_maker_ui.py"
+      :file "test_maker_ui.py"
+      :fsize 13268
+      :lastmodtime '(22018 30267 0 0))
+    (semanticdb-table "__main__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: add_moudle_stub
+   :synopsis: __main__ file to make this module executable
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 151])
+            ("os" include nil nil [152 161])
+            ("sys" include nil nil [162 172])
+            ("sys" code nil nil [210 237])
+            ("BBF" include nil nil [238 248])
+            ("PySide" include nil nil [250 263])
+            ("PySide" include nil nil [264 302])
+            ("gui" include nil nil [304 314])
+            ("if" code nil nil [316 1095]))          
+      :file "__main__.py"
+      :pointmax 1095
+      :fsize 1141
+      :lastmodtime '(22018 30267 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "version.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Tests.test_maker.version
+   :synopsis: version info for the test_maker app
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 155])
+            ("__future__" include nil nil [156 193])
+            ("app_name" variable nil nil [258 281])
+            ("major" variable nil nil [283 292])
+            ("minor" variable nil nil [293 302])
+            ("patch" variable nil nil [303 312]))          
+      :file "version.py"
+      :pointmax 396
+      :fsize 413
+      :lastmodtime '(22018 30256 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Tests!test_maker!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,73 @@
+;; Object git/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "git/"
+  :tables
+  (list
+    (semanticdb-table "git_win32.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os.path" include nil nil [1 15])
+            ("GitCmds" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("git_folder" variable nil (reparse-symbol indented_block_body) [81 178])
+                            ("self" variable nil (reparse-symbol indented_block_body) [188 237]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [57 61])
+                            ("fw_root" variable nil (reparse-symbol function_parameters) [63 70]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [44 238]))                  
+                :type "class")
+                nil [17 238]))          
+      :file "git_win32.py"
+      :pointmax 238
+      :fsize 245
+      :lastmodtime '(22222 60940 0 0)
+      :unmatched-syntax '((NAME 178 . 182) (NEWLINE 189 . 190) (NAME 178 . 182) (NEWLINE 189 . 190)))
+
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: bbf_repo_utils.git
+   :synopsis: windows git
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 121])
+            ("__future__" include nil nil [122 159])
+            ("os.path" include nil nil [161 175])
+            ("BASEDIR" variable nil nil [177 247])
+            ("base" include nil nil [249 267])
+            ("base" code nil nil [269 282]))          
+      :file "__init__.py"
+      :pointmax 283
+      :fsize 298
+      :lastmodtime '(22222 61574 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 11])
+            ("subprocess" include nil nil [12 29])
+            ("git_cmds" variable nil nil [31 46])
+            ("init" function (:arguments 
+              ( ("fw_root" variable nil (reparse-symbol function_parameters) [57 64]))              ) nil [48 421])
+            ("clone_subprocess" function (:arguments 
+              ( ("remote_url" variable nil (reparse-symbol function_parameters) [443 453])
+                ("local_url" variable nil (reparse-symbol function_parameters) [455 464])
+                ("branch" variable nil (reparse-symbol function_parameters) [466 472]))              ) nil [422 752])
+            ("update_subprocess" function (:arguments 
+              ( ("local_url" variable nil (reparse-symbol function_parameters) [775 784])
+                ("remote" variable nil (reparse-symbol function_parameters) [786 792])
+                ("branch" variable nil (reparse-symbol function_parameters) [803 809]))              ) nil [753 1158]))          
+      :file "base.py"
+      :pointmax 1158
+      :fsize 1192
+      :lastmodtime '(22223 8211 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!SGTK_Development!CustomFrameworksDevelopment!bbf-repo-utils!python!git!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

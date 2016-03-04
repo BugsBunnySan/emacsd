@@ -1,0 +1,86 @@
+;; Object bbfAppInfo/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfAppInfo/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfAppInfo
+   :synopsis: base class for application information object
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 162]))          
+      :file "__init__.py"
+      :pointmax 163
+      :fsize 169
+      :lastmodtime '(22174 33950 0 0)
+      :unmatched-syntax '(($EOI 163 . 163) ($EOI 257 . 257) ($EOI 218 . 218) (IMPORT 188 . 194) (MULT 195 . 196) (FROM 162 . 166) (PERIOD 182 . 183) ($EOI 198 . 198)))
+    (semanticdb-table "AppInfo.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfAppInfo
+    :synopsis: Application Information base
+
+Author: Rahul Mishra
+Created: 27/07/2012
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 187])
+            ("__future__" include nil nil [188 225])
+            ("__main__" include nil nil [264 279])
+            ("AppInfo" type
+               (:documentation " Application Information wrapper class "
+                :superclasses ("object")
+                :members 
+                  ( ("getFilename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [374 378]))                          
+                        :documentation " return the currently opened filename
+
+        Returns:
+            str: The currently opened filename
+        ")
+                        (reparse-symbol indented_block_body) [358 525])
+                    ("getPlaybackOption" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [552 556])
+                            ("option" variable nil (reparse-symbol function_parameters) [558 564]))                          
+                        :documentation " return a playback option's value
+
+        Args:
+            option: the playback option to return the value for
+
+        Returns:
+            mixed: the value of the playback option
+        ")
+                        (reparse-symbol indented_block_body) [530 793])
+                    ("isBatchMode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [814 818]))                          
+                        :documentation " return whether the application is in batch mode.
+
+        Returns:
+            bool: True if the application is running in batch mode
+        ")
+                        (reparse-symbol indented_block_body) [798 1000]))                  
+                :type "class")
+                nil [281 1021])
+            ("if" code nil nil [1116 1196])
+            ("getAppInfo" function (:documentation " return the global application information instance
+
+    Returns:
+        AppInfo: the application information instance registered in __main__
+    ") nil [1197 1407]))          
+      :file "AppInfo.py"
+      :pointmax 1407
+      :fsize 1463
+      :lastmodtime '(22174 34858 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!bbfAppInfo!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

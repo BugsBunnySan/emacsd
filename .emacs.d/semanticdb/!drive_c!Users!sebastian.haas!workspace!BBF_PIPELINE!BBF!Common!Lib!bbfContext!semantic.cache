@@ -1,0 +1,920 @@
+;; Object bbfContext/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfContext/"
+  :tables
+  (list
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfContext.base
+   :synopsis: basic support classes used throughout the context implementation
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 186])
+            ("__future__" include nil nil [187 224])
+            ("__all__" variable nil nil [226 272])
+            ("ClassNULL" type
+               (:documentation " Class returned by context/kvstore to indicate no value
+        since users could store None as a value "
+                :superclasses ("object")
+                :members 
+                  ( ("__instance" variable nil (reparse-symbol indented_block_body) [418 435])
+                    ("__new__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [452 455])
+                        ("args" variable nil (reparse-symbol function_parameters) [457 462])
+                        ("kwargs" variable nil (reparse-symbol function_parameters) [464 472]))                      ) (reparse-symbol indented_block_body) [440 606])
+                    ("__nonzero__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [627 631]))                          
+                        :documentation " if <instance_of_ClassNULL>: returns False ")
+                        (reparse-symbol indented_block_body) [611 713])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [730 734]))                          )
+                        (reparse-symbol indented_block_body) [718 761]))                  
+                :type "class")
+                nil [274 761])
+            ("IncompleteInterfaceError" type
+               (:documentation " Raised by interface/service implementation if a class
+        claims to implement an interface but does not do so
+        completely "
+                :superclasses ("Exception")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [976 980]))                  
+                :type "class")
+                nil [784 981])
+            ("__builtin__" include nil nil [1097 1115])
+            ("if" code nil nil [1116 1188])
+            ("NULL" variable nil nil [1188 1211]))          
+      :file "base.py"
+      :pointmax 1212
+      :fsize 1251
+      :lastmodtime '(22182 5408 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "context.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfContext.context
+   :synopsis: Context Stack and Context layers implementation
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 172])
+            ("__future__" include nil nil [173 210])
+            ("__all__" variable nil nil [212 249])
+            ("__builtin__" include nil nil [251 269])
+            ("re" include nil nil [271 280])
+            ("logging" include nil nil [313 327])
+            ("logger" variable nil nil [328 383])
+            ("base" include nil nil [385 396])
+            ("kvstore" include nil nil [397 411])
+            ("service" include nil nil [412 426])
+            ("ContextStack" type
+               (:documentation " A stack of Context() layers. Configuration values are resolved top to bottom,
+        services are aggregated over the whole stack. By default, config values, interfaces
+        and services register on the TOS "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [705 721]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [696 700]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [683 728])
+                    ("get_context_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [753 757])
+                            ("layer" variable nil (reparse-symbol function_parameters) [759 764])
+                            ("name" variable nil (reparse-symbol function_parameters) [771 775])
+                            ("default_tos" variable nil (reparse-symbol function_parameters) [782 793]))                          
+                        :documentation " get a context's idx on the stack either by object or layer name
+
+        Args:
+            layer: a Context object (default None)
+            name: a Context object's name (default None)
+            default_tos: if True (default) default to the top of stack index
+
+        Returns:
+            int: the index of the context
+
+        Raises:
+            ValueError: if the layer couldn't be found and we're not defaulting to tos
+        ")
+                        (reparse-symbol indented_block_body) [733 1745])
+                    ("push" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1759 1763])
+                            ("layer" variable nil (reparse-symbol function_parameters) [1765 1770]))                          
+                        :documentation " push a Context onto the stack, replaces a layer with the same name if such a layer exists
+
+        Args:
+            layer: a Context object
+        ")
+                        (reparse-symbol indented_block_body) [1750 2564])
+                    ("get_context" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2586 2590])
+                            ("name" variable nil (reparse-symbol function_parameters) [2592 2596]))                          
+                        :documentation " return a Context from the stack with a given name
+
+        Args:
+            name: the name of the Context to return
+
+        Raises:
+            ValueError: through get_context_id, if the context couldn't be found
+        ")
+                        (reparse-symbol indented_block_body) [2570 2935])
+                    ("pop" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2948 2952])
+                            ("layer" variable nil (reparse-symbol function_parameters) [2954 2959])
+                            ("name" variable nil (reparse-symbol function_parameters) [2966 2970]))                          
+                        :documentation " remove a Context from the stack by object or name, if the Context can't be found, it's ok,
+            if neither layer nor name is specified, pop TOS
+
+        Args:
+            layer: a Context object
+            name: name of a Context
+        ")
+                        (reparse-symbol indented_block_body) [2940 3529])
+                    ("register_interface" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3557 3561])
+                            ("interface" variable nil (reparse-symbol function_parameters) [3563 3572])
+                            ("cls" variable nil (reparse-symbol function_parameters) [3574 3577])
+                            ("ctx" variable nil (reparse-symbol function_parameters) [3579 3582]))                          
+                        :documentation " Register a service interface in the TOS
+
+        Args:
+            interface: an interface class
+            cls: a service class
+            ctx: currently ignored
+        ")
+                        (reparse-symbol indented_block_body) [3534 3838])
+                    ("get_interfaces" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3862 3866])
+                            ("interface" variable nil (reparse-symbol function_parameters) [3868 3877])
+                            ("filters" variable nil (reparse-symbol function_parameters) [3879 3886]))                          
+                        :documentation " return service classes implementing an interface, potentially filtered
+        as such, this function is bit misnamed, since it doesn't return the interface class but the service class
+
+        Args:
+            interface: an interface class
+            filters: a list of callables of type `bool f(interface)`
+
+        Returns:
+            list: a list of service_class (potentially empty) implementing interface
+        ")
+                        (reparse-symbol indented_block_body) [3843 4885])
+                    ("register_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4911 4915])
+                            ("interface" variable nil (reparse-symbol function_parameters) [4917 4926])
+                            ("service" variable nil (reparse-symbol function_parameters) [4928 4935])
+                            ("ctx" variable nil (reparse-symbol function_parameters) [4937 4940]))                          
+                        :documentation " register a service implementing an interface on the TOS
+
+        Args:
+            interface: an interface class
+            service: a service
+            ctx: currently ignored
+        ")
+                        (reparse-symbol indented_block_body) [4890 5212])
+                    ("make_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5235 5239])
+                            ("interface" variable nil (reparse-symbol function_parameters) [5241 5250])
+                            ("filters" variable nil (reparse-symbol function_parameters) [5252 5259])
+                            ("args" variable nil (reparse-symbol function_parameters) [5264 5269])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [5271 5279]))                          
+                        :documentation " create services from registered classes for an interface
+
+        Args:
+            interface: an interface class
+            filters: a list of callables of type `bool f(service_class)`
+            args: arguments passed to the service class
+            kwargs: keyword arguments passed to the service class
+
+        Returns:
+            list: a list of instantiated services
+        ")
+                        (reparse-symbol indented_block_body) [5217 5991])
+                    ("get_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6013 6017])
+                            ("interface" variable nil (reparse-symbol function_parameters) [6019 6028])
+                            ("filters" variable nil (reparse-symbol function_parameters) [6030 6037])
+                            ("single_item" variable nil (reparse-symbol function_parameters) [6042 6053])
+                            ("make" variable nil (reparse-symbol function_parameters) [6061 6065])
+                            ("args" variable nil (reparse-symbol function_parameters) [6073 6078])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [6080 6088]))                          
+                        :documentation " return services from the whole stack implementing an interface
+
+        Args:
+            interface: an interface class
+            filters: a list of callables of type `bool f(service_class)`
+            single_item: return the first (maybe only) service found, or None, else returns a (possibly empty) list
+            make: if a service class does not have an instance, make one
+            args: arguments passed to the service class
+            kwargs: keyword arguments passed to the service class
+
+        Returns:
+            list: a list of services implementing an interface
+        ")
+                        (reparse-symbol indented_block_body) [5996 7503])
+                    ("_get_collect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7836 7840])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [7842 7850])
+                            ("default" variable nil (reparse-symbol function_parameters) [7852 7859]))                          
+                        :documentation " naive way of getting merged values,
+        just merges all the kvstores of all the layers,
+        then returns the value at key_path. not very optimal...
+
+        Args:
+            key_path: a key path to get the value for (str or list)
+            default: return this value if key_path can't be found anywhere
+        ")
+                        (reparse-symbol indented_block_body) [7819 8452])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8465 8469])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [8471 8479])
+                            ("default" variable nil (reparse-symbol function_parameters) [8481 8488])
+                            ("collect" variable nil (reparse-symbol function_parameters) [8490 8497]))                          
+                        :documentation " get the first value at key_path found in the context stack (or an aggregated value)
+
+        Args:
+            key_path: a key path to get the value for (str or list)
+            default: return this value if key_path can't be found anywhere
+            collect: return aggregated values from the whole stack
+
+        Returns:
+            mixed: the value at the key path, or the default given if there's no value there
+        ")
+                        (reparse-symbol indented_block_body) [8457 9244])
+                    ("__delitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9265 9269])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [9271 9279]))                          
+                        :documentation " delete key_path from the whole stack
+
+        Args:
+            key_path: a key path (str or list)
+        ")
+                        (reparse-symbol indented_block_body) [9249 9600])
+                    ("__contains__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9622 9626])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [9628 9636]))                          
+                        :documentation " check if the any Context on the stack has a value for a key
+
+        Args:
+            key_path: a key path (str or list)
+
+        Returns:
+            bool: True if any layer on the stack has the key_path, False else
+        ")
+                        (reparse-symbol indented_block_body) [9605 10054])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10075 10079])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [10081 10089])
+                            ("value" variable nil (reparse-symbol function_parameters) [10091 10096]))                          
+                        :documentation " set a key on the TOS to a value
+
+        Args:
+            key_path: a key path (str or list)
+            value: a value
+        ")
+                        (reparse-symbol indented_block_body) [10059 10286])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10307 10311])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [10313 10321]))                          
+                        :documentation " get value at key_path from TOS
+
+        Args:
+            key_path: a key path (str or list)
+
+        Returns:
+            mixed: value at key path
+        ")
+                        (reparse-symbol indented_block_body) [10291 10551])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10568 10572]))                          
+                        :documentation " return a string representation of the whole stack, k/v and services...
+        ")
+                        (reparse-symbol indented_block_body) [10556 10854])
+                    ("resolve_string" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11538 11542])
+                            ("string" variable nil (reparse-symbol function_parameters) [11544 11550])
+                            ("collect" variable nil (reparse-symbol function_parameters) [11552 11559]))                          
+                        :documentation " replace tokens in a string with values from the context stack
+
+        Args:
+            string: the string that has tokens to replace
+            collect: whether to use agregated values to replace the tokens with
+
+        Returns:
+            str: copy of the original string with tokens replaced
+        ")
+                        (reparse-symbol indented_block_body) [11519 12488]))                  
+                :type "class")
+                nil [428 12488])
+            ("Context" type
+               (:documentation " One layer of context, pushes itself onto the __builtin__.bbf_context on creation
+        has a registry for interfaces, services and configuration
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__new__" function
+                       (:documentation " create a new Context object
+
+        Args:
+            cls: the Context class python object
+            name: the name of the Context (used in __init__, ignored here)
+            context_stack: use this context stack to push ourselves onto, use global context stack if None
+
+        Returns:
+            obj: the newly created Context object
+        "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [12717 12720])
+                            ("name" variable nil (reparse-symbol function_parameters) [12722 12726])
+                            ("context_stack" variable nil (reparse-symbol function_parameters) [12728 12741]))                          )
+                        (reparse-symbol indented_block_body) [12705 13301])
+                    ("__del__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13318 13322]))                          
+                        :documentation " destructor, pops us of our stack
+        ")
+                        (reparse-symbol indented_block_body) [13306 13427])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            name: our name
+            context_stack: if not None (default), pop ourselves onto this stack
+        \"\"\"" code nil (reparse-symbol indented_block_body) [13480 13616])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13625 13646])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13812 13842])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13852 13873])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13882 13905])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13914 13950])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13960 13977])
+                            ("self" code nil (reparse-symbol indented_block_body) [13987 14018]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13445 13449])
+                            ("name" variable nil (reparse-symbol function_parameters) [13451 13455])
+                            ("context_stack" variable nil (reparse-symbol function_parameters) [13457 13470]))                          
+                        :documentation "
+        Args:
+            name: our name
+            context_stack: if not None (default), pop ourselves onto this stack
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13432 14025])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15302 15306]))                          
+                        :documentation " return a string representaiton of the config, interfaces and services
+
+        Returns:
+            str: long string describing this context layer
+        ")
+                        (reparse-symbol indented_block_body) [15290 15662])
+                    ("name" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15690 15694]))                          
+                        :documentation " return our name
+
+        Returns:
+            str: our name
+        ")
+                        (reparse-symbol indented_block_body) [15667 15807])
+                    ("get_fqon" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15825 15829])
+                            ("o" variable nil (reparse-symbol function_parameters) [15831 15832]))                          
+                        :documentation " return a fully qualified object name, including module the object came from
+
+        Returns:
+            str: fully qualified object name
+        ")
+                        (reparse-symbol indented_block_body) [15812 16255])
+                    ("register_interface" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16372 16376])
+                            ("interface" variable nil (reparse-symbol function_parameters) [16378 16387])
+                            ("cls" variable nil (reparse-symbol function_parameters) [16389 16392]))                          
+                        :documentation " register a class as implementing an interface
+
+        Args:
+            interface: an interface class
+            class: a calss implementing the interface
+        ")
+                        (reparse-symbol indented_block_body) [16349 16947])
+                    ("get_interfaces" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16971 16975])
+                            ("interface" variable nil (reparse-symbol function_parameters) [16977 16986])
+                            ("filters" variable nil (reparse-symbol function_parameters) [16988 16995]))                          
+                        :documentation " get all the classes implementing an interface
+
+        Args:
+            interface: an interface class
+
+        Returns:
+            list: all the classes implementing the given interface
+        ")
+                        (reparse-symbol indented_block_body) [16952 17546])
+                    ("register_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17572 17576])
+                            ("interface" variable nil (reparse-symbol function_parameters) [17578 17587])
+                            ("service" variable nil (reparse-symbol function_parameters) [17589 17596]))                          
+                        :documentation " register a service instance for an interface
+
+        Args:
+            interface: an interface class
+            service: a service implementing the interface
+        ")
+                        (reparse-symbol indented_block_body) [17551 17963])
+                    ("get_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17985 17989])
+                            ("search_id" variable nil (reparse-symbol function_parameters) [17991 18000])
+                            ("filters" variable nil (reparse-symbol function_parameters) [18002 18009]))                          
+                        :documentation " get services by an id
+
+        Args:
+            search_id: either a string id, or an Interface class
+
+        Returns:
+            list: all services matching the search_id
+        ")
+                        (reparse-symbol indented_block_body) [17968 18813])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19756 19760])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [19762 19770])
+                            ("value" variable nil (reparse-symbol function_parameters) [19772 19777]))                          
+                        :documentation " dict-like item assignment support
+
+        Args:
+            key_path: a key path (str or list)
+            value: anything
+        ")
+                        (reparse-symbol indented_block_body) [19740 19967])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19980 19984])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [19986 19994])
+                            ("default" variable nil (reparse-symbol function_parameters) [19996 20003]))                          
+                        :documentation " dict-like item retrieval support
+
+        Args:
+            key_path: a key path (str or list)
+            default: value to return if key_path isn't in our config
+
+        Returns:
+            mixed: value at key path or default if not found
+        ")
+                        (reparse-symbol indented_block_body) [19972 20342])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20363 20367])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [20369 20377]))                          
+                        :documentation " dict-like indexing support
+
+        Args:
+            key_path: a key path (str or list)
+
+        Returns:
+            mixed: value at key path or default if not found
+        ")
+                        (reparse-symbol indented_block_body) [20347 20612])
+                    ("__delitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20633 20637])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [20639 20647]))                          
+                        :documentation " dict-like item deletion support
+
+        Args:
+            key_path: a key path (str or list)
+
+        Raises:
+            IndexError: if key_path does not exist
+        ")
+                        (reparse-symbol indented_block_body) [20617 20871])
+                    ("__contains__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20893 20897])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [20899 20907]))                          
+                        :documentation " dict-like key existance support
+
+        Args:
+            key_path: a key path (str or list)
+
+        Returns:
+            bool: True if key_path exists, False else
+        ")
+                        (reparse-symbol indented_block_body) [20876 21140]))                  
+                :type "class")
+                nil [12515 21140]))          
+      :file "context.py"
+      :pointmax 21161
+      :fsize 21814
+      :lastmodtime '(22228 38325 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "kvstore.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfContext.kvstore
+   :synopsis: Key Value Store
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 140])
+            ("__future__" include nil nil [141 178])
+            ("__all__" variable nil nil [180 201])
+            ("copy" include nil nil [203 228])
+            ("types" include nil nil [229 241])
+            ("base" include nil nil [243 254])
+            ("KVStore" type
+               (:documentation " nested dictionary like key value store with support for:
+        key paths, default values, merging of two kvstores
+        Values are only stored in leaf nodes
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("_default" variable nil (reparse-symbol indented_block_body) [460 475])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\" self._data always either points to another kvstore or a non-dict like value
+
+        Args:
+            path_sep: is the separation character for key paths, like in project.resolution.width
+            parent_key: is the key in the parent dictionary that points to us
+            level: is the length of the key path leading to us
+        \"\"\"" code nil (reparse-symbol indented_block_body) [619 964])
+                            ("self" variable nil (reparse-symbol indented_block_body) [973 988])
+                            ("self" variable nil (reparse-symbol indented_block_body) [997 1022])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1031 1050])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1059 1088]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [564 568])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [570 578])
+                            ("level" variable nil (reparse-symbol function_parameters) [584 589])
+                            ("parent_key" variable nil (reparse-symbol function_parameters) [593 603]))                          
+                        :documentation " self._data always either points to another kvstore or a non-dict like value
+
+        Args:
+            path_sep: is the separation character for key paths, like in project.resolution.width
+            parent_key: is the key in the parent dictionary that points to us
+            level: is the length of the key path leading to us
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [551 1089])
+                    ("_resolve_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1111 1115])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [1117 1125]))                          
+                        :documentation " breaks a user supplied key into a list
+
+        Args:
+            user_key: can be a string or an iterable (list, dict, ...)
+
+        Returns:
+            list: the key as a path
+
+        ")
+                        (reparse-symbol indented_block_body) [1094 1692])
+                    ("_setvalue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1711 1715])
+                            ("key" variable nil (reparse-symbol function_parameters) [1717 1720])
+                            ("value" variable nil (reparse-symbol function_parameters) [1722 1727]))                          
+                        :documentation " sets the value stored at key (as a single value) to value,
+            dict(-like) values are (recursivley) converted to (nested) KVStores
+
+        Args:
+            key: one scalar key, indexing into our _data
+            value: can be anything
+        ")
+                        (reparse-symbol indented_block_body) [1697 2203])
+                    ("_getvalue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2222 2226])
+                            ("key" variable nil (reparse-symbol function_parameters) [2228 2231])
+                            ("default" variable nil (reparse-symbol function_parameters) [2233 2240]))                          
+                        :documentation " convenience method, so subclasses can reimplement data access easily
+
+        Args:
+            key: used to directly index data without further key path lookup
+            default: value to return in case key is not found
+
+        Returns:
+            value: value stored at key, `default` if key not found
+        ")
+                        (reparse-symbol indented_block_body) [2208 2619])
+                    ("_find_place" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2640 2644])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [2646 2654])
+                            ("create" variable nil (reparse-symbol function_parameters) [2656 2662]))                          
+                        :documentation " finds the place at the end of a key_path, optionally creating the path as it goes
+
+        Args:
+            key_path: a key list, specifying a path in the KVStore tree
+            create: whether to create the whole key_path path if it (or parts of it) do not exist
+
+        Returns:
+            KVStore: The KVStore at the end of the path, so the last element of key_path indexes that KVStores _data
+        ")
+                        (reparse-symbol indented_block_body) [2624 3469])
+                    ("__contains__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3491 3495])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [3497 3505]))                          
+                        :documentation " dict like access protocol - for 'in' and 'not in'
+
+        Args:
+            user_key: will be resolved using :func:._resolve_key
+
+        Returns:
+            bool: True if all of key_path exists, False else
+        ")
+                        (reparse-symbol indented_block_body) [3474 3949])
+                    ("__delitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3970 3974])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [3976 3984]))                          
+                        :documentation " dict like access protocol - deleting an item at user_key
+
+        Args:
+            user_key: will be resolved using :func:._resolve_key
+
+        Raises:
+            IndexError: on empty key or if the key doesn't exist in the kvstore tree
+        ")
+                        (reparse-symbol indented_block_body) [3954 4684])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4706 4710])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [4712 4720])
+                            ("value" variable nil (reparse-symbol function_parameters) [4722 4727]))                          
+                        :documentation " dict like access protocol - setting an item at user_key to value
+
+        Args:
+            user_key: will be resolved using :func:._resolve_key
+            value: will be set in the kvstore at the end of the user_key -> path, see :func:._setvalue
+        ")
+                        (reparse-symbol indented_block_body) [4690 5342])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5363 5367])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [5369 5377]))                          
+                        :documentation " dict like access protocol - gettting an item at user_key
+
+        Args:
+            user_key: will be resolved using :func:._resolve_key
+        ")
+                        (reparse-symbol indented_block_body) [5347 6083])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6096 6100])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [6102 6110])
+                            ("default" variable nil (reparse-symbol function_parameters) [6112 6119])
+                            ("as_dict" variable nil (reparse-symbol function_parameters) [6130 6137]))                          
+                        :documentation " dict like access protocol - getting an item at user_key, with default override
+
+        Args:
+            user_key: will be resolved using :func:._resolve_key
+            default: if there's no value at the end of user_key, return this instead
+            as_dict: if the value found is a KVStore, returns it's whole subtree as a nested dictionary instead
+
+        Returns:
+            any: value found at the end of user_key -> path or default
+        ")
+                        (reparse-symbol indented_block_body) [6088 6821])
+                    ("as_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6838 6842]))                          
+                        :documentation " return our data and everything beneath it as a (nested) dictionary
+
+        Returns:
+            dict: the k/v tree stored as nested dictionaries
+        ")
+                        (reparse-symbol indented_block_body) [6826 7217])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7234 7238]))                          
+                        :documentation " return a string representing the whole structure of our _data ")
+                        (reparse-symbol indented_block_body) [7222 7660]))                  
+                :type "class")
+                nil [256 7660]))          
+      :file "kvstore.py"
+      :pointmax 7680
+      :fsize 7914
+      :lastmodtime '(22185 62740 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfContext
+   :synopsis: Context module for global context including configs and services
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 181])
+            ("pprint" include nil nil [182 207])
+            ("base" include nil nil [209 220])
+            ("reload" code nil nil [221 233])
+            ("context" include nil nil [234 248])
+            ("reload" code nil nil [249 264])
+            ("kvstore" include nil nil [265 279])
+            ("reload" code nil nil [280 295])
+            ("service" include nil nil [296 310])
+            ("reload" code nil nil [311 326]))          
+      :file "__init__.py"
+      :pointmax 327
+      :fsize 343
+      :lastmodtime '(21988 35440 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "service.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfContext.service
+   :synopsis: Interfaces and Services base classes
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 161])
+            ("__future__" include nil nil [162 199])
+            ("copy" include nil nil [250 271])
+            ("logging" include nil nil [273 287])
+            ("logger" variable nil nil [288 343])
+            ("abc" include nil nil [345 368])
+            ("base" include nil nil [370 381])
+            ("TagFilter" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [446 468]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [425 429])
+                            ("tags" variable nil (reparse-symbol function_parameters) [431 435]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [412 469])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [487 491])
+                            ("cls" variable nil (reparse-symbol function_parameters) [493 496]))                          )
+                        (reparse-symbol indented_block_body) [474 583]))                  
+                :type "class")
+                nil [383 583])
+            ("ServiceMetaClass" type
+               (:documentation " MetaClass for Service classes
+    "
+                :superclasses ("type")
+                :members 
+                  ( ("__new__" function
+                       (:documentation " create new instance of a Service Class Type, handles registration of a class for interfaces
+        "
+                        :arguments 
+                          ( ("mcls" variable nil (reparse-symbol function_parameters) [676 680])
+                            ("cls_name" variable nil (reparse-symbol function_parameters) [682 690])
+                            ("cls_parents" variable nil (reparse-symbol function_parameters) [692 703])
+                            ("cls_attrs" variable nil (reparse-symbol function_parameters) [705 714]))                          )
+                        (reparse-symbol indented_block_body) [664 1336]))                  
+                :type "class")
+                nil [584 1336])
+            ("Interface" type
+               (:documentation " Base class for Interfaces,
+        service_id should be unique "
+                :superclasses ("object")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [1463 1486])
+                    ("service_id" variable nil (reparse-symbol indented_block_body) [1491 1508]))                  
+                :type "class")
+                nil [1359 1509])
+            ("Service" type
+               (:documentation " Base class for Services
+       __implements__ must contain all interfaces this class implements
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [1671 1703])
+                    ("service_tags" variable nil (reparse-symbol indented_block_body) [1708 1725])
+                    ("__implements__" variable nil (reparse-symbol indented_block_body) [1730 1749])
+                    ("__new__" function
+                       (:documentation " create new Service object and register it for every interface we implement "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1767 1770])
+                            ("args" variable nil (reparse-symbol function_parameters) [1772 1777])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1779 1787]))                          )
+                        (reparse-symbol indented_block_body) [1755 2055])
+                    ("service_ids" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2090 2094]))                          
+                        :documentation " return the service_ids of the interfaces we implement
+
+        Returns:
+            list: a list of service_ids
+        ")
+                        (reparse-symbol indented_block_body) [2060 2296])
+                    ("interfaces" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2330 2334]))                          
+                        :documentation " return the interfaces we implement
+
+        Returns:
+            list: a list of interfaces
+        ")
+                        (reparse-symbol indented_block_body) [2301 2494])
+                    ("interface_names" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2533 2537]))                          
+                        :documentation " return the names of the interfaces we implement
+
+        Returns:
+            list: a list of interface names
+        ")
+                        (reparse-symbol indented_block_body) [2499 2741]))                  
+                :type "class")
+                nil [1532 2741]))          
+      :file "service.py"
+      :pointmax 2762
+      :fsize 2864
+      :lastmodtime '(22220 14148 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!bbfContext!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,55 @@
+;; Object yield/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "yield/"
+  :tables
+  (list
+    (semanticdb-table "yield.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("Task" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [69 86])
+                            ("self" variable nil (reparse-symbol indented_block_body) [95 120]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38 42])
+                            ("name" variable nil (reparse-symbol function_parameters) [44 48])
+                            ("children" variable nil (reparse-symbol function_parameters) [50 58]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [25 121])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [134 138]))                          )
+                        (reparse-symbol indented_block_body) [126 290]))                  
+                :type "class")
+                nil [1 290])
+            ("foo_child_tasks" variable nil nil [291 311])
+            ("for" code nil nil [312 393])
+            ("child_tasks" variable nil nil [394 438])
+            ("for" code nil nil [439 506])
+            ("root_task" variable nil nil [507 544])
+            ("for" code nil nil [546 595]))          
+      :file "yield.py"
+      :pointmax 595
+      :fsize 620
+      :lastmodtime '(22010 62087 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "nested.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("d" variable nil nil [1 44])
+            ("nested_yield" function (:arguments 
+              ( ("d" variable nil (reparse-symbol function_parameters) [63 64]))              ) nil [46 223])
+            ("for" code nil nil [224 262]))          
+      :file "nested.py"
+      :pointmax 262
+      :fsize 273
+      :lastmodtime '(22026 30286 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!yield!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

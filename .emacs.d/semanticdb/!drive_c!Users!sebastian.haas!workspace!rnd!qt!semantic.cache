@@ -1,0 +1,168 @@
+;; Object qt/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "qt/"
+  :tables
+  (list
+    (semanticdb-table "combotableview.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__future__" include nil nil [1 38])
+            ("pprint" include nil nil [40 65])
+            ("sys" include nil nil [68 78])
+            ("PySide" include nil nil [80 112])
+            ("combotableview_ui" include nil nil [114 159])
+            ("ASSETS" variable nil nil [179 201])
+            ("PARTS" variable nil nil [202 278])
+            ("VARIANTS" variable nil nil [279 532])
+            ("LODS" variable nil nil [533 914])
+            ("PART_TYPES" variable nil nil [917 1074])
+            ("SCENE_PROXIES" variable nil nil [1106 1257])
+            ("STYLESHEETS" variable nil nil [1311 1777])
+            ("set_combo_text" function (:arguments 
+              ( ("cb" variable nil (reparse-symbol function_parameters) [1798 1800])
+                ("text" variable nil (reparse-symbol function_parameters) [1802 1806]))              ) nil [1779 1923])
+            ("color_widget" function (:arguments 
+              ( ("widget" variable nil (reparse-symbol function_parameters) [1941 1947])
+                ("style" variable nil (reparse-symbol function_parameters) [1949 1954]))              ) nil [1924 2023])
+            ("color_tv_item" function (:arguments 
+              ( ("model" variable nil (reparse-symbol function_parameters) [2042 2047])
+                ("idx" variable nil (reparse-symbol function_parameters) [2049 2052])
+                ("style" variable nil (reparse-symbol function_parameters) [2054 2059]))              ) nil [2024 2180])
+            ("AssetPartManager" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("PART_IDX" variable nil (reparse-symbol indented_block_body) [2456 2471])
+                    ("VARIANT_IDX" variable nil (reparse-symbol indented_block_body) [2476 2491])
+                    ("LOD_IDX" variable nil (reparse-symbol indented_block_body) [2496 2511])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2529 2582])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2592 2620])
+                            ("self" code nil (reparse-symbol indented_block_body) [2629 2651])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2661 2710])
+                            ("self" code nil (reparse-symbol indented_block_body) [2719 2763])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2773 2795])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2804 2824])
+                            ("self" code nil (reparse-symbol indented_block_body) [2834 2857])
+                            ("self" code nil (reparse-symbol indented_block_body) [2866 2887])
+                            ("self" code nil (reparse-symbol indented_block_body) [2897 2915])
+                            ("self" code nil (reparse-symbol indented_block_body) [2924 2944]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2529 2533])
+                            ("parent" variable nil (reparse-symbol function_parameters) [2535 2541]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2516 2973])
+                    ("populate_ui" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3722 3726]))                          )
+                        (reparse-symbol indented_block_body) [3706 3803])
+                    ("get_row_part_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3852 3856])
+                            ("row" variable nil (reparse-symbol function_parameters) [3858 3861]))                          )
+                        (reparse-symbol indented_block_body) [3831 3922])
+                    ("get_row_variant_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3951 3955])
+                            ("row" variable nil (reparse-symbol function_parameters) [3957 3960]))                          )
+                        (reparse-symbol indented_block_body) [3927 4024])
+                    ("get_row_lod_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4049 4053])
+                            ("row" variable nil (reparse-symbol function_parameters) [4055 4058]))                          )
+                        (reparse-symbol indented_block_body) [4029 4118])
+                    ("get_row_variants_cb" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4169 4173])
+                            ("row" variable nil (reparse-symbol function_parameters) [4175 4178]))                          )
+                        (reparse-symbol indented_block_body) [4145 4325])
+                    ("get_row_lods_cb" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4350 4354])
+                            ("row" variable nil (reparse-symbol function_parameters) [4356 4359]))                          )
+                        (reparse-symbol indented_block_body) [4330 4486])
+                    ("get_row_part" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4527 4531])
+                            ("row" variable nil (reparse-symbol function_parameters) [4533 4536]))                          )
+                        (reparse-symbol indented_block_body) [4510 4632])
+                    ("get_row_variant" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4657 4661])
+                            ("row" variable nil (reparse-symbol function_parameters) [4663 4666]))                          )
+                        (reparse-symbol indented_block_body) [4637 4840])
+                    ("get_row_lod" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4861 4865])
+                            ("row" variable nil (reparse-symbol function_parameters) [4867 4870]))                          )
+                        (reparse-symbol indented_block_body) [4845 5028])
+                    ("lod_changed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5084 5088])
+                            ("row" variable nil (reparse-symbol function_parameters) [5090 5093]))                          )
+                        (reparse-symbol indented_block_body) [5068 5124])
+                    ("variant_changed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5149 5153])
+                            ("row" variable nil (reparse-symbol function_parameters) [5155 5158]))                          )
+                        (reparse-symbol indented_block_body) [5129 5820])
+                    ("asset_changed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5843 5847]))                          )
+                        (reparse-symbol indented_block_body) [5825 7154])
+                    ("color_items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7205 7209]))                          )
+                        (reparse-symbol indented_block_body) [7189 7333])
+                    ("color_row" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7352 7356])
+                            ("row" variable nil (reparse-symbol function_parameters) [7358 7361]))                          )
+                        (reparse-symbol indented_block_body) [7338 7868])
+                    ("color_variant" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7891 7895])
+                            ("row" variable nil (reparse-symbol function_parameters) [7897 7900]))                          )
+                        (reparse-symbol indented_block_body) [7873 8473])
+                    ("color_lod" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8492 8496])
+                            ("row" variable nil (reparse-symbol function_parameters) [8498 8501]))                          )
+                        (reparse-symbol indented_block_body) [8478 8883])
+                    ("apply" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8898 8902]))                          )
+                        (reparse-symbol indented_block_body) [8888 9378]))                  
+                :type "class")
+                nil [2409 9378])
+            ("if" code nil nil [9381 9527]))          
+      :file "combotableview.py"
+      :pointmax 9527
+      :fsize 9840
+      :lastmodtime '(21929 13603 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "combotableview_ui.py"
+      :file "combotableview_ui.py"
+      :fsize 4060
+      :lastmodtime '(21928 56999 0 0)))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!qt!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

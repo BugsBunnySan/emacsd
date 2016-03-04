@@ -1,0 +1,115 @@
+;; Object ShotgunCommandLine/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ShotgunCommandLine/"
+  :tables
+  (list
+    (semanticdb-table "ShotgunCommandLine.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 11])
+            ("os" include nil nil [12 21])
+            ("re" include nil nil [22 31])
+            ("datetime" include nil nil [32 47])
+            ("traceback" include nil nil [48 64])
+            ("shutil" include nil nil [65 78])
+            ("smtplib" include nil nil [128 142])
+            ("unicodedata" include nil nil [143 161])
+            ("m" variable nil nil [163 209])
+            ("if" code nil nil [210 298])
+            ("ShotgunInterface" include nil nil [303 348])
+            ("email.iterators" include nil nil [388 410])
+            ("email.mime.text" include nil nil [411 447])
+            ("__main__" include nil nil [449 464])
+            ("BBF_environ" include nil nil [465 483])
+            ("cachedTasks" variable nil nil [485 499])
+            ("printList" function (:arguments 
+              ( ("header" variable nil (reparse-symbol function_parameters) [514 520])
+                ("dataList" variable nil (reparse-symbol function_parameters) [522 530])
+                ("noHeader" variable nil (reparse-symbol function_parameters) [532 540]))              ) nil [500 2110])
+            ("uploadImage" function
+               (:documentation "
+    Uploads the specified image to the database and asset specified.
+    "
+                :arguments 
+                  ( ("shotgun" variable nil (reparse-symbol function_parameters) [2131 2138])
+                    ("type" variable nil (reparse-symbol function_parameters) [2140 2144])
+                    ("entityName" variable nil (reparse-symbol function_parameters) [2146 2156])
+                    ("imageFile" variable nil (reparse-symbol function_parameters) [2158 2167]))                  )
+                nil [2115 2408])
+            ("listContains" function (:arguments 
+              ( ("value" variable nil (reparse-symbol function_parameters) [2426 2431])
+                ("list" variable nil (reparse-symbol function_parameters) [2433 2437]))              ) nil [2409 2572])
+            ("setShotAssets" function (:arguments 
+              ( ("shotgun" variable nil (reparse-symbol function_parameters) [2591 2598])
+                ("episodeType" variable nil (reparse-symbol function_parameters) [2600 2611])
+                ("episodeCode" variable nil (reparse-symbol function_parameters) [2613 2624])
+                ("runningOrder" variable nil (reparse-symbol function_parameters) [2626 2638])
+                ("assets" variable nil (reparse-symbol function_parameters) [2640 2646])
+                ("status" variable nil (reparse-symbol function_parameters) [2648 2654]))              ) nil [2573 3488])
+            ("loadFile" function (:arguments 
+              ( ("filename" variable nil (reparse-symbol function_parameters) [3525 3533]))              ) nil [3512 3888])
+            ("get_task_info" function (:arguments 
+              ( ("shotgun" variable nil (reparse-symbol function_parameters) [3907 3914])
+                ("episodeID" variable nil (reparse-symbol function_parameters) [3916 3925])
+                ("pipelineStep" variable nil (reparse-symbol function_parameters) [3927 3939])
+                ("taskName" variable nil (reparse-symbol function_parameters) [3941 3949])
+                ("studioName" variable nil (reparse-symbol function_parameters) [3951 3961])
+                ("assetType" variable nil (reparse-symbol function_parameters) [3968 3977]))              ) nil [3889 4660])
+            ("get_all_task_info" function (:arguments 
+              ( ("shotgun" variable nil (reparse-symbol function_parameters) [4683 4690])
+                ("episodeID" variable nil (reparse-symbol function_parameters) [4692 4701]))              ) nil [4661 5055])
+            ("getTaskPercentageOptimized" function (:arguments 
+              ( ("shotgun" variable nil (reparse-symbol function_parameters) [5087 5094])
+                ("episodeID" variable nil (reparse-symbol function_parameters) [5096 5105])
+                ("tasks" variable nil (reparse-symbol function_parameters) [5107 5112])
+                ("status" variable nil (reparse-symbol function_parameters) [5114 5120])
+                ("studioName" variable nil (reparse-symbol function_parameters) [5122 5132]))              ) nil [5056 5903])
+            ("getTaskStat" function (:arguments 
+              ( ("shotgun" variable nil (reparse-symbol function_parameters) [5924 5931])
+                ("episodeID" variable nil (reparse-symbol function_parameters) [5933 5942])
+                ("tasks" variable nil (reparse-symbol function_parameters) [5944 5949])
+                ("status" variable nil (reparse-symbol function_parameters) [5951 5957])
+                ("studioName" variable nil (reparse-symbol function_parameters) [5959 5969])
+                ("assetType" variable nil (reparse-symbol function_parameters) [5976 5985])
+                ("percentage" variable nil (reparse-symbol function_parameters) [5992 6002])
+                ("inverseFilter" variable nil (reparse-symbol function_parameters) [6009 6022]))              ) nil [5908 6676])
+            ("get_sg_latest_script" function (:arguments 
+              ( ("shotgun" variable nil (reparse-symbol function_parameters) [6702 6709])
+                ("episodeID" variable nil (reparse-symbol function_parameters) [6711 6720]))              ) nil [6677 7209])
+            ("get_sg_total_assets" function (:arguments 
+              ( ("shotgun" variable nil (reparse-symbol function_parameters) [7234 7241])
+                ("episodeID" variable nil (reparse-symbol function_parameters) [7243 7252])
+                ("studioName" variable nil (reparse-symbol function_parameters) [7254 7264])
+                ("type" variable nil (reparse-symbol function_parameters) [7271 7275])
+                ("newAssets" variable nil (reparse-symbol function_parameters) [7282 7291]))              ) nil [7210 8557])
+            ("getWeight" function (:arguments 
+              ( ("shotgun" variable nil (reparse-symbol function_parameters) [8572 8579])
+                ("episodeID" variable nil (reparse-symbol function_parameters) [8581 8590])
+                ("assetType" variable nil (reparse-symbol function_parameters) [8592 8601])
+                ("season" variable nil (reparse-symbol function_parameters) [8603 8609])
+                ("countAssetWithWeight" variable nil (reparse-symbol function_parameters) [8611 8631]))              ) nil [8558 9534])
+            ("sendEmail" function (:arguments 
+              ( ("toEmail" variable nil (reparse-symbol function_parameters) [9549 9556])
+                ("subject" variable nil (reparse-symbol function_parameters) [9558 9565])
+                ("message" variable nil (reparse-symbol function_parameters) [9567 9574]))              ) nil [9535 10128])
+            ("markShotsForRetake" function (:arguments 
+              ( ("projectName" variable nil (reparse-symbol function_parameters) [10156 10167])
+                ("episode" variable nil (reparse-symbol function_parameters) [10169 10176])
+                ("shots" variable nil (reparse-symbol function_parameters) [10178 10183])
+                ("studio" variable nil (reparse-symbol function_parameters) [10185 10191])
+                ("templateTypeList" variable nil (reparse-symbol function_parameters) [10193 10209])
+                ("tags" variable nil (reparse-symbol function_parameters) [10211 10215])
+                ("notes" variable nil (reparse-symbol function_parameters) [10217 10222]))              ) nil [10133 12380])
+            ("getKPD" function (:arguments 
+              ( ("projectName" variable nil (reparse-symbol function_parameters) [12392 12403]))              ) nil [12381 14656])
+            ("processCommand" function (:arguments 
+              ( ("argv" variable nil (reparse-symbol function_parameters) [14676 14680]))              ) nil [14657 58309])
+            ("if" code nil nil [58310 58754]))          
+      :file "ShotgunCommandLine.py"
+      :pointmax 58762
+      :fsize 59925
+      :lastmodtime '(21896 15464 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Tools!AssetAssignmentUtility!ShotgunCommandLine!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,142 @@
+;; Object hooks/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hooks/"
+  :tables
+  (list
+    (semanticdb-table "pick_environment.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Hook which chooses an environment file to use based on the current context.
+
+\"\"\"" code nil nil [453 537])
+            ("tank" include nil nil [539 560])
+            ("PickEnvironment" type
+               (:superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [608 612])
+                            ("context" variable nil (reparse-symbol function_parameters) [614 621])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [623 631]))                          
+                        :documentation "
+        The default implementation assumes there are three environments, called shot, asset 
+        and project, and switches to these based on entity type.
+        ")
+                        (reparse-symbol indented_block_body) [596 1775]))                  
+                :type "class")
+                nil [562 1775]))          
+      :file "pick_environment.py"
+      :pointmax 1775
+      :fsize 1774
+      :lastmodtime '(21924 62248 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "process_folder_name.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Core hook which handles conversion of shotgun field data into strings.
+
+This hook can be used to control how folders are named on disk given 
+a field in shotgun. Should for example spaces be replaced by underscores
+or periods when folders are created?
+
+Also this conversion hook may raise exceptions in order to indicate a validation, 
+for example if an invalid naming convention is being used:
+
+if entity_type == \"Shot\" and str_value.startswith(\"AA\"):
+   raise TankError(\"Shot names cannot start with AA!\")
+
+\"\"\"" code nil nil [453 969])
+            ("tank" include nil nil [971 992])
+            ("tank" include nil nil [993 1019])
+            ("re" include nil nil [1020 1029])
+            ("ProcessFolderName" type
+               (:superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1079 1083])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [1085 1096])
+                            ("entity_id" variable nil (reparse-symbol function_parameters) [1098 1107])
+                            ("field_name" variable nil (reparse-symbol function_parameters) [1109 1119])
+                            ("value" variable nil (reparse-symbol function_parameters) [1121 1126])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1128 1136]))                          
+                        :documentation "
+        Default implementation. The following parameters are passed:
+        
+        * entity_type: the shotgun entity type for which the value is taken
+        * entity_id: The entity id representing the data
+        * field_name: the shotgun field associated with the value
+        * value: the actual value in some form, as returned by shotgun        
+        
+        Generates a string value given some shotgun value.
+        Doing smart conversions, so that for example
+        a {\"type\":\"Shot\", \"id\":123, \"name\":\"foo\"} ==> \"foo\"
+        
+        ")
+                        (reparse-symbol indented_block_body) [1067 3347])
+                    ("_replace_non_alphanumeric" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3386 3390])
+                            ("src" variable nil (reparse-symbol function_parameters) [3392 3395])
+                            ("is_project_name" variable nil (reparse-symbol function_parameters) [3397 3412]))                          
+                        :documentation "
+        Safely replace all non-alphanumeric characters 
+        with dashes (-).
+        
+        Note, this handles non-ascii characters correctly
+        ")
+                        (reparse-symbol indented_block_body) [3356 4414]))                  
+                :type "class")
+                nil [1031 4414]))          
+      :file "process_folder_name.py"
+      :pointmax 4419
+      :fsize 4418
+      :lastmodtime '(21924 62401 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "engine_init.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Hook that gets executed every time an engine has fully initialized.
+
+\"\"\"" code nil nil [448 524])
+            ("__future__" include nil nil [525 562])
+            ("os" include nil nil [564 573])
+            ("sys" include nil nil [574 584])
+            ("tank" include nil nil [587 608])
+            ("EngineInit" type
+               (:superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [651 655])
+                            ("engine" variable nil (reparse-symbol function_parameters) [657 663])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [665 673]))                          
+                        :documentation "
+        Gets executed when a Toolkit engine has fully initialized.
+        At this point, all applications and frameworks have been loaded,
+        and the engine is fully operational.
+        ")
+                        (reparse-symbol indented_block_body) [639 960])
+                    ("init_tk_maya" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [982 986])
+                            ("engine" variable nil (reparse-symbol function_parameters) [988 994]))                          )
+                        (reparse-symbol indented_block_body) [965 3185]))                  
+                :type "class")
+                nil [610 3185]))          
+      :file "engine_init.py"
+      :pointmax 3185
+      :fsize 3184
+      :lastmodtime '(22224 26477 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!config!core!hooks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

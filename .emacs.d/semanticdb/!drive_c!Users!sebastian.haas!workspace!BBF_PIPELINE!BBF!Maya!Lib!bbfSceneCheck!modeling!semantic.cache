@@ -1,0 +1,287 @@
+;; Object modeling/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "modeling/"
+  :tables
+  (list
+    (semanticdb-table "deleteHistory.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package BBF.Maya.Lib.bbfSceneCheck.modeling.deleteHistory
+@brief delete non deformer history and do smooth on meshes with fur
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 192])
+            ("__future__" include nil nil [193 230])
+            ("__all__" variable nil nil [232 273])
+            ("logging" include nil nil [275 289])
+            ("pymel.core" include nil nil [290 313])
+            ("BBF_environ" include nil nil [315 333])
+            ("BBF_Validation" include nil nil [334 384])
+            ("bbfSceneCheck" include nil nil [385 422])
+            ("log" variable nil nil [424 457])
+            ("bbfEnv" variable nil nil [458 487])
+            ("skipper" variable nil nil [489 539])
+            ("getSkipper" function nil nil [540 577])
+            ("getValidGeometry" function (:arguments 
+              ( ("groupName" variable nil (reparse-symbol function_parameters) [599 608])
+                ("transform" variable nil (reparse-symbol function_parameters) [610 619]))              ) nil [578 978])
+            ("deleteHistory" function nil nil [979 2181]))          
+      :file "deleteHistory.py"
+      :pointmax 2181
+      :fsize 2242
+      :lastmodtime '(21899 55401 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "assignLambert.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("bbfSceneCheck.general.checkAssignedSG" include nil nil [80 135])
+            ("bbfUtil" include nil nil [136 150])
+            ("badattrs" variable nil nil [152 165])
+            ("filterMeshes" function
+               (:documentation "filter out meshes that should NOT get lambert1 assigned"
+                :arguments 
+                  ( ("meshes" variable nil (reparse-symbol function_parameters) [184 190]))                  )
+                nil [167 844])
+            ("check" function nil nil [845 2204])
+            ("fix" function nil nil [2206 2483]))          
+      :file "assignLambert.py"
+      :pointmax 2483
+      :fsize 2552
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [1 15])
+            ("logger" variable nil nil [16 52])
+            ("os" include nil nil [54 63])
+            ("glob" include nil nil [64 75])
+            ("sys" include nil nil [76 86])
+            ("for" code nil nil [88 352]))          
+      :file "__init__.py"
+      :pointmax 352
+      :fsize 363
+      :lastmodtime '(21919 61103 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkBSName.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("logging" include nil nil [25 39])
+            ("log" variable nil nil [40 73])
+            ("bbfException.bbfExceptions" include nil nil [74 128])
+            ("check" function nil nil [130 235]))          
+      :file "checkBSName.py"
+      :pointmax 235
+      :fsize 242
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkEmptyMeshes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("logging" include nil nil [25 39])
+            ("log" variable nil nil [40 73])
+            ("bbfException.bbfExceptions" include nil nil [74 128])
+            ("bbfSceneCheck" include nil nil [129 166])
+            ("skipper" variable nil nil [168 216])
+            ("getSkipper" function nil nil [217 254])
+            ("getEmptyMeshes" function nil nil [255 509])
+            ("check" function nil nil [510 709])
+            ("fix" function nil nil [710 889]))          
+      :file "checkEmptyMeshes.py"
+      :pointmax 889
+      :fsize 919
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkFlippedUVs.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core.datatypes" include nil nil [1 34])
+            ("maya.cmds" include nil nil [35 59])
+            ("pymel.core" include nil nil [60 83])
+            ("logging" include nil nil [84 98])
+            ("log" variable nil nil [99 132])
+            ("pymel.internal.plogging" include nil nil [133 174])
+            ("" code nil nil [182 184])
+            ("getReversedUVs" function (:arguments 
+              ( ("meshes" variable nil (reparse-symbol function_parameters) [204 210]))              ) nil [185 3392])
+            ("check" function nil nil [3393 3631]))          
+      :file "checkFlippedUVs.py"
+      :pointmax 3631
+      :fsize 3707
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkFurTag.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__main__" include nil nil [1 28])
+            ("pymel.core" include nil nil [29 52])
+            ("bbfException.bbfExceptions" include nil nil [53 107])
+            ("check" function (:arguments 
+              ( ("publishType" variable nil (reparse-symbol function_parameters) [119 130]))              ) nil [109 565]))          
+      :file "checkFurTag.py"
+      :pointmax 565
+      :fsize 575
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkRSSubdiv.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfSceneCheck.lighting.rsLightPrepTasks" include nil nil [25 81])
+            ("Lighting.Tagging.Tagger" include nil nil [82 122])
+            ("logging" include nil nil [123 137])
+            ("bbfException.bbfExceptions" include nil nil [138 192])
+            ("BBF_environ" include nil nil [193 211])
+            ("bbfEnv" variable nil nil [212 241])
+            ("log" variable nil nil [242 275])
+            ("find_no_smooth_meshes" function nil nil [277 1638])
+            ("disable_smooth_mesh_preview" function
+               (:documentation "
+    Turn off \"Smooth Mesh Preview\" on any subdiv=0 meshes. This is
+    to ensure the animator does not animate to a smooth mesh, if it
+    is going to render unsmooth. Fortunately both redshift and the 
+    maya viewport use catmull-clark smoothing so there is no discrepancy 
+    between rendered objects and viewport objects
+    first unlock the whole scene in case something that 
+    used to be tagged unsmooth is now tagged as smooth
+    "
+                :arguments 
+                  ( ("no_smooth_meshes" variable nil (reparse-symbol function_parameters) [1671 1687]))                  )
+                nil [1639 2403])
+            ("tag_no_smooth" function nil nil [2404 2698])
+            ("check" function nil nil [2699 3350]))          
+      :file "checkRSSubdiv.py"
+      :pointmax 3350
+      :fsize 3425
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkTriangles.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("logging" include nil nil [25 39])
+            ("log" variable nil nil [40 73])
+            ("bbfException.bbfExceptions" include nil nil [74 128])
+            ("logging" include nil nil [129 143])
+            ("logger" variable nil nil [144 180])
+            ("bbfUtil" include nil nil [181 195])
+            ("bbfSceneCheck" include nil nil [197 234])
+            ("skipper" variable nil nil [236 282])
+            ("getSkipper" function nil nil [283 321])
+            ("run" function (:arguments 
+              ( ("fix" variable nil (reparse-symbol function_parameters) [329 332]))              ) nil [321 2358])
+            ("check" function nil nil [2359 2570]))          
+      :file "checkTriangles.py"
+      :pointmax 2570
+      :fsize 2629
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "geoCleanup.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("logging" include nil nil [80 94])
+            ("logger" variable nil nil [95 131])
+            ("bbfUtil" include nil nil [132 146])
+            ("bbfSceneCheck" include nil nil [148 185])
+            ("skipper" variable nil nil [187 234])
+            ("getSkipper" function nil nil [235 272])
+            ("run" function (:arguments 
+              ( ("fix" variable nil (reparse-symbol function_parameters) [281 284]))              ) nil [273 2393])
+            ("check" function nil nil [2395 2649])
+            ("fix" function nil nil [2651 2680]))          
+      :file "geoCleanup.py"
+      :pointmax 2680
+      :fsize 2747
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "intermediateObjects.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+An intermediate object is an object's shape prior to its deformation. This will remove them
+'''" code nil nil [1 100])
+            ("pymel.core" include nil nil [101 124])
+            ("logging" include nil nil [125 139])
+            ("logger" variable nil nil [140 176])
+            ("getIntermediateObjects" function nil nil [178 446])
+            ("check" function nil nil [447 583])
+            ("fix" variable nil nil [584 595]))          
+      :file "intermediateObjects.py"
+      :pointmax 598
+      :fsize 620
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "oppositeShapes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+Opposite Attribute : Freeze transformations with negative scale will set the
+'opposite' attribute for these nodes and will reverse the normals.
+This script unchecks the opposite attribute and reverses the normals of the objects.
+'''" code nil nil [1 237])
+            ("pymel.core" include nil nil [238 261])
+            ("bbfException.bbfExceptions" include nil nil [262 316])
+            ("logging" include nil nil [317 331])
+            ("logger" variable nil nil [332 368])
+            ("pprint" include nil nil [369 394])
+            ("getOppositeShapes" function nil nil [396 773])
+            ("check" function nil nil [774 922])
+            ("fix" function nil nil [923 1365]))          
+      :file "oppositeShapes.py"
+      :pointmax 1365
+      :fsize 1403
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "overlappingGeo.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("pprint" include nil nil [25 50])
+            ("itertools" include nil nil [51 67])
+            ("bbfConvenience" include nil nil [69 126])
+            ("bbfException.bbfExceptions" include nil nil [127 181])
+            ("bbfSceneCheck" include nil nil [182 219])
+            ("skipper" variable nil nil [221 272])
+            ("getSkipper" function nil nil [273 310])
+            ("pos_mesh_overlap" variable nil nil [311 332])
+            ("getOverlappers" function nil nil [334 2673])
+            ("check" function nil nil [2674 3033])
+            ("fix" function nil nil [3034 3194]))          
+      :file "overlappingGeo.py"
+      :pointmax 3194
+      :fsize 3272
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "standardBlendshapes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+Ticket #782: Blendshape Publish
+Check Environment Variable for Blend shape list and check if file has that list.
+Fail publish if check fails.
+'''" code nil nil [1 150])
+            ("pymel.core" include nil nil [151 174])
+            ("bbfException.bbfExceptions" include nil nil [175 229])
+            ("logging" include nil nil [230 244])
+            ("log" variable nil nil [245 278])
+            ("__main__" include nil nil [279 306])
+            ("ShotgunInterface" include nil nil [307 352])
+            ("shotgun" variable nil nil [353 396])
+            ("shotgun" code nil nil [397 433])
+            ("BBF_Validation" include nil nil [434 484])
+            ("check" function nil nil [486 1735]))          
+      :file "standardBlendshapes.py"
+      :pointmax 1735
+      :fsize 1781
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfSceneCheck!modeling!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

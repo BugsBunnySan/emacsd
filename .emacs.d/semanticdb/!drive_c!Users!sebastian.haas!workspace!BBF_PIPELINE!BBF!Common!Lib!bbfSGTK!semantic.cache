@@ -1,0 +1,127 @@
+;; Object bbfSGTK/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfSGTK/"
+  :tables
+  (list
+    (semanticdb-table "publish.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfSGTK.publish
+    :synopsis: publishing functions
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 143])
+            ("__future__" include nil nil [144 181])
+            ("__all__" variable nil nil [183 213])
+            ("os" include nil nil [215 224])
+            ("sgtk" include nil nil [226 237])
+            ("BBF.Common.Lib.bbfSGTK" include nil nil [239 279])
+            ("BBF.Common.Lib.bbfSGTK.templates" include nil nil [280 340])
+            ("register_publish" function
+               (:documentation " Register a publish, convienience wrapper around sgtk utils' register publish "
+                :arguments 
+                  ( ("tk" variable nil (reparse-symbol function_parameters) [363 365])
+                    ("publish_path" variable nil (reparse-symbol function_parameters) [367 379])
+                    ("sg_task" variable nil (reparse-symbol function_parameters) [381 388])
+                    ("published_file_type" variable nil (reparse-symbol function_parameters) [390 409])
+                    ("context" variable nil (reparse-symbol function_parameters) [432 439])
+                    ("publish_name" variable nil (reparse-symbol function_parameters) [467 479])
+                    ("version" variable nil (reparse-symbol function_parameters) [486 493])
+                    ("comment" variable nil (reparse-symbol function_parameters) [521 528])
+                    ("thumbnail" variable nil (reparse-symbol function_parameters) [533 542])
+                    ("dependency_paths" variable nil (reparse-symbol function_parameters) [570 586]))                  )
+                nil [342 1714]))          
+      :file "publish.py"
+      :pointmax 1714
+      :fsize 1762
+      :lastmodtime '(22220 45542 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "templates.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfSGTK.templates
+   :synopsis: template and paths handling using templates
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 167])
+            ("__future__" include nil nil [168 205])
+            ("__all__" variable nil nil [207 237])
+            ("BBF.Common.Lib.bbfSGTK" include nil nil [239 279])
+            ("fields_from_path" function
+               (:documentation " given a path, tries to match it to a template and returns the fields "
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [302 306]))                  )
+                nil [281 710])
+            ("get_next_file_version" function (:arguments 
+              ( ("path" variable nil (reparse-symbol function_parameters) [769 773])
+                ("version_field" variable nil (reparse-symbol function_parameters) [775 788]))              ) nil [743 1407]))          
+      :file "templates.py"
+      :pointmax 1407
+      :fsize 1454
+      :lastmodtime '(22224 14277 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfSGTK
+   :synopsis: common sgtk function libraries and classes
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 156])
+            ("__future__" include nil nil [157 194])
+            ("__all__" variable nil nil [196 242])
+            ("sgtk" include nil nil [244 255])
+            ("ISGTKEngine" type
+               (:superclasses ("service.Interface")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [352 356]))                  
+                :type "class")
+                nil [310 357])
+            ("SGTKEngineService" type
+               (:documentation " wraps the current active sgtk engine in a service "
+                :superclasses ("service.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [490 520])
+                    ("__getattr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [542 546])
+                            ("name" variable nil (reparse-symbol function_parameters) [548 552]))                          
+                        :documentation " pass on everything to the currently active engine ")
+                        (reparse-symbol indented_block_body) [526 707]))                  
+                :type "class")
+                nil [382 707])
+            ("bbf_context" code nil nil [868 916]))          
+      :file "__init__.py"
+      :pointmax 917
+      :fsize 949
+      :lastmodtime '(22220 14148 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "context.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfSGTK.context
+    :synopsis: handling the shotgun context
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 151])
+            ("__future__" include nil nil [152 189])
+            ("__all__" variable nil nil [191 219])
+            ("sgtk" include nil nil [221 232])
+            ("replace_entity" function (:arguments 
+              ( ("context" variable nil (reparse-symbol function_parameters) [253 260])
+                ("entity_type" variable nil (reparse-symbol function_parameters) [262 273])
+                ("entity_filter" variable nil (reparse-symbol function_parameters) [275 288]))              ) nil [234 462]))          
+      :file "context.py"
+      :pointmax 462
+      :fsize 478
+      :lastmodtime '(22220 14148 0 0)
+      :unmatched-syntax '((NAME 275 . 288) ($EOI 462 . 462)))
+)
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!bbfSGTK!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

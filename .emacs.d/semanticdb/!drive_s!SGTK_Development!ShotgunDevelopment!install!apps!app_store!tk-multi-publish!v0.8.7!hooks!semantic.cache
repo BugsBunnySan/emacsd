@@ -1,0 +1,264 @@
+;; Object hooks/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hooks/"
+  :tables
+  (list
+    (semanticdb-table "post_publish.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [453 462])
+            ("sys" include nil nil [463 473])
+            ("tank" include nil nil [475 486])
+            ("tank" include nil nil [487 508])
+            ("tank" include nil nil [509 535])
+            ("PostPublishHook" type
+               (:documentation "
+    Single hook that implements post-publish functionality
+    "
+                :superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [670 674])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [676 689])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [691 703])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [705 720])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [722 733])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [743 752])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [754 762]))                          
+                        :documentation "
+        Main hook entry point
+        
+        :param work_template:   template
+                                This is the template defined in the config that
+                                represents the current work file
+
+        :param primary_task:    The primary task that was published by the primary publish hook.  Passed
+                                in here for reference.
+
+        :param secondary_tasks: The list of secondary taskd that were published by the secondary 
+                                publish hook.  Passed in here for reference.
+                        
+        :param progress_cb:     Function
+                                A progress callback to log progress during pre-publish.  Call:
+                        
+                                    progress_cb(percentage, msg)
+                             
+                                to report progress to the UI
+
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               None
+        :raises:                Raise a TankError to notify the user of a problem
+        ")
+                        (reparse-symbol indented_block_body) [649 3644])
+                    ("_do_maya_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3683 3687])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [3689 3702])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [3704 3715])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [3717 3726]))                          
+                        :documentation "
+        Do any Maya post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [3657 5147])
+                    ("_do_motionbuilder_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5187 5191])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [5193 5206])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [5208 5219])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [5221 5230]))                          
+                        :documentation "
+        Do any Motion Builder post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [5152 6620])
+                    ("_do_3dsmax_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6653 6657])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [6659 6672])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [6674 6685])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [6687 6696]))                          
+                        :documentation "
+        Do any 3ds Max post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [6625 8093])
+                    ("_do_3dsmaxplus_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8130 8134])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [8136 8149])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [8151 8162])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [8164 8173]))                          
+                        :documentation "
+        Do any 3ds Max post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [8098 9546])
+                    ("_do_hiero_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9586 9590])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [9592 9605])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [9607 9618])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [9620 9629]))                          
+                        :documentation "
+        Do any Hiero post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [9559 11790])
+                    ("_do_nukestudio_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11827 11831])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [11833 11846])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [11848 11859])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [11861 11870]))                          
+                        :documentation "
+        Do any Nuke Studio post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [11795 12546])
+                    ("_do_nuke_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12577 12581])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [12583 12596])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [12598 12609])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [12611 12620]))                          
+                        :documentation "
+        Do any Nuke post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [12551 15303])
+                    ("_do_houdini_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15337 15341])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [15343 15356])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [15358 15369])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [15371 15380]))                          
+                        :documentation "
+        Do any nuke post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [15308 16814])
+                    ("_do_softimage_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16850 16854])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [16856 16869])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [16871 16882])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [16884 16893]))                          
+                        :documentation "
+        Do any Softimage post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [16819 18476])
+                    ("_do_photoshop_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18512 18516])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [18518 18531])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [18533 18544])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [18546 18555]))                          
+                        :documentation "
+        Do any Photoshop post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [18481 20097])
+                    ("_do_mari_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20128 20132])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [20134 20147])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [20149 20160])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [20162 20171]))                          
+                        :documentation "
+        Mari specific post-publish
+        
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [20102 20756])
+                    ("_get_next_work_file_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20793 20797])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [20799 20812])
+                            ("fields" variable nil (reparse-symbol function_parameters) [20814 20820]))                          
+                        :documentation "
+        Find the next available version for the specified work_file
+        ")
+                        (reparse-symbol indented_block_body) [20761 21236]))                  
+                :type "class")
+                nil [537 21236]))          
+      :file "post_publish.py"
+      :pointmax 21259
+      :fsize 21258
+      :lastmodtime '(22220 36439 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!apps!app_store!tk-multi-publish!v0.8.7!hooks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

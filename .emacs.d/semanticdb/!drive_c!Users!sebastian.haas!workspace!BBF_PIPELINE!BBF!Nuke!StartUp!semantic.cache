@@ -1,0 +1,98 @@
+;; Object StartUp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "StartUp/"
+  :tables
+  (list
+    (semanticdb-table "init.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+Set up nuke for BBF
+Only import things in init.py and menu.py that we want in the global namespace
+Other stuff should be imported in bbfInit.py and bbfMenu.py
+'''" code nil nil [1 167])
+            ("nuke" include nil nil [169 180])
+            ("bbfInit" include nil nil [181 195])
+            ("bbfInit" code nil nil [197 223]))          
+      :file "init.py"
+      :pointmax 225
+      :fsize 235
+      :lastmodtime '(21975 18447 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfInit.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 11])
+            ("nuke" include nil nil [13 24])
+            ("bbfEnvironment" include nil nil [26 54])
+            ("BBF_environ" include nil nil [55 73])
+            ("__main__" include nil nil [74 89])
+            ("__main__" variable nil nil [90 129])
+            ("BBF.Nuke.Lib.bbfNukeAppInfo.NukeAppInfo" include nil nil [170 216])
+            ("bbfPath" include nil nil [235 249])
+            ("paths" variable nil nil [250 271])
+            ("REPO" variable nil nil [272 312])
+            ("LOCAL" variable nil nil [313 355])
+            ("NETWORK" variable nil nil [356 402])
+            ("PSD" variable nil nil [403 441])
+            ("RENDERS" variable nil nil [442 488])
+            ("DEV_LOCAL" variable nil nil [489 539])
+            ("DEV_NETWORK" variable nil nil [540 594])
+            ("updatePythonPath" function nil nil [597 630])
+            ("addProjectFavs" function nil nil [631 1499])
+            ("setNukeDefaults" function nil nil [1500 2898])
+            ("addProjectFavs" code nil nil [2899 2915])
+            ("setNukeDefaults" code nil nil [2916 2933]))          
+      :file "bbfInit.py"
+      :pointmax 2934
+      :fsize 3025
+      :lastmodtime '(22076 51580 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfMenu.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+Add BBF and SHOW menus to nuke with some defaults
+'''" code nil nil [1 58])
+            ("nuke" include nil nil [59 70])
+            ("bbfEnvironment" include nil nil [71 99])
+            ("DEFAULT_MENU_ICON" variable nil nil [101 136])
+            ("getNukeMenuBar" function nil nil [138 189])
+            ("getFileMenu" function nil nil [190 275])
+            ("getRenderMenu" function nil nil [276 365])
+            ("getNodeMenu" function nil nil [366 415])
+            ("getBBFMenu" function (:arguments 
+              ( ("nodes" variable nil (reparse-symbol function_parameters) [431 436]))              ) nil [416 577])
+            ("getShowMenu" function nil nil [578 776])
+            ("getMenuItem" function (:arguments 
+              ( ("menuItemPath" variable nil (reparse-symbol function_parameters) [793 805])
+                ("delimiter" variable nil (reparse-symbol function_parameters) [807 816]))              ) nil [777 1163])
+            ("disableMenuItem" function (:arguments 
+              ( ("menuItemPath" variable nil (reparse-symbol function_parameters) [1184 1196]))              ) nil [1164 1292])
+            ("addDefaultMenus" function nil nil [1293 1558]))          
+      :file "bbfMenu.py"
+      :pointmax 1558
+      :fsize 1616
+      :lastmodtime '(21896 15516 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "menu.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+Set up nuke for BBF
+Only import things in init.py and menu.py that we want in the global namespace
+Other stuff should be imported in bbfInit.py and bbfMenu.py
+'''" code nil nil [1 167])
+            ("sys" include nil nil [168 178])
+            ("bbfMenu" include nil nil [179 193])
+            ("bbfMenu" code nil nil [195 220])
+            ("bbfPhotoshop" include nil nil [222 260])
+            ("bbfPsdToCards" code nil nil [261 284]))          
+      :file "menu.py"
+      :pointmax 285
+      :fsize 296
+      :lastmodtime '(21896 15516 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Nuke!StartUp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

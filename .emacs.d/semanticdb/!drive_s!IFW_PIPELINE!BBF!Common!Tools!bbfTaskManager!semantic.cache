@@ -1,0 +1,426 @@
+;; Object bbfTaskManager/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfTaskManager/"
+  :tables
+  (list
+    (semanticdb-table "bbfTaskManager.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [67 76])
+            ("sys" include nil nil [77 87])
+            ("xml.etree.ElementTree" include nil nil [88 122])
+            ("logging" include nil nil [123 137])
+            ("optparse" include nil nil [138 153])
+            ("textwrap" include nil nil [154 169])
+            ("re" include nil nil [170 179])
+            ("bbfPath" include nil nil [180 207])
+            ("try" code nil nil [209 324])
+            ("logger" variable nil nil [325 361])
+            ("PyQt4" include nil nil [362 398])
+            ("bbfException.bbfExceptions" include nil nil [400 453])
+            ("bbfTaskContext" include nil nil [454 475])
+            ("tw" variable nil nil [476 539])
+            ("Task" type
+               (:superclasses ("QtCore.QObject")
+                :members 
+                  ( ("'''
+    A task is an item in the task list. It consists of a string of code
+    and some other strings to describe it (label, language, help etc)
+    A task also belongs to a certain stream (eg animprep or prepfur)
+    '''" code nil (reparse-symbol indented_block_body) [573 795])
+                    ("queryRequirements" variable nil (reparse-symbol indented_block_body) [800 853])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1007 1035])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1044 1062])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1071 1095])
+                            ("if" code nil (reparse-symbol indented_block_body) [1104 1163])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1171 1187])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1196 1210])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1219 1235])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1244 1264])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1273 1295])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1304 1320])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1329 1351])
+                            ("if" code nil (reparse-symbol indented_block_body) [1360 1504])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1512 1534])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1543 1565])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1574 1594])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1603 1621])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1630 1647])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1656 1679])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1803 1822])
+                            ("if" code nil (reparse-symbol indented_block_body) [1831 2275])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2846 2903])
+                            ("if" code nil (reparse-symbol indented_block_body) [2912 2971]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [872 876])
+                            ("label" variable nil (reparse-symbol function_parameters) [878 883])
+                            ("code" variable nil (reparse-symbol function_parameters) [885 889])
+                            ("language" variable nil (reparse-symbol function_parameters) [891 899])
+                            ("fix" variable nil (reparse-symbol function_parameters) [906 909])
+                            ("help" variable nil (reparse-symbol function_parameters) [916 920])
+                            ("requirements" variable nil (reparse-symbol function_parameters) [927 939])
+                            ("disable" variable nil (reparse-symbol function_parameters) [946 953])
+                            ("stream" variable nil (reparse-symbol function_parameters) [960 966])
+                            ("tags" variable nil (reparse-symbol function_parameters) [973 977])
+                            ("skipper" variable nil (reparse-symbol function_parameters) [984 991]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [859 2971])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2989 2993]))                          )
+                        (reparse-symbol indented_block_body) [2976 3084])
+                    ("getInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3101 3105]))                          )
+                        (reparse-symbol indented_block_body) [3089 3595])
+                    ("requirementsSucceeded" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3626 3630]))                          )
+                        (reparse-symbol indented_block_body) [3600 4311])
+                    ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4328 4332])
+                            ("runfix" variable nil (reparse-symbol function_parameters) [4334 4340])
+                            ("force" variable nil (reparse-symbol function_parameters) [4348 4353]))                          )
+                        (reparse-symbol indented_block_body) [4316 7606]))                  
+                :type "class")
+                nil [541 7606])
+            ("TaskModel" type
+               (:superclasses ("QtCore.QAbstractListModel")
+                :members 
+                  ( ("'''
+    QT Model to store and create tasks.
+    Generate tasks for the specified stream
+    by searching in the specified xmlPaths
+    '''" code nil (reparse-symbol indented_block_body) [7656 7794])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [7885 7924])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7933 7948])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7957 7991])
+                            ("self" code nil (reparse-symbol indented_block_body) [8000 8038]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7812 7816])
+                            ("stream_titles" variable nil (reparse-symbol function_parameters) [7818 7831])
+                            ("xmlPaths" variable nil (reparse-symbol function_parameters) [7833 7841])
+                            ("parent" variable nil (reparse-symbol function_parameters) [7843 7849])
+                            ("filterTagList" variable nil (reparse-symbol function_parameters) [7856 7869]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7799 8039])
+                    ("evalAttribute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8062 8066])
+                            ("attr" variable nil (reparse-symbol function_parameters) [8068 8072]))                          )
+                        (reparse-symbol indented_block_body) [8044 8552])
+                    ("parseXML" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8570 8574])
+                            ("stream_titles" variable nil (reparse-symbol function_parameters) [8576 8589])
+                            ("xmlPaths" variable nil (reparse-symbol function_parameters) [8591 8599]))                          )
+                        (reparse-symbol indented_block_body) [8557 12977])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12995 12999]))                          )
+                        (reparse-symbol indented_block_body) [12982 13055])
+                    ("addTask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13072 13076])
+                            ("task" variable nil (reparse-symbol function_parameters) [13078 13082])
+                            ("inplace" variable nil (reparse-symbol function_parameters) [13084 13091])
+                            ("insertBefore" variable nil (reparse-symbol function_parameters) [13099 13111])
+                            ("insertAfter" variable nil (reparse-symbol function_parameters) [13119 13130]))                          )
+                        (reparse-symbol indented_block_body) [13060 15406])
+                    ("insertTask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15426 15430])
+                            ("row" variable nil (reparse-symbol function_parameters) [15432 15435])
+                            ("task" variable nil (reparse-symbol function_parameters) [15437 15441]))                          )
+                        (reparse-symbol indented_block_body) [15411 15628])
+                    ("hasValidTag" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15649 15653])
+                            ("tags" variable nil (reparse-symbol function_parameters) [15655 15659]))                          )
+                        (reparse-symbol indented_block_body) [15633 15965])
+                    ("rowCount" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15982 15986])
+                            ("parent" variable nil (reparse-symbol function_parameters) [15988 15994]))                          )
+                        (reparse-symbol indented_block_body) [15969 16088])
+                    ("data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16102 16106])
+                            ("index" variable nil (reparse-symbol function_parameters) [16108 16113])
+                            ("role" variable nil (reparse-symbol function_parameters) [16115 16119]))                          )
+                        (reparse-symbol indented_block_body) [16093 17830])
+                    ("setData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17847 17851])
+                            ("index" variable nil (reparse-symbol function_parameters) [17853 17858])
+                            ("value" variable nil (reparse-symbol function_parameters) [17860 17865])
+                            ("role" variable nil (reparse-symbol function_parameters) [17867 17871]))                          )
+                        (reparse-symbol indented_block_body) [17835 18216])
+                    ("taskRequirements" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18242 18246])
+                            ("task" variable nil (reparse-symbol function_parameters) [18248 18252]))                          )
+                        (reparse-symbol indented_block_body) [18221 18872]))                  
+                :type "class")
+                nil [7608 18872])
+            ("TaskView" type
+               (:superclasses ("QtGui.QWidget")
+                :members 
+                  ( ("'''
+    A gui that contains a QListView (lvTasks) which attaches to the TaskModel
+    Also contains a 'Run' button and a context menu
+    '''" code nil (reparse-symbol indented_block_body) [18908 19049])
+                    ("__init__" function
+                       (:suite 
+                          ( ("QtGui" code nil (reparse-symbol indented_block_body) [19107 19143])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19152 19237])
+                            ("self" code nil (reparse-symbol indented_block_body) [19246 19277])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19287 19310])
+                            ("self" code nil (reparse-symbol indented_block_body) [19319 19387])
+                            ("self" code nil (reparse-symbol indented_block_body) [19396 19438])
+                            ("self" code nil (reparse-symbol indented_block_body) [19447 19515])
+                            ("self" code nil (reparse-symbol indented_block_body) [19621 19654]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19067 19071])
+                            ("model" variable nil (reparse-symbol function_parameters) [19073 19078])
+                            ("parent" variable nil (reparse-symbol function_parameters) [19085 19091]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [19054 19655])
+                    ("contextMenu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19676 19680])
+                            ("point" variable nil (reparse-symbol function_parameters) [19682 19687]))                          )
+                        (reparse-symbol indented_block_body) [19660 20342])
+                    ("skip" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20356 20360]))                          )
+                        (reparse-symbol indented_block_body) [20347 20648])
+                    ("info" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20662 20666]))                          )
+                        (reparse-symbol indented_block_body) [20653 21842])
+                    ("runSelected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21864 21868])
+                            ("runfix" variable nil (reparse-symbol function_parameters) [21870 21876]))                          )
+                        (reparse-symbol indented_block_body) [21848 22322])
+                    ("runFix" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22338 22342]))                          )
+                        (reparse-symbol indented_block_body) [22327 22383])
+                    ("runAll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22399 22403]))                          )
+                        (reparse-symbol indented_block_body) [22388 23099])
+                    ("showTaskContext" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23124 23128]))                          )
+                        (reparse-symbol indented_block_body) [23104 23314]))                  
+                :type "class")
+                nil [18873 23314])
+            ("bbfTaskManager" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("'''
+    Manage multiple streams by putting them each into different tabs
+    '''" code nil (reparse-symbol indented_block_body) [23360 23440])
+                    ("__init__" function
+                       (:suite 
+                          ( ("QtGui" code nil (reparse-symbol indented_block_body) [23544 23584])
+                            ("self" code nil (reparse-symbol indented_block_body) [23593 23614])
+                            ("self" code nil (reparse-symbol indented_block_body) [23623 23660])
+                            ("self" variable nil (reparse-symbol indented_block_body) [23669 23704])
+                            ("self" variable nil (reparse-symbol indented_block_body) [23713 23732])
+                            ("if" code nil (reparse-symbol indented_block_body) [23742 24522])
+                            ("self" code nil (reparse-symbol indented_block_body) [24531 24568])
+                            ("QtGui" code nil (reparse-symbol indented_block_body) [24622 24683]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23458 23462])
+                            ("streams" variable nil (reparse-symbol function_parameters) [23464 23471])
+                            ("xmlpaths" variable nil (reparse-symbol function_parameters) [23473 23481])
+                            ("mergestreams" variable nil (reparse-symbol function_parameters) [23483 23495])
+                            ("parent" variable nil (reparse-symbol function_parameters) [23502 23508])
+                            ("filterTagList" variable nil (reparse-symbol function_parameters) [23515 23528]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [23445 24684])
+                    ("setIgnoreErrors" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24709 24713])
+                            ("value" variable nil (reparse-symbol function_parameters) [24715 24720]))                          )
+                        (reparse-symbol indented_block_body) [24689 24849])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24862 24866]))                          )
+                        (reparse-symbol indented_block_body) [24854 24990]))                  
+                :type "class")
+                nil [23315 24990])
+            ("parse_args" function nil nil [24991 25591])
+            ("if" code nil nil [25592 25816]))          
+      :file "bbfTaskManager.py"
+      :pointmax 25817
+      :fsize 26448
+      :lastmodtime '(21775 65479 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 8462 . 8533) (NEWLINE 8461 . 8462) (COLON 8460 . 8461) (TRY 8378 . 8381) (AS 8454 . 8456)))
+    (semanticdb-table "bbfTaskContext.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 11])
+            ("logging" include nil nil [12 26])
+            ("log" variable nil nil [27 60])
+            ("PyQt4" include nil nil [61 90])
+            ("os" include nil nil [91 100])
+            ("try" code nil nil [101 243])
+            ("bbfUI" include nil nil [243 266])
+            ("getContextForTask" function (:arguments 
+              ( ("task" variable nil (reparse-symbol function_parameters) [290 294]))              ) nil [268 574])
+            ("path" variable nil nil [575 642])
+            ("form_class, base_class" code nil nil [643 688])
+            ("TaskContext" type
+               (:superclasses ("base_class" "form_class")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [784 846])
+                            ("self" variable nil (reparse-symbol indented_block_body) [856 872])
+                            ("self" variable nil (reparse-symbol indented_block_body) [881 905])
+                            ("self" variable nil (reparse-symbol indented_block_body) [914 954]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [750 754])
+                            ("task" variable nil (reparse-symbol function_parameters) [756 760])
+                            ("parent" variable nil (reparse-symbol function_parameters) [762 768]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [737 955])
+                    ("showEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [974 978])
+                            ("event" variable nil (reparse-symbol function_parameters) [980 985]))                          )
+                        (reparse-symbol indented_block_body) [960 1625])
+                    ("populateWin" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1646 1650]))                          )
+                        (reparse-symbol indented_block_body) [1630 2822])
+                    ("onStoreContext" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2846 2850]))                          )
+                        (reparse-symbol indented_block_body) [2827 3339])
+                    ("update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3355 3359]))                          )
+                        (reparse-symbol indented_block_body) [3344 3925])
+                    ("getContext" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3945 3949]))                          )
+                        (reparse-symbol indented_block_body) [3930 3970])
+                    ("onNodeFilterChanged" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3999 4003])
+                            ("arg" variable nil (reparse-symbol function_parameters) [4005 4008]))                          )
+                        (reparse-symbol indented_block_body) [3975 4189])
+                    ("onDone" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4205 4209]))                          )
+                        (reparse-symbol indented_block_body) [4194 4344]))                  
+                :type "class")
+                nil [690 4344])
+            ("MayaTaskContext" type
+               (:superclasses ("TaskContext")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [4420 4463]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4399 4403])
+                            ("task" variable nil (reparse-symbol function_parameters) [4405 4409]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4386 4464])
+                    ("getContext" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4484 4488]))                          )
+                        (reparse-symbol indented_block_body) [4469 5231])
+                    ("setContext" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5251 5255])
+                            ("ctx" variable nil (reparse-symbol function_parameters) [5257 5260]))                          )
+                        (reparse-symbol indented_block_body) [5236 5668])
+                    ("onAddNode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5687 5691]))                          )
+                        (reparse-symbol indented_block_body) [5673 6031])
+                    ("onRemoveNode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6053 6057]))                          )
+                        (reparse-symbol indented_block_body) [6036 6570])
+                    ("onSelectNode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6592 6596]))                          )
+                        (reparse-symbol indented_block_body) [6575 6738]))                  
+                :type "class")
+                nil [4345 6738])
+            ("NukeTaskContext" type
+               (:superclasses ("TaskContext")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [6813 6856]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6792 6796])
+                            ("task" variable nil (reparse-symbol function_parameters) [6798 6802]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6779 6857]))                  
+                :type "class")
+                nil [6739 6857]))          
+      :file "bbfTaskContext.py"
+      :pointmax 6857
+      :fsize 7045
+      :lastmodtime '(21546 37953 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!IFW_PIPELINE!BBF!Common!Tools!bbfTaskManager!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

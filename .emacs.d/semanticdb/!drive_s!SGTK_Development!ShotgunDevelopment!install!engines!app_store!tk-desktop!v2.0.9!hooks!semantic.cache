@@ -1,0 +1,56 @@
+;; Object hooks/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hooks/"
+  :tables
+  (list
+    (semanticdb-table "launch_python.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Hook to launch the python interpreter for a specific project.
+\"\"\"" code nil nil [448 517])
+            ("os" include nil nil [519 528])
+            ("sys" include nil nil [529 539])
+            ("subprocess" include nil nil [540 557])
+            ("tank" include nil nil [559 570])
+            ("tank" include nil nil [571 592])
+            ("LaunchPython" type
+               (:superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [637 641])
+                            ("project_python" variable nil (reparse-symbol function_parameters) [643 657])
+                            ("pickle_data_path" variable nil (reparse-symbol function_parameters) [659 675])
+                            ("utilities_module_path" variable nil (reparse-symbol function_parameters) [677 698]))                          
+                        :documentation "
+        Launch the python process that will start the project specific tk-desktop
+        engine and communicate back to the gui proxy.
+
+        :param project_python: (str) The path to the python executable to run
+        :param pickle_data_path: (str) The path to the data needed to start the engine
+        :param utilities_module_path: (str) The path to a utilities module can start the engine
+        ")
+                        (reparse-symbol indented_block_body) [625 2129])
+                    ("path_to_bootstrap" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2156 2160]))                          
+                        :documentation "
+        Return the path to the default bootstrap
+
+        See bootstrap.py for an example of how to properly start the desktop engine
+        in the python subprocess.
+        ")
+                        (reparse-symbol indented_block_body) [2134 2534]))                  
+                :type "class")
+                nil [595 2534]))          
+      :file "launch_python.py"
+      :pointmax 2534
+      :fsize 2533
+      :lastmodtime '(22182 16162 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!engines!app_store!tk-desktop!v2.0.9!hooks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

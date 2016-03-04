@@ -1,0 +1,207 @@
+;; Object bbfCallbacks/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfCallbacks/"
+  :tables
+  (list
+    (semanticdb-table "bbfMessage.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+Class to help handle maya's message event system
+    MModelMessage
+    MSceneMessage
+    MDagMessage
+    MDGMessage
+    ...
+
+    - Wraps the callbacks in timing tests with debug info
+    - Keeps all the callbacks under one dict (self.callbacks)
+    - Emit a Qt signal for each event
+
+    >>> g_bbf_messages = bbfMessage()
+    >>> g_bbf_messages.addCallback('afterNew', assignMentalRay)
+    >>> g_bbf_messages.addCallback('afterNew', someProc)
+    >>> print g_bbf_messages.callbacks
+    {
+     'activeListModified': [],
+     'afterCreateReference': [],
+     'afterLoadReference': [],
+     'afterNew': [<function assignMentalRay at 0x0000000024774E48>,
+                  <function someProc at 0x000000003E581BA8>],
+     'afterOpen': [],
+     'afterReference': [],
+     ...
+     }
+'''" code nil nil [1 786])
+            ("inspect" include nil nil [788 802])
+            ("PyQt4" include nil nil [803 827])
+            ("functools" include nil nil [828 857])
+            ("maya.OpenMaya" include nil nil [859 885])
+            ("pymel.core" include nil nil [886 909])
+            ("pymel.internal" include nil nil [911 946])
+            ("logger" variable nil nil [947 984])
+            ("bbfMessage" type
+               (:superclasses ("QtCore.QObject")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("globals" variable nil (reparse-symbol indented_block_body) [1280 1321])
+                            ("QtCore" code nil (reparse-symbol indented_block_body) [1388 1417])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1470 1489])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1498 1519])
+                            ("for" code nil (reparse-symbol indented_block_body) [1622 2164])
+                            ("for" code nil (reparse-symbol indented_block_body) [2173 2944]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1037 1041]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1024 2944])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2962 2966]))                          )
+                        (reparse-symbol indented_block_body) [2949 3104])
+                    ("call" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3141 3145])
+                            ("eventName" variable nil (reparse-symbol function_parameters) [3147 3156])
+                            ("args" variable nil (reparse-symbol function_parameters) [3158 3163])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [3165 3173]))                          )
+                        (reparse-symbol indented_block_body) [3132 3577])
+                    ("addCallback" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3598 3602])
+                            ("eventName" variable nil (reparse-symbol function_parameters) [3604 3613])
+                            ("func" variable nil (reparse-symbol function_parameters) [3615 3619]))                          )
+                        (reparse-symbol indented_block_body) [3582 4065])
+                    ("removeCallback" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4089 4093])
+                            ("eventName" variable nil (reparse-symbol function_parameters) [4095 4104])
+                            ("func" variable nil (reparse-symbol function_parameters) [4106 4110]))                          )
+                        (reparse-symbol indented_block_body) [4070 4821])
+                    ("listCallbacks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4844 4848])
+                            ("event" variable nil (reparse-symbol function_parameters) [4850 4855]))                          )
+                        (reparse-symbol indented_block_body) [4826 5324]))                  
+                :type "class")
+                nil [986 5324]))          
+      :file "bbfMessage.py"
+      :pointmax 5324
+      :fsize 5458
+      :lastmodtime '(21896 15490 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.internal" include nil nil [1 36])
+            ("logger" variable nil nil [37 74]))          
+      :file "__init__.py"
+      :pointmax 105
+      :fsize 106
+      :lastmodtime '(21919 61102 0 0)
+      :unmatched-syntax '((NAME 75 . 81) ($EOI 105 . 105)))
+    (semanticdb-table "bbfFileCallbacks.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__main__" include nil nil [1 16])
+            ("pymel.core" include nil nil [17 40])
+            ("logging" include nil nil [41 55])
+            ("log" variable nil nil [56 89])
+            ("BBF_environ" include nil nil [90 108])
+            ("global" code nil nil [536 563])
+            ("preUnloadRenderLayer" variable nil nil [564 589])
+            ("setDefaultRL" function (:arguments 
+              ( ("args" variable nil (reparse-symbol function_parameters) [607 612]))              ) nil [590 899])
+            ("resetRL" function (:arguments 
+              ( ("args" variable nil (reparse-symbol function_parameters) [1044 1049]))              ) nil [1032 1350])
+            ("setFPS" function nil nil [1432 2051])
+            ("setLinearUnit" function nil nil [2133 2252])
+            ("checkAssetInformation" function nil nil [2253 2581])
+            ("getSettings" function (:arguments 
+              ( ("options" variable nil (reparse-symbol function_parameters) [2680 2687]))              ) nil [2664 3263])
+            ("getFormatIndex" function (:arguments 
+              ( ("fFormat" variable nil (reparse-symbol function_parameters) [3364 3371]))              ) nil [3345 3708])
+            ("mraySettings" function nil nil [3791 4414])
+            ("redshiftSettings" function nil nil [4415 5340])
+            ("projectSettings" function (:arguments 
+              ( ("lowQuality" variable nil (reparse-symbol function_parameters) [5442 5452]))              ) nil [5422 8187])
+            ("turnOffTextures" function (:arguments 
+              ( ("state" variable nil (reparse-symbol function_parameters) [8208 8213]))              ) nil [8188 8507])
+            ("turnOff2SidedLighting" function nil nil [8508 8999])
+            ("importReferences" function nil nil [9000 9559])
+            ("unloadTurtle" function (:documentation "
+    Turtle is a sneaky little plugin that gets enabled somehow and takes a bit
+    of effort to remove. It can cause crashes on publish/export also
+    ") nil [9560 10633])
+            ("toggleSequenceTexture" function
+               (:documentation "
+    Maya 2015 bug evaluates file sequence textures extremely slowly
+    (especially on a network). We need to have them turned off for
+    interactivity but turn them on when rendering.
+    "
+                :arguments 
+                  ( ("state" variable nil (reparse-symbol function_parameters) [10660 10665]))                  )
+                nil [10634 11692])
+            ("toggleSequenceTextureCB" function nil nil [11693 12031])
+            ("_toggleSequenceTextureCB" function nil nil [12032 12739])
+            ("fixProjectedCachedMeshes" function
+               (:documentation "
+    oct eyes have a projection and rigging network that fails when the eyes
+    are geocached. this disables the geocache mesh on the eyes
+    "
+                :arguments 
+                  ( ("force" variable nil (reparse-symbol function_parameters) [12769 12774]))                  )
+                nil [12740 13808])
+            ("pre_render_settings" function nil nil [13809 14456]))          
+      :file "bbfFileCallbacks.py"
+      :pointmax 14459
+      :fsize 14796
+      :lastmodtime '(21896 15490 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 10330 . 10388) (NEWLINE 10329 . 10330) (COLON 10328 . 10329) (TRY 9768 . 9771) (AS 10322 . 10324)))
+    (semanticdb-table "bbfRenderCallbacks.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.internal" include nil nil [1 36])
+            ("" code nil nil [53 55])
+            ("preRender" function nil nil [56 82])
+            ("" code nil nil [98 100])
+            ("postRender" function nil nil [101 128])
+            ("" code nil nil [144 146])
+            ("preRenderLayer" function nil nil [147 178])
+            ("" code nil nil [194 196])
+            ("postRenderLayer" function nil nil [197 229])
+            ("" code nil nil [245 247])
+            ("preRenderFrame" function nil nil [248 279])
+            ("" code nil nil [295 297])
+            ("postRenderFrame" function nil nil [298 330]))          
+      :file "bbfRenderCallbacks.py"
+      :pointmax 330
+      :fsize 354
+      :lastmodtime '(21896 15490 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfUserEvent.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.OpenMaya" include nil nil [1 27])
+            ("myCallback" function (:arguments 
+              ( ("clientData" variable nil (reparse-symbol function_parameters) [44 54]))              ) nil [29 87])
+            ("yourCallback" function (:arguments 
+              ( ("clientData" variable nil (reparse-symbol function_parameters) [105 115]))              ) nil [88 150])
+            ("om" code nil nil [544 613])
+            ("om" code nil nil [642 701])
+            ("om" code nil nil [751 820])
+            ("examples" function nil nil [151 821]))          
+      :file "bbfUserEvent.py"
+      :pointmax 821
+      :fsize 844
+      :lastmodtime '(21923 35441 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfCallbacks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

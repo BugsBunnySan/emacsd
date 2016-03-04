@@ -1,0 +1,1237 @@
+;; Object bbf_base/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbf_base/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbf_base
+    :synopsis: basic functions across all the pipeline
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 155])
+            ("sys" include nil nil [157 167])
+            ("BBF.Common.Lib.bbfContext" include nil nil [169 215])
+            ("context" variable nil nil [217 259])
+            ("context" variable nil nil [260 294])
+            ("services" include nil nil [296 311])
+            ("bbf_context" code nil nil [375 486]))          
+      :file "__init__.py"
+      :pointmax 487
+      :fsize 505
+      :lastmodtime '(22182 5408 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "services.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbf_base.services
+   :synopsis: os specific utils
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 141])
+            ("__future__" include nil nil [142 179])
+            ("os" include nil nil [304 313])
+            ("re" include nil nil [314 323])
+            ("sys" include nil nil [324 334])
+            ("subprocess" include nil nil [335 352])
+            ("abc" include nil nil [353 363])
+            ("BBF.Common.Lib.bbfContext" include nil nil [365 411])
+            ("IPathBrowser" type
+               (:documentation " PathBrowser and Handler Interface "
+                :superclasses ("bbfContext.service.Interface")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [513 539])
+                    ("native_path" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [585 589])
+                            ("path" variable nil (reparse-symbol function_parameters) [591 595])
+                            ("native" variable nil (reparse-symbol function_parameters) [597 603]))                          
+                        :documentation " handle native slashes and stuff ")
+                        (reparse-symbol indented_block_body) [545 674])
+                    ("sanitize_path" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [721 725])
+                            ("path" variable nil (reparse-symbol function_parameters) [727 731])
+                            ("native" variable nil (reparse-symbol function_parameters) [733 739]))                          
+                        :documentation " return an absolute path with any '//', '..' and such resolved ")
+                        (reparse-symbol indented_block_body) [679 840])
+                    ("open" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [878 882])
+                            ("path" variable nil (reparse-symbol function_parameters) [884 888]))                          
+                        :documentation " use the operating systems default file browser to open a path ")
+                        (reparse-symbol indented_block_body) [845 982]))                  
+                :type "class")
+                nil [413 982])
+            ("PathBrowserService" type
+               (:documentation " Generic PathBrowser and Handler Service, specialized in OS specific services "
+                :superclasses ("bbfContext.service.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [1153 1184])
+                    ("_pathsep" variable nil (reparse-symbol indented_block_body) [1189 1203])
+                    ("native_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1258 1262])
+                            ("path" variable nil (reparse-symbol function_parameters) [1264 1268])
+                            ("native" variable nil (reparse-symbol function_parameters) [1270 1276]))                          
+                        :documentation " handle native slashes and stuff
+
+        Args:
+            path: a path string to nativitize
+            native: either 'keep', 'from', 'to', convert path to/from native paths
+
+        Returns:
+            str: a path converted to/from native path
+        ")
+                        (reparse-symbol indented_block_body) [1242 1757])
+                    ("sanitize_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1781 1785])
+                            ("path" variable nil (reparse-symbol function_parameters) [1787 1791])
+                            ("native" variable nil (reparse-symbol function_parameters) [1793 1799]))                          
+                        :documentation " return an absolute, cleaned up path, potentially converted to/from native path
+
+        Args:
+            path: a path string to sanitize
+            native: either 'keep', 'from', 'to', convert path to/from native paths
+
+        Returns:
+            string: a cleaned up path
+        ")
+                        (reparse-symbol indented_block_body) [1763 2260])
+                    ("open" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2274 2278])
+                            ("path" variable nil (reparse-symbol function_parameters) [2280 2284]))                          
+                        :documentation " use the operating systems default file browser to open a path
+
+        Args:
+            path: a path to open
+        ")
+                        (reparse-symbol indented_block_body) [2265 2580]))                  
+                :type "class")
+                nil [1006 2580])
+            ("LinuxPathBrowser" type
+               (:documentation " Linux version of the PathBrowserService "
+                :superclasses ("PathBrowserService")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [2681 2706])
+                    ("__init__" function
+                       (:suite 
+                          ( ("PathBrowserService" code nil (reparse-symbol indented_block_body) [2730 2763])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2773 2849]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2725 2729]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2712 2860]))                  
+                :type "class")
+                nil [2581 2860])
+            ("WindowsPathBrowser" type
+               (:documentation " Windows version of the PathBrowserService "
+                :superclasses ("PathBrowserService")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [2995 3019])
+                    ("__init__" function
+                       (:suite 
+                          ( ("PathBrowserService" code nil (reparse-symbol indented_block_body) [3043 3076])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3086 3160])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3170 3252]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3038 3042]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3025 3263])
+                    ("sanitize_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3286 3290])
+                            ("path" variable nil (reparse-symbol function_parameters) [3292 3296])
+                            ("native" variable nil (reparse-symbol function_parameters) [3298 3304]))                          )
+                        (reparse-symbol indented_block_body) [3268 3553]))                  
+                :type "class")
+                nil [2891 3553])
+            ("MacosxPathBrowser" type
+               (:documentation " MacOSX version of the PathBrowserService "
+                :superclasses ("PathBrowserService")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [3688 3713])
+                    ("__init__" function
+                       (:suite 
+                          ( ("PathBrowserService" code nil (reparse-symbol indented_block_body) [3737 3770])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3780 3851]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3732 3736]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3719 3862]))                  
+                :type "class")
+                nil [3586 3862]))          
+      :file "services.py"
+      :pointmax 3893
+      :fsize 4028
+      :lastmodtime '(22182 5856 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "qtwidgets.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbf_base.qtwidgets
+   :synopsis: custom widgets
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 139])
+            ("__future__" include nil nil [140 177])
+            ("__all__" variable nil nil [179 392])
+            ("os" include nil nil [394 403])
+            ("logging" include nil nil [404 418])
+            ("functools" include nil nil [419 435])
+            ("reload" code nil nil [437 452])
+            ("PySide" include nil nil [454 485])
+            ("WithQWaitCursor" type
+               (:documentation " Decorator that makes a Qt WaitCursor display while running a function
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            func: a python callable
+        \"\"\"" code nil (reparse-symbol indented_block_body) [643 708])
+                            ("self" variable nil (reparse-symbol indented_block_body) [717 734]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [622 626])
+                            ("func" variable nil (reparse-symbol function_parameters) [628 632]))                          
+                        :documentation "
+        Args:
+            func: a python callable
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [609 735])
+                    ("__get__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [752 756])
+                            ("obj" variable nil (reparse-symbol function_parameters) [758 761])
+                            ("objtype" variable nil (reparse-symbol function_parameters) [763 770]))                          
+                        :documentation " Support instance methods ")
+                        (reparse-symbol indented_block_body) [740 867])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [885 889])
+                            ("args" variable nil (reparse-symbol function_parameters) [891 896])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [898 906]))                          
+                        :documentation " calls our func wrapped in a Qt wait cursors ")
+                        (reparse-symbol indented_block_body) [872 1169]))                  
+                :type "class")
+                nil [487 1169])
+            ("BlockedSignals" type
+               (:documentation " Context Manager that blocks signals for the given widgets while running a function
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            widgets: a widget or list of widgets
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1368 1446])
+                            ("if" code nil (reparse-symbol indented_block_body) [1455 1577]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1344 1348])
+                            ("widgets" variable nil (reparse-symbol function_parameters) [1350 1357]))                          
+                        :documentation "
+        Args:
+            widgets: a widget or list of widgets
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1331 1577])
+                    ("__enter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1596 1600]))                          
+                        :documentation " block signals ")
+                        (reparse-symbol indented_block_body) [1582 1708])
+                    ("__exit__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1726 1730])
+                            ("exc_type" variable nil (reparse-symbol function_parameters) [1732 1740])
+                            ("exc" variable nil (reparse-symbol function_parameters) [1742 1745])
+                            ("exc_tb" variable nil (reparse-symbol function_parameters) [1747 1753]))                          
+                        :documentation " unblock signals ")
+                        (reparse-symbol indented_block_body) [1713 1864]))                  
+                :type "class")
+                nil [1198 1864])
+            ("set_combo_text" function
+               (:documentation " set a combo box to a given text, if it is found in the combo box
+
+    Args:
+        cb: a QComboBox
+        text: the text to search for in the combo box and to set the current index too
+    "
+                :arguments 
+                  ( ("cb" variable nil (reparse-symbol function_parameters) [1916 1918])
+                    ("text" variable nil (reparse-symbol function_parameters) [1920 1924]))                  )
+                nil [1897 2283])
+            ("remove_selected_from_view" function
+               (:parent "dummy"
+                :arguments 
+                  ( ("self" variable nil (reparse-symbol function_parameters) [2314 2318])
+                    ("model" variable nil (reparse-symbol function_parameters) [2320 2325])
+                    ("view" variable nil (reparse-symbol function_parameters) [2327 2331]))                  
+                :documentation " remove all items from a model that are selected in a corresponding view
+
+    Args:
+        model: subclass of a QAbstractItemModel
+        view: view fitting model
+    ")
+                nil [2284 2677])
+            ("process_pending_events" function (:documentation " processes all pending qt events, useful from inside longer running
+    processes that want to give user feedback
+    ") nil [2678 2930])
+            ("get_all_treemodel_data" function
+               (:documentation " get all the data (for a specific role) from a treemodel
+
+    Args:
+        model: a standarditem model (or similar)
+        columns: list of columns to get (defaults to empty list meaning all available columns)
+        role: the data role to query for (defaults to DisplayRole)
+        parent: the parent index to start from (defaults to root of model)
+
+    Returns:
+        list: a list of tuples containing the data of each row of the model
+    "
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [2958 2963])
+                    ("columns" variable nil (reparse-symbol function_parameters) [2965 2972])
+                    ("role" variable nil (reparse-symbol function_parameters) [2977 2981])
+                    ("parent" variable nil (reparse-symbol function_parameters) [3005 3011]))                  )
+                nil [2931 4101])
+            ("CSSQComboBox" type
+               (:documentation " QCombobox that reacts to certain dynamic property changes with a style update "
+                :superclasses ("QtGui.QComboBox")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        \"\"\"" code nil (reparse-symbol indented_block_body) [4297 4481])
+                            ("super" code nil (reparse-symbol indented_block_body) [4490 4539])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4549 4590]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4246 4250])
+                            ("dynamic_property" variable nil (reparse-symbol function_parameters) [4252 4268])
+                            ("parent" variable nil (reparse-symbol function_parameters) [4275 4281]))                          
+                        :documentation "
+        Args:
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4233 4591])
+                    ("event" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4606 4610])
+                            ("qevent" variable nil (reparse-symbol function_parameters) [4612 4618]))                          )
+                        (reparse-symbol indented_block_body) [4596 4965]))                  
+                :type "class")
+                nil [4102 4965])
+            ("CSSQLabel" type
+               (:documentation " QLabel that reacts to certain dynamic property changes with a style update "
+                :superclasses ("QtGui.QLabel")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            label_text: optional text to use as the QLabel's text
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        \"\"\"" code nil (reparse-symbol indented_block_body) [5194 5444])
+                            ("if" code nil (reparse-symbol indented_block_body) [5453 5624])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5633 5674]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5126 5130])
+                            ("label_text" variable nil (reparse-symbol function_parameters) [5132 5142])
+                            ("dynamic_property" variable nil (reparse-symbol function_parameters) [5149 5165])
+                            ("parent" variable nil (reparse-symbol function_parameters) [5172 5178]))                          
+                        :documentation "
+        Args:
+            label_text: optional text to use as the QLabel's text
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5113 5675])
+                    ("event" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5690 5694])
+                            ("qevent" variable nil (reparse-symbol function_parameters) [5696 5702]))                          )
+                        (reparse-symbol indented_block_body) [5680 6046]))                  
+                :type "class")
+                nil [4991 6046])
+            ("CSSQCheckBox" type
+               (:documentation " QCheckBox that reacts to certain dynamic property changes with a style update "
+                :superclasses ("QtGui.QCheckBox")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            button_text: optional text to use as the QCheckBox label
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        \"\"\"" code nil (reparse-symbol indented_block_body) [6282 6535])
+                            ("if" code nil (reparse-symbol indented_block_body) [6544 6723])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6732 6773]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6213 6217])
+                            ("button_text" variable nil (reparse-symbol function_parameters) [6219 6230])
+                            ("dynamic_property" variable nil (reparse-symbol function_parameters) [6237 6253])
+                            ("parent" variable nil (reparse-symbol function_parameters) [6260 6266]))                          
+                        :documentation "
+        Args:
+            button_text: optional text to use as the QCheckBox label
+            dynamic_property: css for this widget will change based on the state of a dynamic property with this name
+            parent: Qt parent widget
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6200 6774])
+                    ("event" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6789 6793])
+                            ("qevent" variable nil (reparse-symbol function_parameters) [6795 6801]))                          )
+                        (reparse-symbol indented_block_body) [6779 7148]))                  
+                :type "class")
+                nil [6069 7148])
+            ("LOG_WINDOW_UI" variable nil nil [7223 7319])
+            ("LOG_WINDOW_RCC" variable nil nil [7320 7416])
+            ("DebugHandler" type
+               (:documentation " testing handler can be used to debug logging formatters "
+                :superclasses ("logging.Handler")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            level: a logging module logging level
+        \"\"\"" code nil (reparse-symbol indented_block_body) [7577 7656])
+                            ("logging" code nil (reparse-symbol indented_block_body) [7665 7708]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7540 7544])
+                            ("level" variable nil (reparse-symbol function_parameters) [7546 7551]))                          
+                        :documentation "
+        Args:
+            level: a logging module logging level
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7527 7709])
+                    ("emit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7723 7727])
+                            ("record" variable nil (reparse-symbol function_parameters) [7729 7735]))                          
+                        :documentation " print the messsage made by our formatting setup
+
+        Args:
+            record: a logging record to output
+        ")
+                        (reparse-symbol indented_block_body) [7714 7964]))                  
+                :type "class")
+                nil [7418 7964])
+            ("HTMLLoggingFormatter" type
+               (:documentation " a logging Formatter outputting html/css formatted records "
+                :superclasses ("logging.Formatter")
+                :members 
+                  ( ("LEVEL_FORMATS" variable nil (reparse-symbol indented_block_body) [8086 8570])
+                    ("DEFAULT_FORMAT" variable nil (reparse-symbol indented_block_body) [8576 8620])
+                    ("format" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8636 8640])
+                            ("record" variable nil (reparse-symbol function_parameters) [8642 8648]))                          
+                        :documentation " format record based on our css formats and the record's level
+
+        Args:
+            record: a logging record to format
+
+        Returns:
+            text/html: a string containing the css styled msg of the `record`
+        ")
+                        (reparse-symbol indented_block_body) [8625 9154]))                  
+                :type "class")
+                nil [7965 9154])
+            ("QLoggingHandler" type
+               (:documentation "a custom logging handler outputing to a qt text edit
+    "
+                :superclasses ("logging.Handler")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            text_edit: a QTextEdit that will have our logging appended to it
+            level: a logging module logging level
+        \"\"\"" code nil (reparse-symbol indented_block_body) [9363 9519])
+                            ("logging" code nil (reparse-symbol indented_block_body) [9528 9571])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9581 9608]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9315 9319])
+                            ("text_edit" variable nil (reparse-symbol function_parameters) [9321 9330])
+                            ("level" variable nil (reparse-symbol function_parameters) [9332 9337]))                          
+                        :documentation "
+        Args:
+            text_edit: a QTextEdit that will have our logging appended to it
+            level: a logging module logging level
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [9302 9609])
+                    ("emit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9623 9627])
+                            ("record" variable nil (reparse-symbol function_parameters) [9629 9635]))                          
+                        :documentation " emit record to our text_edit widget
+
+        Args:
+            record: a logging record to format and output to our text_edit widget
+        ")
+                        (reparse-symbol indented_block_body) [9614 9973]))                  
+                :type "class")
+                nil [9189 9973]))          
+      :file "qtwidgets.py"
+      :pointmax 10002
+      :fsize 10293
+      :lastmodtime '(22182 5408 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "datastructs.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbf_base.datastructs
+   :synopsis: data structures
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 142])
+            ("__future__" include nil nil [143 180])
+            ("logging" include nil nil [230 244])
+            ("logger" variable nil nil [245 298])
+            ("CMP_EQUAL" variable nil nil [300 313])
+            ("FilteredList" type
+               (:documentation " call-able list, adds elements to itself when called "
+                :superclasses ("list")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            args: passed directly to list() initializer
+            kwargs: if it contains 'filter' that will be used as our node filter function
+        \"\"\"" code nil (reparse-symbol indented_block_body) [518 693])
+                            ("super" code nil (reparse-symbol indented_block_body) [702 743])
+                            ("self" variable nil (reparse-symbol indented_block_body) [753 794]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [486 490])
+                            ("args" variable nil (reparse-symbol function_parameters) [492 497])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [499 507]))                          
+                        :documentation "
+        Args:
+            args: passed directly to list() initializer
+            kwargs: if it contains 'filter' that will be used as our node filter function
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [473 795])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [813 817])
+                            ("element" variable nil (reparse-symbol function_parameters) [819 826]))                          )
+                        (reparse-symbol indented_block_body) [800 920]))                  
+                :type "class")
+                nil [379 920])
+            ("DoubleLinkedListNode" type
+               (:documentation " Node in a double linked list, manages its links and data "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            prev_node: previous node in  the list
+            next_node: next node in the list
+            data: the data stored in this node
+        \"\"\"" code nil (reparse-symbol indented_block_body) [543 714])
+                            ("self" variable nil (reparse-symbol indented_block_body) [723 750])
+                            ("self" variable nil (reparse-symbol indented_block_body) [759 786])
+                            ("self" variable nil (reparse-symbol indented_block_body) [795 812]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1069 1073])
+                            ("prev_node" variable nil (reparse-symbol function_parameters) [1075 1084])
+                            ("next_node" variable nil (reparse-symbol function_parameters) [1091 1100])
+                            ("data" variable nil (reparse-symbol function_parameters) [1107 1111]))                          
+                        :documentation "
+        Args:
+            prev_node: previous node in  the list
+            next_node: next node in the list
+            data: the data stored in this node
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1056 1397])
+                    ("prev_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1430 1434]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1402 1468])
+                    ("next_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1501 1505]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1473 1539])
+                    ("data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1567 1571]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1544 1600])
+                    ("prepend" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1617 1621])
+                            ("data" variable nil (reparse-symbol function_parameters) [1623 1627]))                          
+                        :documentation " Prepend a node containing data before us, update linkage
+
+        Args:
+            data: data to store in the new node
+
+        Returns:
+            DoubleLinkedListNode: newly created node inserted before us
+        ")
+                        (reparse-symbol indented_block_body) [1605 2108])
+                    ("append" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2124 2128])
+                            ("data" variable nil (reparse-symbol function_parameters) [2130 2134]))                          
+                        :documentation " Append a node containing data before us, update linkage
+
+        Args:
+            data: data to store in the new node
+
+        Returns:
+            DoubleLinkedListNode: newly created node inserted after us
+        ")
+                        (reparse-symbol indented_block_body) [2113 2614])
+                    ("unlink" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2630 2634]))                          
+                        :documentation " Remove ourselves from the list linkage ")
+                        (reparse-symbol indented_block_body) [2619 2887])
+                    ("replace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2904 2908])
+                            ("data" variable nil (reparse-symbol function_parameters) [2910 2914]))                          
+                        :documentation " Replace our data
+
+        Args:
+            data: the data to replace our data with
+        ")
+                        (reparse-symbol indented_block_body) [2892 3051]))                  
+                :type "class")
+                nil [947 3051])
+            ("DoubleLinkedList" type
+               (:documentation " Double Linked List with data stored in the nodes, supports iteration and list modification "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2574 2591])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2600 2617])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2626 2650]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3204 3208])
+                            ("compare_func" variable nil (reparse-symbol function_parameters) [3210 3222]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3191 3314])
+                    ("head" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3342 3346]))                          
+                        :documentation "
+        Returns:
+            data: the data stored in the head of the list
+
+        Raises:
+            IndexError: if the list is empty
+        ")
+                        (reparse-symbol indented_block_body) [3319 3619])
+                    ("tail" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3647 3651]))                          
+                        :documentation "
+        Returns:
+            data: the data sored in the tail of the list
+
+        Raises:
+            IndexError: if the list is empty
+        ")
+                        (reparse-symbol indented_block_body) [3624 3923])
+                    ("_iter_nodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3944 3948]))                          
+                        :documentation " Iterates through the nodes and yields the nodes ")
+                        (reparse-symbol indented_block_body) [3928 4145])
+                    ("find_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4164 4168])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [4170 4180]))                          
+                        :documentation " search for a node with the search_key contained
+
+        Args:
+            search_key: the data to search for
+
+        Returns:
+            node: the node matching search_key
+
+        Raises:
+            IndexError: if the search_key isn't in the list
+        ")
+                        (reparse-symbol indented_block_body) [4150 4679])
+                    ("find_node_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4702 4706])
+                            ("idx" variable nil (reparse-symbol function_parameters) [4708 4711]))                          )
+                        (reparse-symbol indented_block_body) [4684 4905])
+                    ("find_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4923 4927])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [4929 4939]))                          
+                        :documentation " search for the index of a node by key
+
+        Args:
+            search_key: identifies the node to search for
+
+        Returns:
+            int: index of the node matching search_key
+
+        Raises
+            IndexError: if the search_key isn't in the list
+        ")
+                        (reparse-symbol indented_block_body) [4910 5481])
+                    ("find" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5496 5500])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [5502 5512]))                          
+                        :documentation " search for data stored at search_key (self._cmp(data, search_key) should return 0
+
+        Args:
+            search_key: look for a node that is identified by search_key
+
+        Returns:
+            data: data stored in a node that compares equal to search_key using self._cmp
+        ")
+                        (reparse-symbol indented_block_body) [5487 5997])
+                    ("_slice" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6013 6017])
+                            ("start" variable nil (reparse-symbol function_parameters) [6019 6024])
+                            ("stop" variable nil (reparse-symbol function_parameters) [6026 6030])
+                            ("step" variable nil (reparse-symbol function_parameters) [6032 6036]))                          
+                        :documentation " return a new list containing sliced elements
+
+        Args:
+            start: first contained element
+            stop: first non contained element
+            step: skip ahead this many elements between elements
+
+        Returns:
+            DoubleLinkedList: a double linked list containing the spliced elements
+
+        Raises:
+            IndexError: if the start/stop args are out of bound
+        ")
+                        (reparse-symbol indented_block_body) [6002 7058])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7079 7083])
+                            ("idx" variable nil (reparse-symbol function_parameters) [7085 7088]))                          
+                        :documentation " support indexing and slicing
+
+        Args:
+            idx: either numerical index or slice object
+
+        Returns:
+            data/DoubleLinkedList: data if idx is numerical, new list if idx is a slice object
+
+        Raises:
+            IndexError: if idx is out of bounds
+        ")
+                        (reparse-symbol indented_block_body) [7063 7757])
+                    ("__iter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7775 7779]))                          
+                        :documentation " iterate through the list, yielding node data ")
+                        (reparse-symbol indented_block_body) [7762 7978])
+                    ("__reversed__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8000 8004]))                          
+                        :documentation " reverse iterate through the list, yielding node data ")
+                        (reparse-symbol indented_block_body) [7983 8211])
+                    ("__len__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8228 8232]))                          
+                        :documentation "
+        Returns:
+            int: number of nodes in the list
+        ")
+                        (reparse-symbol indented_block_body) [8216 8411])
+                    ("_unlink" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8428 8432])
+                            ("node" variable nil (reparse-symbol function_parameters) [8434 8438]))                          
+                        :documentation " unlinks a node from the list, updating head/tail pointers ")
+                        (reparse-symbol indented_block_body) [8416 8679])
+                    ("prepend" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8696 8700])
+                            ("data" variable nil (reparse-symbol function_parameters) [8702 8706]))                          
+                        :documentation " Prepend a node with data to the list, updates head pointer
+
+        Args:
+            data: the data to store in the new head of the list
+        ")
+                        (reparse-symbol indented_block_body) [8684 9037])
+                    ("insert" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9053 9057])
+                            ("index" variable nil (reparse-symbol function_parameters) [9059 9064])
+                            ("data" variable nil (reparse-symbol function_parameters) [9066 9070]))                          
+                        :documentation " Insert a node at a given index
+
+        Args:
+            index: The index at which the new data is inserted
+            data: The data to insert at the index
+
+        Raises:
+            IndexError: if the index to insert at doesn't exists
+        ")
+                        (reparse-symbol indented_block_body) [9042 9478])
+                    ("append" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9494 9498])
+                            ("data" variable nil (reparse-symbol function_parameters) [9500 9504]))                          
+                        :documentation " Append a node with data to the list, updates head pointer
+
+        Args:
+            data: the data to store in the new tail of the list
+        ")
+                        (reparse-symbol indented_block_body) [9483 9832])
+                    ("remove" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9848 9852])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [9854 9864]))                          
+                        :documentation " Remove a node containing data from the list
+
+        Args:
+            search_key: node with this data will be removed
+
+        Raises:
+            IndexError: if noe node with `data` as data can be found
+        ")
+                        (reparse-symbol indented_block_body) [9837 10293])
+                    ("insert_before" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10316 10320])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [10322 10332])
+                            ("data" variable nil (reparse-symbol function_parameters) [10334 10338]))                          
+                        :documentation " Insert a new node containing data before an existing node
+
+        Args:
+            search_key: insert before a node containing this data
+            data: the data to insert
+
+        Raises:
+            IndexError: if the search_key is not found
+        ")
+                        (reparse-symbol indented_block_body) [10298 10872])
+                    ("insert_after" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10894 10898])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [10900 10910])
+                            ("data" variable nil (reparse-symbol function_parameters) [10912 10916]))                          
+                        :documentation " Insert a new node containing data after an existing node
+
+        Args:
+            search_key: insert after a node containing this data
+            data: the data to insert
+
+        Raises:
+            IndexError: if the search_key is not found
+        ")
+                        (reparse-symbol indented_block_body) [10877 11447])
+                    ("replace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11464 11468])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [11470 11480])
+                            ("data" variable nil (reparse-symbol function_parameters) [11482 11486]))                          
+                        :documentation " Replace data stored in a node
+
+        Args:
+            search_key: replace the data stored in a node containing this data
+            data: the data to replace existing data with
+
+        Raises:
+            IndexError: if the search_key is not found
+        ")
+                        (reparse-symbol indented_block_body) [11452 12048])
+                    ("remove_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12068 12072])
+                            ("idx" variable nil (reparse-symbol function_parameters) [12074 12077]))                          
+                        :documentation " Remove a node at the specified index
+
+        Args:
+            idx: integer index into the list (doesn't support -1, and such)
+
+        Raises:
+            IndexError: if idx is outside the list
+        ")
+                        (reparse-symbol indented_block_body) [12053 12376])
+                    ("insert_before_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12403 12407])
+                            ("idx" variable nil (reparse-symbol function_parameters) [12409 12412])
+                            ("data" variable nil (reparse-symbol function_parameters) [12414 12418]))                          
+                        :documentation " Insert a node with data before the specified index
+
+        Args:
+            idx: where to insert the data
+            data: this data is stored at the index
+
+        Raises:
+            IndexError: if idx is outside the list
+        ")
+                        (reparse-symbol indented_block_body) [12381 12812])
+                    ("insert_after_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12838 12842])
+                            ("idx" variable nil (reparse-symbol function_parameters) [12844 12847])
+                            ("data" variable nil (reparse-symbol function_parameters) [12849 12853]))                          
+                        :documentation " Insert a node with data after the specified index
+
+        Args:
+            idx: where to insert the data
+            data: this data is stored at the index
+
+        Raises:
+            IndexError: if idx is outside the list
+        ")
+                        (reparse-symbol indented_block_body) [12817 13322])
+                    ("replace_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13343 13347])
+                            ("idx" variable nil (reparse-symbol function_parameters) [13349 13352])
+                            ("data" variable nil (reparse-symbol function_parameters) [13354 13358]))                          
+                        :documentation "  Replace data stored in a node
+
+        Args:
+            idx: idx of the node whose data is to be replaced
+            data: the data to replace existing data with
+
+        Raises:
+            IndexError: if idx is outside the list
+        ")
+                        (reparse-symbol indented_block_body) [13327 13685]))                  
+                :type "class")
+                nil [3052 13685]))          
+      :file "datastructs.py"
+      :pointmax 13685
+      :fsize 14149
+      :lastmodtime '(22102 1438 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "decorators.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbf_base.decorators
+   :synopsis: useful decorators
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 143])
+            ("__future__" include nil nil [144 181])
+            ("__all__" variable nil nil [183 202])
+            ("Debug" type
+               (:documentation " Debug calling a function
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            func: a python callable
+        \"\"\"" code nil (reparse-symbol indented_block_body) [305 370])
+                            ("self" variable nil (reparse-symbol indented_block_body) [379 396]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [284 288])
+                            ("func" variable nil (reparse-symbol function_parameters) [290 294]))                          
+                        :documentation "
+        Args:
+            func: a python callable
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [271 397])
+                    ("__get__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [414 418])
+                            ("obj" variable nil (reparse-symbol function_parameters) [420 423])
+                            ("objtype" variable nil (reparse-symbol function_parameters) [425 432]))                          
+                        :documentation " Support instance methods ")
+                        (reparse-symbol indented_block_body) [402 554])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [572 576])
+                            ("args" variable nil (reparse-symbol function_parameters) [578 583])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [585 593]))                          
+                        :documentation " call our function with the arguments, while printing that we're doing so ")
+                        (reparse-symbol indented_block_body) [559 1094]))                  
+                :type "class")
+                nil [204 1094]))          
+      :file "decorators.py"
+      :pointmax 1113
+      :fsize 1153
+      :lastmodtime '(22212 45216 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "graphs.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbf_base.graphs
+   :synopsis: Graph related stuff
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 141])
+            ("__future__" include nil nil [142 179])
+            ("__all__" variable nil nil [181 208])
+            ("logging" include nil nil [210 224])
+            ("logger" variable nil nil [225 278])
+            ("TreeTraverser" type
+               (:documentation " A graph visitor, with search capabilities,
+        graph needs to support a 'get_root' method that returns the/a root node
+        nodes in the graph need to support get_parent() and get_child(name) and iterate_all_children() methods
+
+        Currently it's a bit of a mix of different ideas, making it rather messy...
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            graph: a graph whose nodes support our protocol
+            path_sep: character that seperates parts of a path to a node
+        \"\"\"" code nil (reparse-symbol indented_block_body) [697 859])
+                            ("self" variable nil (reparse-symbol indented_block_body) [868 887])
+                            ("self" variable nil (reparse-symbol indented_block_body) [897 922])
+                            ("self" variable nil (reparse-symbol indented_block_body) [932 975]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [661 665])
+                            ("graph" variable nil (reparse-symbol function_parameters) [667 672])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [674 682]))                          
+                        :documentation "
+        Args:
+            graph: a graph whose nodes support our protocol
+            path_sep: character that seperates parts of a path to a node
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [648 976])
+                    ("set_current_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1002 1006])
+                            ("node" variable nil (reparse-symbol function_parameters) [1008 1012]))                          
+                        :documentation " this is the node the next search starts at
+
+        Args:
+            node: A node in the graph, or None, in which case it defaults to graph.get_root()
+        ")
+                        (reparse-symbol indented_block_body) [981 1404])
+                    ("join_paths" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1424 1428])
+                            ("path_parts" variable nil (reparse-symbol function_parameters) [1430 1440])
+                            ("args" variable nil (reparse-symbol function_parameters) [1442 1447]))                          
+                        :documentation " joins paths together, optionally extends them as well
+        Args:
+            path_parts: either a path string, or a list of path strings
+            args: additional un-named arguments, will extend the list of path strings
+
+        Returns:
+            string: a string joining all the path_parts together
+        ")
+                        (reparse-symbol indented_block_body) [1409 1947])
+                    ("from_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1966 1970])
+                            ("node" variable nil (reparse-symbol function_parameters) [1972 1976]))                          
+                        :documentation " sets the current node
+
+        Args:
+            node: a node in the graph
+        ")
+                        (reparse-symbol indented_block_body) [1952 2112])
+                    ("_proccess_path_part" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2141 2145])
+                            ("from_node" variable nil (reparse-symbol function_parameters) [2147 2156])
+                            ("path_part" variable nil (reparse-symbol function_parameters) [2158 2167]))                          
+                        :documentation " move on to a node from a given node
+
+        Args:
+            from_node: parent node
+            path_part: name of a child node under from_node
+
+        Returns:
+            node: a node in the graph
+        ")
+                        (reparse-symbol indented_block_body) [2117 2669])
+                    ("get_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2687 2691])
+                            ("path" variable nil (reparse-symbol function_parameters) [2693 2697])
+                            ("from_node" variable nil (reparse-symbol function_parameters) [2699 2708])
+                            ("recurse" variable nil (reparse-symbol function_parameters) [2715 2722]))                          
+                        :documentation " get a node by path
+
+        Args:
+            path: the search path as a string
+            from_node: the node to start searching from, defaults to None => graph root
+            recurse: currently ignored
+
+        Returns:
+            node: the node at the end of path
+        ")
+                        (reparse-symbol indented_block_body) [2674 3346])
+                    ("find_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3365 3369])
+                            ("name" variable nil (reparse-symbol function_parameters) [3371 3375])
+                            ("from_node" variable nil (reparse-symbol function_parameters) [3377 3386]))                          
+                        :documentation " search the (sub)tree for node with the given name
+
+        Args:
+            name: the name of the node to search from
+            from_node: the node to start searching from, default None => graph root
+
+        Returns:
+            node: a node in the tree with the name searched for
+
+        Raises:
+            IndexError: when a node with the givven name wasn't found
+        ")
+                        (reparse-symbol indented_block_body) [3351 4103]))                  
+                :type "class")
+                nil [280 4130]))          
+      :file "graphs.py"
+      :pointmax 4130
+      :fsize 4268
+      :lastmodtime '(22182 5838 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "modules.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbf_base.modules
+   :synopsis: module handling and such
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 147])
+            ("__future__" include nil nil [148 185])
+            ("__all__" variable nil nil [187 217])
+            ("sys" include nil nil [219 229])
+            ("recursive_reload" function (:arguments 
+              ( ("module_name" variable nil (reparse-symbol function_parameters) [252 263])
+                ("fuzzy" variable nil (reparse-symbol function_parameters) [265 270]))              ) nil [231 645]))          
+      :file "modules.py"
+      :pointmax 645
+      :fsize 667
+      :lastmodtime '(22210 725 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!bbf_base!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

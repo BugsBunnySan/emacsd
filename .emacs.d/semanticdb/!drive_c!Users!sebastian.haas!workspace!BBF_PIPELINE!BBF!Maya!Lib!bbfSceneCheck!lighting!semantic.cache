@@ -1,0 +1,239 @@
+;; Object lighting/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "lighting/"
+  :tables
+  (list
+    (semanticdb-table "lightPrepTasks.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [66 80])
+            ("log" variable nil nil [81 114])
+            ("os" include nil nil [115 124])
+            ("pymel.internal.plogging" include nil nil [125 166])
+            ("bbfTaskManager.bbfTaskManager" include nil nil [167 212])
+            ("pymel.core" include nil nil [213 236])
+            ("bbfUtil" include nil nil [237 251])
+            ("BBF_Validation" include nil nil [252 302])
+            ("Lighting.bbfRenderLayer.bbfBaseLayer" include nil nil [303 355])
+            ("Lighting.bbfRenderLayer.bbfBeautyLayers" include nil nil [356 410])
+            ("Lighting.bbfRenderLayer.bbfFurLayers" include nil nil [411 460])
+            ("Lighting.bbfRenderLayer.renderLayerUtil" include nil nil [461 517])
+            ("bbfEntity" include nil nil [518 534])
+            ("__main__" include nil nil [535 562])
+            ("__main__" include nil nil [563 596])
+            ("Red9.core.Red9_General" include nil nil [597 651])
+            ("scenecontext" variable nil nil [652 688])
+            ("bbfCallbacks.bbfFileCallbacks" include nil nil [689 745])
+            ("functools" include nil nil [746 775])
+            ("bbfPath" include nil nil [776 803])
+            ("bbfSceneCheck.general.shotgunFrameRange" include nil nil [804 868])
+            ("" code nil nil [889 891])
+            ("doUpdateFur" function nil nil [892 1205])
+            ("" code nil nil [1235 1237])
+            ("doLoadLightRigs" function nil nil [1238 4818])
+            ("" code nil nil [4856 4858])
+            ("doRenderSettings" function (:arguments 
+              ( ("lowQuality" variable nil (reparse-symbol function_parameters) [4880 4890]))              ) nil [4859 5344])
+            ("mr_render_settings" function (:arguments 
+              ( ("lowQuality" variable nil (reparse-symbol function_parameters) [5368 5378]))              ) nil [5345 8023])
+            ("" code nil nil [8046 8048])
+            ("doBuildActorLayers" function nil nil [8049 8153])
+            ("" code nil nil [8160 8162])
+            ("doBuildPropApprovalLayer" function nil nil [8163 8374])
+            ("" code nil nil [8381 8383])
+            ("doBuildSetLayer" function nil nil [8384 8478])
+            ("" code nil nil [8485 8487])
+            ("doBuildFurLayers" function nil nil [8488 9001])
+            ("" code nil nil [9376 9378])
+            ("doBuildOtherLayers" function nil nil [9379 9916])
+            ("" code nil nil [9923 9937])
+            ("createOverrideShaders" function nil nil [9938 10589])
+            ("" code nil nil [10597 10611])
+            ("doBuildRenderLayers" function nil nil [10612 12385])
+            ("" code nil nil [12594 12596])
+            ("doUnlockHierarchy" function nil nil [12597 13161])
+            ("" code nil nil [13168 13170])
+            ("doRevealSet" function nil nil [13171 14418])
+            ("" code nil nil [14426 14428])
+            ("doSubDivUpdate" function nil nil [14429 15028])
+            ("" code nil nil [15036 15038])
+            ("doToggleVisibility" function nil nil [15039 15624])
+            ("" code nil nil [15631 15645])
+            ("doFixComponentShading" function (:arguments 
+              ( ("meshes" variable nil (reparse-symbol function_parameters) [15672 15678]))              ) nil [15646 18151])
+            ("" code nil nil [18158 18160])
+            ("doHiResMaps" function nil nil [18161 18906])
+            ("" code nil nil [18913 18927])
+            ("doPrepSetDressing" function nil nil [18928 20576])
+            ("" code nil nil [20583 20597])
+            ("createObjectSets" function nil nil [20598 20796])
+            ("createObjectSets_v3" function nil nil [20797 20981])
+            ("" code nil nil [20988 21002])
+            ("buildPasses" function nil nil [21003 21535])
+            ("buildPasses_v3" function nil nil [21536 22054])
+            ("connectIBLtoMRG" function (:documentation "
+    \"mentalrayGlobals\" nodes cannot get exported inside asset files.
+    This means we have to reconnect the IBL to the mrg in the shot
+    ") nil [22056 22524])
+            ("doPublishCamera" function (:arguments 
+              ( ("AnimShotPubWindow" variable nil (reparse-symbol function_parameters) [22545 22562]))              ) nil [22525 22710])
+            ("publishCamera" function
+               (:documentation "
+    Bake and export the camera to an FBX file for use in the nuke comp
+    "
+                :arguments 
+                  ( ("camera" variable nil (reparse-symbol function_parameters) [22729 22735]))                  )
+                nil [22711 23797])
+            ("set_shot_frame_range" function
+               (:documentation "
+    Apply the frame range that was used by the referenced ANM.
+    If this shot exists in SG then apply the SG frame range also
+    "
+                :arguments 
+                  ( ("reference_ns" variable nil (reparse-symbol function_parameters) [24371 24383]))                  )
+                nil [24346 25354])
+            ("do_anim_preview_layer" function (:documentation "
+    Create a render layer with low quality render settings for
+    rendering an anim preview pass. This is a rendered version of FinalAnim
+    intended to catch anim issues before they hit HD (eg floating feet,
+    penetrations, render hiccups: (moblur/visibility/smoothing/textures/...).
+    Remember to turn off this layer when doing the real render!
+    ") nil [25355 25908])
+            ("do_render_preview_layer" function (:documentation "
+    Create a render layer with low quality render settings for
+    rendering the first render preview pass. This is a rendered version is
+    intended to catch rendering issues (eg floating feet,
+    penetrations, render hiccups: (moblur/visibility/smoothing/textures/...).
+    Remember to turn off this layer when doing the full render!
+    ") nil [25909 26631])
+            ("reveal_uncached_eyes" function (:documentation "oct eyes have a projection and rigging network that fails when the eyes
+    are geocached. this disables the geocache mesh on the eyes
+    ") nil [26632 26901])
+            ("LGTBuildTasksV1" function (:arguments 
+              ( ("model" variable nil (reparse-symbol function_parameters) [26922 26927])
+                ("parent" variable nil (reparse-symbol function_parameters) [26929 26935]))              ) nil [26902 28833])
+            ("LGTBuildTasksV2" function (:arguments 
+              ( ("model" variable nil (reparse-symbol function_parameters) [28854 28859])
+                ("parent" variable nil (reparse-symbol function_parameters) [28861 28867]))              ) nil [28834 30379])
+            ("LGTBuildTasksV3" function (:arguments 
+              ( ("model" variable nil (reparse-symbol function_parameters) [30401 30406])
+                ("parent" variable nil (reparse-symbol function_parameters) [30408 30414]))              ) nil [30381 31778])
+            ("LGTBuildTasks_redshift_1" function (:arguments 
+              ( ("model" variable nil (reparse-symbol function_parameters) [31808 31813])
+                ("parent" variable nil (reparse-symbol function_parameters) [31815 31821]))              ) nil [31779 33869])
+            ("run" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [33879 33883])
+                ("model" variable nil (reparse-symbol function_parameters) [33885 33890])
+                ("args" variable nil (reparse-symbol function_parameters) [33892 33897])
+                ("kwargs" variable nil (reparse-symbol function_parameters) [33899 33907]))              ) nil [33871 34550])
+            ("'''
+locs = []
+cam = pm.selected()[0]
+cpos = cam.getTranslation(ws=True)
+furthestPlacer = None
+furthestDistance = 0
+for placer in pm.ls([\"placer_CTRL\", \"Placer_CTRL\"], r=True):
+    pos = placer.getTranslation(ws=True)
+    diff = cpos - pos
+    if diff.length() > furthestDistance:
+        furthestDistance = diff.length()
+        furthestPlacer = placer
+    print placer, diff.length()
+    locs.append(pm.spaceLocator(position=pos))
+pm.select(locs)
+'''" code nil nil [34551 35002]))          
+      :file "lightPrepTasks.py"
+      :pointmax 35003
+      :fsize 35872
+      :lastmodtime '(22025 3230 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 25285 . 25354) (NEWLINE 25284 . 25285) (COLON 25283 . 25284) (TRY 25209 . 25212) (AS 25277 . 25279)))
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [1 15])
+            ("logger" variable nil nil [16 52])
+            ("os" include nil nil [54 63])
+            ("glob" include nil nil [64 75])
+            ("sys" include nil nil [76 86])
+            ("for" code nil nil [88 352]))          
+      :file "__init__.py"
+      :pointmax 352
+      :fsize 363
+      :lastmodtime '(21919 61103 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "rsLightPrepTasks.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfUtil" include nil nil [25 39])
+            ("pymel.internal.plogging" include nil nil [40 81])
+            ("bbfCallbacks.bbfFileCallbacks" include nil nil [82 138])
+            ("BBF_Validation" include nil nil [139 189])
+            ("Lighting.bbfmrBuffers" include nil nil [190 234])
+            ("bbfEntity" include nil nil [235 251])
+            ("logging" include nil nil [252 266])
+            ("log" variable nil nil [267 300])
+            ("get_rs_set" function (:arguments 
+              ( ("set_type" variable nil (reparse-symbol function_parameters) [317 325])
+                ("name" variable nil (reparse-symbol function_parameters) [327 331])
+                ("members" variable nil (reparse-symbol function_parameters) [333 340]))              ) nil [302 894])
+            ("set_if_not_set" function
+               (:documentation "this cuts down the amount of reference edits by only setting it if required"
+                :arguments 
+                  ( ("attr" variable nil (reparse-symbol function_parameters) [914 918])
+                    ("value" variable nil (reparse-symbol function_parameters) [920 925]))                  )
+                nil [895 1188])
+            ("" code nil nil [1195 1197])
+            ("mr_to_shape_subdiv" function (:documentation "
+    Set up the rendertime mesh smoothing for the scene based on mr subdiv approx.
+    This info should be in the asset, but some early publishes of the asset may not have it
+    ") nil [1198 2967])
+            ("" code nil nil [2974 2976])
+            ("rs_render_settings" function
+               (:documentation "Setup render settings, enable render cam etc"
+                :arguments 
+                  ( ("lowQuality" variable nil (reparse-symbol function_parameters) [3000 3010]))                  )
+                nil [2977 4268])
+            ("" code nil nil [4276 4278])
+            ("rebuild_id_sets" function (:documentation "
+    Create and populate redshift object ID sets
+
+    In order to get R/G/B aov mattes for comp we need to create RedshiftObjectId
+    sets and add scene items to them. chars, props, sets are automatically added.
+    sky/plate/glow/glow2/glow3 are also added based on the modellers mesh tagging.
+    ") nil [4279 5945])
+            ("" code nil nil [5952 5954])
+            ("rebuild_passes" function (:documentation "
+    Create the renderpasses associated with the objectSets
+
+    This creates the passes associated with \"Build ID Sets\" step
+    PuzzleMatte (MaskA) stores chars(10) / props(20) / sets(30).
+    PuzzleMatte (MaskB) stores plate(40) / sky(50) / glow(60).
+    PuzzleMatte (MaskC) stores glow2(70) / glow3(80) / unassigned(90)
+    ") nil [5955 7864])
+            ("create_dof_visualizer" function
+               (:documentation "
+    Create a plane to visualize the position of the redshift dof focus distance
+    "
+                :arguments 
+                  ( ("cam" variable nil (reparse-symbol function_parameters) [7891 7894]))                  )
+                nil [7865 11370])
+            ("\"\"\"
+import bbfSceneCheck.lighting.rsLightPrepTasks as rs_lpt
+reload(rs_lpt)
+pm.newFile(f=True)
+trans, cam = pm.camera()
+cam.horizontalFilmAperture.set(cam.verticalFilmAperture.get()*1.777)
+cam.displayCameraFrustum.set(1)
+bok = pm.shadingNode(\"RedshiftBokeh\", asUtility=True)
+bok.message >> pm.PyNode(\"redshiftOptions.bokeh\")
+rs_lpt.create_dof_visualizer(cam)
+\"\"\"" code nil nil [11370 11732]))          
+      :file "rsLightPrepTasks.py"
+      :pointmax 11733
+      :fsize 12258
+      :lastmodtime '(22019 49355 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 2237 . 2317) (NEWLINE 2080 . 2081) (COLON 2079 . 2080) (TRY 1987 . 1990) (AS 2073 . 2075) (INDENT_BLOCK 1119 . 1188) (NEWLINE 1118 . 1119) (COLON 1117 . 1118) (TRY 1050 . 1053) (AS 1111 . 1113))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfSceneCheck!lighting!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

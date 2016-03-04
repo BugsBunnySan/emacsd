@@ -1,0 +1,323 @@
+;; Object HumanRig_Builder/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "HumanRig_Builder/"
+  :tables
+  (list
+    (semanticdb-table "quad_builder.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "quad_builder.py"
+      :pointmax 24231
+      :fsize 24664
+      :lastmodtime '(21923 37899 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "saveShapes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("PyQt4" include nil nil [1 32])
+            ("pickle" include nil nil [33 46])
+            ("Ui_ShapesWindow" type
+               (:superclasses ("object")
+                :members 
+                  ( ("setupUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [95 99])
+                            ("ShapesWindow" variable nil (reparse-symbol function_parameters) [101 113]))                          )
+                        (reparse-symbol indented_block_body) [83 1434])
+                    ("saveShapes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1454 1458]))                          )
+                        (reparse-symbol indented_block_body) [1439 2141])
+                    ("loadShapes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2162 2166]))                          )
+                        (reparse-symbol indented_block_body) [2147 2643])
+                    ("retranslateUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2667 2671])
+                            ("ShapesWindow" variable nil (reparse-symbol function_parameters) [2673 2685]))                          )
+                        (reparse-symbol indented_block_body) [2649 3095]))                  
+                :type "class")
+                nil [48 3095])
+            ("Main_Shapes" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("QtGui" code nil (reparse-symbol indented_block_body) [3168 3200])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3243 3268])
+                            ("self" code nil (reparse-symbol indented_block_body) [3277 3298]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3153 3157]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3140 3299]))                  
+                :type "class")
+                nil [3097 3299])
+            ("if" code nil nil [3300 3417]))          
+      :file "saveShapes.py"
+      :pointmax 3417
+      :fsize 3508
+      :lastmodtime '(21923 37916 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 3366 . 3417) ($EOI 3417 . 3417)))
+    (semanticdb-table "toolbox.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+components:
+anatomical, facial, 
+
+\"\"\"" code nil nil [1 42])
+            ("maya.cmds" include nil nil [45 69])
+            ("pymel.core" include nil nil [70 94])
+            ("rig" include nil nil [95 105])
+            ("toolbox" type
+               (:superclasses ("rig.rig")
+                :members 
+                  ( ("rigBody" variable nil (reparse-symbol indented_block_body) [140 152])
+                    ("components" variable nil (reparse-symbol indented_block_body) [157 172])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [197 201]))                          )
+                        (reparse-symbol indented_block_body) [182 214])
+                    ("connectComponents" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [249 253]))                          )
+                        (reparse-symbol indented_block_body) [227 266])
+                    ("createComponent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [299 303])
+                            ("type" variable nil (reparse-symbol function_parameters) [305 309]))                          )
+                        (reparse-symbol indented_block_body) [279 322])
+                    ("organiseRig" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [347 351]))                          
+                        :documentation "
+        should invoke commands from utility modules
+        ")
+                        (reparse-symbol indented_block_body) [331 458]))                  
+                :type "class")
+                nil [107 458]))          
+      :file "toolbox.py"
+      :pointmax 481
+      :fsize 515
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "loadSave.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+anim_transfer.py
+by Eoghan Garvey @ brown bag films
+
+\"\"\"" code nil nil [2 62])
+            ("pymel.core" include nil nil [64 88])
+            ("PyQt4" include nil nil [89 120])
+            ("cPickle" include nil nil [121 145])
+            ("os.path" include nil nil [146 166])
+            ("mel" code nil nil [182 224])
+            ("mel" code nil nil [225 267])
+            ("animSystem" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [432 456])
+                            ("self" variable nil (reparse-symbol indented_block_body) [465 489])
+                            ("self" variable nil (reparse-symbol indented_block_body) [498 540])
+                            ("self" variable nil (reparse-symbol indented_block_body) [549 581])
+                            ("self" variable nil (reparse-symbol indented_block_body) [590 626])
+                            ("self" variable nil (reparse-symbol indented_block_body) [635 659])
+                            ("self" code nil (reparse-symbol indented_block_body) [668 687]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [308 312])
+                            ("charName" variable nil (reparse-symbol function_parameters) [314 322])
+                            ("charSets" variable nil (reparse-symbol function_parameters) [329 337])
+                            ("charSetsNoRefname" variable nil (reparse-symbol function_parameters) [344 361])
+                            ("animFileList" variable nil (reparse-symbol function_parameters) [368 380])
+                            ("charSubsetList" variable nil (reparse-symbol function_parameters) [387 401])
+                            ("loadList" variable nil (reparse-symbol function_parameters) [408 416]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [295 688])
+                    ("addCharacter" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [710 714])
+                            ("charName" variable nil (reparse-symbol function_parameters) [716 724]))                          )
+                        (reparse-symbol indented_block_body) [693 786])
+                    ("loadClip" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [804 808])
+                            ("fileName" variable nil (reparse-symbol function_parameters) [810 818]))                          )
+                        (reparse-symbol indented_block_body) [791 864])
+                    ("importToFilelist" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [891 895])
+                            ("subc_Indx" variable nil (reparse-symbol function_parameters) [897 906]))                          )
+                        (reparse-symbol indented_block_body) [870 1146])
+                    ("importAndAssign" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1174 1178])
+                            ("c_startTime" variable nil (reparse-symbol function_parameters) [1180 1191])
+                            ("partial" variable nil (reparse-symbol function_parameters) [1193 1200]))                          )
+                        (reparse-symbol indented_block_body) [1153 8375])
+                    ("saveClip" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8395 8399])
+                            ("fileName" variable nil (reparse-symbol function_parameters) [8401 8409])
+                            ("start" variable nil (reparse-symbol function_parameters) [8411 8416])
+                            ("end" variable nil (reparse-symbol function_parameters) [8418 8421]))                          
+                        :documentation "
+        UNCHK = self.unusedNodeCheck()
+        if UNCHK==1:
+            QtGui.QMessageBox.about(None,\"Notice\", \"Warning: unused Renderman nodes in scene!\")
+        ")
+                        (reparse-symbol indented_block_body) [8382 10167])
+                    ("unusedNodeCheck" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10193 10197]))                          )
+                        (reparse-symbol indented_block_body) [10173 10347])
+                    ("resolveIni" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10367 10371])
+                            ("iniFile" variable nil (reparse-symbol function_parameters) [10373 10380]))                          
+                        :documentation "
+        toDo: filter to parse old school dictionaries to 2 dimensional arrays
+        ")
+                        (reparse-symbol indented_block_body) [10352 11659])
+                    ("makeSubClist" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11682 11686]))                          )
+                        (reparse-symbol indented_block_body) [11664 12279])
+                    ("stripNamespace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12303 12307])
+                            ("name" variable nil (reparse-symbol function_parameters) [12309 12313]))                          )
+                        (reparse-symbol indented_block_body) [12284 12481])
+                    ("clearCharKeys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12504 12508]))                          )
+                        (reparse-symbol indented_block_body) [12486 12571]))                  
+                :type "class")
+                nil [270 12571])
+            ("try" code nil nil [12572 12668])
+            ("Ui_MainWindow" type
+               (:superclasses ("object")
+                :members 
+                  ( ("setupUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12714 12718])
+                            ("MainWindow" variable nil (reparse-symbol function_parameters) [12720 12730]))                          )
+                        (reparse-symbol indented_block_body) [12702 22920])
+                    ("saveAnim" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22939 22943]))                          )
+                        (reparse-symbol indented_block_body) [22926 23185])
+                    ("importFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23205 23209]))                          )
+                        (reparse-symbol indented_block_body) [23190 23712])
+                    ("loadAnim" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23730 23734]))                          )
+                        (reparse-symbol indented_block_body) [23717 25864])
+                    ("fillAnimFileList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25890 25894]))                          )
+                        (reparse-symbol indented_block_body) [25869 26188])
+                    ("fillCharSubsetList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26218 26222]))                          )
+                        (reparse-symbol indented_block_body) [26195 26716])
+                    ("fillloadList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26739 26743])
+                            ("directFill" variable nil (reparse-symbol function_parameters) [26745 26755]))                          )
+                        (reparse-symbol indented_block_body) [26722 27606])
+                    ("findCharacter" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27629 27633]))                          )
+                        (reparse-symbol indented_block_body) [27611 28148])
+                    ("selectCharacter" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28175 28179]))                          )
+                        (reparse-symbol indented_block_body) [28155 29328])
+                    ("clearAnimFileListItem" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29381 29385]))                          )
+                        (reparse-symbol indented_block_body) [29355 29847])
+                    ("clearLoadList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29870 29874]))                          )
+                        (reparse-symbol indented_block_body) [29852 30259])
+                    ("clearKeys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30279 30283]))                          )
+                        (reparse-symbol indented_block_body) [30265 30323])
+                    ("stripNamespace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30347 30351])
+                            ("name" variable nil (reparse-symbol function_parameters) [30353 30357]))                          )
+                        (reparse-symbol indented_block_body) [30328 30525])
+                    ("retranslateUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30550 30554])
+                            ("MainWindow" variable nil (reparse-symbol function_parameters) [30556 30566]))                          )
+                        (reparse-symbol indented_block_body) [30532 37066]))                  
+                :type "class")
+                nil [12669 37066])
+            ("Main_LoadSave" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("QtGui" code nil (reparse-symbol indented_block_body) [37141 37173])
+                            ("self" variable nil (reparse-symbol indented_block_body) [37216 37239])
+                            ("self" code nil (reparse-symbol indented_block_body) [37248 37269]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37126 37130]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [37113 37270]))                  
+                :type "class")
+                nil [37068 37270])
+            ("if" code nil nil [37271 37390]))          
+      :file "loadSave.py"
+      :pointmax 37390
+      :fsize 38194
+      :lastmodtime '(21924 52815 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 37337 . 37390) ($EOI 37390 . 37390) (INDENT_BLOCK 30528 . 37066) (INDENT_BLOCK 29351 . 37066) (INDENT_BLOCK 28151 . 37066) (INDENT_BLOCK 26191 . 37066) (NAME 39566 . 39576) ($EOI 39583 . 39583))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!HumanRig_Builder!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

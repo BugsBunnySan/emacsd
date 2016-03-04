@@ -1,0 +1,51 @@
+;; Object hooks/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hooks/"
+  :tables
+  (list
+    (semanticdb-table "before_app_launch.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Before App Launch Hook
+
+This hook is executed prior to application launch and is useful if you need
+to set environment variables or run scripts as part of the app initialization.
+\"\"\"" code nil nil [448 634])
+            ("os" include nil nil [636 645])
+            ("sys" include nil nil [646 656])
+            ("tank" include nil nil [657 668])
+            ("BeforeAppLaunch" type
+               (:documentation "
+    Hook to set up the system prior to app launch.
+    "
+                :superclasses ("tank.Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [788 792])
+                            ("app_path" variable nil (reparse-symbol function_parameters) [794 802])
+                            ("app_args" variable nil (reparse-symbol function_parameters) [804 812])
+                            ("version" variable nil (reparse-symbol function_parameters) [814 821])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [823 831]))                          
+                        :documentation "
+        The execute functon of the hook will be called prior to starting the required application
+
+        :param app_path: (str) The path of the application executable
+        :param app_args: (str) Any arguments the application may require
+        :param version: (str) version of the application being run if set in the \"versions\" settings
+                              of the Launcher instance, otherwise None
+
+        ")
+                        (reparse-symbol indented_block_body) [776 1273]))                  
+                :type "class")
+                nil [670 1273]))          
+      :file "before_app_launch.py"
+      :pointmax 1929
+      :fsize 1928
+      :lastmodtime '(22221 33241 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!apps!app_store!tk-multi-launchapp!v0.7.2!hooks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

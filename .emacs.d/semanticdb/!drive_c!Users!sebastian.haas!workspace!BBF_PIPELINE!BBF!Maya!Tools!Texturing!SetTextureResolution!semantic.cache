@@ -1,0 +1,136 @@
+;; Object SetTextureResolution/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "SetTextureResolution/"
+  :tables
+  (list
+    (semanticdb-table "SetTextureResolution.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.cmds" include nil nil [72 96])
+            ("pymel.core" include nil nil [97 123])
+            ("maya.OpenMaya" include nil nil [124 156])
+            ("bbfUtil" include nil nil [157 171])
+            ("os" include nil nil [172 181])
+            ("PySide" include nil nil [182 214])
+            ("maya.OpenMayaUI" include nil nil [215 245])
+            ("bbfUI.bbfUI" include nil nil [246 273])
+            ("TextureResolution" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("RESOLUTION_LOW" variable nil (reparse-symbol indented_block_body) [323 341])
+                    ("RESOLUTION_MED" variable nil (reparse-symbol indented_block_body) [346 364])
+                    ("RESOLUTION_HIGH" variable nil (reparse-symbol indented_block_body) [369 388])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [468 515])
+                            ("bbfUI" code nil (reparse-symbol indented_block_body) [524 569])
+                            ("self" variable nil (reparse-symbol indented_block_body) [578 618])
+                            ("self" variable nil (reparse-symbol indented_block_body) [627 649])
+                            ("self" variable nil (reparse-symbol indented_block_body) [659 687])
+                            ("self" variable nil (reparse-symbol indented_block_body) [696 771])
+                            ("self" code nil (reparse-symbol indented_block_body) [781 841])
+                            ("self" code nil (reparse-symbol indented_block_body) [850 917])
+                            ("self" code nil (reparse-symbol indented_block_body) [926 988])
+                            ("self" code nil (reparse-symbol indented_block_body) [997 1057])
+                            ("cameras" variable nil (reparse-symbol indented_block_body) [1066 1098])
+                            ("for" code nil (reparse-symbol indented_block_body) [1107 1179])
+                            ("self" code nil (reparse-symbol indented_block_body) [1188 1246])
+                            ("self" code nil (reparse-symbol indented_block_body) [1255 1312])
+                            ("if" code nil (reparse-symbol indented_block_body) [1321 1461])
+                            ("if" code nil (reparse-symbol indented_block_body) [1470 1613]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [407 411])
+                            ("parent" variable nil (reparse-symbol function_parameters) [413 419])
+                            ("winName" variable nil (reparse-symbol function_parameters) [421 428]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [394 1613])
+                    ("onUseHighMidLocator" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1642 1646]))                          )
+                        (reparse-symbol indented_block_body) [1618 2405])
+                    ("onUseMidLowLocator" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2433 2437]))                          )
+                        (reparse-symbol indented_block_body) [2410 3188])
+                    ("onButtonCameraBased" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3217 3221]))                          )
+                        (reparse-symbol indented_block_body) [3193 5066])
+                    ("onButtonSelection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5093 5097]))                          )
+                        (reparse-symbol indented_block_body) [5071 5754])
+                    ("getTexturesCallback" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5783 5787])
+                            ("shader" variable nil (reparse-symbol function_parameters) [5789 5795])
+                            ("textureFile" variable nil (reparse-symbol function_parameters) [5797 5808])
+                            ("tresholdIndex" variable nil (reparse-symbol function_parameters) [5810 5823])
+                            ("data" variable nil (reparse-symbol function_parameters) [5825 5829]))                          )
+                        (reparse-symbol indented_block_body) [5759 6232])
+                    ("setTexturesUsingDistanceCallback" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6274 6278])
+                            ("shader" variable nil (reparse-symbol function_parameters) [6280 6286])
+                            ("textureFile" variable nil (reparse-symbol function_parameters) [6288 6299])
+                            ("tresholdIndex" variable nil (reparse-symbol function_parameters) [6301 6314])
+                            ("data" variable nil (reparse-symbol function_parameters) [6316 6320]))                          )
+                        (reparse-symbol indented_block_body) [6237 6627])
+                    ("setTexturesCallback" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6656 6660])
+                            ("shader" variable nil (reparse-symbol function_parameters) [6662 6668])
+                            ("textureFile" variable nil (reparse-symbol function_parameters) [6670 6681])
+                            ("tresholdIndex" variable nil (reparse-symbol function_parameters) [6683 6696])
+                            ("data" variable nil (reparse-symbol function_parameters) [6698 6702]))                          )
+                        (reparse-symbol indented_block_body) [6632 6850])
+                    ("updateTexture" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6873 6877])
+                            ("textureFile" variable nil (reparse-symbol function_parameters) [6879 6890])
+                            ("textureFilename" variable nil (reparse-symbol function_parameters) [6892 6907])
+                            ("newTextureFolder" variable nil (reparse-symbol function_parameters) [6909 6925]))                          )
+                        (reparse-symbol indented_block_body) [6855 7648])
+                    ("loopThroughTextures" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7677 7681])
+                            ("camPos" variable nil (reparse-symbol function_parameters) [7683 7689])
+                            ("callback" variable nil (reparse-symbol function_parameters) [7691 7699])
+                            ("useSelection" variable nil (reparse-symbol function_parameters) [7701 7713])
+                            ("data" variable nil (reparse-symbol function_parameters) [7721 7725]))                          )
+                        (reparse-symbol indented_block_body) [7653 9578])
+                    ("setResolutionByCamera" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9609 9613])
+                            ("cameraName" variable nil (reparse-symbol function_parameters) [9615 9625])
+                            ("frames" variable nil (reparse-symbol function_parameters) [9627 9633]))                          )
+                        (reparse-symbol indented_block_body) [9583 10131])
+                    ("setResolutionOnSelected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10164 10168])
+                            ("resolution" variable nil (reparse-symbol function_parameters) [10170 10180])
+                            ("useSelection" variable nil (reparse-symbol function_parameters) [10182 10194]))                          )
+                        (reparse-symbol indented_block_body) [10136 10378]))                  
+                :type "class")
+                nil [275 10378])
+            ("setTextureResolution" function nil nil [10380 10672]))          
+      :file "SetTextureResolution.py"
+      :pointmax 10672
+      :fsize 10894
+      :lastmodtime '(22178 20794 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Tools!Texturing!SetTextureResolution!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

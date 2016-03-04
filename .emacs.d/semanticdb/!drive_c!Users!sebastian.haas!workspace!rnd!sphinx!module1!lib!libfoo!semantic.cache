@@ -1,0 +1,62 @@
+;; Object libfoo/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libfoo/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: module1.lib.libfoo
+   :synopsis: The Foo lib
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 121])
+            ("__future__" include nil nil [122 159])
+            ("base" include nil nil [162 173])
+            ("module2.lib.libbogos" include nil nil [184 184])
+            ("reload" code nil nil [184 184])
+            ("base" include nil nil [162 173])
+            ("reload" code nil nil [174 186]))          
+      :file "__init__.py"
+      :pointmax 187
+      :fsize 198
+      :lastmodtime '(21944 59588 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: module1.lib.libfoo.base
+   :synopsis: basic functions for the foo lib
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 146])
+            ("__future__" include nil nil [147 184])
+            ("__all__" variable nil nil [186 212])
+            ("pymel.core" include nil nil [214 237])
+            ("module2.lib.libbogos" include nil nil [239 278])
+            ("reload" code nil nil [279 295])
+            ("frobnitzMesh" function
+               (:documentation "
+    Applies a frobnitz filter on a mesh
+
+    Args:
+        mesh: a PyNode polymesh, will be frobnitzed
+        frobnication_level: how many adjectant verts to take into account for the frobnication of one vert
+
+    Returns:
+        bool: whether the frobnication was successfull or not, not all meshes can be frobnitzed
+    "
+                :arguments 
+                  ( ("mesh" variable nil (reparse-symbol function_parameters) [314 318])
+                    ("frobnication_level" variable nil (reparse-symbol function_parameters) [320 338]))                  )
+                nil [297 849]))          
+      :file "base.py"
+      :pointmax 849
+      :fsize 882
+      :lastmodtime '(21944 60734 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!sphinx!module1!lib!libfoo!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

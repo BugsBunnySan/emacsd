@@ -1,0 +1,410 @@
+;; Object Car/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Car/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(21919 61103 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "chassis.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+should have squash stretch factor along yz plane ( x being forward )
+
+.arclen( 'curve1' )
+
+Hinge points should be located along suspension pts
+
+condition node - NEXT--( second term and color if false should be equal. And linked to a suspension height attribute. )
+
+\"\"\"" code nil nil [1 273])
+            ("pymel.core" include nil nil [292 316])
+            ("conditionalConnect" function
+               (:documentation "
+    conditionOps:
+    
+    0 = equal
+    1 = not equal
+    2 = greater than
+    3 = greater or equal
+    4 = less than
+    5 = less or equal
+    
+    "
+                :arguments 
+                  ( ("sourceNodeAttrib" variable nil (reparse-symbol function_parameters) [342 358])
+                    ("targetNodeAttrib" variable nil (reparse-symbol function_parameters) [360 376])
+                    ("conditionOp" variable nil (reparse-symbol function_parameters) [378 389]))                  )
+                nil [319 920])
+            ("constrainChassis" function
+               (:documentation "
+    arguments must be transform nodes
+    "
+                :arguments 
+                  ( ("ctrlNode" variable nil (reparse-symbol function_parameters) [946 954])
+                    ("frontHinge" variable nil (reparse-symbol function_parameters) [956 966])
+                    ("backHinge" variable nil (reparse-symbol function_parameters) [968 977])
+                    ("leftHinge" variable nil (reparse-symbol function_parameters) [979 988])
+                    ("rightHinge" variable nil (reparse-symbol function_parameters) [990 1000]))                  )
+                nil [923 1535])
+            ("\"\"\"
+hingePoints = [PyNode('frontHinge_loc'), PyNode('backHinge_loc'), PyNode('leftHinge_loc'), PyNode('rightHinge_loc') ]
+
+constrainChassis[PyNode('bulb1attachedCurve1'), PyNode('frontHinge_loc'), PyNode('backHinge_loc'), PyNode('leftHinge_loc'), PyNode('rightHinge_loc')]
+for i in range(3):
+    parent(hingePoints[i], hingePoints[i+1])
+
+
+cNode = conditionalConnect('bulb1attachedCurve1.Back_Hinge', hingePoints[3].rotateZ,  2)
+cNode = conditionalConnect('bulb1attachedCurve1.Back_Hinge', hingePoints[2].rotateZ,  4)
+cNode = conditionalConnect('bulb1attachedCurve1.Front_Hinge', hingePoints[1].rotateX,  4)
+cNode = conditionalConnect('bulb1attachedCurve1.Front_Hinge', hingePoints[0].rotateX,  2) 
+\"\"\"" code nil nil [1600 2301]))          
+      :file "chassis.py"
+      :pointmax 2303
+      :fsize 2372
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "dumpTruck_main.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("v_class" include nil nil [26 47])
+            ("reload" code nil nil [48 59])
+            ("dumpTruck" type
+               (:superclasses ("vcl.vehicle")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2396 2428])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2437 2469])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2478 2512])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2521 2559])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2568 2608])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2617 2633])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2642 2672])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2681 2705])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2714 2750])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2759 2785])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2794 2820])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2829 2855])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2864 2890])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2899 2939])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2948 2990])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2999 3027])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3045 3073])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3082 3110])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3119 3147])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3156 3184])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3193 3221])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3230 3256])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3265 3295])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3304 3328])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3337 3361])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3370 3396])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3405 3431])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3440 3482])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3491 3519])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3528 3554])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3563 3605])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3614 3642]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [113 117])
+                            ("Path_Hook_RG" variable nil (reparse-symbol function_parameters) [119 131])
+                            ("Path_Lead_RG" variable nil (reparse-symbol function_parameters) [190 202])
+                            ("Path_Trail_RG" variable nil (reparse-symbol function_parameters) [259 272])
+                            ("MotionPath_Lead" variable nil (reparse-symbol function_parameters) [329 344])
+                            ("MotionPath_Trail" variable nil (reparse-symbol function_parameters) [393 409])
+                            ("path" variable nil (reparse-symbol function_parameters) [458 462])
+                            ("placer_CTRL" variable nil (reparse-symbol function_parameters) [511 522])
+                            ("ctrlNode" variable nil (reparse-symbol function_parameters) [573 581])
+                            ("vehicleChassis" variable nil (reparse-symbol function_parameters) [634 648])
+                            ("rbWheelTM" variable nil (reparse-symbol function_parameters) [805 814])
+                            ("rfWheelTM" variable nil (reparse-symbol function_parameters) [860 869])
+                            ("lbWheelTM" variable nil (reparse-symbol function_parameters) [915 924])
+                            ("lfWheelTM" variable nil (reparse-symbol function_parameters) [970 979])
+                            ("back_WheelConstr" variable nil (reparse-symbol function_parameters) [1025 1041])
+                            ("front_WheelConstr" variable nil (reparse-symbol function_parameters) [1090 1107])
+                            ("cabin_RG" variable nil (reparse-symbol function_parameters) [1157 1165])
+                            ("ctrlShapes" variable nil (reparse-symbol function_parameters) [1208 1218])
+                            ("rbWheelGeo" variable nil (reparse-symbol function_parameters) [1299 1309])
+                            ("rfWheelGeo" variable nil (reparse-symbol function_parameters) [1369 1379])
+                            ("lbWheelGeo" variable nil (reparse-symbol function_parameters) [1439 1449])
+                            ("lfWheelGeo" variable nil (reparse-symbol function_parameters) [1509 1519])
+                            ("chassisGeo" variable nil (reparse-symbol function_parameters) [1579 1589])
+                            ("dumperGeo" variable nil (reparse-symbol function_parameters) [1645 1654])
+                            ("mudguardGeo" variable nil (reparse-symbol function_parameters) [1710 1721])
+                            ("cabinGeo" variable nil (reparse-symbol function_parameters) [1780 1788])
+                            ("mouthGeo" variable nil (reparse-symbol function_parameters) [1841 1849])
+                            ("lightsGeo" variable nil (reparse-symbol function_parameters) [1904 1913])
+                            ("eye_R_Geo" variable nil (reparse-symbol function_parameters) [1974 1983])
+                            ("browConnect_R_Geo" variable nil (reparse-symbol function_parameters) [2037 2054])
+                            ("brow_R_Geo" variable nil (reparse-symbol function_parameters) [2115 2125])
+                            ("eye_L_Geo" variable nil (reparse-symbol function_parameters) [2180 2189])
+                            ("browConnect_L_Geo" variable nil (reparse-symbol function_parameters) [2243 2260])
+                            ("brow_L_Geo" variable nil (reparse-symbol function_parameters) [2321 2331]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [100 3643])
+                    ("rigDumpTruck" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3680 3684]))                          )
+                        (reparse-symbol indented_block_body) [3663 3989]))                  
+                :type "class")
+                nil [61 3989]))          
+      :file "dumpTruck_main.py"
+      :pointmax 3989
+      :fsize 4072
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "mainCtrlAtts.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("addVehicleAtts" function (:arguments 
+              ( ("vCTRL" variable nil (reparse-symbol function_parameters) [47 52]))              ) nil [28 6334])
+            ("addCabinAtts" function (:arguments 
+              ( ("vCTRL" variable nil (reparse-symbol function_parameters) [6352 6357]))              ) nil [6335 6769]))          
+      :file "mainCtrlAtts.py"
+      :pointmax 6780
+      :fsize 6890
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "travelPath.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+
+FUNCTIONS:
+hookupWheel (wheelGeo, rigNode, motionPath)
+attachCar(frontPath_loc, frontCar_loc, backPath_loc, backCar_loc )
+connectMotionPath(pathLocMotionPath, hindPathLocMotionPath, path, ctrlNode)
+
+\"\"\"" code nil nil [1 208])
+            ("pymel.core" include nil nil [210 234])
+            ("hookupWheel" function (:arguments 
+              ( ("wheelGeo" variable nil (reparse-symbol function_parameters) [254 262])
+                ("rigNode" variable nil (reparse-symbol function_parameters) [264 271])
+                ("motionPath" variable nil (reparse-symbol function_parameters) [273 283]))              ) nil [237 579])
+            ("attachCar" function
+               (:documentation " locators should be attached to path in build rig"
+                :arguments 
+                  ( ("frontPath_loc" variable nil (reparse-symbol function_parameters) [600 613])
+                    ("frontCar_loc" variable nil (reparse-symbol function_parameters) [615 627])
+                    ("backPath_loc" variable nil (reparse-symbol function_parameters) [629 641])
+                    ("backCar_loc" variable nil (reparse-symbol function_parameters) [643 654]))                  )
+                nil [586 832])
+            ("connectMotionPath" function
+               (:documentation "
+    float $pathVal = `getAttr condition1.outColor.outColorR`;
+    
+    //float  $axelsDistance    = `getAttr distanceBetweenAxels.distance`;
+    float  $axelsDistance = 10.041829;
+    
+    float $originalPathLength = 334.7 ;
+    float $currentPathLength = `getAttr pathLength.arcLength`;
+    
+    float $startingPoint = 0.053 * ( $originalPathLength / $currentPathLength);
+    
+    float $axelDistNormalized = $axelsDistance / $currentPathLength;
+    
+    float $mpA = $startingPoint + $pathVal;
+    float $mpB = ($startingPoint - $axelDistNormalized) + $pathVal;
+    
+    motionPath1.uValue = $mpA;
+    "
+                :arguments 
+                  ( ("pathLocMotionPath" variable nil (reparse-symbol function_parameters) [864 881])
+                    ("hindPathLocMotionPath" variable nil (reparse-symbol function_parameters) [883 904])
+                    ("path" variable nil (reparse-symbol function_parameters) [906 910])
+                    ("ctrlNode" variable nil (reparse-symbol function_parameters) [912 920]))                  )
+                nil [842 5533]))          
+      :file "travelPath.py"
+      :pointmax 5533
+      :fsize 5662
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "v_class.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 11])
+            ("pymel.core" include nil nil [13 37])
+            ("path" variable nil nil [39 117])
+            ("if" code nil nil [119 170])
+            ("vehicleCtrlShapes" include nil nil [171 202])
+            ("wheel" include nil nil [203 221])
+            ("travelPath" include nil nil [222 245])
+            ("chassis" include nil nil [246 267])
+            ("mainCtrlAtts" include nil nil [268 294])
+            ("reload" code nil nil [296 309])
+            ("reload" code nil nil [310 322])
+            ("reload" code nil nil [323 335])
+            ("reload" code nil nil [336 349])
+            ("reload" code nil nil [350 363])
+            ("vehicle" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1600 1632])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1641 1673])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1682 1716])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1725 1763])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1772 1812])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1821 1837])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1846 1876])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1885 1909])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1918 1954])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1963 1989])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1998 2024])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2033 2059])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2068 2094])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2103 2143])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2152 2194])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2203 2231]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [404 408])
+                            ("Path_Hook_RG" variable nil (reparse-symbol function_parameters) [410 422])
+                            ("Path_Lead_RG" variable nil (reparse-symbol function_parameters) [481 493])
+                            ("Path_Trail_RG" variable nil (reparse-symbol function_parameters) [550 563])
+                            ("MotionPath_Lead" variable nil (reparse-symbol function_parameters) [620 635])
+                            ("MotionPath_Trail" variable nil (reparse-symbol function_parameters) [684 700])
+                            ("path" variable nil (reparse-symbol function_parameters) [749 753])
+                            ("placer_CTRL" variable nil (reparse-symbol function_parameters) [802 813])
+                            ("ctrlNode" variable nil (reparse-symbol function_parameters) [864 872])
+                            ("vehicleChassis" variable nil (reparse-symbol function_parameters) [925 939])
+                            ("rbWheelTM" variable nil (reparse-symbol function_parameters) [1096 1105])
+                            ("rfWheelTM" variable nil (reparse-symbol function_parameters) [1151 1160])
+                            ("lbWheelTM" variable nil (reparse-symbol function_parameters) [1206 1215])
+                            ("lfWheelTM" variable nil (reparse-symbol function_parameters) [1261 1270])
+                            ("back_WheelConstr" variable nil (reparse-symbol function_parameters) [1316 1332])
+                            ("front_WheelConstr" variable nil (reparse-symbol function_parameters) [1381 1398])
+                            ("cabin_RG" variable nil (reparse-symbol function_parameters) [1448 1456])
+                            ("ctrlShapes" variable nil (reparse-symbol function_parameters) [1499 1509]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [391 2232])
+                    ("rigChassis" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2256 2260]))                          )
+                        (reparse-symbol indented_block_body) [2241 5534])
+                    ("rigCabin" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5569 5573]))                          
+                        :documentation "
+        #####################        EXTRA        ############################
+        
+        cabin_CTRL = vcs.applyShape('cube', manSpinNode, (str(WheelTM)+'_CTRL') )
+        mca.addVehicleAtts(self.cabin_CTRL)
+        ")
+                        (reparse-symbol indented_block_body) [5556 5823]))                  
+                :type "class")
+                nil [365 5823]))          
+      :file "v_class.py"
+      :pointmax 5823
+      :fsize 5953
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "vehicleCtrlShapes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("makeShape" function
+               (:documentation "
+    Creates control shape of type 'ctrlType' at location 'xForm'.  
+    
+    It's shape can be one of following:
+    cross, square, cube, circle, arrow, circleY, circleX, circleZ
+    
+    Returns: CTRL_shape transform node
+    "
+                :arguments 
+                  ( ("ctrlType" variable nil (reparse-symbol function_parameters) [42 50])
+                    ("c_name" variable nil (reparse-symbol function_parameters) [52 58]))                  )
+                nil [28 2631])
+            ("applyShape" function
+               (:documentation "
+    ctrlShape = type of shape (listed in makeshape doc)
+    targetNode = ctrl shape will snap to this nodes transform
+    "
+                :arguments 
+                  ( ("crtlShape" variable nil (reparse-symbol function_parameters) [2650 2659])
+                    ("targetNode" variable nil (reparse-symbol function_parameters) [2661 2671])
+                    ("c_name" variable nil (reparse-symbol function_parameters) [2673 2679]))                  )
+                nil [2635 3085]))          
+      :file "vehicleCtrlShapes.py"
+      :pointmax 3085
+      :fsize 3162
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "wheel.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("vehicleCtrlShapes" include nil nil [26 57])
+            ("spinExpression" function
+               (:documentation "
+    make proxy nurbsCylinder
+    add arclen('nurbsCircle1', ch=True) node
+    
+    float $pathPos = `getAttr \"motionPath1.uValue\"`;
+    float $pathLength = `getAttr \"curveInfo1.arcLength\"`;
+    float $distanceFromOrigin = $pathPos * $pathLength;
+    float $wheelRadius = `getAttr \"makeNurbCylinder1.radius\"`;
+    float $rotateRatio = ((2 * 3.14 * 3.14 * 3.14 )/ $wheelRadius );
+    float $finalRot = -($distanceFromOrigin * $rotateRatio);
+    nurbsCylinder1.rotateZ = $finalRot;
+    
+    "
+                :arguments 
+                  ( ("wheelObject" variable nil (reparse-symbol function_parameters) [78 89])
+                    ("motionPathNode" variable nil (reparse-symbol function_parameters) [91 105])
+                    ("curveInfoNode" variable nil (reparse-symbol function_parameters) [107 120]))                  )
+                nil [59 1222])
+            ("rigWheelSpin" function (:arguments 
+              ( ("wheelShape" variable nil (reparse-symbol function_parameters) [1241 1251])
+                ("wheelTM" variable nil (reparse-symbol function_parameters) [1253 1260])
+                ("motionPathNode" variable nil (reparse-symbol function_parameters) [1262 1276])
+                ("curveInfoNode" variable nil (reparse-symbol function_parameters) [1278 1291])
+                ("ctrlNode" variable nil (reparse-symbol function_parameters) [1293 1301]))              ) nil [1224 2752])
+            ("turnSpinHeirarchy" function (:arguments 
+              ( ("WheelTM" variable nil (reparse-symbol function_parameters) [2775 2782])
+                ("ctrlNode" variable nil (reparse-symbol function_parameters) [2784 2792])
+                ("Path_Hook_RG" variable nil (reparse-symbol function_parameters) [2794 2806])
+                ("autoTurn" variable nil (reparse-symbol function_parameters) [2808 2816]))              ) nil [2753 3717]))          
+      :file "wheel.py"
+      :pointmax 3717
+      :fsize 3800
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "v_main.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [2 26])
+            ("vehicleCtrlShapes" include nil nil [27 58])
+            ("wheel" include nil nil [59 77])
+            ("travelPath" include nil nil [78 101])
+            ("chassis" include nil nil [102 123])
+            ("mainCtrlAtts" include nil nil [124 150])
+            ("reload" code nil nil [152 165])
+            ("reload" code nil nil [166 178])
+            ("reload" code nil nil [179 191])
+            ("reload" code nil nil [192 205])
+            ("reload" code nil nil [206 219])
+            ("rigVehicle" function nil nil [240 3748]))          
+      :file "v_main.py"
+      :pointmax 3943
+      :fsize 4056
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!MechanicalRig_Builder!Car!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

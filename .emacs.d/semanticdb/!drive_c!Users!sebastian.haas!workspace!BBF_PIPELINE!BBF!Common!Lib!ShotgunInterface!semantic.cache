@@ -1,0 +1,2457 @@
+;; Object ShotgunInterface/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ShotgunInterface/"
+  :tables
+  (list
+    (semanticdb-table "ShotgunAssetBaseObject.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.ShotgunAssetBaseObject
+   :synopsis: Base class for shotgun asset objects
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 182])
+            ("__future__" include nil nil [183 220])
+            ("__all__" variable nil nil [222 258])
+            ("ShotgunObject" include nil nil [260 299])
+            ("ShotgunAssetBaseObject" type
+               (:documentation " Base class for Shotgun Asset Objects "
+                :superclasses ("ShotgunObject")
+                :members 
+                  ( ("createRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [423 427])
+                            ("versionTag" variable nil (reparse-symbol function_parameters) [429 439])
+                            ("description" variable nil (reparse-symbol function_parameters) [441 452])
+                            ("type" variable nil (reparse-symbol function_parameters) [454 458])
+                            ("videoFile" variable nil (reparse-symbol function_parameters) [460 469])
+                            ("noteSubject" variable nil (reparse-symbol function_parameters) [499 510])
+                            ("noteContent" variable nil (reparse-symbol function_parameters) [512 523])
+                            ("contains" variable nil (reparse-symbol function_parameters) [525 533])
+                            ("username" variable nil (reparse-symbol function_parameters) [566 574])
+                            ("data" variable nil (reparse-symbol function_parameters) [581 585]))                          
+                        :documentation " Creates a render version, uploads the video, creates a note and attaches it
+        to the version and the tasks associated with the version type.
+
+        Args:
+            versionTag: the version code
+            description: description string for the version
+            type: render type
+            videoFile: the videofile to upload for the version
+            noteSubject: subject header for the note attached to the version
+            noteContent: body of the note attached to the version
+            contains: describes what this version contains
+            username: ignored
+            data: if not None, must be a prefilled dictionary fitting a shotgun version description
+
+        Returns:
+            ShotgunObject: the version created in shotgun
+        ")
+                        (reparse-symbol indented_block_body) [399 1705])
+                    ("createRenderNote" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1731 1735])
+                            ("type" variable nil (reparse-symbol function_parameters) [1737 1741])
+                            ("renderVersion" variable nil (reparse-symbol function_parameters) [1743 1756])
+                            ("noteSubject" variable nil (reparse-symbol function_parameters) [1758 1769])
+                            ("noteContent" variable nil (reparse-symbol function_parameters) [1771 1782]))                          
+                        :documentation " creates a shotgun note attached to a renderversion
+
+        Args:
+            type: the type of render
+            renderVersion: a shotgun object representation of a shotgun version (see :func:`self.createRenderVersionEmpty`)
+            noteSubject: subject header for the note
+            noteContent: body of the note attached to the version
+        ")
+                        (reparse-symbol indented_block_body) [1710 2856])
+                    ("getRenderNoteName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2883 2887])
+                            ("type" variable nil (reparse-symbol function_parameters) [2889 2893]))                          
+                        :documentation " given a shotgun render type, return a string representation
+
+        Args:
+            type: the shotgun render type
+
+        Returns:
+            list: the strings describing the render type
+        ")
+                        (reparse-symbol indented_block_body) [2861 4000])
+                    ("getRenderVersionTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4031 4035])
+                            ("type" variable nil (reparse-symbol function_parameters) [4037 4041]))                          
+                        :documentation " Returns a list of tasks which are associated with the render version type.
+
+        Args:
+            type: the shotgun render type
+
+        Returns:
+            list: a list of tasks associated with a render type
+        ")
+                        (reparse-symbol indented_block_body) [4005 5239])
+                    ("createRenderVersionEmpty" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5273 5277])
+                            ("versionTag" variable nil (reparse-symbol function_parameters) [5279 5289])
+                            ("description" variable nil (reparse-symbol function_parameters) [5291 5302])
+                            ("type" variable nil (reparse-symbol function_parameters) [5304 5308])
+                            ("contains" variable nil (reparse-symbol function_parameters) [5310 5318])
+                            ("username" variable nil (reparse-symbol function_parameters) [5323 5331])
+                            ("data" variable nil (reparse-symbol function_parameters) [5338 5342])
+                            ("status" variable nil (reparse-symbol function_parameters) [5349 5355]))                          
+                        :documentation " Creates an empty render version with the basic information.
+
+        Args:
+            versionTag: the version code
+            description: description string for the version
+            type: render type
+            contains: describes what this version contains
+            username: ignored
+            data: if not None, must be a prefilled dictionary fitting a shotgun version description
+            status: the status of the version
+
+        Returns:
+            ShotgunObject: If all is well returns the empty created version wrapped
+            (bool, str): If there's an exception returns False and a message
+        ")
+                        (reparse-symbol indented_block_body) [5244 6953])
+                    ("getLatestRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6985 6989])
+                            ("type" variable nil (reparse-symbol function_parameters) [6991 6995])
+                            ("returnId" variable nil (reparse-symbol function_parameters) [7002 7010])
+                            ("returnObject" variable nil (reparse-symbol function_parameters) [7018 7030]))                          
+                        :documentation " Returns the latest render version tag and description of the specified
+        asset for the specified type.
+
+        Args:
+            type:
+            returnId:
+            returnObject:
+
+        Returns:
+            (int, data, description): int:1 when found, 0 when no data found, -1 if we don't have an id yet,
+                                      data: None if nothing found, id if returnId is True, a shotgunobject if returnObject is True
+                                      description: description of the version or error message
+        ")
+                        (reparse-symbol indented_block_body) [6958 8582])
+                    ("getRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8608 8612])
+                            ("renderType" variable nil (reparse-symbol function_parameters) [8614 8624])
+                            ("name" variable nil (reparse-symbol function_parameters) [8631 8635])
+                            ("latestOnly" variable nil (reparse-symbol function_parameters) [8642 8652])
+                            ("fields" variable nil (reparse-symbol function_parameters) [8660 8666]))                          
+                        :documentation " Returns published version information about this asset.
+
+        Args:
+            renderType: render type
+            name: the name/code of the version to find
+            latestOnly: only return the latest version, not all matching ones
+            fields: include these fields in the returned information
+
+        Returns:
+           list: if latestOnly is False (default), return list of ShotgunObjects wrapping versions matching type and id
+           ShotgunObject: if latestOnly is True, return ShotgunObject wrapping latest version matching type and id
+        ")
+                        (reparse-symbol indented_block_body) [8587 10106]))                  
+                :type "class")
+                nil [301 10106]))          
+      :file "ShotgunAssetBaseObject.py"
+      :pointmax 10142
+      :fsize 10386
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ShotgunObject.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.ShotgunObject
+   :synopsis: base class for shotgun entity wrapper classes
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 182])
+            ("__future__" include nil nil [183 220])
+            ("__all__" variable nil nil [222 267])
+            ("get_subclasses" function (:arguments 
+              ( ("c" variable nil (reparse-symbol function_parameters) [288 289]))              ) nil [269 426])
+            ("ShotgunObject" type
+               (:documentation " Wraps the shotgun query result into a shotgun object and allows access to
+    its data using member variables.
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("_code" variable nil (reparse-symbol indented_block_body) [587 597])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            shotugn: a ShotgunInterface instance
+            data: dictionary with shotgun entity data
+        \"\"\"" code nil (reparse-symbol indented_block_body) [645 777])
+                            ("self" variable nil (reparse-symbol indented_block_body) [786 808])
+                            ("for" code nil (reparse-symbol indented_block_body) [873 1566]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [615 619])
+                            ("shotgun" variable nil (reparse-symbol function_parameters) [621 628])
+                            ("data" variable nil (reparse-symbol function_parameters) [630 634]))                          
+                        :documentation "
+        Args:
+            shotugn: a ShotgunInterface instance
+            data: dictionary with shotgun entity data
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [602 1566])
+                    ("getClassCode" function
+                       (:documentation " return the codename of the wrapped object
+
+        Returns:
+            str: code of this class of objects
+        "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1605 1608]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1571 1767])
+                    ("Name" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1795 1799]))                          
+                        :documentation " There is a slight inconsistency in shotgun where it sometimes returns name and other times returns code. We need to
+        check which one is the correct attribute name and use it.
+
+        Returns:
+            str: code or name of the wrapped object, as appropriate
+        ")
+                        (reparse-symbol indented_block_body) [1772 2255])
+                    ("wrap" function
+                       (:documentation " Wraps the specified shotgun data into an object. Depending on the object type
+        it will have extra functionality.
+
+        Args:
+            shotgun: a ShotgunInterface instance
+            data: dictionary with shotgun entity data, or list of such dicts
+
+        Returns:
+            ShotgunObject/dict: either a single ShotgunObject or a dictionary of those, depends on `data`
+        "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [2286 2289])
+                            ("shotgun" variable nil (reparse-symbol function_parameters) [2291 2298])
+                            ("data" variable nil (reparse-symbol function_parameters) [2300 2304]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2260 3812])
+                    ("addFields" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3831 3835])
+                            ("fields" variable nil (reparse-symbol function_parameters) [3837 3843]))                          
+                        :documentation " Adds the specified fields to the object and gets their values from shotgun.
+
+        Args:
+            fields: list of names of fields to add, or a single field name
+
+        Returns:
+            bool: True if adding the field(s) succeeded, False else
+        ")
+                        (reparse-symbol indented_block_body) [3817 4978])
+                    ("updateFields" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5000 5004])
+                            ("fields" variable nil (reparse-symbol function_parameters) [5006 5012]))                          
+                        :documentation " Update shotgun with the specified fields for this asset.
+
+        Args:
+            fields: list of names of fields to add, or a single field name
+
+        Returns:
+            bool: True if adding the field(s) succeeded, False else
+        ")
+                        (reparse-symbol indented_block_body) [4983 5618])
+                    ("updateFieldData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5643 5647])
+                            ("data" variable nil (reparse-symbol function_parameters) [5649 5653]))                          
+                        :documentation " Update shotgun with the specified data
+
+        Args:
+            data: shotgun data dict
+
+        Returns:
+            bool: True if adding the field(s) succeeded, False else
+        ")
+                        (reparse-symbol indented_block_body) [5623 6031])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6049 6053]))                          
+                        :documentation "
+        Returns:
+            str: string representation of the data represented in the ShotgunObject
+        ")
+                        (reparse-symbol indented_block_body) [6036 6418])
+                    ("getShotgunDict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6442 6446])
+                            ("fields" variable nil (reparse-symbol function_parameters) [6448 6454]))                          
+                        :documentation " returns a dictionary resembling what shotgun would return
+
+        Args:
+            fields: list of additional fields to include in the dictionary, can be empty
+
+        Returns:
+            dict: dictionary containing at least our type and id
+
+        Raises:
+            AttributeError: if we don't have one of the extra fields as an attribute
+        ")
+                        (reparse-symbol indented_block_body) [6423 7036])
+                    ("getTask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7101 7105])
+                            ("pipelineStep" variable nil (reparse-symbol function_parameters) [7107 7119])
+                            ("taskName" variable nil (reparse-symbol function_parameters) [7126 7134])
+                            ("fields" variable nil (reparse-symbol function_parameters) [7141 7147])
+                            ("assetType" variable nil (reparse-symbol function_parameters) [7190 7199]))                          
+                        :documentation " Returns a list of tasks which matches the pipeline step and task name and is linked to the entity we represent
+
+        Args:
+            pipelineStep: name of a pipeline step in shotgun
+            taskName: name of the task
+            fields: return these fields in the Tasks
+            assetType: override the asset type of our entity
+
+        Returns:
+            list: ShotgunObjects representing tasks
+        ")
+                        (reparse-symbol indented_block_body) [7089 8549])
+                    ("createNote" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8633 8637])
+                            ("subject" variable nil (reparse-symbol function_parameters) [8639 8646])
+                            ("content" variable nil (reparse-symbol function_parameters) [8648 8655])
+                            ("pipelineStep" variable nil (reparse-symbol function_parameters) [8657 8669])
+                            ("taskName" variable nil (reparse-symbol function_parameters) [8676 8684])
+                            ("data" variable nil (reparse-symbol function_parameters) [8691 8695])
+                            ("username" variable nil (reparse-symbol function_parameters) [8702 8710])
+                            ("imageFileList" variable nil (reparse-symbol function_parameters) [8717 8730])
+                            ("linkTo" variable nil (reparse-symbol function_parameters) [8735 8741]))                          
+                        :documentation " Creates a note indicating that the specified task has had a status change. A list of users to notify
+            will be generated and the note will be addressed to them.
+
+        Args:
+            subject: subject of the Note
+            content: body of the Note
+            pipelineStep: name of a pipeline step (can be None)
+            taskName: name of a task (can be None)
+            data: prefilled Note dict
+            username: ignored
+            imageFileList: list (possibly empty (default)) of image filepaths to attach to the note
+            linkTo: list of ShotgunObjects to link the note to
+        ")
+                        (reparse-symbol indented_block_body) [8618 11577])
+                    ("getNote" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11594 11598])
+                            ("noteSubject" variable nil (reparse-symbol function_parameters) [11600 11611])
+                            ("noteId" variable nil (reparse-symbol function_parameters) [11618 11624])
+                            ("fields" variable nil (reparse-symbol function_parameters) [11631 11637])
+                            ("returnList" variable nil (reparse-symbol function_parameters) [11653 11663]))                          
+                        :documentation " Returns the ID of a note
+
+        Args:
+            noteSubject: if not None, use this to find the note
+            noteId: if not None, use this to find the note
+            fields: fields to include in the returned data
+            returnList: if True, return a list of notes matching the search criteria, else(default) return one ShotgunNoteObject
+
+        Returns:
+            ShotgunObject/list: either one ShotgunObject or a list of them
+        ")
+                        (reparse-symbol indented_block_body) [11582 12742]))                  
+                :type "class")
+                nil [427 12742]))          
+      :file "ShotgunObject.py"
+      :pointmax 12769
+      :fsize 13138
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 12743 . 12753)))
+    (semanticdb-table "ShotgunInterface.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.ShotgunInterface
+   :synopsis: interface to the shotgun api
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 168])
+            ("__future__" include nil nil [169 206])
+            ("__all__" variable nil nil [208 245])
+            ("webbrowser" include nil nil [247 264])
+            ("time" include nil nil [265 276])
+            ("os" include nil nil [277 286])
+            ("sys" include nil nil [287 297])
+            ("re" include nil nil [298 307])
+            ("getpass" include nil nil [308 322])
+            ("traceback" include nil nil [323 339])
+            ("thread" include nil nil [340 353])
+            ("Shotgun" include nil nil [355 382])
+            ("ShotgunObject" include nil nil [383 422])
+            ("log" function
+               (:documentation " Writes the passed in message to the console with a date and time stamp.
+
+    Args:
+        msg: the message to print
+    "
+                :arguments 
+                  ( ("msg" variable nil (reparse-symbol function_parameters) [432 435]))                  )
+                nil [424 674])
+            ("ShotgunInterface" type
+               (:documentation " Interface object for accessing Shotgun.
+
+    This class is a Singleton. If you need a unique instance of this class you need to
+    specify newInstance=True in the constructor.
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("PUBLISH_TYPE_GEOMETRY" variable nil (reparse-symbol indented_block_body) [904 927])
+                    ("PUBLISH_TYPE_RIG" variable nil (reparse-symbol indented_block_body) [932 950])
+                    ("PUBLISH_TYPE_SHADER" variable nil (reparse-symbol indented_block_body) [955 976])
+                    ("PUBLISH_TYPE_PRD" variable nil (reparse-symbol indented_block_body) [981 999])
+                    ("PUBLISH_TYPE_BLENDSHAPES" variable nil (reparse-symbol indented_block_body) [1004 1030])
+                    ("PUBLISH_TYPE_FUR" variable nil (reparse-symbol indented_block_body) [1035 1053])
+                    ("PUBLISH_TYPE_CAMERA" variable nil (reparse-symbol indented_block_body) [1058 1079])
+                    ("PUBLISH_TYPE_BLOCKING" variable nil (reparse-symbol indented_block_body) [1084 1107])
+                    ("STATUS_WAITING_TO_START" variable nil (reparse-symbol indented_block_body) [1113 1138])
+                    ("STATUS_READY_TO_START" variable nil (reparse-symbol indented_block_body) [1143 1166])
+                    ("STATUS_IN_PROGRESS" variable nil (reparse-symbol indented_block_body) [1171 1191])
+                    ("STATUS_ON_HOLD" variable nil (reparse-symbol indented_block_body) [1196 1212])
+                    ("STATUS_READY_FOR_REVISION" variable nil (reparse-symbol indented_block_body) [1217 1244])
+                    ("STATUS_COMPLETE" variable nil (reparse-symbol indented_block_body) [1249 1266])
+                    ("ASSET_STATUS_WAITING_TO_START" variable nil (reparse-symbol indented_block_body) [1272 1303])
+                    ("ASSET_STATUS_IN_PROGRESS" variable nil (reparse-symbol indented_block_body) [1308 1334])
+                    ("ASSET_STATUS_PROXY_READY_FOR_SHIP" variable nil (reparse-symbol indented_block_body) [1339 1374])
+                    ("ASSET_STATUS_PROXY_SHIPPED" variable nil (reparse-symbol indented_block_body) [1379 1407])
+                    ("ASSET_STATUS_READY_FOR_SHIP" variable nil (reparse-symbol indented_block_body) [1412 1441])
+                    ("ASSET_STATUS_SHIPPED" variable nil (reparse-symbol indented_block_body) [1446 1468])
+                    ("ASSET_STATUS_ASI_PROXY_READY_FOR_SHIP" variable nil (reparse-symbol indented_block_body) [1473 1512])
+                    ("ASSET_STATUS_ASI_PROXY_SHIPPED" variable nil (reparse-symbol indented_block_body) [1517 1549])
+                    ("ASSET_STATUS_ASI_READY_FOR_SHIP" variable nil (reparse-symbol indented_block_body) [1554 1587])
+                    ("ASSET_STATUS_ASI_SHIPPED" variable nil (reparse-symbol indented_block_body) [1592 1618])
+                    ("RENDER_TYPE_ANIM" variable nil (reparse-symbol indented_block_body) [1624 1644])
+                    ("RENDER_TYPE_LGT" variable nil (reparse-symbol indented_block_body) [1649 1668])
+                    ("RENDER_TYPE_RETAKE" variable nil (reparse-symbol indented_block_body) [1673 1695])
+                    ("RENDER_TYPE_GEOMETRY" variable nil (reparse-symbol indented_block_body) [1700 1724])
+                    ("RENDER_TYPE_RIG" variable nil (reparse-symbol indented_block_body) [1729 1748])
+                    ("RENDER_TYPE_SHADER" variable nil (reparse-symbol indented_block_body) [1753 1775])
+                    ("RENDER_TYPE_BLENDSHAPES" variable nil (reparse-symbol indented_block_body) [1780 1807])
+                    ("RENDER_TYPE_ANIMATIC" variable nil (reparse-symbol indented_block_body) [1812 1836])
+                    ("RENDER_TYPE_PREVIZ" variable nil (reparse-symbol indented_block_body) [1841 1863])
+                    ("CacheData" variable nil (reparse-symbol indented_block_body) [1869 1884])
+                    ("server_name" variable nil (reparse-symbol indented_block_body) [1890 1906])
+                    ("_instance" variable nil (reparse-symbol indented_block_body) [1912 1926])
+                    ("__new__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [1944 1947])
+                        ("args" variable nil (reparse-symbol function_parameters) [1949 1954])
+                        ("kwargs" variable nil (reparse-symbol function_parameters) [1956 1964]))                      ) (reparse-symbol indented_block_body) [1932 2412])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            server_name: the name of the shotgun server to connect to
+        \"\"\"" code nil (reparse-symbol indented_block_body) [2475 2574])
+                            ("if" code nil (reparse-symbol indented_block_body) [2583 2636])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2645 3367])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3377 4124])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4134 4162])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4171 4229])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4238 4257])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4266 4339])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4348 4417])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4426 4488])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4497 4552])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4561 4638])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4647 4705])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4715 4739])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4748 4840])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4849 4935])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4944 5042])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5051 5144])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5153 5242])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5251 5335])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5344 5448])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5457 5554])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5563 5659])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5668 5755])
+                            ("server_path, script_user, script_key" code nil (reparse-symbol indented_block_body) [5766 5837])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5846 5876])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5885 5915])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5924 5952])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5961 5975])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5984 6005])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6014 6030])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6039 6059])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6068 6090]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2430 2434])
+                            ("server_name" variable nil (reparse-symbol function_parameters) [2436 2447])
+                            ("args" variable nil (reparse-symbol function_parameters) [2449 2454])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [2456 2464]))                          
+                        :documentation "
+        Args:
+            server_name: the name of the shotgun server to connect to
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2417 6091])
+                    ("getTaskStatusCode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6118 6122])
+                            ("codeId" variable nil (reparse-symbol function_parameters) [6124 6130]))                          )
+                        (reparse-symbol indented_block_body) [6096 6239])
+                    ("loadServers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6260 6264]))                          
+                        :documentation " search for shotgun license file and load servers from it
+
+        Returns:
+            list: the list of servers found in the license file
+        ")
+                        (reparse-symbol indented_block_body) [6244 7668])
+                    ("getServerSetup" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7692 7696])
+                            ("server_name" variable nil (reparse-symbol function_parameters) [7698 7709]))                          
+                        :documentation " Gets the configuration information for the specified server.
+
+        Args:
+            server_name: the name of a shotgun server
+
+        Returns:
+            tuple: server URL, server script and server key
+        ")
+                        (reparse-symbol indented_block_body) [7673 8576])
+                    ("connectToServer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8601 8605]))                          
+                        :documentation " Connects to Shotgun if the connection has not already been established.
+
+        If SHOTGUN_PPROXY is set then shotgun will use it at a proxy. The format of it
+        is [username:pass@]proxy.com[:8080]
+
+        Returns:
+            bool: True if connection was made, False else
+        ")
+                        (reparse-symbol indented_block_body) [8581 9353])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9370 9374])
+                            ("projectName" variable nil (reparse-symbol function_parameters) [9376 9387]))                          
+                        :documentation " Connects to Shotgun if the connection has not already been established.
+
+        Args:
+            projectName: this is the name of the project to connect to in Shotgun
+
+        Returns:
+            id: the project id connected to (None if we're not connected)
+        ")
+                        (reparse-symbol indented_block_body) [9358 9963])
+                    ("getProjectName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9987 9991])
+                            ("code" variable nil (reparse-symbol function_parameters) [9993 9997]))                          
+                        :documentation " Gets the project name.
+
+        Args:
+            code: this is the code of the project
+
+        Returns:
+            str: the project name matching the code.
+        ")
+                        (reparse-symbol indented_block_body) [9968 10457])
+                    ("getProjectCode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10481 10485])
+                            ("name" variable nil (reparse-symbol function_parameters) [10487 10491]))                          
+                        :documentation " Gets the project code.
+
+        Args:
+            name: this is the name of the project
+
+        Returns:
+            str: the project code for the specified project name, None if not found
+        ")
+                        (reparse-symbol indented_block_body) [10462 10924])
+                    ("getProjectID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10946 10950])
+                            ("name" variable nil (reparse-symbol function_parameters) [10951 10955]))                          
+                        :documentation " Gets the project id.
+
+        Args:
+            name: this is the name of the project
+
+        Returns:
+            id: the project id for the specified project name, None if not found
+        ")
+                        (reparse-symbol indented_block_body) [10929 11357])
+                    ("getProjectInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11381 11385])
+                            ("fields" variable nil (reparse-symbol function_parameters) [11386 11392])
+                            ("name" variable nil (reparse-symbol function_parameters) [11393 11397]))                          
+                        :documentation " Returns information about a project
+
+        Args:
+            fields: include this informaiton in the return value
+            name: If not None (the default), return information about the project with that name, use our own project else
+
+        Returns:
+            dict: information about the project
+            value: if fields is just one item, return a single value for that field
+            None: if no information could be found or the project name wasn't found
+        ")
+                        (reparse-symbol indented_block_body) [11362 12507])
+                    ("getProjectNames" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12532 12536])
+                            ("filters" variable nil (reparse-symbol function_parameters) [12538 12545]))                          
+                        :documentation " Returns names of projects
+
+        Args:
+             filters: list of shotgun filters, filter the list of projects returned by these
+
+        Returns:
+            list: project names or None if none are found
+        ")
+                        (reparse-symbol indented_block_body) [12512 13137])
+                    ("getStatusName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13160 13164])
+                            ("code" variable nil (reparse-symbol function_parameters) [13165 13169]))                          
+                        :documentation " Returns the status name for the specified status code.
+
+        Args:
+            code: the code of a shotgun status
+
+        Returns:
+            str: Name of the status, 'unknown' if it can't be found
+        ")
+                        (reparse-symbol indented_block_body) [13142 13721])
+                    ("getStatusCode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13744 13748])
+                            ("status" variable nil (reparse-symbol function_parameters) [13749 13755]))                          
+                        :documentation " Returns the status code for the specified status name.
+
+        Args:
+            status: name of a shotgun status
+
+        Returns:
+            str: status code
+        ")
+                        (reparse-symbol indented_block_body) [13726 14274])
+                    ("getEntityID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14295 14299])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [14301 14310])
+                            ("entityType" variable nil (reparse-symbol function_parameters) [14312 14322]))                          
+                        :documentation " return id of an entity
+
+        Args:
+            assetName: name of a shotgun entity
+            entityType: type of a shotgun entity
+
+        Returns:
+            id: the id of the entity
+        ")
+                        (reparse-symbol indented_block_body) [14279 14849])
+                    ("getAssetID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14869 14873])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [14875 14884]))                          
+                        :documentation " Gets the ID of the specified asset in Shotgun.
+
+        Args:
+            assetName: the name of an asset
+
+        Returns:
+            str: id of the asset
+        ")
+                        (reparse-symbol indented_block_body) [14854 15492])
+                    ("getEpisodeObject" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15518 15522])
+                            ("episode" variable nil (reparse-symbol function_parameters) [15524 15531]))                          
+                        :documentation " return ShotgunObject for an episode
+
+        Args:
+            episode: name of an episode in shotgun
+
+        Returns:
+            ShotgunEpisodeObject: wrapped shotgun episode, None if not found
+        ")
+                        (reparse-symbol indented_block_body) [15497 15951])
+                    ("getEpisodeID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15974 15978])
+                            ("episode" variable nil (reparse-symbol function_parameters) [15980 15987]))                          
+                        :documentation " return id of an episode
+
+        Args:
+            episode: the name of an episode in shotgun
+
+        Returns:
+            id: the id of the episode in shotgun, None if not found
+        ")
+                        (reparse-symbol indented_block_body) [15957 17373])
+                    ("getEpisodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17394 17398]))                          
+                        :documentation " return all episodes in the currently connected project
+
+        Returns:
+            list: the episodes in the current project
+        ")
+                        (reparse-symbol indented_block_body) [17378 17787])
+                    ("getShotID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17807 17811])
+                            ("episode" variable nil (reparse-symbol function_parameters) [17813 17820])
+                            ("shot" variable nil (reparse-symbol function_parameters) [17822 17826]))                          
+                        :documentation " Gets the ID of the specified asset in Shotgun.
+
+        Args:
+            episode: the name of an episode in shotgun
+            shot: the name of a shot in shotgun
+
+        Returns:
+            id: the shot entity ID, None if not found
+        ")
+                        (reparse-symbol indented_block_body) [17793 19476])
+                    ("getShotInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19497 19501])
+                            ("episode" variable nil (reparse-symbol function_parameters) [19503 19510])
+                            ("shot" variable nil (reparse-symbol function_parameters) [19512 19516])
+                            ("fields" variable nil (reparse-symbol function_parameters) [19518 19524]))                          
+                        :documentation " return information about a shot
+
+        Args:
+            episode: the name of an episode in shotgun
+            shot: the name of a shot in shotgun
+            fields: include these fields in the returned information
+
+        Returns:
+            tuple:
+                bool: whether the shot was found or not
+                status: status message
+                shotData: dict of shot data, None if not found
+        ")
+                        (reparse-symbol indented_block_body) [19481 20608])
+                    ("getShotObject" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20631 20635])
+                            ("episode" variable nil (reparse-symbol function_parameters) [20637 20644])
+                            ("shot" variable nil (reparse-symbol function_parameters) [20646 20650])
+                            ("fields" variable nil (reparse-symbol function_parameters) [20652 20658]))                          
+                        :documentation " get ShotgunShotObject for a specific shot
+
+        Args:
+            episode: the name of an episode in shotgun
+            shot: the name of a shot in shotgun
+            fields: include these fields in the returned information
+
+        Returns:
+            ShotgunShotObject: a wrapped shot, None if couldn't be found
+        ")
+                        (reparse-symbol indented_block_body) [20613 21230])
+                    ("getAssetObject" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21254 21258])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [21260 21269])
+                            ("fields" variable nil (reparse-symbol function_parameters) [21271 21277]))                          
+                        :documentation " get ShotgunAssetObject for an asset
+
+        Args:
+            assetName: the name of an asset in shotgun
+            fields: include these fields in the returned information
+
+        Returns:
+            ShotgunAssetObject: a wrapped asset, None if couldn't be found
+        ")
+                        (reparse-symbol indented_block_body) [21235 21759])
+                    ("getAssetInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21781 21785])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [21787 21796])
+                            ("fields" variable nil (reparse-symbol function_parameters) [21798 21804]))                          
+                        :documentation " Returns a dictionary with information about the specified asset
+
+        Args:
+            assetName: the name of an asset in shotgun
+            fields: include these fields in the returned information
+
+        Returns:
+            tuple:
+                bool: whether the asset was found or not
+                status: status message
+                shotData: dict of asset data, None if not found
+        ")
+                        (reparse-symbol indented_block_body) [21764 22857])
+                    ("getID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22872 22876])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [22878 22887]))                          
+                        :documentation " Gets the ID of the specified entity in Shotgun.
+
+        Args:
+            assetName: the name of an entity in shotgun
+
+        Returns:
+            tuple:
+                id: the id of an asset, None if not found
+                type:
+        ")
+                        (reparse-symbol indented_block_body) [22862 23977])
+                    ("getPipelineStepID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24004 24008])
+                            ("name" variable nil (reparse-symbol function_parameters) [24010 24014])
+                            ("type" variable nil (reparse-symbol function_parameters) [24016 24020]))                          
+                        :documentation " Returns the id of a step
+
+        Args:
+            name: name of a pipeline step in shotgun
+            type: entity type this pipeline step belongs to (None(default) => don't care about that)
+
+        Returns:
+             id: id of a pipeline step or 'unknown' if not found
+        ")
+                        (reparse-symbol indented_block_body) [23982 24755])
+                    ("getTaskInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24776 24780])
+                            ("asset" variable nil (reparse-symbol function_parameters) [24782 24787])
+                            ("pipeline" variable nil (reparse-symbol function_parameters) [24789 24797])
+                            ("task" variable nil (reparse-symbol function_parameters) [24799 24803])
+                            ("fields" variable nil (reparse-symbol function_parameters) [24805 24811])
+                            ("assetIsID" variable nil (reparse-symbol function_parameters) [24837 24846]))                          
+                        :documentation " get information about a task in shotgun
+
+        Args:
+            asset: either the name of an asset, or a tupple of (assetID, asseType), if assetIsID is True
+            pipeline: name of a pipeline step in shotgun
+            task: the name of a task in shotgun (on the pipeline step)
+            fields: list of fields to return values for
+            assetIsID: controls how the `asset` parameter is interpreted
+
+        Returns:
+            tuple:
+                bool: whether the task was found
+                status: status message about the search result
+                dict: task information
+        ")
+                        (reparse-symbol indented_block_body) [24760 26731])
+                    ("getTaskStatus" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26754 26758])
+                            ("asset" variable nil (reparse-symbol function_parameters) [26760 26765])
+                            ("pipeline" variable nil (reparse-symbol function_parameters) [26767 26775])
+                            ("task" variable nil (reparse-symbol function_parameters) [26777 26781]))                          
+                        :documentation " get the status of a task
+
+        Args:
+            asset: name of an asset in shotgun
+            pipeline: name of a pipeline step in shotgun
+            task: name of a task in shotgun
+
+        Returns:
+            int: status code
+        ")
+                        (reparse-symbol indented_block_body) [26736 27485])
+                    ("getEntityInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27508 27512])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [27514 27523])
+                            ("fields" variable nil (reparse-symbol function_parameters) [27525 27531]))                          
+                        :documentation " Returns a dictionary with information about the specified asset
+
+        Args:
+            assetName: name of an asset in shotgun
+            fields: list of fields to return in the information
+
+        Returns:
+            tuple:
+                bool: whether the asset was found or not
+                status: status message
+                shotData: dict of asset data, None if not found
+        ")
+                        (reparse-symbol indented_block_body) [27490 28577])
+                    ("getEntityList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28600 28604])
+                            ("entityType" variable nil (reparse-symbol function_parameters) [28606 28616])
+                            ("fields" variable nil (reparse-symbol function_parameters) [28618 28624])
+                            ("filters" variable nil (reparse-symbol function_parameters) [28626 28633])
+                            ("ignoreProject" variable nil (reparse-symbol function_parameters) [28640 28653])
+                            ("order" variable nil (reparse-symbol function_parameters) [28661 28666]))                          
+                        :documentation " get information about shotgun entities of a specific type
+
+        Args:
+            entityType: type of entity to look for
+            fields: list of fields to return information for
+            filters: list of shotgun query filters
+            ignoreProject: if True, return entities of the connected project only (default False)
+            order: order the results by this (see :func:`shotgun api - find()`)
+
+        Returns:
+            list: list of dicts with shotgun entity information
+        ")
+                        (reparse-symbol indented_block_body) [28582 29661])
+                    ("getEntityObjectList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29690 29694])
+                            ("entityType" variable nil (reparse-symbol function_parameters) [29696 29706])
+                            ("fields" variable nil (reparse-symbol function_parameters) [29708 29714])
+                            ("filters" variable nil (reparse-symbol function_parameters) [29716 29723])
+                            ("ignoreProject" variable nil (reparse-symbol function_parameters) [29730 29743]))                          
+                        :documentation " Returns a list of entity objects for the specified type.
+
+        Args:
+            entityType:  type of entity to look for
+            fields: list of fields to return information for
+            filters: list of shotgun query filters
+            ignoreProject: if True, return entities of the connected project only (default False)
+
+        Returns:
+            list: list of shotgun objects
+        ")
+                        (reparse-symbol indented_block_body) [29666 30305])
+                    ("getAssetList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30327 30331])
+                            ("filters" variable nil (reparse-symbol function_parameters) [30333 30340]))                          
+                        :documentation " gets list of assets
+        You can use the filter option to reduce the amount of assets returned in the list.
+
+        Example:
+            getAssetList([['sg_asset_type','is','Character']])
+
+        Args:
+            filters: list of shotgun query filters
+
+        Returns:
+            list: dicts with information about assets
+        ")
+                        (reparse-symbol indented_block_body) [30310 30890])
+                    ("getShotList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30911 30915])
+                            ("episodeName" variable nil (reparse-symbol function_parameters) [30917 30928])
+                            ("setting" variable nil (reparse-symbol function_parameters) [30930 30937]))                          
+                        :documentation " Gets the list of shots in the specified episode.
+
+        Args:
+            episodeName: name of an episode in shotgun
+            setting: name of a field on shots in shotgun, if None (default) defaults to 'code'
+
+        Returns:
+            tuple:
+                bool: success of getting the shot list
+                list or str: either list of shots or string exmplaining why none coul dbe found
+        ")
+                        (reparse-symbol indented_block_body) [30895 31966])
+                    ("createDocumentEntity" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31996 32000])
+                            ("document_filename" variable nil (reparse-symbol function_parameters) [32002 32019])
+                            ("tags" variable nil (reparse-symbol function_parameters) [32021 32025])
+                            ("description" variable nil (reparse-symbol function_parameters) [32027 32038]))                          
+                        :documentation " Creates a new document entity using the specified document location, tags and
+            description.
+
+        Args:
+            document_filename: filename of the document to create an entity for
+            tags: list of strings used as tags
+            description: description of the document entity
+
+        Returns:
+            tuple:
+                bool: success flag
+                str: description of error
+        ")
+                        (reparse-symbol indented_block_body) [31971 33638])
+                    ("getPublishTypeString" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33668 33672])
+                            ("type" variable nil (reparse-symbol function_parameters) [33674 33678]))                          
+                        :documentation " Returns the publish type string for the specified publish type or function code
+
+        Args:
+            type: publish type identifier (code, full name, short name)
+
+        Returns:
+            str: string representation of the type, None if type code is unknown
+        ")
+                        (reparse-symbol indented_block_body) [33643 34155])
+                    ("getPublishFunctionCodeString" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34193 34197])
+                            ("type" variable nil (reparse-symbol function_parameters) [34199 34203]))                          
+                        :documentation " Returns the function code for the specified publish type or publish type string
+
+        Args:
+            type: publish type identifier (code, full name, short name)
+
+        Returns:
+            str: short name of the publish type
+        ")
+                        (reparse-symbol indented_block_body) [34160 34647])
+                    ("getPublishTypeCode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34675 34679])
+                            ("type" variable nil (reparse-symbol function_parameters) [34681 34685]))                          
+                        :documentation " Returns the publish type code for the specified function code or publish type string
+
+        Args:
+            type: publish type identifier (code, full name, short name)
+
+        Returns:
+            int: code of the pulish type
+        ")
+                        (reparse-symbol indented_block_body) [34652 35127])
+                    ("getRenderTypeString" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35156 35160])
+                            ("type" variable nil (reparse-symbol function_parameters) [35162 35166]))                          
+                        :documentation " Returns the render type string for the specified render type code
+
+        Args:
+            type: render type identifier (code or full name)
+
+        Returns:
+            str: full name of the render type
+        ")
+                        (reparse-symbol indented_block_body) [35132 35582])
+                    ("getRenderTypeCode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35609 35613])
+                            ("type" variable nil (reparse-symbol function_parameters) [35615 35619]))                          
+                        :documentation " Returns the render type code for the specified render type string
+
+        Args:
+            type: render type identifier (code or full name)
+
+        Returns:
+            int: code of the render type
+        ")
+                        (reparse-symbol indented_block_body) [35587 36030])
+                    ("createPublishVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36060 36064])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [36066 36075])
+                            ("versionTag" variable nil (reparse-symbol function_parameters) [36077 36087])
+                            ("description" variable nil (reparse-symbol function_parameters) [36089 36100])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [36102 36113])
+                            ("contains" variable nil (reparse-symbol function_parameters) [36115 36123])
+                            ("filepath" variable nil (reparse-symbol function_parameters) [36128 36136]))                          
+                        :documentation " Creates a new publish version using the specified asset name, version tag, description
+        and publish type.
+
+        Args:
+            assetName: name of an asset in shotgun
+            versionTag: code of the version to use in shotgun
+            description: description of the version
+            publishType: type of publish done,  can be 'Rig', 'Shader', 'Geometry' or 'PRD'
+            contains: string describing what MDL, Shaders, etc... versions went into this publish
+            filepath: if not None (the default), link the publish event to this file
+
+        Returns:
+            tuple:
+                bool: success flag
+                str: description of error
+        ")
+                        (reparse-symbol indented_block_body) [36035 37767])
+                    ("getLatestPublishedVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37802 37806])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [37808 37817])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [37819 37830]))                          
+                        :documentation " Returns the latest published version tag and description of the specified
+        asset for the specified type. The publish type can be
+
+        Args:
+            assetName: name of an asset in shotgun
+            publishType: one of 'Rig', 'Shader', 'Geometry' or 'PRD'
+
+        Returns:
+             tuple:
+                 int: 1 when found data, 0 when no data
+                 str: version tag
+                 str: description
+        ")
+                        (reparse-symbol indented_block_body) [37772 39191])
+                    ("getLatestPublishedVersions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39227 39231])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [39233 39242]))                          
+                        :documentation " return latest published versions for an asset
+
+        Args:
+            assetName: name of the asset
+
+        Returns:
+            tuple:
+                int: 1 when found data, 0 when no data, -1 in case of failure to find asset
+                list: list of shotugn PublishEvents
+                str: description
+        ")
+                        (reparse-symbol indented_block_body) [39196 40731])
+                    ("getLatestPublishedContents" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40767 40771])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [40773 40782])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [40784 40795]))                          
+                        :documentation " Returns the latest published contains tag and description of the specified
+        asset for the specified type. The publish type can be 'Rig', 'Shader', 'Geometry' or 'PRD'.
+
+        Args:
+            assetName:
+            publishedType:
+
+        Returns
+            tuple:
+                int: 1 when found data, 0 when no data, -1 in case of failure to find asset
+                list: list of shotugn PublishEvents
+                str: description
+        ")
+                        (reparse-symbol indented_block_body) [40736 42191])
+                    ("updateTask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [42211 42215])
+                            ("asset" variable nil (reparse-symbol function_parameters) [42217 42222])
+                            ("pipelineStep" variable nil (reparse-symbol function_parameters) [42224 42236])
+                            ("taskName" variable nil (reparse-symbol function_parameters) [42238 42246])
+                            ("statusCode" variable nil (reparse-symbol function_parameters) [42248 42258]))                          
+                        :documentation " update a task's status in shotgun
+
+        Args:
+            asset: name of an entity in shotgun
+            pipelineStep: name of a pipeline step in shotgun
+            taskName: name of the task
+            statusCode: int code of a taks status
+
+        Returns:
+            tuple:
+                int: 0 if update failed, 1 on success
+                str: status message
+        ")
+                        (reparse-symbol indented_block_body) [42196 43807])
+                    ("getAssetStatus" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [43831 43835])
+                            ("asset" variable nil (reparse-symbol function_parameters) [43837 43842]))                          
+                        :documentation " get the status of an asset
+
+        Args:
+            asset: name of an entity in shotgun
+
+        Returns:
+            tuple:
+                int: 1 if the asset was found, 0 else
+                status: asset finding status message
+                assetStatus: status of the asset
+        ")
+                        (reparse-symbol indented_block_body) [43812 45018])
+                    ("getAssetParent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [45042 45046])
+                            ("asset" variable nil (reparse-symbol function_parameters) [45048 45053]))                          
+                        :documentation " Returns a list of parents connected with the specified asset. Note, there should only be one parent but
+        Shotgun allows the user attach multiple parents. This is a feature we dont use but we need to support in
+        the ShotgunInterface.
+
+        Args:
+            asset: name of an asset in shotgun
+
+        Returns:
+            tuple:
+                bool: whether the asset parent was found or not
+                str: status msg
+                list: list of one parent if it was found, empty else
+        ")
+                        (reparse-symbol indented_block_body) [45023 46361])
+                    ("getAssetDerivatives" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [46390 46394])
+                            ("asset" variable nil (reparse-symbol function_parameters) [46396 46401]))                          
+                        :documentation " Returns a list of derivatives connected with the specified asset.
+
+        Args:
+            asset: name of an asset in shotgun
+
+        Returns:
+            tuple:
+                int: 1 if assset derivatives wer found, 0 else
+                status: status message
+                list: list of asset derivative dicts
+        ")
+                        (reparse-symbol indented_block_body) [46366 47517])
+                    ("updateAssetStatus" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [47544 47548])
+                            ("asset" variable nil (reparse-symbol function_parameters) [47550 47555])
+                            ("statusCode" variable nil (reparse-symbol function_parameters) [47557 47567]))                          
+                        :documentation " update the status of an asset
+
+        Args:
+            asset: asset name in shotgun
+            statusCode:  int code of an asset status
+
+        Returns:
+            tuple:
+                int: 0 if the update failed, 1 else
+                str: status message
+        ")
+                        (reparse-symbol indented_block_body) [47522 48343])
+                    ("createNote" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [48363 48367])
+                            ("asset" variable nil (reparse-symbol function_parameters) [48369 48374])
+                            ("subject" variable nil (reparse-symbol function_parameters) [48376 48383])
+                            ("content" variable nil (reparse-symbol function_parameters) [48385 48392])
+                            ("pipeline" variable nil (reparse-symbol function_parameters) [48394 48402])
+                            ("task" variable nil (reparse-symbol function_parameters) [48409 48413])
+                            ("data" variable nil (reparse-symbol function_parameters) [48420 48424])
+                            ("username" variable nil (reparse-symbol function_parameters) [48431 48439])
+                            ("imageFileList" variable nil (reparse-symbol function_parameters) [48446 48459])
+                            ("replyIfExists" variable nil (reparse-symbol function_parameters) [48464 48477]))                          
+                        :documentation " Creates a note indicating that the specified task has had a status change. A list of users to notify
+        will be generated and the note will be addressed to them.
+
+        Args:
+            asset: name of an asset in shotgun
+            subject: subject of the note
+            content: body of the note
+            pipeline: name of a pipeline step in shotgun (or None)
+            task: the name of a task in shotgun (on the pipeline step) (or None)
+            data: prepared shotgun data dict for the note (can be None)
+            username: ignored
+            imageFileList: list of image file paths to upload to the note
+            replyIfExists: ignored (rpelying if the note exists is the default behaviour)
+
+        Returns:
+            tuple:
+                int: 1 if successfull, 0 else
+                str: status message
+        ")
+                        (reparse-symbol indented_block_body) [48348 51107])
+                    ("getNoteID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [51126 51130])
+                            ("noteSubject" variable nil (reparse-symbol function_parameters) [51132 51143])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [51145 51154]))                          
+                        :documentation " Returns the ID of a note
+
+        Args:
+            noteSubject: subject line of a note stored in shotgun
+            assetName: if not None(default), the note has to be attached to an asset with this name
+
+        Returns:
+            int: the id of the note, None if not found
+        ")
+                        (reparse-symbol indented_block_body) [51112 52024])
+                    ("replyToNote" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [52045 52049])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [52051 52060])
+                            ("noteSubject" variable nil (reparse-symbol function_parameters) [52062 52073])
+                            ("reply" variable nil (reparse-symbol function_parameters) [52075 52080])
+                            ("username" variable nil (reparse-symbol function_parameters) [52082 52090])
+                            ("imageFileList" variable nil (reparse-symbol function_parameters) [52097 52110])
+                            ("createNote" variable nil (reparse-symbol function_parameters) [52115 52125]))                          
+                        :documentation " create a reply to a note on an asset
+
+        Args:
+            assetName: name of an asset in shotgun
+            noteSubject: subject of an existing note in shotgun
+            reply: body text of the reply
+            username: ignored
+            imageFileList: list (potentialy empty (default)) of images to upload to the reply
+            createNote: if the note to reply to doesn't yet exists, create such a note instead
+        ")
+                        (reparse-symbol indented_block_body) [52029 53124])
+                    ("setUsername" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [53145 53149])
+                            ("username" variable nil (reparse-symbol function_parameters) [53151 53159]))                          
+                        :documentation " set our username and clear the usernameID
+
+        Args:
+            username: name or login of a person (HumanUser) in shotgun
+        ")
+                        (reparse-symbol indented_block_body) [53129 53374])
+                    ("addUserInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [53395 53399])
+                            ("dataDict" variable nil (reparse-symbol function_parameters) [53401 53409])
+                            ("fieldName" variable nil (reparse-symbol function_parameters) [53411 53420]))                          
+                        :documentation " add user information to a shotgun data dict, if we have a valid userID
+
+        Args:
+            dataDict: a shotgun data dictionary
+            fieldName: a field in the shotgun data dictionary
+
+        Returns:
+            dict: the updated data dictionary
+        ")
+                        (reparse-symbol indented_block_body) [53379 53872])
+                    ("_getUsernameID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [53896 53900])
+                            ("username" variable nil (reparse-symbol function_parameters) [53902 53910]))                          
+                        :documentation " return the shotgun ID for a user
+
+        Args:
+            username: name or login of a person(HumanUser) in shotgun
+
+        Returns:
+            int: shotgun user id, will be 0 if the user can't be found
+        ")
+                        (reparse-symbol indented_block_body) [53877 55038])
+                    ("getUsernameID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [55061 55065])
+                            ("username" variable nil (reparse-symbol function_parameters) [55067 55075]))                          
+                        :documentation " Returns the username ID for the internal username stored or a given username
+
+        Args:
+            username: name or login of a person(HumanUser) in shotgun
+
+        Returns:
+            int: the id of the user or None if there is no match
+        ")
+                        (reparse-symbol indented_block_body) [55043 55781])
+                    ("getUsername" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [55802 55806]))                          
+                        :documentation " Returns the current system username. If an override has been specified this is returned.
+
+        Returns:
+            str: a username or login or None if it couldn't be determined
+        ")
+                        (reparse-symbol indented_block_body) [55786 56319])
+                    ("createSequence" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [56343 56347])
+                            ("name" variable nil (reparse-symbol function_parameters) [56349 56353])
+                            ("episode" variable nil (reparse-symbol function_parameters) [56355 56362]))                          
+                        :documentation " create a shotgun sequence, potentially fill it with the shots in an episode
+
+        Args:
+            name: the name to give the sequence
+            episode: name of an episode in shotgun or None(default)
+
+        Returns:
+            int: id of the created sequence
+        ")
+                        (reparse-symbol indented_block_body) [56324 57214])
+                    ("getSequence" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [57235 57239])
+                            ("name" variable nil (reparse-symbol function_parameters) [57241 57245])
+                            ("createIfDoesntExist" variable nil (reparse-symbol function_parameters) [57247 57266]))                          
+                        :documentation " return a sequence from shotgun, potentially create it, if it doesn't exist
+
+        Args:
+            name: the name of the sequence to get
+            createIfDoesntExists: if True, create the sequence if it can't be found (default False)
+
+        Returns:
+            int: id of the found/created sequence
+        ")
+                        (reparse-symbol indented_block_body) [57219 57885])
+                    ("createRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [57914 57918])
+                            ("episode" variable nil (reparse-symbol function_parameters) [57920 57927])
+                            ("ShotName" variable nil (reparse-symbol function_parameters) [57929 57937])
+                            ("versionTag" variable nil (reparse-symbol function_parameters) [57939 57949])
+                            ("description" variable nil (reparse-symbol function_parameters) [57951 57962])
+                            ("videoFile" variable nil (reparse-symbol function_parameters) [57964 57973])
+                            ("type" variable nil (reparse-symbol function_parameters) [57975 57979])
+                            ("contains" variable nil (reparse-symbol function_parameters) [57981 57989])
+                            ("uploadVideo" variable nil (reparse-symbol function_parameters) [57994 58005])
+                            ("noteSubject" variable nil (reparse-symbol function_parameters) [58012 58023]))                          
+                        :documentation " Creates a new Asset Render version using the specified episode/shot name, version tag, description
+        and video file. The version is added to the playlist and note.
+
+        Args:
+            episode: name of an episode of a version in shotgun
+            ShotName: name of a shot of a version in shotgun
+            versionTag: name/code of a version in shotgun
+            description: description of the render version
+            videoFile: name of a video file representing the render version
+            type: RENDER_TYPE_ANIM for Animation, RENDER_TYPE_LGT for Lighting
+            contains:  string describing what MDL, Shaders, etc... versions went into this publish
+            uploadVideo: if True(default), upload the videoFile if it exists
+            noteSubject: subject of the note to create, can be None(default), then it's autogenerated
+
+        Returns:
+            tuple:
+                bool: success flag
+                str: description of error
+        ")
+                        (reparse-symbol indented_block_body) [57890 59211])
+                    ("createAssetRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [59245 59249])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [59251 59260])
+                            ("versionTag" variable nil (reparse-symbol function_parameters) [59262 59272])
+                            ("description" variable nil (reparse-symbol function_parameters) [59274 59285])
+                            ("videoFile" variable nil (reparse-symbol function_parameters) [59287 59296])
+                            ("type" variable nil (reparse-symbol function_parameters) [59298 59302])
+                            ("contains" variable nil (reparse-symbol function_parameters) [59304 59312])
+                            ("uploadVideo" variable nil (reparse-symbol function_parameters) [59317 59328])
+                            ("noteSubject" variable nil (reparse-symbol function_parameters) [59335 59346])
+                            ("username" variable nil (reparse-symbol function_parameters) [59353 59361])
+                            ("data" variable nil (reparse-symbol function_parameters) [59368 59372]))                          
+                        :documentation " Creates a new Asset Render version using the specified asset name, version tag, description
+        and video file. The version is added to the playlist and note.
+
+        Args:
+            assetName: name of an asset in shotgun
+            versionTag: tag of a version in shotgun
+            description: description of the version
+            videoFile: a videoFile on disk
+            type: RENDER_TYPE_ANIM for Animation, RENDER_TYPE_LGT for Lighting, RENDER_TYPE_RETAKE, RENDER_TYPE_GEOMETRY, RENDER_TYPE_RIG, RENDER_TYPE_SHADER RENDER_TYPE_BLENDSHAPES
+            contains: string describing what MDL, Shaders, etc... versions went into this publish
+            uploadVideo: if True, upload the video file (if it exists)
+            noteSubject: subject of the note to create, can be None(default), then it's autogenerated
+            username: ignored
+            data: if not None(default), prefilled dictionary of shotgun data
+
+        Returns:
+            tuple:
+                bool: success flag
+                str: description of error
+        ")
+                        (reparse-symbol indented_block_body) [59216 66385])
+                    ("getLatestRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [66417 66421])
+                            ("episode" variable nil (reparse-symbol function_parameters) [66423 66430])
+                            ("shotName" variable nil (reparse-symbol function_parameters) [66432 66440])
+                            ("type" variable nil (reparse-symbol function_parameters) [66442 66446]))                          
+                        :documentation " Returns the latest render version tag and description of the specified
+        asset for the specified type.
+
+        Args:
+            episode: name of an episode in shotgun
+            shotName: name of a shot in shotgun
+            type: render type of version
+
+        Returns:
+            tuple:
+                int: 1 when found data, 0 when no data
+                str: version tag
+                str: description
+        ")
+                        (reparse-symbol indented_block_body) [66390 67013])
+                    ("getWardrobeShader" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [67040 67044])
+                            ("asset" variable nil (reparse-symbol function_parameters) [67046 67051])
+                            ("wardrobe" variable nil (reparse-symbol function_parameters) [67053 67061]))                          
+                        :documentation " Returns the shader used with the specified asset for the specified wardrobe item,
+        or of the asset if wardrobe is None
+
+        Args:
+            asset: name of an asset in shotgun
+            wardrobe: If set to None it will return the shader variant for the asset
+
+        Returns:
+            str: name of the shader variant
+        ")
+                        (reparse-symbol indented_block_body) [67018 68351])
+                    ("setWardrobeShader" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [68378 68382])
+                            ("asset" variable nil (reparse-symbol function_parameters) [68384 68389])
+                            ("wardrobe" variable nil (reparse-symbol function_parameters) [68391 68399])
+                            ("shader" variable nil (reparse-symbol function_parameters) [68401 68407]))                          
+                        :documentation " Sets the wardrobe shader to use with the specified asset for the specified wardrobe item,
+        or the asset if wardrobe is None
+
+        Args:
+            asset: name of an asset in shotgun
+            wardrobe: name of a wardrobe asset (can be None => set shader for asset)
+            shader: name of a shader
+
+        Returns:
+            bool: True if shader set, False if it failed
+        ")
+                        (reparse-symbol indented_block_body) [68356 70136])
+                    ("getLatestAssetRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [70175 70179])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [70181 70190])
+                            ("type" variable nil (reparse-symbol function_parameters) [70192 70196])
+                            ("returnId" variable nil (reparse-symbol function_parameters) [70203 70211]))                          
+                        :documentation " Returns the latest render version tag and description of the specified
+        asset for the specified type.
+
+        Args:
+            assetName: name of an asset in shotgun
+            type: render type of version
+            returnId: if False(default), return tag of version, id else
+
+        Returns:
+            tuple:
+                int: 1 when found data, 0 when no data, -1 if the asset can't be found
+                str/int: version code, or if returnId is True, the shotgun id of the version object
+        ")
+                        (reparse-symbol indented_block_body) [70143 71644])
+                    ("createShot" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [71664 71668])
+                            ("shotCode" variable nil (reparse-symbol function_parameters) [71670 71678])
+                            ("templateName" variable nil (reparse-symbol function_parameters) [71680 71692]))                          
+                        :documentation " create a Shot in Shotgun with tasks
+        Args:
+            shotCode: name of the shot
+            templateName: name of a task template to use
+
+        Returns:
+            tuple:
+                str: result log
+                None:
+            None: if successful
+        ")
+                        (reparse-symbol indented_block_body) [71649 73127])
+                    ("createAsset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [73148 73152])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [73154 73163])
+                            ("assetType" variable nil (reparse-symbol function_parameters) [73165 73174])
+                            ("subType" variable nil (reparse-symbol function_parameters) [73176 73183])
+                            ("reference" variable nil (reparse-symbol function_parameters) [73185 73194])
+                            ("parentAsset" variable nil (reparse-symbol function_parameters) [73196 73207])
+                            ("templateName" variable nil (reparse-symbol function_parameters) [73214 73226])
+                            ("assetWeight" variable nil (reparse-symbol function_parameters) [73233 73244])
+                            ("userName" variable nil (reparse-symbol function_parameters) [73256 73264]))                          
+                        :documentation " Creates a new asset in Shotgun and sets it up all the notes and links.
+
+        Args:
+            assetName: name of the asset
+            assetType: name of an asset type in shotgun
+            subType: sub type of the asset
+            reference: URL of a reference for this asset
+            parentAsset: if not None (default), code of an asset that should be the parent of this one
+            templateName: name of a task template in shotgun
+            assetWeight: float waeight of this asset
+            userName: ignored
+
+        Returns:
+            tuple:
+                str: result log
+                int: id of the newly created asset, None if failure
+        ")
+                        (reparse-symbol indented_block_body) [73132 79874]))                  
+                :type "class")
+                nil [675 79874]))          
+      :file "ShotgunInterface.py"
+      :pointmax 79904
+      :fsize 82056
+      :lastmodtime '(22220 14148 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface
+   :synopsis: wrappers and utilities to handle information from shotgun
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 180])
+            ("__future__" include nil nil [181 218])
+            ("ShotgunInterface" include nil nil [220 250])
+            ("ShotgunUtils" include nil nil [251 277])
+            ("ShotgunVersionObject" include nil nil [308 342])
+            ("ShotgunRenderVersionObject" include nil nil [343 383])
+            ("ShotgunNoteObject" include nil nil [384 415])
+            ("ShotgunEpisodeObject" include nil nil [416 450])
+            ("ShotgunShotObject" include nil nil [451 482])
+            ("ShotgunAssetObject" include nil nil [483 515])
+            ("services" include nil nil [517 532])
+            ("reload" code nil nil [533 549]))          
+      :file "__init__.py"
+      :pointmax 550
+      :fsize 571
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax '(($EOI 550 . 550) ($EOI 605 . 605) ($EOI 593 . 593) ($EOI 586 . 586) ($EOI 579 . 579) ($EOI 560 . 560) ($EOI 561 . 561) (IMPORT 188 . 194) (MULT 195 . 196) (FROM 162 . 166) (PERIOD 182 . 183) ($EOI 529 . 529)))
+    (semanticdb-table "ShotgunUtils.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.ShotgunUtils
+   :synopsis: utility functions for shotgun interface
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 175])
+            ("__future__" include nil nil [176 213])
+            ("os" include nil nil [458 467])
+            ("re" include nil nil [468 477])
+            ("webbrowser" include nil nil [478 495])
+            ("ShotgunInterface" include nil nil [497 527])
+            ("browseToAssetInShotgun" function
+               (:documentation " Open the Shotgun page of the Asset associated with the specified file in the default browser.
+
+    Args:
+        filePath: this is the path of the open asset file
+
+    Returns:
+        str: saying if the function succeeded or failed.
+    "
+                :arguments 
+                  ( ("filePath" variable nil (reparse-symbol function_parameters) [556 564]))                  )
+                nil [529 2196])
+            ("browseToScreeningRoomInShotgun" function
+               (:documentation " Open the Shotgun page of the Asset associated with the specified file in the default browser.
+
+    Args:
+        filePath: this is the path of the shot to open in ScreeningRoom
+
+    Returns:
+        str: saying if the function succeeded or failed.
+    "
+                :arguments 
+                  ( ("filePath" variable nil (reparse-symbol function_parameters) [2232 2240]))                  )
+                nil [2197 3890])
+            ("createNotesForAsset" function
+               (:documentation " Create notes for asset.
+
+    Args:
+        shotgun: a ShotgunInterface instance
+        assetName: name of an asset in Shotgun
+    "
+                :arguments 
+                  ( ("shotgun" variable nil (reparse-symbol function_parameters) [3915 3922])
+                    ("assetName" variable nil (reparse-symbol function_parameters) [3924 3933]))                  )
+                nil [3891 6975])
+            ("setupProjectTemplates" function
+               (:documentation " Setup a new project using the specified project as the base line. The new project should already exist in Shotgun. This function
+    performs the following tasks:
+    -    Creates the Groups
+    -    Creates the Task Templates
+    -    Assigns the tasks in the tempaltes to the correct groups.
+    -    The default project is TemplateProjectBBF
+
+    Args:
+        fromProject: project name to copy from
+        toProject: project name to copy to
+    "
+                :arguments 
+                  ( ("fromProject" variable nil (reparse-symbol function_parameters) [7002 7013])
+                    ("toProject" variable nil (reparse-symbol function_parameters) [7015 7024]))                  )
+                nil [6976 10922])
+            ("getProjectTemplate" function
+               (:documentation " Perform an analysis of two task templates returning the difference between the two templates.
+
+    Args:
+        fromProject: project name to copy from
+        toProject: project name to copy to
+    "
+                :arguments 
+                  ( ("project" variable nil (reparse-symbol function_parameters) [10947 10954]))                  )
+                nil [10924 12037])
+            ("TaskTemplateDiff" type
+               (:documentation " Calculate the difference between two dictionaries as:
+    (1) items added
+    (2) items removed
+    (3) keys same in both but changed values
+    (4) keys same in both and unchanged values
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            past_dict: dictionary used to calculate changes from
+            current_dict: dictionary used to calculate changes to
+        \"\"\"" code nil (reparse-symbol indented_block_body) [12103 12263])
+                            ("self, self" code nil (reparse-symbol indented_block_body) [12272 12331])
+                            ("self, self" code nil (reparse-symbol indented_block_body) [12340 12421])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12430 12491]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12292 12296])
+                            ("past_dict" variable nil (reparse-symbol function_parameters) [12298 12307])
+                            ("current_dict" variable nil (reparse-symbol function_parameters) [12309 12321]))                          
+                        :documentation "
+        Args:
+            past_dict: dictionary used to calculate changes from
+            current_dict: dictionary used to calculate changes to
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [12279 12721])
+                    ("added" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12736 12740]))                          
+                        :documentation " find keys that were added to past dict to make current dict
+
+        Returns:
+            list: list of keys
+        ")
+                        (reparse-symbol indented_block_body) [12726 13116])
+                    ("removed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13133 13137]))                          
+                        :documentation " find keys that were removed from past dict to make current dict
+
+        Returns:
+            list: list of keys
+        ")
+                        (reparse-symbol indented_block_body) [13121 13514])
+                    ("changed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13531 13535]))                          
+                        :documentation " find changes in values where keys are the same
+
+        Returns:
+            dict: dictionary of changes keyed by change type
+        ")
+                        (reparse-symbol indented_block_body) [13519 14460])
+                    ("unchanged" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14571 14575]))                          )
+                        (reparse-symbol indented_block_body) [14557 14669]))                  
+                :type "class")
+                nil [12039 14669])
+            ("deleteShot" function
+               (:documentation " Delete a shot and its tasks.
+    Deleting shots from the UI can be slow and causes the browser to hang. This is a script to help automate this.
+
+    Args:
+        shotgun: shotgun interface instance
+        shotId: id of a shot in shotgun
+    "
+                :arguments 
+                  ( ("shotgun" variable nil (reparse-symbol function_parameters) [14715 14722])
+                    ("shotId" variable nil (reparse-symbol function_parameters) [14724 14730]))                  )
+                nil [14700 15212])
+            ("createAssetNotes" function
+               (:documentation " Create notes but do it eventless as we dont want to notify anyone about the note as
+    it can confuse at creation time.
+
+    Args:
+        projectName: name of a project in shotgun
+    "
+                :arguments 
+                  ( ("projectName" variable nil (reparse-symbol function_parameters) [15234 15245]))                  )
+                nil [15213 18361])
+            ("migrateDatabaseAssets" function
+               (:documentation " migrate assets from one shotgun project to another
+
+    Args:
+        fromProject: name of a project in Shotgun
+        fromSeasonNumber: season to use for an asset if it's seasons is 'Current'
+        toPorject: name of a project in Shotgun
+        assetNameConvertFunc: if not None(default), must be a python function `str f(str, ShotgunAssetObject)`, taking an asset name and shotgun object and returning a new name
+        skipAsset: if not None(default), must be a python function `bool f(ShotgunAssetObject)`, given a ShotgunAssetObject returns whether to skip it or not
+    "
+                :arguments 
+                  ( ("fromProject" variable nil (reparse-symbol function_parameters) [18388 18399])
+                    ("fromSeasonNumber" variable nil (reparse-symbol function_parameters) [18401 18417])
+                    ("toProject" variable nil (reparse-symbol function_parameters) [18419 18428])
+                    ("assetNameConvertFunc" variable nil (reparse-symbol function_parameters) [18430 18450])
+                    ("skipAsset" variable nil (reparse-symbol function_parameters) [18457 18466]))                  )
+                nil [18362 26494]))          
+      :file "ShotgunUtils.py"
+      :pointmax 26494
+      :fsize 28493
+      :lastmodtime '(22183 44197 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ShotgunVersionObject.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.ShotgunVersionObject
+   :synopsis: wrapper around a shotgun version
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 176])
+            ("__future__" include nil nil [177 214])
+            ("re" include nil nil [252 261])
+            ("ShotgunObject" include nil nil [263 302])
+            ("ShotgunVersionObject" type
+               (:documentation " wrapper around shotgun version entities "
+                :superclasses ("ShotgunObject")
+                :members 
+                  ( ("_code" variable nil (reparse-symbol indented_block_body) [403 423])
+                    ("version" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [455 459]))                          
+                        :documentation " return the version number of the version object
+
+        Returns:
+            int: version number (-1 if there no valid version number to be found
+        ")
+                        (reparse-symbol indented_block_body) [429 1154]))                  
+                :type "class")
+                nil [304 1154]))          
+      :file "ShotgunVersionObject.py"
+      :pointmax 1188
+      :fsize 1230
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ShotgunRenderVersionObject.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.ShotgunRenderVersionObject
+   :synopsis: wrapper class around shotgun render versions
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 194])
+            ("__future__" include nil nil [195 232])
+            ("__all__" variable nil nil [234 274])
+            ("os" include nil nil [276 285])
+            ("ShotgunObject" include nil nil [287 326])
+            ("ShotgunRenderVersionObject" type
+               (:documentation " wrapper around shotgun render versions "
+                :superclasses ("ShotgunObject")
+                :members 
+                  ( ("_code" variable nil (reparse-symbol indented_block_body) [432 447])
+                    ("upload" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [464 468])
+                            ("videoFile" variable nil (reparse-symbol function_parameters) [470 479]))                          
+                        :documentation " upload a video file to the shotgun render version
+
+        Args:
+            videoFile: path to a video file on disk
+
+        Returns:
+            bool: True if upload successfull, False else
+        ")
+                        (reparse-symbol indented_block_body) [453 1150]))                  
+                :type "class")
+                nil [328 1150]))          
+      :file "ShotgunRenderVersionObject.py"
+      :pointmax 1190
+      :fsize 1232
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 449 . 1150) (NEWLINE 447 . 448)))
+    (semanticdb-table "ShotgunNoteObject.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.ShotgunNoteObject
+   :synopsis: wrapped Shotgun Note
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 161])
+            ("__future__" include nil nil [162 199])
+            ("__all__" variable nil nil [201 232])
+            ("os" include nil nil [234 243])
+            ("ShotgunObject" include nil nil [245 284])
+            ("ShotgunNoteObject" type
+               (:superclasses ("ShotgunObject")
+                :members 
+                  ( ("_code" variable nil (reparse-symbol indented_block_body) [330 342])
+                    ("_getNoteData" function
+                       (:documentation " Returns a dictionary containing the note contents and attachments.
+
+        Args:
+            cls: the ShotgunNoteObject class
+            shotgun: a shotgun interface instance (:class:`BBF.Common.Lib.ShotgunInterface.ShotgunInterface.ShotgunInterface`)
+            fromNote: the Note object to fill data in for
+
+        Returns:
+            dict: filled in note data
+        "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [382 385])
+                            ("shotgun" variable nil (reparse-symbol function_parameters) [387 394])
+                            ("fromNote" variable nil (reparse-symbol function_parameters) [396 404]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [348 2084])
+                    ("getNoteData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2105 2109]))                          
+                        :documentation " Returns a dictionary containing the note contents and attachments.
+
+        Returns:
+           dict: filled in note data
+        ")
+                        (reparse-symbol indented_block_body) [2089 2324])
+                    ("copy" function
+                       (:documentation " Copy the contents of one note to the other.
+
+        Args:
+        cls: the ShotgunNoteClass
+        shotgun: a shotgun interface instance (:class:`BBF.Common.Lib.ShotgunInterface.ShotgunInterface.ShotgunInterface`)
+        fromNote:  the Note object to copy from
+        toNote: note to copy data to
+        "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [2355 2358])
+                            ("shotgun" variable nil (reparse-symbol function_parameters) [2360 2367])
+                            ("fromNote" variable nil (reparse-symbol function_parameters) [2369 2377])
+                            ("toNote" variable nil (reparse-symbol function_parameters) [2379 2385]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2329 4584])
+                    ("copyTo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4600 4604])
+                            ("toNote" variable nil (reparse-symbol function_parameters) [4606 4612]))                          
+                        :documentation " Copy the contents of this note to the note toNote
+
+        Args:
+            toNote: a note object to copy our data to
+        ")
+                        (reparse-symbol indented_block_body) [4589 4817])
+                    ("copyFrom" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4835 4839])
+                            ("fromNote" variable nil (reparse-symbol function_parameters) [4841 4849]))                          
+                        :documentation " Copy the contents of the note fromNote to this note.
+
+        Args:
+            toNote: a note object to copy from
+        ")
+                        (reparse-symbol indented_block_body) [4822 5052])
+                    ("reply" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5067 5071])
+                            ("reply" variable nil (reparse-symbol function_parameters) [5073 5078])
+                            ("username" variable nil (reparse-symbol function_parameters) [5080 5088])
+                            ("imageFileList" variable nil (reparse-symbol function_parameters) [5095 5108]))                          
+                        :documentation " Reply to the existing note
+
+        Args:
+            reply: text of the reply
+            username: ignored
+            imageFileList: list (potentially empty(default)) of images to upload and attach to the note
+        ")
+                        (reparse-symbol indented_block_body) [5057 5707])
+                    ("upload" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5723 5727])
+                            ("imageFilename" variable nil (reparse-symbol function_parameters) [5729 5742]))                          
+                        :documentation " upload an image file to the note we represent
+
+        Args:
+            imageFilename: path to an image file
+        ")
+                        (reparse-symbol indented_block_body) [5712 5942]))                  
+                :type "class")
+                nil [286 5942]))          
+      :file "ShotgunNoteObject.py"
+      :pointmax 5973
+      :fsize 6426
+      :lastmodtime '(22205 45094 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ShotgunEpisodeObject.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.ShotgunEpisodeObject
+   :synopsis: ShotgunObject warpper for Shotgun episodes
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 186])
+            ("__future__" include nil nil [187 224])
+            ("__all__" variable nil nil [226 260])
+            ("ShotgunObject" include nil nil [262 301])
+            ("ShotgunAssetBaseObject" include nil nil [302 359])
+            ("ShotgunEpisodeObject" type
+               (:documentation " Shotgun episode object. Contains information about a specific episode and allows access to information in
+    that episode.
+    "
+                :superclasses ("ShotgunAssetBaseObject")
+                :members 
+                  ( ("_code" variable nil (reparse-symbol indented_block_body) [557 570])
+                    ("getAssetVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [596 600])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [602 611]))                          
+                        :documentation " return versions of assets specific to this episode
+
+        Args:
+            assetName: if not None (the default) only return versions for that asset
+
+        Returns:
+            list: if assetName is None, return list of versions for all the assets in the shots of this episode
+            ShotgunObject: if assetName is not None, return only versions for this asset
+            None: if no asset version information could be found
+        ")
+                        (reparse-symbol indented_block_body) [576 2161])
+                    ("getAssetInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2183 2187])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [2189 2198])
+                            ("fields" variable nil (reparse-symbol function_parameters) [2205 2211]))                          
+                        :documentation " return information about assets in this episode
+
+        Args:
+            assetName: if not None (the default) only return information for that asset
+            fields: include these fields in the returned information
+
+        Returns:
+            list: if assetName is None, return list all assets in the shots of this episode
+            ShotgunObject: if assetName is not None, return only this asset
+            None: if no assets could be found
+        ")
+                        (reparse-symbol indented_block_body) [2166 3437])
+                    ("getShots" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3455 3459])
+                            ("fields" variable nil (reparse-symbol function_parameters) [3461 3467]))                          
+                        :documentation " Returns the shots in this episode
+
+        Args:
+            fields: this is a list of the shot fields to return the default is 'id' and 'code'.
+
+        Returns:
+            list: the shots for this epsiode.
+        ")
+                        (reparse-symbol indented_block_body) [3442 3909])
+                    ("getShot" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3926 3930])
+                            ("shotName" variable nil (reparse-symbol function_parameters) [3932 3940])
+                            ("fields" variable nil (reparse-symbol function_parameters) [3942 3948]))                          
+                        :documentation " Returns the specified shot in this episode
+
+        Args:
+            shotName: this is the name of the shot we are looking for.
+            fields: this is a list of the shot fields to return the default is 'id'.
+
+        Returns:
+            ShotgunObject: wrapped shotgun shot, None if not found in this episode
+        ")
+                        (reparse-symbol indented_block_body) [3914 4558])
+                    ("createShot" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4578 4582])
+                            ("shotName" variable nil (reparse-symbol function_parameters) [4584 4592])
+                            ("templateName" variable nil (reparse-symbol function_parameters) [4594 4606])
+                            ("duration" variable nil (reparse-symbol function_parameters) [4608 4616])
+                            ("runningOrder" variable nil (reparse-symbol function_parameters) [4623 4635])
+                            ("data" variable nil (reparse-symbol function_parameters) [4642 4646]))                          
+                        :documentation " Creates a new shot in this episode.
+
+        Args:
+            shotName: name of the shot to create
+            templateName: task template to use
+            duration: length of the shot in frames
+            runningOrder: the running order of the shot
+            data: if not None (the default), must be dictionary with fields fitting for a shot
+
+        Returns:
+            ShotgunObject: wrapped shot or None if the shot couldn't be created
+        ")
+                        (reparse-symbol indented_block_body) [4563 6637])
+                    ("updateThumbnails" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6663 6667]))                          
+                        :documentation " Updates the thumbnails of the shots in the episode to the latest uploaded version thumbnail. ")
+                        (reparse-symbol indented_block_body) [6642 7004]))                  
+                :type "class")
+                nil [361 7004]))          
+      :file "ShotgunEpisodeObject.py"
+      :pointmax 7038
+      :fsize 7779
+      :lastmodtime '(22220 14151 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ShotgunShotObject.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.ShotgunShotObject
+   :synopsis: wrapper around shotgun shot objects
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 176])
+            ("__future__" include nil nil [177 214])
+            ("__all__" variable nil nil [216 247])
+            ("ShotgunObject" include nil nil [249 288])
+            ("ShotgunAssetBaseObject" include nil nil [289 346])
+            ("ShotgunShotObject" type
+               (:documentation " Shotgun Shot object. Contains information about a specific shot and allows access to information in
+    that shot.
+    "
+                :superclasses ("ShotgunAssetBaseObject")
+                :members 
+                  ( ("_code" variable nil (reparse-symbol indented_block_body) [532 544])
+                    ("updateThumbnail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [570 574]))                          
+                        :documentation " Updates the thumbnail of this shot to the latest uploaded version thumbnail. ")
+                        (reparse-symbol indented_block_body) [550 928])
+                    ("getAssetVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [953 957])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [959 968]))                          
+                        :documentation " return the version of an asset as used in this shot
+
+        Args:
+            assetName: name of an asset in shotgun
+
+        Returns:
+            ShotgunObject: the published version of the asset to be used in this shot
+        ")
+                        (reparse-symbol indented_block_body) [933 1849])
+                    ("getAssetInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1871 1875])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [1877 1886])
+                            ("fields" variable nil (reparse-symbol function_parameters) [1893 1899]))                          
+                        :documentation " return assets in this shot
+
+        Args:
+            assetName: if not None(default), only return the named asset
+            fields: include these fields in the returned objects
+
+        Returns:
+            list/ShotgunObject: list of ShotgunAssetObjects or one ShotgunAssetObject (None if no assets found)
+        ")
+                        (reparse-symbol indented_block_body) [1854 2985])
+                    ("createNotes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3007 3011]))                          
+                        :documentation " Creates the default notes for the shot. These notes are attached to the tasks in the shot.
+        ")
+                        (reparse-symbol indented_block_body) [2991 4316]))                  
+                :type "class")
+                nil [348 4316]))          
+      :file "ShotgunShotObject.py"
+      :pointmax 4347
+      :fsize 4494
+      :lastmodtime '(22213 48811 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ShotgunAssetObject.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.ShotgunAssetObject
+   :synopsis: ShotgunObject warpper for Shotgun assets
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 182])
+            ("__future__" include nil nil [183 220])
+            ("__all__" variable nil nil [222 254])
+            ("ShotgunObject" include nil nil [256 295])
+            ("ShotgunAssetBaseObject" include nil nil [296 353])
+            ("ShotgunAssetObject" type
+               (:documentation " wrapper for shotgun assets "
+                :superclasses ("ShotgunAssetBaseObject")
+                :members 
+                  ( ("_code" variable nil (reparse-symbol indented_block_body) [448 461])
+                    ("getVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [482 486])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [488 499])
+                            ("latestOnly" variable nil (reparse-symbol function_parameters) [501 511]))                          
+                        :documentation " Returns published version information about this asset.
+
+        Args:
+            publishType: the publish type of the publish event
+            latestOnly: only return one result
+
+        Returns:
+            list: if latest is False (default), return list of ShotgunObjects
+            ShotgunObject: if latestOnly is True, return one ShotgunObject
+            None: if nothing is found
+        ")
+                        (reparse-symbol indented_block_body) [467 1814])
+                    ("getVariants" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1835 1839])
+                            ("fields" variable nil (reparse-symbol function_parameters) [1841 1847]))                          
+                        :documentation " Returns a list of variants for this asset.
+
+        Args:
+            fields: list of fields to retrive
+
+        Returns:
+            list: list of ShotgunObjects wrapping Assets
+        ")
+                        (reparse-symbol indented_block_body) [1819 2173])
+                    ("getParts" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2191 2195])
+                            ("fields" variable nil (reparse-symbol function_parameters) [2197 2203]))                          
+                        :documentation " Returns a list of parts of this asset.
+
+        Args:
+            fields: list of fields to retrive
+
+        Returns:
+            list: list of ShotgunObjects wrapping Assets
+        ")
+                        (reparse-symbol indented_block_body) [2178 2549])
+                    ("getParentAsset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2573 2577])
+                            ("fields" variable nil (reparse-symbol function_parameters) [2579 2585]))                          
+                        :documentation " if we're a variant, return the parent asset
+
+        Args:
+            fields: list of fields of the part to return
+
+        Returns:
+            ShotgunAssetObject: the asset we're a variant of, or None
+        ")
+                        (reparse-symbol indented_block_body) [2554 3043])
+                    ("getContainingAssets" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3072 3076])
+                            ("fields" variable nil (reparse-symbol function_parameters) [3078 3084]))                          
+                        :documentation " if we're a part of an asset, return it. Note that if we have a parent asset, that's who we should ask as well
+
+        Args:
+            fields: list of fields of the part to return
+
+        Returns:
+            list: list of ShotgunAssetObjects that we're part of, can be empty
+        ")
+                        (reparse-symbol indented_block_body) [3048 3746])
+                    ("getVariantVersions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3774 3778])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [3780 3791])
+                            ("latestOnly" variable nil (reparse-symbol function_parameters) [3793 3803]))                          
+                        :documentation " return versions of this asset's variants
+
+        Args:
+            publishType: the publish type of the publish event
+            latestOnly: only return the latest version, not all matching ones
+
+        Returns:
+            list: if latest is False (default), return list of ShotgunObjects
+            ShotgunObject: if latestOnly is True, return one ShotgunObject
+            None: if nothing is found
+        ")
+                        (reparse-symbol indented_block_body) [3751 5558])
+                    ("uploadThumbnail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5583 5587])
+                            ("imageFile" variable nil (reparse-symbol function_parameters) [5589 5598]))                          
+                        :documentation " Uploads the specified image to the asset.
+
+        Args:
+            imageFile: filename of an image file
+        ")
+                        (reparse-symbol indented_block_body) [5563 5799])
+                    ("rename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5815 5819])
+                            ("newAssetName" variable nil (reparse-symbol function_parameters) [5821 5833]))                          
+                        :documentation " Renames the Asset and all relating elements in Shotgun (notes, publish events, versions, etc.)
+
+        Args:
+            newAssetName: This is the new name of the asset
+
+        Returns:
+            bool: True if successful
+        ")
+                        (reparse-symbol indented_block_body) [5804 8067])
+                    ("createNotes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8088 8092]))                          
+                        :documentation " Creates the default notes for this assets.
+        These notes are attached to the tasks in the asset.
+        ")
+                        (reparse-symbol indented_block_body) [8072 12755]))                  
+                :type "class")
+                nil [355 12755]))          
+      :file "ShotgunAssetObject.py"
+      :pointmax 12787
+      :fsize 13115
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 3747 . 12755)))
+    (semanticdb-table "services.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.ShotgunInterface.services
+   :synopsis: services related to the shotgun interface
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 173])
+            ("__future__" include nil nil [174 211])
+            ("__all__" variable nil nil [213 270])
+            ("BBF.Common.Lib.bbfContext" include nil nil [272 318])
+            ("ShotgunInterface" include nil nil [320 343])
+            ("IProjectDatabase" type
+               (:documentation "Project Database conneciton service "
+                :superclasses ("bbfContext.service.Interface")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [450 480]))                  
+                :type "class")
+                nil [345 481])
+            ("ShotgunInterfaceService" type
+               (:documentation " ShotgunInterface wrapper to present it as a project database service "
+                :superclasses ("bbfContext.service.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [656 691])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            server_name: the shotgun server to connect to
+        \"\"\"" code nil (reparse-symbol indented_block_body) [738 825])
+                            ("self" variable nil (reparse-symbol indented_block_body) [834 907]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [710 714])
+                            ("server_name" variable nil (reparse-symbol function_parameters) [716 727]))                          
+                        :documentation "
+        Args:
+            server_name: the shotgun server to connect to
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [697 908])
+                    ("__getattr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [929 933])
+                            ("name" variable nil (reparse-symbol function_parameters) [935 939]))                          
+                        :documentation " pass on everything to the wrapped shotgun interface
+
+        Args:
+            name: name of the attribute to get
+        ")
+                        (reparse-symbol indented_block_body) [913 1135]))                  
+                :type "class")
+                nil [512 1135]))          
+      :file "services.py"
+      :pointmax 1172
+      :fsize 1211
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!ShotgunInterface!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

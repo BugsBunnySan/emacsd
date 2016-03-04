@@ -1,0 +1,105 @@
+;; Object tests/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "tests/"
+  :tables
+  (list
+    (semanticdb-table "kvstore.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("unittest" include nil nil [1 16])
+            ("sys" include nil nil [18 28])
+            ("sys" code nil nil [29 49])
+            ("ctx" include nil nil [51 61])
+            ("TestKVStore" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("setUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [115 119]))                          )
+                        (reparse-symbol indented_block_body) [105 155])
+                    ("test_init" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [174 178]))                          )
+                        (reparse-symbol indented_block_body) [160 289])
+                    ("test_single_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [316 320]))                          )
+                        (reparse-symbol indented_block_body) [294 404])
+                    ("test_dict_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [429 433]))                          )
+                        (reparse-symbol indented_block_body) [409 694]))                  
+                :type "class")
+                nil [63 694])
+            ("test_suite" variable nil nil [695 764])
+            ("unittest" code nil nil [765 817]))          
+      :file "kvstore.py"
+      :pointmax 818
+      :fsize 845
+      :lastmodtime '(21901 21434 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "service.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pprint" include nil nil [1 26])
+            ("unittest" include nil nil [28 43])
+            ("sys" include nil nil [45 55])
+            ("sys" code nil nil [56 76])
+            ("__main__" include nil nil [78 93])
+            ("ctx" include nil nil [95 105])
+            ("ITest" type
+               (:superclasses ("ctx.Interface")
+                :members 
+                  ( ("method_a" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [152 156]))                          )
+                        (reparse-symbol indented_block_body) [139 172])
+                    ("method_b" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [190 194])
+                            ("x" variable nil (reparse-symbol function_parameters) [196 197])
+                            ("y" variable nil (reparse-symbol function_parameters) [199 200]))                          )
+                        (reparse-symbol indented_block_body) [177 216]))                  
+                :type "class")
+                nil [107 216])
+            ("TestInterfaceService" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("test_implements_ok" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [291 295]))                          )
+                        (reparse-symbol indented_block_body) [268 533])
+                    ("test_implements_fail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [563 567]))                          )
+                        (reparse-symbol indented_block_body) [538 834])
+                    ("test_interface_register" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [867 871]))                          )
+                        (reparse-symbol indented_block_body) [839 1211])
+                    ("test_service_register" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1242 1246]))                          )
+                        (reparse-symbol indented_block_body) [1216 1605]))                  
+                :type "class")
+                nil [217 1605])
+            ("test_suite" variable nil nil [1606 1684])
+            ("unittest" code nil nil [1685 1737]))          
+      :file "service.py"
+      :pointmax 1738
+      :fsize 1807
+      :lastmodtime '(21901 26850 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!tests!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

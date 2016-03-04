@@ -1,0 +1,1286 @@
+;; Object hooks/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hooks/"
+  :tables
+  (list
+    (semanticdb-table "bbf_scene_operation_tk-maya.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [448 457])
+            ("maya.cmds" include nil nil [458 482])
+            ("tank" include nil nil [484 495])
+            ("tank" include nil nil [496 517])
+            ("tank" include nil nil [518 544])
+            ("tank.platform.qt" include nil nil [545 579])
+            ("SceneOperation" type
+               (:documentation "
+    Hook called to perform an operation with the
+    current scene
+    "
+                :superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [709 713])
+                            ("operation" variable nil (reparse-symbol function_parameters) [715 724])
+                            ("file_path" variable nil (reparse-symbol function_parameters) [726 735])
+                            ("context" variable nil (reparse-symbol function_parameters) [737 744])
+                            ("parent_action" variable nil (reparse-symbol function_parameters) [746 759])
+                            ("file_version" variable nil (reparse-symbol function_parameters) [761 773])
+                            ("read_only" variable nil (reparse-symbol function_parameters) [775 784])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [786 794]))                          
+                        :documentation "
+        Main hook entry point
+
+        :param operation:       String
+                                Scene operation to perform
+
+        :param file_path:       String
+                                File path to use if the operation
+                                requires it (e.g. open)
+
+        :param context:         Context
+                                The context the file operation is being
+                                performed in.
+
+        :param parent_action:   This is the action that this scene operation is
+                                being executed for.  This can be one of:
+                                - open_file
+                                - new_file
+                                - save_file_as
+                                - version_up
+
+        :param file_version:    The version/revision of the file to be opened.  If this is 'None'
+                                then the latest version should be opened.
+
+        :param read_only:       Specifies if the file should be opened read-only or not
+
+        :returns:               Depends on operation:
+                                'current_path' - Return the current scene
+                                                 file path as a String
+                                'reset'        - True if scene was reset to an empty
+                                                 state, otherwise False
+                                all others     - None
+        ")
+                        (reparse-symbol indented_block_body) [697 4517]))                  
+                :type "class")
+                nil [581 4517]))          
+      :file "bbf_scene_operation_tk-maya.py"
+      :pointmax 4517
+      :fsize 4516
+      :lastmodtime '(22229 44063 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbf_scan_scene_tk-maya.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: bbf_hooks.bbf_scan_scene_tk-maya
+   :synopsis: Maya engine sgtk scene scanner hook
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 159])
+            ("__future__" include nil nil [160 197])
+            ("__all__" variable nil nil [199 226])
+            ("os" include nil nil [692 701])
+            ("maya.cmds" include nil nil [702 726])
+            ("tank" include nil nil [728 739])
+            ("tank" include nil nil [740 761])
+            ("tank" include nil nil [762 788])
+            ("BBF.Common.Lib.bbfContext.service" include nil nil [790 852])
+            ("reload" code nil nil [853 879])
+            ("BBF.Common.Lib.bbfSGTK.PublishHandler.base" include nil nil [880 942])
+            ("reload" code nil nil [943 960])
+            ("BBF.Maya.Lib.bbfSGTK.PublishHandler" include nil nil [961 1014])
+            ("reload" code nil nil [1015 1030])
+            ("ScanSceneHook" type
+               (:documentation " Hook to scan scene for items to publish
+    "
+                :superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1132 1136])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1138 1146]))                          
+                        :documentation " Main hook entry point
+
+        Returns:        A list of any items that were found to be published.
+                        Each item in the list should be a dictionary containing
+                        the following keys:
+                        {
+                            type:   String
+                                    This should match a scene_item_type defined in
+                                    one of the outputs in the configuration and is
+                                    used to determine the outputs that should be
+                                    published for the item
+
+                            name:   String
+                                    Name to use for the item in the UI
+
+                            description:    String
+                                            Description of the item to use in the UI
+
+                            selected:       Bool
+                                            Initial selected state of item in the UI.
+                                            Items are selected by default.
+
+                            required:       Bool
+                                            Required state of item in the UI.  If True then
+                                            item will not be deselectable.  Items are not
+                                            required by default.
+
+                            other_params:   Dictionary
+                                            Optional dictionary that will be passed to the
+                                            pre-publish and publish hooks
+                        }
+
+        Raises:
+            TankError: If the scene hasn't been saved yet
+        ")
+                        (reparse-symbol indented_block_body) [1120 3594]))                  
+                :type "class")
+                nil [1032 3594]))          
+      :file "bbf_scan_scene_tk-maya.py"
+      :pointmax 3594
+      :fsize 3593
+      :lastmodtime '(22211 28856 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbf_secondary_pre_publish_tk-maya.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: bbf_hooks.bbf_secondary_pre_publish_tk-maya
+   :synopsis: Maya engine sgtk scene item validation hook
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 178])
+            ("__future__" include nil nil [179 216])
+            ("pprint" include nil nil [218 252])
+            ("__all__" variable nil nil [255 283])
+            ("os" include nil nil [750 759])
+            ("maya.cmds" include nil nil [760 784])
+            ("maya.mel" include nil nil [785 807])
+            ("tank" include nil nil [809 820])
+            ("tank" include nil nil [821 842])
+            ("tank" include nil nil [843 869])
+            ("BBF.Common.Lib.bbfContext.service" include nil nil [871 933])
+            ("reload" code nil nil [934 960])
+            ("BBF.Common.Lib.bbfSGTK.PublishHandler.base" include nil nil [961 1023])
+            ("reload" code nil nil [1024 1041])
+            ("BBF.Maya.Lib.bbfSGTK.PublishHandler" include nil nil [1042 1095])
+            ("reload" code nil nil [1096 1111])
+            ("PrePublishHook" type
+               (:documentation "
+    Single hook that implements pre-publish functionality
+    "
+                :superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1231 1235])
+                            ("tasks" variable nil (reparse-symbol function_parameters) [1237 1242])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [1244 1257])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [1259 1270])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [1272 1281])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1283 1291]))                          
+                        :documentation "
+        Main hook entry point
+        :param tasks:           List of tasks to be pre-published.  Each task is be a
+                                dictionary containing the following keys:
+                                {
+                                    item:   Dictionary
+                                            This is the item returned by the scan hook
+                                            {
+                                                name:           String
+                                                description:    String
+                                                type:           String
+                                                other_params:   Dictionary
+                                            }
+
+                                    output: Dictionary
+                                            This is the output as defined in the configuration - the
+                                            primary output will always be named 'primary'
+                                            {
+                                                name:             String (this 'name' is the 'type' of the item!)
+                                                publish_template: template
+                                                tank_type:        String
+                                            }
+                                }
+
+        :param work_template:   template
+                                This is the template defined in the config that
+                                represents the current work file
+
+        :param progress_cb:     Function
+                                A progress callback to log progress during pre-publish.  Call:
+
+                                    progress_cb(percentage, msg)
+
+                                to report progress to the UI
+
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               A list of any tasks that were found which have problems that
+                                need to be reported in the UI.  Each item in the list should
+                                be a dictionary containing the following keys:
+                                {
+                                    task:   Dictionary
+                                            This is the task that was passed into the hook and
+                                            should not be modified
+                                            {
+                                                item:...
+                                                output:...
+                                            }
+
+                                    errors: List
+                                            A list of error messages (strings) to report
+                                }
+        ")
+                        (reparse-symbol indented_block_body) [1219 5482]))                  
+                :type "class")
+                nil [1113 5482]))          
+      :file "bbf_secondary_pre_publish_tk-maya.py"
+      :pointmax 5482
+      :fsize 5481
+      :lastmodtime '(22213 56373 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbf_secondary_publish_tk-maya.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: bbf_hooks.bbf_secondary_publish_tk-maya
+   :synopsis: Maya engine sgtk publish hook
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 160])
+            ("__future__" include nil nil [161 198])
+            ("__all__" variable nil nil [200 225])
+            ("os" include nil nil [691 700])
+            ("shutil" include nil nil [701 714])
+            ("maya.cmds" include nil nil [715 739])
+            ("maya.mel" include nil nil [740 762])
+            ("tank" include nil nil [764 775])
+            ("tank" include nil nil [776 797])
+            ("tank" include nil nil [798 824])
+            ("BBF.Common.Lib.bbfContext.service" include nil nil [826 888])
+            ("reload" code nil nil [889 915])
+            ("BBF.Common.Lib.bbfSGTK.PublishHandler.base" include nil nil [916 978])
+            ("reload" code nil nil [979 996])
+            ("BBF.Maya.Lib.bbfSGTK.PublishHandler" include nil nil [997 1050])
+            ("reload" code nil nil [1051 1066])
+            ("PublishHook" type
+               (:documentation "
+    Single hook that implements publish functionality for secondary tasks
+    "
+                :superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1208 1212])
+                            ("tasks" variable nil (reparse-symbol function_parameters) [1214 1219])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [1221 1234])
+                            ("comment" variable nil (reparse-symbol function_parameters) [1236 1243])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [1245 1259])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [1261 1268])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [1270 1282])
+                            ("primary_publish_path" variable nil (reparse-symbol function_parameters) [1292 1312])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [1314 1325])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [1327 1336])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1338 1346]))                          
+                        :documentation "
+        Main hook entry point
+        :param tasks:                   List of secondary tasks to be published.  Each task is a
+                                        dictionary containing the following keys:
+                                        {
+                                            item:   Dictionary
+                                                    This is the item returned by the scan hook
+                                                    {
+                                                        name:           String
+                                                        description:    String
+                                                        type:           String
+                                                        other_params:   Dictionary
+                                                    }
+
+                                            output: Dictionary
+                                                    This is the output as defined in the configuration - the
+                                                    primary output will always be named 'primary'
+                                                    {
+                                                        name:             String
+                                                        publish_template: template
+                                                        tank_type:        String
+                                                    }
+                                        }
+
+        :param work_template:           template
+                                        This is the template defined in the config that
+                                        represents the current work file
+
+        :param comment:                 String
+                                        The comment provided for the publish
+
+        :param thumbnail:               Path string
+                                        The default thumbnail provided for the publish
+
+        :param sg_task:                 Dictionary (shotgun entity description)
+                                        The shotgun task to use for the publish
+
+        :param primary_publish_path:    Path string
+                                        This is the path of the primary published file as returned
+                                        by the primary publish hook
+
+        :param progress_cb:             Function
+                                        A progress callback to log progress during pre-publish.  Call:
+
+                                            progress_cb(percentage, msg)
+
+                                        to report progress to the UI
+
+        :param primary_task:            The primary task that was published by the primary publish hook.  Passed
+                                        in here for reference.  This is a dictionary in the same format as the
+                                        secondary tasks above.
+
+        :param user_data:               A dictionary containing any data shared by other hooks run prior to
+                                        this hook. Additional data may be added to this dictionary that will
+                                        then be accessible from user_data in any hooks run after this one.
+
+        :returns:                       A list of any tasks that had problems that need to be reported
+                                        in the UI.  Each item in the list should be a dictionary containing
+                                        the following keys:
+                                        {
+                                            task:   Dictionary
+                                                    This is the task that was passed into the hook and
+                                                    should not be modified
+                                                    {
+                                                        item:...
+                                                        output:...
+                                                    }
+
+                                            errors: List
+                                                    A list of error messages (strings) to report
+                                        }
+        ")
+                        (reparse-symbol indented_block_body) [1187 6984]))                  
+                :type "class")
+                nil [1068 6984]))          
+      :file "bbf_secondary_publish_tk-maya.py"
+      :pointmax 6984
+      :fsize 6983
+      :lastmodtime '(22200 60213 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 6667 . 6740) (NEWLINE 6666 . 6667) (COLON 6665 . 6666) (TRY 6435 . 6438) (AS 6661 . 6663)))
+    (semanticdb-table "bbf_filter_publishes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [448 457])
+            ("sgtk" include nil nil [459 470])
+            ("sgtk" include nil nil [471 492])
+            ("FilterPublishes" type
+               (:documentation "
+    Hook that can be used to filter the list of publishes returned from Shotgun for the current
+    location
+    "
+                :superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [665 669])
+                            ("publishes" variable nil (reparse-symbol function_parameters) [671 680])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [682 690]))                          
+                        :documentation "
+        Main hook entry point
+
+        :param publishes:    List of dictionaries
+                             A list of  dictionaries for the current location within the app.  Each
+                             item in the list is a Dictionary of the form:
+
+                             {
+                                 \"sg_publish\" : {Shotgun entity dictionary for a Published File entity}
+                             }
+
+
+        :return List:        The filtered list of dictionaries of the same form as the input 'publishes'
+                             list
+        ")
+                        (reparse-symbol indented_block_body) [653 1816]))                  
+                :type "class")
+                nil [494 1816]))          
+      :file "bbf_filter_publishes.py"
+      :pointmax 1816
+      :fsize 1815
+      :lastmodtime '(22229 50407 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbf_tk-maya_actions.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: bbf_tk-maya_actions
+   :synopsis: loader2 actions hook
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 131])
+            ("__future__" include nil nil [132 169])
+            ("\"\"\"
+Hook that loads defines all the available actions, broken down by publish type.
+\"\"\"" code nil nil [635 722])
+            ("os" include nil nil [723 732])
+            ("sgtk" include nil nil [734 745])
+            ("BBF.Common.Lib.bbfContext.service" include nil nil [747 809])
+            ("BBF.Common.Lib.bbfSGTK.LoadingHandler.base" include nil nil [810 872])
+            ("BBF.Maya.Lib.bbfSGTK.LoadingHandler.base" include nil nil [873 932])
+            ("HookBaseClass" variable nil nil [934 975])
+            ("MayaActions" type
+               (:superclasses ("HookBaseClass")
+                :members 
+                  ( ("generate_actions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1215 1219])
+                            ("sg_publish_data" variable nil (reparse-symbol function_parameters) [1221 1236])
+                            ("actions" variable nil (reparse-symbol function_parameters) [1238 1245])
+                            ("ui_area" variable nil (reparse-symbol function_parameters) [1247 1254]))                          
+                        :documentation "
+        Returns a list of action instances for a particular publish.
+        This method is called each time a user clicks a publish somewhere in the UI.
+        The data returned from this hook will be used to populate the actions menu for a publish.
+
+        The mapping between Publish types and actions are kept in a different place
+        (in the configuration) so at the point when this hook is called, the loader app
+        has already established *which* actions are appropriate for this object.
+
+        The hook should return at least one action for each item passed in via the
+        actions parameter.
+
+        This method needs to return detailed data for those actions, in the form of a list
+        of dictionaries, each with name, params, caption and description keys.
+
+        Because you are operating on a particular publish, you may tailor the output
+        (caption, tooltip etc) to contain custom information suitable for this publish.
+
+        The ui_area parameter is a string and indicates where the publish is to be shown.
+        - If it will be shown in the main browsing area, \"main\" is passed.
+        - If it will be shown in the details area, \"details\" is passed.
+        - If it will be shown in the history area, \"history\" is passed.
+
+        Please note that it is perfectly possible to create more than one action \"instance\" for
+        an action! You can for example do scene introspection - if the action passed in
+        is \"character_attachment\" you may for example scan the scene, figure out all the nodes
+        where this object can be attached and return a list of action instances:
+        \"attach to left hand\", \"attach to right hand\" etc. In this case, when more than
+        one object is returned for an action, use the params key to pass additional
+        data into the run_action hook.
+
+        :param sg_publish_data: Shotgun data dictionary with all the standard publish fields.
+        :param actions: List of action strings which have been defined in the app configuration.
+        :param ui_area: String denoting the UI Area (see above).
+        :returns List of dictionaries, each with keys name, params, caption and description
+        ")
+                        (reparse-symbol indented_block_body) [1194 4045])
+                    ("execute_action" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4069 4073])
+                            ("name" variable nil (reparse-symbol function_parameters) [4075 4079])
+                            ("params" variable nil (reparse-symbol function_parameters) [4081 4087])
+                            ("sg_publish_data" variable nil (reparse-symbol function_parameters) [4089 4104]))                          
+                        :documentation "
+        Execute a given action. The data sent to this be method will
+        represent one of the actions enumerated by the generate_actions method.
+
+        :param name: Action name string representing one of the items returned by generate_actions.
+        :param params: Params data, as specified by generate_actions.
+        :param sg_publish_data: Shotgun data dictionary with all the standard publish fields.
+        :returns: No return value expected.
+        ")
+                        (reparse-symbol indented_block_body) [4050 4838]))                  
+                :type "class")
+                nil [977 4838]))          
+      :file "bbf_tk-maya_actions.py"
+      :pointmax 4838
+      :fsize 4837
+      :lastmodtime '(22211 23708 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbf_primary_publish.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [448 457])
+            ("uuid" include nil nil [458 469])
+            ("tempfile" include nil nil [470 485])
+            ("tank" include nil nil [501 512])
+            ("tank" include nil nil [513 534])
+            ("tank" include nil nil [535 561])
+            ("pymel.core" include nil nil [563 586])
+            ("BBF.Common.Lib.bbfSGTK.templates" include nil nil [588 648])
+            ("PrimaryPublishHook" type
+               (:documentation "
+    Single hook that implements publish of the primary task
+    "
+                :superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [774 778])
+                            ("task" variable nil (reparse-symbol function_parameters) [780 784])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [786 799])
+                            ("comment" variable nil (reparse-symbol function_parameters) [801 808])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [810 824])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [826 833])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [835 846])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [864 873])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [875 883]))                          
+                        :documentation "
+        Main hook entry point
+        :param task:            Primary task to be published.  This is a
+                                dictionary containing the following keys:
+                                {
+                                    item:   Dictionary
+                                            This is the item returned by the scan hook
+                                            {
+                                                name:           String
+                                                description:    String
+                                                type:           String
+                                                other_params:   Dictionary
+                                            }
+
+                                    output: Dictionary
+                                            This is the output as defined in the configuration - the
+                                            primary output will always be named 'primary'
+                                            {
+                                                name:             String
+                                                publish_template: template
+                                                tank_type:        String
+                                            }
+                                }
+
+        :param work_template:   template
+                                This is the template defined in the config that
+                                represents the current work file
+
+        :param comment:         String
+                                The comment provided for the publish
+
+        :param thumbnail:       Path string
+                                The default thumbnail provided for the publish
+
+        :param sg_task:         Dictionary (shotgun entity description)
+                                The shotgun task to use for the publish
+
+        :param progress_cb:     Function
+                                A progress callback to log progress during pre-publish.  Call:
+
+                                    progress_cb(percentage, msg)
+
+                                to report progress to the UI
+
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               Path String
+                                Hook should return the path of the primary publish so that it
+                                can be passed as a dependency to all secondary publishes
+
+        :raises:                Hook should raise a TankError if publish of the
+                                primary task fails
+        ")
+                        (reparse-symbol indented_block_body) [762 5238])
+                    ("_do_maya_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5264 5268])
+                            ("task" variable nil (reparse-symbol function_parameters) [5270 5274])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [5276 5289])
+                            ("comment" variable nil (reparse-symbol function_parameters) [5291 5298])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [5300 5314])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [5316 5323])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [5350 5361])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [5363 5372]))                          
+                        :documentation "
+        Publish the main Maya scene
+
+        :param task:            The primary task to publish
+        :param work_template:   The primary work template to use
+        :param comment:         The publish description/comment
+        :param thumbnail_path:  The path to the thumbnail to associate with the published file
+        :param sg_task:         The Shotgun task that this publish should be associated with
+        :param progress_cb:     A callback to use when reporting any progress
+                                to the UI
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               The path to the file that has been published
+        ")
+                        (reparse-symbol indented_block_body) [5243 8907])
+                    ("_maya_find_additional_scene_dependencies" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8957 8961]))                          
+                        :documentation "
+        Find additional dependencies from the scene
+        ")
+                        (reparse-symbol indented_block_body) [8912 10821])
+                    ("_do_motionbuilder_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10857 10861])
+                            ("task" variable nil (reparse-symbol function_parameters) [10863 10867])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [10869 10882])
+                            ("comment" variable nil (reparse-symbol function_parameters) [10884 10891])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [10893 10907])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [10909 10916])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [10952 10963])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [10965 10974]))                          
+                        :documentation "
+        Publish the main Motion Builder scene
+
+        :param task:            The primary task to publish
+        :param work_template:   The primary work template to use
+        :param comment:         The publish description/comment
+        :param thumbnail_path:  The path to the thumbnail to associate with the published file
+        :param sg_task:         The Shotgun task that this publish should be associated with
+        :param progress_cb:     A callback to use when reporting any progress
+                                to the UI
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               The path to the file that has been published
+        ")
+                        (reparse-symbol indented_block_body) [10827 14097])
+                    ("_motionbuilder_find_additional_scene_dependencies" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14156 14160]))                          
+                        :documentation "
+        Find additional dependencies from the scene
+        ")
+                        (reparse-symbol indented_block_body) [14102 14304])
+                    ("_do_3dsmax_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14333 14337])
+                            ("task" variable nil (reparse-symbol function_parameters) [14339 14343])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [14345 14358])
+                            ("comment" variable nil (reparse-symbol function_parameters) [14360 14367])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [14369 14383])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [14385 14392])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [14421 14432])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [14434 14443]))                          
+                        :documentation "
+        Publish the main 3ds Max scene
+
+        :param task:            The primary task to publish
+        :param work_template:   The primary work template to use
+        :param comment:         The publish description/comment
+        :param thumbnail_path:  The path to the thumbnail to associate with the published file
+        :param sg_task:         The Shotgun task that this publish should be associated with
+        :param progress_cb:     A callback to use when reporting any progress
+                                to the UI
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               The path to the file that has been published
+        ")
+                        (reparse-symbol indented_block_body) [14310 17537])
+                    ("_3dsmax_find_additional_scene_dependencies" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17589 17593]))                          
+                        :documentation "
+        Find additional dependencies from the scene
+        ")
+                        (reparse-symbol indented_block_body) [17542 17737])
+                    ("_do_3dsmaxplus_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17769 17773])
+                            ("task" variable nil (reparse-symbol function_parameters) [17775 17779])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [17781 17794])
+                            ("comment" variable nil (reparse-symbol function_parameters) [17796 17803])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [17805 17819])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [17821 17828])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [17861 17872])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [17874 17883]))                          
+                        :documentation "
+        Publish the main 3ds Max scene
+
+        :param task:            The primary task to publish
+        :param work_template:   The primary work template to use
+        :param comment:         The publish description/comment
+        :param thumbnail_path:  The path to the thumbnail to associate with the published file
+        :param sg_task:         The Shotgun task that this publish should be associated with
+        :param progress_cb:     A callback to use when reporting any progress
+                                to the UI
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               The path to the file that has been published
+        ")
+                        (reparse-symbol indented_block_body) [17742 20958])
+                    ("_3dsmax_plus_find_additional_scene_dependencies" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21015 21019]))                          
+                        :documentation "
+        Find additional dependencies from the scene
+        ")
+                        (reparse-symbol indented_block_body) [20963 21163])
+                    ("_do_hiero_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21190 21194])
+                            ("task" variable nil (reparse-symbol function_parameters) [21196 21200])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [21202 21215])
+                            ("comment" variable nil (reparse-symbol function_parameters) [21217 21224])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [21226 21240])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [21242 21249])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [21277 21288])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [21290 21299]))                          
+                        :documentation "
+        Publish the currently selected hiero project.
+
+        :param task:            The primary task to publish
+        :param work_template:   The primary work template to use
+        :param comment:         The publish description/comment
+        :param thumbnail_path:  The path to the thumbnail to associate with the published file
+        :param sg_task:         The Shotgun task that this publish should be associated with
+        :param progress_cb:     A callback to use when reporting any progress
+                                to the UI
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               The path to the file that has been published
+        ")
+                        (reparse-symbol indented_block_body) [21168 25139])
+                    ("_hiero_find_additional_scene_dependencies" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25192 25196]))                          
+                        :documentation "
+        Find additional dependencies from the scene
+        ")
+                        (reparse-symbol indented_block_body) [25146 25340])
+                    ("_do_nuke_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25368 25372])
+                            ("task" variable nil (reparse-symbol function_parameters) [25374 25378])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [25380 25393])
+                            ("comment" variable nil (reparse-symbol function_parameters) [25395 25402])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [25404 25418])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [25420 25427])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [25454 25465])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [25467 25476]))                          
+                        :documentation "
+        Publish the main Nuke script
+
+        :param task:            The primary task to publish
+        :param work_template:   The primary work template to use
+        :param comment:         The publish description/comment
+        :param thumbnail_path:  The path to the thumbnail to associate with the published file
+        :param sg_task:         The Shotgun task that this publish should be associated with
+        :param progress_cb:     A callback to use when reporting any progress
+                                to the UI
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               The path to the file that has been published
+        ")
+                        (reparse-symbol indented_block_body) [25347 28635])
+                    ("_nuke_find_script_dependencies" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28675 28679]))                          
+                        :documentation "
+        Find all dependencies for the current nuke script
+        ")
+                        (reparse-symbol indented_block_body) [28640 29927])
+                    ("_do_houdini_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29956 29960])
+                            ("task" variable nil (reparse-symbol function_parameters) [29962 29966])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [29968 29981])
+                            ("comment" variable nil (reparse-symbol function_parameters) [29983 29990])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [29992 30006])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [30008 30015])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [30045 30056])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [30058 30067]))                          
+                        :documentation "
+        Publish the main Houdini scene
+
+        :param task:            The primary task to publish
+        :param work_template:   The primary work template to use
+        :param comment:         The publish description/comment
+        :param thumbnail_path:  The path to the thumbnail to associate with the published file
+        :param sg_task:         The Shotgun task that this publish should be associated with
+        :param progress_cb:     A callback to use when reporting any progress
+                                to the UI
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               The path to the file that has been published
+        ")
+                        (reparse-symbol indented_block_body) [29932 33111])
+                    ("_houdini_find_additional_scene_dependencies" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33164 33168]))                          
+                        :documentation "
+        Find additional dependencies from the scene
+        ")
+                        (reparse-symbol indented_block_body) [33116 33312])
+                    ("_do_softimage_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33343 33347])
+                            ("task" variable nil (reparse-symbol function_parameters) [33349 33353])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [33355 33368])
+                            ("comment" variable nil (reparse-symbol function_parameters) [33370 33377])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [33379 33393])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [33395 33402])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [33434 33445])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [33447 33456]))                          
+                        :documentation "
+        Publish the main Softimage scene
+
+        :param task:            The primary task to publish
+        :param work_template:   The primary work template to use
+        :param comment:         The publish description/comment
+        :param thumbnail_path:  The path to the thumbnail to associate with the published file
+        :param sg_task:         The Shotgun task that this publish should be associated with
+        :param progress_cb:     A callback to use when reporting any progress
+                                to the UI
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               The path to the file that has been published
+        ")
+                        (reparse-symbol indented_block_body) [33317 36707])
+                    ("_softimage_find_additional_scene_dependencies" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36762 36766]))                          
+                        :documentation "
+        Find additional dependencies from the scene
+        ")
+                        (reparse-symbol indented_block_body) [36712 36910])
+                    ("_do_photoshop_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36941 36945])
+                            ("task" variable nil (reparse-symbol function_parameters) [36947 36951])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [36953 36966])
+                            ("comment" variable nil (reparse-symbol function_parameters) [36968 36975])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [36977 36991])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [36993 37000])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [37032 37043])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [37045 37054]))                          
+                        :documentation "
+        Publish the main Photoshop scene
+
+        :param task:            The primary task to publish
+        :param work_template:   The primary work template to use
+        :param comment:         The publish description/comment
+        :param thumbnail_path:  The path to the thumbnail to associate with the published file
+        :param sg_task:         The Shotgun task that this publish should be associated with
+        :param progress_cb:     A callback to use when reporting any progress
+                                to the UI
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               The path to the file that has been published
+        ")
+                        (reparse-symbol indented_block_body) [36915 41887])
+                    ("_do_mari_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [41913 41917])
+                            ("task" variable nil (reparse-symbol function_parameters) [41919 41923])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [41925 41938])
+                            ("comment" variable nil (reparse-symbol function_parameters) [41940 41947])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [41949 41963])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [41965 41972])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [41999 42010])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [42012 42021]))                          
+                        :documentation "
+        Perform the primary publish for Mari
+
+        :param task:            The primary task to publish
+        :param work_template:   The primary work template to use
+        :param comment:         The publish description/comment
+        :param thumbnail_path:  The path to the thumbnail to associate with the published file
+        :param sg_task:         The Shotgun task that this publish should be associated with
+        :param progress_cb:     A callback to use when reporting any progress
+                                to the UI
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               The path to the file that has been published
+        ")
+                        (reparse-symbol indented_block_body) [41892 43306])
+                    ("_get_publish_name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [43334 43338])
+                            ("path" variable nil (reparse-symbol function_parameters) [43340 43344])
+                            ("template" variable nil (reparse-symbol function_parameters) [43346 43354])
+                            ("fields" variable nil (reparse-symbol function_parameters) [43356 43362]))                          
+                        :documentation "
+        Return the 'name' to be used for the file - if possible
+        this will return a 'versionless' name
+        ")
+                        (reparse-symbol indented_block_body) [43312 46273])
+                    ("_register_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [46301 46305])
+                            ("path" variable nil (reparse-symbol function_parameters) [46307 46311])
+                            ("name" variable nil (reparse-symbol function_parameters) [46313 46317])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [46319 46326])
+                            ("publish_version" variable nil (reparse-symbol function_parameters) [46328 46343])
+                            ("tank_type" variable nil (reparse-symbol function_parameters) [46345 46354])
+                            ("comment" variable nil (reparse-symbol function_parameters) [46356 46363])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [46365 46379])
+                            ("dependency_paths" variable nil (reparse-symbol function_parameters) [46381 46397]))                          
+                        :documentation "
+        Helper method to register publish using the
+        specified publish info.
+        ")
+                        (reparse-symbol indented_block_body) [46279 47126]))                  
+                :type "class")
+                nil [650 47126]))          
+      :file "bbf_primary_publish.py"
+      :pointmax 47126
+      :fsize 47125
+      :lastmodtime '(22213 47359 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbf_post_publish.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: hooks.bbf_post_publish
+   :synopsis: customized post publish hook
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 142])
+            ("__future__" include nil nil [606 643])
+            ("os" include nil nil [645 654])
+            ("sys" include nil nil [655 665])
+            ("shutil" include nil nil [666 679])
+            ("tank" include nil nil [681 692])
+            ("tank" include nil nil [693 714])
+            ("tank" include nil nil [715 741])
+            ("PostPublishHook" type
+               (:documentation "
+    Single hook that implements post-publish functionality
+    "
+                :superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [872 876])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [878 891])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [893 905])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [907 922])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [924 935])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [945 954])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [956 964]))                          
+                        :documentation "
+        Main hook entry point
+
+        :param work_template:   template
+                                This is the template defined in the config that
+                                represents the current work file
+
+        :param primary_task:    The primary task that was published by the primary publish hook.  Passed
+                                in here for reference.
+
+        :param secondary_tasks: The list of secondary taskd that were published by the secondary
+                                publish hook.  Passed in here for reference.
+
+        :param progress_cb:     Function
+                                A progress callback to log progress during pre-publish.  Call:
+
+                                    progress_cb(percentage, msg)
+
+                                to report progress to the UI
+
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+
+        :returns:               None
+        :raises:                Raise a TankError to notify the user of a problem
+        ")
+                        (reparse-symbol indented_block_body) [851 4168])
+                    ("_do_maya_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4199 4203])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [4205 4217])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [4219 4234])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [4236 4249])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [4251 4262])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [4264 4273]))                          
+                        :documentation "
+        Do any Maya post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [4173 6554])
+                    ("_do_motionbuilder_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6594 6598])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [6600 6612])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [6614 6629])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [6631 6644])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [6646 6657])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [6659 6668]))                          
+                        :documentation "
+        Do any Motion Builder post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [6559 8050])
+                    ("_do_3dsmax_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8083 8087])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [8089 8101])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [8103 8118])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [8120 8133])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [8135 8146])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [8148 8157]))                          
+                        :documentation "
+        Do any 3ds Max post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [8055 9497])
+                    ("_do_3dsmaxplus_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9534 9538])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [9540 9552])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [9554 9569])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [9571 9584])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [9586 9597])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [9599 9608]))                          
+                        :documentation "
+        Do any 3ds Max post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [9502 10924])
+                    ("_do_hiero_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10956 10960])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [10962 10974])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [10976 10991])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [10993 11006])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [11008 11019])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [11021 11030]))                          
+                        :documentation "
+        Do any Hiero post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [10929 13150])
+                    ("_do_nuke_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13182 13186])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [13188 13200])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [13202 13217])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [13219 13232])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [13234 13245])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [13247 13256]))                          
+                        :documentation "
+        Do any nuke post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [13156 15429])
+                    ("_do_houdini_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15463 15467])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [15469 15481])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [15483 15498])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [15500 15513])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [15515 15526])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [15528 15537]))                          
+                        :documentation "
+        Do any nuke post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [15434 16963])
+                    ("_do_softimage_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16999 17003])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [17005 17017])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [17019 17034])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [17036 17049])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [17051 17062])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [17064 17073]))                          
+                        :documentation "
+        Do any Softimage post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [16968 18599])
+                    ("_do_photoshop_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18635 18639])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [18641 18653])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [18655 18670])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [18672 18685])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [18687 18698])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [18700 18709]))                          
+                        :documentation "
+        Do any Photoshop post-publish work
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [18604 20186])
+                    ("_do_mari_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20217 20221])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [20223 20235])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [20237 20252])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [20254 20267])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [20269 20280])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [20282 20291]))                          
+                        :documentation "
+        Mari specific post-publish
+
+        :param work_template:   The primary work template used for the publish
+        :param progress_cb:     Callback to be used when reporting progress
+        :param user_data:       A dictionary containing any data shared by other hooks run prior to
+                                this hook. Additional data may be added to this dictionary that will
+                                then be accessible from user_data in any hooks run after this one.
+        ")
+                        (reparse-symbol indented_block_body) [20191 20868])
+                    ("_get_next_work_file_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20905 20909])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [20911 20923])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [20925 20940])
+                            ("work_template" variable nil (reparse-symbol function_parameters) [20942 20955])
+                            ("fields" variable nil (reparse-symbol function_parameters) [20957 20963]))                          
+                        :documentation "
+        Find the next available version for the specified work_file
+        ")
+                        (reparse-symbol indented_block_body) [20873 21379]))                  
+                :type "class")
+                nil [743 21379]))          
+      :file "bbf_post_publish.py"
+      :pointmax 21379
+      :fsize 21378
+      :lastmodtime '(22232 26145 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbf_before_app_launch.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Before App Launch Hook
+
+This hook is executed prior to application launch and is useful if you need
+to set environment variables or run scripts as part of the app initialization.
+\"\"\"" code nil nil [448 634])
+            ("os" include nil nil [636 645])
+            ("sys" include nil nil [646 656])
+            ("tank" include nil nil [658 669])
+            ("BeforeAppLaunch" type
+               (:documentation "
+    Hook to set up the system prior to app launch.
+    "
+                :superclasses ("tank.Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [789 793])
+                            ("app_path" variable nil (reparse-symbol function_parameters) [795 803])
+                            ("app_args" variable nil (reparse-symbol function_parameters) [805 813])
+                            ("version" variable nil (reparse-symbol function_parameters) [815 822])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [824 832]))                          
+                        :documentation "
+        The execute functon of the hook will be called prior to starting the required application
+
+        :param app_path: (str) The path of the application executable
+        :param app_args: (str) Any arguments the application may require
+        :param version: (str) version of the application being run if set in the \"versions\" settings
+                              of the Launcher instance, otherwise None
+
+        ")
+                        (reparse-symbol indented_block_body) [777 2055]))                  
+                :type "class")
+                nil [671 2055]))          
+      :file "bbf_before_app_launch.py"
+      :pointmax 2055
+      :fsize 2054
+      :lastmodtime '(22222 63091 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!config!hooks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

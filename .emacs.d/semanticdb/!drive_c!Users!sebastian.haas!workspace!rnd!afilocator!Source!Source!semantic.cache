@@ -1,0 +1,533 @@
+;; Object Source/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Source/"
+  :tables
+  (list
+    (semanticdb-table "afiLocatorDraw.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("afiLocatorDraw.h" include nil nil [331 358])
+            ("DrawLocator" function
+               (:arguments 
+                  ( ("viewportType" variable (:type "int") (reparse-symbol arg-sub-list) [376 393])
+                    ("locatorTypeVal" variable (:type "int") (reparse-symbol arg-sub-list) [394 413])
+                    ("showLocator" variable (:type "int") (reparse-symbol arg-sub-list) [414 430])
+                    ("showShaded" variable (:type "int") (reparse-symbol arg-sub-list) [431 446])
+                    ("translation" variable (:type ("MPoint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [447 466])
+                    ("rotation" variable (:type ("MPoint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [467 483])
+                    ("scale" variable (:type ("MPoint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [484 497])
+                    ("transparency" variable (:type "float") (reparse-symbol arg-sub-list) [498 517]))                  
+                :type "int")
+                nil [360 97654])
+            ("getBoundingBox" function
+               (:arguments 
+                  ( ("locatorTypeVal" variable (:type "int") (reparse-symbol arg-sub-list) [97685 97704])
+                    ("sizeMult" variable (:type ("MPoint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [97705 97721])
+                    ("lp" variable (:type ("MPoint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [97722 97733]))                  
+                :type ("MBoundingBox" type (:type "class") nil nil))
+                nil [97657 102769]))          
+      :file "afiLocatorDraw.cpp"
+      :pointmax 102770
+      :fsize 105077
+      :lastmodtime '(20132 5394 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "afiLocatorDraw.h"
+      :file "afiLocatorDraw.h"
+      :fsize 802
+      :lastmodtime '(20132 5966 0 0))
+    (semanticdb-table "afiLocatorNode.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("afiLocatorNode.h" include nil nil [575 602])
+            ("AfiLocatorNode" type
+               (:superclasses 
+                  ( ("MPxLocatorNode" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [1039 1046])
+                    ("AfiLocatorNode" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :type ("AfiLocatorNode" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1048 1065])
+                    ("AfiLocatorNode" function
+                       (:prototype-flag t
+                        :destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [1067 1093])
+                    ("compute" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("plug" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MPlug" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1127 1145])
+                            ("data" variable
+                               (:reference 1
+                                :type ("MDataBlock" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1146 1164]))                          
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1098 1165])
+                    ("draw" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("view" variable
+                               (:reference 1
+                                :type ("M3dView" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1198 1213])
+                            ("path" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MDagPath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1214 1236])
+                            ("style" variable (:type ("M3dView::DisplayStyle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1248 1276])
+                            ("status" variable (:type ("M3dView::DisplayStatus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1287 1318]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1168 1319])
+                    ("isBounded" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type "bool")
+                        (reparse-symbol classsubparts) [1323 1365])
+                    ("boundingBox" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :type ("MBoundingBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1368 1412])
+                    ("creator" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :typemodifiers ("static")
+                        :type "void")
+                        (reparse-symbol classsubparts) [1416 1450])
+                    ("initialize" function
+                       (:prototype-flag t
+                        :typemodifiers ("static")
+                        :type ("MStatus" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1453 1490])
+                    ("size" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1508 1537])
+                    ("locatorType" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1620 1650])
+                    ("locatorSubType" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1695 1728])
+                    ("showLocator" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1777 1807])
+                    ("showShaded" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1870 1899])
+                    ("showLabel" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1933 1967])
+                    ("locatorSizeX" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1992 2029])
+                    ("locatorSizeY" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2051 2088])
+                    ("locatorSizeZ" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2110 2147])
+                    ("locatorRotateX" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2169 2208])
+                    ("locatorRotateY" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2231 2270])
+                    ("locatorRotateZ" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2293 2332])
+                    ("locatorColorR" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2355 2393])
+                    ("locatorColorG" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2417 2455])
+                    ("locatorColorB" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2479 2517])
+                    ("transparency" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2541 2578])
+                    ("label" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2599 2629])
+                    ("labelAlign" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2652 2688])
+                    ("labelOffsetX" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2716 2753])
+                    ("labelOffsetY" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2775 2812])
+                    ("labelOffsetZ" variable
+                       (:typemodifiers ("static")
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2834 2871])
+                    ("public" label nil (reparse-symbol classsubparts) [2893 2900])
+                    ("id" variable
+                       (:typemodifiers ("static")
+                        :type ("MTypeId" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2903 2922])
+                    ("drawDbClassification" variable
+                       (:typemodifiers ("static")
+                        :type ("MString" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2926 2963])
+                    ("drawRegistrantId" variable
+                       (:typemodifiers ("static")
+                        :type ("MString" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2965 2998]))                  
+                :type "class")
+                nil [992 3001])
+            ("id" function
+               (:prototype-flag t
+                :parent "AfiLocatorNode"
+                :type ("MTypeId" type (:type "class") nil nil))
+                nil [3019 3055])
+            ("AfiLocatorNode::locatorType" variable (:type ("MObject" type (:type "class") nil nil)) nil [3127 3163])
+            ("AfiLocatorNode::locatorSubType" variable (:type ("MObject" type (:type "class") nil nil)) nil [3164 3203])
+            ("AfiLocatorNode::showLocator" variable (:type ("MObject" type (:type "class") nil nil)) nil [3204 3240])
+            ("AfiLocatorNode::showShaded" variable (:type ("MObject" type (:type "class") nil nil)) nil [3241 3276])
+            ("AfiLocatorNode::showLabel" variable (:type ("MObject" type (:type "class") nil nil)) nil [3277 3311])
+            ("AfiLocatorNode::locatorSizeX" variable (:type ("MObject" type (:type "class") nil nil)) nil [3312 3349])
+            ("AfiLocatorNode::locatorSizeY" variable (:type ("MObject" type (:type "class") nil nil)) nil [3350 3387])
+            ("AfiLocatorNode::locatorSizeZ" variable (:type ("MObject" type (:type "class") nil nil)) nil [3388 3425])
+            ("AfiLocatorNode::locatorRotateX" variable (:type ("MObject" type (:type "class") nil nil)) nil [3426 3465])
+            ("AfiLocatorNode::locatorRotateY" variable (:type ("MObject" type (:type "class") nil nil)) nil [3466 3505])
+            ("AfiLocatorNode::locatorRotateZ" variable (:type ("MObject" type (:type "class") nil nil)) nil [3506 3545])
+            ("AfiLocatorNode::locatorColorR" variable (:type ("MObject" type (:type "class") nil nil)) nil [3546 3584])
+            ("AfiLocatorNode::locatorColorG" variable (:type ("MObject" type (:type "class") nil nil)) nil [3585 3623])
+            ("AfiLocatorNode::locatorColorB" variable (:type ("MObject" type (:type "class") nil nil)) nil [3624 3662])
+            ("AfiLocatorNode::transparency" variable (:type ("MObject" type (:type "class") nil nil)) nil [3663 3700])
+            ("AfiLocatorNode::label" variable (:type ("MObject" type (:type "class") nil nil)) nil [3701 3731])
+            ("AfiLocatorNode::labelAlign" variable (:type ("MObject" type (:type "class") nil nil)) nil [3732 3767])
+            ("AfiLocatorNode::labelOffsetX" variable (:type ("MObject" type (:type "class") nil nil)) nil [3768 3805])
+            ("AfiLocatorNode::labelOffsetY" variable (:type ("MObject" type (:type "class") nil nil)) nil [3806 3843])
+            ("AfiLocatorNode::labelOffsetZ" variable (:type ("MObject" type (:type "class") nil nil)) nil [3844 3881])
+            ("drawDbClassification" function
+               (:prototype-flag t
+                :parent "AfiLocatorNode"
+                :type ("MString" type (:type "class") nil nil))
+                nil [3900 3979])
+            ("drawRegistrantId" function
+               (:prototype-flag t
+                :parent "AfiLocatorNode"
+                :type ("MString" type (:type "class") nil nil))
+                nil [3980 4045])
+            ("AfiLocatorNode" function
+               (:constructor-flag t
+                :parent "AfiLocatorNode"
+                :type ("AfiLocatorNode" type (:type "class") nil nil))
+                nil [4048 4083])
+            ("AfiLocatorNode" function
+               (:destructor-flag t
+                :parent "AfiLocatorNode"
+                :type "void")
+                nil [4084 4120])
+            ("compute" function
+               (:parent "AfiLocatorNode"
+                :arguments 
+                  ( ("" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MPlug" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4155 4177])
+                    ("" variable
+                       (:reference 1
+                        :type ("MDataBlock" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4178 4200]))                  
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [4122 4236])
+            ("draw" function
+               (:parent "AfiLocatorNode"
+                :arguments 
+                  ( ("view" variable
+                       (:reference 1
+                        :type ("M3dView" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4294 4309])
+                    ("" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MDagPath" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4310 4336])
+                    ("style" variable (:type ("M3dView::DisplayStyle" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4346 4374])
+                    ("status" variable (:type ("M3dView::DisplayStatus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4383 4414]))                  
+                :type "void")
+                nil [4267 9690])
+            ("isBounded" function
+               (:parent "AfiLocatorNode"
+                :type "bool")
+                nil [9692 9749])
+            ("boundingBox" function
+               (:parent "AfiLocatorNode"
+                :type ("MBoundingBox" type (:type "class") nil nil))
+                nil [9751 10959])
+            ("creator" function
+               (:pointer 1
+                :parent "AfiLocatorNode"
+                :type "void")
+                nil [10961 11026])
+            ("AfiLocatorNodeData" type
+               (:superclasses 
+                  ( ("MUserData" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [11428 11435])
+                    ("AfiLocatorNodeData" function
+                       (:constructor-flag t
+                        :type ("AfiLocatorNodeData" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11437 11479])
+                    ("AfiLocatorNodeData" function
+                       (:destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [11508 11540])
+                    ("fMultiplier" variable (:type "float") (reparse-symbol classsubparts) [11543 11561])
+                    ("isSelected" variable (:type "bool") (reparse-symbol classsubparts) [11563 11579])
+                    ("locatorType" variable (:type "int") (reparse-symbol classsubparts) [11582 11599])
+                    ("showLocator" variable (:type "int") (reparse-symbol classsubparts) [11601 11618])
+                    ("showShaded" variable (:type "int") (reparse-symbol classsubparts) [11620 11636])
+                    ("trans" variable (:type "float") (reparse-symbol classsubparts) [11638 11650])
+                    ("translation" variable (:type ("MPoint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11652 11671])
+                    ("rotation" variable (:type ("MPoint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11673 11689])
+                    ("scale" variable (:type ("MPoint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11691 11704])
+                    ("color" variable (:type ("MColor" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11707 11720]))                  
+                :type "class")
+                nil [11382 11723])
+            ("AfiLocatorNodeDrawOverride" type
+               (:superclasses 
+                  ( ("MHWRender::MPxDrawOverride" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [11797 11804])
+                    ("Creator" function
+                       (:pointer 1
+                        :typemodifiers ("static")
+                        :arguments 
+                          ( ("obj" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MObject" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [11849 11868]))                          
+                        :type ("MHWRender::MPxDrawOverride" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11806 11920])
+                    ("AfiLocatorNodeDrawOverride" function
+                       (:prototype-flag t
+                        :destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [11923 11961])
+                    ("boundingBox" function
+                       (:prototype-flag t
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("objPath" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MDagPath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12000 12024])
+                            ("cameraPath" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MDagPath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12027 12054]))                          
+                        :type ("MBoundingBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11964 12061])
+                    ("prepareForDraw" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :typemodifiers ("virtual")
+                        :arguments 
+                          ( ("objPath" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MDagPath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12101 12125])
+                            ("cameraPath" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MDagPath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12128 12155])
+                            ("oldData" variable
+                               (:pointer 1
+                                :type ("MUserData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12158 12177]))                          
+                        :type ("MUserData" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12064 12178])
+                    ("draw" function
+                       (:prototype-flag t
+                        :typemodifiers ("static")
+                        :arguments 
+                          ( ("context" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MHWRender::MDrawContext" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12198 12237])
+                            ("data" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("MUserData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12238 12260]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12181 12261])
+                    ("private" label nil (reparse-symbol classsubparts) [12263 12271])
+                    ("AfiLocatorNodeDrawOverride" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("obj" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MObject" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12300 12319]))                          
+                        :type ("AfiLocatorNodeDrawOverride" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12273 12320])
+                    ("getSelectionStatus" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("objPath" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("MDagPath" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12347 12371]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [12323 12378]))                  
+                :type "class")
+                nil [11726 12435])
+            ("AfiLocatorNodeDrawOverride" function
+               (:constructor-flag t
+                :parent "AfiLocatorNodeDrawOverride"
+                :arguments 
+                  ( ("obj" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12492 12511]))                  
+                :type ("AfiLocatorNodeDrawOverride" type (:type "class") nil nil))
+                nil [12437 12583])
+            ("AfiLocatorNodeDrawOverride" function
+               (:destructor-flag t
+                :parent "AfiLocatorNodeDrawOverride"
+                :type "void")
+                nil [12585 12646])
+            ("getSelectionStatus" function
+               (:parent "AfiLocatorNodeDrawOverride"
+                :arguments 
+                  ( ("objPath" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MDagPath" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12700 12724]))                  
+                :type "bool")
+                nil [12648 13065])
+            ("boundingBox" function
+               (:parent "AfiLocatorNodeDrawOverride"
+                :arguments 
+                  ( ("objPath" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MDagPath" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13120 13144])
+                    ("cameraPath" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MDagPath" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13144 13171]))                  
+                :type ("MBoundingBox" type (:type "class") nil nil))
+                nil [13067 14463])
+            ("prepareForDraw" function
+               (:pointer 1
+                :parent "AfiLocatorNodeDrawOverride"
+                :arguments 
+                  ( ("objPath" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MDagPath" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14521 14545])
+                    ("cameraPath" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MDagPath" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14547 14574])
+                    ("oldData" variable
+                       (:pointer 1
+                        :type ("MUserData" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14576 14595]))                  
+                :type ("MUserData" type (:type "class") nil nil))
+                nil [14465 17060])
+            ("draw" function
+               (:parent "AfiLocatorNodeDrawOverride"
+                :arguments 
+                  ( ("context" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("MHWRender::MDrawContext" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17100 17139])
+                    ("data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("MUserData" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17140 17162]))                  
+                :type "void")
+                nil [17062 18664])
+            ("initialize" function
+               (:parent "AfiLocatorNode"
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [18746 25470])
+            ("initializePlugin" function
+               (:arguments 
+                  ( ("obj" variable (:type ("MObject" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25498 25511]))                  
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [25472 26289])
+            ("uninitializePlugin" function
+               (:arguments 
+                  ( ("obj" variable (:type ("MObject" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26319 26331]))                  
+                :type ("MStatus" type (:type "class") nil nil))
+                nil [26291 26890]))          
+      :file "afiLocatorNode.cpp"
+      :pointmax 26891
+      :fsize 27729
+      :lastmodtime '(20132 6132 0 0)
+      :unmatched-syntax '((string 4021 . 4043) (string 3945 . 3977) (number 3046 . 3053)))
+    (semanticdb-table "afiLocatorNode.h"
+      :file "afiLocatorNode.h"
+      :fsize 1319
+      :lastmodtime '(20132 5384 0 0)))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!afilocator!Source!Source!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

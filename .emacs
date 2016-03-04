@@ -7,13 +7,17 @@
  '(column-number-mode t)
  '(nxml-child-indent 4)
  '(nxml-slash-auto-complete-flag t)
+ '(py-load-pymacs-p nil)
+ '(pymacs-python-command "c:/Python27/python.exe")
+ '(python-shell-interpreter "c:/Python27/Scripts/ipython.exe")
  '(scroll-bar-mode (quote right))
  '(show-paren-mode t)
  '(slime-backend "/usr/share/common-lisp/source/swank/swank-loader.lisp")
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(w32-get-true-file-attributes nil t))
 
 ;; markdown mode
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/els")
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
@@ -24,7 +28,7 @@
 ;(add-to-list 'auto-mode-alist '("\\.cfg\\'" . wesnoth-mode))
 
 ;; lua mode
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/els")
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
@@ -39,7 +43,11 @@
 ;; use c-mode for mel
 (add-to-list 'auto-mode-alist '("\\.mel$" . c-mode))
 
+;; use tcl-mode for nuke gizmos
 (add-to-list 'auto-mode-alist '("\\.gizmo$" . tcl-mode))
+
+;; use python-mode for pyw
+(add-to-list 'auto-mode-alist '("\\.pyw$" . python-mode))
 
 ;; K&R are _right_ :)
 (setq c-default-style "k&r"
@@ -63,7 +71,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/color-theme-20080305.34")
 (require 'color-theme)
 (color-theme-initialize)
-(load "~/.emacs.d/color-theme-molokai.el")
+(load "~/.emacs.d/els/color-theme-molokai.el")
 (color-theme-hober)
 
 ;; autocomplete
@@ -73,7 +81,7 @@
 (ac-config-default)
 
 ;; folding
-(load "~/.emacs.d/jfold-mode-1.0.0.el")
+(load "~/.emacs.d/els/jfold-mode-1.0.0.el")
 (require 'jfold-mode)
 
 ;; tune some stuff
@@ -118,19 +126,25 @@
 (put 'upcase-region 'disabled nil)
 
 (add-to-list 'load-path
-                  "~/.emacs.d/plugins/yasnippet")
-    (require 'yasnippet)
-    (yas-global-mode 1)
+	     "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
 
-; ropemacs
-;(require 'pymacs)
-;(pymacs-load "ropemacs" "rope-")
+;; ropemacs
+(defun load-ropemacs()
+  (interactive)
+  (require 'pymacs)
+  (pymacs-load "ropemacs" "rope-")
+  (setq ropemacs-confirm-saving 'nil)
+  )
+
+(global-set-key (kbd "C-x p l") 'load-ropemacs)
 
 ;; smex
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;;(global-set-key (kbd "M-x") 'smex)
+;;(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+;;(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;(add-to-list 'load-path
 ;		"~/.emacs.d/plugins/pde/lisp")
@@ -156,6 +170,12 @@
 (autoload 'pylint "pylint")
 (add-hook 'python-mode-hook 'pylint-add-menu-items)
 (add-hook 'python-mode-hook 'pylint-add-key-bindings)
+
+;;(add-to-list 'load-path "~/.emacs.d/elpa/anything-20130605.1746")
+;;(require 'anything) (require 'anything-ipython)
+;;(when (require 'anything-show-completion nil t)
+;;  (use-anything-show-completion 'anything-ipython-complete
+;;				'(length initial-pattern)))
 
 
 (defun quote-region (rStart rEnd quote-chars )
@@ -204,4 +224,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Lucida Sans Typewriter" :foundry "outline" :slant normal :weight normal :height 98 :width normal)))))
+ '(default ((t (:family "Hack" :foundry "outline" :slant normal :weight normal :height 98 :width normal)))))

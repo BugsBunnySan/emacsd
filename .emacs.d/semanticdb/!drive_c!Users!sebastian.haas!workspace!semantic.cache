@@ -1,0 +1,247 @@
+;; Object workspace/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "workspace/"
+  :tables
+  (list
+    (semanticdb-table "test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("n" variable nil nil [2 13])
+            ("duplicate_node" function nil nil [16 120])
+            ("duplicate_node" code nil nil [121 137]))          
+      :file "test.py"
+      :pointmax 138
+      :fsize 137
+      :lastmodtime '(21897 32775 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "getshaders.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__future__" include nil nil [1 38])
+            ("threading" include nil nil [40 56])
+            ("Queue" include nil nil [57 69])
+            ("pymel.core" include nil nil [71 94])
+            ("logging" include nil nil [96 110])
+            ("logger" variable nil nil [111 147])
+            ("pymel.internal.plogging" include nil nil [149 190])
+            ("" code nil nil [198 200])
+            ("getObjectSets" function (:arguments 
+              ( ("setType" variable nil (reparse-symbol function_parameters) [219 226]))              ) nil [201 391])
+            ("" code nil nil [398 400])
+            ("get_sg_shaders" function nil nil [401 636])
+            ("" code nil nil [643 645])
+            ("get_obj_sgs" function (:arguments 
+              ( ("sg_shaders" variable nil (reparse-symbol function_parameters) [662 672]))              ) nil [646 1286])
+            ("get_obj_set_shaders" function
+               (:decorators 
+                  ( ("timed" function (:type "decorator") nil nil))                  
+                :arguments 
+                  ( ("obj_set" variable nil (reparse-symbol function_parameters) [1318 1325])
+                    ("queue" variable nil (reparse-symbol function_parameters) [1327 1332]))                  )
+                nil [1287 1760])
+            ("" code nil nil [1768 1770])
+            ("get_obj_set_shaders" function nil nil [1771 2081]))          
+      :file "getshaders.py"
+      :pointmax 2081
+      :fsize 2351
+      :lastmodtime '(21901 33612 0 0)
+      :unmatched-syntax '(($EOI 2081 . 2081) ($EOI 2122 . 2122) ($EOI 2130 . 2130) ($EOI 2192 . 2192) (COMMA 1382 . 1383)))
+    (semanticdb-table "tools_usage.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("datetime" include nil nil [1 30])
+            ("Tool" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [97 113])
+                            ("self" variable nil (reparse-symbol indented_block_body) [122 141])
+                            ("self" variable nil (reparse-symbol indented_block_body) [150 166])
+                            ("self" variable nil (reparse-symbol indented_block_body) [175 217])
+                            ("self" variable nil (reparse-symbol indented_block_body) [226 255])
+                            ("self" variable nil (reparse-symbol indented_block_body) [264 290]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [70 74])
+                            ("name" variable nil (reparse-symbol function_parameters) [76 80])
+                            ("path" variable nil (reparse-symbol function_parameters) [82 86]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [57 291])
+                    ("add_usage" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [310 314])
+                            ("tstamp" variable nil (reparse-symbol function_parameters) [316 322])
+                            ("project" variable nil (reparse-symbol function_parameters) [324 331])
+                            ("user" variable nil (reparse-symbol function_parameters) [333 337])
+                            ("toolpath" variable nil (reparse-symbol function_parameters) [339 347]))                          )
+                        (reparse-symbol indented_block_body) [296 961]))                  
+                :type "class")
+                nil [33 961])
+            ("tool_usage" variable nil nil [962 977])
+            ("usage_file" variable nil nil [979 1018])
+            ("idx" variable nil nil [1020 1027])
+            ("for" code nil nil [1028 1340])
+            ("usage_file" code nil nil [1341 1359])
+            ("os" include nil nil [1361 1374])
+            ("re" include nil nil [1361 1374])
+            ("remap_to_s" function (:arguments 
+              ( ("path" variable nil (reparse-symbol function_parameters) [1391 1395]))              ) nil [1376 1477])
+            ("for" code nil nil [1478 2924]))          
+      :file "tools_usage.py"
+      :pointmax 2924
+      :fsize 2996
+      :lastmodtime '(21943 43911 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "hkf.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package hkf
+@brief hilite keyframes plugin
+
+@copyright 2015 Sebastian Haas
+\"\"\"" code nil nil [25 108])
+            ("__future__" include nil nil [109 146])
+            ("sys" include nil nil [1218 1228])
+            ("maya.OpenMaya" include nil nil [1229 1261])
+            ("maya.OpenMayaAnim" include nil nil [1262 1302])
+            ("maya.OpenMayaMPx" include nil nil [1303 1341])
+            ("kPluginNodeName" variable nil nil [1343 1381])
+            ("kPluginName" variable nil nil [1382 1416])
+            ("kPluginNodeClassify" variable nil nil [1417 1456])
+            ("kPluginNodeId" variable nil nil [1457 1503])
+            ("KeyframeHiliteNode" type
+               (:documentation " Hiliting node. If connected between a control's transform and shape,
+    will hilite the shape if the control has a keyframe set on it at current time
+    "
+                :superclasses ("OpenMayaMPx.MPxNode")
+                :members 
+                  ( ("time_in_attr" variable nil (reparse-symbol indented_block_body) [1768 1807])
+                    ("source_node_attr" variable nil (reparse-symbol indented_block_body) [1812 1851])
+                    ("hilite_color_attr" variable nil (reparse-symbol indented_block_body) [1856 1895])
+                    ("hilite_toggle_attr" variable nil (reparse-symbol indented_block_body) [1900 1939])
+                    ("__init__" function
+                       (:suite 
+                          ( ("OpenMayaMPx" code nil (reparse-symbol indented_block_body) [1973 2007])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2016 2040])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2049 2068]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1958 1962]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1945 2069])
+                    ("_get_src_input_nodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2099 2103]))                          
+                        :documentation " currently the node works only with one controller, to support multiple controllers
+        attached to one hilite node, this returns a list
+        ")
+                        (reparse-symbol indented_block_body) [2074 2847])
+                    ("_anim_curve_is_keyed_at" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2880 2884])
+                            ("ac_fn" variable nil (reparse-symbol function_parameters) [2886 2891])
+                            ("time" variable nil (reparse-symbol function_parameters) [2893 2897]))                          
+                        :documentation " checks whether an animation curve has a keyframe set at a specified time
+
+        Args:
+            ac_fn: animation curve functionset, set to an animation curve
+            time: numeric time
+
+        Returns:
+            bool: True if ac_fn finds a key at time, else False
+        ")
+                        (reparse-symbol indented_block_body) [2852 3330])
+                    ("_source_is_keyed_at" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3359 3363])
+                            ("time" variable nil (reparse-symbol function_parameters) [3365 3369]))                          
+                        :documentation " checks whether a (currently, *the*) source node has a keyframe set at a specified time
+
+        Args:
+            time: numeric time
+
+        Returns:
+            bool: True if the source node has a keyframe set at time, else False
+        ")
+                        (reparse-symbol indented_block_body) [3335 4197])
+                    ("connectionMade" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4221 4225])
+                            ("plug" variable nil (reparse-symbol function_parameters) [4227 4231])
+                            ("other_plug" variable nil (reparse-symbol function_parameters) [4233 4243])
+                            ("is_src" variable nil (reparse-symbol function_parameters) [4245 4251]))                          
+                        :documentation " std overriden callback when a connection is made to us
+
+        Args:
+            plug: our plug that the connection was made to
+            other_plug: the other side of the new connection
+            is_src: bool whether we're the source or the destination of the connection
+
+        Returns:
+            kUnknownParameter: if a connection is made to something else than our source_node_attr
+        ")
+                        (reparse-symbol indented_block_body) [4202 4995])
+                    ("connectionBroken" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5021 5025])
+                            ("plug" variable nil (reparse-symbol function_parameters) [5027 5031])
+                            ("other_plug" variable nil (reparse-symbol function_parameters) [5033 5043])
+                            ("is_src" variable nil (reparse-symbol function_parameters) [5045 5051]))                          
+                        :documentation " std overriden callback when a conection to us is broken
+
+        Args:
+            plug: our plug that the connection was made to
+            other_plug: the other side of the new connection
+            is_src: bool whether we're the source or the destination of the connection
+
+        Returns:
+            kUnknownParameter: if a connection is made to something else than our source_node_attr
+        ")
+                        (reparse-symbol indented_block_body) [5000 5626])
+                    ("compute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5643 5647])
+                            ("plug" variable nil (reparse-symbol function_parameters) [5649 5653])
+                            ("data" variable nil (reparse-symbol function_parameters) [5655 5659]))                          
+                        :documentation " std overriden callback when we need to recompute our data
+        if we currently have a hilite node attached, we'll compute whether to hilite it or not
+
+        Args:
+            plug: the plug that needs its data computed
+            data: unused
+
+        Returns:
+            kUnknownParameter: if a connection is made to something else than our source_node_attr
+        ")
+                        (reparse-symbol indented_block_body) [5631 6551]))                  
+                :type "class")
+                nil [1550 6551])
+            ("nodeCreator" function (:documentation " called to create a new hilite node, registered in initialize plugin ") nil [6552 6705])
+            ("nodeInitializer" function (:documentation " called to initialize a newly created node ") nil [6706 8767])
+            ("initializePlugin" function
+               (:documentation " std plugin initialize function, registered how a node is created "
+                :arguments 
+                  ( ("mobject" variable nil (reparse-symbol function_parameters) [8789 8796]))                  )
+                nil [8768 9239])
+            ("uninitializePlugin" function
+               (:documentation " std plugin uninitialize function, deregisters the node "
+                :arguments 
+                  ( ("mobject" variable nil (reparse-symbol function_parameters) [9264 9271]))                  )
+                nil [9241 9578]))          
+      :file "hkf.py"
+      :pointmax 9578
+      :fsize 9817
+      :lastmodtime '(21995 22584 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 9468 . 9578) (NEWLINE 9467 . 9468) (COLON 9466 . 9467) (TRY 9390 . 9393) (AS 9462 . 9464) (INDENT_BLOCK 9131 . 9239) (NEWLINE 9130 . 9131) (COLON 9129 . 9130) (TRY 8925 . 8928) (AS 9125 . 9127))))
+  :file "!drive_c!Users!sebastian.haas!workspace!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,244 @@
+;; Object bbfContext/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfContext/"
+  :tables
+  (list
+    (semanticdb-table "test_service.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package BBF.Common.Lib.bbfContext.test_service
+@brief test cases for BBF.Common.Lib.bbfContext.service
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 169])
+            ("unittest" include nil nil [170 185])
+            ("__builtin__" include nil nil [187 205])
+            ("__builtin__" variable nil nil [252 280])
+            ("BBF.Common.Lib.bbfContext" include nil nil [282 328])
+            ("TestInterfaceService" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("setUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [391 395]))                          )
+                        (reparse-symbol indented_block_body) [381 704])
+                    ("test_implements_ok" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [732 736]))                          
+                        :documentation " Test complete Interface implementation ")
+                        (reparse-symbol indented_block_body) [709 1045])
+                    ("test_implements_fail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1075 1079]))                          
+                        :documentation " Test incomeplete Interface implementation fails ")
+                        (reparse-symbol indented_block_body) [1050 1437])
+                    ("test_interface_register" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1470 1474]))                          
+                        :documentation " Test registering of interface in global context ")
+                        (reparse-symbol indented_block_body) [1442 1894])
+                    ("test_service_register" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1925 1929]))                          
+                        :documentation " Test registering of service in global context ")
+                        (reparse-symbol indented_block_body) [1899 2344]))                  
+                :type "class")
+                nil [330 2344]))          
+      :file "test_service.py"
+      :pointmax 2479
+      :fsize 2561
+      :lastmodtime '(21916 2129 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "test_base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package BBF.Common.Lib.bbfContext.test_base
+@brief test cases for BBF.Common.Lib.bbfContext.base
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 163])
+            ("__builtin__" include nil nil [181 199])
+            ("__builtin__" variable nil nil [246 274])
+            ("BBF.Common.Lib.bbfContext" include nil nil [276 322])
+            ("TestBase" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("test_null" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [377 381]))                          
+                        :documentation " Test the 'no value for key' marker class ")
+                        (reparse-symbol indented_block_body) [363 569])
+                    ("test_import" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [590 594]))                          
+                        :documentation " Test import of base.py directly ")
+                        (reparse-symbol indented_block_body) [574 788])
+                    ("test_reload" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [809 813]))                          
+                        :documentation " Test reload of directly imported base ")
+                        (reparse-symbol indented_block_body) [793 1067]))                  
+                :type "class")
+                nil [324 1067]))          
+      :file "test_base.py"
+      :pointmax 1190
+      :fsize 1241
+      :lastmodtime '(21916 2129 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "test_context.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package BBF.Common.Lib.bbfContext.test_context
+@brief test cases for BBF.Common.Lib.bbfContext.context
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 169])
+            ("unittest" include nil nil [170 185])
+            ("__builtin__" include nil nil [187 205])
+            ("__builtin__" variable nil nil [252 280])
+            ("BBF.Common.Lib.bbfContext" include nil nil [282 328])
+            ("TestContextStack" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("setUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [387 391]))                          )
+                        (reparse-symbol indented_block_body) [377 462])
+                    ("test_init_stack" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [487 491]))                          
+                        :documentation " Test creation of __builtin__.bbf_context context stack ")
+                        (reparse-symbol indented_block_body) [467 614])
+                    ("test_create_delete_context" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [650 654]))                          
+                        :documentation " Test creation and deletion of a context layer on the stack ")
+                        (reparse-symbol indented_block_body) [619 914])
+                    ("_test_config" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [936 940]))                          )
+                        (reparse-symbol indented_block_body) [919 1239])
+                    ("test_config" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1260 1264]))                          
+                        :documentation " Test config values handling with multiple layers ")
+                        (reparse-symbol indented_block_body) [1244 1663]))                  
+                :type "class")
+                nil [330 1663]))          
+      :file "test_context.py"
+      :pointmax 1795
+      :fsize 1851
+      :lastmodtime '(21916 2129 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "test_kvstore.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package BBF.Common.Lib.bbfContext.test_kvstore
+@brief test cases for BBF.Common.Lib.bbfContext.kvstore
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 169])
+            ("unittest" include nil nil [170 185])
+            ("__builtin__" include nil nil [187 205])
+            ("__builtin__" variable nil nil [252 280])
+            ("BBF.Common.Lib.bbfContext" include nil nil [282 328])
+            ("TestKVStore" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("setUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [382 386]))                          )
+                        (reparse-symbol indented_block_body) [372 437])
+                    ("test_init" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [456 460]))                          
+                        :documentation " Test initialization of empty KVStore ")
+                        (reparse-symbol indented_block_body) [442 762])
+                    ("test_single_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [789 793]))                          
+                        :documentation " Test non-dict/list value store and retrieve ")
+                        (reparse-symbol indented_block_body) [767 937])
+                    ("test_dict_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [962 966]))                          
+                        :documentation " Test dictionary value store and retrieve ")
+                        (reparse-symbol indented_block_body) [942 1475])
+                    ("test_list_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1500 1504]))                          
+                        :documentation " test list value store and retrieve ")
+                        (reparse-symbol indented_block_body) [1480 1742])
+                    ("test_default_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1770 1774]))                          
+                        :documentation " test default value for non existing key ")
+                        (reparse-symbol indented_block_body) [1747 1937])
+                    ("test_merge_expand" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1964 1968]))                          
+                        :documentation " test merge with adding a non existing key value ")
+                        (reparse-symbol indented_block_body) [1942 2339])
+                    ("test_merge_overwrite" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2369 2373]))                          
+                        :documentation " test merge with overwriting an existing key ")
+                        (reparse-symbol indented_block_body) [2344 2703])
+                    ("test_merge_expand_overwrite" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2740 2744]))                          
+                        :documentation " test merge with overwriting existing and adding non existing keys")
+                        (reparse-symbol indented_block_body) [2708 3193])
+                    ("test_merge_overwrite_type" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3228 3232]))                          
+                        :documentation " test merge with changing the type of value stored at existing key ")
+                        (reparse-symbol indented_block_body) [3198 3758])
+                    ("test_overwrite_expand2" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3790 3794]))                          
+                        :documentation " test merge with overwriting and expanding deeper nesed keys ")
+                        (reparse-symbol indented_block_body) [3763 4454])
+                    ("test_merge_in" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4477 4481]))                          )
+                        (reparse-symbol indented_block_body) [4459 5099]))                  
+                :type "class")
+                nil [330 5099]))          
+      :file "test_kvstore.py"
+      :pointmax 5229
+      :fsize 5364
+      :lastmodtime '(21918 12686 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!Tests!test_BBF!Common!Lib!bbfContext!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

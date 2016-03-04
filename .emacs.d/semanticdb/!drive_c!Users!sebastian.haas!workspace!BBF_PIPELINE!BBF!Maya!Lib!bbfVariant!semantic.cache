@@ -1,0 +1,281 @@
+;; Object bbfVariant/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfVariant/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.internal" include nil nil [1 36])
+            ("logger" variable nil nil [37 74]))          
+      :file "__init__.py"
+      :pointmax 105
+      :fsize 106
+      :lastmodtime '(21919 61103 0 0)
+      :unmatched-syntax '((NAME 75 . 81) ($EOI 105 . 105)))
+    (semanticdb-table "bbfAssetVariant.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfVariant.bbfAssetVariant
+   :synopsis: variant asset things
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 151])
+            ("__future__" include nil nil [152 189])
+            ("__all__" variable nil nil [191 203])
+            ("re" include nil nil [205 214])
+            ("logging" include nil nil [215 229])
+            ("pymel.core" include nil nil [231 254])
+            ("maya.cmds" include nil nil [255 279])
+            ("BBF.Common.Lib.ShotgunInterface.ShotgunInterface" include nil nil [281 358])
+            ("BBF.Maya.Lib.bbfShader" include nil nil [360 402])
+            ("BBF.Common.Lib.BBF_environ" include nil nil [403 451])
+            ("BBF.Maya.Lib.bbf_base.nodes" include nil nil [452 501])
+            ("BBF.Common.Lib.bbf_base.datastructs" include nil nil [502 566])
+            ("BBF.Maya.Lib.bbf_scene_hierarchy.scene_parser" include nil nil [567 635])
+            ("BBF.Maya.Lib.bbfUtil" include nil nil [636 674])
+            ("VARIANT_INVISIBILITY_ATTR" variable nil nil [675 727])
+            ("VARIANT_VISIBILITY_ATTR" variable nil nil [728 778])
+            ("ALL_VARIANTS_STR" variable nil nil [779 820])
+            ("bbfEnv" variable nil nil [822 851])
+            ("log" variable nil nil [852 885])
+            ("getNodeFilters" function nil nil [887 1249])
+            ("getNodeFilteredNodes" function nil nil [1250 1513])
+            ("showVariant" function
+               (:decorators 
+                  ( ("bbfUtil.chunk_undo" function (:type "decorator") nil nil))                  
+                :arguments 
+                  ( ("variantName" variable nil (reparse-symbol function_parameters) [1550 1561])
+                    ("displayProgressDialog" variable nil (reparse-symbol function_parameters) [1563 1584]))                  )
+                nil [1514 1903])
+            ("disableVariantManager" function nil nil [1904 2150])
+            ("getVariantList" function (:arguments 
+              ( ("root" variable nil (reparse-symbol function_parameters) [3203 3207]))              ) nil [3184 3591])
+            ("getVariantListFromShotgun" function (:arguments 
+              ( ("assetName" variable nil (reparse-symbol function_parameters) [3622 3631]))              ) nil [3592 4054])
+            ("createVariantNodes" function (:arguments 
+              ( ("assetName" variable nil (reparse-symbol function_parameters) [4078 4087]))              ) nil [4055 5461])
+            ("setNodeVisibilityForAllVariants" function (:arguments 
+              ( ("nodeList" variable nil (reparse-symbol function_parameters) [5498 5506])
+                ("isVisible" variable nil (reparse-symbol function_parameters) [5508 5517]))              ) nil [5462 6707])
+            ("topLevelGroupAlwaysVisible" function
+               (:documentation " check if a node is invisible, or will potentially be turned invisible in a variant "
+                :arguments 
+                  ( ("node" variable nil (reparse-symbol function_parameters) [6739 6743]))                  )
+                nil [6708 7405])
+            ("deleteVariant" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [7425 7436]))              ) nil [7407 7784])
+            ("__deleteVariantSettings" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [7813 7824]))              ) nil [7785 8887])
+            ("copyVariantSettings" function (:arguments 
+              ( ("fromVariantName" variable nil (reparse-symbol function_parameters) [8912 8927])
+                ("toVariantName" variable nil (reparse-symbol function_parameters) [8929 8942]))              ) nil [8888 10621])
+            ("addVariantAttr" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [10765 10769])
+                ("attr" variable nil (reparse-symbol function_parameters) [10771 10775])
+                ("value" variable nil (reparse-symbol function_parameters) [10777 10782]))              ) nil [10746 11132])
+            ("removeVariantAttr" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [11155 11159])
+                ("attr" variable nil (reparse-symbol function_parameters) [11161 11165])
+                ("value" variable nil (reparse-symbol function_parameters) [11167 11172]))              ) nil [11133 11383])
+            ("setVariantAttr" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [11403 11407])
+                ("attr" variable nil (reparse-symbol function_parameters) [11409 11413])
+                ("value" variable nil (reparse-symbol function_parameters) [11415 11420]))              ) nil [11384 11569])
+            ("hasVariantAttr" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [11589 11593])
+                ("attr" variable nil (reparse-symbol function_parameters) [11595 11599])
+                ("value" variable nil (reparse-symbol function_parameters) [11601 11606]))              ) nil [11570 11745])
+            ("setVariantChildrenGeometry" function (:arguments 
+              ( ("nodes" variable nil (reparse-symbol function_parameters) [11777 11782])
+                ("variantName" variable nil (reparse-symbol function_parameters) [11784 11795]))              ) nil [11746 12380])
+            ("setVariantGeometry" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [12405 12416]))              ) nil [12382 12745])
+            ("changeNodeVisibility" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [12771 12775])
+                ("show" variable nil (reparse-symbol function_parameters) [12777 12781]))              ) nil [12746 13238])
+            ("showVariantGeometry" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [13647 13658]))              ) nil [13623 14722])
+            ("getShaderVariant" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [14867 14871])
+                ("attr" variable nil (reparse-symbol function_parameters) [14873 14877])
+                ("variant" variable nil (reparse-symbol function_parameters) [14879 14886]))              ) nil [14846 15120])
+            ("showVariantShader" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [15143 15154])
+                ("displayProgressDialog" variable nil (reparse-symbol function_parameters) [15156 15177]))              ) nil [15121 16382])
+            ("addShaderVariantAttr" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [16408 16412])
+                ("attr" variable nil (reparse-symbol function_parameters) [16414 16418])
+                ("variant" variable nil (reparse-symbol function_parameters) [16420 16427])
+                ("value" variable nil (reparse-symbol function_parameters) [16429 16434]))              ) nil [16383 16937])
+            ("setVariantShaders" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [16960 16971]))              ) nil [16938 17251])
+            ("cloneAttr" function (:arguments 
+              ( ("source" variable nil (reparse-symbol function_parameters) [17390 17396])
+                ("destination" variable nil (reparse-symbol function_parameters) [17398 17409]))              ) nil [17376 18294])
+            ("disableVariantOverrides" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [18323 18334]))              ) nil [18295 19706])
+            ("enableVariantOverrides" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [19823 19834]))              ) nil [19796 20973])
+            ("addVariantOverRide" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [20997 21008])
+                ("overrideAttrName" variable nil (reparse-symbol function_parameters) [21010 21026]))              ) nil [20974 23096])
+            ("removeVariantOverRide" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [23123 23134])
+                ("overrideAttrName" variable nil (reparse-symbol function_parameters) [23136 23152]))              ) nil [23097 24234])
+            ("getCurrentVariant" function nil nil [24235 24671])
+            ("disableVariants" function nil nil [24672 24990])
+            ("switchVariantOverrides" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [25018 25029]))              ) nil [24991 25346])
+            ("getDefaultVariant" function
+               (:documentation "
+    There is technically no such thing as a \"default\" variant so this
+    function should be used with care. Eg just to consistently
+    switch *some* variant such as at publish time.
+    Variants can be either
+        A) children of a assetNameMaster (excluding assetNameMaster)
+        B) children on a assetName (including assetName)
+    For case A we will assume the default variant to be the 1st child alphabetically
+    For case B the default variant will be the parent of the other variants
+    "
+                :arguments 
+                  ( ("assetName" variable nil (reparse-symbol function_parameters) [25369 25378]))                  )
+                nil [25347 26337])
+            ("prepNodeForPublish" function
+               (:documentation " ensure a node is ready to be published, and it will behave nicely when the PRD is used in another asset,
+
+    Args:
+        node: a pm.PyNode
+    "
+                :arguments 
+                  ( ("node" variable nil (reparse-symbol function_parameters) [26361 26365]))                  )
+                nil [26338 26725])
+            ("prepSceneForPublish" function
+               (:documentation " ensure the top groups in this scene are ready to be published, and they will behave nicely when the PRD is used in another asset
+
+    Args:
+        scene_type: the type of scene this is, needed to find the top level groups
+            see BBF.Maya.Lib.bbf_scene_hierarchy for a list of scene_types
+    "
+                :arguments 
+                  ( ("scene_type" variable nil (reparse-symbol function_parameters) [26750 26760]))                  )
+                nil [26726 27392])
+            ("isolateVariant" function
+               (:documentation " switch to a variant and delete stuff not visible in this variant,
+    the resulting maya scene can be published as that variants PRD
+
+    Args:
+        variantName: the name of the variant to switch to
+        scene_type: the type of scene this is, needed to find the top level groups
+            see BBF.Maya.Lib.bbf_scene_hierarchy for a list of scene_types
+    "
+                :arguments 
+                  ( ("variantName" variable nil (reparse-symbol function_parameters) [27412 27423])
+                    ("scene_type" variable nil (reparse-symbol function_parameters) [27425 27435])
+                    ("top_level_groups" variable nil (reparse-symbol function_parameters) [27445 27461]))                  )
+                nil [27393 28448])
+            ("getVariantNodeFromName" function (:arguments 
+              ( ("variantName" variable nil (reparse-symbol function_parameters) [28476 28487]))              ) nil [28449 28735])
+            ("setupVariantHUD" function nil nil [28736 30176]))          
+      :file "bbfAssetVariant.py"
+      :pointmax 30176
+      :fsize 31015
+      :lastmodtime '(22220 14149 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 8853 . 8887) (NEWLINE 8852 . 8853) (COLON 8851 . 8852) (TRY 8746 . 8749) (AS 8845 . 8847)))
+    (semanticdb-table "bbfVariantNode.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 17])
+            ("math" include nil nil [1 17])
+            ("maya.OpenMaya" include nil nil [18 50])
+            ("maya.OpenMayaMPx" include nil nil [51 89])
+            ("kPluginNodeTypeName" variable nil nil [90 124])
+            ("variantNodeId" variable nil nil [125 165])
+            ("variantNode" type
+               (:superclasses ("OpenMayaMPx.MPxNode")
+                :members 
+                  ( ("enabled" variable nil (reparse-symbol indented_block_body) [251 279])
+                    ("__init__" function
+                       (:suite 
+                          ( ("OpenMayaMPx" code nil (reparse-symbol indented_block_body) [313 347]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [298 302]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [285 348])
+                    ("postConstructor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [381 385]))                          )
+                        (reparse-symbol indented_block_body) [361 485])
+                    ("compute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [510 514])
+                            ("plug" variable nil (reparse-symbol function_parameters) [515 519])
+                            ("dataBlock" variable nil (reparse-symbol function_parameters) [520 529]))                          )
+                        (reparse-symbol indented_block_body) [498 545]))                  
+                :type "class")
+                nil [185 545])
+            ("nodeCreator" function nil nil [556 624])
+            ("nodeInitializer" function nil nil [639 923])
+            ("initializePlugin" function (:arguments 
+              ( ("mobject" variable nil (reparse-symbol function_parameters) [984 991]))              ) nil [963 1251])
+            ("uninitializePlugin" function (:arguments 
+              ( ("mobject" variable nil (reparse-symbol function_parameters) [1310 1317]))              ) nil [1287 1528]))          
+      :file "bbfVariantNode.py"
+      :pointmax 1532
+      :fsize 1587
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "upgrade.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.mel" include nil nil [1 16])
+            ("pymel.core" include nil nil [17 40])
+            ("re" include nil nil [41 50])
+            ("bbfAssetVariant" include nil nil [51 73])
+            ("reload" code nil nil [74 97])
+            ("showEnabled" function nil nil [99 248])
+            ("upgradeMDL" function nil nil [256 2119])
+            ("upgradeRG" function nil nil [2124 3614])
+            ("listShaderOverrides" function nil nil [3615 3927])
+            ("removeNamespaceMDL" function nil nil [3940 4370])
+            ("removeNamespaceRG" function (:arguments 
+              ( ("masterNamespace" variable nil (reparse-symbol function_parameters) [4393 4408]))              ) nil [4371 6584]))          
+      :file "upgrade.py"
+      :pointmax 6600
+      :fsize 6786
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "tasks.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfVariant.tasks
+    :synopsis: variant publishingbbfTaskManager Tasks
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 160])
+            ("__future__" include nil nil [161 198])
+            ("__all__" variable nil nil [200 233])
+            ("pymel.core" include nil nil [235 258])
+            ("BBF.Maya.Tools._Common.LODManager.tasks" include nil nil [260 318])
+            ("BBF.Common.Tools.bbfTaskManager.bbfTaskManager" include nil nil [319 381])
+            ("BBF.Maya.Lib.bbfUtil" include nil nil [382 420])
+            ("BBF.Maya.Lib.bbf_base.utils" include nil nil [421 473])
+            ("bbfAssetVariant" include nil nil [475 497])
+            ("prepare_publish_variant" function nil nil [499 797])
+            ("cleanup_publish_variant" function nil nil [798 903])
+            ("expand_publish_task" function (:arguments 
+              ( ("parent_task" variable nil (reparse-symbol function_parameters) [928 939])
+                ("userData" variable nil (reparse-symbol function_parameters) [941 949]))              ) nil [904 2977]))          
+      :file "tasks.py"
+      :pointmax 2977
+      :fsize 3047
+      :lastmodtime '(22178 20793 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfVariant!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

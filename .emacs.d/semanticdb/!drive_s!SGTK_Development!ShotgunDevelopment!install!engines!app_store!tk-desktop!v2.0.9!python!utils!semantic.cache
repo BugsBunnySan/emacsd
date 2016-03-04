@@ -1,0 +1,41 @@
+;; Object utils/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "utils/"
+  :tables
+  (list
+    (semanticdb-table "bootstrap_utilities.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [448 457])
+            ("sys" include nil nil [458 468])
+            ("traceback" include nil nil [469 485])
+            ("cPickle" include nil nil [486 510])
+            ("start_engine" function
+               (:documentation "
+    Start the tk-desktop engine given a data dictionary like the one passed
+    to the launch_python hook.
+    "
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [530 534]))                  )
+                nil [513 1610])
+            ("start_app" function
+               (:documentation " Run the QApplication for the given tk-desktop engine "
+                :arguments 
+                  ( ("engine" variable nil (reparse-symbol function_parameters) [1626 1632]))                  )
+                nil [1612 2818])
+            ("handle_error" function
+               (:documentation "
+    Attempt to communicate the error back to the GUI proxy given a data
+    dictionary like the one passed to the launch_python hook.
+    "
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [2837 2841]))                  )
+                nil [2820 3631]))          
+      :file "bootstrap_utilities.py"
+      :pointmax 3631
+      :fsize 3630
+      :lastmodtime '(22182 16163 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!engines!app_store!tk-desktop!v2.0.9!python!utils!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

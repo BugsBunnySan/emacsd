@@ -1,0 +1,497 @@
+;; Object AssetPartManager/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "AssetPartManager/"
+  :tables
+  (list
+    (semanticdb-table "main.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Tools.AssetPartManager.main
+   :synopsis: main class and ui of the AssetPartManager
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 169])
+            ("__future__" include nil nil [170 207])
+            ("__all__" variable nil nil [209 239])
+            ("logging" include nil nil [241 255])
+            ("re" include nil nil [256 265])
+            ("os.path" include nil nil [266 280])
+            ("PySide" include nil nil [282 314])
+            ("pymel.core" include nil nil [316 339])
+            ("maya.api.OpenMaya" include nil nil [340 370])
+            ("BBF.Common.Lib.bbfContext" include nil nil [372 418])
+            ("BBF.Common.Lib.ShotgunInterface" include nil nil [419 477])
+            ("BBF.Common.Lib.BBF_Validation.BBF_Validation" include nil nil [478 547])
+            ("BBF.Common.Lib.bbfPath" include nil nil [548 588])
+            ("BBF.Maya.Lib.bbf_base.ui" include nil nil [589 635])
+            ("BBF.Common.Lib.bbf_base.qtwidgets" include nil nil [636 698])
+            ("assets" include nil nil [700 713])
+            ("lodrow" include nil nil [714 727])
+            ("AssetPartManager_ui" include nil nil [729 765])
+            ("callback_update_from_scene" function
+               (:parent "dummy"
+                :arguments 
+                  ( ("self" variable nil (reparse-symbol function_parameters) [798 802])
+                    ("clientData" variable nil (reparse-symbol function_parameters) [804 814]))                  
+                :documentation " this will accumulate all update callbacks generated while maya is busy into one,
+    like for example when the scene is being opened and a lot of references are loaded.
+    called from outside the APM, because of the evalDeferred (which won't work with a 'self....')
+    ")
+                nil [767 1632])
+            ("AssetPartManager" type
+               (:documentation " A GUI to manage Assets and their Parts in a Maya Scene "
+                :superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("parent" code nil (reparse-symbol indented_block_body) [1788 1836])
+                            ("super" code nil (reparse-symbol indented_block_body) [1845 1898])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1908 1947])
+                            ("self" code nil (reparse-symbol indented_block_body) [1956 1978])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2015 2089])
+                            ("formatter" variable nil (reparse-symbol indented_block_body) [2098 2151])
+                            ("handler" variable nil (reparse-symbol indented_block_body) [2160 2249])
+                            ("handler" code nil (reparse-symbol indented_block_body) [2258 2289])
+                            ("self" code nil (reparse-symbol indented_block_body) [2298 2329])
+                            ("prev_app" variable nil (reparse-symbol indented_block_body) [2339 2386])
+                            ("if" code nil (reparse-symbol indented_block_body) [2395 2449])
+                            ("bbf_context" variable nil (reparse-symbol indented_block_body) [2458 2501])
+                            ("try" code nil (reparse-symbol indented_block_body) [2511 2733])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2742 2777])
+                            ("pdbs" variable nil (reparse-symbol indented_block_body) [2787 2837])
+                            ("if" code nil (reparse-symbol indented_block_body) [2846 2934])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3017 3469])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3479 3707])
+                            ("for" code nil (reparse-symbol indented_block_body) [3717 3827])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3885 4002])
+                            ("app_dir" variable nil (reparse-symbol indented_block_body) [4031 4083])
+                            ("css_file" variable nil (reparse-symbol indented_block_body) [4092 4148])
+                            ("css_file" variable nil (reparse-symbol indented_block_body) [4157 4187])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4196 4223])
+                            ("css_file" code nil (reparse-symbol indented_block_body) [4232 4248])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4316 4365])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4374 4428])
+                            ("self" code nil (reparse-symbol indented_block_body) [4437 4492])
+                            ("self" code nil (reparse-symbol indented_block_body) [4501 4550])
+                            ("self" code nil (reparse-symbol indented_block_body) [4559 4609])
+                            ("self" code nil (reparse-symbol indented_block_body) [4618 4695])
+                            ("self" code nil (reparse-symbol indented_block_body) [4704 4790])
+                            ("self" code nil (reparse-symbol indented_block_body) [4799 4894])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4903 4966])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4976 4995])
+                            ("if" code nil (reparse-symbol indented_block_body) [5005 5102])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5111 5233])
+                            ("self" code nil (reparse-symbol indented_block_body) [5243 5268])
+                            ("bbf_base_qtwidgets" code nil (reparse-symbol indented_block_body) [5278 5340])
+                            ("self" code nil (reparse-symbol indented_block_body) [5350 5368])
+                            ("self" code nil (reparse-symbol indented_block_body) [5378 5440])
+                            ("self" code nil (reparse-symbol indented_block_body) [5450 5477])
+                            ("interesting_messages" variable nil (reparse-symbol indented_block_body) [5566 6158])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6167 6192])
+                            ("for" code nil (reparse-symbol indented_block_body) [6201 6380])
+                            ("self" code nil (reparse-symbol indented_block_body) [6389 6411])
+                            ("self" code nil (reparse-symbol indented_block_body) [6421 6496]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1760 1764])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1766 1772]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1747 6497])
+                    ("css" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6524 6528]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [6502 6556])
+                    ("cleanup" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6573 6577]))                          
+                        :documentation " called instead of plain self.close to give us a chance to unregister our message callbacks ")
+                        (reparse-symbol indented_block_body) [6561 7109])
+                    ("__del__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7126 7130]))                          
+                        :documentation " If we get dismissed by some strange way other than closing normally,
+        at least try to cleanup ")
+                        (reparse-symbol indented_block_body) [7114 7309])
+                    ("selection_changed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7336 7340])
+                            ("selected_items" variable nil (reparse-symbol function_parameters) [7342 7356])
+                            ("deselected_items" variable nil (reparse-symbol function_parameters) [7358 7374]))                          
+                        :documentation " Handle selection by updating checkboxes in the lod_rows
+
+        Args:
+            selected_items: QModelIndexList of items that are now selected
+            deselected_items: QModelIndexList of items that were selected but aren't anymore
+        ")
+                        (reparse-symbol indented_block_body) [7314 7961])
+                    ("get_projectdb_info" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("bbf_base_qtwidgets.WithQWaitCursor" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8029 8033]))                          
+                        :documentation " Fetch information about Assets from the project database ")
+                        (reparse-symbol indented_block_body) [7966 8816])
+                    ("clear_scene_info" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8842 8846]))                          
+                        :documentation " Forget any information we have about the current Maya scene ")
+                        (reparse-symbol indented_block_body) [8821 9156])
+                    ("_set_mode_to" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9178 9182])
+                            ("mode_name" variable nil (reparse-symbol function_parameters) [9184 9193]))                          
+                        :documentation " Set our mode to the named mode (Asset, Shot, ...)
+
+        Args:
+            mode_name: The name of a mode we should switch to
+        ")
+                        (reparse-symbol indented_block_body) [9161 9813])
+                    ("update_data_from_scene" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("bbf_base_qtwidgets.WithQWaitCursor" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9885 9889])
+                            ("clientData" variable nil (reparse-symbol function_parameters) [9891 9901]))                          
+                        :documentation " Sync our data with what's in the scene. Can be called via user interaction,
+        or via callbacks or Maya API SceneMessages
+
+        Args:
+            clientData: extra data, currently used for debugging this function's callers
+        ")
+                        (reparse-symbol indented_block_body) [9818 11469])
+                    ("update_ui_from_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11499 11503])
+                            ("clientData" variable nil (reparse-symbol function_parameters) [11505 11515]))                          
+                        :documentation " Sync our UI to reflect the data in the scene
+
+        Args:
+            clientData: extra data, currently used for debugging this function's callers
+        ")
+                        (reparse-symbol indented_block_body) [11474 12214])
+                    ("collect_all_part_types" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12246 12250])
+                            ("ignore_ignored" variable nil (reparse-symbol function_parameters) [12252 12266])
+                            ("selected_only" variable nil (reparse-symbol function_parameters) [12273 12286]))                          
+                        :documentation " Collect all the part_type tags used in the scene so far, queries our lod_rows,
+        used by the context menu on the Part column
+
+        Args:
+            ignore_ignored: if True (default), ignore lod_rows that are set to ignore
+            selected_only: if True, only query selected lod_rows (default False)
+
+        Returns:
+            list: all the part_type tags found
+        ")
+                        (reparse-symbol indented_block_body) [12219 13007])
+                    ("collect_all_variant_suffixes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13045 13049])
+                            ("selected_only" variable nil (reparse-symbol function_parameters) [13051 13064]))                          
+                        :documentation " Collect all the variant suffixes used in the scene so far, queries our lod_rows
+        used by the context menu on the Variant column
+
+        Args:
+            selected_only: if True, only query selected lod_rows (default False)
+
+        Returns:
+            list: all the variant suffixes found
+        ")
+                        (reparse-symbol indented_block_body) [13012 13731])
+                    ("collect_all_lods" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13757 13761])
+                            ("selected_only" variable nil (reparse-symbol function_parameters) [13763 13776]))                          
+                        :documentation " Collect all the LOD names used in the scene so far, queries our lod_rows
+        used by the context menu on the LOD column
+
+        Args:
+            selected_only: if True, only query selected lod_rows (default False)
+
+        Returns:
+            list: all the LOD names found
+        ")
+                        (reparse-symbol indented_block_body) [13736 14395])
+                    ("populate_ui" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14416 14420]))                          
+                        :documentation " add initial things to the UI ")
+                        (reparse-symbol indented_block_body) [14400 14985])
+                    ("get_main_asset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15027 15031]))                          
+                        :documentation " Return the selected SceneMain Asset ")
+                        (reparse-symbol indented_block_body) [15008 15208])
+                    ("setup_parts_model_header" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15242 15246]))                          
+                        :documentation " (Re-)setup the tableview headers ")
+                        (reparse-symbol indented_block_body) [15213 15377])
+                    ("show_context_menu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15404 15408])
+                            ("position" variable nil (reparse-symbol function_parameters) [15410 15418]))                          
+                        :documentation " right click context menu callback
+
+        Args:
+            positon: mouse pointer position, passed in by Qt
+        ")
+                        (reparse-symbol indented_block_body) [15382 15927])
+                    ("show_part_context_menu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15959 15963])
+                            ("position" variable nil (reparse-symbol function_parameters) [15965 15973]))                          
+                        :documentation " Build and show the Part Column context menu ")
+                        (reparse-symbol indented_block_body) [15932 16509])
+                    ("show_variant_context_menu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16544 16548])
+                            ("position" variable nil (reparse-symbol function_parameters) [16550 16558]))                          
+                        :documentation " Build and show the Variant Column context menu ")
+                        (reparse-symbol indented_block_body) [16514 16942])
+                    ("map_idx_from_source" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16970 16974])
+                            ("idx" variable nil (reparse-symbol function_parameters) [16976 16979]))                          
+                        :documentation " Remap indices from the proxy model to the source
+
+        Args:
+            idx: a QModelIndex
+        ")
+                        (reparse-symbol indented_block_body) [16946 17158])
+                    ("show_lod_context_menu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17189 17193])
+                            ("position" variable nil (reparse-symbol function_parameters) [17195 17203]))                          
+                        :documentation " Build and show the LOD Column context menu ")
+                        (reparse-symbol indented_block_body) [17163 17552])
+                    ("set_status" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17572 17576])
+                            ("msg" variable nil (reparse-symbol function_parameters) [17578 17581]))                          
+                        :documentation " Set our status line message
+
+        Args:
+            msg: string set as status line text message
+        ")
+                        (reparse-symbol indented_block_body) [17557 17746])
+                    ("_set_ctrls" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17766 17770])
+                            ("enable" variable nil (reparse-symbol function_parameters) [17772 17778]))                          
+                        :documentation " Enable or disable the controls
+
+        Args:
+            enable: bool either enabes or disables the currently visible control buttons
+        ")
+                        (reparse-symbol indented_block_body) [17751 18170])
+                    ("main_asset_changed" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("bbf_base_qtwidgets.WithQWaitCursor" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18257 18261])
+                            ("main_asset_name" variable nil (reparse-symbol function_parameters) [18263 18278]))                          
+                        :documentation " Callback called when the main asset combo box has changed
+
+        Args:
+            main_asset_name: The currently selected text in the main asset combo box
+        ")
+                        (reparse-symbol indented_block_body) [18194 19889])
+                    ("clear_log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19908 19912]))                          
+                        :documentation " callback to clear the log contents ")
+                        (reparse-symbol indented_block_body) [19894 20009])
+                    ("color_items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20030 20034]))                          
+                        :documentation " called to update the lod_rows' colors ")
+                        (reparse-symbol indented_block_body) [20014 20171])
+                    ("set_mode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20189 20193])
+                            ("mode_name" variable nil (reparse-symbol function_parameters) [20195 20204]))                          
+                        :documentation " callback for the mode being changed by the user
+
+        Args:
+            mode_name: the mode name that was selected
+        ")
+                        (reparse-symbol indented_block_body) [20176 20437])
+                    ("from_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20481 20485]))                          
+                        :documentation " update internal data and ui from the scene button ")
+                        (reparse-symbol indented_block_body) [20466 20684])
+                    ("from_shotgun" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20761 20765]))                          
+                        :documentation " should update our data from the project database ")
+                        (reparse-symbol indented_block_body) [20744 20846])
+                    ("print_state" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20867 20871]))                          
+                        :documentation " puts our internal state in the logger ")
+                        (reparse-symbol indented_block_body) [20851 21121])
+                    ("apply" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21136 21140])
+                            ("selected_only" variable nil (reparse-symbol function_parameters) [21142 21155]))                          
+                        :documentation " Apply changes the user made in the UI to the scene, not called directly by the GUI
+
+        Args:
+            selected_only: Only apply slected LOD rows (default False)
+        ")
+                        (reparse-symbol indented_block_body) [21126 22622])
+                    ("unload_selected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22647 22651]))                          
+                        :documentation " Unload selected references (setting them to 'unloaded', keeping them in the scene) ")
+                        (reparse-symbol indented_block_body) [22627 23612])
+                    ("select_selected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23637 23641]))                          
+                        :documentation " Select the contents of all the selected references ")
+                        (reparse-symbol indented_block_body) [23617 24496])
+                    ("load_all_selected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24523 24527]))                          
+                        :documentation " Load all the LODs that aren't yet loaded from selected lod rows ")
+                        (reparse-symbol indented_block_body) [24501 24660])
+                    ("apply_selected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24684 24688]))                          
+                        :documentation " Callback for the apply button ")
+                        (reparse-symbol indented_block_body) [24665 24776])
+                    ("load_all_missing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24802 24806])
+                            ("selected_only" variable nil (reparse-symbol function_parameters) [24808 24821]))                          
+                        :documentation " Load all the LODs that aren't yet in the scene,
+
+        Args:
+            selected_only: if True, ignore unselected rows (default False)
+        ")
+                        (reparse-symbol indented_block_body) [24781 25703])
+                    ("_select_by_part_type" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25733 25737])
+                            ("part_type" variable nil (reparse-symbol function_parameters) [25739 25748])
+                            ("replace" variable nil (reparse-symbol function_parameters) [25750 25757]))                          
+                        :documentation " Select lod rows by the part_type tag of their Part
+
+        Args:
+            part_type: A part_type tag
+            replace: replace current selection
+        ")
+                        (reparse-symbol indented_block_body) [25708 26303])
+                    ("_set_selected_to_variant" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26337 26341])
+                            ("variant_suffix" variable nil (reparse-symbol function_parameters) [26343 26357]))                          
+                        :documentation " Set the selected lod_rows to the given variant suffix,
+        it's not an error if a lod_row doesn't know about the suffix,
+        it'll just ignore it
+
+        Args:
+            variant_suffix: suffix identifying a Variant
+        ")
+                        (reparse-symbol indented_block_body) [26308 26835])
+                    ("_set_selected_to_lod" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26865 26869])
+                            ("lod" variable nil (reparse-symbol function_parameters) [26871 26874]))                          
+                        :documentation " Set the selected lod_rows to the given LODs,
+        it's not an error if a lod_row doesn't know about the LOD,
+        it'll just ignore it
+
+        Args:
+            lod: a LOD name
+        ")
+                        (reparse-symbol indented_block_body) [26840 27288])
+                    ("_set_selected_ignore" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27318 27322])
+                            ("ignore" variable nil (reparse-symbol function_parameters) [27324 27330]))                          
+                        :documentation " Set selected lod_rows' ignore status
+
+        Args:
+            ignore: bool determining if the row should be set to ignore or not
+        ")
+                        (reparse-symbol indented_block_body) [27293 27902])
+                    ("ignore_selected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27927 27931]))                          
+                        :documentation " Callback for the ignore button ")
+                        (reparse-symbol indented_block_body) [27907 28021])
+                    ("unignore_selected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28048 28052]))                          
+                        :documentation " Callback for the unignore button ")
+                        (reparse-symbol indented_block_body) [28026 28145]))                  
+                :type "class")
+                nil [1633 28145]))          
+      :file "main.py"
+      :pointmax 28145
+      :fsize 28863
+      :lastmodtime '(22025 21104 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "assets.py"
+      :file "assets.py"
+      :fsize 30905
+      :lastmodtime '(22025 19604 0 0))
+    (semanticdb-table "lodrow.py"
+      :file "lodrow.py"
+      :fsize 11539
+      :lastmodtime '(22025 105 0 0))
+    (semanticdb-table "AssetPartManager_ui.py"
+      :file "AssetPartManager_ui.py"
+      :fsize 24123
+      :lastmodtime '(22025 105 0 0)))
+  :file "!drive_s!BBF_PIPELINE!BBF!Maya!Tools!_Common!AssetPartManager!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

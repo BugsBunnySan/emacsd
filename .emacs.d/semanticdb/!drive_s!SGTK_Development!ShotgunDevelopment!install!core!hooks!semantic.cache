@@ -1,0 +1,284 @@
+;; Object hooks/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hooks/"
+  :tables
+  (list
+    (semanticdb-table "cache_location.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Hook to control the various cache locations in the system.
+\"\"\"" code nil nil [453 519])
+            ("sgtk" include nil nil [521 532])
+            ("sgtk" include nil nil [533 559])
+            ("os" include nil nil [560 569])
+            ("errno" include nil nil [570 582])
+            ("urlparse" include nil nil [583 598])
+            ("sys" include nil nil [599 609])
+            ("HookBaseClass" variable nil nil [611 652])
+            ("CacheLocation" type
+               (:documentation "
+    Hook to control cache folder creation.
+    
+    For further details, see individual cache methods below.
+    "
+                :superclasses ("HookBaseClass")
+                :members 
+                  ( ("path_cache" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [839 843])
+                            ("project_id" variable nil (reparse-symbol function_parameters) [845 855])
+                            ("pipeline_configuration_id" variable nil (reparse-symbol function_parameters) [857 882]))                          
+                        :documentation "
+        Establish a location for the path cache database file.
+        
+        Overriding this method in a hook allows a user to change the location on disk where
+        the path cache file is located. The path cache file holds a temporary cache representation
+        of the FilesystemLocation entities stored in Shotgun for a project. Typically, this cache
+        is stored on a local machine, separate for each user.  
+        
+        :param project_id: The shotgun id of the project to store caches for
+        :param pipeline_configuration_id: The shotgun pipeline config id to store caches for
+        :returns: The path to a path cache file. This file should exist when this method returns.
+        ")
+                        (reparse-symbol indented_block_body) [824 1885])
+                    ("bundle_cache" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1911 1915])
+                            ("project_id" variable nil (reparse-symbol function_parameters) [1917 1927])
+                            ("pipeline_configuration_id" variable nil (reparse-symbol function_parameters) [1929 1954])
+                            ("bundle" variable nil (reparse-symbol function_parameters) [1956 1962]))                          
+                        :documentation "
+        Establish a cache folder for an app, engine or framework.
+        
+        Apps, Engines or Frameworks commonly caches data on disk. This can be 
+        small files, shotgun queries, thumbnails etc. This method implements the 
+        logic which defines this location on disk. The cache should be organized in 
+        a way so that all instances of the app can re-use the same data. (Apps 
+        which needs to cache things per-instance can implement this using a sub
+        folder inside the bundle cache location).
+
+        :param project_id: The shotgun id of the project to store caches for
+        :param pipeline_configuration_id: The shotgun pipeline config id to store caches for
+        :param bundle: The app, engine or framework object which is requesting the cache folder.
+        :returns: The path to a folder which should exist on disk.
+        ")
+                        (reparse-symbol indented_block_body) [1894 3080])
+                    ("_get_cache_root" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3113 3117])
+                            ("project_id" variable nil (reparse-symbol function_parameters) [3119 3129])
+                            ("pipeline_configuration_id" variable nil (reparse-symbol function_parameters) [3131 3156]))                          
+                        :documentation "
+        Helper method that can be used both by subclassing hooks
+        and inside this base level hook. This method calculates the cache root
+        for the current project and configuration. In the default implementation,
+        all the different types of cache data resides below a common root point. 
+        
+        :param project_id: The shotgun id of the project to store caches for
+        :param pipeline_configuration_id: The shotgun pipeline config id to store caches for
+        :returns: The calculated location for the cache root
+        ")
+                        (reparse-symbol indented_block_body) [3093 4881])
+                    ("_ensure_file_exists" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4914 4918])
+                            ("path" variable nil (reparse-symbol function_parameters) [4920 4924]))                          
+                        :documentation "
+        Helper method - creates a file if it doesn't already exists
+        
+        :param path: path to create
+        ")
+                        (reparse-symbol indented_block_body) [4890 5693])
+                    ("_ensure_folder_exists" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5728 5732])
+                            ("path" variable nil (reparse-symbol function_parameters) [5734 5738]))                          
+                        :documentation "
+        Helper method - creates a folder if it doesn't already exists
+        
+        :param path: path to create
+        ")
+                        (reparse-symbol indented_block_body) [5702 6449]))                  
+                :type "class")
+                nil [654 6449]))          
+      :file "cache_location.py"
+      :pointmax 6462
+      :fsize 6461
+      :lastmodtime '(21924 62400 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 6413 . 6449) (NEWLINE 6412 . 6413) (COLON 6411 . 6412) (FINALLY 6404 . 6411) (INDENT_BLOCK 5657 . 5693) (NEWLINE 5656 . 5657) (COLON 5655 . 5656) (FINALLY 5648 . 5655)))
+    (semanticdb-table "pick_environment.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Hook which chooses an environment file to use based on the current context.
+This file is almost always overridden by a standard config.
+
+\"\"\"" code nil nil [453 597])
+            ("tank" include nil nil [599 620])
+            ("PickEnvironment" type
+               (:superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [668 672])
+                            ("context" variable nil (reparse-symbol function_parameters) [674 681])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [683 691]))                          
+                        :documentation "
+        The default implementation assumes there are two environments, called shot 
+        and asset, and switches to these based on entity type.
+        ")
+                        (reparse-symbol indented_block_body) [656 1139]))                  
+                :type "class")
+                nil [622 1139]))          
+      :file "pick_environment.py"
+      :pointmax 1139
+      :fsize 1138
+      :lastmodtime '(21924 62400 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "example_template_hook.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+This hook is a simple example to illustrate how template settings in an app
+can be evaluated at runtime based on complex conditions.
+
+If you have an app which has a template parameter, you would typically use a setting
+which points to one of your templates. So in the environment config, you would have:
+
+template_snapshot: maya_shot_publish
+
+However if you want more complex behaviour, it is possible to specify that a hook
+should be used to evaluate the setting at runtime rather than just set it. 
+For example:
+
+template_snapshot: \"hook:example_template_hook:maya_shot_publish\"
+
+This setting would look for a core hook named example_template_hook and execute it.
+See below for an example implementation and parameter descriptions.
+\"\"\"" code nil nil [453 1194])
+            ("tank" include nil nil [1196 1217])
+            ("os" include nil nil [1218 1227])
+            ("ProceduralTemplateEvaluator" type
+               (:superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1291 1295])
+                            ("setting" variable nil (reparse-symbol function_parameters) [1297 1304])
+                            ("bundle_obj" variable nil (reparse-symbol function_parameters) [1306 1316])
+                            ("extra_params" variable nil (reparse-symbol function_parameters) [1318 1330])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1332 1340]))                          
+                        :documentation "
+        Example pass-through implementation. One option is expected in extra_params,
+        and this will be returned.
+        
+        So the following two things will evaluate to the same thing:
+        
+        > template_snapshot: maya_shot_publish
+        > template_snapshot: hook:example_template_hook:maya_shot_publish
+        
+        
+        
+        :param setting: The name of the setting for which we are evaluating 
+                        In our example above, it would be template_snapshot.
+                         
+        :param bundle_obj: The app, engine or framework object that the setting
+                           is associated with.
+        
+        :param extra_params: List of options passed from the setting. If the settings
+                             string is \"hook:hook_name:foo:bar\", extra_params would
+                             be ['foo', 'bar'] 
+                             
+        returns: needs to return the name of a template, as a string.
+        ")
+                        (reparse-symbol indented_block_body) [1279 2425]))                  
+                :type "class")
+                nil [1229 2425]))          
+      :file "example_template_hook.py"
+      :pointmax 2446
+      :fsize 2445
+      :lastmodtime '(21924 62400 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "context_additional_entities.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Hook which provides advanced customization of context creation.
+Returns a dict with two keys:
+
+    entity_types_in_path: a list of Shotgun entity types (ie. CustomNonProjectEntity05) that
+        context_from_path should recognize and use to fill its additional_entities list.
+    
+    entity_fields_on_task: a list of Shotgun fields (ie. sg_extra_link) on the Task entity
+        that context_from_entity should query Shotgun for and insert the resulting entities
+        into its additional_entities_list.
+
+\"\"\"" code nil nil [453 969])
+            ("tank" include nil nil [971 992])
+            ("ContextAdditionalEntities" type
+               (:superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1050 1054])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1056 1064]))                          
+                        :documentation "
+        The default implementation does not do anything.
+        ")
+                        (reparse-symbol indented_block_body) [1038 1291]))                  
+                :type "class")
+                nil [994 1291]))          
+      :file "context_additional_entities.py"
+      :pointmax 1291
+      :fsize 1290
+      :lastmodtime '(21924 62400 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "engine_init.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Hook that gets executed every time an engine has fully initialized.
+
+\"\"\"" code nil nil [448 524])
+            ("tank" include nil nil [526 547])
+            ("os" include nil nil [548 557])
+            ("EngineInit" type
+               (:superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [600 604])
+                            ("engine" variable nil (reparse-symbol function_parameters) [606 612])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [614 622]))                          
+                        :documentation "
+        Gets executed when a Toolkit engine has fully initialized.
+        At this point, all applications and frameworks have been loaded,
+        and the engine is fully operational.
+        ")
+                        (reparse-symbol indented_block_body) [588 909])
+                    ("init_tk_maya" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [931 935])
+                            ("engine" variable nil (reparse-symbol function_parameters) [937 943]))                          )
+                        (reparse-symbol indented_block_body) [914 3226]))                  
+                :type "class")
+                nil [559 3226]))          
+      :file "engine_init.py"
+      :pointmax 3226
+      :fsize 3225
+      :lastmodtime '(22220 16459 0 0)
+      :unmatched-syntax '((FROM 2900 . 2904) (AS 2941 . 2943) (FROM 2900 . 2904) (AS 2941 . 2943) (FROM 2900 . 2904) (AS 2934 . 2936) (FROM 2900 . 2904) (AS 2934 . 2936))))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!core!hooks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,58 @@
+;; Object libfoo/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libfoo/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF. module1.lib.libfoo
+   :synopsis: The Foo lib
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 126])
+            ("__future__" include nil nil [127 164])
+            ("base" include nil nil [167 178])
+            ("reload" code nil nil [179 191]))          
+      :file "__init__.py"
+      :pointmax 192
+      :fsize 203
+      :lastmodtime '(21947 40141 0 0)
+      :unmatched-syntax '(($EOI 192 . 192)))
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.module1.lib.libfoo.base
+   :synopsis: basic functions for the foo lib
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 150])
+            ("__future__" include nil nil [151 188])
+            ("__all__" variable nil nil [190 216])
+            ("pymel.core" include nil nil [218 241])
+            ("reload" code nil nil [287 303])
+            ("frobnitzMesh" function
+               (:documentation "
+    Applies a frobnitz filter on a mesh
+
+    Args:
+        mesh: a PyNode polymesh, will be frobnitzed
+        frobnication_level: how many adjectant verts to take into account for the frobnication of one vert
+
+    Returns:
+        bool: whether the frobnication was successfull or not, not all meshes can be frobnitzed
+    "
+                :arguments 
+                  ( ("mesh" variable nil (reparse-symbol function_parameters) [322 326])
+                    ("frobnication_level" variable nil (reparse-symbol function_parameters) [328 346]))                  )
+                nil [305 857]))          
+      :file "base.py"
+      :pointmax 857
+      :fsize 890
+      :lastmodtime '(21947 40193 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!sphinx!BBF!module1!lib!libfoo!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

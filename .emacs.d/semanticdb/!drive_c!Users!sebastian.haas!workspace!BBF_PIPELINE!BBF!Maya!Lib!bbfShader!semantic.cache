@@ -1,0 +1,518 @@
+;; Object bbfShader/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfShader/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfShader
+   :synopsis: shader support functions
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 138])
+            ("__future__" include nil nil [139 176])
+            ("__all__" variable nil nil [178 190])
+            ("PySide" include nil nil [192 224])
+            ("functools" include nil nil [226 255])
+            ("re" include nil nil [256 265])
+            ("logging" include nil nil [266 280])
+            ("pymel.core" include nil nil [282 305])
+            ("maya.cmds" include nil nil [306 330])
+            ("BBF_environ" include nil nil [332 350])
+            ("bbfUI" include nil nil [352 375])
+            ("bbfEnv" variable nil nil [376 405])
+            ("bbfShader.shaderVariantSwitcher" include nil nil [407 452])
+            ("log" variable nil nil [517 550])
+            ("log" code nil nil [551 577])
+            ("getShaderModule" function (:arguments 
+              ( ("nodename" variable nil (reparse-symbol function_parameters) [599 607]))              ) nil [579 904])
+            ("getShaderType" function (:arguments 
+              ( ("nodename" variable nil (reparse-symbol function_parameters) [925 933]))              ) nil [907 1117])
+            ("ShaderWrap" type
+               (:documentation "
+    Some of the our shaders have different attr names for the same thing
+    This class attempts to give a consistent interface to this problem
+    >>> shdwrap = ShaderWrap()
+    >>> shdwrap.shader_type
+    'BBF_mila'
+    >>> shdwrap.diffuse
+    'diffuse'
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("osl" variable nil (reparse-symbol indented_block_body) [1545 1564])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1573 1596])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1605 1624])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1633 1663])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1672 1694])
+                            ("if" code nil (reparse-symbol indented_block_body) [1704 2420])
+                            ("if" code nil (reparse-symbol indented_block_body) [2429 2871])
+                            ("pm" code nil (reparse-symbol indented_block_body) [2879 2893]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1433 1437])
+                            ("shader_type" variable nil (reparse-symbol function_parameters) [1439 1450]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1420 2815]))                  
+                :type "class")
+                nil [1118 2815])
+            ("shaderCopyAttrList" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [2839 2847])
+                ("attrList" variable nil (reparse-symbol function_parameters) [2849 2857])
+                ("fromPrefix" variable nil (reparse-symbol function_parameters) [2859 2869])
+                ("toPrefix" variable nil (reparse-symbol function_parameters) [2876 2884])
+                ("separator" variable nil (reparse-symbol function_parameters) [2891 2900])
+                ("skipConnections" variable nil (reparse-symbol function_parameters) [2906 2921])
+                ("copyToNodeName" variable nil (reparse-symbol function_parameters) [2929 2943]))              ) nil [2816 4329])
+            ("logger" variable nil nil [4342 4378])
+            ("logger" code nil nil [4379 4438])
+            ("shaderTemplateRefresh" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [4788 4796]))              ) nil [4762 5353])
+            ("shaderTemplatePresetClamp" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [5384 5392]))              ) nil [5354 6651])
+            ("shaderInitializeNode" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [6677 6685]))              ) nil [6652 7758])
+            ("cloneAttr" function (:arguments 
+              ( ("toAttr" variable nil (reparse-symbol function_parameters) [8472 8478])
+                ("fromAttr" variable nil (reparse-symbol function_parameters) [8480 8488]))              ) nil [8458 9855])
+            ("hardCopyAttr" function (:arguments 
+              ( ("toAttr" variable nil (reparse-symbol function_parameters) [9873 9879])
+                ("fromAttr" variable nil (reparse-symbol function_parameters) [9881 9889])
+                ("skipConnections" variable nil (reparse-symbol function_parameters) [9890 9905]))              ) nil [9856 10499])
+            ("copyAttr" function (:arguments 
+              ( ("toAttr" variable nil (reparse-symbol function_parameters) [10513 10519])
+                ("fromAttr" variable nil (reparse-symbol function_parameters) [10521 10529])
+                ("skipConnections" variable nil (reparse-symbol function_parameters) [10531 10546]))              ) nil [10500 12770])
+            ("shaderCopyAttr" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [12790 12798])
+                ("attrName" variable nil (reparse-symbol function_parameters) [12800 12808])
+                ("fromPrefix" variable nil (reparse-symbol function_parameters) [12810 12820])
+                ("toPrefix" variable nil (reparse-symbol function_parameters) [12827 12835])
+                ("separator" variable nil (reparse-symbol function_parameters) [12842 12851])
+                ("skipConnections" variable nil (reparse-symbol function_parameters) [12857 12872])
+                ("copyToNodeName" variable nil (reparse-symbol function_parameters) [12880 12894]))              ) nil [12771 14765])
+            ("shaderCopyPreset" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [14787 14795])
+                ("fromPrefix" variable nil (reparse-symbol function_parameters) [14797 14807])
+                ("toPrefix" variable nil (reparse-symbol function_parameters) [14814 14822])
+                ("separator" variable nil (reparse-symbol function_parameters) [14829 14838])
+                ("skipConnections" variable nil (reparse-symbol function_parameters) [14844 14859])
+                ("copyToNodeName" variable nil (reparse-symbol function_parameters) [14866 14880]))              ) nil [14766 16387])
+            ("shaderSwitchPreset" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [16412 16420])
+                ("timeOfDay" variable nil (reparse-symbol function_parameters) [16422 16431])
+                ("variant" variable nil (reparse-symbol function_parameters) [16438 16445]))              ) nil [16388 18696])
+            ("shaderTemplateSavePreset" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [18727 18735]))              ) nil [18697 19049])
+            ("shaderExportPresetToFile" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [19200 19208]))              ) nil [19170 19219])
+            ("HEAD" code nil nil [19219 19219])
+            ("master" code nil nil [19219 19219])
+            ("shaderTemplateSwitchPreset" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [19253 19261]))              ) nil [19222 19703])
+            ("presetFileBegin" function
+               (:documentation "
+    returns the first needed lines to close a preset file
+    "
+                :arguments 
+                  ( ("presetNodeType" variable nil (reparse-symbol function_parameters) [19844 19858]))                  )
+                nil [19824 20062])
+            ("presetFileLine" function (:arguments 
+              ( ("attr" variable nil (reparse-symbol function_parameters) [20082 20086])
+                ("value" variable nil (reparse-symbol function_parameters) [20088 20093]))              ) nil [20063 20217])
+            ("presetFileEnd" function (:documentation "
+    returns the last needed lines to close a preset file
+    ") nil [20218 20368])
+            ("presetFileMake" function
+               (:documentation "
+    takes a list like [['diffuse_weight', 3], ['diffuse_roughness', 3], ['diffuse', 3], ['no_diffuse_bump', 3]]
+    being [[attrNameToSave, value]]
+    Returns a presetFileReady to save to disk
+    "
+                :arguments 
+                  ( ("attrsToSave" variable nil (reparse-symbol function_parameters) [20388 20399])
+                    ("nodename" variable nil (reparse-symbol function_parameters) [20401 20409]))                  )
+                nil [20369 20825])
+            ("shaderExportPresetToFileWin" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("QtGui" code nil (reparse-symbol indented_block_body) [21042 21074])
+                            ("self" code nil (reparse-symbol indented_block_body) [21083 21137])
+                            ("self" variable nil (reparse-symbol indented_block_body) [21146 21183])
+                            ("self" code nil (reparse-symbol indented_block_body) [21192 21259])
+                            ("self" variable nil (reparse-symbol indented_block_body) [21291 21324])
+                            ("self" code nil (reparse-symbol indented_block_body) [21333 21388])
+                            ("self" code nil (reparse-symbol indented_block_body) [21397 21434])
+                            ("self" code nil (reparse-symbol indented_block_body) [21443 21479])
+                            ("shaderModule" variable nil (reparse-symbol indented_block_body) [21489 21527])
+                            ("topPosition" variable nil (reparse-symbol indented_block_body) [21561 21575])
+                            ("self" variable nil (reparse-symbol indented_block_body) [21584 21602])
+                            ("for" code nil (reparse-symbol indented_block_body) [21611 21886])
+                            ("self" variable nil (reparse-symbol indented_block_body) [21914 21955])
+                            ("self" code nil (reparse-symbol indented_block_body) [21964 22032])
+                            ("self" code nil (reparse-symbol indented_block_body) [22041 22073])
+                            ("self" code nil (reparse-symbol indented_block_body) [22083 22143])
+                            ("self" code nil (reparse-symbol indented_block_body) [22254 22286]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20897 20901])
+                            ("nodeName" variable nil (reparse-symbol function_parameters) [20902 20910]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [20884 22166])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22179 22183])
+                            ("nodeName" variable nil (reparse-symbol function_parameters) [22184 22192]))                          )
+                        (reparse-symbol indented_block_body) [22171 23144]))                  
+                :type "class")
+                nil [20826 23144])
+            ("shaderExportPresetToFile" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [23174 23182]))              ) nil [23145 23418])
+            ("prepareNewShader" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [25509 25513]))              ) nil [25488 33588])
+            ("rebuildTEXTAPPROVAL" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [33613 33617]))              ) nil [33589 36564]))          
+      :file "__init__.py"
+      :pointmax 36564
+      :fsize 37380
+      :lastmodtime '(22102 1443 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shaderVariantSwitcher.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("logging" include nil nil [25 39])
+            ("PyQt4" include nil nil [40 76])
+            ("functools" include nil nil [77 106])
+            ("BBF_environ" include nil nil [107 125])
+            ("bbfUI" include nil nil [126 149])
+            ("bbfEnv" variable nil nil [150 179])
+            ("os" include nil nil [180 189])
+            ("log" variable nil nil [190 223])
+            ("log" code nil nil [224 250])
+            ("bbfShader" include nil nil [251 267])
+            ("uiFile" variable nil nil [270 346])
+            ("form_class, base_class" code nil nil [347 394])
+            ("ShaderVariantSwitcher" type
+               (:superclasses ("base_class" "form_class")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [499 539])
+                            ("self" code nil (reparse-symbol indented_block_body) [548 566])
+                            ("self" variable nil (reparse-symbol indented_block_body) [678 707])
+                            ("self" code nil (reparse-symbol indented_block_body) [716 777])
+                            ("for" code nil (reparse-symbol indented_block_body) [786 882])
+                            ("self" code nil (reparse-symbol indented_block_body) [891 935])
+                            ("self" code nil (reparse-symbol indented_block_body) [944 1017])
+                            ("self" code nil (reparse-symbol indented_block_body) [1026 1069])
+                            ("self" code nil (reparse-symbol indented_block_body) [1078 1113])
+                            ("self" code nil (reparse-symbol indented_block_body) [1122 1189])
+                            ("shaderModule" variable nil (reparse-symbol indented_block_body) [1265 1311])
+                            ("for" code nil (reparse-symbol indented_block_body) [1320 1418])
+                            ("self" code nil (reparse-symbol indented_block_body) [1426 1461])
+                            ("self" code nil (reparse-symbol indented_block_body) [1516 1542]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [465 469])
+                            ("node" variable nil (reparse-symbol function_parameters) [471 475])
+                            ("parent" variable nil (reparse-symbol function_parameters) [477 483]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [452 1543])
+                    ("populateVariantList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1572 1576]))                          )
+                        (reparse-symbol indented_block_body) [1548 2512])
+                    ("nodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2527 2531]))                          )
+                        (reparse-symbol indented_block_body) [2517 2998])
+                    ("onOperateChanged" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3024 3028]))                          )
+                        (reparse-symbol indented_block_body) [3003 3066])
+                    ("contextMenu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3087 3091])
+                            ("point" variable nil (reparse-symbol function_parameters) [3093 3098]))                          )
+                        (reparse-symbol indented_block_body) [3071 3690])
+                    ("onAddVariant" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3712 3716]))                          )
+                        (reparse-symbol indented_block_body) [3695 4094])
+                    ("onRemoveVariant" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4119 4123]))                          )
+                        (reparse-symbol indented_block_body) [4099 5094])
+                    ("onRenameVariant" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5119 5123]))                          )
+                        (reparse-symbol indented_block_body) [5099 6152])
+                    ("onSelectShaders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6177 6181]))                          )
+                        (reparse-symbol indented_block_body) [6157 6448])
+                    ("onSwitch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6466 6470]))                          )
+                        (reparse-symbol indented_block_body) [6453 7570]))                  
+                :type "class")
+                nil [395 7570])
+            ("getVariants" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [7587 7591]))              ) nil [7571 7721])
+            ("getVariantsAcross" function (:arguments 
+              ( ("nodes" variable nil (reparse-symbol function_parameters) [7744 7749]))              ) nil [7722 8198])
+            ("getShadersWithVariant" function (:arguments 
+              ( ("variant" variable nil (reparse-symbol function_parameters) [8225 8232]))              ) nil [8199 8399])
+            ("addVariant" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [8415 8419])
+                ("newvariant" variable nil (reparse-symbol function_parameters) [8421 8431]))              ) nil [8400 8752])
+            ("removeVariant" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [8771 8775])
+                ("variant" variable nil (reparse-symbol function_parameters) [8777 8784])
+                ("mode" variable nil (reparse-symbol function_parameters) [8786 8790]))              ) nil [8753 9818])
+            ("renameVariant" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [9837 9841])
+                ("variant" variable nil (reparse-symbol function_parameters) [9843 9850])
+                ("newvariant" variable nil (reparse-symbol function_parameters) [9852 9862])
+                ("mode" variable nil (reparse-symbol function_parameters) [9864 9868]))              ) nil [9819 11001])
+            ("GetVariantName" type
+               (:superclasses ("QtGui.QDialog")
+                :members 
+                  ( ("newVariantName" variable nil (reparse-symbol indented_block_body) [11044 11063])
+                    ("__init__" function
+                       (:suite 
+                          ( ("QtGui" code nil (reparse-symbol indented_block_body) [11129 11171])
+                            ("self" code nil (reparse-symbol indented_block_body) [11180 11227])
+                            ("self" code nil (reparse-symbol indented_block_body) [11236 11255])
+                            ("self" code nil (reparse-symbol indented_block_body) [11264 11285])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11345 11376])
+                            ("self" code nil (reparse-symbol indented_block_body) [11385 11436])
+                            ("self" code nil (reparse-symbol indented_block_body) [11445 11478])
+                            ("self" code nil (reparse-symbol indented_block_body) [11487 11522])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11540 11581])
+                            ("self" code nil (reparse-symbol indented_block_body) [11590 11652])
+                            ("validator" variable nil (reparse-symbol indented_block_body) [11781 11861])
+                            ("self" code nil (reparse-symbol indented_block_body) [11870 11913])
+                            ("addButton" variable nil (reparse-symbol indented_block_body) [11959 11994])
+                            ("addButton" code nil (reparse-symbol indented_block_body) [12003 12055])
+                            ("addButton" code nil (reparse-symbol indented_block_body) [12064 12092])
+                            ("self" code nil (reparse-symbol indented_block_body) [12101 12186]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11081 11085])
+                            ("operation" variable nil (reparse-symbol function_parameters) [11087 11096])
+                            ("parent" variable nil (reparse-symbol function_parameters) [11107 11113]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [11068 12187])
+                    ("createVariant" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12210 12214]))                          )
+                        (reparse-symbol indented_block_body) [12192 12297]))                  
+                :type "class")
+                nil [11003 12297]))          
+      :file "shaderVariantSwitcher.py"
+      :pointmax 12297
+      :fsize 12515
+      :lastmodtime '(22102 1443 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "utils.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package BBF.Maya.Lib.bbfShader.utils
+@brief shader handling utilities
+
+@copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 136])
+            ("__future__" include nil nil [137 174])
+            ("__all__" variable nil nil [176 229])
+            ("logging" include nil nil [231 245])
+            ("logger" variable nil nil [246 282])
+            ("pymel.core" include nil nil [284 307])
+            ("maya.cmds" include nil nil [308 332])
+            ("pymel.internal.plogging" include nil nil [334 375])
+            ("get_obj_shading_groups" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [404 408]))              ) nil [377 576])
+            ("ObjShadersGetter" type
+               (:documentation " finds shaders of items "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [712 759])
+                            ("self" variable nil (reparse-symbol indented_block_body) [768 787])
+                            ("self" variable nil (reparse-symbol indented_block_body) [797 816])
+                            ("self" variable nil (reparse-symbol indented_block_body) [825 846])
+                            ("self" variable nil (reparse-symbol indented_block_body) [855 878])
+                            ("self" code nil (reparse-symbol indented_block_body) [888 920])
+                            ("self" code nil (reparse-symbol indented_block_body) [930 1048])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1057 1120]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [661 665])
+                            ("items" variable nil (reparse-symbol function_parameters) [667 672])
+                            ("onlySurfaceShaders" variable nil (reparse-symbol function_parameters) [677 695]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [648 1121])
+                    ("_get_nodes_shading_groups" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1156 1160]))                          
+                        :documentation " build a dictionary of nodes and their shading groups, includes transforms, which collect
+            the shading groups of their shapes
+        ")
+                        (reparse-symbol indented_block_body) [1126 2168])
+                    ("get_surface_shaders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2197 2201])
+                            ("root_node" variable nil (reparse-symbol function_parameters) [2203 2212]))                          
+                        :documentation " Given a node root_node returns all first level surface shaders below node,
+            skipping past all non surface shader nodes
+        ")
+                        (reparse-symbol indented_block_body) [2173 2868])
+                    ("get_sg_shaders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2892 2896])
+                            ("sg_name" variable nil (reparse-symbol function_parameters) [2898 2905]))                          
+                        :documentation " Get all shaders (or surface shaders only) contributing to shading group sg_name ")
+                        (reparse-symbol indented_block_body) [2873 3305])
+                    ("get_nodes_shaders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3332 3336])
+                            ("nodes" variable nil (reparse-symbol function_parameters) [3338 3343]))                          
+                        :documentation " return a dictionary of nodes and their shaders.
+        ")
+                        (reparse-symbol indented_block_body) [3310 3938])
+                    ("get_result" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3958 3962]))                          
+                        :documentation " process all the items and return their shaders ")
+                        (reparse-symbol indented_block_body) [3943 4353]))                  
+                :type "class")
+                nil [577 4353])
+            ("" code nil nil [4390 4392])
+            ("getObjShaders" function (:arguments 
+              ( ("items" variable nil (reparse-symbol function_parameters) [4411 4416])
+                ("onlySurfaceShaders" variable nil (reparse-symbol function_parameters) [4418 4436]))              ) nil [4393 4547]))          
+      :file "utils.py"
+      :pointmax 4547
+      :fsize 4678
+      :lastmodtime '(21916 2137 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ShaderExport.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "ShaderExport.py"
+      :pointmax 14165
+      :fsize 13863
+      :lastmodtime '(22178 20793 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ShaderImport.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.cmds" include nil nil [356 378])
+            ("BBF_Validation" include nil nil [379 429])
+            ("bbfException.bbfExceptions" include nil nil [430 484])
+            ("pymel.core" include nil nil [485 508])
+            ("logging" include nil nil [509 523])
+            ("log" variable nil nil [524 557])
+            ("BBF_environ" include nil nil [558 576])
+            ("bbfEnv" variable nil nil [577 606])
+            ("bbfPath" include nil nil [607 634])
+            ("ShotgunInterface" include nil nil [635 680])
+            ("shotgun" variable nil nil [681 724])
+            ("shotgun" code nil nil [725 761])
+            ("bbfUtil" include nil nil [762 776])
+            ("bbfEntity" include nil nil [777 793])
+            ("\"\"\" This will allow user to export shader from texture/model file
+    also allow user to import existing shader into the scene and will be
+    applied to respective objects
+\"\"\"" code nil nil [876 1052])
+            ("serverPath" variable nil nil [1054 1069])
+            ("applyShaders" function
+               (:documentation " This method will read shader assignments and apply them to respective objects "
+                :arguments 
+                  ( ("shadingGroups" variable nil (reparse-symbol function_parameters) [1169 1182])
+                    ("assetName" variable nil (reparse-symbol function_parameters) [1184 1193])
+                    ("shdAssetName" variable nil (reparse-symbol function_parameters) [1198 1210]))                  )
+                nil [1152 6112])
+            ("reference" function (:arguments 
+              ( ("prefix" variable nil (reparse-symbol function_parameters) [6127 6133])
+                ("filename" variable nil (reparse-symbol function_parameters) [6135 6143]))              ) nil [6113 6377])
+            ("loadShader" function
+               (:documentation "This method will check if shader file is already loaded"
+                :arguments 
+                  ( ("prefix" variable nil (reparse-symbol function_parameters) [6393 6399])
+                    ("filename" variable nil (reparse-symbol function_parameters) [6401 6409]))                  )
+                nil [6378 7056])
+            ("referShader" function
+               (:documentation "This method will refer shader into the scene and call apply shader method"
+                :arguments 
+                  ( ("assetName" variable nil (reparse-symbol function_parameters) [7154 7163])
+                    ("shdAssetName" variable nil (reparse-symbol function_parameters) [7165 7177])
+                    ("filename" variable nil (reparse-symbol function_parameters) [7179 7187]))                  )
+                nil [7138 7439])
+            ("getSHDPath" function (:arguments 
+              ( ("assetName" variable nil (reparse-symbol function_parameters) [7455 7464])
+                ("existing" variable nil (reparse-symbol function_parameters) [7466 7474]))              ) nil [7440 8089])
+            ("importShader" function (:arguments 
+              ( ("geonode" variable nil (reparse-symbol function_parameters) [8107 8114])
+                ("browse" variable nil (reparse-symbol function_parameters) [8121 8127]))              ) nil [8090 10660])
+            ("reparentSHDDAGs" function (:arguments 
+              ( ("placements" variable nil (reparse-symbol function_parameters) [10681 10691]))              ) nil [10661 10891])
+            ("transferUVLinking" function
+               (:documentation "
+    When uv linking is used, the mesh becomes an input into the
+    shading network. This means the mesh gets exported with the
+    shaders in the SHD. So when the SHD is imported/applied onto
+    the rig then we end up with 2 meshes! The original and the one
+    that came in with the SHD that has the uvlink to the shader
+    network. We need to tranfer the uvlink from the extra mesh onto
+    the original(rigged) mesh. Then we have no need for the extra mesh
+    "
+                :arguments 
+                  ( ("srcMeshes" variable nil (reparse-symbol function_parameters) [10914 10923])
+                    ("deleteAfter" variable nil (reparse-symbol function_parameters) [10925 10936]))                  )
+                nil [10892 12491])
+            ("deleteEmptyGroups" function (:arguments 
+              ( ("parentGroups" variable nil (reparse-symbol function_parameters) [12514 12526]))              ) nil [12492 12763])
+            ("importShaderCB" function (:arguments 
+              ( ("args" variable nil (reparse-symbol function_parameters) [12783 12788]))              ) nil [12764 13701])
+            ("sdrImportOptWin" function nil nil [13702 14794])
+            ("setVariantFromShotgun" function (:arguments 
+              ( ("assetName" variable nil (reparse-symbol function_parameters) [14822 14831])
+                ("subAssetName" variable nil (reparse-symbol function_parameters) [14833 14845])
+                ("SGs" variable nil (reparse-symbol function_parameters) [14847 14850]))              ) nil [14796 16133])
+            ("rigShader" function (:arguments 
+              ( ("rig_NS" variable nil (reparse-symbol function_parameters) [16149 16155])
+                ("shader_NS" variable nil (reparse-symbol function_parameters) [16162 16171]))              ) nil [16135 17336]))          
+      :file "ShaderImport.py"
+      :pointmax 17336
+      :fsize 17737
+      :lastmodtime '(22178 20793 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfShader!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

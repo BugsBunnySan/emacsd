@@ -1,0 +1,393 @@
+;; Object nodes/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "nodes/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(21919 61102 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "baseNode.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfCore.data.name" include nil nil [26 60])
+            ("BaseNode" type
+               (:superclasses ("object")
+                :members 
+                  ( ("''' Base class that stores the pymel node. '''" code nil (reparse-symbol indented_block_body) [91 137])
+                    ("__init__" function
+                       (:suite 
+                          ( ("''' Initializes from the given pymel node. '''" code nil (reparse-symbol indented_block_body) [179 225])
+                            ("self" variable nil (reparse-symbol indented_block_body) [234 255]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [156 160])
+                            ("pyNode" variable nil (reparse-symbol function_parameters) [162 168]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [143 256])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [273 277]))                          )
+                        (reparse-symbol indented_block_body) [261 380])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [398 402]))                          )
+                        (reparse-symbol indented_block_body) [385 510])
+                    ("pyNode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [540 544]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [515 615])
+                    ("zero" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [629 633])
+                            ("rotation" variable nil (reparse-symbol function_parameters) [635 643])
+                            ("description" variable nil (reparse-symbol function_parameters) [650 661]))                          )
+                        (reparse-symbol indented_block_body) [620 2062]))                  
+                :type "class")
+                nil [63 2062]))          
+      :file "baseNode.py"
+      :pointmax 2062
+      :fsize 2118
+      :lastmodtime '(21909 2936 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "control.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("tagNode" include nil nil [26 53])
+            ("controlShape" include nil nil [54 91])
+            ("Control" type
+               (:superclasses ("TagNode")
+                :members 
+                  ( ("'''
+    This class adds control functionality to a pymel transform.
+
+    It also provides an access point to the ControlShape.
+    '''" code nil (reparse-symbol indented_block_body) [122 256])
+                    ("TAG" variable nil (reparse-symbol indented_block_body) [262 273])
+                    ("SUFFIX" variable nil (reparse-symbol indented_block_body) [278 293])
+                    ("fromPyNode" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [331 334])
+                            ("pyNode" variable nil (reparse-symbol function_parameters) [336 342]))                          )
+                        (reparse-symbol indented_block_body) [299 749])
+                    ("__init__" function
+                       (:suite 
+                          ( ("''' Initializes from the given pymel node (transform). '''" code nil (reparse-symbol indented_block_body) [790 848])
+                            ("super" code nil (reparse-symbol indented_block_body) [857 894])
+                            ("self" variable nil (reparse-symbol indented_block_body) [904 922]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [767 771])
+                            ("pyNode" variable nil (reparse-symbol function_parameters) [773 779]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [754 923])
+                    ("shape" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [952 956]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [928 1120]))                  
+                :type "class")
+                nil [94 1120]))          
+      :file "control.py"
+      :pointmax 1120
+      :fsize 1160
+      :lastmodtime '(21899 47858 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "tagNode.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("baseNode" include nil nil [26 55])
+            ("TAG_ATTR" variable nil nil [58 78])
+            ("PUBLISH_TAG" variable nil nil [80 103])
+            ("TagNode" type
+               (:superclasses ("BaseNode")
+                :members 
+                  ( ("'''
+    This class adds tag functionality to a pymel node, which can be used for
+    identification (e.g. controls or skin joints). The tags are stored on a 
+    custom attribute as a space-separated string.
+
+    A special tag is used for publishing nodes. A published node is used in
+    animation (e.g. control) and should not be locked.
+
+    Classes inheriting from TagNode can define a mandatory TAG that needs
+    to be present when listing.
+    '''" code nil (reparse-symbol indented_block_body) [135 589])
+                    ("TAG" variable nil (reparse-symbol indented_block_body) [595 605])
+                    ("isTagNode" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [642 645])
+                            ("pyNode" variable nil (reparse-symbol function_parameters) [647 653]))                          )
+                        (reparse-symbol indented_block_body) [611 799])
+                    ("listAll" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [833 836])
+                            ("namespace" variable nil (reparse-symbol function_parameters) [838 847])
+                            ("recursive" variable nil (reparse-symbol function_parameters) [852 861]))                          )
+                        (reparse-symbol indented_block_body) [804 1206])
+                    ("listTagged" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1243 1246])
+                            ("tagStr" variable nil (reparse-symbol function_parameters) [1248 1254])
+                            ("namespace" variable nil (reparse-symbol function_parameters) [1256 1265])
+                            ("recursive" variable nil (reparse-symbol function_parameters) [1270 1279]))                          )
+                        (reparse-symbol indented_block_body) [1211 1514])
+                    ("listAllSelected" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1556 1559]))                          )
+                        (reparse-symbol indented_block_body) [1519 1854])
+                    ("listTaggedSelected" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1899 1902])
+                            ("tagStr" variable nil (reparse-symbol function_parameters) [1904 1910]))                          )
+                        (reparse-symbol indented_block_body) [1859 2086])
+                    ("__init__" function
+                       (:suite 
+                          ( ("''' Initializes from the given pymel node.'''" code nil (reparse-symbol indented_block_body) [2127 2172])
+                            ("super" code nil (reparse-symbol indented_block_body) [2181 2218])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2227 2244]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2104 2108])
+                            ("pyNode" variable nil (reparse-symbol function_parameters) [2110 2116]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2091 2245])
+                    ("_getTagAttr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2266 2270]))                          )
+                        (reparse-symbol indented_block_body) [2250 2502])
+                    ("_setTagAttr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2523 2527]))                          )
+                        (reparse-symbol indented_block_body) [2507 3210])
+                    ("tags" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3238 3242]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [3215 3377])
+                    ("tags" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3408 3412])
+                            ("tags" variable nil (reparse-symbol function_parameters) [3414 3418]))                          
+                        :decorators 
+                          ( ("tags.setter" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [3382 3524])
+                    ("addTag" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3540 3544])
+                            ("tagStr" variable nil (reparse-symbol function_parameters) [3546 3552]))                          )
+                        (reparse-symbol indented_block_body) [3529 3745])
+                    ("isTagged" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3763 3767])
+                            ("tagStr" variable nil (reparse-symbol function_parameters) [3769 3775]))                          )
+                        (reparse-symbol indented_block_body) [3750 3982])
+                    ("removeTag" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4001 4005])
+                            ("tagStr" variable nil (reparse-symbol function_parameters) [4007 4013]))                          )
+                        (reparse-symbol indented_block_body) [3987 4205])
+                    ("publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4222 4226]))                          )
+                        (reparse-symbol indented_block_body) [4210 4341])
+                    ("isPublished" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4362 4366]))                          )
+                        (reparse-symbol indented_block_body) [4346 4474]))                  
+                :type "class")
+                nil [106 4474]))          
+      :file "tagNode.py"
+      :pointmax 4474
+      :fsize 4606
+      :lastmodtime '(21896 15490 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "controlShape.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfCore.data.color" include nil nil [26 67])
+            ("TOLERANCE" variable nil nil [70 88])
+            ("ControlShape" type
+               (:superclasses ("object")
+                :members 
+                  ( ("'''
+    This composite class adds shape functionality to a core node. A shape 
+    exists of one or more nurbsCurves under the transform node.
+    '''" code nil (reparse-symbol indented_block_body) [123 273])
+                    ("__init__" function
+                       (:suite 
+                          ( ("''' Initializes from the given core node. '''" code nil (reparse-symbol indented_block_body) [313 358])
+                            ("self" variable nil (reparse-symbol indented_block_body) [367 384])
+                            ("self" variable nil (reparse-symbol indented_block_body) [393 412]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [292 296])
+                            ("node" variable nil (reparse-symbol function_parameters) [298 302]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [279 413])
+                    ("_enableOverrides" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [439 443]))                          )
+                        (reparse-symbol indented_block_body) [418 763])
+                    ("_unlock" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [780 784]))                          )
+                        (reparse-symbol indented_block_body) [768 1136])
+                    ("_getCurveInput" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1160 1164])
+                            ("destination" variable nil (reparse-symbol function_parameters) [1166 1177]))                          )
+                        (reparse-symbol indented_block_body) [1141 1515])
+                    ("_connectCurves" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1539 1543])
+                            ("input" variable nil (reparse-symbol function_parameters) [1545 1550])
+                            ("destination" variable nil (reparse-symbol function_parameters) [1552 1563]))                          )
+                        (reparse-symbol indented_block_body) [1520 2041])
+                    ("_disconnectCurves" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2068 2072])
+                            ("input" variable nil (reparse-symbol function_parameters) [2074 2079])
+                            ("destination" variable nil (reparse-symbol function_parameters) [2081 2092]))                          )
+                        (reparse-symbol indented_block_body) [2046 2494])
+                    ("curves" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2524 2528]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2499 2927])
+                    ("getNumCvs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2946 2950]))                          )
+                        (reparse-symbol indented_block_body) [2932 3131])
+                    ("connectVisibility" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3158 3162])
+                            ("input" variable nil (reparse-symbol function_parameters) [3164 3169]))                          )
+                        (reparse-symbol indented_block_body) [3136 3373])
+                    ("connectLodVisibility" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3403 3407])
+                            ("input" variable nil (reparse-symbol function_parameters) [3409 3414]))                          )
+                        (reparse-symbol indented_block_body) [3378 3624])
+                    ("connectOverrideVisibility" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3659 3663])
+                            ("input" variable nil (reparse-symbol function_parameters) [3665 3670]))                          )
+                        (reparse-symbol indented_block_body) [3629 3891])
+                    ("getColor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3909 3913]))                          )
+                        (reparse-symbol indented_block_body) [3896 4177])
+                    ("setColor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4195 4199])
+                            ("color" variable nil (reparse-symbol function_parameters) [4201 4206]))                          )
+                        (reparse-symbol indented_block_body) [4182 4576])
+                    ("rotate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4592 4596])
+                            ("values" variable nil (reparse-symbol function_parameters) [4598 4604]))                          )
+                        (reparse-symbol indented_block_body) [4581 4831])
+                    ("scale" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4846 4850])
+                            ("values" variable nil (reparse-symbol function_parameters) [4852 4858])
+                            ("absolute" variable nil (reparse-symbol function_parameters) [4860 4868]))                          )
+                        (reparse-symbol indented_block_body) [4836 5717])
+                    ("translate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5736 5740])
+                            ("values" variable nil (reparse-symbol function_parameters) [5742 5748]))                          )
+                        (reparse-symbol indented_block_body) [5722 5973])
+                    ("add" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5986 5990])
+                            ("shape" variable nil (reparse-symbol function_parameters) [5992 5997])
+                            ("replace" variable nil (reparse-symbol function_parameters) [5999 6006]))                          )
+                        (reparse-symbol indented_block_body) [5978 7348])
+                    ("getPositions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7370 7374])
+                            ("world" variable nil (reparse-symbol function_parameters) [7376 7381]))                          )
+                        (reparse-symbol indented_block_body) [7353 7734])
+                    ("setPositions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7756 7760])
+                            ("positions" variable nil (reparse-symbol function_parameters) [7762 7771])
+                            ("world" variable nil (reparse-symbol function_parameters) [7773 7778]))                          )
+                        (reparse-symbol indented_block_body) [7739 8117])
+                    ("mirrorFrom" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8137 8141])
+                            ("shape" variable nil (reparse-symbol function_parameters) [8143 8148])
+                            ("mirror" variable nil (reparse-symbol function_parameters) [8150 8156])
+                            ("world" variable nil (reparse-symbol function_parameters) [8158 8163]))                          )
+                        (reparse-symbol indented_block_body) [8122 8451]))                  
+                :type "class")
+                nil [91 8451]))          
+      :file "controlShape.py"
+      :pointmax 8451
+      :fsize 8672
+      :lastmodtime '(21916 2137 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfCore!nodes!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,90 @@
+;; Object plug-ins/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "plug-ins/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(21919 61102 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfInstanceShape.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.api.OpenMaya" include nil nil [1 31])
+            ("CMD_NAME" variable nil nil [34 63])
+            ("REMOVE_SHORTNAME" variable nil nil [65 88])
+            ("REMOVE_LONGNAME" variable nil nil [89 115])
+            ("maya_useNewAPI" function nil nil [118 230])
+            ("InstanceShape" type
+               (:superclasses ("om.MPxCommand")
+                :members 
+                  ( ("'''
+    The bbfInstanceShape command instances a shape under one or more transforms.
+    Select the shape first and the transform(s) last.
+
+    This command is more optimized than \"parent -addObject -shape\", which
+    slows down significantly with a large number of instances.
+
+    When the flag is used it will remove the instanced shape from the 
+    transform(s).
+    '''" code nil (reparse-symbol indented_block_body) [272 646])
+                    ("__init__" function
+                       (:suite 
+                          ( ("''' Initializes a new instance of the command. '''" code nil (reparse-symbol indented_block_body) [680 730])
+                            ("super" code nil (reparse-symbol indented_block_body) [739 776])
+                            ("self" variable nil (reparse-symbol indented_block_body) [785 806])
+                            ("self" variable nil (reparse-symbol indented_block_body) [815 837])
+                            ("self" variable nil (reparse-symbol indented_block_body) [846 866])
+                            ("self" variable nil (reparse-symbol indented_block_body) [875 896]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [665 669]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [652 897])
+                    ("doIt" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [911 915])
+                            ("args" variable nil (reparse-symbol function_parameters) [917 921]))                          )
+                        (reparse-symbol indented_block_body) [902 1835])
+                    ("isUndoable" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1855 1859]))                          )
+                        (reparse-symbol indented_block_body) [1840 1944])
+                    ("redoIt" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1960 1964]))                          )
+                        (reparse-symbol indented_block_body) [1949 2304])
+                    ("undoIt" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2320 2324]))                          )
+                        (reparse-symbol indented_block_body) [2309 2666])
+                    ("parseArguments" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2690 2694])
+                            ("args" variable nil (reparse-symbol function_parameters) [2696 2700]))                          )
+                        (reparse-symbol indented_block_body) [2671 3624]))                  
+                :type "class")
+                nil [232 3624])
+            ("cmdCreator" function nil nil [3625 3721])
+            ("syntaxCreator" function nil nil [3723 3981])
+            ("initializePlugin" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [4004 4007]))              ) nil [3983 4260])
+            ("uninitializePlugin" function (:arguments 
+              ( ("obj" variable nil (reparse-symbol function_parameters) [4285 4288]))              ) nil [4262 4490]))          
+      :file "bbfInstanceShape.py"
+      :pointmax 4490
+      :fsize 4626
+      :lastmodtime '(21907 45291 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfGeoInstancer!plug-ins!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

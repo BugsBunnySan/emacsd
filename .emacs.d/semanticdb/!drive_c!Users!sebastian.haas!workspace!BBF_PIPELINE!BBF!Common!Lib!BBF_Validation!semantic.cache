@@ -1,0 +1,594 @@
+;; Object BBF_Validation/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "BBF_Validation/"
+  :tables
+  (list
+    (semanticdb-table "BBF_Validation.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.BBF_Validation.BBF_Validation
+   :synopsis: This module validates \"Location\" and \"Name\" of a file
+
+Author:      Rahul Mishra
+Created:     23/11/2011
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 239])
+            ("__future__" include nil nil [240 277])
+            ("__all__" variable nil nil [279 701])
+            ("os" include nil nil [703 712])
+            ("re" include nil nil [713 722])
+            ("logging" include nil nil [723 737])
+            ("__main__" include nil nil [738 753])
+            ("BBF.Common.Lib.bbfException.bbfExceptions" include nil nil [755 820])
+            ("BBF.Common.Lib.ShotgunInterface" include nil nil [821 881])
+            ("BBF.Common.Lib.bbfSGTK.templates" include nil nil [882 942])
+            ("BBF.Common.Lib.bbfAppInfo.AppInfo" include nil nil [944 995])
+            ("logger" variable nil nil [997 1033])
+            ("isAssetInShotgun" function
+               (:documentation " check if assetName exists in shotgun in the current project
+
+    Args:
+        assetName: asset to check in shotgun for
+        episode: if given, assume asset is a shot, else an asset
+
+    Returns:
+        id: the id of the asset, can be None
+    "
+                :arguments 
+                  ( ("assetName" variable nil (reparse-symbol function_parameters) [1056 1065])
+                    ("episode" variable nil (reparse-symbol function_parameters) [1067 1074]))                  )
+                nil [1035 1584])
+            ("parseRule" function
+               (:documentation " Parses the specified rule. By default this function converts the rule into a regular expression
+    which can be used to match.
+
+    If you want to find a key in the rule use the findKey argument. A tuple is returned which contains the
+    reg exp rule and an index to the group in the rule which contains the key.
+
+    If you want to replace the rule keys with values you can specify the replacement keys in a dictionary
+    using the replaceKeys argument.
+    "
+                :arguments 
+                  ( ("rule" variable nil (reparse-symbol function_parameters) [1599 1603])
+                    ("findKey" variable nil (reparse-symbol function_parameters) [1605 1612])
+                    ("replaceKeys" variable nil (reparse-symbol function_parameters) [1619 1630]))                  )
+                nil [1585 6564])
+            ("isValidLocations" function
+               (:documentation " applies isValidLocation for two rules to a path, assetLocation and derivativeLocation
+
+    Args:
+        fullpath: a string describing a filepath
+
+    Returns:
+        (bool, str): True if fullpath is a valid file name, str gives an explanatory message
+    "
+                :arguments 
+                  ( ("fullpath" variable nil (reparse-symbol function_parameters) [6587 6595]))                  )
+                nil [6566 7113])
+            ("isValidLocation" function
+               (:documentation " applies a filename rule to a path
+
+    Args:
+        fullpath: a string describing a filepath
+        rule: a filepath rule
+
+    Returns:
+        (bool, str): True if fullpath is a valid file name, str gives an explanatory message
+    "
+                :arguments 
+                  ( ("fullpath" variable nil (reparse-symbol function_parameters) [7136 7144])
+                    ("rule" variable nil (reparse-symbol function_parameters) [7146 7150]))                  )
+                nil [7115 7944])
+            ("getNameComponent" function
+               (:documentation " retrieves a filename component
+
+    Args:
+        filename: a string describing a filepath
+        component: part name of an sgtk template
+
+    Returns:
+        str: part of filename matching component, None if component not found
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [7967 7975])
+                    ("component" variable nil (reparse-symbol function_parameters) [7977 7986]))                  )
+                nil [7946 8466])
+            ("getAssetInfo" function
+               (:documentation " applies a filename rule to a path and returns value at key
+
+    Args:
+        fullpath: a string describing a filepath
+        key: key in the filename rule to return
+
+    Returns:
+        str: string at key in fullpath, None if key is not in the rule
+    "
+                :arguments 
+                  ( ("fullpath" variable nil (reparse-symbol function_parameters) [8484 8492])
+                    ("key" variable nil (reparse-symbol function_parameters) [8494 8497]))                  )
+                nil [8467 8811])
+            ("getAssetType" function
+               (:documentation " Returns the type of the specified file or the open file,
+
+    Args:
+        fullpath: a string describing a filepath, if None defaults to filename of current asset open in application
+
+    Returns:
+        str: assetTypeCode, None if there's no assetCode in fullpath
+    "
+                :arguments 
+                  ( ("fullpath" variable nil (reparse-symbol function_parameters) [8877 8885]))                  )
+                nil [8860 9489])
+            ("getAssetFunction" function
+               (:documentation " Returns the function of the asset specified by path or opened asset file
+
+    Args:
+        fullpath: a string describing a filepath, if None defaults to filename of current asset open in application
+
+    Returns:
+        str: asset function code, None if there's no functionCode to be found in fullpath
+    "
+                :arguments 
+                  ( ("fullpath" variable nil (reparse-symbol function_parameters) [9563 9571]))                  )
+                nil [9542 10054])
+            ("getAssetDirName" function
+               (:documentation " returns the name part corresponding to the asset name in a filepath
+
+    Args:
+        filename: a string describing a filepath
+        assetType: either shot if filename describes a shot, or anything else
+        repeatNo: only important if assetType is shot, 0 returns Episode name, 1 returns shotname, anythin else returns None
+
+    Returns:
+        str: part of the filename corresponding to the asset name
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [10158 10166])
+                    ("assetType" variable nil (reparse-symbol function_parameters) [10168 10177])
+                    ("repeatNo" variable nil (reparse-symbol function_parameters) [10179 10187]))                  )
+                nil [10138 10875])
+            ("getFileName" function
+               (:documentation " returns the filename for an asset
+
+    Args:
+        assetCode: code for the kind of asset it is (character, set, ...)
+        assetName: the name of the asset
+        functionCode: MDL or PRD, etc...
+
+    Returns:
+         str: a filename describing the asset as specified
+    "
+                :arguments 
+                  ( ("assetCode" variable nil (reparse-symbol function_parameters) [10894 10903])
+                    ("assetName" variable nil (reparse-symbol function_parameters) [10905 10914])
+                    ("functionCode" variable nil (reparse-symbol function_parameters) [10916 10928]))                  )
+                nil [10877 11475])
+            ("getAssetName" function
+               (:documentation " returns the assetname in a filename
+
+    Args:
+        filename: a string describing a 2filepath
+
+    Returns:
+        str: the name of the asset associated with the filname
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [11494 11502]))                  )
+                nil [11477 12065])
+            ("getFileProjectCode" function
+               (:documentation " return the project code in a filename
+
+    Args:
+        filename: a string describing a filepath
+
+    Return:
+        str: project short code, None if it's not in the filename
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [12090 12098]))                  )
+                nil [12067 12347])
+            ("getAssetCode" function
+               (:documentation " get asset code str from a filename, or episode name
+
+    Args:
+        filename: a string describing a filepath
+
+    Return:
+        str: asset code or episode, None if it's not in the filename
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [12366 12374]))                  )
+                nil [12349 12827])
+            ("getFunctionCode" function
+               (:documentation " get asset code str from a filename
+
+    Args:
+        filename: a string describing a filepath
+
+    Return:
+        str: file function code, None if it's not in the filename
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [12849 12857]))                  )
+                nil [12829 13104])
+            ("getShotName" function
+               (:documentation " extract the shot name from a filename
+
+    Args:
+        filename: a string describing a filepath
+
+    Return:
+        str: shot name, empty string if it's not in the filename
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [13122 13130]))                  )
+                nil [13106 14173])
+            ("getEpisodeName" function
+               (:documentation " get episode name form filename
+
+    Args:
+        filename: a string describing a filepath
+
+    Return:
+        str: episode name, empty string if it's not in the filename
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [14194 14202]))                  )
+                nil [14175 14711])
+            ("getDocumentDir" function (:documentation " return windows specific My Documents path
+
+    Return:
+        str: path to My Documents or 'Failure!' if it can't be found
+    ") nil [14713 15143])
+            ("getPublishPath" function
+               (:documentation " return the path to publish an asset file too
+
+    Args:
+        filename: a string describing a filepath to an asset file
+        publishType: string determining what type of publishing is being done
+        assetType: the type of the asset being published
+        pRuleKey: which filename rule to use to make the path
+        fpath: ignored
+
+    Returns:
+        str: path (directory) to where the asset should be published to
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [15164 15172])
+                    ("publishType" variable nil (reparse-symbol function_parameters) [15174 15185])
+                    ("assetType" variable nil (reparse-symbol function_parameters) [15187 15196])
+                    ("pRuleKey" variable nil (reparse-symbol function_parameters) [15198 15206])
+                    ("fpath" variable nil (reparse-symbol function_parameters) [15249 15254]))                  )
+                nil [15145 16274])
+            ("getPublishFileName" function
+               (:documentation " return the filename an asset would be published to
+
+    Args:
+        assetCode: type of asset
+        assetName: the name of the asset
+        publishType: type of publishing being done
+        rulename: which filename rule to use to make the path
+
+    Returns:
+        str: filename to save the published asset into
+    "
+                :arguments 
+                  ( ("assetCode" variable nil (reparse-symbol function_parameters) [16300 16309])
+                    ("assetName" variable nil (reparse-symbol function_parameters) [16311 16320])
+                    ("publishType" variable nil (reparse-symbol function_parameters) [16322 16333])
+                    ("rulename" variable nil (reparse-symbol function_parameters) [16335 16343]))                  )
+                nil [16276 17034])
+            ("validate" function
+               (:documentation " check that a file path describes a valid asset/shot
+
+    Args:
+        fullpath: a string describing a filepath to an asset file
+
+    Return:
+        (int, str, str, str): int -> 1 if validation succeeds, asset name, asset code and function code
+
+    Raises:
+        bbfExceptions.SceneCheckError: if any of the validation steps fails
+    "
+                :arguments 
+                  ( ("fullpath" variable nil (reparse-symbol function_parameters) [17049 17057]))                  )
+                nil [17036 19049]))          
+      :file "BBF_Validation.py"
+      :pointmax 20216
+      :fsize 20812
+      :lastmodtime '(22220 17827 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.BBF_Validation
+   :synopsis: validates / gets parts of filenames and hierarchical scenes
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 180])
+            ("__future__" include nil nil [180 180])
+            ("__all__" variable nil nil [180 180]))          
+      :file "__init__.py"
+      :pointmax 258
+      :fsize 268
+      :lastmodtime '(22102 1438 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "SceneParser.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.BBF_Validation.SceneParser
+    :synopsis: parser/validator for tree like structures
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 175])
+            ("__future__" include nil nil [176 213])
+            ("pprint" include nil nil [215 240])
+            ("__all__" variable nil nil [242 296])
+            ("yaml" include nil nil [298 309])
+            ("re" include nil nil [310 319])
+            ("logging" include nil nil [320 334])
+            ("VERSION" variable nil nil [336 353])
+            ("log" variable nil nil [355 388])
+            ("ParseError" type
+               (:documentation " raised when a parse error is encountered "
+                :superclasses ("Exception")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            msg: a string explaining what went wrong
+            node: the node encountered that caused the parse error to occur
+        \"\"\"" code nil (reparse-symbol indented_block_body) [517 675])
+                            ("super" code nil (reparse-symbol indented_block_body) [684 721])
+                            ("self" variable nil (reparse-symbol indented_block_body) [731 748]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [491 495])
+                            ("msg" variable nil (reparse-symbol function_parameters) [497 500])
+                            ("node" variable nil (reparse-symbol function_parameters) [502 506]))                          
+                        :documentation "
+        Args:
+            msg: a string explaining what went wrong
+            node: the node encountered that caused the parse error to occur
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [478 749])
+                    ("node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [777 781]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [754 810]))                  
+                :type "class")
+                nil [391 810])
+            ("ParseConstraintError" type
+               (:documentation " raised when the parser encounters a node that violates a rule constraint,
+    or when a constraint definition is invalid
+    "
+                :superclasses ("ParseError")
+                :type "class")
+                nil [835 1012])
+            ("RuleConstraint" type
+               (:documentation " A constraint to be placed on the occurence of rules within another rule "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            constraintDef: a string defining the constraint, either \\d+, or \\d+- or \\d+-\\d+ (min-max, but -max is optional and only min- means at least min times)
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1208 1400])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1409 1424])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1433 1448])
+                            ("self" code nil (reparse-symbol indented_block_body) [1458 1495]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1178 1182])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [1184 1197]))                          
+                        :documentation "
+        Args:
+            constraintDef: a string defining the constraint, either \\d+, or \\d+- or \\d+-\\d+ (min-max, but -max is optional and only min- means at least min times)
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1165 1496])
+                    ("_parse_constraint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1523 1527])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [1529 1542]))                          
+                        :documentation " break a constraint definition into max and min occurences
+
+        Args:
+            constraintDef: either \\d+, or \\d+- or \\d+-\\d+
+        ")
+                        (reparse-symbol indented_block_body) [1501 2347]))                  
+                :type "class")
+                nil [1047 2347])
+            ("Rule" type
+               (:documentation " A Rule leading from a regex pattern to other rules "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            token_type: a string identifying this token
+            pattern: a regular expression string applied to nodes in the scene hierarchy
+            next_rule_defs: list of names of follow up rules, needed during grammar readin
+        \"\"\"" code nil (reparse-symbol indented_block_body) [2528 2793])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2802 2831])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2840 2887])
+                            ("self" code nil (reparse-symbol indented_block_body) [2896 2939])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2948 2969])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2978 3011]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2476 2480])
+                            ("token_type" variable nil (reparse-symbol function_parameters) [2482 2492])
+                            ("pattern" variable nil (reparse-symbol function_parameters) [2494 2501])
+                            ("next_rule_defs" variable nil (reparse-symbol function_parameters) [2503 2517]))                          
+                        :documentation "
+        Args:
+            token_type: a string identifying this token
+            pattern: a regular expression string applied to nodes in the scene hierarchy
+            next_rule_defs: list of names of follow up rules, needed during grammar readin
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2463 3012])
+                    ("token_type" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3046 3050]))                          
+                        :documentation "
+        Returns:
+            str: the token type of this rule
+        ")
+                        (reparse-symbol indented_block_body) [3017 3171])
+                    ("pattern" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3202 3206]))                          
+                        :documentation "
+        Returns:
+            regex: a compiled regular expression
+        ")
+                        (reparse-symbol indented_block_body) [3176 3328])
+                    ("next_rules" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3362 3366]))                          
+                        :documentation "
+        Returns:
+            list: a (possbily empty) list of rules to match next
+        ")
+                        (reparse-symbol indented_block_body) [3333 3507])
+                    ("add_next_rule" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3530 3534])
+                            ("rule" variable nil (reparse-symbol function_parameters) [3536 3540])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [3542 3555]))                          
+                        :documentation " add a rule, and register its constraints
+
+        Args:
+            rule: a Rule object
+            constraintDef: a constraint definition
+        ")
+                        (reparse-symbol indented_block_body) [3512 3845])
+                    ("check_constraint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3871 3875])
+                            ("matched_node" variable nil (reparse-symbol function_parameters) [3877 3889])
+                            ("token_type" variable nil (reparse-symbol function_parameters) [3891 3901])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [3903 3913])
+                            ("relax" variable nil (reparse-symbol function_parameters) [3915 3920]))                          
+                        :documentation " check the occurence of one token_type underneath a node
+
+        Args:
+            matched_node: the node underneatch which the occurences are going to be checked
+            token_type: token type indentifier
+            occurences: list of nodes matching token_type that where found beneath matched_node
+            relax: only report errors to log if True, else raise Exception
+
+        Raises:
+            Exception: when len(occurences) falls outside this rules constraints for token_type
+        ")
+                        (reparse-symbol indented_block_body) [3850 5858])
+                    ("check_constraints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5885 5889])
+                            ("matched_node" variable nil (reparse-symbol function_parameters) [5891 5903])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [5905 5915])
+                            ("relax" variable nil (reparse-symbol function_parameters) [5917 5922]))                          
+                        :documentation " checkd occurences of tokens below a node
+
+        Args:
+            matched_node: the node underneatch which the occurences are going to be checked
+            occurences: dict mapping token types to lists of nodes that matched them
+            relax: only report errors to log if True, else raise Exception
+        ")
+                        (reparse-symbol indented_block_body) [5863 6472]))                  
+                :type "class")
+                nil [2376 6472])
+            ("Parser" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            actionTable: a dict/OrderedDict of TokenTypes and function to call
+        \"\"\"" code nil (reparse-symbol indented_block_body) [6564 6672])
+                            ("self" code nil (reparse-symbol indented_block_body) [6681 6718]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6531 6535])
+                            ("actionTable" variable nil (reparse-symbol function_parameters) [6537 6548]))                          
+                        :documentation "
+        Args:
+            actionTable: a dict/OrderedDict of TokenTypes and function to call
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6518 6719])
+                    ("parse" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6734 6738])
+                            ("node" variable nil (reparse-symbol function_parameters) [6740 6744])
+                            ("rules" variable nil (reparse-symbol function_parameters) [6746 6751])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [6753 6763])
+                            ("relax" variable nil (reparse-symbol function_parameters) [6770 6775]))                          
+                        :documentation " start parsing the scene from node on, using rules as a starting point
+
+        Args:
+            node: a hierarchy node, needs to have a .name() and a .getChildren() function
+            rules: a list of Rule objects
+            occurences: a dictionary used to keep track of rule occurences and their constraints, used for recursion
+            relax: only report errors to log if True, else raise Exception
+
+        Raises:
+            Exception: if no rule in rules matches the node in question
+        ")
+                        (reparse-symbol indented_block_body) [6724 8739]))                  
+                :type "class")
+                nil [6492 8739])
+            ("readGrammar" function
+               (:documentation " read in a grammar from a yaml file, return the rule named as the start rule
+    (the rest of the parse tree should be anchored beneath this rule)
+
+    Args:
+        grammarFileName: name of a yaml file containing the grammar of a scene
+        startRuleName: the name of the top most rule, this will be the one returned to the user
+        extraTokens: dictionary of extra token -> pattern definitions
+        extraRules: dictionary of extra rule -> rules definitions
+
+    Returns:
+        Rule: a rule from the grammar matching startRuleName
+    "
+                :arguments 
+                  ( ("grammarFileName" variable nil (reparse-symbol function_parameters) [8777 8792])
+                    ("startRuleName" variable nil (reparse-symbol function_parameters) [8794 8807])
+                    ("extraTokens" variable nil (reparse-symbol function_parameters) [8809 8820])
+                    ("extraRules" variable nil (reparse-symbol function_parameters) [8825 8835]))                  )
+                nil [8761 10393]))          
+      :file "SceneParser.py"
+      :pointmax 10393
+      :fsize 10667
+      :lastmodtime '(22182 5407 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!BBF_Validation!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

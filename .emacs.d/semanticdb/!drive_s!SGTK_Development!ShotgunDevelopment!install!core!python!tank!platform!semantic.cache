@@ -1,0 +1,156 @@
+;; Object platform/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "platform/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("find_app_settings" include nil nil [487 558])
+            ("get_engine_path" include nil nil [487 558])
+            ("current_engine" include nil nil [487 558])
+            ("start_engine" include nil nil [487 558])
+            ("Application" include nil nil [608 626])
+            ("Engine" include nil nil [640 653])
+            ("Framework" include nil nil [670 686])
+            ("TankContextChangeNotSupportedError" include nil nil [702 754])
+            ("TankError" include nil nil [702 754])
+            ("_get_current_bundle" function nil nil [873 3348])
+            ("change_context" function
+               (:documentation "
+    Running change_context will attempt to change the context the engine and
+    its apps are running in on the fly. The current engine must accept the
+    context change, otherwise a full restart of the engine will be run instead.
+
+    The determination of whether an engine supports context changing comes from
+    its \"context_change_allowed\" property. If that property returns True, then
+    the context change will be allowed to proceed. If it returns False, then
+    the engine's \"change_context\" method will raise
+    TankContextChangeNotSupportedError, which will then trigger a restart of
+    the engine and all of its apps.
+
+    In the event that the engine does support context changes, any apps that
+    support context changing will do so, as well. Any that do not will themselves
+    be restarted within the new context.
+
+    The benefit of supporting context changes in engines and apps is speed. The
+    end result of this routine should be identical to that of a restart, but
+    will require less time to complete.
+
+    For more information on supporting context changing, see the following:
+
+        tank.platform.engine.context_change_allowed
+        tank.platform.application.context_change_allowed
+        tank.platform.engine.change_context()
+        tank.platform.application.change_context()
+
+    :param new_context: The new Context to change to.
+    "
+                :arguments 
+                  ( ("new_context" variable nil (reparse-symbol function_parameters) [3488 3499]))                  )
+                nil [3469 5368])
+            ("restart" function
+               (:documentation "
+    Running restart will shut down any currently running engine, then refresh the templates
+    definitions and finally start up the engine again. 
+    
+    The template configuration, environment configuration and the actual app and engine code
+    will be reloaded.
+    
+    Any open windows will remain open and will use the old code base and settings. In order to
+    access any changes that have happened as part of a reload, you need to launch new app
+    windows and these will use the fresh code and configs.
+
+    :param new_context: The new Context to start the engine in, if desired. Default behavior
+                        is to restart the engine with its current context.
+    "
+                :arguments 
+                  ( ("new_context" variable nil (reparse-symbol function_parameters) [5381 5392]))                  )
+                nil [5369 7070])
+            ("current_bundle" function (:documentation "
+    Returns the bundle (app, engine or framework) instance for the
+    app that the calling code is associated with. This is a special method, designed to 
+    be used inside python modules that belong to apps, engines or frameworks.
+    
+    The calling code needs to have been imported using toolkit's standard import 
+    mechanism, import_module(), otherwise an exception will be raised.
+    
+    This special helper method can be useful when code deep inside an app needs
+    to reach out to for example grab a configuration value. Then you can simply do
+    
+    app = sgtk.platform.current_bundle()
+    app.get_setting(\"frame_range\")
+
+    :returns: app, engine or framework instance
+    ") nil [7073 7835])
+            ("get_framework" function
+               (:documentation "
+    Convenience method that returns a framework instance given a framework name.
+    
+    This is a special method, designed to 
+    be used inside python modules that belong to apps, engines or frameworks.
+    
+    The calling code needs to have been imported using toolkit's standard import 
+    mechanism, import_module(), otherwise an exception will be raised.    
+    
+    For example, if your app code requires the tk-framework-helpers framework, and you
+    need to retrieve a configuration setting from this framework, then you can 
+    simply do
+    
+    fw = sgtk.platform.get_framework(\"tk-framework-helpers\")
+    fw.get_setting(\"frame_range\")
+
+    :param framework: name of the framework object to access, as defined in the app's
+                      info.yml manifest.
+    :returns: framework instance
+    "
+                :arguments 
+                  ( ("framework" variable nil (reparse-symbol function_parameters) [7855 7864]))                  )
+                nil [7837 8984])
+            ("import_framework" function
+               (:documentation "
+    Convenience method for using frameworks code inside of apps, engines and other frameworks.
+    
+    This method is intended to replace an import statement.
+    Instead of typing 
+    
+    > from . import foo_bar
+    
+    You use the following syntax to load a framework module
+    
+    > foo_bar = tank.platform.import_framework(\"tk-framework-mystuff\", \"foo_bar\")
+    
+    This is a special method, designed to 
+    be used inside python modules that belong to apps, engines or frameworks.
+    
+    The calling code needs to have been imported using toolkit's standard import 
+    mechanism, import_module(), otherwise an exception will be raised.    
+
+    :param framework: name of the framework object to access, as defined in the app's
+                      info.yml manifest.
+    :param module: module to load from framework
+    "
+                :arguments 
+                  ( ("framework" variable nil (reparse-symbol function_parameters) [9007 9016])
+                    ("module" variable nil (reparse-symbol function_parameters) [9018 9024]))                  )
+                nil [8986 10202]))          
+      :file "__init__.py"
+      :pointmax 10205
+      :fsize 10204
+      :lastmodtime '(22220 43446 0 0)
+      :unmatched-syntax '((FROM 920 . 924) (PERIOD 925 . 926) (PERIOD 694 . 695) (FROM 688 . 692) (PERIOD 693 . 694) (FROM 654 . 658) (PERIOD 659 . 660) (FROM 627 . 631) (PERIOD 632 . 633) (FROM 590 . 594) (PERIOD 595 . 596) (PERIOD 479 . 480)))
+    (semanticdb-table "Application.py"
+      :file "Application.py"
+      :fsize 6409
+      :lastmodtime '(22220 43445 0 0))
+    (semanticdb-table "Engine.py"
+      :file "Engine.py"
+      :fsize 85287
+      :lastmodtime '(22220 43445 0 0))
+    (semanticdb-table "Framework.py"
+      :file "Framework.py"
+      :fsize 9651
+      :lastmodtime '(22220 43445 0 0)))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!core!python!tank!platform!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

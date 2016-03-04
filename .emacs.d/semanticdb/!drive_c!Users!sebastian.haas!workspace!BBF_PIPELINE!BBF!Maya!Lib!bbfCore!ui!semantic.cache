@@ -1,0 +1,290 @@
+;; Object ui/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ui/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(21919 61102 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "abstractWindow.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("PySide" include nil nil [1 33])
+            ("pymel.core" include nil nil [34 57])
+            ("AbstractWindow" type
+               (:superclasses ("QtGui.QWidget")
+                :members 
+                  ( ("'''
+    This abstract class adds functionality to restore the widget size and
+    position from optionVars. Classes inheriting from this abstract should
+    set the class variables to specific optionVar names (SIZEXOV, SIZEYOV, 
+    POSXOV and POSYOV)
+
+    example of a child class:
+
+        class NewWindow(AbstractWindow):
+
+        SIZEXOV = 'NewWindowSizeXOV'
+        SIZEYOV = 'NewWindowSizeYOV'
+        POSXOV = 'NewWindowPosXOV'
+        POSYOV = 'NewWindowPosYOV'
+
+        def __init__(self):
+            super(NewWindow, self).__init__()
+            self.setParent(getMainWindow())
+            self.setWindowFlags(QtCore.Qt.Window)
+            ...
+            # create layouts and widgets
+            ...
+            self.restore()
+            self.show()
+    '''" code nil (reparse-symbol indented_block_body) [101 871])
+                    ("SIZEXOV" variable nil (reparse-symbol indented_block_body) [877 891])
+                    ("SIZEYOV" variable nil (reparse-symbol indented_block_body) [896 910])
+                    ("POSXOV" variable nil (reparse-symbol indented_block_body) [915 928])
+                    ("POSYOV" variable nil (reparse-symbol indented_block_body) [933 946])
+                    ("__init__" function
+                       (:suite 
+                          ( ("''' Initializes the widget. '''" code nil (reparse-symbol indented_block_body) [997 1028])
+                            ("super" code nil (reparse-symbol indented_block_body) [1037 1090]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [965 969])
+                            ("args" variable nil (reparse-symbol function_parameters) [971 976])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [978 986]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [952 1091])
+                    ("_getOptionVar" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1114 1118])
+                            ("var" variable nil (reparse-symbol function_parameters) [1120 1123])
+                            ("default" variable nil (reparse-symbol function_parameters) [1125 1132]))                          )
+                        (reparse-symbol indented_block_body) [1096 1290])
+                    ("restore" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1307 1311]))                          )
+                        (reparse-symbol indented_block_body) [1295 1653])
+                    ("closeEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1673 1677])
+                            ("event" variable nil (reparse-symbol function_parameters) [1679 1684]))                          )
+                        (reparse-symbol indented_block_body) [1658 2073]))                  
+                :type "class")
+                nil [60 2073]))          
+      :file "abstractWindow.py"
+      :pointmax 2073
+      :fsize 2136
+      :lastmodtime '(21896 15490 0 0)
+      :unmatched-syntax '((RETURN 1223 . 1229) (IF 1248 . 1250) (ELSE 1277 . 1281)))
+    (semanticdb-table "collapseLayout.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("PySide" include nil nil [1 33])
+            ("MAX_HEIGHT" variable nil nil [36 57])
+            ("TITLE_H" variable nil nil [59 71])
+            ("LINE" variable nil nil [72 80])
+            ("CollapseTitle" type
+               (:superclasses ("QtGui.QFrame")
+                :members 
+                  ( ("'''
+    This class creates a title widget for the CollapseLayout. It shows both
+    the collapsed state (+ or -) and a user defined title label. A clicked
+    signal will emit when the title is clicked.
+    '''" code nil (reparse-symbol indented_block_body) [122 332])
+                    ("clicked" variable nil (reparse-symbol indented_block_body) [338 363])
+                    ("__init__" function
+                       (:suite 
+                          ( ("''' Creates the layout and title widgets. '''" code nil (reparse-symbol indented_block_body) [414 459])
+                            ("super" code nil (reparse-symbol indented_block_body) [468 520])
+                            ("self" variable nil (reparse-symbol indented_block_body) [529 552])
+                            ("self" code nil (reparse-symbol indented_block_body) [562 622])
+                            ("self" code nil (reparse-symbol indented_block_body) [631 654])
+                            ("self" variable nil (reparse-symbol indented_block_body) [664 699])
+                            ("self" code nil (reparse-symbol indented_block_body) [708 733])
+                            ("self" code nil (reparse-symbol indented_block_body) [742 782])
+                            ("self" variable nil (reparse-symbol indented_block_body) [792 829])
+                            ("self" code nil (reparse-symbol indented_block_body) [838 875])
+                            ("self" code nil (reparse-symbol indented_block_body) [884 918])
+                            ("font" variable nil (reparse-symbol indented_block_body) [927 957])
+                            ("font" code nil (reparse-symbol indented_block_body) [966 998])
+                            ("self" code nil (reparse-symbol indented_block_body) [1007 1037])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1047 1084])
+                            ("self" code nil (reparse-symbol indented_block_body) [1093 1130])
+                            ("self" code nil (reparse-symbol indented_block_body) [1139 1169])
+                            ("self" code nil (reparse-symbol indented_block_body) [1179 1202]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [382 386])
+                            ("args" variable nil (reparse-symbol function_parameters) [388 393])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [395 403]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [369 1203])
+                    ("mousePressEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1228 1232])
+                            ("event" variable nil (reparse-symbol function_parameters) [1234 1239]))                          )
+                        (reparse-symbol indented_block_body) [1208 1325])
+                    ("title" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1340 1344]))                          )
+                        (reparse-symbol indented_block_body) [1330 1421])
+                    ("setTitle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1439 1443])
+                            ("title" variable nil (reparse-symbol function_parameters) [1445 1450]))                          )
+                        (reparse-symbol indented_block_body) [1426 1546])
+                    ("collapse" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1564 1568]))                          )
+                        (reparse-symbol indented_block_body) [1551 1658])
+                    ("setCollapse" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1679 1683])
+                            ("state" variable nil (reparse-symbol function_parameters) [1685 1690]))                          )
+                        (reparse-symbol indented_block_body) [1663 1921]))                  
+                :type "class")
+                nil [83 1921])
+            ("CollapseLayout" type
+               (:superclasses ("QtGui.QLayout")
+                :members 
+                  ( ("'''
+    This class creates a collapsable layout, similar to Maya's frameLayout.
+    A title shows the label of the layout and the collapsed state (+ or -).
+    When clicked this shows or hides the frame that contains the child widgets.
+
+    All child Widgets will be added in a vertical column.
+    '''" code nil (reparse-symbol indented_block_body) [1964 2266])
+                    ("__init__" function
+                       (:suite 
+                          ( ("''' Creates collapseLayout with a title and frame widget. '''" code nil (reparse-symbol indented_block_body) [2317 2378])
+                            ("super" code nil (reparse-symbol indented_block_body) [2387 2440])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2450 2466])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2475 2498])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2507 2531])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2541 2588])
+                            ("self" code nil (reparse-symbol indented_block_body) [2597 2644])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2654 2700])
+                            ("self" code nil (reparse-symbol indented_block_body) [2709 2773])
+                            ("self" code nil (reparse-symbol indented_block_body) [2782 2811]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2285 2289])
+                            ("args" variable nil (reparse-symbol function_parameters) [2291 2296])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [2298 2306]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2272 2812])
+                    ("__del__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2829 2833]))                          )
+                        (reparse-symbol indented_block_body) [2817 2912])
+                    ("_titleCallback" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2936 2940]))                          )
+                        (reparse-symbol indented_block_body) [2917 3123])
+                    ("addItem" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3140 3144])
+                            ("item" variable nil (reparse-symbol function_parameters) [3146 3150]))                          )
+                        (reparse-symbol indented_block_body) [3128 3237])
+                    ("count" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3252 3256]))                          )
+                        (reparse-symbol indented_block_body) [3242 3351])
+                    ("itemAt" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3367 3371])
+                            ("index" variable nil (reparse-symbol function_parameters) [3373 3378]))                          )
+                        (reparse-symbol indented_block_body) [3356 3611])
+                    ("takeAt" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3627 3631])
+                            ("index" variable nil (reparse-symbol function_parameters) [3633 3638]))                          )
+                        (reparse-symbol indented_block_body) [3616 3913])
+                    ("expandingDirections" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3942 3946]))                          )
+                        (reparse-symbol indented_block_body) [3918 4148])
+                    ("hasHeightForWidth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4175 4179]))                          )
+                        (reparse-symbol indented_block_body) [4153 4326])
+                    ("setGeometry" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4347 4351])
+                            ("rect" variable nil (reparse-symbol function_parameters) [4353 4357]))                          )
+                        (reparse-symbol indented_block_body) [4331 6057])
+                    ("sizeHint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6075 6079]))                          )
+                        (reparse-symbol indented_block_body) [6062 6176])
+                    ("minimumSize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6197 6201]))                          )
+                        (reparse-symbol indented_block_body) [6181 7212])
+                    ("collapsable" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7233 7237]))                          )
+                        (reparse-symbol indented_block_body) [7217 7334])
+                    ("setCollapsable" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7358 7362])
+                            ("state" variable nil (reparse-symbol function_parameters) [7364 7369]))                          )
+                        (reparse-symbol indented_block_body) [7339 7527])
+                    ("collapse" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7545 7549]))                          )
+                        (reparse-symbol indented_block_body) [7532 7640])
+                    ("setCollapse" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7661 7665])
+                            ("state" variable nil (reparse-symbol function_parameters) [7667 7672]))                          )
+                        (reparse-symbol indented_block_body) [7645 7839])
+                    ("title" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7854 7858]))                          )
+                        (reparse-symbol indented_block_body) [7844 7940])
+                    ("setTitle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7958 7962])
+                            ("title" variable nil (reparse-symbol function_parameters) [7964 7969]))                          )
+                        (reparse-symbol indented_block_body) [7945 8057]))                  
+                :type "class")
+                nil [1923 8057]))          
+      :file "collapseLayout.py"
+      :pointmax 8057
+      :fsize 8301
+      :lastmodtime '(21896 15490 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfCore!ui!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

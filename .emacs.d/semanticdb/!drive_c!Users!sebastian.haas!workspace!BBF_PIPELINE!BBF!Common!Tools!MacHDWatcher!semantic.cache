@@ -1,0 +1,944 @@
+;; Object MacHDWatcher/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "MacHDWatcher/"
+  :tables
+  (list
+    (semanticdb-table "MacHDWatcher.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [59 68])
+            ("shutil" include nil nil [69 82])
+            ("time" include nil nil [83 94])
+            ("re" include nil nil [95 104])
+            ("subprocess" include nil nil [105 122])
+            ("datetime" include nil nil [123 138])
+            ("Queue" include nil nil [139 151])
+            ("threading" include nil nil [152 168])
+            ("sys" include nil nil [169 179])
+            ("traceback" include nil nil [180 196])
+            ("sys" include nil nil [197 207])
+            ("random" include nil nil [208 221])
+            ("copy" include nil nil [222 233])
+            ("signal" include nil nil [234 247])
+            ("test.test_support" include nil nil [248 284])
+            ("ShotgunInterface" include nil nil [285 330])
+            ("g_shotgun" variable nil nil [332 385])
+            ("g_shotgun" code nil nil [386 413])
+            ("g_lock" variable nil nil [414 439])
+            ("LOCAL_ROOT" variable nil nil [441 492])
+            ("HD_DELIVERIES_ROOT" variable nil nil [493 535])
+            ("PRIORITY_TRIGGER" code nil nil [536 606])
+            ("LOG_FOLDER" code nil nil [607 666])
+            ("DEBUG_MODE" variable nil nil [667 683])
+            ("if" code nil nil [685 790])
+            ("reportException" function (:arguments 
+              ( ("log" variable nil (reparse-symbol function_parameters) [811 814]))              ) nil [791 1161])
+            ("updateTask" function (:arguments 
+              ( ("log" variable nil (reparse-symbol function_parameters) [1177 1180])
+                ("projectName" variable nil (reparse-symbol function_parameters) [1182 1193])
+                ("episodeCode" variable nil (reparse-symbol function_parameters) [1195 1206])
+                ("shotCode" variable nil (reparse-symbol function_parameters) [1208 1216])
+                ("statusCode" variable nil (reparse-symbol function_parameters) [1218 1228])
+                ("fileInfo" variable nil (reparse-symbol function_parameters) [1230 1238])
+                ("createNote" variable nil (reparse-symbol function_parameters) [1240 1250]))              ) nil [1162 2712])
+            ("updateShotgun" function (:arguments 
+              ( ("log" variable nil (reparse-symbol function_parameters) [2731 2734])
+                ("fileInfo" variable nil (reparse-symbol function_parameters) [2736 2744])
+                ("statusCode" variable nil (reparse-symbol function_parameters) [2746 2756])
+                ("createNote" variable nil (reparse-symbol function_parameters) [2758 2768]))              ) nil [2713 5263])
+            ("systemMount" function (:arguments 
+              ( ("volume" variable nil (reparse-symbol function_parameters) [5281 5287])
+                ("log" variable nil (reparse-symbol function_parameters) [5289 5292])
+                ("machineName" variable nil (reparse-symbol function_parameters) [5294 5305]))              ) nil [5265 7598])
+            ("systemUnmount" function (:arguments 
+              ( ("mountPoint" variable nil (reparse-symbol function_parameters) [7617 7627])
+                ("log" variable nil (reparse-symbol function_parameters) [7629 7632]))              ) nil [7599 8352])
+            ("updateMountTable" function nil nil [8353 12728])
+            ("FileInformation" type
+               (:members 
+                  ( ("uniqueNumber" variable nil (reparse-symbol indented_block_body) [12756 12770])
+                    ("subFolders" variable nil (reparse-symbol indented_block_body) [12775 12788])
+                    ("filename" variable nil (reparse-symbol indented_block_body) [12793 12804])
+                    ("movieFilename" variable nil (reparse-symbol indented_block_body) [12809 12825])
+                    ("convertedFilename" variable nil (reparse-symbol indented_block_body) [12830 12850])
+                    ("originalFilename" variable nil (reparse-symbol indented_block_body) [12855 12874])
+                    ("volume" variable nil (reparse-symbol indented_block_body) [12879 12888])
+                    ("destinationFile" variable nil (reparse-symbol indented_block_body) [12893 12913])
+                    ("keepOrigional" variable nil (reparse-symbol indented_block_body) [12918 12937])
+                    ("lastClockCheck" variable nil (reparse-symbol indented_block_body) [12942 12980])
+                    ("unarchiveTime" variable nil (reparse-symbol indented_block_body) [12985 13020])
+                    ("convertTime" variable nil (reparse-symbol indented_block_body) [13025 13058])
+                    ("copyToNetworkTime" variable nil (reparse-symbol indented_block_body) [13063 13102])
+                    ("logText" variable nil (reparse-symbol indented_block_body) [13107 13117])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [13193 13217])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13226 13254])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13263 13283])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13292 13320])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13329 13372]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13136 13140])
+                            ("filename" variable nil (reparse-symbol function_parameters) [13142 13150])
+                            ("subFolders" variable nil (reparse-symbol function_parameters) [13152 13162])
+                            ("volume" variable nil (reparse-symbol function_parameters) [13164 13170])
+                            ("mountPoint" variable nil (reparse-symbol function_parameters) [13172 13182]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13123 13373])
+                    ("log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13386 13390])
+                            ("message" variable nil (reparse-symbol function_parameters) [13392 13399]))                          )
+                        (reparse-symbol indented_block_body) [13378 13457])
+                    ("resetClock" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13477 13481]))                          )
+                        (reparse-symbol indented_block_body) [13462 13532])
+                    ("getDuration" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13553 13557]))                          )
+                        (reparse-symbol indented_block_body) [13537 13657])
+                    ("sendEmail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13676 13680])
+                            ("author_email_address" variable nil (reparse-symbol function_parameters) [13682 13702])
+                            ("destination_email_address" variable nil (reparse-symbol function_parameters) [13704 13729])
+                            ("bcc_email_address" variable nil (reparse-symbol function_parameters) [13731 13748])
+                            ("subject" variable nil (reparse-symbol function_parameters) [13750 13757])
+                            ("message" variable nil (reparse-symbol function_parameters) [13759 13766]))                          )
+                        (reparse-symbol indented_block_body) [13662 14782])
+                    ("getEmails" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14801 14805])
+                            ("project" variable nil (reparse-symbol function_parameters) [14807 14814]))                          )
+                        (reparse-symbol indented_block_body) [14787 15386])
+                    ("failed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15402 15406]))                          )
+                        (reparse-symbol indented_block_body) [15391 16144]))                  
+                :type "class")
+                nil [12729 16144])
+            ("BaseThread" type
+               (:superclasses ("threading.Thread")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [16225 16253])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16262 16291])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16300 16330])
+                            ("threading" code nil (reparse-symbol indented_block_body) [16339 16387])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16396 16413])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16422 16442])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16451 16469]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16198 16202])
+                            ("threadName" variable nil (reparse-symbol function_parameters) [16204 16214]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [16185 16470])
+                    ("logFileInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16491 16495])
+                            ("fileInfo" variable nil (reparse-symbol function_parameters) [16497 16505])
+                            ("message" variable nil (reparse-symbol function_parameters) [16507 16514]))                          )
+                        (reparse-symbol indented_block_body) [16475 16573])
+                    ("log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16586 16590])
+                            ("message" variable nil (reparse-symbol function_parameters) [16592 16599]))                          )
+                        (reparse-symbol indented_block_body) [16578 16759])
+                    ("stop" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16773 16777]))                          )
+                        (reparse-symbol indented_block_body) [16764 16805])
+                    ("stopped" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16822 16826]))                          )
+                        (reparse-symbol indented_block_body) [16810 16963])
+                    ("handleMessage" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16986 16990])
+                            ("message" variable nil (reparse-symbol function_parameters) [16992 16999]))                          )
+                        (reparse-symbol indented_block_body) [16968 17133])
+                    ("isIdle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17149 17153]))                          )
+                        (reparse-symbol indented_block_body) [17138 17223])
+                    ("clearInMessages" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17248 17252]))                          )
+                        (reparse-symbol indented_block_body) [17228 17347])
+                    ("addToStart" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17368 17372])
+                            ("messageQueue" variable nil (reparse-symbol function_parameters) [17374 17386])
+                            ("message" variable nil (reparse-symbol function_parameters) [17388 17395]))                          )
+                        (reparse-symbol indented_block_body) [17353 17701])
+                    ("addMessage" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17721 17725])
+                            ("message" variable nil (reparse-symbol function_parameters) [17727 17734])
+                            ("priority" variable nil (reparse-symbol function_parameters) [17736 17744]))                          )
+                        (reparse-symbol indented_block_body) [17706 17894])
+                    ("getNextMessage" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17918 17922]))                          )
+                        (reparse-symbol indented_block_body) [17899 18344])
+                    ("addOutMessage" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18367 18371])
+                            ("message" variable nil (reparse-symbol function_parameters) [18373 18380])
+                            ("priority" variable nil (reparse-symbol function_parameters) [18382 18390]))                          )
+                        (reparse-symbol indented_block_body) [18349 18542])
+                    ("getOutNextMessage" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18569 18573]))                          )
+                        (reparse-symbol indented_block_body) [18547 18817])
+                    ("reportException" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18842 18846]))                          )
+                        (reparse-symbol indented_block_body) [18822 19249])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19262 19266]))                          )
+                        (reparse-symbol indented_block_body) [19254 19846]))                  
+                :type "class")
+                nil [16145 19846])
+            ("ExtractThread" type
+               (:superclasses ("BaseThread")
+                :members 
+                  ( ("stagingFolder" code nil (reparse-symbol indented_block_body) [19884 19924])
+                    ("convertedFolder" code nil (reparse-symbol indented_block_body) [19929 19973])
+                    ("originalFolder" code nil (reparse-symbol indented_block_body) [19978 20020])
+                    ("dropletFile" code nil (reparse-symbol indented_block_body) [20025 20084])
+                    ("__init__" function
+                       (:suite 
+                          ( ("BaseThread" code nil (reparse-symbol indented_block_body) [20117 20161]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20102 20106]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [20089 20162])
+                    ("unZip" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20177 20181])
+                            ("fileInfo" variable nil (reparse-symbol function_parameters) [20183 20191])
+                            ("uniqueStagingFolder" variable nil (reparse-symbol function_parameters) [20193 20212]))                          )
+                        (reparse-symbol indented_block_body) [20167 20641])
+                    ("unRar" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20656 20660])
+                            ("fileInfo" variable nil (reparse-symbol function_parameters) [20662 20670])
+                            ("uniqueStagingFolder" variable nil (reparse-symbol function_parameters) [20672 20691]))                          )
+                        (reparse-symbol indented_block_body) [20646 21844])
+                    ("convertMovie" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21866 21870])
+                            ("fileInfo" variable nil (reparse-symbol function_parameters) [21872 21880]))                          )
+                        (reparse-symbol indented_block_body) [21849 24196])
+                    ("processMultipleMovies" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24227 24231])
+                            ("fileInfo" variable nil (reparse-symbol function_parameters) [24233 24241])
+                            ("uniqueStagingFolder" variable nil (reparse-symbol function_parameters) [24243 24262]))                          )
+                        (reparse-symbol indented_block_body) [24201 25816])
+                    ("getCode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25833 25837])
+                            ("number" variable nil (reparse-symbol function_parameters) [25839 25845]))                          )
+                        (reparse-symbol indented_block_body) [25821 25883])
+                    ("getUniqueFilename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25910 25914])
+                            ("number" variable nil (reparse-symbol function_parameters) [25916 25922])
+                            ("filename" variable nil (reparse-symbol function_parameters) [25924 25932]))                          )
+                        (reparse-symbol indented_block_body) [25888 25992])
+                    ("processFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26013 26017])
+                            ("fileInfo" variable nil (reparse-symbol function_parameters) [26019 26027]))                          )
+                        (reparse-symbol indented_block_body) [25997 27811])
+                    ("handleMessage" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27834 27838])
+                            ("message" variable nil (reparse-symbol function_parameters) [27840 27847]))                          )
+                        (reparse-symbol indented_block_body) [27816 28005]))                  
+                :type "class")
+                nil [19847 28005])
+            ("TransferThread" type
+               (:superclasses ("BaseThread")
+                :members 
+                  ( ("defaultMountPoint" variable nil (reparse-symbol indented_block_body) [28044 28082])
+                    ("mountPoint" variable nil (reparse-symbol indented_block_body) [28087 28118])
+                    ("currentlyMounted" variable nil (reparse-symbol indented_block_body) [28123 28144])
+                    ("destinationFolder" variable nil (reparse-symbol indented_block_body) [28149 28188])
+                    ("failedFile" variable nil (reparse-symbol indented_block_body) [28193 28216])
+                    ("pleaseUnmount" variable nil (reparse-symbol indented_block_body) [28221 28239])
+                    ("__init__" function
+                       (:suite 
+                          ( ("BaseThread" code nil (reparse-symbol indented_block_body) [28272 28316]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28257 28261]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [28244 28317])
+                    ("handleMessage" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28340 28344])
+                            ("message" variable nil (reparse-symbol function_parameters) [28346 28353]))                          )
+                        (reparse-symbol indented_block_body) [28322 28819])
+                    ("mount" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28834 28838])
+                            ("volume" variable nil (reparse-symbol function_parameters) [28840 28846])
+                            ("machineName" variable nil (reparse-symbol function_parameters) [28848 28859]))                          )
+                        (reparse-symbol indented_block_body) [28824 29262])
+                    ("unmount" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29279 29283]))                          )
+                        (reparse-symbol indented_block_body) [29267 29435])
+                    ("storeFailed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29456 29460])
+                            ("filename" variable nil (reparse-symbol function_parameters) [29462 29470]))                          )
+                        (reparse-symbol indented_block_body) [29440 29582])
+                    ("copyToDestination" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29609 29613])
+                            ("fileInfo" variable nil (reparse-symbol function_parameters) [29615 29623]))                          )
+                        (reparse-symbol indented_block_body) [29587 32736]))                  
+                :type "class")
+                nil [28006 32736])
+            ("MaxHDWatcher" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [32789 32811])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32820 32854])
+                            ("self" code nil (reparse-symbol indented_block_body) [32863 32878]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32774 32778]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [32761 32879])
+                    ("getNewFiles" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32900 32904])
+                            ("topFolder" variable nil (reparse-symbol function_parameters) [32906 32915]))                          )
+                        (reparse-symbol indented_block_body) [32884 33790])
+                    ("finishedProcessingFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33822 33826])
+                            ("filename" variable nil (reparse-symbol function_parameters) [33828 33836]))                          )
+                        (reparse-symbol indented_block_body) [33795 33951])
+                    ("loadList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33969 33973]))                          )
+                        (reparse-symbol indented_block_body) [33956 34311]))                  
+                :type "class")
+                nil [32737 34311])
+            ("FinderThread" type
+               (:superclasses ("BaseThread")
+                :members 
+                  ( ("watcher" variable nil (reparse-symbol indented_block_body) [34348 34370])
+                    ("uniqueNumber" variable nil (reparse-symbol indented_block_body) [34375 34391])
+                    ("watchFolders" variable nil (reparse-symbol indented_block_body) [34396 34411])
+                    ("__init__" function
+                       (:suite 
+                          ( ("BaseThread" code nil (reparse-symbol indented_block_body) [34444 34488])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34497 34517])
+                            ("self" code nil (reparse-symbol indented_block_body) [34526 34548]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34429 34433]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [34416 34549])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34562 34566]))                          )
+                        (reparse-symbol indented_block_body) [34554 35022])
+                    ("reloadWatchList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35047 35051]))                          )
+                        (reparse-symbol indented_block_body) [35027 37151])
+                    ("createTicket" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37173 37177])
+                            ("fileInfo" variable nil (reparse-symbol function_parameters) [37179 37187]))                          )
+                        (reparse-symbol indented_block_body) [37156 37842])
+                    ("finishedProcessingFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37874 37878])
+                            ("fileInfo" variable nil (reparse-symbol function_parameters) [37880 37888]))                          )
+                        (reparse-symbol indented_block_body) [37847 38722])
+                    ("scanForFiles" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38744 38748]))                          )
+                        (reparse-symbol indented_block_body) [38727 42630]))                  
+                :type "class")
+                nil [34312 42630])
+            ("log" function
+               (:documentation " The Log function writes the message passed in to the log file and the console "
+                :arguments 
+                  ( ("message" variable nil (reparse-symbol function_parameters) [42640 42647]))                  )
+                nil [42631 43151])
+            ("flushLog" function nil nil [43152 43255])
+            ("main" function nil nil [43257 46637])
+            ("if" code nil nil [46638 46676]))          
+      :file "MacHDWatcher.py"
+      :pointmax 46676
+      :fsize 47873
+      :lastmodtime '(21926 9960 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 43541 . 46637) (INDENT_BLOCK 43503 . 46637) (INDENT_BLOCK 43461 . 46637) (INDENT_BLOCK 43422 . 46637) (INDENT_BLOCK 43384 . 46637) (INDENT_BLOCK 43350 . 46637) (INDENT_BLOCK 43293 . 46637) (INDENT_BLOCK 43269 . 46637) (INDENT_BLOCK 13119 . 16144) (NEWLINE 13117 . 13118)))
+    (semanticdb-table "ShotgunInterface.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("Shotgun" include nil nil [1 28])
+            ("webbrowser" include nil nil [29 46])
+            ("time" include nil nil [47 58])
+            ("os" include nil nil [59 68])
+            ("sys" include nil nil [69 79])
+            ("re" include nil nil [80 89])
+            ("getpass" include nil nil [90 104])
+            ("traceback" include nil nil [105 121])
+            ("log" function
+               (:documentation "
+        Writes the passed in message to the console with a date and time stamp.
+    "
+                :arguments 
+                  ( ("msg" variable nil (reparse-symbol function_parameters) [131 134]))                  )
+                nil [123 335])
+            ("ShotgunInterface" type
+               (:documentation "
+        Interface object for accessing Shotgun.
+        
+        This class is a Singleton. If you need a unique instance of this class you need to
+        specify newInstance=True in the constructor.
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("PUBLISH_TYPE_GEOMETRY" variable nil (reparse-symbol indented_block_body) [589 612])
+                    ("PUBLISH_TYPE_RIG" variable nil (reparse-symbol indented_block_body) [617 635])
+                    ("PUBLISH_TYPE_SHADER" variable nil (reparse-symbol indented_block_body) [640 661])
+                    ("PUBLISH_TYPE_PRD" variable nil (reparse-symbol indented_block_body) [666 684])
+                    ("PUBLISH_TYPE_BLENDSHAPES" variable nil (reparse-symbol indented_block_body) [689 715])
+                    ("PUBLISH_TYPE_FUR" variable nil (reparse-symbol indented_block_body) [720 738])
+                    ("PUBLISH_TYPE_CAMERA" variable nil (reparse-symbol indented_block_body) [743 764])
+                    ("PUBLISH_TYPE_BLOCKING" variable nil (reparse-symbol indented_block_body) [769 792])
+                    ("STATUS_WAITING_TO_START" variable nil (reparse-symbol indented_block_body) [802 827])
+                    ("STATUS_READY_TO_START" variable nil (reparse-symbol indented_block_body) [832 855])
+                    ("STATUS_IN_PROGRESS" variable nil (reparse-symbol indented_block_body) [860 880])
+                    ("STATUS_ON_HOLD" variable nil (reparse-symbol indented_block_body) [885 901])
+                    ("STATUS_READY_FOR_REVISION" variable nil (reparse-symbol indented_block_body) [906 933])
+                    ("STATUS_COMPLETE" variable nil (reparse-symbol indented_block_body) [938 955])
+                    ("ASSET_STATUS_WAITING_TO_START" variable nil (reparse-symbol indented_block_body) [965 996])
+                    ("ASSET_STATUS_IN_PROGRESS" variable nil (reparse-symbol indented_block_body) [1001 1027])
+                    ("ASSET_STATUS_PROXY_READY_FOR_SHIP" variable nil (reparse-symbol indented_block_body) [1032 1067])
+                    ("ASSET_STATUS_PROXY_SHIPPED" variable nil (reparse-symbol indented_block_body) [1072 1100])
+                    ("ASSET_STATUS_READY_FOR_SHIP" variable nil (reparse-symbol indented_block_body) [1105 1134])
+                    ("ASSET_STATUS_SHIPPED" variable nil (reparse-symbol indented_block_body) [1139 1161])
+                    ("RENDER_TYPE_ANIM" variable nil (reparse-symbol indented_block_body) [1167 1187])
+                    ("RENDER_TYPE_LGT" variable nil (reparse-symbol indented_block_body) [1192 1211])
+                    ("RENDER_TYPE_RETAKE" variable nil (reparse-symbol indented_block_body) [1216 1238])
+                    ("RENDER_TYPE_GEOMETRY" variable nil (reparse-symbol indented_block_body) [1243 1267])
+                    ("RENDER_TYPE_RIG" variable nil (reparse-symbol indented_block_body) [1272 1291])
+                    ("RENDER_TYPE_SHADER" variable nil (reparse-symbol indented_block_body) [1296 1318])
+                    ("RENDER_TYPE_BLENDSHAPES" variable nil (reparse-symbol indented_block_body) [1323 1350])
+                    ("RENDER_TYPE_ANIMATIC" variable nil (reparse-symbol indented_block_body) [1355 1379])
+                    ("CacheData" variable nil (reparse-symbol indented_block_body) [1389 1404])
+                    ("server_name" variable nil (reparse-symbol indented_block_body) [1414 1430])
+                    ("ShotgunProjects" variable nil (reparse-symbol indented_block_body) [1435 1837])
+                    ("_instance" variable nil (reparse-symbol indented_block_body) [1851 1867])
+                    ("__new__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [1885 1888])
+                        ("args" variable nil (reparse-symbol function_parameters) [1890 1895])
+                        ("kwargs" variable nil (reparse-symbol function_parameters) [1897 1905]))                      ) (reparse-symbol indented_block_body) [1873 2282])
+                    ("__init__" function
+                       (:suite 
+                          ( ("if" code nil (reparse-symbol indented_block_body) [2349 2402])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2419 2447])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2456 2514])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2523 2542])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2551 2624])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2633 2702])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2711 2773])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2782 2837])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2846 2923])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2932 2990])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3008 3032])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3041 3125])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3134 3207])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3216 3308])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3317 3397])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3406 3485])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3494 3561])
+                            ("server_path, script_user, script_key" code nil (reparse-symbol indented_block_body) [3572 3643])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3652 3682])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3691 3721])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3730 3758])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3767 3781])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3790 3811])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3820 3836]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2304 2308])
+                            ("server_name" variable nil (reparse-symbol function_parameters) [2310 2321])
+                            ("args" variable nil (reparse-symbol function_parameters) [2323 2328])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [2330 2338]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2291 3837])
+                    ("getProjectName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3865 3869])
+                            ("code" variable nil (reparse-symbol function_parameters) [3871 3875]))                          )
+                        (reparse-symbol indented_block_body) [3846 3991])
+                    ("getProjectCode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4023 4027])
+                            ("name" variable nil (reparse-symbol function_parameters) [4029 4033]))                          )
+                        (reparse-symbol indented_block_body) [4004 4187])
+                    ("loadServers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4208 4212]))                          )
+                        (reparse-symbol indented_block_body) [4192 5295])
+                    ("getServerSetup" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5327 5331])
+                            ("server_name" variable nil (reparse-symbol function_parameters) [5333 5344]))                          )
+                        (reparse-symbol indented_block_body) [5308 6174])
+                    ("connectToServer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6199 6203]))                          
+                        :documentation "
+            Connects to Shotgun if the connection has not already been established.
+        ")
+                        (reparse-symbol indented_block_body) [6179 6495])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6512 6516])
+                            ("projectName" variable nil (reparse-symbol function_parameters) [6518 6529]))                          
+                        :documentation "
+            Connects to Shotgun if the connection has not already been established.
+        ")
+                        (reparse-symbol indented_block_body) [6500 6865])
+                    ("getProjectID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6887 6891])
+                            ("name" variable nil (reparse-symbol function_parameters) [6892 6896]))                          
+                        :documentation "
+            Returns the project ID for the specified project name
+        ")
+                        (reparse-symbol indented_block_body) [6870 7322])
+                    ("getProjectInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7346 7350])
+                            ("fields" variable nil (reparse-symbol function_parameters) [7351 7357])
+                            ("name" variable nil (reparse-symbol function_parameters) [7358 7362]))                          
+                        :documentation "
+            Returns the project ID for the specified project name
+        ")
+                        (reparse-symbol indented_block_body) [7327 8085])
+                    ("getProjectNames" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8110 8114])
+                            ("filters" variable nil (reparse-symbol function_parameters) [8116 8123]))                          
+                        :documentation "
+            Returns the project ID for the specified project name
+        ")
+                        (reparse-symbol indented_block_body) [8090 8595])
+                    ("getStatusName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8618 8622])
+                            ("code" variable nil (reparse-symbol function_parameters) [8623 8627]))                          
+                        :documentation "
+            Returns the status name for the specified status code.
+        ")
+                        (reparse-symbol indented_block_body) [8600 9043])
+                    ("getStatusCode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9066 9070])
+                            ("status" variable nil (reparse-symbol function_parameters) [9071 9077]))                          
+                        :documentation "
+            Returns the status code for the specified status name.
+
+            Returns (Status code)
+        ")
+                        (reparse-symbol indented_block_body) [9048 9536])
+                    ("getEntityID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9557 9561])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [9563 9572])
+                            ("entityType" variable nil (reparse-symbol function_parameters) [9574 9584]))                          )
+                        (reparse-symbol indented_block_body) [9541 9897])
+                    ("getAssetID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9917 9921])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [9923 9932]))                          )
+                        (reparse-symbol indented_block_body) [9902 10601])
+                    ("getEpisodeID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10623 10627])
+                            ("episode" variable nil (reparse-symbol function_parameters) [10629 10636]))                          )
+                        (reparse-symbol indented_block_body) [10606 11926])
+                    ("getEpisodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11951 11955]))                          )
+                        (reparse-symbol indented_block_body) [11935 12201])
+                    ("getShotID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12246 12250])
+                            ("episode" variable nil (reparse-symbol function_parameters) [12252 12259])
+                            ("shot" variable nil (reparse-symbol function_parameters) [12261 12265]))                          )
+                        (reparse-symbol indented_block_body) [12232 13818])
+                    ("getShotInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13839 13843])
+                            ("episode" variable nil (reparse-symbol function_parameters) [13845 13852])
+                            ("shot" variable nil (reparse-symbol function_parameters) [13854 13858])
+                            ("fields" variable nil (reparse-symbol function_parameters) [13860 13866]))                          )
+                        (reparse-symbol indented_block_body) [13823 14532])
+                    ("getAssetInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14558 14562])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [14564 14573])
+                            ("fields" variable nil (reparse-symbol function_parameters) [14575 14581]))                          )
+                        (reparse-symbol indented_block_body) [14541 15329])
+                    ("getID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15344 15348])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [15350 15359]))                          )
+                        (reparse-symbol indented_block_body) [15334 16095])
+                    ("getPipelineStepID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16122 16126])
+                            ("name" variable nil (reparse-symbol function_parameters) [16128 16132]))                          
+                        :documentation "
+            Returns the id of a step
+        ")
+                        (reparse-symbol indented_block_body) [16100 16526])
+                    ("getTaskInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16547 16551])
+                            ("asset" variable nil (reparse-symbol function_parameters) [16553 16558])
+                            ("pipeline" variable nil (reparse-symbol function_parameters) [16560 16568])
+                            ("task" variable nil (reparse-symbol function_parameters) [16570 16574])
+                            ("fields" variable nil (reparse-symbol function_parameters) [16576 16582])
+                            ("assetIsID" variable nil (reparse-symbol function_parameters) [16608 16617]))                          )
+                        (reparse-symbol indented_block_body) [16531 17893])
+                    ("getTaskStatus" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17916 17920])
+                            ("asset" variable nil (reparse-symbol function_parameters) [17922 17927])
+                            ("pipeline" variable nil (reparse-symbol function_parameters) [17929 17937])
+                            ("task" variable nil (reparse-symbol function_parameters) [17939 17943]))                          )
+                        (reparse-symbol indented_block_body) [17898 18404])
+                    ("getEntityInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18427 18431])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [18433 18442])
+                            ("fields" variable nil (reparse-symbol function_parameters) [18444 18450]))                          )
+                        (reparse-symbol indented_block_body) [18409 19213])
+                    ("getEntityList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19236 19240])
+                            ("entityType" variable nil (reparse-symbol function_parameters) [19242 19252])
+                            ("fields" variable nil (reparse-symbol function_parameters) [19254 19260])
+                            ("filters" variable nil (reparse-symbol function_parameters) [19262 19269])
+                            ("ignoreProject" variable nil (reparse-symbol function_parameters) [19276 19289]))                          )
+                        (reparse-symbol indented_block_body) [19218 19747])
+                    ("getAssetList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19769 19773])
+                            ("filters" variable nil (reparse-symbol function_parameters) [19775 19782]))                          )
+                        (reparse-symbol indented_block_body) [19752 20307])
+                    ("getShotList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20328 20332])
+                            ("episodeName" variable nil (reparse-symbol function_parameters) [20334 20345])
+                            ("setting" variable nil (reparse-symbol function_parameters) [20347 20354]))                          )
+                        (reparse-symbol indented_block_body) [20312 21380])
+                    ("createDocumentEntity" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21414 21418])
+                            ("document_filename" variable nil (reparse-symbol function_parameters) [21420 21437])
+                            ("tags" variable nil (reparse-symbol function_parameters) [21439 21443])
+                            ("description" variable nil (reparse-symbol function_parameters) [21445 21456]))                          )
+                        (reparse-symbol indented_block_body) [21389 22748])
+                    ("_getPublishTypeString" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22779 22783])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [22785 22796]))                          )
+                        (reparse-symbol indented_block_body) [22753 23452])
+                    ("_getRenderTypeString" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23482 23486])
+                            ("renderType" variable nil (reparse-symbol function_parameters) [23488 23498]))                          )
+                        (reparse-symbol indented_block_body) [23457 24155])
+                    ("createPublishVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24185 24189])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [24191 24200])
+                            ("versionTag" variable nil (reparse-symbol function_parameters) [24202 24212])
+                            ("description" variable nil (reparse-symbol function_parameters) [24214 24225])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [24227 24238])
+                            ("contains" variable nil (reparse-symbol function_parameters) [24240 24248]))                          )
+                        (reparse-symbol indented_block_body) [24160 25338])
+                    ("getLatestPublishedVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25373 25377])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [25379 25388])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [25390 25401]))                          )
+                        (reparse-symbol indented_block_body) [25343 26606])
+                    ("getLatestPublishedVersions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26642 26646])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [26648 26657]))                          )
+                        (reparse-symbol indented_block_body) [26611 28122])
+                    ("getLatestPublishedContents" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28158 28162])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [28164 28173])
+                            ("publishType" variable nil (reparse-symbol function_parameters) [28175 28186]))                          )
+                        (reparse-symbol indented_block_body) [28127 29407])
+                    ("updateTask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29427 29431])
+                            ("asset" variable nil (reparse-symbol function_parameters) [29433 29438])
+                            ("pipelineStep" variable nil (reparse-symbol function_parameters) [29440 29452])
+                            ("taskName" variable nil (reparse-symbol function_parameters) [29454 29462])
+                            ("statusCode" variable nil (reparse-symbol function_parameters) [29464 29474]))                          )
+                        (reparse-symbol indented_block_body) [29412 30611])
+                    ("getAssetStatus" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30647 30651])
+                            ("asset" variable nil (reparse-symbol function_parameters) [30653 30658]))                          )
+                        (reparse-symbol indented_block_body) [30628 31547])
+                    ("getAssetParent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31571 31575])
+                            ("asset" variable nil (reparse-symbol function_parameters) [31577 31582]))                          )
+                        (reparse-symbol indented_block_body) [31552 32627])
+                    ("getAssetDerivatives" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32656 32660])
+                            ("asset" variable nil (reparse-symbol function_parameters) [32662 32667]))                          )
+                        (reparse-symbol indented_block_body) [32632 33557])
+                    ("updateAssetStatus" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33584 33588])
+                            ("asset" variable nil (reparse-symbol function_parameters) [33590 33595])
+                            ("statusCode" variable nil (reparse-symbol function_parameters) [33597 33607]))                          )
+                        (reparse-symbol indented_block_body) [33562 34103])
+                    ("createNote" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34123 34127])
+                            ("asset" variable nil (reparse-symbol function_parameters) [34129 34134])
+                            ("subject" variable nil (reparse-symbol function_parameters) [34136 34143])
+                            ("content" variable nil (reparse-symbol function_parameters) [34145 34152])
+                            ("pipeline" variable nil (reparse-symbol function_parameters) [34154 34162])
+                            ("task" variable nil (reparse-symbol function_parameters) [34169 34173])
+                            ("data" variable nil (reparse-symbol function_parameters) [34180 34184]))                          
+                        :documentation "
+            Creates a note indicating that the specified task has had a status change. A list of users to notify
+            will be generated and the note will be addressed to them.
+        ")
+                        (reparse-symbol indented_block_body) [34108 35861])
+                    ("getUsernameID" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35888 35892])
+                            ("username" variable nil (reparse-symbol function_parameters) [35894 35902]))                          )
+                        (reparse-symbol indented_block_body) [35870 36257])
+                    ("createSequence" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36281 36285])
+                            ("name" variable nil (reparse-symbol function_parameters) [36287 36291])
+                            ("episode" variable nil (reparse-symbol function_parameters) [36293 36300]))                          )
+                        (reparse-symbol indented_block_body) [36262 36903])
+                    ("getSequence" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36924 36928])
+                            ("name" variable nil (reparse-symbol function_parameters) [36930 36934])
+                            ("createIfDoesntExist" variable nil (reparse-symbol function_parameters) [36936 36955]))                          )
+                        (reparse-symbol indented_block_body) [36908 37258])
+                    ("createRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37291 37295])
+                            ("episode" variable nil (reparse-symbol function_parameters) [37297 37304])
+                            ("ShotName" variable nil (reparse-symbol function_parameters) [37306 37314])
+                            ("versionTag" variable nil (reparse-symbol function_parameters) [37316 37326])
+                            ("description" variable nil (reparse-symbol function_parameters) [37328 37339])
+                            ("videoFile" variable nil (reparse-symbol function_parameters) [37341 37350])
+                            ("type" variable nil (reparse-symbol function_parameters) [37352 37356])
+                            ("contains" variable nil (reparse-symbol function_parameters) [37358 37366])
+                            ("uploadVideo" variable nil (reparse-symbol function_parameters) [37371 37382])
+                            ("noteSubject" variable nil (reparse-symbol function_parameters) [37389 37400]))                          )
+                        (reparse-symbol indented_block_body) [37267 37970])
+                    ("createAssetRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38012 38016])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [38018 38027])
+                            ("versionTag" variable nil (reparse-symbol function_parameters) [38029 38039])
+                            ("description" variable nil (reparse-symbol function_parameters) [38041 38052])
+                            ("videoFile" variable nil (reparse-symbol function_parameters) [38054 38063])
+                            ("type" variable nil (reparse-symbol function_parameters) [38065 38069])
+                            ("contains" variable nil (reparse-symbol function_parameters) [38071 38079])
+                            ("uploadVideo" variable nil (reparse-symbol function_parameters) [38084 38095])
+                            ("noteSubject" variable nil (reparse-symbol function_parameters) [38102 38113])
+                            ("username" variable nil (reparse-symbol function_parameters) [38120 38128])
+                            ("data" variable nil (reparse-symbol function_parameters) [38135 38139]))                          )
+                        (reparse-symbol indented_block_body) [37983 44414])
+                    ("getLatestRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [44446 44450])
+                            ("episode" variable nil (reparse-symbol function_parameters) [44452 44459])
+                            ("shotName" variable nil (reparse-symbol function_parameters) [44461 44469]))                          )
+                        (reparse-symbol indented_block_body) [44419 44815])
+                    ("getLatestAssetRenderVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [44852 44856])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [44858 44867])
+                            ("type" variable nil (reparse-symbol function_parameters) [44869 44873])
+                            ("returnId" variable nil (reparse-symbol function_parameters) [44880 44888]))                          )
+                        (reparse-symbol indented_block_body) [44820 46022]))                  
+                :type "class")
+                nil [336 46022])
+            ("browseToAssetInShotgun" function (:arguments 
+              ( ("filePath" variable nil (reparse-symbol function_parameters) [46050 46058]))              ) nil [46023 47446])
+            ("browseToScreeningRoomInShotgun" function (:arguments 
+              ( ("filePath" variable nil (reparse-symbol function_parameters) [47490 47498]))              ) nil [47455 48912])
+            ("uploadAnimaticShots" function nil nil [48913 50702])
+            ("reportException" function (:arguments 
+              ( ("log" variable nil (reparse-symbol function_parameters) [50723 50726]))              ) nil [50703 51073])
+            ("if" code nil nil [51074 52133]))          
+      :file "ShotgunInterface.py"
+      :pointmax 64256
+      :fsize 65866
+      :lastmodtime '(21896 15466 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 35670 . 35725) (NEWLINE 35669 . 35670) (COLON 35668 . 35669) (TRY 35494 . 35497) (AS 35664 . 35666)))
+    (semanticdb-table "DeliveryConvert.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("Droplet" type
+               (:members 
+                  ( ("dropletFile" variable nil (reparse-symbol indented_block_body) [20 34])
+                    ("convertedFolder" variable nil (reparse-symbol indented_block_body) [39 57])
+                    ("log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [70 74])
+                            ("message" variable nil (reparse-symbol function_parameters) [76 83]))                          )
+                        (reparse-symbol indented_block_body) [62 99])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [172 196])
+                            ("self" variable nil (reparse-symbol indented_block_body) [205 251]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [121 125])
+                            ("filename" variable nil (reparse-symbol function_parameters) [127 135])
+                            ("deleteWhenConverted" variable nil (reparse-symbol function_parameters) [137 156]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [108 252])
+                    ("convertMovie" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [278 282]))                          )
+                        (reparse-symbol indented_block_body) [261 1458]))                  
+                :type "class")
+                nil [1 1458]))          
+      :file "DeliveryConvert.py"
+      :pointmax 1463
+      :fsize 1508
+      :lastmodtime '(21896 15466 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Tools!MacHDWatcher!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

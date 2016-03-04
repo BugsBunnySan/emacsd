@@ -1,0 +1,192 @@
+;; Object tk_multi_publish/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "tk_multi_publish/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 488
+      :fsize 487
+      :lastmodtime '(22220 36440 0 0)
+      :unmatched-syntax '((IMPORT 467 . 473) ($EOI 488 . 488) (PERIOD 458 . 459)))
+    (semanticdb-table "publish.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [453 462])
+            ("pprint" include nil nil [463 476])
+            ("tempfile" include nil nil [477 492])
+            ("tank" include nil nil [494 505])
+            ("tank" include nil nil [506 532])
+            ("tank.platform.qt" include nil nil [533 575])
+            ("TaskProgressReporter" include nil nil [592 619])
+            ("PublishForm" include nil nil [639 657])
+            ("PublishOutput" include nil nil [672 692])
+            ("Item" include nil nil [704 715])
+            ("Task" include nil nil [727 738])
+            ("PublishHandler" type
+               (:documentation "
+    Main publish handler
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Construction
+        \"\"\"" code nil (reparse-symbol indented_block_body) [861 897])
+                            ("self" variable nil (reparse-symbol indented_block_body) [906 921])
+                            ("self" variable nil (reparse-symbol indented_block_body) [931 992])
+                            ("primary_output_dict" variable nil (reparse-symbol indented_block_body) [1045 1069])
+                            ("primary_output_dict" variable nil (reparse-symbol indented_block_body) [1078 1167])
+                            ("primary_output_dict" variable nil (reparse-symbol indented_block_body) [1176 1259])
+                            ("primary_output_dict" variable nil (reparse-symbol indented_block_body) [1268 1349])
+                            ("primary_output_dict" variable nil (reparse-symbol indented_block_body) [1358 1425])
+                            ("primary_output_dict" variable nil (reparse-symbol indented_block_body) [1434 1511])
+                            ("primary_output_dict" variable nil (reparse-symbol indented_block_body) [1520 1611])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1620 1751])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1769 1886])
+                            ("unique_names" variable nil (reparse-symbol indented_block_body) [1946 1963])
+                            ("for" code nil (reparse-symbol indented_block_body) [1972 3026]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [841 845])
+                            ("app" variable nil (reparse-symbol function_parameters) [847 850]))                          
+                        :documentation "
+        Construction
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [828 3026])
+                    ("show_publish_dlg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3060 3064]))                          
+                        :documentation "
+        Displays the publish dialog
+        ")
+                        (reparse-symbol indented_block_body) [3039 3689])
+                    ("get_publish_tasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3720 3724]))                          
+                        :documentation "
+        Get the list of tasks that can be published
+        ")
+                        (reparse-symbol indented_block_body) [3698 3984])
+                    ("get_shotgun_tasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4015 4019]))                          
+                        :documentation "
+        Pull a list of tasks from shotgun based on the current context
+        ")
+                        (reparse-symbol indented_block_body) [3993 4899])
+                    ("get_initial_thumbnail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4930 4934]))                          
+                        :documentation "
+        Get the initial thumbnail to use for the publish
+        ")
+                        (reparse-symbol indented_block_body) [4904 5089])
+                    ("_on_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5127 5131])
+                            ("publish_form" variable nil (reparse-symbol function_parameters) [5133 5145]))                          
+                        :documentation "
+        Slot called when publish signal is emitted from the UI
+        ")
+                        (reparse-symbol indented_block_body) [5111 13587])
+                    ("_build_task_list" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13613 13617])
+                            ("items" variable nil (reparse-symbol function_parameters) [13619 13624]))                          
+                        :documentation "
+        Takes a list of items and builds a list of tasks containing
+        each item and it's corresponding output in output-centric
+        order
+        ")
+                        (reparse-symbol indented_block_body) [13592 14999])
+                    ("_scan_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15024 15028]))                          
+                        :documentation "
+        Find the list of 'items' to publish
+        ")
+                        (reparse-symbol indented_block_body) [15008 15997])
+                    ("_do_pre_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16030 16034])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [16036 16048])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [16050 16065])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [16067 16078])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [16080 16089]))                          
+                        :documentation "
+        Do pre-publish pass on tasks using the pre-publish hook
+        ")
+                        (reparse-symbol indented_block_body) [16010 17695])
+                    ("_do_primary_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17742 17746])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [17748 17760])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [17762 17769])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [17771 17785])
+                            ("comment" variable nil (reparse-symbol function_parameters) [17787 17794])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [17796 17807])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [17817 17826]))                          
+                        :documentation "
+        Do publish of primary task with the primary publish hook
+        ")
+                        (reparse-symbol indented_block_body) [17709 18312])
+                    ("_do_secondary_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18369 18373])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [18375 18390])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [18392 18404])
+                            ("primary_publish_path" variable nil (reparse-symbol function_parameters) [18406 18426])
+                            ("sg_task" variable nil (reparse-symbol function_parameters) [18428 18435])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [18445 18459])
+                            ("comment" variable nil (reparse-symbol function_parameters) [18461 18468])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [18470 18481])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [18483 18492]))                          
+                        :documentation "
+        Do publish of secondary tasks using the secondary publish hook
+        ")
+                        (reparse-symbol indented_block_body) [18334 19980])
+                    ("_do_post_publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20022 20026])
+                            ("primary_task" variable nil (reparse-symbol function_parameters) [20028 20040])
+                            ("secondary_tasks" variable nil (reparse-symbol function_parameters) [20042 20057])
+                            ("progress_cb" variable nil (reparse-symbol function_parameters) [20059 20070])
+                            ("user_data" variable nil (reparse-symbol function_parameters) [20072 20081]))                          
+                        :documentation "
+        Do post-publish using the post-publish hook
+        ")
+                        (reparse-symbol indented_block_body) [20001 20638]))                  
+                :type "class")
+                nil [744 20638]))          
+      :file "publish.py"
+      :pointmax 20648
+      :fsize 20647
+      :lastmodtime '(22220 36440 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 13269 . 13316) (NEWLINE 12996 . 12997) (COLON 12995 . 12996) (FINALLY 12988 . 12995) (INDENT_BLOCK 8015 . 8645) (NEWLINE 8014 . 8015) (COLON 8013 . 8014) (FINALLY 8006 . 8013) (FROM 3216 . 3220) (PERIOD 3221 . 3222) (FROM 716 . 720) (PERIOD 721 . 722) (FROM 693 . 697) (PERIOD 698 . 699) (FROM 659 . 663) (PERIOD 664 . 665) (FROM 620 . 624) (PERIOD 625 . 626) (FROM 577 . 581) (PERIOD 582 . 583)))
+    (semanticdb-table "Item.py"
+      :file "Item.py"
+      :fsize 1433
+      :lastmodtime '(22220 36440 0 0))
+    (semanticdb-table "Task.py"
+      :file "Task.py"
+      :fsize 2187
+      :lastmodtime '(22220 36440 0 0)))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!apps!app_store!tk-multi-publish!v0.8.7!python!tk_multi_publish!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

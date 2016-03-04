@@ -1,0 +1,178 @@
+;; Object v1.3.1/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "v1.3.1/"
+  :tables
+  (list
+    (semanticdb-table "app.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+A breakdown app which shows what in the scene is out of date.
+\"\"\"" code nil nil [448 517])
+            ("tank.platform" include nil nil [519 556])
+            ("sys" include nil nil [558 568])
+            ("os" include nil nil [569 578])
+            ("MultiBreakdown" type
+               (:superclasses ("Application")
+                :members 
+                  ( ("init_app" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [633 637]))                          
+                        :documentation "
+        Called as the application is being initialized
+        ")
+                        (reparse-symbol indented_block_body) [620 942])
+                    ("show_breakdown_dialog" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [974 978]))                          
+                        :documentation "
+        Show the breakdown UI as a dialog.
+        
+        This is a helper method to make it easy to programatically access the breakdown UI.
+        External code could then do something like:
+        
+        >>> import sgtk
+        >>> e = sgtk.platform.current_engine()
+        >>> e.apps[\"tk-multi-breakdown\"].show_breakdown_dialog()
+        ")
+                        (reparse-symbol indented_block_body) [948 1530])
+                    ("analyze_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1570 1574]))                          
+                        :documentation "
+        Runs the scene analysis and returns a list of scene items.
+        
+        Each item is represented by a dictionary with a number of keys to 
+        describe the item. This method uses the same logic that the main UI
+        uses to determine the list of files.
+        
+        Only files whose path corresponds to a template in the toolkit templates
+        file will be detected. Files do not need to exist as publishes in Shotgun
+        however if they do, this method will return basic Shotgun publish metadata
+        for them.
+        
+        The two keys node_name and node_type are used to return a DCC-centric 
+        \"address\" or representation which makes it possible to identify the path
+        within the DCC. In for example Maya and Nuke, this will return the 
+        node name and type. The logic for this is implemented in the hooks and 
+        will vary between DCCs.
+        
+        Here is an example of what the return data typically looks like:
+        
+        {'fields': {'Sequence': 'aaa',
+                    'Shot': 'aaa_00010',
+                    'Step': 'Comp',
+                    'eye': '%V',
+                    'height': 1556,
+                    'name': 'test',
+                    'output': 'output',
+                    'version': 1,
+                    'width': 2048},
+         'template': <Sgtk TemplatePath nuke_shot_render_pub_mono_dpx>,
+         
+         'node_name': 'Read2',
+         'node_type': 'Read',
+         
+         'sg_data': {'code': 'aaa_00010_test_output_v001.%04d.dpx',
+                     'entity': {'id': 1660, 'name': 'aaa_00010', 'type': 'Shot'},
+                     'id': 1424,
+                     'name': 'test',
+                     'published_file_type': {'id': 3,
+                                             'name': 'Rendered Image',
+                                             'type': 'PublishedFileType'},
+                     'task': {'id': 4714, 'name': 'Comp', 'type': 'Task'},
+                     'type': 'PublishedFile',
+                     'project': {'id': 234, 'name': 'Climp', 'type': 'Project'},
+                     'version_number': 1},
+         }
+        
+        This method will attempt to connect to shotgun, but the number of calls made are
+        constant and independent of the scene complexity.
+        
+        Below is an example showing how to retrieve the scene breakdown and update all items
+        that are not using the latest version.
+        
+        # find the breakdown app instance
+        import sgtk
+        engine = sgtk.platform.current_engine()
+        breakdown_app = engine.apps[\"tk-multi-breakdown\"]
+        
+        # get list of breakdown items
+        items = breakdown_app.analyze_scene()
+        
+        # now loop over all items
+        for item in items:
+        
+            # get the latest version on disk
+            latest_version = breakdown_app.compute_highest_version(item[\"template\"], item[\"fields\"])
+            
+            # if our current version is out of date, update it!
+            current_version = item[\"fields\"][\"version\"]
+            if latest_version > current_version:
+                
+                # make a fields dictionary representing the latest version
+                latest_fields = copy.copy(item[\"fields\"])
+                latest_fields[\"version\"] = latest_version
+                
+                # request that the breakdown updates to the latest version
+                breakdown_app.update_item(item[\"node_type\"], item[\"node_name\"], item[\"template\"], latest_fields)
+
+        
+        
+        :returns: List of dictionaries, see above for example.
+        ")
+                        (reparse-symbol indented_block_body) [1552 6400])
+                    ("compute_highest_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6434 6438])
+                            ("template" variable nil (reparse-symbol function_parameters) [6440 6448])
+                            ("fields" variable nil (reparse-symbol function_parameters) [6450 6456]))                          
+                        :documentation "
+        Given a template and some fields, return the highest version number found on disk.
+        The template key containing the version number is assumed to be named {version}.
+        
+        This will perform a scan on disk to determine the highest version.
+        
+        For a usage example, see the analyze_scene() method.
+         
+        :param template: Template object to calculate for
+        :param fields: A complete set of fields for the template
+        :returns: The highest version number found
+        ")
+                        (reparse-symbol indented_block_body) [6406 7147])
+                    ("update_item" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7185 7189])
+                            ("node_type" variable nil (reparse-symbol function_parameters) [7191 7200])
+                            ("node_name" variable nil (reparse-symbol function_parameters) [7202 7211])
+                            ("template" variable nil (reparse-symbol function_parameters) [7213 7221])
+                            ("fields" variable nil (reparse-symbol function_parameters) [7223 7229]))                          
+                        :documentation "
+        Request that the breakdown updates an given node with a new version.
+        This is similar to running the update in the breakdown UI. The actual 
+        update call will be dispatched to a hook which handles the DCC specific logic.
+        
+        For a usage example, see the analyze_scene() method.
+                
+        :param node_type: Node type of the item to update, as returned by analyze_scene()
+        :param node_name: Node name of the item to update, as returned by analyze_scene()
+        :param template: Template object representing the path pattern to update
+        :param fields: Fields dictionary representing the values to apply to the template in order
+                       to render an valid and existing path on disk that the system can update to.
+        ")
+                        (reparse-symbol indented_block_body) [7169 8307]))                  
+                :type "class")
+                nil [580 8307]))          
+      :file "app.py"
+      :pointmax 8310
+      :fsize 8309
+      :lastmodtime '(22182 15923 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_s!SGTK_Development!ShotgunDevelopment!install!apps!app_store!tk-multi-breakdown!v1.3.1!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

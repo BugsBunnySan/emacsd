@@ -1,0 +1,275 @@
+;; Object bbf_scene_hierarchy/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbf_scene_hierarchy/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_scene_hierarchy
+   :synopsis: Library handling Scene hierarchy groups
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 163])
+            ("__future__" include nil nil [164 201]))          
+      :file "__init__.py"
+      :pointmax 202
+      :fsize 209
+      :lastmodtime '(22102 1443 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "groups.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_scene_hierarchy.groups
+   :synopsis: get and create standard scene hierarchy groups
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 177])
+            ("__future__" include nil nil [178 215])
+            ("__all__" variable nil nil [217 326])
+            ("re" include nil nil [328 337])
+            ("pymel.core" include nil nil [339 362])
+            ("BBF.Common.Lib.bbf_base.datastructs" include nil nil [364 428])
+            ("scene_parser" include nil nil [430 449])
+            ("get_top_level_groups" function
+               (:documentation " lists all the top level groups, pontentially under a specified root, potentially matching some filter function
+
+    Args:
+        root: a maya node, directly underneath which groups will be searched for, default: None, meaning scene root
+        node_filter: if not None (default), must be a function (bool f(node)) applied to each node, if it returns False, the node is skipped
+
+    Returns:
+        list: list of Maya transforms
+    "
+                :arguments 
+                  ( ("root" variable nil (reparse-symbol function_parameters) [532 536])
+                    ("node_filter" variable nil (reparse-symbol function_parameters) [543 554]))                  )
+                nil [507 1287])
+            ("_get_child_groups" function
+               (:documentation " lists all groups that are direct children of a bunch of nodes and match a regex
+
+    Args:
+        parent_nodes: a list of parent_nodes
+        child_regex: a compiled RegexObject used to filter child groups
+
+    Returns:
+        list: list of Maya transforms
+    "
+                :arguments 
+                  ( ("parent_nodes" variable nil (reparse-symbol function_parameters) [1310 1322])
+                    ("child_regex" variable nil (reparse-symbol function_parameters) [1324 1335]))                  )
+                nil [1288 1888])
+            ("get_groups" function (:arguments 
+              ( ("group_types" variable nil (reparse-symbol function_parameters) [1904 1915])
+                ("root" variable nil (reparse-symbol function_parameters) [1920 1924]))              ) nil [1889 2172])
+            ("get_special_groups" function
+               (:documentation " lists all the special groups
+
+    Returns:
+        list: list of Maya transforms
+    "
+                :arguments 
+                  ( ("root" variable nil (reparse-symbol function_parameters) [2196 2200]))                  )
+                nil [2173 2540])
+            ("get_geo_groups" function
+               (:documentation " lists all the Geo groups
+
+    Returns:
+        list: list of Maya transforms
+    "
+                :arguments 
+                  ( ("root" variable nil (reparse-symbol function_parameters) [2560 2564]))                  )
+                nil [2541 2732])
+            ("get_lights_groups" function (:documentation " lists all the lights groups
+
+    Returns:
+        list: list of Maya transforms
+    ") nil [2733 2927])
+            ("get_rig_groups" function (:documentation " lists all the rig groups
+
+    Returns:
+        list: list of Maya transforms
+    ") nil [2928 3110])
+            ("get_lod_groups" function
+               (:documentation " lists all the LOD groups, grouped by lod name
+
+    Returns:
+        dict: list of Maya transforms, keyed by lodname
+    "
+                :arguments 
+                  ( ("root" variable nil (reparse-symbol function_parameters) [3130 3134]))                  )
+                nil [3111 3571]))          
+      :file "groups.py"
+      :pointmax 3571
+      :fsize 3490
+      :lastmodtime '(22122 62061 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "asset_parts.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_scene_hierarchy.asset_parts
+   :synopsis: Finding parts, lods, etc... in a maya scene
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 179])
+            ("__future__" include nil nil [180 217])
+            ("__all__" variable nil nil [219 356])
+            ("re" include nil nil [358 367])
+            ("BBF.Common.Lib.bbf_base.datastructs" include nil nil [369 433])
+            ("scene_parser" include nil nil [435 454])
+            ("get_lod_group_names" function (:documentation " return list of LOD names for the current project/context
+
+    Returns:
+        list: LOD names
+    ") nil [465 655])
+            ("get_lod_distances" function (:documentation " return LOD distance thresholds
+
+    Returns:
+        dict: lods => LOD name => distance map, camLocal => describe camera local threshold
+    ") nil [656 1025])
+            ("find_all_lods" function
+               (:documentation " find all the LOD groups in the scene or under a specified root node
+
+    Args:
+        root: optionally constrain results to those underneath this node
+
+    Returns:
+        dict: maps LOD group names to lists of LOD nodes
+    "
+                :arguments 
+                  ( ("root" variable nil (reparse-symbol function_parameters) [1044 1048])
+                    ("scene_type" variable nil (reparse-symbol function_parameters) [1055 1065])
+                    ("start_rule_name" variable nil (reparse-symbol function_parameters) [1075 1090])
+                    ("relax" variable nil (reparse-symbol function_parameters) [1100 1105]))                  )
+                nil [1026 1781])
+            ("has_part_stamp_attr" function
+               (:documentation " check if a node has an asset part stamp
+
+    Args:
+        node: a pm.PyNode to check
+        attr_value: if not None, check the attribute has this value
+
+    Returns:
+        bool: True if the node has the attribute and, if not None the attribute has the value, False else
+    "
+                :arguments 
+                  ( ("node" variable nil (reparse-symbol function_parameters) [1816 1820])
+                    ("attr_value" variable nil (reparse-symbol function_parameters) [1822 1832]))                  )
+                nil [1792 2264])
+            ("find_all_parts" function
+               (:documentation " find all the asset parts in the scene
+
+    Args:
+        part_name: only find the part with the given name, only makes sense if `stamped` is also True
+        stamped: filter the parts found by being stamped correctly
+        scene_type: any of the SCENE_TYPES defined in scene_parser
+
+    Returns:
+        list: list of groups representing parts in the scene
+
+    Raises:
+        Exception: if the scene does not conform to the rules defined by scene_type
+    "
+                :arguments 
+                  ( ("part_name" variable nil (reparse-symbol function_parameters) [2284 2293])
+                    ("stamped" variable nil (reparse-symbol function_parameters) [2300 2307])
+                    ("scene_type" variable nil (reparse-symbol function_parameters) [2315 2325])
+                    ("start_rule_name" variable nil (reparse-symbol function_parameters) [2335 2350])
+                    ("relax" variable nil (reparse-symbol function_parameters) [2360 2365]))                  )
+                nil [2265 3650])
+            ("find_top_asset_group" function
+               (:documentation " return the top level asset group for a given scene type
+
+    Args:
+        scene_type: any of the SCENE_TYPES defined in scene_parser
+
+    Returns:
+       node_list: a list of top asset groups, currently will have only one element
+
+    Raises:
+        Exception: if the scene does not conform to the rules defined by scene_type
+    "
+                :arguments 
+                  ( ("scene_type" variable nil (reparse-symbol function_parameters) [3691 3701])
+                    ("start_rule_name" variable nil (reparse-symbol function_parameters) [3711 3726])
+                    ("relax" variable nil (reparse-symbol function_parameters) [3736 3741]))                  )
+                nil [3666 4335]))          
+      :file "asset_parts.py"
+      :pointmax 4335
+      :fsize 4476
+      :lastmodtime '(22187 40665 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "scene_parser.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_scene_hierarchy.scene_parser
+   :synopsis: maya scene parser based on SceneParser
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 175])
+            ("__future__" include nil nil [176 213])
+            ("__all__" variable nil nil [215 268])
+            ("os" include nil nil [270 279])
+            ("pymel.core" include nil nil [281 304])
+            ("BBF.Common.Lib.BBF_Validation.SceneParser" include nil nil [306 369])
+            ("__base_dir" variable nil nil [371 444])
+            ("SCENE_TYPES" variable nil nil [509 1029])
+            ("ASSET_TYPES" variable nil nil [1031 1298])
+            ("SceneNode" type
+               (:documentation " pretend maya scene root node, will have top level Maya transforms as children "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1447 1474])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1483 1522]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1432 1436]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1419 1523])
+                    ("name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1537 1541]))                          )
+                        (reparse-symbol indented_block_body) [1528 1570])
+                    ("getChildren" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1591 1595]))                          )
+                        (reparse-symbol indented_block_body) [1575 1628]))                  
+                :type "class")
+                nil [1300 1628])
+            ("get_publish_scene_type" function (:arguments 
+              ( ("publish_type" variable nil (reparse-symbol function_parameters) [1656 1668])
+                ("asset_type" variable nil (reparse-symbol function_parameters) [1670 1680]))              ) nil [1629 1849])
+            ("get_scene_type_file" function (:arguments 
+              ( ("scene_type" variable nil (reparse-symbol function_parameters) [1874 1884]))              ) nil [1850 2000])
+            ("parse_scene" function
+               (:documentation " parses a maya scene using SceneParser
+
+    Args:
+        scene_type: Any of the types defined in SCENE_TYPES in this module
+        action_table: dict mapping node-token types to actions (python callables)
+        rootNode: Maya node to start parsing from, defaults to a SceneNode instance if None
+        relax: if True, only report parse errors, else (default) throw an exception
+    "
+                :arguments 
+                  ( ("scene_type" variable nil (reparse-symbol function_parameters) [2017 2027])
+                    ("start_rule_name" variable nil (reparse-symbol function_parameters) [2037 2052])
+                    ("action_table" variable nil (reparse-symbol function_parameters) [2078 2090])
+                    ("rootNode" variable nil (reparse-symbol function_parameters) [2097 2105])
+                    ("relax" variable nil (reparse-symbol function_parameters) [2112 2117]))                  )
+                nil [2001 3089]))          
+      :file "scene_parser.py"
+      :pointmax 3089
+      :fsize 3173
+      :lastmodtime '(22224 17650 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbf_scene_hierarchy!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

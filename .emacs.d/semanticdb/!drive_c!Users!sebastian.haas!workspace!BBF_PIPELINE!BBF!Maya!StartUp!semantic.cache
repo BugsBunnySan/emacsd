@@ -1,0 +1,271 @@
+;; Object StartUp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "StartUp/"
+  :tables
+  (list
+    (semanticdb-table "userSetup.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("sys" include nil nil [11 21])
+            ("datetime" include nil nil [22 37])
+            ("thread" include nil nil [38 51])
+            ("re" include nil nil [52 61])
+            ("__main__" include nil nil [62 77])
+            ("maya.cmds" include nil nil [79 103])
+            ("maya.mel" include nil nil [104 126])
+            ("pymel.core" include nil nil [127 150])
+            ("pymel.core.nodetypes" include nil nil [151 184])
+            ("pymel.core.datatypes" include nil nil [185 218])
+            ("maya.OpenMaya" include nil nil [219 245])
+            ("pprint" include nil nil [246 271])
+            ("logging" include nil nil [272 286])
+            ("log" variable nil nil [287 320])
+            ("setupBBFEnv" function (:documentation "
+    Importing the BBF module will bootstrap all the other python paths
+    but we still need to actually find the BBF module! It lives in the
+    XXX_PIPELINE folder. We can 'inspect' this fuction to find the file
+    as __file__ does not work in userSetup
+    ") nil [322 959])
+            ("bbfToolsRootPath" variable nil nil [959 991])
+            ("BBF.Maya.Lib.bbfMayaAppInfo.MayaAppInfo" include nil nil [1111 1172])
+            ("bbfPath" include nil nil [1174 1201])
+            ("BBF_environ" include nil nil [1202 1220])
+            ("bbfEnv" variable nil nil [1221 1303])
+            ("BBF_environ" code nil nil [1304 1330])
+            ("BBF.Common.Lib.bbfPath" include nil nil [1332 1374])
+            ("sys" code nil nil [1375 1433])
+            ("Red9" include nil nil [1435 1446])
+            ("Red9" code nil nil [1447 1469])
+            ("try" code nil nil [1514 1583])
+            ("preloadShotgunFunc" function nil nil [1602 2111])
+            ("if" code nil nil [2112 2285])
+            ("os" code nil nil [2490 2660])
+            ("addMenus" function nil nil [3412 4130])
+            ("pm" code nil nil [4130 4155])
+            ("bbfCallbacks" include nil nil [4157 4192])
+            ("g_bbf_messages" variable nil nil [4193 4233])
+            ("bbfCallbacks.bbfFileCallbacks" include nil nil [4392 4448])
+            ("bbfAssetMapper.bbfAssetMapper" include nil nil [4449 4495])
+            ("bbfVariant.bbfAssetVariant" include nil nil [4496 4548])
+            ("g_bbf_messages" code nil nil [4550 4632])
+            ("g_bbf_messages" code nil nil [4633 4713])
+            ("g_bbf_messages" code nil nil [4714 4796])
+            ("g_bbf_messages" code nil nil [4797 4868])
+            ("g_bbf_messages" code nil nil [4869 4942])
+            ("g_bbf_messages" code nil nil [4943 5008])
+            ("g_bbf_messages" code nil nil [5009 5083])
+            ("g_bbf_messages" code nil nil [5084 5147])
+            ("g_bbf_messages" code nil nil [5148 5218])
+            ("g_bbf_messages" code nil nil [5219 5291])
+            ("g_bbf_messages" code nil nil [5292 5371])
+            ("g_bbf_messages" code nil nil [5372 5446])
+            ("g_bbf_messages" code nil nil [5447 5526])
+            ("g_bbf_messages" code nil nil [5527 5601])
+            ("g_bbf_messages" code nil nil [5602 5673])
+            ("g_bbf_messages" code nil nil [5674 5744])
+            ("g_bbf_messages" code nil nil [5745 5826])
+            ("om" code nil nil [5827 5929])
+            ("g_bbf_messages" code nil nil [5930 6012])
+            ("g_bbf_messages" code nil nil [6013 6090])
+            ("g_bbf_messages" code nil nil [6091 6163])
+            ("g_bbf_messages" code nil nil [6164 6235])
+            ("RegisterAssetManager" function (:arguments 
+              ( ("isBatchMode" variable nil (reparse-symbol function_parameters) [6262 6273]))              ) nil [6237 7250])
+            ("RegisterAssetManager" code nil nil [7250 7290])
+            ("for" code nil nil [7293 7456])
+            ("bbfErrorHandling" include nil nil [7711 7747])
+            ("handler" code nil nil [7748 7765])
+            ("cmds" code nil nil [7855 7946]))          
+      :file "userSetup.py"
+      :pointmax 7947
+      :fsize 8142
+      :lastmodtime '(22213 48844 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "AssetManagerMayaClient.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 11])
+            ("maya.cmds" include nil nil [12 36])
+            ("socket" include nil nil [37 50])
+            ("random" include nil nil [51 64])
+            ("os" include nil nil [65 74])
+            ("subprocess" include nil nil [75 92])
+            ("maya.mel" include nil nil [93 115])
+            ("time" include nil nil [116 127])
+            ("thread" include nil nil [128 141])
+            ("maya.OpenMaya" include nil nil [142 162])
+            ("re" include nil nil [163 172])
+            ("bbfAssetRepo" include nil nil [173 210])
+            ("AssetManagerBase" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [390 394]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [375 379]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [362 395])
+                    ("updateFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [415 419])
+                            ("filename" variable nil (reparse-symbol function_parameters) [421 429])
+                            ("comment" variable nil (reparse-symbol function_parameters) [431 438])
+                            ("awaitResponse" variable nil (reparse-symbol function_parameters) [440 453]))                          )
+                        (reparse-symbol indented_block_body) [400 535])
+                    ("getLatestFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [558 562])
+                            ("filename" variable nil (reparse-symbol function_parameters) [564 572])
+                            ("awaitResponse" variable nil (reparse-symbol function_parameters) [574 587]))                          )
+                        (reparse-symbol indented_block_body) [540 672])
+                    ("checkoutFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [694 698])
+                            ("filename" variable nil (reparse-symbol function_parameters) [700 708])
+                            ("awaitResponse" variable nil (reparse-symbol function_parameters) [710 723]))                          )
+                        (reparse-symbol indented_block_body) [677 807])
+                    ("checkinFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [828 832])
+                            ("filename" variable nil (reparse-symbol function_parameters) [834 842])
+                            ("comment" variable nil (reparse-symbol function_parameters) [844 851])
+                            ("awaitResponse" variable nil (reparse-symbol function_parameters) [853 866]))                          )
+                        (reparse-symbol indented_block_body) [812 949]))                  
+                :type "class")
+                nil [334 949])
+            ("AssetManagerClient" type
+               (:superclasses ("AssetManagerBase")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("print" code nil (reparse-symbol indented_block_body) [1203 1267])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1276 1304])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1313 1333])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1342 1373])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1382 1405])
+                            ("print" code nil (reparse-symbol indented_block_body) [1415 1491])
+                            ("if" code nil (reparse-symbol indented_block_body) [1604 2025]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1188 1192]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1175 2025])
+                    ("setupMayaPort" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2048 2052]))                          )
+                        (reparse-symbol indented_block_body) [2030 2817])
+                    ("connectToPort" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2840 2844])
+                            ("defaultPort" variable nil (reparse-symbol function_parameters) [2846 2857]))                          )
+                        (reparse-symbol indented_block_body) [2822 3285])
+                    ("updateFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3305 3309])
+                            ("filename" variable nil (reparse-symbol function_parameters) [3311 3319])
+                            ("comment" variable nil (reparse-symbol function_parameters) [3321 3328])
+                            ("awaitResponse" variable nil (reparse-symbol function_parameters) [3330 3343]))                          )
+                        (reparse-symbol indented_block_body) [3290 3626])
+                    ("getLatestFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3649 3653])
+                            ("filename" variable nil (reparse-symbol function_parameters) [3655 3663])
+                            ("awaitResponse" variable nil (reparse-symbol function_parameters) [3665 3678]))                          )
+                        (reparse-symbol indented_block_body) [3631 3899])
+                    ("checkoutFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3921 3925])
+                            ("filename" variable nil (reparse-symbol function_parameters) [3927 3935])
+                            ("awaitResponse" variable nil (reparse-symbol function_parameters) [3937 3950]))                          )
+                        (reparse-symbol indented_block_body) [3904 4165])
+                    ("checkinFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4186 4190])
+                            ("filename" variable nil (reparse-symbol function_parameters) [4192 4200])
+                            ("comment" variable nil (reparse-symbol function_parameters) [4202 4209])
+                            ("awaitResponse" variable nil (reparse-symbol function_parameters) [4211 4224]))                          )
+                        (reparse-symbol indented_block_body) [4170 4457])
+                    ("startAssetManager" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4484 4488]))                          )
+                        (reparse-symbol indented_block_body) [4462 5496])
+                    ("runAssetManager" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5521 5525])
+                            ("selectCurrentFile" variable nil (reparse-symbol function_parameters) [5527 5544]))                          )
+                        (reparse-symbol indented_block_body) [5501 5967])
+                    ("returnString" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5989 5993]))                          )
+                        (reparse-symbol indented_block_body) [5972 6237])
+                    ("setSocketTimeout" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6263 6267]))                          )
+                        (reparse-symbol indented_block_body) [6242 6304])
+                    ("sendToAssetManager" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6332 6336])
+                            ("cmd" variable nil (reparse-symbol function_parameters) [6338 6341])
+                            ("awaitResponse" variable nil (reparse-symbol function_parameters) [6343 6356]))                          )
+                        (reparse-symbol indented_block_body) [6309 6920])
+                    ("getOpenFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6941 6945]))                          )
+                        (reparse-symbol indented_block_body) [6925 7170])
+                    ("openFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7188 7192])
+                            ("path" variable nil (reparse-symbol function_parameters) [7194 7198]))                          )
+                        (reparse-symbol indented_block_body) [7175 8681])
+                    ("importFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8701 8705])
+                            ("path" variable nil (reparse-symbol function_parameters) [8707 8711]))                          )
+                        (reparse-symbol indented_block_body) [8686 9108])
+                    ("referenceFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9131 9135])
+                            ("path" variable nil (reparse-symbol function_parameters) [9137 9141]))                          )
+                        (reparse-symbol indented_block_body) [9113 9546])
+                    ("saveMayaFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9568 9572])
+                            ("path" variable nil (reparse-symbol function_parameters) [9574 9578]))                          )
+                        (reparse-symbol indented_block_body) [9551 9661])
+                    ("delete" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9677 9681]))                          )
+                        (reparse-symbol indented_block_body) [9666 9844]))                  
+                :type "class")
+                nil [1127 9844]))          
+      :file "AssetManagerMayaClient.py"
+      :pointmax 9844
+      :fsize 10110
+      :lastmodtime '(22178 20793 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 9788 . 9844) (NEWLINE 9787 . 9788) (COLON 9786 . 9787) (TRY 9710 . 9713) (AS 9780 . 9782) (INDENT_BLOCK 6870 . 6920) (NEWLINE 6869 . 6870) (COLON 6868 . 6869) (FINALLY 6861 . 6868))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!StartUp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

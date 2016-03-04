@@ -1,0 +1,71 @@
+;; Object Lib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Lib/"
+  :tables
+  (list
+    (semanticdb-table "MaxPythonScript.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 11])
+            ("sys" code nil nil [12 62])
+            ("sys" code nil nil [63 115])
+            ("os" include nil nil [117 126])
+            ("re" include nil nil [127 136])
+            ("webbrowser" include nil nil [137 154])
+            ("ShotgunInterface" include nil nil [155 200])
+            ("optparse" include nil nil [201 234])
+            ("commandHandler" type
+               (:superclasses ("object")
+                :members 
+                  ( ("'''
+    Base command handler which will be inherted by all command handlers.
+    '''" code nil (reparse-symbol indented_block_body) [370 454])
+                    ("isCommandHandler" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [497 500])
+                            ("command" variable nil (reparse-symbol function_parameters) [502 509]))                          )
+                        (reparse-symbol indented_block_body) [459 533])
+                    ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [550 554])
+                            ("options" variable nil (reparse-symbol function_parameters) [556 563])
+                            ("args" variable nil (reparse-symbol function_parameters) [565 569]))                          )
+                        (reparse-symbol indented_block_body) [538 585]))                  
+                :type "class")
+                nil [336 585])
+            ("browseAssetHandler" type
+               (:superclasses ("commandHandler")
+                :members 
+                  ( ("'''
+    Browse to the asset associated with the given file.
+    '''" code nil (reparse-symbol indented_block_body) [736 803])
+                    ("isCommandHandler" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [846 849])
+                            ("command" variable nil (reparse-symbol function_parameters) [851 858]))                          )
+                        (reparse-symbol indented_block_body) [808 907])
+                    ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [924 928])
+                            ("options" variable nil (reparse-symbol function_parameters) [930 937])
+                            ("args" variable nil (reparse-symbol function_parameters) [939 943]))                          )
+                        (reparse-symbol indented_block_body) [912 2424]))                  
+                :type "class")
+                nil [690 2424])
+            ("getCommandHandler" function (:arguments 
+              ( ("command" variable nil (reparse-symbol function_parameters) [2547 2554]))              ) nil [2525 2697])
+            ("main" function nil nil [2702 3343]))          
+      :file "MaxPythonScript.py"
+      :pointmax 3358
+      :fsize 3448
+      :lastmodtime '(21896 15482 0 0)
+      :unmatched-syntax '((NAME 3352 . 3356) ($EOI 3358 . 3358))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Max!Lib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

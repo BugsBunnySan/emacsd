@@ -1,0 +1,74 @@
+;; Object pinard-Pymacs-5989046/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pinard-Pymacs-5989046/"
+  :tables
+  (list
+    (semanticdb-table "Makefile"
+      :major-mode 'makefile-gmake-mode
+      :tags 
+        '( ("EMACS" variable (:default-value ("emacs")) nil [178 192])
+            ("PYTHON" variable (:default-value ("python")) nil [192 208])
+            ("RST2LATEX" variable (:default-value ("rst2latex")) nil [208 230])
+            ("PYSETUP" variable (:default-value ("$(PYTHON)" "setup.py")) nil [231 260])
+            ("PPPP" variable (:default-value ("$(PYTHON)" "pppp" "-C" "ppppconfig.py")) nil [260 299])
+            ("all" function nil nil [300 351])
+            ("check" function (:arguments ("clean-debug")) nil [352 558])
+            ("install" function nil nil [559 629])
+            ("clean" function (:arguments ("clean-debug")) nil [630 768])
+            ("clean-debug" function nil nil [769 830])
+            ("pppp.pdf" function (:arguments ("pppp.rst.in")) nil [831 1098])
+            ("pymacs.pdf" function (:arguments ("pymacs.rst.in")) nil [1099 1382])
+            ("ARCHIVES" variable (:default-value ("web/src/archives")) nil [1449 1477])
+            ("VERSION" variable (:default-value ("`grep '^version' setup.py | sed -e \"s/'$$//\" -e \"s/.*'//\"`")) nil [1477 1546])
+            ("publish" function (:arguments ("pppp.pdf" "pymacs.pdf" "pymacs.rst")) nil [1547 1980]))          
+      :file "Makefile"
+      :pointmax 1980
+      :fsize 1979
+      :lastmodtime '(20392 18227 0 0)
+      :unmatched-syntax '((shell-command 1934 . 1979) (bol 1933 . 1933)))
+    (semanticdb-table "ppppconfig.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("get_version" function nil nil [195 386])
+            ("VERSION" variable nil nil [387 410])
+            ("del" code nil nil [411 426])
+            ("DEFADVICE_OK" variable nil nil [846 864])
+            ("get_python" function nil nil [925 1000])
+            ("PYTHON" variable nil nil [1001 1022])
+            ("del" code nil nil [1023 1037])
+            ("IO_ERRORS_WITH_SIGNALS" variable nil nil [1413 1442])
+            ("get_old_exceptions" function nil nil [1505 1574])
+            ("OLD_EXCEPTIONS" variable nil nil [1575 1612])
+            ("del" code nil nil [1613 1635])
+            ("get_python3" function nil nil [1673 1743])
+            ("PYTHON3" variable nil nil [1744 1767])
+            ("del" code nil nil [1768 1783]))          
+      :file "ppppconfig.py"
+      :pointmax 1784
+      :fsize 1783
+      :lastmodtime '(20392 18227 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "Pymacs.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "Pymacs.py"
+      :pointmax 33321
+      :fsize 34266
+      :lastmodtime '(21896 21863 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "setup.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [48 58])
+            ("try" code nil nil [60 546])
+            ("package" variable nil nil [547 565])
+            ("version" variable nil nil [566 582])
+            ("setup" code nil nil [584 827]))          
+      :file "setup.py"
+      :pointmax 828
+      :fsize 828
+      :lastmodtime '(20392 18227 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!pinard-Pymacs-5989046!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

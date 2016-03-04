@@ -1,0 +1,1390 @@
+;; Object anatomy/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "anatomy/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(21919 61103 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "arm.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+
+partsFolder = 'S:/Rigging/rigParts/fbx/'
+cmds.file((partsFolder+\"arm.fbx\"), pr=1,rpr=\"New\",i=1,loadReferenceDepth=\"all\",type=\"FBX\",options=\"v=0\")
+
+makeIdentity('L_clav_skJnt',apply=True,s=0,r=1,t=0,n=0)
+joint('L_clav_skJnt', zso=1,ch=1,e=1,oj='xyz',secondaryAxisOrient='zup')
+
+
+lArm = ikFkArm()
+lArm.initialize(PyNode('L_clav_skJnt') , PyNode('L_arm_rgJnt'), PyNode('L_foreArm_rgJnt'), PyNode('L_hand_skJnt'), side='L')
+lArm.rigArm()
+lArm.rigTwistJoints()
+lArm.rigHand()
+lArm.rigShoulder()
+
+\"\"\"" code nil nil [1 500])
+            ("pymel.core" include nil nil [503 527])
+            ("rig" include nil nil [529 545])
+            ("jointCmds" include nil nil [546 568])
+            ("controlShapes" include nil nil [569 595])
+            ("m_geometry" include nil nil [596 620])
+            ("m_Maths" include nil nil [621 641])
+            ("m_namingConventions" include nil nil [642 676])
+            ("m_Constraints" include nil nil [677 704])
+            ("transformCmds" include nil nil [705 731])
+            ("reload" code nil nil [733 744])
+            ("reload" code nil nil [745 756])
+            ("reload" code nil nil [757 768])
+            ("reload" code nil nil [769 780])
+            ("reload" code nil nil [781 793])
+            ("ikFkArm" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("clavJoint" variable nil (reparse-symbol indented_block_body) [830 844])
+                    ("armJoint" variable nil (reparse-symbol indented_block_body) [853 866])
+                    ("foreArmJoint" variable nil (reparse-symbol indented_block_body) [871 888])
+                    ("handJoint" variable nil (reparse-symbol indented_block_body) [893 907])
+                    ("twistAmt" variable nil (reparse-symbol indented_block_body) [917 929])
+                    ("side" variable nil (reparse-symbol indented_block_body) [934 943])
+                    ("arm_SkinJNTS" variable nil (reparse-symbol indented_block_body) [953 970])
+                    ("foreArm_SkinJNTS" variable nil (reparse-symbol indented_block_body) [975 996])
+                    ("arm_CTRLS" variable nil (reparse-symbol indented_block_body) [1006 1020])
+                    ("cogCtrl" variable nil (reparse-symbol indented_block_body) [1030 1042])
+                    ("chestCtrl" variable nil (reparse-symbol indented_block_body) [1047 1061])
+                    ("shoulderCtrl" variable nil (reparse-symbol indented_block_body) [1066 1083])
+                    ("handIkCtrl" variable nil (reparse-symbol indented_block_body) [1093 1108])
+                    ("handFkCtrl" variable nil (reparse-symbol indented_block_body) [1113 1128])
+                    ("arm_antiTwistJnt" variable nil (reparse-symbol indented_block_body) [1143 1164])
+                    ("hand_antiTwistJnt" variable nil (reparse-symbol indented_block_body) [1169 1191])
+                    ("armCtrlHook" variable nil (reparse-symbol indented_block_body) [1201 1217])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1257 1261])
+                            ("clavJoint" variable nil (reparse-symbol function_parameters) [1263 1272])
+                            ("armJoint" variable nil (reparse-symbol function_parameters) [1274 1282])
+                            ("foreArmJoint" variable nil (reparse-symbol function_parameters) [1284 1296])
+                            ("handJoint" variable nil (reparse-symbol function_parameters) [1298 1307])
+                            ("twistAmt" variable nil (reparse-symbol function_parameters) [1309 1317])
+                            ("side" variable nil (reparse-symbol function_parameters) [1321 1325])
+                            ("cogCtrl" variable nil (reparse-symbol function_parameters) [1332 1339])
+                            ("chestCtrl" variable nil (reparse-symbol function_parameters) [1346 1355])
+                            ("shoulderCtrl" variable nil (reparse-symbol function_parameters) [1360 1372])
+                            ("arm_antiTwistJnt" variable nil (reparse-symbol function_parameters) [1377 1393])
+                            ("hand_antiTwistJnt" variable nil (reparse-symbol function_parameters) [1398 1415]))                          
+                        :documentation "
+        outside_loc, inside_loc,
+        initialise variables
+        ")
+                        (reparse-symbol indented_block_body) [1242 2138])
+                    ("rigTwistJoints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2179 2183]))                          )
+                        (reparse-symbol indented_block_body) [2160 2530])
+                    ("rigHand" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2555 2559]))                          )
+                        (reparse-symbol indented_block_body) [2543 6587])
+                    ("rigShoulder" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6652 6656]))                          )
+                        (reparse-symbol indented_block_body) [6636 6987])
+                    ("rigArm" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7020 7024]))                          )
+                        (reparse-symbol indented_block_body) [7009 17658]))                  
+                :type "class")
+                nil [798 17658]))          
+      :file "arm.py"
+      :pointmax 17658
+      :fsize 18109
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "rig.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("rig" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [70 86])
+                            ("self" variable nil (reparse-symbol indented_block_body) [95 111])
+                            ("self" variable nil (reparse-symbol indented_block_body) [120 137])
+                            ("self" variable nil (reparse-symbol indented_block_body) [146 164])
+                            ("self" variable nil (reparse-symbol indented_block_body) [197 217])
+                            ("self" variable nil (reparse-symbol indented_block_body) [226 245])
+                            ("self" variable nil (reparse-symbol indented_block_body) [254 276])
+                            ("self" variable nil (reparse-symbol indented_block_body) [285 302])
+                            ("self" variable nil (reparse-symbol indented_block_body) [311 340])
+                            ("self" variable nil (reparse-symbol indented_block_body) [349 376]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [55 59]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [42 377])
+                    ("lockAttribs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [415 419]))                          )
+                        (reparse-symbol indented_block_body) [399 2425])
+                    ("versionStamp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2446 2450]))                          )
+                        (reparse-symbol indented_block_body) [2429 2472]))                  
+                :type "class")
+                nil [27 2472]))          
+      :file "rig.py"
+      :pointmax 2472
+      :fsize 2538
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "biped.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [2 26])
+            ("leg_pawed" include nil nil [28 50])
+            ("leg_pawed_triIk" include nil nil [51 80])
+            ("leg_hoofed_biIk" include nil nil [81 110])
+            ("leg_hoofed_triIk" include nil nil [111 141])
+            ("shoulder" include nil nil [142 163])
+            ("controlShapes" include nil nil [164 190])
+            ("transformCmds" include nil nil [191 217])
+            ("m_Constraints" include nil nil [218 245])
+            ("ribbonSpline" include nil nil [246 272])
+            ("torso_bpd" include nil nil [273 295])
+            ("rig" include nil nil [296 312])
+            ("arm" include nil nil [313 323])
+            ("maya.cmds" include nil nil [324 348])
+            ("reload" code nil nil [349 360])
+            ("reload" code nil nil [361 371])
+            ("reload" code nil nil [372 382])
+            ("reload" code nil nil [383 394])
+            ("reload" code nil nil [395 405])
+            ("reload" code nil nil [406 417])
+            ("reload" code nil nil [418 429])
+            ("reload" code nil nil [430 441])
+            ("reload" code nil nil [442 452])
+            ("reload" code nil nil [453 463])
+            ("reload" code nil nil [464 474])
+            ("reload" code nil nil [475 486])
+            ("biped" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("cName" variable nil (reparse-symbol indented_block_body) [520 530])
+                    ("legType" variable nil (reparse-symbol indented_block_body) [535 547])
+                    ("armType" variable nil (reparse-symbol indented_block_body) [552 564])
+                    ("shoulderType" variable nil (reparse-symbol indented_block_body) [569 586])
+                    ("spineJntAmt" variable nil (reparse-symbol indented_block_body) [591 606])
+                    ("armsJntAmt" variable nil (reparse-symbol indented_block_body) [611 625])
+                    ("legsJntAmt" variable nil (reparse-symbol indented_block_body) [630 644])
+                    ("ctrlShapes" variable nil (reparse-symbol indented_block_body) [649 664])
+                    ("ctrlShapesCVs" variable nil (reparse-symbol indented_block_body) [669 687])
+                    ("chest_CTRL" variable nil (reparse-symbol indented_block_body) [692 707])
+                    ("hip_CTRL" variable nil (reparse-symbol indented_block_body) [712 725])
+                    ("placer_CTRL" variable nil (reparse-symbol indented_block_body) [730 746])
+                    ("cog_CTRL" variable nil (reparse-symbol indented_block_body) [751 764])
+                    ("spineJoint" variable nil (reparse-symbol indented_block_body) [769 784])
+                    ("hipJoint" variable nil (reparse-symbol indented_block_body) [789 802])
+                    ("chestJoint" variable nil (reparse-symbol indented_block_body) [807 822])
+                    ("arms" variable nil (reparse-symbol indented_block_body) [827 836])
+                    ("legs" variable nil (reparse-symbol indented_block_body) [841 850])
+                    ("shoulders" variable nil (reparse-symbol indented_block_body) [855 869])
+                    ("torso" variable nil (reparse-symbol indented_block_body) [874 884])
+                    ("charSets" variable nil (reparse-symbol indented_block_body) [889 902])
+                    ("body_msh" variable nil (reparse-symbol indented_block_body) [955 968])
+                    ("shapeMult" variable nil (reparse-symbol indented_block_body) [973 986])
+                    ("flipKnee" variable nil (reparse-symbol indented_block_body) [991 1005])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1058 1062])
+                            ("cName" variable nil (reparse-symbol function_parameters) [1064 1069])
+                            ("legType" variable nil (reparse-symbol function_parameters) [1071 1078])
+                            ("armType" variable nil (reparse-symbol function_parameters) [1080 1087])
+                            ("shoulderType" variable nil (reparse-symbol function_parameters) [1089 1101])
+                            ("spineJntAmt" variable nil (reparse-symbol function_parameters) [1103 1114])
+                            ("legsJntAmt" variable nil (reparse-symbol function_parameters) [1118 1128])
+                            ("armsJntAmt" variable nil (reparse-symbol function_parameters) [1132 1142])
+                            ("shapeMult" variable nil (reparse-symbol function_parameters) [1146 1155])
+                            ("body_msh" variable nil (reparse-symbol function_parameters) [1159 1167])
+                            ("flipKnee" variable nil (reparse-symbol function_parameters) [1172 1180]))                          )
+                        (reparse-symbol indented_block_body) [1043 1533])
+                    ("setupBuild" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1562 1566]))                          )
+                        (reparse-symbol indented_block_body) [1547 4953])
+                    ("rigTorso" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4975 4979]))                          )
+                        (reparse-symbol indented_block_body) [4962 5907])
+                    ("rigShoulders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5937 5941]))                          )
+                        (reparse-symbol indented_block_body) [5920 7086])
+                    ("rigLegs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7107 7111]))                          )
+                        (reparse-symbol indented_block_body) [7095 8847])
+                    ("rigArms" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8872 8876]))                          )
+                        (reparse-symbol indented_block_body) [8860 10702])
+                    ("connectControls" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10744 10748]))                          )
+                        (reparse-symbol indented_block_body) [10724 11810])
+                    ("organiseNodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11837 11841]))                          )
+                        (reparse-symbol indented_block_body) [11819 12481])
+                    ("\"\"\"
+    def saveShapes(self):
+        if len(self.ctrlShapes)>0:
+            
+            shapeCVs = []
+            for o in self.ctrlShapes:
+                o = o.getShape()
+                shapeCVs.append([o, o.getCVs('object')])
+            self.ctrlShapesCVs = shapeCVs
+            \"\"\"" code nil (reparse-symbol indented_block_body) [12503 12792])
+                    ("makeCharacterSets" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12832 12836]))                          )
+                        (reparse-symbol indented_block_body) [12810 13122]))                  
+                :type "class")
+                nil [490 13122]))          
+      :file "biped.py"
+      :pointmax 13122
+      :fsize 13461
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "leg_pawed.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("rig" include nil nil [27 43])
+            ("jointCmds" include nil nil [44 66])
+            ("controlShapes" include nil nil [67 93])
+            ("m_geometry" include nil nil [94 118])
+            ("m_Maths" include nil nil [119 139])
+            ("m_namingConventions" include nil nil [140 174])
+            ("m_Constraints" include nil nil [175 202])
+            ("transformCmds" include nil nil [203 229])
+            ("m_utilities" include nil nil [230 254])
+            ("reload" code nil nil [256 267])
+            ("reload" code nil nil [268 278])
+            ("reload" code nil nil [279 290])
+            ("reload" code nil nil [291 302])
+            ("reload" code nil nil [303 314])
+            ("reload" code nil nil [315 327])
+            ("legPawed" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("thighJoint" variable nil (reparse-symbol indented_block_body) [507 522])
+                    ("shinJoint" variable nil (reparse-symbol indented_block_body) [527 541])
+                    ("heelJoint" variable nil (reparse-symbol indented_block_body) [546 560])
+                    ("toesJoint" variable nil (reparse-symbol indented_block_body) [565 579])
+                    ("outside_loc" variable nil (reparse-symbol indented_block_body) [589 605])
+                    ("inside_loc" variable nil (reparse-symbol indented_block_body) [610 625])
+                    ("front_loc" variable nil (reparse-symbol indented_block_body) [630 644])
+                    ("hind_loc" variable nil (reparse-symbol indented_block_body) [649 662])
+                    ("twistAmt" variable nil (reparse-symbol indented_block_body) [729 741])
+                    ("side" variable nil (reparse-symbol indented_block_body) [746 755])
+                    ("placement" variable nil (reparse-symbol indented_block_body) [760 774])
+                    ("thigh_SkinJNTS" variable nil (reparse-symbol indented_block_body) [784 803])
+                    ("shin_SkinJNTS" variable nil (reparse-symbol indented_block_body) [808 826])
+                    ("leg_CTRLS" variable nil (reparse-symbol indented_block_body) [836 850])
+                    ("fk_CTRLS" variable nil (reparse-symbol indented_block_body) [855 868])
+                    ("leg_CTRL" variable nil (reparse-symbol indented_block_body) [873 886])
+                    ("knee_CTRL" variable nil (reparse-symbol indented_block_body) [891 905])
+                    ("extraLeg" variable nil (reparse-symbol indented_block_body) [984 997])
+                    ("reverseKnee" variable nil (reparse-symbol indented_block_body) [1007 1025])
+                    ("sideOrient" variable nil (reparse-symbol indented_block_body) [1035 1053])
+                    ("scaleLink" variable nil (reparse-symbol indented_block_body) [1063 1077])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1135 1139])
+                            ("thighJoint" variable nil (reparse-symbol function_parameters) [1142 1152])
+                            ("shinJoint" variable nil (reparse-symbol function_parameters) [1154 1163])
+                            ("heelJoint" variable nil (reparse-symbol function_parameters) [1165 1174])
+                            ("toesJoint" variable nil (reparse-symbol function_parameters) [1176 1185])
+                            ("outside_loc" variable nil (reparse-symbol function_parameters) [1187 1198])
+                            ("inside_loc" variable nil (reparse-symbol function_parameters) [1200 1210])
+                            ("front_loc" variable nil (reparse-symbol function_parameters) [1212 1221])
+                            ("hind_loc" variable nil (reparse-symbol function_parameters) [1223 1231])
+                            ("twistAmt" variable nil (reparse-symbol function_parameters) [1233 1241])
+                            ("side" variable nil (reparse-symbol function_parameters) [1247 1251])
+                            ("placement" variable nil (reparse-symbol function_parameters) [1258 1267])
+                            ("extraLeg" variable nil (reparse-symbol function_parameters) [1274 1282])
+                            ("reverseKnee" variable nil (reparse-symbol function_parameters) [1287 1298])
+                            ("sideOrient" variable nil (reparse-symbol function_parameters) [1308 1318])
+                            ("scaleLink" variable nil (reparse-symbol function_parameters) [1326 1335]))                          )
+                        (reparse-symbol indented_block_body) [1120 2448])
+                    ("makeTwistJoints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2499 2503]))                          )
+                        (reparse-symbol indented_block_body) [2479 2894])
+                    ("createCTRLS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2928 2932]))                          )
+                        (reparse-symbol indented_block_body) [2912 4304])
+                    ("addCtrlAttributes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4340 4344]))                          )
+                        (reparse-symbol indented_block_body) [4318 7174])
+                    ("rigLeg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7207 7211]))                          )
+                        (reparse-symbol indented_block_body) [7196 16134])
+                    ("rigAll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16276 16280]))                          )
+                        (reparse-symbol indented_block_body) [16265 16413]))                  
+                :type "class")
+                nil [474 16413]))          
+      :file "leg_pawed.py"
+      :pointmax 16421
+      :fsize 16840
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "leg_pawed_triIk.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("rig" include nil nil [27 43])
+            ("jointCmds" include nil nil [44 66])
+            ("controlShapes" include nil nil [67 93])
+            ("m_geometry" include nil nil [94 118])
+            ("m_Maths" include nil nil [119 139])
+            ("m_namingConventions" include nil nil [140 174])
+            ("m_Constraints" include nil nil [175 202])
+            ("reload" code nil nil [204 215])
+            ("reload" code nil nil [216 227])
+            ("reload" code nil nil [228 239])
+            ("reload" code nil nil [240 252])
+            ("\"\"\"
+import leg_pawed as lp
+
+R_leg = lp.legPawed( 'R_front_thigh_rgJnt', 'R_front_shin_rgJnt', 'R_front_ankle_skJnt', 'R_front_heel_skJnt', 'R_front_inside_loc', 'R_front_outside_loc', 'R_front_front_loc', 'R_front_hind_loc', side='R')
+
+R_leg.makeTwistJoints()
+R_leg.createCTRLS()
+R_leg.addCtrlAttributes()
+R_leg.rigLeg()
+
+\"\"\"" code nil nil [399 724])
+            ("leg_pawed_triIk" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("upperThighJoint" variable nil (reparse-symbol indented_block_body) [766 786])
+                    ("thighJoint" variable nil (reparse-symbol indented_block_body) [791 806])
+                    ("shinJoint" variable nil (reparse-symbol indented_block_body) [811 825])
+                    ("heelJoint" variable nil (reparse-symbol indented_block_body) [830 844])
+                    ("toesJoint" variable nil (reparse-symbol indented_block_body) [849 863])
+                    ("outside_loc" variable nil (reparse-symbol indented_block_body) [873 889])
+                    ("inside_loc" variable nil (reparse-symbol indented_block_body) [894 909])
+                    ("front_loc" variable nil (reparse-symbol indented_block_body) [914 928])
+                    ("hind_loc" variable nil (reparse-symbol indented_block_body) [933 946])
+                    ("thigh_twistJointAmt" variable nil (reparse-symbol indented_block_body) [956 979])
+                    ("shin_twistJointAmt" variable nil (reparse-symbol indented_block_body) [984 1006])
+                    ("side" variable nil (reparse-symbol indented_block_body) [1011 1020])
+                    ("placement" variable nil (reparse-symbol indented_block_body) [1025 1039])
+                    ("thigh_SkinJNTS" variable nil (reparse-symbol indented_block_body) [1049 1068])
+                    ("shin_SkinJNTS" variable nil (reparse-symbol indented_block_body) [1073 1091])
+                    ("leg_CTRLS" variable nil (reparse-symbol indented_block_body) [1101 1115])
+                    ("fk_CTRLS" variable nil (reparse-symbol indented_block_body) [1120 1133])
+                    ("root_CTRLS" variable nil (reparse-symbol indented_block_body) [1143 1158])
+                    ("extraLeg" variable nil (reparse-symbol indented_block_body) [1168 1181])
+                    ("rig_grp" variable nil (reparse-symbol indented_block_body) [1191 1203])
+                    ("nonScalable_rig_grp" variable nil (reparse-symbol indented_block_body) [1208 1232])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1262 1266])
+                            ("upperThighJoint" variable nil (reparse-symbol function_parameters) [1268 1283])
+                            ("thighJoint" variable nil (reparse-symbol function_parameters) [1285 1295])
+                            ("shinJoint" variable nil (reparse-symbol function_parameters) [1297 1306])
+                            ("heelJoint" variable nil (reparse-symbol function_parameters) [1308 1317])
+                            ("toesJoint" variable nil (reparse-symbol function_parameters) [1319 1328])
+                            ("outside_loc" variable nil (reparse-symbol function_parameters) [1330 1341])
+                            ("inside_loc" variable nil (reparse-symbol function_parameters) [1343 1353])
+                            ("front_loc" variable nil (reparse-symbol function_parameters) [1355 1364])
+                            ("hind_loc" variable nil (reparse-symbol function_parameters) [1366 1374])
+                            ("thigh_twistJointAmt" variable nil (reparse-symbol function_parameters) [1376 1395])
+                            ("shin_twistJointAmt" variable nil (reparse-symbol function_parameters) [1399 1417])
+                            ("side" variable nil (reparse-symbol function_parameters) [1421 1425])
+                            ("placement" variable nil (reparse-symbol function_parameters) [1432 1441])
+                            ("extraLeg" variable nil (reparse-symbol function_parameters) [1448 1456]))                          
+                        :documentation "
+        initialise variables
+        ")
+                        (reparse-symbol indented_block_body) [1247 2480])
+                    ("makeTwistJoints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2513 2517]))                          )
+                        (reparse-symbol indented_block_body) [2493 4469])
+                    ("createCTRLS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4507 4511]))                          )
+                        (reparse-symbol indented_block_body) [4491 6046])
+                    ("addCtrlAttributes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6077 6081]))                          )
+                        (reparse-symbol indented_block_body) [6055 8428])
+                    ("rigLeg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8461 8465]))                          )
+                        (reparse-symbol indented_block_body) [8450 29102])
+                    ("rigAll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29253 29257]))                          )
+                        (reparse-symbol indented_block_body) [29242 29390]))                  
+                :type "class")
+                nil [726 29390]))          
+      :file "leg_pawed_triIk.py"
+      :pointmax 29398
+      :fsize 30068
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "leg_hoofed_biIk.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("rig" include nil nil [27 43])
+            ("jointCmds" include nil nil [44 66])
+            ("controlShapes" include nil nil [67 93])
+            ("m_geometry" include nil nil [94 118])
+            ("m_Maths" include nil nil [119 139])
+            ("m_namingConventions" include nil nil [140 174])
+            ("m_Constraints" include nil nil [175 202])
+            ("reload" code nil nil [204 215])
+            ("reload" code nil nil [216 227])
+            ("reload" code nil nil [228 239])
+            ("reload" code nil nil [240 252])
+            ("leg_hoofed_biIk" type
+               (:documentation "
+    import leg_hoofed_biIk as lhb
+    reload(lhb)
+    
+    leg = flh.leg_hoofed_biIk(radiusJoint, carpusJoint, hoofUpperJoint, hoofLowerJoint, hoofTipJoint, carpus_twistJointAmt=4, side = '', charName = '')
+    leg.makeTwistJoints()
+    leg.createCTRLS()
+    .addCtrlAttributes()
+    .rigLeg()
+    "
+                :superclasses ("rg.rig")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        initialise variables
+        \"\"\"" code nil (reparse-symbol indented_block_body) [769 813])
+                            ("self" variable nil (reparse-symbol indented_block_body) [822 860])
+                            ("self" variable nil (reparse-symbol indented_block_body) [869 907])
+                            ("self" variable nil (reparse-symbol indented_block_body) [916 960])
+                            ("self" variable nil (reparse-symbol indented_block_body) [969 1013])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1022 1062])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1071 1119])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1128 1144])
+                            ("if" code nil (reparse-symbol indented_block_body) [1153 1219])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1227 1253])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1262 1280])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1289 1307])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1316 1336])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1345 1362])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1371 1400]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [622 626])
+                            ("radiusJoint" variable nil (reparse-symbol function_parameters) [628 639])
+                            ("carpusJoint" variable nil (reparse-symbol function_parameters) [641 652])
+                            ("hoofUpperJoint" variable nil (reparse-symbol function_parameters) [654 668])
+                            ("hoofLowerJoint" variable nil (reparse-symbol function_parameters) [670 684])
+                            ("hoofTipJoint" variable nil (reparse-symbol function_parameters) [686 698])
+                            ("carpus_twistJointAmt" variable nil (reparse-symbol function_parameters) [700 720])
+                            ("side" variable nil (reparse-symbol function_parameters) [724 728])
+                            ("placement" variable nil (reparse-symbol function_parameters) [735 744]))                          
+                        :documentation "
+        initialise variables
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [609 1401])
+                    ("makeTwistJoints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1434 1438]))                          )
+                        (reparse-symbol indented_block_body) [1414 2183])
+                    ("createCTRLS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2212 2216]))                          )
+                        (reparse-symbol indented_block_body) [2196 3161])
+                    ("addCtrlAttributes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3205 3209]))                          )
+                        (reparse-symbol indented_block_body) [3183 3720])
+                    ("rigLeg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3753 3757]))                          )
+                        (reparse-symbol indented_block_body) [3742 5701]))                  
+                :type "class")
+                nil [254 5701]))          
+      :file "leg_hoofed_biIk.py"
+      :pointmax 5709
+      :fsize 5841
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "leg_hoofed_triIk.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("rig" include nil nil [27 43])
+            ("jointCmds" include nil nil [44 66])
+            ("controlShapes" include nil nil [67 93])
+            ("m_geometry" include nil nil [94 118])
+            ("m_Maths" include nil nil [119 139])
+            ("m_namingConventions" include nil nil [140 174])
+            ("m_Constraints" include nil nil [175 202])
+            ("reload" code nil nil [204 215])
+            ("reload" code nil nil [216 227])
+            ("reload" code nil nil [228 239])
+            ("reload" code nil nil [240 252])
+            ("leg_hoofed_triIk" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        initialise variables
+        \"\"\"" code nil (reparse-symbol indented_block_body) [453 497])
+                            ("self" variable nil (reparse-symbol indented_block_body) [506 542])
+                            ("self" variable nil (reparse-symbol indented_block_body) [551 587])
+                            ("self" variable nil (reparse-symbol indented_block_body) [596 634])
+                            ("self" variable nil (reparse-symbol indented_block_body) [643 683])
+                            ("self" variable nil (reparse-symbol indented_block_body) [692 730])
+                            ("self" variable nil (reparse-symbol indented_block_body) [739 783])
+                            ("self" variable nil (reparse-symbol indented_block_body) [801 849])
+                            ("self" variable nil (reparse-symbol indented_block_body) [867 883])
+                            ("self" variable nil (reparse-symbol indented_block_body) [901 926])
+                            ("self" variable nil (reparse-symbol indented_block_body) [944 962])
+                            ("self" variable nil (reparse-symbol indented_block_body) [971 989])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1007 1027])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1036 1053])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1062 1091]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [313 317])
+                            ("femurJoint" variable nil (reparse-symbol function_parameters) [319 329])
+                            ("tibiaJoint" variable nil (reparse-symbol function_parameters) [331 341])
+                            ("tarsusJoint" variable nil (reparse-symbol function_parameters) [343 354])
+                            ("pasternJoint" variable nil (reparse-symbol function_parameters) [356 368])
+                            ("coffinJoint" variable nil (reparse-symbol function_parameters) [370 381])
+                            ("coffinTipJoint" variable nil (reparse-symbol function_parameters) [383 397])
+                            ("tarsus_twistJointAmt" variable nil (reparse-symbol function_parameters) [399 419])
+                            ("side" variable nil (reparse-symbol function_parameters) [423 427]))                          
+                        :documentation "
+        initialise variables
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [300 1092])
+                    ("makeTwistJoints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1125 1129]))                          
+                        :documentation "
+        startPoint = self.tarsusJoint.getTranslation('world')
+        endPoint = self.pasternJoint.getTranslation('world')
+        jointAmt = self.tarsus_twistJointAmt
+        
+        vOffset = mM.divideVector(startPoint, endPoint, jointAmt)
+        halfOffset = [o/2 for o in vOffset]
+        
+        jointStart = mM.addVectors(startPoint, halfOffset)
+        jointEnd = mM.subtractVectors(endPoint, halfOffset)
+        ")
+                        (reparse-symbol indented_block_body) [1105 2173])
+                    ("createCTRLS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2211 2215]))                          )
+                        (reparse-symbol indented_block_body) [2195 3312])
+                    ("addCtrlAttributes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3374 3378]))                          )
+                        (reparse-symbol indented_block_body) [3352 3889])
+                    ("rigLeg" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3922 3926]))                          )
+                        (reparse-symbol indented_block_body) [3911 5407]))                  
+                :type "class")
+                nil [254 5407]))          
+      :file "leg_hoofed_triIk.py"
+      :pointmax 5407
+      :fsize 5548
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shoulder.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("controlShapes" include nil nil [26 52])
+            ("rig" include nil nil [53 69])
+            ("\"\"\"
+import shoulder_quadruped as sq
+
+reload(sq)
+
+shoulder = sq.shoulderQped('R_front_scapula_rgJnt', 'R_front_clavicle_skJnt', side='R', stretchy=True)
+shoulder.rigShoulder()
+\"\"\"" code nil nil [71 249])
+            ("shoulder" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("clavJoint" variable nil (reparse-symbol indented_block_body) [285 299])
+                    ("clavTip" variable nil (reparse-symbol indented_block_body) [304 316])
+                    ("shoulderCTRL" variable nil (reparse-symbol indented_block_body) [321 338])
+                    ("side" variable nil (reparse-symbol indented_block_body) [343 352])
+                    ("stretchy" variable nil (reparse-symbol indented_block_body) [357 370])
+                    ("rig_grp" variable nil (reparse-symbol indented_block_body) [375 387])
+                    ("chestConnect" variable nil (reparse-symbol indented_block_body) [392 409])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [434 438])
+                            ("clavJoint" variable nil (reparse-symbol function_parameters) [440 449])
+                            ("chestConnect" variable nil (reparse-symbol function_parameters) [451 463])
+                            ("side" variable nil (reparse-symbol function_parameters) [468 472])
+                            ("positional" variable nil (reparse-symbol function_parameters) [479 489]))                          )
+                        (reparse-symbol indented_block_body) [419 701])
+                    ("rigShoulder" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [726 730]))                          )
+                        (reparse-symbol indented_block_body) [710 1255]))                  
+                :type "class")
+                nil [252 1255]))          
+      :file "shoulder.py"
+      :pointmax 1355
+      :fsize 1409
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ribbonSpline.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("rig" include nil nil [1 17])
+            ("jointCmds" include nil nil [18 40])
+            ("controlShapes" include nil nil [41 67])
+            ("m_geometry" include nil nil [68 92])
+            ("m_Maths" include nil nil [93 113])
+            ("pymel.core" include nil nil [114 138])
+            ("reload" code nil nil [140 151])
+            ("reload" code nil nil [152 163])
+            ("reload" code nil nil [164 175])
+            ("ribbonSpline" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [320 344])
+                            ("self" variable nil (reparse-symbol indented_block_body) [357 385])
+                            ("self" variable nil (reparse-symbol indented_block_body) [394 418])
+                            ("self" variable nil (reparse-symbol indented_block_body) [427 443])
+                            ("self" variable nil (reparse-symbol indented_block_body) [452 479]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [232 236])
+                            ("jointAmt" variable nil (reparse-symbol function_parameters) [238 246])
+                            ("startPoint" variable nil (reparse-symbol function_parameters) [252 262])
+                            ("endPoint" variable nil (reparse-symbol function_parameters) [274 282])
+                            ("name" variable nil (reparse-symbol function_parameters) [295 299]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [219 480])
+                    ("createBones" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [520 524]))                          )
+                        (reparse-symbol indented_block_body) [504 963])
+                    ("createCTRLS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [992 996]))                          )
+                        (reparse-symbol indented_block_body) [976 1295])
+                    ("createRig" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1318 1322]))                          
+                        :documentation "
+        curve_and_IkHandle = jc.rigTwistbones(sBones[:1][0] , sBones[-1:][0],alternateTwistStart='default')
+        twistCurve = curve_and_IkHandle[0]
+        jc.makeStretchJointsExpression (jointsArray, theCurve)
+        return curve_and_IkHandle 
+        ")
+                        (reparse-symbol indented_block_body) [1304 5268])
+                    ("rigCTRLS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5299 5303])
+                            ("bottomCTRL" variable nil (reparse-symbol function_parameters) [5305 5315])
+                            ("topCTRL" variable nil (reparse-symbol function_parameters) [5317 5324])
+                            ("twistCurve" variable nil (reparse-symbol function_parameters) [5326 5336]))                          )
+                        (reparse-symbol indented_block_body) [5286 5593])
+                    ("create" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5613 5617]))                          )
+                        (reparse-symbol indented_block_body) [5602 5737]))                  
+                :type "class")
+                nil [177 5737]))          
+      :file "ribbonSpline.py"
+      :pointmax 5804
+      :fsize 5962
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "torso_bpd.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("rig" include nil nil [27 43])
+            ("jointCmds" include nil nil [44 66])
+            ("controlShapes" include nil nil [67 93])
+            ("m_geometry" include nil nil [94 118])
+            ("m_Maths" include nil nil [119 139])
+            ("m_namingConventions" include nil nil [140 174])
+            ("m_Constraints" include nil nil [175 202])
+            ("transformCmds" include nil nil [203 229])
+            ("ribbonSpline" include nil nil [230 256])
+            ("reload" code nil nil [258 269])
+            ("reload" code nil nil [270 281])
+            ("reload" code nil nil [282 293])
+            ("reload" code nil nil [294 305])
+            ("reload" code nil nil [306 318])
+            ("torso" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("headJoint" variable nil (reparse-symbol indented_block_body) [357 371])
+                    ("spineJntAmt" variable nil (reparse-symbol indented_block_body) [376 391])
+                    ("chest_CTRL" variable nil (reparse-symbol indented_block_body) [396 411])
+                    ("hip_CTRL" variable nil (reparse-symbol indented_block_body) [416 429])
+                    ("cog_CTRL" variable nil (reparse-symbol indented_block_body) [434 447])
+                    ("neck_CTRLS" variable nil (reparse-symbol indented_block_body) [452 467])
+                    ("head_CTRL" variable nil (reparse-symbol indented_block_body) [472 486])
+                    ("placer_CTRL" variable nil (reparse-symbol indented_block_body) [491 507])
+                    ("hipJoint" variable nil (reparse-symbol indented_block_body) [512 525])
+                    ("spineJoint" variable nil (reparse-symbol indented_block_body) [530 545])
+                    ("chestJoint" variable nil (reparse-symbol indented_block_body) [550 565])
+                    ("fkCtrls" variable nil (reparse-symbol indented_block_body) [570 582])
+                    ("ikCtrls" variable nil (reparse-symbol indented_block_body) [587 599])
+                    ("ikJnts" variable nil (reparse-symbol indented_block_body) [604 615])
+                    ("spineFkJnts" variable nil (reparse-symbol indented_block_body) [620 636])
+                    ("spineSegments" variable nil (reparse-symbol indented_block_body) [641 659])
+                    ("hip_Fk_CTRL" variable nil (reparse-symbol indented_block_body) [664 680])
+                    ("scaleConnectNodes" variable nil (reparse-symbol indented_block_body) [685 707])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [732 736])
+                            ("spineJntAmt" variable nil (reparse-symbol function_parameters) [738 749])
+                            ("hipJoint" variable nil (reparse-symbol function_parameters) [753 761])
+                            ("spineJoint" variable nil (reparse-symbol function_parameters) [766 776])
+                            ("chestJoint" variable nil (reparse-symbol function_parameters) [781 791]))                          )
+                        (reparse-symbol indented_block_body) [717 967])
+                    ("createJoints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1002 1006]))                          )
+                        (reparse-symbol indented_block_body) [985 1838])
+                    ("rigIkSpine" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1866 1870]))                          )
+                        (reparse-symbol indented_block_body) [1851 5529])
+                    ("rigFkSpine" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5566 5570]))                          )
+                        (reparse-symbol indented_block_body) [5551 7115])
+                    ("rigSpine" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7150 7154]))                          )
+                        (reparse-symbol indented_block_body) [7137 9185])
+                    ("rigNeck" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9206 9210]))                          )
+                        (reparse-symbol indented_block_body) [9194 10273])
+                    ("rigHead" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10303 10307]))                          )
+                        (reparse-symbol indented_block_body) [10291 11280])
+                    ("rigEars" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11305 11309]))                          )
+                        (reparse-symbol indented_block_body) [11293 12757])
+                    ("rigTail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12791 12795]))                          )
+                        (reparse-symbol indented_block_body) [12779 13676])
+                    ("rigEyes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13710 13714]))                          )
+                        (reparse-symbol indented_block_body) [13698 15047])
+                    ("rigJaw" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15075 15079]))                          )
+                        (reparse-symbol indented_block_body) [15064 15258])
+                    ("rigAll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15283 15287]))                          )
+                        (reparse-symbol indented_block_body) [15272 15325]))                  
+                :type "class")
+                nil [322 15325]))          
+      :file "torso_bpd.py"
+      :pointmax 15325
+      :fsize 15733
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "mouthJaw.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("rig" include nil nil [1 17])
+            ("m_Maths" include nil nil [18 38])
+            ("pymel.core" include nil nil [39 63])
+            ("maya.cmds" include nil nil [64 88])
+            ("mouthJaw" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("spacerJnts" variable nil (reparse-symbol indented_block_body) [166 180])
+                    ("jaw_main_rgJnt" variable nil (reparse-symbol indented_block_body) [233 252])
+                    ("top_rgJnt" variable nil (reparse-symbol indented_block_body) [258 272])
+                    ("bot_rgJnt" variable nil (reparse-symbol indented_block_body) [277 291])
+                    ("left_rgJnt" variable nil (reparse-symbol indented_block_body) [296 311])
+                    ("right_rgJnt" variable nil (reparse-symbol indented_block_body) [316 332])
+                    ("top_skJnt" variable nil (reparse-symbol indented_block_body) [338 352])
+                    ("bot_skJnt" variable nil (reparse-symbol indented_block_body) [357 371])
+                    ("left_skJnt" variable nil (reparse-symbol indented_block_body) [376 391])
+                    ("right_skJnt" variable nil (reparse-symbol indented_block_body) [396 412])
+                    ("leftTop_rgJnts" variable nil (reparse-symbol indented_block_body) [418 437])
+                    ("leftBot_rgJnts" variable nil (reparse-symbol indented_block_body) [442 461])
+                    ("rightTop_rgJnts" variable nil (reparse-symbol indented_block_body) [466 486])
+                    ("rightBot_rgJnts" variable nil (reparse-symbol indented_block_body) [491 511])
+                    ("jaw_ctrl" variable nil (reparse-symbol indented_block_body) [516 529])
+                    ("close_ctrl" variable nil (reparse-symbol indented_block_body) [534 549])
+                    ("lips_ctrl" variable nil (reparse-symbol indented_block_body) [554 568])
+                    ("lips_L_ctrl" variable nil (reparse-symbol indented_block_body) [573 589])
+                    ("lips_R_ctrl" variable nil (reparse-symbol indented_block_body) [594 610])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [631 635])
+                            ("spacerJnts" variable nil (reparse-symbol function_parameters) [636 646])
+                            ("jaw_ctrl" variable nil (reparse-symbol function_parameters) [650 658])
+                            ("close_ctrl" variable nil (reparse-symbol function_parameters) [665 675])
+                            ("lips_ctrl" variable nil (reparse-symbol function_parameters) [682 691])
+                            ("lips_L_ctrl" variable nil (reparse-symbol function_parameters) [698 709])
+                            ("lips_R_ctrl" variable nil (reparse-symbol function_parameters) [728 739])
+                            ("top_rgJnt" variable nil (reparse-symbol function_parameters) [759 768])
+                            ("bot_rgJnt" variable nil (reparse-symbol function_parameters) [786 795])
+                            ("left_rgJnt" variable nil (reparse-symbol function_parameters) [813 823])
+                            ("right_rgJnt" variable nil (reparse-symbol function_parameters) [842 853])
+                            ("jaw_main_rgJnt" variable nil (reparse-symbol function_parameters) [873 887]))                          )
+                        (reparse-symbol indented_block_body) [616 2034])
+                    ("makeInbtwnJnts" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2059 2063]))                          )
+                        (reparse-symbol indented_block_body) [2040 4505])
+                    ("followJaw" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4526 4530])
+                            ("prox" variable nil (reparse-symbol function_parameters) [4532 4536])
+                            ("ease" variable nil (reparse-symbol function_parameters) [4538 4542])
+                            ("thresh" variable nil (reparse-symbol function_parameters) [4544 4550])
+                            ("sideValAtt" variable nil (reparse-symbol function_parameters) [4552 4562])
+                            ("valAtt" variable nil (reparse-symbol function_parameters) [4564 4570])
+                            ("jawJnt" variable nil (reparse-symbol function_parameters) [4572 4578])
+                            ("vertical" variable nil (reparse-symbol function_parameters) [4580 4588]))                          
+                        :documentation "
+
+        ")
+                        (reparse-symbol indented_block_body) [4512 7848])
+                    ("rigCartesianJnts" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7932 7936]))                          )
+                        (reparse-symbol indented_block_body) [7911 10786])
+                    ("sideMouth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10805 10809])
+                            ("jawMultiplier" variable nil (reparse-symbol function_parameters) [10811 10824])
+                            ("lipCTRL" variable nil (reparse-symbol function_parameters) [10826 10833])
+                            ("xScale" variable nil (reparse-symbol function_parameters) [10835 10841])
+                            ("yScale" variable nil (reparse-symbol function_parameters) [10846 10852]))                          )
+                        (reparse-symbol indented_block_body) [10791 11721])
+                    ("rigMouth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11741 11745]))                          )
+                        (reparse-symbol indented_block_body) [11728 14926])
+                    ("jawLR" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14941 14945]))                          )
+                        (reparse-symbol indented_block_body) [14931 17156])
+                    ("connectHorizontal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17184 17188]))                          )
+                        (reparse-symbol indented_block_body) [17162 17204]))                  
+                :type "class")
+                nil [115 17204]))          
+      :file "mouthJaw.py"
+      :pointmax 17546
+      :fsize 17985
+      :lastmodtime '(21923 36493 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 17233 . 17546) (IF 17205 . 17207) (NAME 17215 . 17217) (COLON 17231 . 17232) (INDENT_BLOCK 17528 . 17546) (INDENT_BLOCK 17507 . 17546) (INDENT_BLOCK 17480 . 17546) (INDENT_BLOCK 17407 . 17546) (INDENT_BLOCK 17384 . 17546) (INDENT_BLOCK 17233 . 17546) (NAME 17215 . 17217) (COLON 17231 . 17232) (NAME 18466 . 18471) ($EOI 18479 . 18479)))
+    (semanticdb-table "quadruped.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("leg_pawed" include nil nil [27 49])
+            ("leg_pawed_triIk" include nil nil [50 79])
+            ("leg_hoofed_biIk" include nil nil [80 109])
+            ("leg_hoofed_triIk" include nil nil [110 140])
+            ("shoulder_quadruped" include nil nil [141 172])
+            ("controlShapes" include nil nil [173 199])
+            ("transformCmds" include nil nil [200 226])
+            ("m_Constraints" include nil nil [227 254])
+            ("ribbonSpline" include nil nil [255 281])
+            ("torso" include nil nil [282 300])
+            ("rig" include nil nil [301 317])
+            ("maya.cmds" include nil nil [318 342])
+            ("reload" code nil nil [343 353])
+            ("reload" code nil nil [354 365])
+            ("reload" code nil nil [366 376])
+            ("reload" code nil nil [377 388])
+            ("reload" code nil nil [389 400])
+            ("reload" code nil nil [401 412])
+            ("reload" code nil nil [413 423])
+            ("reload" code nil nil [424 434])
+            ("reload" code nil nil [435 445])
+            ("reload" code nil nil [446 457])
+            ("\"\"\"
+ctrlShapes
+
+\"\"\"" code nil nil [460 479])
+            ("quadruped" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("cName" variable nil (reparse-symbol indented_block_body) [516 526])
+                    ("frontLegType" variable nil (reparse-symbol indented_block_body) [531 548])
+                    ("hindLegType" variable nil (reparse-symbol indented_block_body) [553 569])
+                    ("shoulderType" variable nil (reparse-symbol indented_block_body) [574 591])
+                    ("spineJntAmt" variable nil (reparse-symbol indented_block_body) [596 611])
+                    ("ctrlShapes" variable nil (reparse-symbol indented_block_body) [616 631])
+                    ("ctrlShapesCVs" variable nil (reparse-symbol indented_block_body) [636 654])
+                    ("chest_CTRL" variable nil (reparse-symbol indented_block_body) [659 674])
+                    ("hip_CTRL" variable nil (reparse-symbol indented_block_body) [679 692])
+                    ("placer_CTRL" variable nil (reparse-symbol indented_block_body) [697 713])
+                    ("spineJoint" variable nil (reparse-symbol indented_block_body) [718 733])
+                    ("hipJoint" variable nil (reparse-symbol indented_block_body) [738 751])
+                    ("hind_Legs" variable nil (reparse-symbol indented_block_body) [756 770])
+                    ("fore_Legs" variable nil (reparse-symbol indented_block_body) [775 789])
+                    ("shoulders" variable nil (reparse-symbol indented_block_body) [794 808])
+                    ("torso" variable nil (reparse-symbol indented_block_body) [813 823])
+                    ("charSets" variable nil (reparse-symbol indented_block_body) [833 846])
+                    ("rig_grp" variable nil (reparse-symbol indented_block_body) [856 868])
+                    ("nonScalable_rig_grp" variable nil (reparse-symbol indented_block_body) [873 897])
+                    ("legsHind_knee" variable nil (reparse-symbol indented_block_body) [907 925])
+                    ("legsFore_knee" variable nil (reparse-symbol indented_block_body) [930 948])
+                    ("body_msh" variable nil (reparse-symbol indented_block_body) [958 971])
+                    ("scaleConnectNodes" variable nil (reparse-symbol indented_block_body) [981 1003])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1033 1037])
+                            ("cName" variable nil (reparse-symbol function_parameters) [1039 1044])
+                            ("frontLegType" variable nil (reparse-symbol function_parameters) [1046 1058])
+                            ("hindLegType" variable nil (reparse-symbol function_parameters) [1060 1071])
+                            ("shoulderType" variable nil (reparse-symbol function_parameters) [1073 1085])
+                            ("spineJntAmt" variable nil (reparse-symbol function_parameters) [1087 1098])
+                            ("legsHind_knee" variable nil (reparse-symbol function_parameters) [1104 1117])
+                            ("legsFore_knee" variable nil (reparse-symbol function_parameters) [1121 1134]))                          )
+                        (reparse-symbol indented_block_body) [1018 1877])
+                    ("setupBuild" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1905 1909]))                          )
+                        (reparse-symbol indented_block_body) [1890 6591])
+                    ("rigTorso" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6631 6635]))                          )
+                        (reparse-symbol indented_block_body) [6618 7555])
+                    ("rigShoulders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7598 7602]))                          )
+                        (reparse-symbol indented_block_body) [7581 9543])
+                    ("rigFrontLegs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9569 9573]))                          )
+                        (reparse-symbol indented_block_body) [9552 12721])
+                    ("rigHindLegs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12754 12758]))                          )
+                        (reparse-symbol indented_block_body) [12738 18705])
+                    ("connectControls" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18729 18733]))                          )
+                        (reparse-symbol indented_block_body) [18709 19402])
+                    ("rigEyes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19427 19431]))                          )
+                        (reparse-symbol indented_block_body) [19415 20731])
+                    ("organiseNodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20766 20770]))                          )
+                        (reparse-symbol indented_block_body) [20748 21487])
+                    ("organiseMSH" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21516 21520]))                          )
+                        (reparse-symbol indented_block_body) [21500 21634])
+                    ("makeCharacterSets" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21665 21669]))                          )
+                        (reparse-symbol indented_block_body) [21643 21956])
+                    ("makeSkin" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21982 21986]))                          )
+                        (reparse-symbol indented_block_body) [21969 22206])
+                    ("saveShapes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22243 22247]))                          )
+                        (reparse-symbol indented_block_body) [22228 22488])
+                    ("extraRig" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22518 22522])
+                            ("xDir" variable nil (reparse-symbol function_parameters) [22524 22528])
+                            ("xFile" variable nil (reparse-symbol function_parameters) [22530 22535]))                          )
+                        (reparse-symbol indented_block_body) [22505 22754]))                  
+                :type "class")
+                nil [482 22754]))          
+      :file "quadruped.py"
+      :pointmax 22754
+      :fsize 23271
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shoulder_quadruped.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("controlShapes" include nil nil [26 52])
+            ("rig" include nil nil [53 69])
+            ("\"\"\"
+import shoulder_quadruped as sq
+
+reload(sq)
+
+shoulder = sq.shoulderQped('R_front_scapula_rgJnt', 'R_front_clavicle_skJnt', side='R', stretchy=True)
+shoulder.rigShoulder()
+\"\"\"" code nil nil [71 249])
+            ("shoulderQped" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("scapulaJoint" variable nil (reparse-symbol indented_block_body) [289 306])
+                    ("clavJoint" variable nil (reparse-symbol indented_block_body) [311 325])
+                    ("shoulderCTRL" variable nil (reparse-symbol indented_block_body) [330 347])
+                    ("side" variable nil (reparse-symbol indented_block_body) [352 361])
+                    ("stretchy" variable nil (reparse-symbol indented_block_body) [366 379])
+                    ("rig_grp" variable nil (reparse-symbol indented_block_body) [384 396])
+                    ("chestConnect" variable nil (reparse-symbol indented_block_body) [401 418])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [443 447])
+                            ("scapulaJoint" variable nil (reparse-symbol function_parameters) [449 461])
+                            ("clavJoint" variable nil (reparse-symbol function_parameters) [463 472])
+                            ("chestConnect" variable nil (reparse-symbol function_parameters) [474 486])
+                            ("side" variable nil (reparse-symbol function_parameters) [491 495])
+                            ("stretchy" variable nil (reparse-symbol function_parameters) [502 510]))                          )
+                        (reparse-symbol indented_block_body) [428 767])
+                    ("rigShoulder" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [792 796]))                          )
+                        (reparse-symbol indented_block_body) [776 2907]))                  
+                :type "class")
+                nil [252 2907]))          
+      :file "shoulder_quadruped.py"
+      :pointmax 2980
+      :fsize 3058
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "torso.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 25])
+            ("rig" include nil nil [27 43])
+            ("jointCmds" include nil nil [44 66])
+            ("controlShapes" include nil nil [67 93])
+            ("m_geometry" include nil nil [94 118])
+            ("m_Maths" include nil nil [119 139])
+            ("m_namingConventions" include nil nil [140 174])
+            ("m_Constraints" include nil nil [175 202])
+            ("transformCmds" include nil nil [203 229])
+            ("ribbonSpline" include nil nil [230 256])
+            ("reload" code nil nil [258 269])
+            ("reload" code nil nil [270 281])
+            ("reload" code nil nil [282 293])
+            ("reload" code nil nil [294 305])
+            ("reload" code nil nil [306 318])
+            ("torso" type
+               (:superclasses ("rg.rig")
+                :members 
+                  ( ("headJoint" variable nil (reparse-symbol indented_block_body) [357 370])
+                    ("spineJntAmt" variable nil (reparse-symbol indented_block_body) [375 390])
+                    ("chest_CTRL" variable nil (reparse-symbol indented_block_body) [395 410])
+                    ("hip_CTRL" variable nil (reparse-symbol indented_block_body) [415 428])
+                    ("cog_CTRL" variable nil (reparse-symbol indented_block_body) [433 446])
+                    ("neck_CTRLS" variable nil (reparse-symbol indented_block_body) [451 466])
+                    ("head_CTRL" variable nil (reparse-symbol indented_block_body) [471 485])
+                    ("placer_CTRL" variable nil (reparse-symbol indented_block_body) [490 506])
+                    ("hipJoint" variable nil (reparse-symbol indented_block_body) [511 524])
+                    ("spineJoint" variable nil (reparse-symbol indented_block_body) [529 544])
+                    ("scaleConnectNodes" variable nil (reparse-symbol indented_block_body) [549 571])
+                    ("initialise" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [596 600])
+                            ("spineJntAmt" variable nil (reparse-symbol function_parameters) [602 613]))                          )
+                        (reparse-symbol indented_block_body) [581 657])
+                    ("rigSpine" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [688 692]))                          )
+                        (reparse-symbol indented_block_body) [675 4463])
+                    ("rigNeck" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4484 4488]))                          )
+                        (reparse-symbol indented_block_body) [4472 5331])
+                    ("rigHead" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5371 5375]))                          )
+                        (reparse-symbol indented_block_body) [5359 6181])
+                    ("rigEars" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6206 6210]))                          )
+                        (reparse-symbol indented_block_body) [6194 7502])
+                    ("rigTail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7527 7531]))                          )
+                        (reparse-symbol indented_block_body) [7515 8412])
+                    ("rigEyes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8428 8432]))                          )
+                        (reparse-symbol indented_block_body) [8416 8740])
+                    ("rigJaw" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8773 8777]))                          )
+                        (reparse-symbol indented_block_body) [8762 8956])
+                    ("rigAll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8981 8985]))                          )
+                        (reparse-symbol indented_block_body) [8970 9023]))                  
+                :type "class")
+                nil [322 9023]))          
+      :file "torso.py"
+      :pointmax 9023
+      :fsize 9293
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "wing.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+
+partsFolder = 'S:/Rigging/rigParts/fbx/'
+cmds.file((partsFolder+\"wing.fbx\"), pr=1,rpr=\"New\",i=1,loadReferenceDepth=\"all\",type=\"FBX\",options=\"v=0\")
+
+makeIdentity('L_clav_skJnt',apply=True,s=0,r=1,t=0,n=0)
+joint('L_clav_skJnt', zso=1,ch=1,e=1,oj='xyz',secondaryAxisOrient='zup')
+
+
+
+cmds.file((\"E:/wing/wingBuild.ma\"), pr=1,rpr=\"New\",i=1,loadReferenceDepth=\"all\",options=\"v=0\")
+cmds.file((\"E:/Dump/duck.ma\"), pr=1,rpr=\"New\",i=1,loadReferenceDepth=\"all\",options=\"v=0\")
+makeIdentity('L_clav_skJnt',apply=True,s=0,r=1,t=0,n=0)
+joint('L_clav_skJnt', zso=1,ch=1,e=1,oj='xyz',secondaryAxisOrient='zup')
+
+
+import wing
+reload(wing)
+w = wing.wing()
+w.initialize('L')
+w.rigWing()
+
+
+fSet = ['C_Feather_Secondary_01_MSH', 'C_Feather_Secondary_02_MSH', 'C_Feather_Secondary_03_MSH', 'C_Feather_Secondary_04_MSH', 'C_Feather_Secondary_05_MSH']
+w.constrainFeathers(fSet, PyNode('L_Feathers_01_rgJnt'), PyNode('L_Feathers_02_rgJnt'), 'arm')
+
+\"\"\"" code nil nil [1 932])
+            ("pymel.core" include nil nil [935 959])
+            ("maya.cmds" include nil nil [960 984])
+            ("rig" include nil nil [985 995])
+            ("jointCmds" include nil nil [996 1018])
+            ("controlShapes" include nil nil [1019 1045])
+            ("arm" include nil nil [1046 1056])
+            ("transformCmds" include nil nil [1057 1083])
+            ("wing" type
+               (:superclasses ("rig.rig")
+                :members 
+                  ( ("arm_jnt" variable nil (reparse-symbol indented_block_body) [1116 1128])
+                    ("foreArm_jnt" variable nil (reparse-symbol indented_block_body) [1133 1149])
+                    ("hand_A_jnt" variable nil (reparse-symbol indented_block_body) [1154 1169])
+                    ("hand_B_jnt" variable nil (reparse-symbol indented_block_body) [1174 1189])
+                    ("side" variable nil (reparse-symbol indented_block_body) [1194 1203])
+                    ("armCtrl" variable nil (reparse-symbol indented_block_body) [1224 1236])
+                    ("foreArmCtrl" variable nil (reparse-symbol indented_block_body) [1241 1257])
+                    ("hand_A_Ctrl" variable nil (reparse-symbol indented_block_body) [1262 1278])
+                    ("hand_B_Ctrl" variable nil (reparse-symbol indented_block_body) [1283 1299])
+                    ("wing_ik_ctrl" variable nil (reparse-symbol indented_block_body) [1304 1321])
+                    ("\"\"\"\"
+    def initialize(self, arm_jnt, foreArm_jnt, hand_A_jnt, side):
+        self.arm_jnt = PyNode(arm_jnt)
+        self.foreArm_jnt = PyNode(foreArm_jnt)
+        self.hand_A_jnt = PyNode(hand_A_jnt)
+        self.hand_B_jnt = PyNode(hand_B_jnt)
+        self.side = side
+    \"\"\"" code nil (reparse-symbol indented_block_body) [1336 1615])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1640 1644])
+                            ("side" variable nil (reparse-symbol function_parameters) [1646 1650]))                          )
+                        (reparse-symbol indented_block_body) [1625 1678])
+                    ("featherRig" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1715 1719]))                          )
+                        (reparse-symbol indented_block_body) [1700 1732])
+                    ("constrainFeathers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1767 1771])
+                            ("featherSet" variable nil (reparse-symbol function_parameters) [1772 1782])
+                            ("ocA" variable nil (reparse-symbol function_parameters) [1784 1787])
+                            ("ocB" variable nil (reparse-symbol function_parameters) [1789 1792])
+                            ("id" variable nil (reparse-symbol function_parameters) [1794 1796]))                          
+                        :documentation "
+        featherSet = list of feather geo's
+        ocJntA = 
+        ocJntB =
+        id = string identifying anatomical part, such as 'arm' / 'forearm' etc...
+        ")
+                        (reparse-symbol indented_block_body) [1745 2855])
+                    ("\"\"\"
+    def createCtrls(self):
+        #create Shapes
+        armCtrl = cs.ctrlShape()
+        armCtrl = armCtrl.applyShape('circleX', self.arm_jnt, c_name=(self.side+'_wing_arm_ctrl'))
+        
+        foreArmCtrl = cs.ctrlShape()
+        foreArmCtrl = foreArmCtrl.applyShape('circleX', self.foreArm_jnt, c_name=(self.side+'_wing_foreArm_ctrl'))
+        
+        hand_A_Ctrl = cs.ctrlShape()
+        hand_A_Ctrl = hand_A_Ctrl.applyShape('circleX', self.hand_A_jnt, c_name=(self.side+'_wing_handA_ctrl'))
+        
+        hand_B_Ctrl = cs.ctrlShape()
+        hand_B_Ctrl = hand_B_Ctrl.applyShape('circleX', self.hand_B_jnt, c_name=(self.side+'_wing_handB_ctrl'))
+        
+        hand_C_Ctrl = cs.ctrlShape()
+        hand_C_Ctrl = hand_C_Ctrl.applyShape('circleX', self.hand_C_jnt, c_name=(self.side+'_wing_handC_ctrl'))
+        
+        wing_ik_ctrl = cs.ctrlShape()
+        wing_ik_ctrl = wing_ik_ctrl.applyShape('cube', self.hand_A_jnt, c_name=(self.side+'_wing_IK_ctrl'))
+        
+        self.armCtrl = armCtrl
+        self.foreArmCtrl = foreArmCtrl
+        self.hand_A_Ctrl = hand_A_Ctrl
+        self.hand_B_Ctrl = hand_B_Ctrl
+        self.hand_C_Ctrl = hand_C_Ctrl
+        self.wing_ik_ctrl = wing_ik_ctrl
+    \"\"\"" code nil (reparse-symbol indented_block_body) [2874 4094])
+                    ("rigWing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4116 4120]))                          )
+                        (reparse-symbol indented_block_body) [4104 8098]))                  
+                :type "class")
+                nil [1086 8098]))          
+      :file "wing.py"
+      :pointmax 8126
+      :fsize 8338
+      :lastmodtime '(21896 15483 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!HumanRig_Builder!anatomy!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

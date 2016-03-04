@@ -1,0 +1,1522 @@
+;; Object bbfEntity/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfEntity/"
+  :tables
+  (list
+    (semanticdb-table "bbfEntity.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [60 74])
+            ("logger" variable nil nil [75 111])
+            ("inspect" include nil nil [112 126])
+            ("pprint" include nil nil [128 153])
+            ("functools" include nil nil [154 181])
+            ("re" include nil nil [182 191])
+            ("cPickle" include nil nil [192 206])
+            ("ShotgunInterface" include nil nil [208 253])
+            ("pymel.core" include nil nil [255 278])
+            ("maya.cmds" include nil nil [279 303])
+            ("bbfUtil" include nil nil [305 319])
+            ("__main__" include nil nil [321 348])
+            ("BBF_Validation.BBF_Validation" include nil nil [350 395])
+            ("withCallbacks" function (:arguments 
+              ( ("func" variable nil (reparse-symbol function_parameters) [415 419]))              ) nil [397 771])
+            ("withShotgun" function (:arguments 
+              ( ("func" variable nil (reparse-symbol function_parameters) [788 792]))              ) nil [772 1142])
+            ("Entity" type
+               (:superclasses ("object")
+                :members 
+                  ( ("'''
+    An entity is an abstract representation of an asset in a maya scene
+    It might be:
+        a character
+        a prop
+        a camera
+        a geo
+        a rig
+        ...
+    '''" code nil (reparse-symbol indented_block_body) [1170 1362])
+                    ("_shotgun" variable nil (reparse-symbol indented_block_body) [1367 1394])
+                    ("type" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1426 1429]))                          )
+                        (reparse-symbol indented_block_body) [1400 1504])
+                    ("__init__" function
+                       (:suite 
+                          ( ("nodes" variable nil (reparse-symbol indented_block_body) [1545 1565])
+                            ("if" code nil (reparse-symbol indented_block_body) [1575 1901])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1910 1941]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1522 1526])
+                            ("_name" variable nil (reparse-symbol function_parameters) [1528 1533]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1509 1942])
+                    ("node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1956 1960]))                          )
+                        (reparse-symbol indented_block_body) [1947 2041])
+                    ("name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2055 2059]))                          )
+                        (reparse-symbol indented_block_body) [2046 2651])
+                    ("getStamp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2669 2673]))                          )
+                        (reparse-symbol indented_block_body) [2656 4175])
+                    ("getAssetCode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4197 4201]))                          )
+                        (reparse-symbol indented_block_body) [4180 4306])
+                    ("getAssetType" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4328 4332]))                          )
+                        (reparse-symbol indented_block_body) [4311 4463])
+                    ("getAssetName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4485 4489]))                          )
+                        (reparse-symbol indented_block_body) [4468 4598])
+                    ("getRepresentation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4625 4629]))                          )
+                        (reparse-symbol indented_block_body) [4603 4721])
+                    ("getVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4741 4745]))                          )
+                        (reparse-symbol indented_block_body) [4726 4976])
+                    ("getFilepath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4997 5001])
+                            ("local" variable nil (reparse-symbol function_parameters) [5003 5008]))                          )
+                        (reparse-symbol indented_block_body) [4981 5605])
+                    ("getLatestStamp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5646 5650]))                          
+                        :decorators 
+                          ( ("withShotgun" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [5610 5924])
+                    ("getLatestVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5950 5954]))                          )
+                        (reparse-symbol indented_block_body) [5929 6116])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6133 6137]))                          )
+                        (reparse-symbol indented_block_body) [6121 6174])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6192 6196]))                          )
+                        (reparse-symbol indented_block_body) [6179 6252]))                  
+                :type "class")
+                nil [1144 6252])
+            ("All" type
+               (:superclasses ("Entity")
+                :members 
+                  ( ("'''The All object of an entity. Corresponds to the \"_All\" group node'''" code nil (reparse-symbol indented_block_body) [6276 6347])
+                    ("ls" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [6377 6380])
+                            ("name" variable nil (reparse-symbol function_parameters) [6382 6386]))                          )
+                        (reparse-symbol indented_block_body) [6353 8535])
+                    ("__init__" function
+                       (:suite 
+                          ( ("if" code nil (reparse-symbol indented_block_body) [8890 8930])
+                            ("all" code nil (reparse-symbol indented_block_body) [9317 9339])
+                            ("if" code nil (reparse-symbol indented_block_body) [9348 9569])
+                            ("Entity" code nil (reparse-symbol indented_block_body) [9578 9604])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9614 9631])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9640 9657])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9666 9685])
+                            ("if" code nil (reparse-symbol indented_block_body) [9695 9885]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8553 8557])
+                            ("_name" variable nil (reparse-symbol function_parameters) [8559 8564]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8540 9885])
+                    ("getStamp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9903 9907]))                          )
+                        (reparse-symbol indented_block_body) [9890 10429])
+                    ("getRig" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10445 10449]))                          )
+                        (reparse-symbol indented_block_body) [10434 10876])
+                    ("rigs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10904 10908]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [10881 11007])
+                    ("rig" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11034 11038]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [11012 11140])
+                    ("getGeo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11156 11160]))                          )
+                        (reparse-symbol indented_block_body) [11145 11587])
+                    ("geos" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11771 11775]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [11748 11874])
+                    ("geo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11901 11905]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [11879 12007])
+                    ("getLights" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12026 12030]))                          )
+                        (reparse-symbol indented_block_body) [12012 12328])
+                    ("lights" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12358 12362]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [12333 12470])
+                    ("light" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12499 12503]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [12475 12614]))                  
+                :type "class")
+                nil [6253 12614])
+            ("Geo" type
+               (:superclasses ("Entity")
+                :members 
+                  ( ("'''The Geometry object of an entity. Corresponds to the \"_Geo\" group node'''" code nil (reparse-symbol indented_block_body) [12639 12715])
+                    ("__init__" function
+                       (:suite 
+                          ( ("if" code nil (reparse-symbol indented_block_body) [12833 12885])
+                            ("if" code nil (reparse-symbol indented_block_body) [12893 13151])
+                            ("Entity" code nil (reparse-symbol indented_block_body) [13160 13186])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13196 13257]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12733 12737])
+                            ("_name" variable nil (reparse-symbol function_parameters) [12739 12744]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [12720 13180]))                  
+                :type "class")
+                nil [12616 13180])
+            ("BS" type
+               (:superclasses ("Entity")
+                :members 
+                  ( ("'''The Blendshape object of an entity. Corresponds to the \"_BS\" group node'''" code nil (reparse-symbol indented_block_body) [13203 13280])
+                    ("__init__" function
+                       (:suite 
+                          ( ("if" code nil (reparse-symbol indented_block_body) [13398 13449])
+                            ("if" code nil (reparse-symbol indented_block_body) [13458 13577])
+                            ("Entity" code nil (reparse-symbol indented_block_body) [13586 13612])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13622 13685]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13298 13302])
+                            ("_name" variable nil (reparse-symbol function_parameters) [13304 13309]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13285 13608]))                  
+                :type "class")
+                nil [13181 13608])
+            ("Rig" type
+               (:superclasses ("Entity")
+                :members 
+                  ( ("'''The Rig object of an entity. Corresponds to the \"_Rig\" group node'''" code nil (reparse-symbol indented_block_body) [13632 13703])
+                    ("ls" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [13732 13735]))                          )
+                        (reparse-symbol indented_block_body) [13708 13964])
+                    ("__init__" function
+                       (:suite 
+                          ( ("if" code nil (reparse-symbol indented_block_body) [14082 14134])
+                            ("if" code nil (reparse-symbol indented_block_body) [14143 14262])
+                            ("Entity" code nil (reparse-symbol indented_block_body) [14271 14297])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14307 14363]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13982 13986])
+                            ("_name" variable nil (reparse-symbol function_parameters) [13988 13993]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13969 14286])
+                    ("getStamp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14304 14308]))                          )
+                        (reparse-symbol indented_block_body) [14291 14446])
+                    ("getInternalSlaves" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14473 14477]))                          )
+                        (reparse-symbol indented_block_body) [14451 14557])
+                    ("getInternalMasters" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14585 14589]))                          )
+                        (reparse-symbol indented_block_body) [14562 14669])
+                    ("getExternalSlaves" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14696 14700]))                          )
+                        (reparse-symbol indented_block_body) [14674 14782])
+                    ("getExternalMasters" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14810 14814]))                          )
+                        (reparse-symbol indented_block_body) [14787 14896])
+                    ("loadAnimation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14919 14923])
+                            ("file" variable nil (reparse-symbol function_parameters) [14925 14929])
+                            ("offset" variable nil (reparse-symbol function_parameters) [14931 14937])
+                            ("cycle" variable nil (reparse-symbol function_parameters) [14941 14946]))                          )
+                        (reparse-symbol indented_block_body) [14901 15180])
+                    ("getCtrls" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15198 15202])
+                            ("filters" variable nil (reparse-symbol function_parameters) [15204 15211]))                          )
+                        (reparse-symbol indented_block_body) [15185 15675]))                  
+                :type "class")
+                nil [13609 15675])
+            ("Fur" type
+               (:superclasses ("Entity")
+                :members 
+                  ( ("'''The Fur object of an entity. Corresponds to the \"_Fur\" group node'''" code nil (reparse-symbol indented_block_body) [15699 15770])
+                    ("__init__" function
+                       (:suite 
+                          ( ("if" code nil (reparse-symbol indented_block_body) [15888 15934])
+                            ("if" code nil (reparse-symbol indented_block_body) [15943 16062])
+                            ("Entity" code nil (reparse-symbol indented_block_body) [16071 16097])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16107 16163]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15788 15792])
+                            ("_name" variable nil (reparse-symbol function_parameters) [15794 15799]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [15775 16086]))                  
+                :type "class")
+                nil [15676 16086]))          
+      :file "bbfEntity.py"
+      :pointmax 16086
+      :fsize 16787
+      :lastmodtime '(22102 1442 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfCharacter.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [63 86])
+            ("try" code nil nil [87 202])
+            ("bbfActor" include nil nil [203 218])
+            ("Actor" variable nil nil [219 241])
+            ("bbfEntity" include nil nil [242 258])
+            ("Character" type
+               (:superclasses ("Actor")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("Actor" code nil (reparse-symbol indented_block_body) [330 357])
+                            ("self" variable nil (reparse-symbol indented_block_body) [366 385])
+                            ("self" variable nil (reparse-symbol indented_block_body) [394 409])
+                            ("self" variable nil (reparse-symbol indented_block_body) [418 438])
+                            ("self" variable nil (reparse-symbol indented_block_body) [447 463]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [302 306])
+                            ("_name" variable nil (reparse-symbol function_parameters) [308 313]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [289 464])
+                    ("fur" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [665 669]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [643 819])
+                    ("getBS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [834 838]))                          )
+                        (reparse-symbol indented_block_body) [824 1050])
+                    ("getFur" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1066 1070]))                          )
+                        (reparse-symbol indented_block_body) [1055 1495]))                  
+                :type "class")
+                nil [260 1495]))          
+      :file "bbfCharacter.py"
+      :pointmax 1495
+      :fsize 1551
+      :lastmodtime '(21908 61928 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfActor.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [59 73])
+            ("logger" variable nil nil [74 110])
+            ("pymel.core" include nil nil [112 135])
+            ("bbfEntity" include nil nil [137 153])
+            ("bbfUtil" include nil nil [154 168])
+            ("Actor" type
+               (:superclasses ("bbfEntity.All")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("bbfEntity" code nil (reparse-symbol indented_block_body) [244 279])
+                            ("logger" code nil (reparse-symbol indented_block_body) [288 360]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [216 220])
+                            ("_name" variable nil (reparse-symbol function_parameters) [222 227]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [203 361]))                  
+                :type "class")
+                nil [170 361]))          
+      :file "bbfActor.py"
+      :pointmax 408
+      :fsize 424
+      :lastmodtime '(21908 61928 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfProp.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [58 72])
+            ("logger" variable nil nil [73 109])
+            ("pymel.core" include nil nil [110 133])
+            ("try" code nil nil [134 249])
+            ("bbfActor" include nil nil [250 265])
+            ("Actor" variable nil nil [266 288])
+            ("bbfEntity" include nil nil [289 305])
+            ("bbfUtil" include nil nil [306 320])
+            ("bbfSet" include nil nil [321 334])
+            ("Prop" type
+               (:superclasses ("Actor")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("Actor" code nil (reparse-symbol indented_block_body) [400 427])
+                            ("logger" code nil (reparse-symbol indented_block_body) [436 508]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [372 376])
+                            ("_name" variable nil (reparse-symbol function_parameters) [378 383]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [359 509]))                  
+                :type "class")
+                nil [336 509])
+            ("SetProp" type
+               (:superclasses ("Prop")
+                :members 
+                  ( ("ls" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [560 563])
+                            ("name" variable nil (reparse-symbol function_parameters) [565 569])
+                            ("parent" variable nil (reparse-symbol function_parameters) [576 582]))                          )
+                        (reparse-symbol indented_block_body) [536 1054])
+                    ("__init__" function
+                       (:suite 
+                          ( ("Prop" code nil (reparse-symbol indented_block_body) [1100 1126]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1072 1076])
+                            ("_name" variable nil (reparse-symbol function_parameters) [1078 1083]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1059 1127])
+                    ("name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1141 1145]))                          )
+                        (reparse-symbol indented_block_body) [1132 1230])
+                    ("getStamp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1248 1252]))                          )
+                        (reparse-symbol indented_block_body) [1235 1417]))                  
+                :type "class")
+                nil [510 1417])
+            ("PropifyProp" type
+               (:superclasses ("Prop")
+                :members 
+                  ( ("ls" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1472 1475])
+                            ("name" variable nil (reparse-symbol function_parameters) [1477 1481])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1488 1494]))                          )
+                        (reparse-symbol indented_block_body) [1448 1927])
+                    ("__init__" function
+                       (:suite 
+                          ( ("Prop" code nil (reparse-symbol indented_block_body) [1973 1999]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1945 1949])
+                            ("_name" variable nil (reparse-symbol function_parameters) [1951 1956]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1932 2000])
+                    ("name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2248 2252]))                          )
+                        (reparse-symbol indented_block_body) [2239 2337])
+                    ("_isOldStyle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2358 2362]))                          )
+                        (reparse-symbol indented_block_body) [2342 2712])
+                    ("getSource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2731 2735]))                          )
+                        (reparse-symbol indented_block_body) [2717 3243])
+                    ("getSourceEntity" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3268 3272]))                          )
+                        (reparse-symbol indented_block_body) [3248 3508])
+                    ("getStamp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3526 3530]))                          )
+                        (reparse-symbol indented_block_body) [3513 3720])
+                    ("getGeo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3736 3740]))                          )
+                        (reparse-symbol indented_block_body) [3725 4239]))                  
+                :type "class")
+                nil [1418 4239]))          
+      :file "bbfProp.py"
+      :pointmax 4239
+      :fsize 4369
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfSet.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [57 80])
+            ("try" code nil nil [81 196])
+            ("bbfEntity" include nil nil [197 213])
+            ("bbfProp" include nil nil [214 228])
+            ("bbfUtil" include nil nil [229 243])
+            ("Set" type
+               (:superclasses ("bbfEntity.All")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("bbfEntity" code nil (reparse-symbol indented_block_body) [317 352])
+                            ("self" variable nil (reparse-symbol indented_block_body) [439 460]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [289 293])
+                            ("_name" variable nil (reparse-symbol function_parameters) [295 300]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [276 461])
+                    ("getSetProps" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [482 486]))                          )
+                        (reparse-symbol indented_block_body) [466 614])
+                    ("setProps" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [646 650]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [619 766]))                  
+                :type "class")
+                nil [245 766]))          
+      :file "bbfSet.py"
+      :pointmax 766
+      :fsize 797
+      :lastmodtime '(21908 61928 0 0)
+      :unmatched-syntax '((AT 619 . 620) (NEWLINE 641 . 642) (INDENT_BLOCK 462 . 614) (INDENT_BLOCK 431 . 461)))
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+module for making working with characters/props/cameras in maya easier
+
+ben                     >>    Character(\"Benjamin\")
+ben.isLoaded            >>    False
+ben.load()              ##    load the PRD
+ben.node                >>    PyNode(\"Benjamin_All\")
+ben.filepath            >>    Y:/BeatrixPotter/...../PRB_C_Benjamin_PRD.mb
+
+ben.geo                 >>    Geo(\"Benjamin\")
+ben.geo.node            >>    PyNode(\"Benjamin_Geo\")
+ben.geo.ls(type=mesh)   ##    return all mesh nodes under Geo
+ben.geo.exportcache()   ##    generate geo cache files
+ben.geo.importcache()   ##    import geocache files onto geo
+
+ben.rig                 >>    Rig(\"Benjamin\")
+ben.rig.node            >>    PyNode(\"Benjamin_Rig\")
+ben.rig.isLoaded        >>    True
+ben.rig.version         >>    4
+ben.rig.filepath        >>    Y:/BeatrixPotter/...../PRB_C_Benjamin_RG.mb
+ben.rig.bakeanim()      ##    bake out anim constraints
+
+ben.fur                 >>    Fur(\"Benjamin\")    # how will this work with non-fur chars
+ben.fur.exists          >>    True               # Ben is a fur character
+ben.fur.isLoaded        >>    False
+ben.fur.filepath        >>    Y:/BeatrixPotter/...../PRB_C_Benjamin_FUR.mb
+ben.fur.load(\"Body\")    ##    load fur onto the body
+ben.fur.version         >>    6
+ben.fur.body.shave      >>    PyNode(\"Body_Fur\")
+
+ben.shaders             >>    Shaders(\"Benjamin\")
+ben.shaders.load(\"Low\") >>    # load his low res shaders
+ben.shaders.version     >>    2
+ben.shaders.filepath    >>    Y:/BeatrixPotter/...../PRB_C_Benjamin_SHD.mb
+ben.shaders.ls()        >>    [shader1, shader2, shader3]
+
+bbfEntity.Character.ls()
+bbfEntity.Geo.ls()
+
+@decorators / @property pros and cons
+    - doesn't work with ipython \"?\"
+    - doesn't work with help() / docstrings
+    + tab completion works in script edit/ipython ben.geo.<TAB>
+    + less code
+
+
+import emulategateway
+openf C:/Users/Luke Harris/Documents/maya/projects/default/scenes/mainrigs.mb
+import bbfEntity
+reload(bbfEntity)
+ben = bbfEntity.Character(\"Benjaminin\")
+ben.getVersion()
+
+
+# add Fur object
+# add Rig specific functionality (ctrls)
+# Rig / Geo might need to know their parent,
+    so they know if they are a char or prop rig (eg for finding RG.mb filepath)
+# should we get rid of the ability to instantiate entities that dont exist?
+# should be able to construct obj from another obj,
+    b = Entity(\"Ben_All\")
+    Character(b)
+'''" code nil nil [59 2448])
+            ("logging" include nil nil [2449 2463])
+            ("logger" variable nil nil [2464 2500])
+            ("logger" code nil nil [2501 2530])
+            ("pymel.core" include nil nil [2531 2554])
+            ("bbfEntity" include nil nil [2556 2572])
+            ("bbfActor" include nil nil [2592 2607])
+            ("bbfCharacter" include nil nil [2626 2645])
+            ("bbfProp" include nil nil [2668 2682])
+            ("bbfSet" include nil nil [2700 2713])
+            ("bbfUtil" include nil nil [2730 2744])
+            ("BBF_Validation" include nil nil [2745 2795])
+            ("Actor" variable nil nil [2797 2819])
+            ("Entity" variable nil nil [2820 2845])
+            ("Character" variable nil nil [2846 2880])
+            ("Prop" variable nil nil [2881 2900])
+            ("SetProp" variable nil nil [2901 2926])
+            ("PropifyProp" variable nil nil [2927 2960])
+            ("Set" variable nil nil [2961 2977])
+            ("getEntity" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [2993 2997]))              ) nil [2979 3521])
+            ("prepPartialEntities" function nil nil [3522 4997])
+            ("ls" function (:arguments 
+              ( ("type" variable nil (reparse-symbol function_parameters) [5005 5009]))              ) nil [4998 5621]))          
+      :file "__init__.py"
+      :pointmax 5621
+      :fsize 5788
+      :lastmodtime '(21919 61102 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bbfRig.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [1 15])
+            ("logger" variable nil nil [16 52])
+            ("pymel.core" include nil nil [54 77])
+            ("maya.cmds" include nil nil [78 102])
+            ("bbfEntity" include nil nil [104 120])
+            ("Rig" type
+               (:superclasses ("bbfEntity.Entity")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("bbfEntity" code nil (reparse-symbol indented_block_body) [197 235]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [169 173])
+                            ("_name" variable nil (reparse-symbol function_parameters) [175 180]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [156 236])
+                    ("rig" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [263 267]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [241 423])
+                    ("geo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [450 454]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [428 610])
+                    ("blendshape" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [643 647]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [614 861])
+                    ("rigVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [895 899]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [866 1038])
+                    ("geoVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1072 1076]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1043 1215])
+                    ("blendshapeVersion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1256 1260]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1220 1426])
+                    ("ctrls" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1487 1491]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1463 1742]))                  
+                :type "class")
+                nil [122 1742]))          
+      :file "bbfRig.py"
+      :pointmax 1742
+      :fsize 1805
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "sceneAssets.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.cmds" include nil nil [353 375])
+            ("pymel.core" include nil nil [377 400])
+            ("maya.mel" include nil nil [402 424])
+            ("__main__" include nil nil [425 452])
+            ("getAssemblies" function (:arguments 
+              ( ("nodeList" variable nil (reparse-symbol function_parameters) [564 572]))              ) nil [546 857])
+            ("listSetProps" function (:arguments 
+              ( ("Sets" variable nil (reparse-symbol function_parameters) [968 972]))              ) nil [951 1246])
+            ("listPropified" function nil nil [1340 1485])
+            ("getSceneAsset" function (:arguments 
+              ( ("key" variable nil (reparse-symbol function_parameters) [1597 1600]))              ) nil [1579 1943])
+            ("getSceneChars" function nil nil [2037 2111])
+            ("getSceneSets" function nil nil [2204 2271])
+            ("getSceneProps" function (:arguments 
+              ( ("typ" variable nil (reparse-symbol function_parameters) [2383 2386]))              ) nil [2365 2869]))          
+      :file "sceneAssets.py"
+      :pointmax 2875
+      :fsize 2973
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "scenePartAssets.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfEntity.scenePartAssets
+   :synopsis: scene and parts/lods aware assets
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 163])
+            ("__future__" include nil nil [164 201])
+            ("pprint" include nil nil [203 229])
+            ("__all__" variable nil nil [231 320])
+            ("re" include nil nil [322 331])
+            ("os" include nil nil [332 341])
+            ("glob" include nil nil [342 353])
+            ("logging" include nil nil [354 368])
+            ("copy" include nil nil [369 390])
+            ("pymel.core" include nil nil [392 415])
+            ("BBF.Common.Lib.bbfPath" include nil nil [417 457])
+            ("BBF.Common.Lib.BBF_Validation.BBF_Validation" include nil nil [458 527])
+            ("BBF.Maya.Lib.bbf_base.references" include nil nil [528 581])
+            ("BBF.Maya.Lib.bbf_base.decorators" include nil nil [582 635])
+            ("log" variable nil nil [637 686])
+            ("log" code nil nil [687 714])
+            ("init" function nil nil [716 825])
+            ("canonical_pathname" function (:arguments 
+              ( ("path" variable nil (reparse-symbol function_parameters) [900 904]))              ) nil [877 984])
+            ("SceneLODGroup" type
+               (:documentation " A Group of LODs belonging to a common variant asset "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            variant_asset: the SceneVariant whose LODs we're managing
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1097 1196])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1205 1234])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1243 1258])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1268 1299]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1177 1181])
+                            ("variant_asset" variable nil (reparse-symbol function_parameters) [1183 1196]))                          
+                        :documentation "
+        Args:
+            variant_asset: the SceneVariant whose LODs we're managing
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1164 1410])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1428 1432]))                          )
+                        (reparse-symbol indented_block_body) [1415 1465])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1481 1485]))                          )
+                        (reparse-symbol indented_block_body) [1469 1523])
+                    ("add_lod" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1540 1544])
+                            ("lod" variable nil (reparse-symbol function_parameters) [1546 1549]))                          
+                        :documentation "
+        Add an LOD to the group
+
+        Args:
+            lod: the SceneLOD to add to this group
+        ")
+                        (reparse-symbol indented_block_body) [1528 1710])
+                    ("get_loaded" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1730 1734]))                          
+                        :documentation "
+        Returns:
+            list: the LODs in the group that are loaded
+        ")
+                        (reparse-symbol indented_block_body) [1715 1996])
+                    ("get_lods" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2014 2018]))                          
+                        :documentation " Return the SceneLODs in this group ")
+                        (reparse-symbol indented_block_body) [2001 2098])
+                    ("get_variant" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2119 2123]))                          
+                        :documentation " Return the variant these LODs belong to ")
+                        (reparse-symbol indented_block_body) [2103 2211])
+                    ("__iter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2229 2233]))                          
+                        :documentation " iteration support ")
+                        (reparse-symbol indented_block_body) [2216 2311])
+                    ("__contains__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2333 2337])
+                            ("key" variable nil (reparse-symbol function_parameters) [2339 2342]))                          
+                        :documentation " in/not in support ")
+                        (reparse-symbol indented_block_body) [2316 2412])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2433 2437])
+                            ("key" variable nil (reparse-symbol function_parameters) [2439 2442]))                          
+                        :documentation " dict-like access support ")
+                        (reparse-symbol indented_block_body) [2417 2573])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2586 2590])
+                            ("key" variable nil (reparse-symbol function_parameters) [2592 2595])
+                            ("default" variable nil (reparse-symbol function_parameters) [2597 2604]))                          
+                        :documentation " dict-like access support ")
+                        (reparse-symbol indented_block_body) [2578 2692])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2713 2717])
+                            ("key" variable nil (reparse-symbol function_parameters) [2719 2722])
+                            ("value" variable nil (reparse-symbol function_parameters) [2724 2729]))                          
+                        :documentation " dict-like access support ")
+                        (reparse-symbol indented_block_body) [2697 2861])
+                    ("values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2877 2881]))                          
+                        :documentation " dict-like access support ")
+                        (reparse-symbol indented_block_body) [2866 2960])
+                    ("items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2975 2979]))                          
+                        :documentation " dict-like access support ")
+                        (reparse-symbol indented_block_body) [2965 3057]))                  
+                :type "class")
+                nil [1067 3057])
+            ("SceneVariantGroup" type
+               (:documentation " A Group of Variants in the scene all belonging to the same Part asset "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            main_asset: the Main Asset the Part we're keeping Variants for
+        \"\"\"" code nil (reparse-symbol indented_block_body) [3107 3211])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3220 3249])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3259 3284])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3312 3331]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3190 3194])
+                            ("main_asset" variable nil (reparse-symbol function_parameters) [3196 3206]))                          
+                        :documentation "
+        Args:
+            main_asset: the Main Asset the Part we're keeping Variants for
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3177 3442])
+                    ("add_variant" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3463 3467])
+                            ("variant_asset" variable nil (reparse-symbol function_parameters) [3469 3482]))                          
+                        :documentation " Add a variant to the group, also sets variant_asset's group attribute to us
+
+        Args:
+            variant_asset: a SceneVariant to add to the group
+        ")
+                        (reparse-symbol indented_block_body) [3447 3756])
+                    ("set_parent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3776 3780])
+                            ("asset_name" variable nil (reparse-symbol function_parameters) [3782 3792]))                          
+                        :documentation " Set the Parent asset name of the Variants we're keeping,
+        the Parent asset name should be of a SceneVariant in our group
+
+        Args:
+            asset_name: the name of an asset hopefully in our group
+        ")
+                        (reparse-symbol indented_block_body) [3761 4075])
+                    ("parent" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4105 4109]))                          
+                        :documentation " Return the parent asset based on hte parent asset name that was set
+
+        Returns:
+            SceneVariant: the SceneVariant representing the parent asset of the Variants in this group
+        ")
+                        (reparse-symbol indented_block_body) [4080 4380])
+                    ("get_variants" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4402 4406]))                          
+                        :documentation " Return all our variants ")
+                        (reparse-symbol indented_block_body) [4385 4479])
+                    ("get_main" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4497 4501]))                          
+                        :documentation " Return the Main asset ")
+                        (reparse-symbol indented_block_body) [4484 4574])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4595 4599])
+                            ("key" variable nil (reparse-symbol function_parameters) [4601 4604]))                          
+                        :documentation " dict-like access support ")
+                        (reparse-symbol indented_block_body) [4579 4683])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4704 4708])
+                            ("key" variable nil (reparse-symbol function_parameters) [4710 4713])
+                            ("value" variable nil (reparse-symbol function_parameters) [4715 4720]))                          
+                        :documentation " dict-like access support ")
+                        (reparse-symbol indented_block_body) [4688 4800])
+                    ("__contains__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4822 4826])
+                            ("key" variable nil (reparse-symbol function_parameters) [4828 4831]))                          
+                        :documentation " dict-like access support ")
+                        (reparse-symbol indented_block_body) [4805 4912])
+                    ("__iter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4930 4934]))                          
+                        :documentation " iteration support ")
+                        (reparse-symbol indented_block_body) [4917 5016])
+                    ("values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5032 5036]))                          
+                        :documentation " dict-like access support ")
+                        (reparse-symbol indented_block_body) [5021 5119])
+                    ("items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5134 5138]))                          
+                        :documentation " dict-like access support ")
+                        (reparse-symbol indented_block_body) [5124 5220])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5237 5241]))                          )
+                        (reparse-symbol indented_block_body) [5225 5283]))                  
+                :type "class")
+                nil [3058 5283])
+            ("SceneLOD" type
+               (:documentation " Represents one LOD (that is, one LOD file (proxy-)referenced into the Scene) "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            code: str, the LOD code (e.g. High, Low, etc...)
+            variant_asset: the SceneVariant we belong to
+            group: the SceneLODGroup we should add ourselves to
+            filename: the path to a file that represents the LOD
+        \"\"\"" code nil (reparse-symbol indented_block_body) [5357 5633])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5643 5660])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5670 5689])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5698 5728])
+                            ("if" code nil (reparse-symbol indented_block_body) [5738 5857])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5866 5895])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5904 5949])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5959 6197])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6206 6228]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5414 5418])
+                            ("code" variable nil (reparse-symbol function_parameters) [5420 5424])
+                            ("variant_asset" variable nil (reparse-symbol function_parameters) [5426 5439])
+                            ("group" variable nil (reparse-symbol function_parameters) [5441 5446])
+                            ("filename" variable nil (reparse-symbol function_parameters) [5448 5456]))                          
+                        :documentation "
+        Args:
+            code: str, the LOD code (e.g. High, Low, etc...)
+            variant_asset: the SceneVariant we belong to
+            group: the SceneLODGroup we should add ourselves to
+            filename: the path to a file that represents the LOD
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5401 6339])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6356 6360]))                          )
+                        (reparse-symbol indented_block_body) [6344 6641])
+                    ("display_name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6677 6681]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [6646 6718])
+                    ("code" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6746 6750]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [6723 6779])
+                    ("group" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6808 6812]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [6784 6842])
+                    ("reference" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6875 6879]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [6847 6913])
+                    ("matches_reference" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6940 6944])
+                            ("reference" variable nil (reparse-symbol function_parameters) [6946 6955]))                          
+                        :documentation " Check whether an existing reference would match this LOD,
+        based on our filename
+
+        Args:
+            reference: a PyMEL reference node (or name of one)
+
+        Returns:
+            bool: True if the reference passed in references the same file as us
+        ")
+                        (reparse-symbol indented_block_body) [6918 7369])
+                    ("set_reference" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7392 7396])
+                            ("reference" variable nil (reparse-symbol function_parameters) [7398 7407]))                          
+                        :documentation " Set our reference
+
+        Args:
+            reference: a PyMEL reference node (or name of one)
+
+        ")
+                        (reparse-symbol indented_block_body) [7374 8404])
+                    ("conform_reference" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8431 8435]))                          
+                        :documentation " Mkae sure our reference has a conforming name and proxy tag ")
+                        (reparse-symbol indented_block_body) [8409 8824])
+                    ("file_reference" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8862 8866]))                          
+                        :documentation " Return a PyMEL.FileReference encapsulating our reference node ")
+                        (reparse-symbol indented_block_body) [8829 9078])
+                    ("find_group_reference" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9108 9112]))                          
+                        :documentation " Find the reference node for the Variant group (by going to our variant and then its group),
+        of which there should be only one proper one (the rest will then be proxy references to that first one
+
+        Returns:
+            reference: a reference node if such a one is already in existance (None, else)
+        ")
+                        (reparse-symbol indented_block_body) [9083 9708])
+                    ("load" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9722 9726])
+                            ("switch_to" variable nil (reparse-symbol function_parameters) [9728 9737]))                          
+                        :documentation " Load the reference we represent, optionally also switch what's loaded in the scene to it
+
+        Args:
+            switch_to: True if we should switch to our reference after loading it, False else, default False
+        ")
+                        (reparse-symbol indented_block_body) [9713 11106])
+                    ("unload" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11122 11126]))                          )
+                        (reparse-symbol indented_block_body) [11111 11413])
+                    ("select_contents" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11438 11442]))                          )
+                        (reparse-symbol indented_block_body) [11418 11757])
+                    ("switch_to" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11776 11780]))                          
+                        :documentation " Switch to our reference ")
+                        (reparse-symbol indented_block_body) [11762 12106])
+                    ("ensure_loaded" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12129 12133]))                          
+                        :documentation " make sure our reference is loaded into the scene ")
+                        (reparse-symbol indented_block_body) [12111 12313])
+                    ("clear_scene_info" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12339 12343]))                          
+                        :documentation " forget the reference node that (may have) represented us in the scene ")
+                        (reparse-symbol indented_block_body) [12318 12463])
+                    ("in_scene" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12495 12499]))                          
+                        :documentation " check if our file is referenced into the scene ")
+                        (reparse-symbol indented_block_body) [12468 12853])
+                    ("is_loaded" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12886 12890]))                          
+                        :documentation " check if our reference is the one that is loaded ")
+                        (reparse-symbol indented_block_body) [12858 13154]))                  
+                :type "class")
+                nil [5284 13154])
+            ("SceneVariant" type
+               (:documentation " Represents a Variant in the Scene.
+    Note that a Parent asset is treated as a Variant, it's just marked as special in the SceneVariantGroup we belong to
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            code: The Variant's Asset code
+            main_asset: The Main Asset we're representing a (variant of a) Part of
+            pdb: a project database connection (see ShotgunInterface.services as an example)
+            pdb_dict: Asset information for this Variant as returned by the pdb
+        \"\"\"" code nil (reparse-symbol indented_block_body) [13419 13747])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13756 13779])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13788 13817])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13826 13848])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13857 13884])
+                            ("if" code nil (reparse-symbol indented_block_body) [13894 14002])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14011 14027])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14137 14163])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14173 14195])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14235 14257])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14527 14552])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14561 14576])
+                            ("needed_fields" variable nil (reparse-symbol indented_block_body) [14675 14747])
+                            ("missing_fields" code nil (reparse-symbol indented_block_body) [14756 14820])
+                            ("if" code nil (reparse-symbol indented_block_body) [14829 15274])
+                            ("self" code nil (reparse-symbol indented_block_body) [15283 15336])
+                            ("if" code nil (reparse-symbol indented_block_body) [15346 15832])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15841 15878])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15887 15912])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15922 16009])
+                            ("if" code nil (reparse-symbol indented_block_body) [16019 16394]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13371 13375])
+                            ("code" variable nil (reparse-symbol function_parameters) [13377 13381])
+                            ("main_asset" variable nil (reparse-symbol function_parameters) [13383 13393])
+                            ("pdb" variable nil (reparse-symbol function_parameters) [13395 13398])
+                            ("pdb_dict" variable nil (reparse-symbol function_parameters) [13400 13408]))                          
+                        :documentation "
+        Args:
+            code: The Variant's Asset code
+            main_asset: The Main Asset we're representing a (variant of a) Part of
+            pdb: a project database connection (see ShotgunInterface.services as an example)
+            pdb_dict: Asset information for this Variant as returned by the pdb
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13358 16394])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16412 16416]))                          )
+                        (reparse-symbol indented_block_body) [16399 16449])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16465 16469]))                          )
+                        (reparse-symbol indented_block_body) [16453 16784])
+                    ("code" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16812 16816]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [16789 16845])
+                    ("tags" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16873 16877]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [16850 16912])
+                    ("part_type" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17033 17037]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [17005 17071])
+                    ("group" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17100 17104]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [17076 17134])
+                    ("is_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17241 17245]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [17214 17278])
+                    ("is_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17317 17321])
+                            ("is_scene" variable nil (reparse-symbol function_parameters) [17323 17331]))                          
+                        :decorators 
+                          ( ("is_scene.setter" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [17283 17368])
+                    ("lod_group" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17401 17405]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [17373 17439])
+                    ("main" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17467 17471]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [17444 17506])
+                    ("suffix" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17536 17540]))                          
+                        :documentation "
+        Returns:
+            str: the suffix to the Parent Asset's name that makes this Varient unique (can be empty if we are the parent asset)
+        ")
+                        (reparse-symbol indented_block_body) [17511 17874])
+                    ("parent_name" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17909 17913]))                          
+                        :documentation "
+        Returns:
+            str: The name of the parent asset of this asset
+        ")
+                        (reparse-symbol indented_block_body) [17879 18216])
+                    ("update_from_pdb_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18246 18250])
+                            ("pdb" variable nil (reparse-symbol function_parameters) [18252 18255])
+                            ("pdb_dict" variable nil (reparse-symbol function_parameters) [18257 18265]))                          
+                        :documentation " Update ourself with information from the pdb
+
+        Args:
+            pdb: the project database service used to query the information
+            pdb_dict: the information about an Asset returned by the pdb
+        ")
+                        (reparse-symbol indented_block_body) [18221 18696])
+                    ("get_loaded_lods" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18721 18725]))                          )
+                        (reparse-symbol indented_block_body) [18701 18772])
+                    ("get_lod" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18789 18793])
+                            ("lod_name" variable nil (reparse-symbol function_parameters) [18795 18803]))                          
+                        :documentation "
+        Args:
+            lod_name: the name of an LOD
+
+        Returns:
+            SceneLOD: the LOD object named lod_name
+        ")
+                        (reparse-symbol indented_block_body) [18777 19006])
+                    ("has_lods" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19024 19028]))                          
+                        :documentation "
+        Returns:
+            bool: True if we have any LODs
+        ")
+                        (reparse-symbol indented_block_body) [19011 19165])
+                    ("fill_lods" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19184 19188])
+                            ("force_update" variable nil (reparse-symbol function_parameters) [19190 19202]))                          
+                        :documentation " Given our information about an asset, check for LOD files on disk and add them to our lod_group
+
+        Args:
+            force_update: If False and we've checked for LOD files previously, don't recheck, default False
+        ")
+                        (reparse-symbol indented_block_body) [19170 20764])
+                    ("fill_parts" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20785 20789])
+                            ("force_update" variable nil (reparse-symbol function_parameters) [20791 20803]))                          
+                        :documentation " Get the Assets from the project database that are parts of ourselves
+
+        Args:
+            force_update: if False (the default), and we've gotten the Parts information previously, do nothing
+        ")
+                        (reparse-symbol indented_block_body) [20770 22690])
+                    ("" code nil (reparse-symbol indented_block_body) [22719 22722])
+                    ("matches_reference" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22749 22753])
+                            ("reference" variable nil (reparse-symbol function_parameters) [22755 22764]))                          
+                        :documentation " checks if the reference matches this one specific variant asset ")
+                        (reparse-symbol indented_block_body) [22727 23105])
+                    ("" code nil (reparse-symbol indented_block_body) [23134 23137])
+                    ("recursive_matches_reference" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23174 23178])
+                            ("reference" variable nil (reparse-symbol function_parameters) [23180 23189]))                          
+                        :documentation " checks if this variant or any of its LODs or any LODs of its parts, etc... matches the reference ")
+                        (reparse-symbol indented_block_body) [23142 23709])
+                    ("maybe_add_reference" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23738 23742])
+                            ("reference" variable nil (reparse-symbol function_parameters) [23744 23753]))                          
+                        :documentation " checks if the reference matches any of our LODs or any of our parts
+
+        Args:
+            reference: a :class:`ReferenceNode <PyMEL:pymel.core.nodetypes.Reference>`
+
+        Returns:
+            bool: whether the reference could be added to anything we know about
+        ")
+                        (reparse-symbol indented_block_body) [23714 24570])
+                    ("clear_scene_info" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24596 24600]))                          
+                        :documentation " Forget any information we have about the current Maya scene ")
+                        (reparse-symbol indented_block_body) [24575 24955])
+                    ("in_scene" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24987 24991]))                          
+                        :documentation "
+        Returns:
+            bool: True if we are in the scene (might be as unloaded references though)
+        ")
+                        (reparse-symbol indented_block_body) [24960 25405])
+                    ("is_loaded" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25438 25442]))                          
+                        :documentation "
+        Returns:
+            bool: True if we are activly in the scene (not just as unloaded refs)
+        ")
+                        (reparse-symbol indented_block_body) [25410 25902])
+                    ("parts" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25931 25935]))                          
+                        :documentation "
+        Return:
+            dict: the Parent Assets of all our Parts' SceneVariantGroups, keyed by Asset code
+        ")
+                        (reparse-symbol indented_block_body) [25907 26353])
+                    ("part_in_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26376 26380])
+                            ("parent_name" variable nil (reparse-symbol function_parameters) [26382 26393]))                          
+                        :documentation " check if an Asset (or one of its Variants) that is a part of us is present in the scene
+
+        Args:
+            parent_name: The name of the Parent Asset of one of our Parts
+
+        Returns:
+            bool: True if any Asset in the Parts SceneVariantGroup is in the scene
+        ")
+                        (reparse-symbol indented_block_body) [26358 26883])
+                    ("load_parts" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26903 26907])
+                            ("parts" variable nil (reparse-symbol function_parameters) [26909 26914])
+                            ("lod_name" variable nil (reparse-symbol function_parameters) [26916 26924]))                          
+                        :documentation " Load the parts specified by name, setting to lod_name
+
+        Args:
+            parts: list of asset names (or single name)
+            lod_name: name of an LOD to set loaded parts to, can be None (== default)
+        ")
+                        (reparse-symbol indented_block_body) [26888 27819])
+                    ("load_all_missing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27845 27849])
+                            ("lod_name" variable nil (reparse-symbol function_parameters) [27851 27859]))                          
+                        :documentation " Make sure all our LODs and all our Parts' LODs are loaded in the scene
+
+        Args:
+            lod_name: If not None, ensure that an LOD with this name is loaded first
+        ")
+                        (reparse-symbol indented_block_body) [27824 28699]))                  
+                :type "class")
+                nil [13155 28699]))          
+      :file "scenePartAssets.py"
+      :pointmax 28699
+      :fsize 29519
+      :lastmodtime '(22228 22016 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfEntity!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

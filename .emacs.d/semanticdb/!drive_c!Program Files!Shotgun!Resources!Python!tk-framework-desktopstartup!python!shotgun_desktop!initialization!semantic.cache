@@ -1,0 +1,146 @@
+;; Object initialization/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "initialization/"
+  :tables
+  (list
+    (semanticdb-table "initialize.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [448 457])
+            ("sys" include nil nil [458 468])
+            ("logging" include nil nil [469 483])
+            ("tempfile" include nil nil [484 499])
+            ("install" include nil nil [508 522])
+            ("shotgun" include nil nil [530 544])
+            ("paths" include nil nil [553 565])
+            ("initialize" function
+               (:documentation " initialize toolkit for this computer for a single site "
+                :arguments 
+                  ( ("splash" variable nil (reparse-symbol function_parameters) [583 589])
+                    ("connection" variable nil (reparse-symbol function_parameters) [591 601]))                  )
+                nil [568 2942]))          
+      :file "initialize.py"
+      :pointmax 2942
+      :fsize 3031
+      :lastmodtime '(21917 10684 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "install.py"
+      :file "install.py"
+      :fsize 15773
+      :lastmodtime '(21861 12624 0 0))
+    (semanticdb-table "shotgun.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("json" include nil nil [448 459])
+            ("urllib" include nil nil [460 473])
+            ("urllib2" include nil nil [474 488])
+            ("logging" include nil nil [490 504])
+            ("logger" variable nil nil [505 560])
+            ("shotgun_api3" include nil nil [562 594])
+            ("constants" include nil nil [603 619])
+            ("distutils.version" include nil nil [620 662])
+            ("get_server_version" function
+               (:documentation "
+    Retrieves the server version from the connection.
+
+    :param connection: Connection we want the server version from.
+
+    :returns: Tuple of (major, minor) versions.
+    "
+                :arguments 
+                  ( ("connection" variable nil (reparse-symbol function_parameters) [688 698]))                  )
+                nil [665 1138])
+            ("is_script_user_required" function
+               (:documentation "
+    Returns if a site needs to be configured with a script user or if the new
+    human user based authentication for Toolkit will work with it.
+
+    :param connection: Connection to the server to test against.
+
+    :returns: If the site is not compatible with the new authentication code,
+        returns True, False otherwise.
+    "
+                :arguments 
+                  ( ("connection" variable nil (reparse-symbol function_parameters) [1168 1178]))                  )
+                nil [1140 1686])
+            ("does_pipeline_configuration_require_project" function
+               (:documentation "
+    Returns if pipeline configurations are project entities or not.
+
+    :param connection: Connection to the server to test against.
+
+    :returns: True if pipeline configurations are project entities, False
+        otherwise.
+    "
+                :arguments 
+                  ( ("connection" variable nil (reparse-symbol function_parameters) [1736 1746]))                  )
+                nil [1688 2130])
+            ("get_or_create_script" function
+               (:documentation "
+    Find the Toolkit script in Shotgun or create it if it does not exist.
+
+    This method is present for legacy reason. When running pre-6.0 sites, we
+    have to configure the core to use script users due for script user based
+    authentication. However, in a post 5.0 world, clients will now by default
+    use human user authentication and therefore won't need a script user to
+    created.
+
+    :param connection: Connection to the server to get or create a script user
+                       from.
+
+    :returns: A dictionary with keys firstname and salted_password.
+    "
+                :arguments 
+                  ( ("connection" variable nil (reparse-symbol function_parameters) [2157 2167]))                  )
+                nil [2132 3943])
+            ("get_proxy_from_connection" function
+               (:documentation "
+    Return the proxy string from a connection object
+    Returns None if there is no proxy set
+    "
+                :arguments 
+                  ( ("connection" variable nil (reparse-symbol function_parameters) [3975 3985]))                  )
+                nil [3945 4529])
+            ("get_app_store_credentials" function
+               (:documentation " Return the validated script for this site to connect to the app store "
+                :arguments 
+                  ( ("connection" variable nil (reparse-symbol function_parameters) [4561 4571]))                  )
+                nil [4531 5238])
+            ("__get_app_store_key_internal" function
+               (:documentation "
+    Return the script for this site to connect to the app store using a given
+    set of credentials.
+
+    :param connection: Connection to Shotgun.
+    :param post_data: Credentials to send to the sgtk_install_script route.
+
+    :returns: Dictionary with keys script_name and script_key.
+    "
+                :arguments 
+                  ( ("connection" variable nil (reparse-symbol function_parameters) [5273 5283])
+                    ("post_data" variable nil (reparse-symbol function_parameters) [5285 5294]))                  )
+                nil [5240 6157])
+            ("__get_app_store_key" function
+               (:documentation "
+    Return the script for this site to connect to the app store. Uses the right
+    authentication mechanism based on the version of the website.
+
+    :param connection: Connection to Shotgun.
+
+    :returns: Dictionary with keys script_name and script_key.
+    "
+                :arguments 
+                  ( ("connection" variable nil (reparse-symbol function_parameters) [6183 6193]))                  )
+                nil [6159 7265]))          
+      :file "shotgun.py"
+      :pointmax 7265
+      :fsize 7479
+      :lastmodtime '(21917 11637 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "constants.py"
+      :file "constants.py"
+      :fsize 690
+      :lastmodtime '(21861 12624 0 0)))
+  :file "!drive_c!Program Files!Shotgun!Resources!Python!tk-framework-desktopstartup!python!shotgun_desktop!initialization!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

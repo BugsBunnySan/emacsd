@@ -1,0 +1,103 @@
+;; Object context/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "context/"
+  :tables
+  (list
+    (semanticdb-table "kvstore.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package context.kvstore
+@brief 
+
+@copyright 2015 Sebastian Haas
+\"\"\"" code nil nil [25 97])
+            ("__future__" include nil nil [98 135])
+            ("__all__" variable nil nil [137 158])
+            ("__builtin__" include nil nil [160 178])
+            ("Null" type
+               (:superclasses ("object")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [204 208]))                  
+                :type "class")
+                nil [180 209])
+            ("if" code nil nil [210 277])
+            ("KVStore" type
+               (:documentation " Key Value store with key path support "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [428 444])
+                            ("self" variable nil (reparse-symbol indented_block_body) [453 479])
+                            ("self" variable nil (reparse-symbol indented_block_body) [488 508])
+                            ("self" variable nil (reparse-symbol indented_block_body) [517 547]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [373 377])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [379 387])
+                            ("level" variable nil (reparse-symbol function_parameters) [393 398])
+                            ("parent_key" variable nil (reparse-symbol function_parameters) [402 412]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [360 548])
+                    ("__resolve_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [571 575])
+                            ("key" variable nil (reparse-symbol function_parameters) [577 580]))                          )
+                        (reparse-symbol indented_block_body) [553 763])
+                    ("__setvalue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [791 795])
+                            ("key" variable nil (reparse-symbol function_parameters) [797 800])
+                            ("value" variable nil (reparse-symbol function_parameters) [802 807]))                          )
+                        (reparse-symbol indented_block_body) [776 1016])
+                    ("__find_place" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1038 1042])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [1044 1052])
+                            ("create" variable nil (reparse-symbol function_parameters) [1054 1060]))                          )
+                        (reparse-symbol indented_block_body) [1021 1455])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1488 1492])
+                            ("key" variable nil (reparse-symbol function_parameters) [1494 1497])
+                            ("value" variable nil (reparse-symbol function_parameters) [1499 1504]))                          )
+                        (reparse-symbol indented_block_body) [1472 1848])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1869 1873])
+                            ("key" variable nil (reparse-symbol function_parameters) [1875 1878]))                          )
+                        (reparse-symbol indented_block_body) [1853 2326])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2339 2343])
+                            ("key" variable nil (reparse-symbol function_parameters) [2345 2348])
+                            ("default" variable nil (reparse-symbol function_parameters) [2350 2357])
+                            ("as_dict" variable nil (reparse-symbol function_parameters) [2364 2371]))                          )
+                        (reparse-symbol indented_block_body) [2331 2572])
+                    ("as_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2589 2593]))                          )
+                        (reparse-symbol indented_block_body) [2577 2799])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2820 2824]))                          )
+                        (reparse-symbol indented_block_body) [2808 3178]))                  
+                :type "class")
+                nil [283 3178]))          
+      :file "kvstore.py"
+      :pointmax 3178
+      :fsize 3177
+      :lastmodtime '(21923 2148 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!rnd!context!context!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

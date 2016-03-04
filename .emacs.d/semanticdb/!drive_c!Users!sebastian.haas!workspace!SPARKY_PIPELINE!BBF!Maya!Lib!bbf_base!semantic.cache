@@ -1,0 +1,60 @@
+;; Object bbf_base/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbf_base/"
+  :tables
+  (list
+    (semanticdb-table "nodes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbf_base.nodes
+   :synopsis: basic node handling functions
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 148])
+            ("__future__" include nil nil [149 186])
+            ("__all__" variable nil nil [188 214])
+            ("pymel.core" include nil nil [216 239])
+            ("BBF.Common.Lib.bbfContext" include nil nil [241 287])
+            ("NodesKVStore" type
+               (:documentation " A callable KVStore that will list nodes by type "
+                :superclasses ("bbfContext.kvstore.KVStore")
+                :members 
+                  ( ("_default" variable nil (reparse-symbol indented_block_body) [401 414])
+                    ("_setvalue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [434 438])
+                            ("key" variable nil (reparse-symbol function_parameters) [440 443])
+                            ("value" variable nil (reparse-symbol function_parameters) [445 450]))                          
+                        :documentation " disallow setting values
+
+        Raises:
+            TypeError: always
+        ")
+                        (reparse-symbol indented_block_body) [420 623])
+                    ("_getvalue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [642 646])
+                            ("node_type" variable nil (reparse-symbol function_parameters) [648 657])
+                            ("default" variable nil (reparse-symbol function_parameters) [659 666]))                          
+                        :documentation "
+        Args:
+            node_type: the type of node to list
+            default: used in case there's no node of type node_type in the scene
+
+        Returns:
+            list: a list of :class:`PyNode <PyMEL:pymel.core.general.PyNode>` of type node_type (can be empty)
+        ")
+                        (reparse-symbol indented_block_body) [628 1100]))                  
+                :type "class")
+                nil [289 1100]))          
+      :file "nodes.py"
+      :pointmax 1126
+      :fsize 1168
+      :lastmodtime '(22021 5815 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!SPARKY_PIPELINE!BBF!Maya!Lib!bbf_base!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

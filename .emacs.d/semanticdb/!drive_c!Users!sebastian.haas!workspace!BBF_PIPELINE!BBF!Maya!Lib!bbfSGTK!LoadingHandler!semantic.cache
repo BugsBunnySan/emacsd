@@ -1,0 +1,270 @@
+;; Object LoadingHandler/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "LoadingHandler/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.LoadingHandler.base
+    :synopsis: maya specific loaders for sgtk
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 163])
+            ("__future__" include nil nil [163 163])
+            ("scene" include nil nil [163 163])
+            ("shader" include nil nil [163 163]))          
+      :file "__init__.py"
+      :pointmax 164
+      :fsize 170
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "action_base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.LoadingHandler.action_base
+   :synopsis: base for actions in maya
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 163])
+            ("__future__" include nil nil [164 201])
+            ("__all__" variable nil nil [203 227])
+            ("BBF.Common.Lib.bbfSGTK.LoadingHandler.base" include nil nil [229 300])
+            ("MayaAction" type
+               (:superclasses ("LoadingHandlerBase.Action")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [351 355]))                  
+                :type "class")
+                nil [302 356]))          
+      :file "action_base.py"
+      :pointmax 380
+      :fsize 396
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "services.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.LoadingHandler.services
+   :synopsis: loading services support
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 160])
+            ("__future__" include nil nil [161 198])
+            ("__all__" variable nil nil [200 232])
+            ("BBF.Common.Lib.bbfSGTK.LoadingHandler.base" include nil nil [234 305])
+            ("MayaLoadingHandler" type
+               (:superclasses ("LoadingHandlerBase.LoadingHandler")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [372 376]))                  
+                :type "class")
+                nil [307 377]))          
+      :file "services.py"
+      :pointmax 408
+      :fsize 423
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "texture.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.LoadingHandler.texture
+    :synopsis: texture loading and importing for maya
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 174])
+            ("__future__" include nil nil [175 212])
+            ("__all__" variable nil nil [214 294])
+            ("pymel.core" include nil nil [296 319])
+            ("action_base" include nil nil [321 339])
+            ("services" include nil nil [340 355])
+            ("TextureLoadingHandler" type
+               (:superclasses ("services.MayaLoadingHandler")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [419 482])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [516 561])
+                            ("self" variable nil (reparse-symbol indented_block_body) [571 706]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [501 505]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [488 707]))                  
+                :type "class")
+                nil [357 707])
+            ("TextureLoadingAction" type
+               (:superclasses ("action_base.MayaAction")
+                :members 
+                  ( ("name" variable nil (reparse-symbol indented_block_body) [799 820])
+                    ("caption" variable nil (reparse-symbol indented_block_body) [825 858])
+                    ("description" variable nil (reparse-symbol indented_block_body) [863 906])
+                    ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [924 928]))                          )
+                        (reparse-symbol indented_block_body) [912 1117]))                  
+                :type "class")
+                nil [743 1117])
+            ("UdimLoadingAction" type
+               (:superclasses ("action_base.MayaAction")
+                :members 
+                  ( ("name" variable nil (reparse-symbol indented_block_body) [1205 1231])
+                    ("caption" variable nil (reparse-symbol indented_block_body) [1236 1282])
+                    ("description" variable nil (reparse-symbol indented_block_body) [1287 1337])
+                    ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1355 1359]))                          )
+                        (reparse-symbol indented_block_body) [1343 1698]))                  
+                :type "class")
+                nil [1152 1698]))          
+      :file "texture.py"
+      :pointmax 1729
+      :fsize 1783
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shader.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.LoadingHandler.shader
+   :synopsis: loading published shaders
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 159])
+            ("__future__" include nil nil [160 197])
+            ("__all__" variable nil nil [199 254])
+            ("sgtk" include nil nil [256 267])
+            ("BBF.Common.Lib.bbfSGTK" include nil nil [269 309])
+            ("BBF.Maya.Lib.bbfShader.ShaderImport" include nil nil [310 368])
+            ("action_base" include nil nil [370 388])
+            ("services" include nil nil [389 404])
+            ("ShaderLoadingHandler" type
+               (:superclasses ("services.MayaLoadingHandler")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [467 510])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [531 575])
+                            ("self" variable nil (reparse-symbol indented_block_body) [585 645]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [529 533]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [516 659]))                  
+                :type "class")
+                nil [406 659])
+            ("ShaderApplyAction" type
+               (:superclasses ("action_base.MayaAction")
+                :members 
+                  ( ("name" variable nil (reparse-symbol indented_block_body) [747 769])
+                    ("caption" variable nil (reparse-symbol indented_block_body) [774 808])
+                    ("description" variable nil (reparse-symbol indented_block_body) [813 865])
+                    ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [883 887]))                          )
+                        (reparse-symbol indented_block_body) [871 1506]))                  
+                :type "class")
+                nil [694 1506]))          
+      :file "shader.py"
+      :pointmax 1537
+      :fsize 1588
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "scene.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.LoadingHandler.reference
+    :synopsis: reference loading and importing for maya
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 178])
+            ("__future__" include nil nil [179 216])
+            ("__all__" variable nil nil [218 300])
+            ("os" include nil nil [302 311])
+            ("sgtk" include nil nil [313 324])
+            ("pymel.core" include nil nil [326 349])
+            ("BBF.Common.Lib.bbfSGTK.templates" include nil nil [351 411])
+            ("action_base" include nil nil [413 431])
+            ("services" include nil nil [432 447])
+            ("SceneLoadingHandler" type
+               (:superclasses ("services.MayaLoadingHandler")
+                :members 
+                  ( ("service_tags" variable nil (reparse-symbol indented_block_body) [509 558])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [506 549])
+                            ("self" variable nil (reparse-symbol indented_block_body) [559 684]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [577 581]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [564 771])
+                    ("generate_actions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [797 801])
+                            ("hook" variable nil (reparse-symbol function_parameters) [803 807])
+                            ("sg_publish_data" variable nil (reparse-symbol function_parameters) [809 824])
+                            ("actions" variable nil (reparse-symbol function_parameters) [826 833])
+                            ("ui_area" variable nil (reparse-symbol function_parameters) [835 842]))                          )
+                        (reparse-symbol indented_block_body) [776 1891]))                  
+                :type "class")
+                nil [449 1891])
+            ("ReferenceLoadingAction" type
+               (:superclasses ("action_base.MayaAction")
+                :members 
+                  ( ("name" variable nil (reparse-symbol indented_block_body) [1983 2008])
+                    ("caption" variable nil (reparse-symbol indented_block_body) [2013 2045])
+                    ("description" variable nil (reparse-symbol indented_block_body) [2050 2114])
+                    ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2132 2136]))                          )
+                        (reparse-symbol indented_block_body) [2120 2433]))                  
+                :type "class")
+                nil [1925 2433])
+            ("ImportLoadingAction" type
+               (:superclasses ("action_base.MayaAction")
+                :members 
+                  ( ("name" variable nil (reparse-symbol indented_block_body) [2525 2547])
+                    ("caption" variable nil (reparse-symbol indented_block_body) [2552 2587])
+                    ("description" variable nil (reparse-symbol indented_block_body) [2592 2622])
+                    ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2640 2644]))                          )
+                        (reparse-symbol indented_block_body) [2628 2840]))                  
+                :type "class")
+                nil [2470 2840]))          
+      :file "scene.py"
+      :pointmax 2873
+      :fsize 2956
+      :lastmodtime '(22231 3752 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSGTK.LoadingHandler.base
+   :synopsis: loading handler base for maya
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 161])
+            ("__future__" include nil nil [162 199])
+            ("scene" include nil nil [201 213])
+            ("shader" include nil nil [214 227])
+            ("texture" include nil nil [228 242]))          
+      :file "base.py"
+      :pointmax 243
+      :fsize 254
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfSGTK!LoadingHandler!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

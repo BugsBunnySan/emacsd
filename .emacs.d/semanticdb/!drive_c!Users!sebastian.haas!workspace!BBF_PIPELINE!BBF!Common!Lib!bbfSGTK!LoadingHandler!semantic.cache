@@ -1,0 +1,148 @@
+;; Object LoadingHandler/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "LoadingHandler/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfSGTK.LoadingHandler
+    :synopsis: loading handler for sgtk base class and stuff
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 175]))          
+      :file "__init__.py"
+      :pointmax 176
+      :fsize 182
+      :lastmodtime '(22229 29149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfSGTK.LoadingHandler.base
+    :synopsis: base class for sgtk loading handlers
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 171])
+            ("__future__" include nil nil [172 209])
+            ("__all__" variable nil nil [211 268])
+            ("abc" include nil nil [270 280])
+            ("BBF.Common.Lib.bbfContext" include nil nil [282 328])
+            ("ILoadingHandler" type
+               (:superclasses ("bbfContext.service.Interface")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [387 416])
+                    ("generate_actions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [467 471])
+                            ("hook" variable nil (reparse-symbol function_parameters) [473 477])
+                            ("sg_publish_data" variable nil (reparse-symbol function_parameters) [479 494])
+                            ("actions" variable nil (reparse-symbol function_parameters) [496 503])
+                            ("ui_area" variable nil (reparse-symbol function_parameters) [505 512]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [422 528])
+                    ("execute_action" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [576 580])
+                            ("hook" variable nil (reparse-symbol function_parameters) [582 586])
+                            ("name" variable nil (reparse-symbol function_parameters) [588 592])
+                            ("params" variable nil (reparse-symbol function_parameters) [594 600])
+                            ("sg_publish_data" variable nil (reparse-symbol function_parameters) [602 617]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [533 633]))                  
+                :type "class")
+                nil [330 633])
+            ("LoadingHandler" type
+               (:superclasses ("bbfContext.service.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [717 751])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [785 811]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [770 774]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [757 812])
+                    ("generate_actions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [838 842])
+                            ("hook" variable nil (reparse-symbol function_parameters) [844 848])
+                            ("sg_publish_data" variable nil (reparse-symbol function_parameters) [850 865])
+                            ("actions" variable nil (reparse-symbol function_parameters) [867 874])
+                            ("ui_area" variable nil (reparse-symbol function_parameters) [876 883]))                          )
+                        (reparse-symbol indented_block_body) [817 1171])
+                    ("execute_action" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1195 1199])
+                            ("hook" variable nil (reparse-symbol function_parameters) [1201 1205])
+                            ("name" variable nil (reparse-symbol function_parameters) [1207 1211])
+                            ("params" variable nil (reparse-symbol function_parameters) [1213 1219])
+                            ("sg_publish_data" variable nil (reparse-symbol function_parameters) [1221 1236]))                          )
+                        (reparse-symbol indented_block_body) [1176 1254]))                  
+                :type "class")
+                nil [663 1254])
+            ("Action" type
+               (:superclasses ("dict")
+                :members 
+                  ( ("name" variable nil (reparse-symbol indented_block_body) [1307 1342])
+                    ("caption" variable nil (reparse-symbol indented_block_body) [1347 1378])
+                    ("description" variable nil (reparse-symbol indented_block_body) [1383 1458])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1532 1549])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1558 1597])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1606 1629])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1638 1661])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1671 1702])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1711 1737])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1746 1780])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1789 1827])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1837 1908]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1476 1480])
+                            ("hook" variable nil (reparse-symbol function_parameters) [1482 1486])
+                            ("sg_publish_data" variable nil (reparse-symbol function_parameters) [1488 1503])
+                            ("actions" variable nil (reparse-symbol function_parameters) [1505 1512])
+                            ("ui_area" variable nil (reparse-symbol function_parameters) [1514 1521]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1463 1909])
+                    ("publish_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1945 1949]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1914 1986])
+                    ("publish_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2033 2037])
+                            ("publish_path" variable nil (reparse-symbol function_parameters) [2039 2051]))                          
+                        :decorators 
+                          ( ("publish_path.setter" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1991 2096])
+                    ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2113 2117]))                          )
+                        (reparse-symbol indented_block_body) [2101 2133]))                  
+                :type "class")
+                nil [1283 2133]))          
+      :file "base.py"
+      :pointmax 2153
+      :fsize 2230
+      :lastmodtime '(22229 53950 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 1987 . 2133) (INDENT_BLOCK 2012 . 2133) (NAME 2062 . 2070) (NEWLINE 2073 . 2074) (INDENT_BLOCK 2012 . 2161) (INDENT_BLOCK 1910 . 2167))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!bbfSGTK!LoadingHandler!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

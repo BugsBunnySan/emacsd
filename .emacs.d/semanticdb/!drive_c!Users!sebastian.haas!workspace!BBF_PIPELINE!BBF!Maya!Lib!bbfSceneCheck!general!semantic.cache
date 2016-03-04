@@ -1,0 +1,978 @@
+;; Object general/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "general/"
+  :tables
+  (list
+    (semanticdb-table "checkLights.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("bbfEntity" include nil nil [80 96])
+            ("logging" include nil nil [97 111])
+            ("logger" variable nil nil [112 148])
+            ("check" function nil nil [150 1256]))          
+      :file "checkLights.py"
+      :pointmax 1256
+      :fsize 1286
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkPhysicalLights.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+Lights must be: directional, spot, or area lights ONLY
+All lights should have shadow color set to black
+All lights must cast raytraced shadows
+Spots and area lights must have the arealight checkbox ON under the mental ray tab
+Spots and area lights hisample should not be higher than 16 inside the mental ray tab
+#2384: light check up for asset publishing LGTv2
+\"\"\"" code nil nil [1 369])
+            ("pymel.core" include nil nil [370 393])
+            ("bbfException.bbfExceptions" include nil nil [394 448])
+            ("logging" include nil nil [449 463])
+            ("logger" variable nil nil [464 500])
+            ("bbfSceneCheck" include nil nil [501 538])
+            ("skipper" variable nil nil [540 591])
+            ("getSkipper" function nil nil [592 629])
+            ("check" function nil nil [630 3880]))          
+      :file "checkPhysicalLights.py"
+      :pointmax 3880
+      :fsize 3984
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [1 15])
+            ("logger" variable nil nil [16 52])
+            ("os" include nil nil [54 63])
+            ("glob" include nil nil [64 75])
+            ("sys" include nil nil [76 86])
+            ("for" code nil nil [88 352]))          
+      :file "__init__.py"
+      :pointmax 352
+      :fsize 363
+      :lastmodtime '(21919 61103 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "animatedVisibility.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfException.bbfExceptions" include nil nil [1 55])
+            ("maya.cmds" include nil nil [57 81])
+            ("pymel.core" include nil nil [82 105])
+            ("logging" include nil nil [106 120])
+            ("BBF_environ" include nil nil [121 139])
+            ("log" variable nil nil [140 173])
+            ("bbfUtil" include nil nil [174 188])
+            ("bbfSceneCheck" include nil nil [189 226])
+            ("skipper" variable nil nil [228 271])
+            ("getSkipper" function nil nil [272 309])
+            ("checkHiddenGeo" function nil nil [310 1377])
+            ("checkZeroKeys" function nil nil [1378 1684])
+            ("check" function nil nil [1685 2362])
+            ("fix" function nil nil [2363 2473]))          
+      :file "animatedVisibility.py"
+      :pointmax 2473
+      :fsize 2545
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "animLayers.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("logging" include nil nil [80 94])
+            ("log" variable nil nil [95 128])
+            ("check" function nil nil [130 292]))          
+      :file "animLayers.py"
+      :pointmax 292
+      :fsize 301
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "assetSpecificTask.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfPath" include nil nil [1 28])
+            ("logging" include nil nil [29 43])
+            ("log" variable nil nil [44 77])
+            ("pymel.core" include nil nil [78 101])
+            ("check" function (:arguments 
+              ( ("filter" variable nil (reparse-symbol function_parameters) [114 120]))              ) nil [104 654]))          
+      :file "assetSpecificTask.py"
+      :pointmax 654
+      :fsize 672
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkAssetHierarchy.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("logging" include nil nil [80 94])
+            ("log" variable nil nil [95 128])
+            ("bbfPublish.publish" include nil nil [129 154])
+            ("BBF_environ" include nil nil [155 173])
+            ("bbfEnv" variable nil nil [174 203])
+            ("sgtk" include nil nil [205 216])
+            ("BBF.Maya.Lib.bbfVariant.bbfAssetVariant" include nil nil [218 283])
+            ("BBF.Common.Lib.bbf_base.datastructs" include nil nil [284 350])
+            ("BBF.Maya.Lib.bbf_scene_hierarchy.scene_parser" include nil nil [351 423])
+            ("BBF.Common.Lib.BBF_Validation.SceneParser" include nil nil [424 487])
+            ("BBF.Common.Lib.bbfSGTK.templates" include nil nil [488 548])
+            ("getUnmatchedkAssetInGroups" function (:arguments 
+              ( ("groups" variable nil (reparse-symbol function_parameters) [581 587])
+                ("variants" variable nil (reparse-symbol function_parameters) [589 597])
+                ("template" variable nil (reparse-symbol function_parameters) [599 607]))              ) nil [550 848])
+            ("checkHierarchy" function (:arguments 
+              ( ("publish_type" variable nil (reparse-symbol function_parameters) [868 880]))              ) nil [849 2646]))          
+      :file "checkAssetHierarchy.py"
+      :pointmax 2646
+      :fsize 2718
+      :lastmodtime '(22224 16799 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkAssignedSG.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("logging" include nil nil [80 94])
+            ("log" variable nil nil [95 128])
+            ("bbfSceneCheck" include nil nil [129 166])
+            ("skipper" variable nil nil [189 238])
+            ("getSkipper" function nil nil [239 276])
+            ("removeVariantLayerShaderOverrides" function nil nil [277 1185])
+            ("noSG" variable nil nil [1186 1195])
+            ("check" function nil nil [1196 1717])
+            ("fix" function nil nil [1718 1765]))          
+      :file "checkAssignedSG.py"
+      :pointmax 1767
+      :fsize 1770
+      :lastmodtime '(22191 45495 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkAttrs.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfException.bbfExceptions" include nil nil [1 55])
+            ("pymel.core" include nil nil [56 79])
+            ("bbfUtil" include nil nil [80 94])
+            ("check" function (:arguments 
+              ( ("attrname" variable nil (reparse-symbol function_parameters) [106 114]))              ) nil [96 658])
+            ("fix" function (:arguments 
+              ( ("attrname" variable nil (reparse-symbol function_parameters) [667 675]))              ) nil [659 914])
+            ("checkHasAttrs" function (:arguments 
+              ( ("groupName" variable nil (reparse-symbol function_parameters) [933 942])
+                ("attrname" variable nil (reparse-symbol function_parameters) [944 952])
+                ("skip" variable nil (reparse-symbol function_parameters) [954 958]))              ) nil [915 1204]))          
+      :file "checkAttrs.py"
+      :pointmax 1205
+      :fsize 1238
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkBNGNamespace.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfException.bbfExceptions" include nil nil [1 55])
+            ("pymel.core" include nil nil [56 79])
+            ("logging" include nil nil [80 94])
+            ("log" variable nil nil [95 128])
+            ("generateRequiredProc" function nil nil [130 871])
+            ("checkExists" function (:arguments 
+              ( ("nodes" variable nil (reparse-symbol function_parameters) [889 894]))              ) nil [873 1247]))          
+      :file "checkBNGNamespace.py"
+      :pointmax 1247
+      :fsize 1288
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkGeoSuffix.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__main__" include nil nil [1 28])
+            ("bbfException.bbfExceptions" include nil nil [29 83])
+            ("re" include nil nil [84 93])
+            ("pymel.core" include nil nil [94 117])
+            ("bbfUtil" include nil nil [118 132])
+            ("logging" include nil nil [133 147])
+            ("logger" variable nil nil [148 184])
+            ("bbfSceneCheck" include nil nil [185 222])
+            ("skipper" variable nil nil [224 270])
+            ("getSkipper" function nil nil [271 308])
+            ("listGeos" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [403 411]))              ) nil [390 2523])
+            ("check" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [2616 2624]))              ) nil [2606 2854])
+            ("fix" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [2945 2953]))              ) nil [2937 3499]))          
+      :file "checkGeoSuffix.py"
+      :pointmax 3499
+      :fsize 3582
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkRenderNodes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfException.bbfExceptions" include nil nil [1 55])
+            ("pymel.core" include nil nil [56 79])
+            ("logging" include nil nil [80 94])
+            ("BBF_environ" include nil nil [95 113])
+            ("bbfEnv" variable nil nil [114 143])
+            ("log" variable nil nil [144 177])
+            ("check" function nil nil [179 1006]))          
+      :file "checkRenderNodes.py"
+      :pointmax 1006
+      :fsize 1027
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkRenderStats.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("logging" include nil nil [25 39])
+            ("log" variable nil nil [40 73])
+            ("check" function nil nil [75 1352]))          
+      :file "checkRenderStats.py"
+      :pointmax 1352
+      :fsize 1377
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkShaderNetworks.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+check for problems in the shader networks
+'''" code nil nil [1 50])
+            ("pymel.core" include nil nil [51 74])
+            ("bbfException.bbfExceptions" include nil nil [75 129])
+            ("logging" include nil nil [130 144])
+            ("log" variable nil nil [145 178])
+            ("unclampedUnpremults" function nil nil [180 1273])
+            ("checkForBadShaderTypes" function nil nil [1274 1629])
+            ("checkForSurfaceLuminance" function nil nil [1630 1754])
+            ("checkRemapNodes" function (:documentation " check that remap[Hsv|Color] nodes have their renderPassMode set correctly ") nil [1755 2194])
+            ("check" function nil nil [2195 3166]))          
+      :file "checkShaderNetworks.py"
+      :pointmax 3166
+      :fsize 3443
+      :lastmodtime '(22178 20793 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkSkyNodes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfException.bbfExceptions" include nil nil [1 55])
+            ("pymel.core" include nil nil [56 79])
+            ("check" function nil nil [81 291]))          
+      :file "checkSkyNodes.py"
+      :pointmax 291
+      :fsize 298
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkVariants.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [1 15])
+            ("sgtk" include nil nil [17 28])
+            ("pymel.core" include nil nil [30 53])
+            ("BBF_Validation" include nil nil [55 105])
+            ("BBF_environ" include nil nil [106 124])
+            ("bbfVariant.bbfAssetVariant" include nil nil [125 169])
+            ("bbfException.bbfExceptions" include nil nil [170 224])
+            ("BBF.Common.Lib.bbfSGTK.templates" include nil nil [225 285])
+            ("logger" variable nil nil [288 324])
+            ("getExtraVariantList" function nil nil [326 960])
+            ("check" function nil nil [961 1264])
+            ("fix" function nil nil [1265 1822]))          
+      :file "checkVariants.py"
+      :pointmax 1822
+      :fsize 1879
+      :lastmodtime '(22220 14149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "clearAssetName.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+Published models and rigs should not have nodes that refer to the character, eg:
+
+Body_MSH (good)
+Peter_Body_MSH (bad)
+PRB_C_Peter_Body_MSH (bad)
+
+The \"Peter\" prefix gets added to nodes when the file is imported/referenced
+it shouldn't be in the file itself.
+
+'''" code nil nil [1 268])
+            ("sgtk" include nil nil [269 280])
+            ("pymel.core" include nil nil [282 305])
+            ("BBF_Validation" include nil nil [307 357])
+            ("bbfException.bbfExceptions" include nil nil [358 412])
+            ("bbfSceneCheck" include nil nil [413 450])
+            ("BBF.Common.Lib.bbfSGTK.templates" include nil nil [451 511])
+            ("skipper" variable nil nil [513 564])
+            ("getSkipper" function nil nil [565 602])
+            ("namedNodes" variable nil nil [603 618])
+            ("check" function nil nil [620 1824])
+            ("fix" function nil nil [1825 1928]))          
+      :file "clearAssetName.py"
+      :pointmax 1928
+      :fsize 1989
+      :lastmodtime '(22220 14149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "compareVersions.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfException.bbfExceptions" include nil nil [1 55])
+            ("pymel.core" include nil nil [56 79])
+            ("BBF_environ" include nil nil [80 98])
+            ("bbfEnv" variable nil nil [99 128])
+            ("BBF_Validation" include nil nil [129 179])
+            ("ShotgunInterface" include nil nil [180 225])
+            ("logging" include nil nil [226 240])
+            ("log" variable nil nil [241 274])
+            ("check" function nil nil [276 995]))          
+      :file "compareVersions.py"
+      :pointmax 995
+      :fsize 1017
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "componentShading.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.cmds" include nil nil [758 782])
+            ("bbfException.bbfExceptions" include nil nil [783 837])
+            ("hfHighlightBadShaded" function nil nil [839 1618])
+            ("hfSplitBadShaded" function (:arguments 
+              ( ("engines" variable nil (reparse-symbol function_parameters) [1640 1647]))              ) nil [1619 4464])
+            ("hfRepairShadingConnections" function (:arguments 
+              ( ("meshes" variable nil (reparse-symbol function_parameters) [4499 4505]))              ) nil [4468 5458])
+            ("hfSplitByShader" function nil nil [5503 5958])
+            ("fix" function nil nil [6011 6395])
+            ("check" function nil nil [6396 6800]))          
+      :file "componentShading.py"
+      :pointmax 6800
+      :fsize 6955
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "defaultShaderAssignment.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSceneCheck.general.defaultShaderAssignment
+   :synopsis: checks related to initialshading group
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 188])
+            ("__future__" include nil nil [189 226])
+            ("re" include nil nil [228 237])
+            ("logging" include nil nil [238 252])
+            ("pymel.core" include nil nil [254 277])
+            ("maya.cmds" include nil nil [278 300])
+            ("bbfException.bbfExceptions" include nil nil [302 356])
+            ("log" variable nil nil [358 391])
+            ("check" function (:documentation " Check that no objects are in the initial shading group, excepting some special cases
+
+    Raises:
+        SceneCheckError: When nodes are found in the initialShadingGroup that shouldn't be in it
+    ") nil [393 2119]))          
+      :file "defaultShaderAssignment.py"
+      :pointmax 2119
+      :fsize 2325
+      :lastmodtime '(22185 62777 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "deleteAnimCurves.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("logging" include nil nil [80 94])
+            ("logger" variable nil nil [95 131])
+            ("global" code nil nil [133 149])
+            ("badcurves" variable nil nil [150 164])
+            ("bbfSceneCheck" include nil nil [166 203])
+            ("skipper" variable nil nil [205 255])
+            ("getSkipper" function nil nil [256 293])
+            ("check" function nil nil [294 1577])
+            ("fix" function nil nil [1577 1693]))          
+      :file "deleteAnimCurves.py"
+      :pointmax 1693
+      :fsize 1747
+      :lastmodtime '(22030 22052 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "displayLayers.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("logging" include nil nil [25 39])
+            ("log" variable nil nil [40 73])
+            ("check" function nil nil [75 311]))          
+      :file "displayLayers.py"
+      :pointmax 312
+      :fsize 322
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "dummyTask.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("doNothing" function nil nil [97 120]))          
+      :file "dummyTask.py"
+      :pointmax 120
+      :fsize 122
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "duplicateNodeNames.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("zoo.zooPyMaya" include nil nil [1 40])
+            ("bbfException.bbfExceptions" include nil nil [41 95])
+            ("pprint" include nil nil [96 121])
+            ("pymel.core" include nil nil [122 145])
+            ("re" include nil nil [146 155])
+            ("maya.cmds" include nil nil [156 180])
+            ("bbfUtil" include nil nil [181 195])
+            ("bbfSceneCheck" include nil nil [196 233])
+            ("skipper" variable nil nil [235 286])
+            ("getSkipper" function nil nil [287 324])
+            ("getDupes" function nil nil [325 935])
+            ("check" function nil nil [936 1311])
+            ("fix" function nil nil [1312 1377])
+            ("fix2" function nil nil [1378 2233]))          
+      :file "duplicateNodeNames.py"
+      :pointmax 2233
+      :fsize 2293
+      :lastmodtime '(22102 1443 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "emptyUVSets.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfException.bbfExceptions" include nil nil [1 55])
+            ("pymel.core" include nil nil [56 79])
+            ("os" include nil nil [80 89])
+            ("bbfSceneCheck" include nil nil [90 127])
+            ("skipper" variable nil nil [129 175])
+            ("getSkipper" function nil nil [176 213])
+            ("findEmptyUvSets" function (:arguments 
+              ( ("doFix" variable nil (reparse-symbol function_parameters) [234 239]))              ) nil [214 1422])
+            ("check" function nil nil [1423 1911])
+            ("fix" function nil nil [1912 1954]))          
+      :file "emptyUVSets.py"
+      :pointmax 1954
+      :fsize 2124
+      :lastmodtime '(22102 1443 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "geocacheStamps.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.utils" include nil nil [1 18])
+            ("pymel.core" include nil nil [19 42])
+            ("maya.cmds" include nil nil [43 67])
+            ("bbfException.bbfExceptions" include nil nil [68 122])
+            ("BBF_environ" include nil nil [123 141])
+            ("bbfEnv" variable nil nil [142 171])
+            ("ShotgunInterface" include nil nil [172 195])
+            ("logging" include nil nil [196 210])
+            ("logger" variable nil nil [211 247])
+            ("xml.etree.ElementTree" include nil nil [248 282])
+            ("comparePRDstamps" function (:arguments 
+              ( ("sceneStamp" variable nil (reparse-symbol function_parameters) [305 315])
+                ("cacheStamp" variable nil (reparse-symbol function_parameters) [317 327]))              ) nil [284 1747])
+            ("getMismatchedStamps" function nil nil [1776 3534])
+            ("check" function (:arguments 
+              ( ("popup" variable nil (reparse-symbol function_parameters) [3545 3550]))              ) nil [3535 4481]))          
+      :file "geocacheStamps.py"
+      :pointmax 4481
+      :fsize 4595
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "importRemoveNamespaces.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfPath" include nil nil [1 28])
+            ("logging" include nil nil [29 43])
+            ("log" variable nil nil [44 77])
+            ("pymel.core" include nil nil [78 101])
+            ("check" function nil nil [103 259]))          
+      :file "importRemoveNamespaces.py"
+      :pointmax 259
+      :fsize 266
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "lightLinks.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+This removes nodes that define light linking relationships between lights and objects. It will strip the scene of all light linking'''" code nil nil [1 139])
+            ("pymel.core" include nil nil [140 163])
+            ("bbfException.bbfExceptions" include nil nil [164 218])
+            ("logging" include nil nil [219 233])
+            ("logger" variable nil nil [234 270])
+            ("pprint" include nil nil [271 296])
+            ("getLightLinks" function nil nil [298 570])
+            ("check" function nil nil [571 893])
+            ("fix" function nil nil [894 1354]))          
+      :file "lightLinks.py"
+      :pointmax 1354
+      :fsize 1392
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "localPaths.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [86 109])
+            ("bbfException.bbfExceptions" include nil nil [110 164])
+            ("__main__" include nil nil [166 181])
+            ("bbfPath" include nil nil [182 209])
+            ("BBF_environ" include nil nil [210 228])
+            ("bbfEnv" variable nil nil [229 258])
+            ("bbfSceneCheck" include nil nil [259 296])
+            ("skipper" variable nil nil [298 343])
+            ("getSkipper" function nil nil [344 381])
+            ("validdrives" variable nil nil [382 436])
+            ("isGoodPath" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [462 466])
+                ("path" variable nil (reparse-symbol function_parameters) [468 472]))              ) nil [447 1078])
+            ("checkFileTexturePaths" function nil nil [1079 1367])
+            ("fixFileTexturePaths" function nil nil [1368 1423])
+            ("checkMiProxyPaths" function nil nil [1424 1650])
+            ("checkReferencePaths" function nil nil [1651 1887])
+            ("checkCachePaths" function nil nil [1888 2115])
+            ("checkAllPaths" function nil nil [2116 2603])
+            ("check" function nil nil [2604 3183])
+            ("fix" function nil nil [3184 3221]))          
+      :file "localPaths.py"
+      :pointmax 3221
+      :fsize 3323
+      :lastmodtime '(22219 21512 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "lockNames.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("logging" include nil nil [25 39])
+            ("log" variable nil nil [40 73])
+            ("bbfUtil" include nil nil [74 88])
+            ("lockNames" function (:arguments 
+              ( ("groups" variable nil (reparse-symbol function_parameters) [104 110])
+                ("lock" variable nil (reparse-symbol function_parameters) [115 119]))              ) nil [90 765]))          
+      :file "lockNames.py"
+      :pointmax 765
+      :fsize 784
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "materialInfo.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+Removes empty materialInfo nodes, which are dependency nodes for hardware shading
+'''" code nil nil [1 90])
+            ("pymel.core" include nil nil [91 114])
+            ("bbfException.bbfExceptions" include nil nil [115 169])
+            ("logging" include nil nil [170 184])
+            ("logger" variable nil nil [185 221])
+            ("pprint" include nil nil [222 247])
+            ("getUnconnectedMatInfos" function nil nil [249 475])
+            ("check" function nil nil [476 593]))          
+      :file "materialInfo.py"
+      :pointmax 593
+      :fsize 614
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "nonBBFShaders.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+make sure all shaders are PRB shaders
+'''" code nil nil [1 46])
+            ("pymel.core" include nil nil [47 70])
+            ("bbfException.bbfExceptions" include nil nil [71 125])
+            ("logging" include nil nil [126 140])
+            ("logger" variable nil nil [141 177])
+            ("re" include nil nil [178 187])
+            ("bbfSceneCheck" include nil nil [188 225])
+            ("bbfShader" include nil nil [226 242])
+            ("skipper" variable nil nil [244 293])
+            ("getSkipper" function nil nil [294 331])
+            ("getNonBBFShds" function nil nil [332 964])
+            ("check" function nil nil [965 1233]))          
+      :file "nonBBFShaders.py"
+      :pointmax 1233
+      :fsize 1274
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "oldStylePRX.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+make sure there are no PRX's that have the shader in the mi file
+(the have no child transforms)
+'''" code nil nil [1 104])
+            ("pymel.core" include nil nil [105 128])
+            ("bbfException.bbfExceptions" include nil nil [129 183])
+            ("logging" include nil nil [184 198])
+            ("logger" variable nil nil [199 235])
+            ("bbfUtil" include nil nil [236 250])
+            ("getOldPRXs" function nil nil [252 456])
+            ("getBadTransforms" function nil nil [457 682])
+            ("getEmptyHighRes" function nil nil [683 1029])
+            ("zeroSubdiv" function (:arguments 
+              ( ("fix" variable nil (reparse-symbol function_parameters) [1045 1048]))              ) nil [1030 1618])
+            ("check" function nil nil [1619 2209])
+            ("fix" function nil nil [2210 2274]))          
+      :file "oldStylePRX.py"
+      :pointmax 2274
+      :fsize 2355
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "pastedNodes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("os" include nil nil [80 89])
+            ("bbfSceneCheck" include nil nil [90 127])
+            ("skipper" variable nil nil [150 198])
+            ("getSkipper" function nil nil [199 236])
+            ("getPasted" function nil nil [237 328])
+            ("check" function nil nil [329 592])
+            ("fix" function nil nil [593 817]))          
+      :file "pastedNodes.py"
+      :pointmax 817
+      :fsize 846
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "propagateLightLinks.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("logging" include nil nil [80 94])
+            ("log" variable nil nil [95 128])
+            ("check" function nil nil [130 180])
+            ("fix" function nil nil [181 228])
+            ("propagate_light_links" function (:arguments 
+              ( ("fix" variable nil (reparse-symbol function_parameters) [255 258]))              ) nil [229 1537]))          
+      :file "propagateLightLinks.py"
+      :pointmax 1537
+      :fsize 1631
+      :lastmodtime '(21962 5298 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "removeNamespaces.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("logging" include nil nil [80 94])
+            ("logger" variable nil nil [95 131])
+            ("BBF_Validation" include nil nil [132 182])
+            ("bbfPublish" include nil nil [183 200])
+            ("BBF_environ" include nil nil [201 219])
+            ("bbfVariant.bbfAssetVariant" include nil nil [220 264])
+            ("getExtraNamespaces" function (:documentation "
+    return a list of \"extra\" namespaces that may have come into the scene.
+    Don't include allowable namespaces such as reference namespaces,
+    built in namespaces, variant namespaces...
+    ") nil [267 940])
+            ("getNSNodes" function (:arguments 
+              ( ("namespaces" variable nil (reparse-symbol function_parameters) [956 966]))              ) nil [941 1118])
+            ("check" function nil nil [1119 1479])
+            ("fix" function (:arguments 
+              ( ("iterations" variable nil (reparse-symbol function_parameters) [1488 1498]))              ) nil [1480 2064])
+            ("removeMasterNamespace" function nil nil [2065 2592]))          
+      :file "removeNamespaces.py"
+      :pointmax 2592
+      :fsize 2670
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "renderCleanup.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("logging" include nil nil [25 39])
+            ("log" variable nil nil [40 73])
+            ("Texturing.bbfViewportShader.viewportShader" include nil nil [74 129])
+            ("BBF_environ" include nil nil [130 148])
+            ("bbfEnv" variable nil nil [149 178])
+            ("deleteShaderOverride" function (:arguments 
+              ( ("override" variable nil (reparse-symbol function_parameters) [205 213]))              ) nil [180 697])
+            ("deleteRenderObjectSets" function (:documentation "
+    these object sets get generated in the shot at LGT build.
+    Delete any that may exist in the asset while doing lookdev
+    ") nil [698 1018])
+            ("deleteMRSubdiv" function (:documentation "
+    these subdiv nodes get generated in the shot at LGT build.
+    Delete any that may exist in the asset while doing lookdev
+    ") nil [1019 1333])
+            ("check" function nil nil [1334 2930]))          
+      :file "renderCleanup.py"
+      :pointmax 2930
+      :fsize 3006
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "renderLayers.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("logging" include nil nil [1 15])
+            ("log" variable nil nil [16 49])
+            ("pymel.core" include nil nil [50 73])
+            ("BBF_environ" include nil nil [74 92])
+            ("check" function nil nil [94 901]))          
+      :file "renderLayers.py"
+      :pointmax 901
+      :fsize 925
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "sceneName.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sgtk" include nil nil [1 12])
+            ("pymel.core" include nil nil [14 37])
+            ("bbfException.bbfExceptions" include nil nil [39 93])
+            ("check" function nil nil [95 1288]))          
+      :file "sceneName.py"
+      :pointmax 1288
+      :fsize 1317
+      :lastmodtime '(22220 14149 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "scriptNodes.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("bbfConvenience" include nil nil [80 126])
+            ("dupescripts" variable nil nil [128 144])
+            ("getDupeScripts" function nil nil [146 620])
+            ("check" function nil nil [621 1204])
+            ("fix" function nil nil [1205 1323]))          
+      :file "scriptNodes.py"
+      :pointmax 1323
+      :fsize 1364
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "settingsCheck.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("__main__" include nil nil [80 107])
+            ("bbfCallbacks.bbfFileCallbacks" include nil nil [108 150])
+            ("logging" include nil nil [151 165])
+            ("logger" variable nil nil [166 202])
+            ("failures" variable nil nil [204 217])
+            ("check" function nil nil [218 778])
+            ("fix" function nil nil [778 1044]))          
+      :file "settingsCheck.py"
+      :pointmax 1044
+      :fsize 1073
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shaderGamma.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("logging" include nil nil [80 94])
+            ("log" variable nil nil [95 128])
+            ("getBadGammas" function nil nil [130 345])
+            ("check" function nil nil [346 702])
+            ("fix" function nil nil [703 803]))          
+      :file "shaderGamma.py"
+      :pointmax 803
+      :fsize 827
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shaderNames.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("bbfException.bbfExceptions" include nil nil [25 79])
+            ("re" include nil nil [80 89])
+            ("bbfSceneCheck" include nil nil [90 127])
+            ("skipper" variable nil nil [150 198])
+            ("getSkipper" function nil nil [199 236])
+            ("bad_shaders" variable nil nil [237 253])
+            ("check" function nil nil [255 801])
+            ("fix" function nil nil [802 1112]))          
+      :file "shaderNames.py"
+      :pointmax 1113
+      :fsize 1146
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shapeNames.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("re" include nil nil [1 10])
+            ("pymel.core" include nil nil [11 34])
+            ("maya.cmds" include nil nil [35 59])
+            ("bbfException.bbfExceptions" include nil nil [60 114])
+            ("logging" include nil nil [116 130])
+            ("log" variable nil nil [131 164])
+            ("bbfSceneCheck" include nil nil [165 202])
+            ("skipper" variable nil nil [204 251])
+            ("getSkipper" function nil nil [252 289])
+            ("getFailures" function (:arguments 
+              ( ("fix" variable nil (reparse-symbol function_parameters) [306 309]))              ) nil [290 1633])
+            ("check" function nil nil [1634 1955])
+            ("fix" function nil nil [1956 1992]))          
+      :file "shapeNames.py"
+      :pointmax 1992
+      :fsize 2047
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shotgunAssetStamps.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("bbfUtil" include nil nil [11 25])
+            ("BBF_environ" include nil nil [26 44])
+            ("maya.cmds" include nil nil [45 67])
+            ("pymel.core" include nil nil [68 91])
+            ("bbfException.bbfExceptions" include nil nil [92 146])
+            ("ShotgunInterface" include nil nil [147 192])
+            ("BBF_Validation.BBF_Validation" include nil nil [193 238])
+            ("logging" include nil nil [239 253])
+            ("logger" variable nil nil [254 290])
+            ("maya.utils" include nil nil [291 308])
+            ("re" include nil nil [310 319])
+            ("getCurrentAssetStamps" function nil nil [321 1513])
+            ("getExpectedAssetStamps" function (:arguments 
+              ( ("episodeCode" variable nil (reparse-symbol function_parameters) [1542 1553])
+                ("shotCode" variable nil (reparse-symbol function_parameters) [1555 1563]))              ) nil [1515 3622])
+            ("getIncorrectStamps" function (:arguments 
+              ( ("currentStamps" variable nil (reparse-symbol function_parameters) [3647 3660])
+                ("expectedStamps" variable nil (reparse-symbol function_parameters) [3662 3676]))              ) nil [3624 4967])
+            ("check" function nil nil [4968 5917])
+            ("fix" function nil nil [5918 5989]))          
+      :file "shotgunAssetStamps.py"
+      :pointmax 5991
+      :fsize 6145
+      :lastmodtime '(21962 5298 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "shotgunFrameRange.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.utils" include nil nil [1 18])
+            ("pymel.core" include nil nil [19 42])
+            ("bbfException.bbfExceptions" include nil nil [43 97])
+            ("BBF_environ" include nil nil [98 116])
+            ("ShotgunInterface" include nil nil [117 140])
+            ("logging" include nil nil [141 155])
+            ("log" variable nil nil [156 189])
+            ("BBF_Validation.BBF_Validation" include nil nil [190 235])
+            ("getShotgunFrameCount" function (:arguments 
+              ( ("episode" variable nil (reparse-symbol function_parameters) [262 269])
+                ("shot" variable nil (reparse-symbol function_parameters) [276 280]))              ) nil [237 961])
+            ("getCurrentFrameCount" function nil nil [962 1127])
+            ("check" function nil nil [1128 1540])
+            ("fix" function (:arguments 
+              ( ("episode" variable nil (reparse-symbol function_parameters) [1549 1556])
+                ("shot" variable nil (reparse-symbol function_parameters) [1563 1567]))              ) nil [1541 2064]))          
+      :file "shotgunFrameRange.py"
+      :pointmax 2064
+      :fsize 2117
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "switchToMasterLayer.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("check" function nil nil [26 88]))          
+      :file "switchToMasterLayer.py"
+      :pointmax 89
+      :fsize 93
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "thumbnailRender.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pymel.core" include nil nil [1 24])
+            ("tempfile" include nil nil [25 40])
+            ("os" include nil nil [41 50])
+            ("logging" include nil nil [51 65])
+            ("bbfPath" include nil nil [66 93])
+            ("bbfUtil" include nil nil [94 108])
+            ("BBF_Validation" include nil nil [109 159])
+            ("shutil" include nil nil [160 173])
+            ("subprocess" include nil nil [174 191])
+            ("fnmatch" include nil nil [192 206])
+            ("__main__" include nil nil [207 240])
+            ("log" variable nil nil [242 275])
+            ("doit" function nil nil [277 995])
+            ("setup" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [1006 1010])
+                ("imageFilePrefix" variable nil (reparse-symbol function_parameters) [1012 1027])
+                ("cam" variable nil (reparse-symbol function_parameters) [1029 1032]))              ) nil [996 2275])
+            ("render" function (:arguments 
+              ( ("outdir" variable nil (reparse-symbol function_parameters) [2287 2293])
+                ("ifp" variable nil (reparse-symbol function_parameters) [2295 2298]))              ) nil [2276 3745]))          
+      :file "thumbnailRender.py"
+      :pointmax 3745
+      :fsize 3849
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 834 . 852) (NEWLINE 833 . 834) (COLON 832 . 833) (TRY 713 . 716) (AS 826 . 828)))
+    (semanticdb-table "unusedShaders.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+Deletes Unused Shader Nodes. Same command from Hypershade
+'''" code nil nil [1 66])
+            ("pymel.core" include nil nil [67 90])
+            ("run" function nil nil [92 131]))          
+      :file "unusedShaders.py"
+      :pointmax 131
+      :fsize 137
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "zeroScale.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("bbfException.bbfExceptions" include nil nil [1 55])
+            ("re" include nil nil [56 65])
+            ("pymel.core" include nil nil [66 89])
+            ("maya.cmds" include nil nil [90 114])
+            ("bbfSceneCheck" include nil nil [115 152])
+            ("skipper" variable nil nil [154 201])
+            ("getSkipper" function nil nil [202 239])
+            ("getZeroRefEdits" function nil nil [240 949])
+            ("getZeroScales" function nil nil [950 1548])
+            ("check" function nil nil [1549 1933])
+            ("fix" function nil nil [1934 2137]))          
+      :file "zeroScale.py"
+      :pointmax 2137
+      :fsize 2197
+      :lastmodtime '(21896 15491 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "checkTopGroupsVisibility.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Maya.Lib.bbfSceneCheck.general.checkTopGroupsVisibility
+   :synopsis: check visibility of top level groups
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 187])
+            ("__future__" include nil nil [188 225])
+            ("__all__" variable nil nil [227 291])
+            ("logging" include nil nil [293 307])
+            ("BBF.Maya.Lib.bbf_scene_hierarchy.scene_parser" include nil nil [309 383])
+            ("BBF.Common.Lib.bbf_base.datastructs" include nil nil [384 445])
+            ("BBF.Maya.Lib.bbfException.bbfExceptions" include nil nil [446 509])
+            ("BBF.Maya.Lib.bbfVariant.bbfAssetVariant" include nil nil [510 575])
+            ("BBF.Common.Lib.bbf_widgets.OptionListSelector" include nil nil [577 651])
+            ("log" variable nil nil [653 706])
+            ("log" code nil nil [707 734])
+            ("is_invisible" function
+               (:documentation " check if a node is invisible, or will potentially be turned invisible in a variant "
+                :arguments 
+                  ( ("node" variable nil (reparse-symbol function_parameters) [753 757]))                  )
+                nil [736 942])
+            ("get_invisible_top_groups" function (:arguments 
+              ( ("scene_type" variable nil (reparse-symbol function_parameters) [972 982]))              ) nil [943 1312])
+            ("check_for_invisible_groups" function (:arguments 
+              ( ("scene_type" variable nil (reparse-symbol function_parameters) [1344 1354]))              ) nil [1313 1630])
+            ("fix_invisible_groups" function (:arguments 
+              ( ("scene_type" variable nil (reparse-symbol function_parameters) [1658 1668]))              ) nil [1633 2589]))          
+      :file "checkTopGroupsVisibility.py"
+      :pointmax 2589
+      :fsize 2658
+      :lastmodtime '(22178 20793 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!bbfSceneCheck!general!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

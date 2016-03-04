@@ -1,0 +1,83 @@
+;; Object bbfException/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bbfException/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfException
+   :synopsis: Custom exceptions used by the pipeline code
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 162]))          
+      :file "__init__.py"
+      :pointmax 163
+      :fsize 169
+      :lastmodtime '(22175 49842 0 0)
+      :unmatched-syntax '(($EOI 163 . 163) ($EOI 244 . 244) ($EOI 221 . 221) ($EOI 222 . 222) (IMPORT 188 . 194) (MULT 195 . 196) (FROM 162 . 166) (PERIOD 182 . 183)))
+    (semanticdb-table "bbfExceptions.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: BBF.Common.Lib.bbfException.bbfExceptions
+   :synopsis:
+
+copyright 2016 Brown Bag Films
+\"\"\"" code nil nil [25 132])
+            ("__future__" include nil nil [133 170])
+            ("__all__" variable nil nil [172 219])
+            ("SceneCheckError" type
+               (:documentation " Signals that some validation of a scene failed.
+
+    Usage:
+    >>> try:
+    ...     raise SceneCheckError('Something bad happened', 'some data')
+    ... except SceneCheckError, e:
+    ...     print e
+    ...     print e.data
+    Something bad happened
+    some data
+    "
+                :superclasses ("Exception")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("Exception" code nil (reparse-symbol indented_block_body) [590 623])
+                            ("self" variable nil (reparse-symbol indented_block_body) [632 648]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [555 559])
+                            ("message" variable nil (reparse-symbol function_parameters) [561 568])
+                            ("data" variable nil (reparse-symbol function_parameters) [570 574]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [542 649]))                  
+                :type "class")
+                nil [221 649])
+            ("PauseException" type
+               (:documentation " signals that a process exited but wasn't done yet, so it expects to resume later on "
+                :superclasses ("Exception")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("Exception" code nil (reparse-symbol indented_block_body) [831 864])
+                            ("self" variable nil (reparse-symbol indented_block_body) [873 889]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [796 800])
+                            ("message" variable nil (reparse-symbol function_parameters) [802 809])
+                            ("data" variable nil (reparse-symbol function_parameters) [811 815]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [783 890]))                  
+                :type "class")
+                nil [650 890])
+            ("if" code nil nil [892 960]))          
+      :file "bbfExceptions.py"
+      :pointmax 960
+      :fsize 996
+      :lastmodtime '(22175 49992 0 0)
+      :unmatched-syntax '(($EOI 960 . 960) ($EOI 962 . 962))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!Lib!bbfException!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

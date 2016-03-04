@@ -1,0 +1,70 @@
+;; Object setup_tools/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "setup_tools/"
+  :tables
+  (list
+    (semanticdb-table "_test_Max_FOO.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: test_FOO
+   :synopsis: test stub for FOO
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 117])
+            ("__future__" include nil nil [118 155])
+            ("pytest" include nil nil [157 170])
+            ("pytest" code nil nil [172 203])
+            ("setup_module" function nil nil [228 257])
+            ("teardown_module" function nil nil [258 290])
+            ("TestFOO" type
+               (:superclasses ("object")
+                :members 
+                  ( ("setup_class" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [334 338]))                          )
+                        (reparse-symbol indented_block_body) [318 354])
+                    ("teardown_class" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [378 382]))                          )
+                        (reparse-symbol indented_block_body) [359 398]))                  
+                :type "class")
+                nil [291 398]))          
+      :file "_test_Max_FOO.py"
+      :pointmax 462
+      :fsize 492
+      :lastmodtime '(21926 25013 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "generate_test_stub.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: generate_test_stub
+\\   :synopsis:
+
+copyright 2015 Brown Bag Films
+\"\"\"" code nil nil [25 110])
+            ("__future__" include nil nil [111 148])
+            ("__base_dir" variable nil nil [150 205])
+            ("templates_dir" variable nil nil [206 259])
+            ("code_base_dir" variable nil nil [261 313])
+            ("main" function
+               (:documentation " module is something like BBF/Common/Lib/bbfSomething/__init__.py
+        => module_path will be C:/Some/Path/BBF/Common/Lib/bbfSomething
+        => module_out_name will be Common.Lib.bbfSomething
+        => module_name will be bbfSomething
+    "
+                :arguments 
+                  ( ("template" variable nil (reparse-symbol function_parameters) [324 332])
+                    ("module" variable nil (reparse-symbol function_parameters) [334 340]))                  )
+                nil [315 1138]))          
+      :file "generate_test_stub.py"
+      :pointmax 1138
+      :fsize 1173
+      :lastmodtime '(21926 26327 0 0)
+      :unmatched-syntax '((NAME 805 . 819) (NEWLINE 821 . 822) (NAME 805 . 819) (NEWLINE 821 . 822) (NAME 980 . 991) (NEWLINE 992 . 993) (INDENT_BLOCK 972 . 993))))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Tests!setup_tools!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,1228 @@
+;; Object Shotgun/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Shotgun/"
+  :tables
+  (list
+    (semanticdb-table "shotgun.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("'''
+ -----------------------------------------------------------------------------
+ Copyright (c) 2009-2015, Shotgun Software Inc
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+
+  - Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+
+  - Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+  - Neither the name of the Shotgun Software Inc nor the names of its
+    contributors may be used to endorse or promote products derived from this
+    software without specific prior written permission.
+
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+'''" code nil nil [23 1624])
+            ("base64" include nil nil [1627 1640])
+            ("cookielib" include nil nil [1641 1657])
+            ("cStringIO" include nil nil [1690 1706])
+            ("datetime" include nil nil [1739 1754])
+            ("logging" include nil nil [1755 1769])
+            ("mimetools" include nil nil [1770 1786])
+            ("os" include nil nil [1819 1828])
+            ("re" include nil nil [1829 1838])
+            ("copy" include nil nil [1839 1850])
+            ("stat" include nil nil [1851 1862])
+            ("sys" include nil nil [1900 1910])
+            ("time" include nil nil [1911 1922])
+            ("types" include nil nil [1923 1935])
+            ("urllib" include nil nil [1936 1949])
+            ("urllib2" include nil nil [1950 1964])
+            ("urlparse" include nil nil [1994 2009])
+            ("shutil" include nil nil [2010 2023])
+            ("if" code nil nil [2147 2405])
+            ("mimetypes" code nil nil [2455 2495])
+            ("mimetypes" code nil nil [2530 2569])
+            ("LOG" variable nil nil [2595 2634])
+            ("LOG" code nil nil [2635 2661])
+            ("SG_TIMEZONE" variable nil nil [2663 2689])
+            ("try" code nil nil [2692 2856])
+            ("__version__" variable nil nil [2946 2972])
+            ("ShotgunError" type
+               (:documentation "Base for all Shotgun API Errors"
+                :superclasses ("Exception")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [3140 3144]))                  
+                :type "class")
+                nil [3063 3145])
+            ("ShotgunFileDownloadError" type
+               (:documentation "Exception for file download-related errors"
+                :superclasses ("ShotgunError")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [3249 3253]))                  
+                :type "class")
+                nil [3146 3254])
+            ("Fault" type
+               (:documentation "Exception when server side exception detected."
+                :superclasses ("ShotgunError")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [3343 3347]))                  
+                :type "class")
+                nil [3255 3348])
+            ("ServerCapabilities" type
+               (:documentation "Container for the servers capabilities, such as version and paging.
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"ServerCapabilities.__init__
+
+        :param host: Host name for the server excluding protocol.
+
+        :param meta: dict of meta data for the server returned from the
+        info api method.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [3597 3804])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3839 3855])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3864 3887])
+                            ("try" code nil (reparse-symbol indented_block_body) [4022 4143])
+                            ("if" code nil (reparse-symbol indented_block_body) [4151 4533])
+                            ("if" code nil (reparse-symbol indented_block_body) [4542 4674])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4683 4721])
+                            ("self" code nil (reparse-symbol indented_block_body) [4730 4759]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3570 3574])
+                            ("host" variable nil (reparse-symbol function_parameters) [3576 3580])
+                            ("meta" variable nil (reparse-symbol function_parameters) [3582 3586]))                          
+                        :documentation "ServerCapabilities.__init__
+
+        :param host: Host name for the server excluding protocol.
+
+        :param meta: dict of meta data for the server returned from the
+        info api method.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3557 4760])
+                    ("_ensure_json_supported" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4793 4797]))                          
+                        :documentation "Checks the server version supports the JSON api, raises an
+        exception if it does not.
+
+        :raises ShotgunError: The current server version does not support json
+        ")
+                        (reparse-symbol indented_block_body) [4766 5186])
+                    ("ensure_include_archived_projects" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5228 5232]))                          
+                        :documentation "Checks the server version support include_archived_projects parameter
+        to find.
+        ")
+                        (reparse-symbol indented_block_body) [5191 5565])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5583 5587]))                          )
+                        (reparse-symbol indented_block_body) [5571 5717]))                  
+                :type "class")
+                nil [3435 5717])
+            ("ClientCapabilities" type
+               (:documentation "Container for the client capabilities.
+
+    Detects the current client platform and works out the SG field
+    used for local data paths.
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("system" variable nil (reparse-symbol indented_block_body) [5938 5967])
+                            ("if" code nil (reparse-symbol indented_block_body) [5977 6228])
+                            ("if" code nil (reparse-symbol indented_block_body) [6237 6380])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6389 6453]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5923 5927]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5910 6454])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6471 6475]))                          )
+                        (reparse-symbol indented_block_body) [6459 6649]))                  
+                :type "class")
+                nil [5718 6649])
+            ("_Config" type
+               (:documentation "Container for the client configuration."
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [6756 6781])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7079 7103])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7112 7133])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7142 7178])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7187 7214])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7223 7242])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7251 7274])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7283 7305])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7314 7339])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7348 7373])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7409 7433])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7442 7460])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7469 7487])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7496 7516])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7525 7549])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7558 7580])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7589 7611])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7620 7642])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7651 7676])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7685 7710])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7719 7749]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6741 6745]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6728 7750]))                  
+                :type "class")
+                nil [6650 7750])
+            ("Shotgun" type
+               (:documentation "Shotgun Client Connection"
+                :superclasses ("object")
+                :members 
+                  ( ("_DATE_PATTERN" variable nil (reparse-symbol indented_block_body) [7970 8060])
+                    ("_DATE_TIME_PATTERN" variable nil (reparse-symbol indented_block_body) [8065 8229])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Initialises a new instance of the Shotgun client.
+
+        :param base_url: http or https url to the shotgun server.
+
+        :param script_name: name of the client script, used to authenticate
+        to the server. If script_name is provided, then api_key must be as
+        well and neither login nor password can be provided.
+
+        :param api_key: key assigned to the client script, used to
+        authenticate to the server.  If api_key is provided, then script_name
+        must be as well and neither login nor password can be provided.
+
+        :param convert_datetimes_to_utc: If True date time values are
+        converted from local time to UTC time before been sent to the server.
+        Datetimes received from the server are converted back to local time.
+        If False the client should use UTC date time values.
+        Default is True.
+
+        :param http_proxy: Optional, URL for the http proxy server, on the
+        form [username:pass@]proxy.com[:8080]
+
+        :param connect: If True, connect to the server. Only used for testing.
+		
+		:param ca_certs: The path to the SSL certificate file. Useful for users
+		who would like to package their application into an executable.
+
+        :param login: The login to use to authenticate to the server. If login
+        is provided, then password must be as well and neither script_name nor
+        api_key can be provided.
+
+        :param password: The password for the login to use to authenticate to
+        the server. If password is provided, then login must be as well and
+        neither script_name nor api_key can be provided.
+        
+        :param sudo_as_login: A user login string for the user whose permissions will
+        be applied to all actions and who will be logged as the user performing
+        all actions. Note that logged events will have an additional extra meta-data parameter 
+        'sudo_actual_user' indicating the script or user that actually authenticated.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [8623 10603])
+                            ("if" code nil (reparse-symbol indented_block_body) [10655 11094])
+                            ("if" code nil (reparse-symbol indented_block_body) [11103 11368])
+                            ("if" code nil (reparse-symbol indented_block_body) [11419 11645])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11654 11677])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11686 11715])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11724 11761])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11770 11800])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11809 11845])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11854 11895])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11904 11967])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11976 12025])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12034 12057])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12066 12092])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12102 12142])
+                            ("self, self, api_base, _, _" code nil (reparse-symbol indented_block_body) [12151 12254])
+                            ("if" code nil (reparse-symbol indented_block_body) [12263 12416])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12424 12546])
+                            ("auth, self" code nil (reparse-symbol indented_block_body) [12719 12782])
+                            ("if" code nil (reparse-symbol indented_block_body) [12791 12925])
+                            ("if" code nil (reparse-symbol indented_block_body) [12973 13910])
+                            ("if" code nil (reparse-symbol indented_block_body) [13920 13991])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14000 14039])
+                            ("self" code nil (reparse-symbol indented_block_body) [14107 14130])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14140 14164])
+                            ("if" code nil (reparse-symbol indented_block_body) [14304 14345]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8248 8252])
+                            ("base_url" variable nil (reparse-symbol function_parameters) [8271 8279])
+                            ("script_name" variable nil (reparse-symbol function_parameters) [8298 8309])
+                            ("api_key" variable nil (reparse-symbol function_parameters) [8333 8340])
+                            ("convert_datetimes_to_utc" variable nil (reparse-symbol function_parameters) [8364 8388])
+                            ("http_proxy" variable nil (reparse-symbol function_parameters) [8412 8422])
+                            ("ensure_ascii" variable nil (reparse-symbol function_parameters) [8446 8458])
+                            ("connect" variable nil (reparse-symbol function_parameters) [8482 8489])
+                            ("ca_certs" variable nil (reparse-symbol function_parameters) [8501 8509])
+                            ("login" variable nil (reparse-symbol function_parameters) [8533 8538])
+                            ("password" variable nil (reparse-symbol function_parameters) [8562 8570])
+                            ("sudo_as_login" variable nil (reparse-symbol function_parameters) [8594 8607]))                          
+                        :documentation "Initialises a new instance of the Shotgun client.
+
+        :param base_url: http or https url to the shotgun server.
+
+        :param script_name: name of the client script, used to authenticate
+        to the server. If script_name is provided, then api_key must be as
+        well and neither login nor password can be provided.
+
+        :param api_key: key assigned to the client script, used to
+        authenticate to the server.  If api_key is provided, then script_name
+        must be as well and neither login nor password can be provided.
+
+        :param convert_datetimes_to_utc: If True date time values are
+        converted from local time to UTC time before been sent to the server.
+        Datetimes received from the server are converted back to local time.
+        If False the client should use UTC date time values.
+        Default is True.
+
+        :param http_proxy: Optional, URL for the http proxy server, on the
+        form [username:pass@]proxy.com[:8080]
+
+        :param connect: If True, connect to the server. Only used for testing.
+		
+		:param ca_certs: The path to the SSL certificate file. Useful for users
+		who would like to package their application into an executable.
+
+        :param login: The login to use to authenticate to the server. If login
+        is provided, then password must be as well and neither script_name nor
+        api_key can be provided.
+
+        :param password: The password for the login to use to authenticate to
+        the server. If password is provided, then login must be as well and
+        neither script_name nor api_key can be provided.
+        
+        :param sudo_as_login: A user login string for the user whose permissions will
+        be applied to all actions and who will be logged as the user performing
+        all actions. Note that logged events will have an additional extra meta-data parameter 
+        'sudo_actual_user' indicating the script or user that actually authenticated.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8235 14345])
+                    ("server_info" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14480 14484]))                          
+                        :documentation "Returns server information.")
+                        (reparse-symbol indented_block_body) [14450 14573])
+                    ("server_caps" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14608 14612]))                          
+                        :documentation "
+        :returns: ServerCapabilities that describe the server the client is
+        connected to.
+        ")
+                        (reparse-symbol indented_block_body) [14578 14967])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14984 14988]))                          
+                        :documentation "Forces the client to connect to the server if it is not already
+        connected.
+
+        NOTE: The client will automatically connect to the server. Only
+        call this function if you wish to confirm the client can connect.
+        ")
+                        (reparse-symbol indented_block_body) [14972 15310])
+                    ("close" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15325 15329]))                          
+                        :documentation "Closes the current connection to the server.
+
+        If the client needs to connect again it will do so automatically.
+        ")
+                        (reparse-symbol indented_block_body) [15315 15523])
+                    ("info" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15537 15541]))                          
+                        :documentation "Calls the Info function on the Shotgun API to get the server meta.
+
+        :returns: dict of the server meta data.
+        ")
+                        (reparse-symbol indented_block_body) [15528 15754])
+                    ("find_one" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15772 15776])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [15778 15789])
+                            ("filters" variable nil (reparse-symbol function_parameters) [15791 15798])
+                            ("fields" variable nil (reparse-symbol function_parameters) [15800 15806])
+                            ("order" variable nil (reparse-symbol function_parameters) [15813 15818])
+                            ("filter_operator" variable nil (reparse-symbol function_parameters) [15833 15848])
+                            ("retired_only" variable nil (reparse-symbol function_parameters) [15855 15867])
+                            ("include_archived_projects" variable nil (reparse-symbol function_parameters) [15875 15900]))                          
+                        :documentation "Calls the find() method and returns the first result, or None.
+
+        :param entity_type: Required, entity type (string) to find.
+
+        :param filters: Required, list of filters to apply.
+
+        :param fields: Optional list of fields from the matched entities to
+        return. Defaults to id.
+
+        :param order: Optional list of fields to order the results by, list
+        has the form [{'field_name':'foo','direction':'asc or desc'},]
+
+        :param filter_operator: Optional operator to apply to the filters,
+        supported values are 'all' and 'any'. Defaults to 'all'.
+
+        :param limit: Optional, number of entities to return per page.
+        Defaults to 0 which returns all entities that match.
+
+        :param page: Optional, page of results to return. By default all
+        results are returned. Use together with limit.
+
+        :param retired_only: Optional, flag to return only entities that have
+        been retried. Defaults to False which returns only entities which
+        have not been retired.
+        ")
+                        (reparse-symbol indented_block_body) [15759 17204])
+                    ("find" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17218 17222])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [17224 17235])
+                            ("filters" variable nil (reparse-symbol function_parameters) [17237 17244])
+                            ("fields" variable nil (reparse-symbol function_parameters) [17246 17252])
+                            ("order" variable nil (reparse-symbol function_parameters) [17259 17264])
+                            ("filter_operator" variable nil (reparse-symbol function_parameters) [17283 17298])
+                            ("limit" variable nil (reparse-symbol function_parameters) [17305 17310])
+                            ("retired_only" variable nil (reparse-symbol function_parameters) [17314 17326])
+                            ("page" variable nil (reparse-symbol function_parameters) [17334 17338])
+                            ("include_archived_projects" variable nil (reparse-symbol function_parameters) [17354 17379]))                          
+                        :documentation "Find entities matching the given filters.
+
+        :param entity_type: Required, entity type (string) to find.
+
+        :param filters: Required, list of filters to apply.
+
+        :param fields: Optional list of fields from the matched entities to
+        return. Defaults to id.
+
+        :param order: Optional list of fields to order the results by, list
+        has the form [{'field_name':'foo','direction':'asc or desc'},]
+
+        :param filter_operator: Optional operator to apply to the filters,
+        supported values are 'all' and 'any'. Defaults to 'all'.
+
+        :param limit: Optional, number of entities to return per page.
+        Defaults to 0 which returns all entities that match.
+
+        :param page: Optional, page of results to return. By default all
+        results are returned. Use together with limit.
+
+        :param retired_only: Optional, flag to return only entities that have
+        been retried. Defaults to False which returns only entities which
+        have not been retired.
+
+        :param include_archived_projects: Optional, flag to include entities
+        whose projects have been archived
+
+        :returns: list of the dicts for each entity with the requested fields,
+        and their id and type.
+        ")
+                        (reparse-symbol indented_block_body) [17209 21229])
+                    ("_construct_read_parameters" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21267 21271])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [21308 21319])
+                            ("fields" variable nil (reparse-symbol function_parameters) [21356 21362])
+                            ("filters" variable nil (reparse-symbol function_parameters) [21399 21406])
+                            ("retired_only" variable nil (reparse-symbol function_parameters) [21443 21455])
+                            ("order" variable nil (reparse-symbol function_parameters) [21492 21497])
+                            ("include_archived_projects" variable nil (reparse-symbol function_parameters) [21534 21559]))                          )
+                        (reparse-symbol indented_block_body) [21236 22656])
+                    ("summarize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22675 22679])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [22699 22710])
+                            ("filters" variable nil (reparse-symbol function_parameters) [22730 22737])
+                            ("summary_fields" variable nil (reparse-symbol function_parameters) [22757 22771])
+                            ("filter_operator" variable nil (reparse-symbol function_parameters) [22791 22806])
+                            ("grouping" variable nil (reparse-symbol function_parameters) [22831 22839])
+                            ("include_archived_projects" variable nil (reparse-symbol function_parameters) [22864 22889]))                          
+                        :documentation "
+        Return group and summary information for entity_type for summary_fields
+        based on the given filters.
+        ")
+                        (reparse-symbol indented_block_body) [22661 24034])
+                    ("create" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24050 24054])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [24056 24067])
+                            ("data" variable nil (reparse-symbol function_parameters) [24069 24073])
+                            ("return_fields" variable nil (reparse-symbol function_parameters) [24075 24088]))                          
+                        :documentation "Create a new entity of the specified entity_type.
+
+        :param entity_type: Required, entity type (string) to create.
+
+        :param data: Required, dict fields to set on the new entity.
+
+        :param return_fields: Optional list of fields from the new entity
+        to return. Defaults to 'id' field.
+
+        :returns: dict of the requested fields.
+        ")
+                        (reparse-symbol indented_block_body) [24039 26107])
+                    ("update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26123 26127])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [26129 26140])
+                            ("entity_id" variable nil (reparse-symbol function_parameters) [26142 26151])
+                            ("data" variable nil (reparse-symbol function_parameters) [26153 26157]))                          
+                        :documentation "Updates the specified entity with the supplied data.
+
+        :param entity_type: Required, entity type (string) to update.
+
+        :param entity_id: Required, id of the entity to update.
+
+        :param data: Required, dict fields to update on the entity.
+
+        :returns: dict of the fields updated, with the entity_type and
+        id added.
+        ")
+                        (reparse-symbol indented_block_body) [26112 28212])
+                    ("delete" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28228 28232])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [28234 28245])
+                            ("entity_id" variable nil (reparse-symbol function_parameters) [28247 28256]))                          
+                        :documentation "Retire the specified entity.
+
+        The entity can be brought back to life using the revive function.
+
+        :param entity_type: Required, entity type (string) to delete.
+
+        :param entity_id: Required, id of the entity to delete.
+
+        :returns: True if the entity was deleted, False otherwise e.g. if the
+        entity has previously been deleted.
+        ")
+                        (reparse-symbol indented_block_body) [28217 28787])
+                    ("revive" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28803 28807])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [28809 28820])
+                            ("entity_id" variable nil (reparse-symbol function_parameters) [28822 28831]))                          
+                        :documentation "Revive an entity that has previously been deleted.
+
+        :param entity_type: Required, entity type (string) to revive.
+
+        :param entity_id: Required, id of the entity to revive.
+
+        :returns: True if the entity was revived, False otherwise e.g. if the
+        entity has previously been revived (or was not deleted).
+        ")
+                        (reparse-symbol indented_block_body) [28792 29330])
+                    ("batch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29345 29349])
+                            ("requests" variable nil (reparse-symbol function_parameters) [29351 29359]))                          
+                        :documentation "Make a batch request  of several create, update and delete calls.
+
+        All requests are performed within a transaction, so either all will
+        complete or none will.
+
+        :param requests: A list of dict's of the form which have a
+            request_type key and also specifies:
+            - create: entity_type, data dict of fields to set
+            - update: entity_type, entity_id, data dict of fields to set
+            - delete: entity_type and entity_id
+
+        :returns: A list of values for each operation, create and update
+        requests return a dict of the fields updated. Delete requests
+        return True if the entity was deleted.
+        ")
+                        (reparse-symbol indented_block_body) [29335 32079])
+                    ("work_schedule_read" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32107 32111])
+                            ("start_date" variable nil (reparse-symbol function_parameters) [32113 32123])
+                            ("end_date" variable nil (reparse-symbol function_parameters) [32125 32133])
+                            ("project" variable nil (reparse-symbol function_parameters) [32135 32142])
+                            ("user" variable nil (reparse-symbol function_parameters) [32149 32153]))                          
+                        :documentation "Get the work day rules for a given date range.
+
+        reasons:
+            STUDIO_WORK_WEEK
+            STUDIO_EXCEPTION
+            PROJECT_WORK_WEEK
+            PROJECT_EXCEPTION
+            USER_WORK_WEEK
+            USER_EXCEPTION
+
+
+        :param start_date: Start date of date range.
+        :type start_date: str (YYYY-MM-DD)
+        :param end_date: End date of date range.
+        :type end_date: str (YYYY-MM-DD)
+        :param dict project: Project entity to query WorkDayRules for. (optional)
+        :param dict user: User entity to query WorkDayRules for. (optional)
+        ")
+                        (reparse-symbol indented_block_body) [32084 33406])
+                    ("work_schedule_update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33436 33440])
+                            ("date" variable nil (reparse-symbol function_parameters) [33442 33446])
+                            ("working" variable nil (reparse-symbol function_parameters) [33448 33455])
+                            ("description" variable nil (reparse-symbol function_parameters) [33457 33468])
+                            ("project" variable nil (reparse-symbol function_parameters) [33475 33482])
+                            ("user" variable nil (reparse-symbol function_parameters) [33489 33493])
+                            ("recalculate_field" variable nil (reparse-symbol function_parameters) [33500 33517]))                          
+                        :documentation "Update the work schedule for a given date. If neither project nor user are passed the studio work schedule will be updated.
+        Project and User can only be used separately.
+
+        :param date: Date of WorkDayRule to update.
+        :type date: str (YYYY-MM-DD)
+        :param bool working:
+        :param str description: Reason for time off. (optional)
+        :param dict project: Project entity to assign to. Cannot be used with user. (optional)
+        :param dict user: User entity to assign to. Cannot be used with project. (optional)
+        :param str recalculate_field: Choose the schedule field that will be recalculated on Tasks when they are affected by a change in working schedule. 'due_date' or 'duration', default is a Site Preference (optional)
+        ")
+                        (reparse-symbol indented_block_body) [33411 34970])
+                    ("follow" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34986 34990])
+                            ("user" variable nil (reparse-symbol function_parameters) [34992 34996])
+                            ("entity" variable nil (reparse-symbol function_parameters) [34998 35004]))                          
+                        :documentation "Adds the entity to the user's followed entities (or does nothing if the user is already following the entity)
+        
+        :param dict user: User entity to follow the entity
+        :param dict entity: Entity to be followed
+        
+        :returns: dict with 'followed'=true, and dicts for the 'user' and 'entity' that were passed in
+        ")
+                        (reparse-symbol indented_block_body) [34975 35752])
+                    ("unfollow" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35770 35774])
+                            ("user" variable nil (reparse-symbol function_parameters) [35776 35780])
+                            ("entity" variable nil (reparse-symbol function_parameters) [35782 35788]))                          
+                        :documentation "Removes entity from the user's followed entities (or does nothing if the user is not following the entity)
+        
+        :param dict user: User entity to unfollow the entity
+        :param dict entity: Entity to be unfollowed
+        
+        :returns: dict with 'unfollowed'=true, and dicts for the 'user' and 'entity' that were passed in
+        ")
+                        (reparse-symbol indented_block_body) [35757 36541])
+                    ("followers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36560 36564])
+                            ("entity" variable nil (reparse-symbol function_parameters) [36566 36572]))                          
+                        :documentation "Gets all followers of the entity.
+        
+        :param dict entity: Find all followers of this entity
+        
+        :returns list of dicts for all the users following the entity
+        ")
+                        (reparse-symbol indented_block_body) [36546 37144])
+                    ("schema_entity_read" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37172 37176]))                          
+                        :documentation "Gets all active entities defined in the schema.
+
+        :returns: dict of Entity Type to dict containing the display name.
+        ")
+                        (reparse-symbol indented_block_body) [37149 37385])
+                    ("schema_read" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37406 37410]))                          
+                        :documentation "Gets the schema for all fields in all entities.
+
+        :returns: nested dicts
+        ")
+                        (reparse-symbol indented_block_body) [37390 37568])
+                    ("schema_field_read" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37595 37599])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [37601 37612])
+                            ("field_name" variable nil (reparse-symbol function_parameters) [37614 37624]))                          
+                        :documentation "Gets all schema for fields in the specified entity_type or one
+        field.
+
+        :param entity_type: Required, entity type (string) to get the schema
+        for.
+
+        :param field_name: Optional, name of the field to get the schema
+        definition for. If not supplied all fields for the entity type are
+        returned.
+
+        :returns: dict of field name to nested dicts which describe the field
+        ")
+                        (reparse-symbol indented_block_body) [37573 38263])
+                    ("schema_field_create" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38292 38296])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [38298 38309])
+                            ("data_type" variable nil (reparse-symbol function_parameters) [38311 38320])
+                            ("display_name" variable nil (reparse-symbol function_parameters) [38322 38334])
+                            ("properties" variable nil (reparse-symbol function_parameters) [38344 38354]))                          
+                        :documentation "Creates a field for the specified entity type.
+
+        :param entity_type: Required, entity type (string) to add the field to
+
+        :param data_type: Required, Shotgun data type for the new field.
+
+        :param display_name: Required, display name for the new field.
+
+        :param properties: Optional, dict of properties for the new field.
+
+        :returns: The Shotgun name (string) for the new field, this is
+        different to the display_name passed in.
+        ")
+                        (reparse-symbol indented_block_body) [38268 39252])
+                    ("schema_field_update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39281 39285])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [39287 39298])
+                            ("field_name" variable nil (reparse-symbol function_parameters) [39300 39310])
+                            ("properties" variable nil (reparse-symbol function_parameters) [39312 39322]))                          
+                        :documentation "Updates the specified field definition with the supplied
+        properties.
+
+        :param entity_type: Required, entity type (string) to add the field to
+
+        :param field_name: Required, Shotgun name of the field to update.
+
+        :param properties: Required, dict of updated properties for the field.
+
+        :returns: True if the field was updated, False otherwise.
+        ")
+                        (reparse-symbol indented_block_body) [39257 40044])
+                    ("schema_field_delete" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40073 40077])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [40079 40090])
+                            ("field_name" variable nil (reparse-symbol function_parameters) [40092 40102]))                          
+                        :documentation "Deletes the specified field definition from the entity_type.
+
+        :param entity_type: Required, entity type (string) to delete the field
+        from.
+
+        :param field_name: Required, Shotgun name of the field to delete.
+
+        :param properties: Required, dict of updated properties for the field.
+
+        :returns: True if the field was updated, False otherwise.
+        ")
+                        (reparse-symbol indented_block_body) [40049 40669])
+                    ("add_user_agent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40693 40697])
+                            ("agent" variable nil (reparse-symbol function_parameters) [40699 40704]))                          
+                        :documentation "Add agent to the user-agent header
+
+        Append agent to the string passed in as the user-agent to be logged
+        in events for this API session.
+
+        :param agent: Required, string to append to user-agent.
+        ")
+                        (reparse-symbol indented_block_body) [40674 40987])
+                    ("reset_user_agent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [41013 41017]))                          
+                        :documentation "Reset user agent to the default
+
+        Eg. shotgun-json (3.0.17); Python 2.6 (Mac)
+        ")
+                        (reparse-symbol indented_block_body) [40992 41431])
+                    ("set_session_uuid" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [41457 41461])
+                            ("session_uuid" variable nil (reparse-symbol function_parameters) [41463 41475]))                          
+                        :documentation "Sets the browser session_uuid for this API session.
+
+        Once set events generated by this API session will include the
+        session_uuid in their EventLogEntries.
+
+        :param session_uuid: Session UUID to set.
+        ")
+                        (reparse-symbol indented_block_body) [41436 41787])
+                    ("share_thumbnail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [41812 41816])
+                            ("entities" variable nil (reparse-symbol function_parameters) [41818 41826])
+                            ("thumbnail_path" variable nil (reparse-symbol function_parameters) [41828 41842])
+                            ("source_entity" variable nil (reparse-symbol function_parameters) [41849 41862])
+                            ("filmstrip_thumbnail" variable nil (reparse-symbol function_parameters) [41877 41896])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [41904 41912]))                          )
+                        (reparse-symbol indented_block_body) [41792 45505])
+                    ("upload_thumbnail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [45531 45535])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [45537 45548])
+                            ("entity_id" variable nil (reparse-symbol function_parameters) [45550 45559])
+                            ("path" variable nil (reparse-symbol function_parameters) [45561 45565])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [45567 45575]))                          
+                        :documentation "Convenience function for uploading thumbnails, see upload.
+        ")
+                        (reparse-symbol indented_block_body) [45510 45765])
+                    ("upload_filmstrip_thumbnail" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [45801 45805])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [45807 45818])
+                            ("entity_id" variable nil (reparse-symbol function_parameters) [45820 45829])
+                            ("path" variable nil (reparse-symbol function_parameters) [45831 45835])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [45837 45845]))                          
+                        :documentation "Convenience function for uploading thumbnails, see upload.
+        ")
+                        (reparse-symbol indented_block_body) [45770 46291])
+                    ("upload" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [46307 46311])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [46313 46324])
+                            ("entity_id" variable nil (reparse-symbol function_parameters) [46326 46335])
+                            ("path" variable nil (reparse-symbol function_parameters) [46337 46341])
+                            ("field_name" variable nil (reparse-symbol function_parameters) [46343 46353])
+                            ("display_name" variable nil (reparse-symbol function_parameters) [46368 46380])
+                            ("tag_list" variable nil (reparse-symbol function_parameters) [46387 46395]))                          
+                        :documentation "Upload a file as an attachment/thumbnail to the specified
+        entity_type and entity_id.
+
+        :param entity_type: Required, entity type (string) to revive.
+
+        :param entity_id: Required, id of the entity to revive.
+
+        :param path: path to file on disk
+
+        :param field_name: the field on the entity to upload to
+            (ignored if thumbnail)
+
+        :param display_name: the display name to use for the file in the ui
+            (ignored if thumbnail)
+
+        :param tag_list: comma-separated string of tags to assign to the file
+
+        :returns: Id of the new attachment.
+        ")
+                        (reparse-symbol indented_block_body) [46296 49323])
+                    ("download_attachment" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [49352 49356])
+                            ("attachment" variable nil (reparse-symbol function_parameters) [49358 49368])
+                            ("file_path" variable nil (reparse-symbol function_parameters) [49376 49385])
+                            ("attachment_id" variable nil (reparse-symbol function_parameters) [49421 49434]))                          
+                        :documentation "Downloads the file associated with a Shotgun Attachment.
+
+        NOTE: On older (< v5.1.0) Shotgun versions, non-downloadable files 
+        on Shotgun don't raise exceptions, they cause a server error which 
+        returns a 200 with the page content.
+
+        :param attachment: (mixed) Usually a dict representing an Attachment.
+        The dict should have a 'url' key that specifies the download url. 
+        Optionally, the dict can be a standard entity hash format with 'id' and
+        'type' keys as long as 'type'=='Attachment'. This is only supported for
+        backwards compatibility (#22150).
+        If an int value is passed in, the Attachment with the matching id will
+        be downloaded from the Shotgun server.
+
+        :param file_path: (str) Optional. If provided, write the data directly
+        to local disk using the file_path. This avoids loading all of the data 
+        in memory and saves the file locally which is probably what is desired
+        anyway. 
+
+        :param attachment_id: (int) Optional. Deprecated in favor of passing in 
+        Attachment hash to attachment param. This attachment_id exists only for
+        backwards compatibility for scripts specifying the parameter with
+        keywords.
+
+        :returns: (str) If file_path is None, returns data of the Attachment 
+        file as a string. If file_path is provided, returns file_path.
+        ")
+                        (reparse-symbol indented_block_body) [49328 53416])
+                    ("set_up_auth_cookie" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [53444 53448]))                          
+                        :documentation "Sets up urllib2 with a cookie for authentication on the Shotgun 
+        instance.
+        ")
+                        (reparse-symbol indented_block_body) [53421 53979])
+                    ("get_attachment_download_url" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [54016 54020])
+                            ("attachment" variable nil (reparse-symbol function_parameters) [54022 54032]))                          
+                        :documentation "Returns the URL for downloading provided Attachment.
+
+        :param attachment: (mixed) If type is an int, construct url to download
+        Attachment with id from Shotgun. 
+        If type is a dict, and a url key is present, use that url. 
+        If type is a dict, and url key is not present, check if we have
+        an id and type keys and the type is 'Attachment' in which case we 
+        construct url to download Attachment with id from Shotgun as if just
+        the id has been passed in. 
+
+        :todo: Support for a standard entity hash should be removed: #22150
+
+        :returns: (str) the download URL for the Attachment or None if None was
+        passed to attachment param. This avoids raising an error when results
+        from a find() are passed off to a download_attachment() call.
+        ")
+                        (reparse-symbol indented_block_body) [53984 55846])
+                    ("authenticate_human_user" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [55879 55883])
+                            ("user_login" variable nil (reparse-symbol function_parameters) [55885 55895])
+                            ("user_password" variable nil (reparse-symbol function_parameters) [55897 55910]))                          )
+                        (reparse-symbol indented_block_body) [55851 57521])
+                    ("update_project_last_accessed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [57560 57564])
+                            ("project" variable nil (reparse-symbol function_parameters) [57566 57573])
+                            ("user" variable nil (reparse-symbol function_parameters) [57575 57579]))                          
+                        :documentation "
+        Update projects last_accessed_by_current_user field.
+        
+        :param project - a project entity hash
+        :param user - A human user entity hash. Optional if either login or sudo_as are used.
+
+        ")
+                        (reparse-symbol indented_block_body) [57527 58709])
+                    ("_get_session_token" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [58738 58742]))                          
+                        :documentation "Hack to authenticate in order to download protected content
+        like Attachments
+        ")
+                        (reparse-symbol indented_block_body) [58715 59242])
+                    ("_build_opener" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [59265 59269])
+                            ("handler" variable nil (reparse-symbol function_parameters) [59271 59278]))                          
+                        :documentation "Build urllib2 opener with appropriate proxy handler.")
+                        (reparse-symbol indented_block_body) [59247 59970])
+                    ("schema" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [60028 60032])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [60034 60045]))                          )
+                        (reparse-symbol indented_block_body) [60017 60162])
+                    ("entity_types" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [60184 60188]))                          )
+                        (reparse-symbol indented_block_body) [60167 60266])
+                    ("_call_rpc" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [60384 60388])
+                            ("method" variable nil (reparse-symbol function_parameters) [60390 60396])
+                            ("params" variable nil (reparse-symbol function_parameters) [60398 60404])
+                            ("include_auth_params" variable nil (reparse-symbol function_parameters) [60406 60425])
+                            ("first" variable nil (reparse-symbol function_parameters) [60432 60437]))                          
+                        :documentation "Calls the specified method on the Shotgun Server sending the
+        supplied payload.
+
+        ")
+                        (reparse-symbol indented_block_body) [60370 61895])
+                    ("_auth_params" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [61917 61921]))                          
+                        :documentation " return a dictionary of the authentication parameters being used. ")
+                        (reparse-symbol indented_block_body) [61900 63175])
+                    ("_build_payload" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [63199 63203])
+                            ("method" variable nil (reparse-symbol function_parameters) [63205 63211])
+                            ("params" variable nil (reparse-symbol function_parameters) [63213 63219])
+                            ("include_auth_params" variable nil (reparse-symbol function_parameters) [63221 63240]))                          
+                        :documentation "Builds the payload to be send to the rpc endpoint.
+
+        ")
+                        (reparse-symbol indented_block_body) [63180 63701])
+                    ("_encode_payload" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [63726 63730])
+                            ("payload" variable nil (reparse-symbol function_parameters) [63732 63739]))                          
+                        :documentation "Encodes the payload to a string to be passed to the rpc endpoint.
+
+        The payload is json encoded as a unicode string if the content
+        requires it. The unicode string is then encoded as 'utf-8' as it must
+        be in a single byte encoding to go over the wire.
+        ")
+                        (reparse-symbol indented_block_body) [63706 64193])
+                    ("_make_call" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [64213 64217])
+                            ("verb" variable nil (reparse-symbol function_parameters) [64219 64223])
+                            ("path" variable nil (reparse-symbol function_parameters) [64225 64229])
+                            ("body" variable nil (reparse-symbol function_parameters) [64231 64235])
+                            ("headers" variable nil (reparse-symbol function_parameters) [64237 64244]))                          
+                        :documentation "Makes a HTTP call to the server, handles retry and failure.
+        ")
+                        (reparse-symbol indented_block_body) [64198 65010])
+                    ("_http_request" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [65033 65037])
+                            ("verb" variable nil (reparse-symbol function_parameters) [65039 65043])
+                            ("path" variable nil (reparse-symbol function_parameters) [65045 65049])
+                            ("body" variable nil (reparse-symbol function_parameters) [65051 65055])
+                            ("headers" variable nil (reparse-symbol function_parameters) [65057 65064]))                          
+                        :documentation "Makes the actual HTTP request.
+        ")
+                        (reparse-symbol indented_block_body) [65015 65983])
+                    ("_parse_http_status" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [66011 66015])
+                            ("status" variable nil (reparse-symbol function_parameters) [66017 66023]))                          
+                        :documentation "Parse the status returned from the http request.
+
+        :raises: RuntimeError if the http status is non success.
+
+        :param status: Tuple of (code, reason).
+        ")
+                        (reparse-symbol indented_block_body) [65988 66668])
+                    ("_decode_response" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [66694 66698])
+                            ("headers" variable nil (reparse-symbol function_parameters) [66700 66707])
+                            ("body" variable nil (reparse-symbol function_parameters) [66709 66713]))                          
+                        :documentation "Decodes the response from the server from the wire format to
+        a python data structure.
+
+        :param headers: Headers from the server.
+
+        :param body: Raw response body from the server.
+
+        :returns: If the content-type starts with application/json or
+        text/javascript the body is json decoded. Otherwise the raw body is
+        returned.
+        ")
+                        (reparse-symbol indented_block_body) [66673 67369])
+                    ("_json_loads" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [67390 67394])
+                            ("body" variable nil (reparse-symbol function_parameters) [67396 67400]))                          )
+                        (reparse-symbol indented_block_body) [67374 67435])
+                    ("_json_loads_ascii" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [67462 67466])
+                            ("body" variable nil (reparse-symbol function_parameters) [67468 67472]))                          )
+                        (reparse-symbol indented_block_body) [67440 68311])
+                    ("_response_errors" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [68338 68342])
+                            ("sg_response" variable nil (reparse-symbol function_parameters) [68344 68355]))                          
+                        :documentation "Raises any API errors specified in the response.
+
+        :raises ShotgunError: If the server response contains an exception.
+        ")
+                        (reparse-symbol indented_block_body) [68317 68683])
+                    ("_visit_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [68704 68708])
+                            ("data" variable nil (reparse-symbol function_parameters) [68710 68714])
+                            ("visitor" variable nil (reparse-symbol function_parameters) [68716 68723]))                          
+                        :documentation "Walk the data (simple python types) and call the visitor.")
+                        (reparse-symbol indented_block_body) [68688 69266])
+                    ("_transform_outbound" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [69295 69299])
+                            ("data" variable nil (reparse-symbol function_parameters) [69301 69305]))                          
+                        :documentation "Transforms data types or values before they are sent by the
+        client.
+
+        - changes timezones
+        - converts dates and times to strings
+        ")
+                        (reparse-symbol indented_block_body) [69271 70785])
+                    ("_transform_inbound" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [70813 70817])
+                            ("data" variable nil (reparse-symbol function_parameters) [70819 70823]))                          
+                        :documentation "Transforms data types or values after they are received from the
+        server.")
+                        (reparse-symbol indented_block_body) [70790 71982])
+                    ("_get_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [72114 72118]))                          
+                        :documentation "Returns the current connection or creates a new connection to the
+        current server.
+        ")
+                        (reparse-symbol indented_block_body) [72094 72971])
+                    ("_close_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [72998 73002]))                          
+                        :documentation "Closes the current connection.")
+                        (reparse-symbol indented_block_body) [72976 73355])
+                    ("_parse_records" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [73472 73476])
+                            ("records" variable nil (reparse-symbol function_parameters) [73478 73485]))                          
+                        :documentation "Parses 'records' returned from the api to do local modifications:
+
+        - Insert thumbnail urls
+        - Insert local file paths.
+        - Revert &lt; html entities that may be the result of input sanitization
+          mechanisms back to a litteral < character.
+
+        :param records: List of records (dicts) to process or a single record.
+
+        :returns: A list of the records processed.
+        ")
+                        (reparse-symbol indented_block_body) [73453 75245])
+                    ("_build_thumb_url" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [75271 75275])
+                            ("entity_type" variable nil (reparse-symbol function_parameters) [75277 75288])
+                            ("entity_id" variable nil (reparse-symbol function_parameters) [75290 75299]))                          
+                        :documentation "Returns the URL for the thumbnail of an entity given the
+        entity type and the entity id.
+
+        Note: This makes a call to the server for every thumbnail.
+
+        :param entity_type: Entity type the id is for.
+
+        :param entity_id: id of the entity to get the thumbnail for.
+
+        :returns: Fully qualified url to the thumbnail.
+        ")
+                        (reparse-symbol indented_block_body) [75250 76665])
+                    ("_dict_to_list" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [76688 76692])
+                            ("d" variable nil (reparse-symbol function_parameters) [76694 76695])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [76697 76705])
+                            ("value_name" variable nil (reparse-symbol function_parameters) [76720 76730]))                          
+                        :documentation "Utility function to convert a dict into a list dicts using the
+        key_name and value_name keys.
+
+        e.g. d {'foo' : 'bar'} changed to [{'field_name':'foo, 'value':'bar'}]
+        ")
+                        (reparse-symbol indented_block_body) [76670 77063]))                  
+                :type "class")
+                nil [7751 77063])
+            ("FormPostHandler" type
+               (:documentation "
+    Handler for multipart form data
+    "
+                :superclasses ("urllib2.BaseHandler")
+                :members 
+                  ( ("handler_order" code nil (reparse-symbol indented_block_body) [77266 77320])
+                    ("http_request" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [77364 77368])
+                            ("request" variable nil (reparse-symbol function_parameters) [77370 77377]))                          )
+                        (reparse-symbol indented_block_body) [77347 78119])
+                    ("encode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [78135 78139])
+                            ("params" variable nil (reparse-symbol function_parameters) [78141 78147])
+                            ("files" variable nil (reparse-symbol function_parameters) [78149 78154])
+                            ("boundary" variable nil (reparse-symbol function_parameters) [78156 78164])
+                            ("buffer" variable nil (reparse-symbol function_parameters) [78171 78177]))                          )
+                        (reparse-symbol indented_block_body) [78124 79373])
+                    ("https_request" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [79396 79400])
+                            ("request" variable nil (reparse-symbol function_parameters) [79402 79409]))                          )
+                        (reparse-symbol indented_block_body) [79378 79454]))                  
+                :type "class")
+                nil [77166 79454])
+            ("_translate_filters" function (:arguments 
+              ( ("filters" variable nil (reparse-symbol function_parameters) [79479 79486])
+                ("filter_operator" variable nil (reparse-symbol function_parameters) [79488 79503]))              ) nil [79456 79770])
+            ("_translate_filters_dict" function (:arguments 
+              ( ("sg_filter" variable nil (reparse-symbol function_parameters) [79799 79808]))              ) nil [79771 80475])
+            ("_translate_filters_list" function (:arguments 
+              ( ("filters" variable nil (reparse-symbol function_parameters) [80508 80515]))              ) nil [80480 80940])
+            ("_translate_filters_simple" function (:arguments 
+              ( ("sg_filter" variable nil (reparse-symbol function_parameters) [80971 80980]))              ) nil [80941 81251]))          
+      :file "shotgun.py"
+      :pointmax 81258
+      :fsize 83362
+      :lastmodtime '(22015 58872 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Common!ThirdParty!Lib!Shotgun!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

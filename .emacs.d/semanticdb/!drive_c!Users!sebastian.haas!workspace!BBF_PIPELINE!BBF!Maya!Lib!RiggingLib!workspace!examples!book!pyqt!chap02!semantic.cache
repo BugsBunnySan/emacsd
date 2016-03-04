@@ -1,0 +1,198 @@
+;; Object chap02/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "chap02/"
+  :tables
+  (list
+    (semanticdb-table "answers.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__future__" include nil nil [638 669])
+            ("__future__" include nil nil [670 707])
+            ("future_builtins" include nil nil [768 797])
+            ("\"\"\"Answers to the exercises in chapter 2.
+\"\"\"" code nil nil [799 844])
+            ("valid" function
+               (:documentation "Returns a copy of text than only contains characters in chars
+
+    This function is case-sensitive.
+    
+    >>> valid(\"Barking\")
+    'B'
+    >>> valid(\"KL754\", \"0123456789\")
+    '754'
+    >>> valid(\"BEAN\", \"abcdefghijklmnopqrstuvwxyz\")
+    ''
+    "
+                :arguments 
+                  ( ("text" variable nil (reparse-symbol function_parameters) [856 860])
+                    ("chars" variable nil (reparse-symbol function_parameters) [862 867]))                  )
+                nil [846 1291])
+            ("charcount" function
+               (:documentation "Returns a dictionary with character counts for each letter in text
+
+    The text is lowercased. Any whitespace character's count is given
+    the \"whitespace\" key, any non-whitespace, non-A-Z character's is
+    given the \"others\" key; the letter keys are lowercase, i.e., \"a\",
+    \"b\", ..., \"z\".
+
+    >>> stats = {}
+    >>> for char in \"abcdefghijklmnopqrstuvwxyz\": stats[char] = 0
+    >>> stats[\"whitespace\"] = 0
+    >>> stats[\"others\"] = 0
+    >>> charcount(\"\") == stats
+    True
+    >>> stats[\"a\"] = 1
+    >>> stats[\"b\"] = 2
+    >>> stats[\"l\"] = 1
+    >>> stats[\"e\"] = 2
+    >>> stats[\"whitespace\"] = 1
+    >>> stats[\"o\"] = 1
+    >>> stats[\"d\"] = 2
+    >>> stats[\"i\"] = 1
+    >>> charcount(\"Able bodied\") == stats
+    True
+    >>> for char in \"abcdefghijklmnopqrstuvwxyz\": stats[char] = 0
+    >>> stats[\"e\"] = 5
+    >>> stats[\"x\"] = 1
+    >>> stats[\"c\"] = 1
+    >>> stats[\"d\"] = 2
+    >>> stats[\"i\"] = 2
+    >>> stats[\"n\"] = 1
+    >>> stats[\"g\"] = 1
+    >>> stats[\"l\"] = 2
+    >>> stats[\"y\"] = 1
+    >>> stats[\"whitespace\"] = 1
+    >>> stats[\"b\"] = 1
+    >>> charcount(\"Exceedingly Edible\") == stats
+    True
+    "
+                :arguments 
+                  ( ("text" variable nil (reparse-symbol function_parameters) [1307 1311]))                  )
+                nil [1293 2819])
+            ("integer" function
+               (:documentation "Returns an integer whatever the input value
+    
+    If the input is invalid returns 0
+
+    >>> integer(\"tonsils\")
+    0
+    >>> integer(4.5)
+    5
+    >>> integer(32)
+    32
+    >>> integer(\"-15.1\")
+    -15
+    >>> integer(22.499999999)
+    22
+    >>> integer(\"22.5\")
+    23
+    >>> integer(\"-red\")
+    0
+    "
+                :arguments 
+                  ( ("number" variable nil (reparse-symbol function_parameters) [2833 2839]))                  )
+                nil [2821 3260])
+            ("incrementString" function
+               (:documentation "Returns the text incremented by one letter
+
+    The text must be alphabetic or a ValueError is raised.
+    
+    >>> incrementString(\"A\")
+    'B'
+    >>> incrementString(\"Z\")
+    'AA'
+    >>> incrementString(\"AM\")
+    'AN'
+    >>> incrementString(\"AZ\")
+    'BA'
+    >>> incrementString(\"BA\")
+    'BB'
+    >>> incrementString(\"BZ\")
+    'CA'
+    >>> incrementString(\"ZZA\")
+    'ZZB'
+    >>> incrementString(\"ZZZ\")
+    'AAAA'
+    >>> incrementString(\"AAAA\")
+    'AAAB'
+    >>> incrementString(\"AAAZ\")
+    'AABA'
+    >>> incrementString(\"ABC2\")
+    Traceback (most recent call last):
+    ValueError: text must be purely alphabetic
+    "
+                :arguments 
+                  ( ("text" variable nil (reparse-symbol function_parameters) [3282 3286]))                  )
+                nil [3262 4440])
+            ("leapyears" function
+               (:documentation "Returns a generator that returns the leap years in yearlist
+
+    >>> years = [1600, 1604, 1700, 1704, 1800, 1900, 1996, 2000, 2004]
+    >>> list(leapyears(years))
+    [1600, 1604, 1704, 1996, 2000, 2004]
+    "
+                :arguments 
+                  ( ("yearlist" variable nil (reparse-symbol function_parameters) [4456 4464]))                  )
+                nil [4442 4842])
+            ("if" code nil nil [4844 4912]))          
+      :file "answers.py"
+      :pointmax 4913
+      :fsize 5096
+      :lastmodtime '(21896 15489 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "frange.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__future__" include nil nil [638 669])
+            ("__future__" include nil nil [670 707])
+            ("__future__" include nil nil [708 747])
+            ("future_builtins" include nil nil [748 777])
+            ("\"\"\"Provides two simple range functions for floating point numbers.
+\"\"\"" code nil nil [779 849])
+            ("frange" function
+               (:documentation "Returns a list of floats using range-like syntax
+
+    frange(start, stop, inc)   # start = arg0  stop = arg1  inc = arg2
+    frange(start, stop)        # start = arg0  stop = arg1  inc = 1.0
+    frange(stop)               # start = 0.0   stop = arg0  inc = 1.0
+    
+    >>> frange(5)
+    [0.0, 1.0, 2.0, 3.0, 4.0]
+    >>> frange(5, 10)
+    [5, 6.0, 7.0, 8.0, 9.0]
+    >>> frange(2, 5, 0.5)
+    [2, 2.5, 3.0, 3.5, 4.0, 4.5]
+    "
+                :arguments 
+                  ( ("arg0" variable nil (reparse-symbol function_parameters) [863 867])
+                    ("arg1" variable nil (reparse-symbol function_parameters) [869 873])
+                    ("arg2" variable nil (reparse-symbol function_parameters) [880 884]))                  )
+                nil [852 1778])
+            ("gfrange" function
+               (:documentation "Returns a generator of floats using range-like syntax
+
+    gfrange(start, stop, inc)
+    gfrange(start, stop) # inc == 1.0
+    gfrange(stop) # start = 0.0, inc == 1.0
+
+    >>> list(gfrange(5))
+    [0.0, 1.0, 2.0, 3.0, 4.0]
+    >>> list(gfrange(5, 10))
+    [5, 6.0, 7.0, 8.0, 9.0]
+    >>> list(gfrange(2, 5, 0.5))
+    [2, 2.5, 3.0, 3.5, 4.0, 4.5]
+    "
+                :arguments 
+                  ( ("arg0" variable nil (reparse-symbol function_parameters) [1792 1796])
+                    ("arg1" variable nil (reparse-symbol function_parameters) [1798 1802])
+                    ("arg2" variable nil (reparse-symbol function_parameters) [1809 1813]))                  )
+                nil [1780 2591])
+            ("if" code nil nil [2593 2661]))          
+      :file "frange.py"
+      :pointmax 2662
+      :fsize 2749
+      :lastmodtime '(21896 15489 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!sebastian.haas!workspace!BBF_PIPELINE!BBF!Maya!Lib!RiggingLib!workspace!examples!book!pyqt!chap02!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

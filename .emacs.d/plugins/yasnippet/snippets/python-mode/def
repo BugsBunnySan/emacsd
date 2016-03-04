@@ -5,17 +5,17 @@
 # key: def
 # --
 def ${1:name}($2):
-    """$3
+    """
+    $3
     ${2:$
-      (let* 
+      (let*
         ((indent
             (concat "\n" (make-string (current-column) 32)))
            (args
             (mapconcat
              '(lambda (x)
                 (if (not (string= (nth 0 x) ""))
-                    (concat "- " (char-to-string 96) (nth 0 x)
-                            (char-to-string 96) ":")))
+                    (concat "    " (nth 0 x) ":")))
              (mapcar
               '(lambda (x)
                  (mapcar
@@ -30,7 +30,12 @@ def ${1:name}($2):
           (make-string 3 34)
         (mapconcat
          'identity
-         (list "" "Arguments:" args (make-string 3 34))
-         indent)))
+         (list "" "Args:" args (make-string 3 34))
+         indent
+	 "Returns:"
+	 indent
+	 "Raises:"
+	 indent
+	 )))
     }
     $0
