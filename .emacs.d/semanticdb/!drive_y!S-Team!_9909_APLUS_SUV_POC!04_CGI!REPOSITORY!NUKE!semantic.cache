@@ -1,0 +1,82 @@
+;; Object NUKE/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "NUKE/"
+  :tables
+  (list
+    (semanticdb-table "nuke_renderlayer_switch.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [110 119])
+            ("inspect" include nil nil [120 134])
+            ("re" include nil nil [135 144])
+            ("time" include nil nil [145 156])
+            ("yaml" include nil nil [158 169])
+            ("af" include nil nil [171 180])
+            ("cgruconfig" include nil nil [181 198])
+            ("nuke" include nil nil [200 211])
+            ("kvstore.kvstore" include nil nil [213 244])
+            ("context.stack" include nil nil [245 273])
+            ("context.specialized" include nil nil [274 308])
+            ("name_service.services" include nil nil [309 345])
+            ("implementations.name_service.yaml" include nil nil [346 386])
+            ("\"\"\"
+import sys
+sys.path.append(r'Y:/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY')
+sys.path.append(r'Y:/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY/NUKE')
+sys.path.append(r'Y:/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY/pipeline')
+sys.path.insert(0, '\\\\\\\\CARBON\\\\repositories\\\\3rdparty\\\\cgru\\\\current\\\\afanasy\\\\python')
+sys.path.insert(0, '\\\\\\\\CARBON\\\\repositories\\\\3rdparty\\\\cgru\\\\current\\\\lib\\\\python')
+
+import os
+os.environ['PROJECT_ROOT'] = r'Y:/S-Team/_9909_APLUS_SUV_POC'
+
+import nuke_renderlayer_switch as nrs
+reload(nrs)
+nrs.load_all_renderlayers(r'Y:/S-Team/_9909_APLUS_SUV_POC/04_CGI/999/999_010/__MAIN__/lgt/MAYA/images/v004')
+
+
+nrs.render_combinations()
+\"\"\"" code nil nil [907 1578])
+            ("\"\"\"
+ns = CONTEXT['config_processing..services.name_service.services.NameServiceI.name_service.name_service.yaml'][0]
+
+ns.match('render.maya.images_versioned_folder', r'Y:\\S-Team\\_9909_APLUS_SUV_POC\\04_CGI\\999\\999_010\\__MAIN__\\lgt\\MAYA\\images\\v004'.replace('\\\\', '/'))
+
+ns.match('project.root', r'Y:/S-Team/_9909_APLUS_SUV_POC')
+\"\"\"" code nil nil [1584 1915])
+            ("setup_context" function nil nil [1916 3739])
+            ("switch_input" function
+               (:parent "dummy"
+                :arguments 
+                  ( ("self" variable nil (reparse-symbol function_parameters) [3757 3761]))                  )
+                nil [3740 3971])
+            ("set_all_prs" function (:arguments 
+              ( ("value" variable nil (reparse-symbol function_parameters) [3988 3993]))              ) nil [3972 4172])
+            ("setup_renderlayer_group" function (:arguments 
+              ( ("render_layer" variable nil (reparse-symbol function_parameters) [4201 4213])
+                ("render_layer_folder" variable nil (reparse-symbol function_parameters) [4215 4234])
+                ("name_service" variable nil (reparse-symbol function_parameters) [4236 4248])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [4250 4257]))              ) nil [4173 7476])
+            ("load_all_renderlayers" function (:arguments 
+              ( ("render_output_folder" variable nil (reparse-symbol function_parameters) [7503 7523]))              ) nil [7477 8002])
+            ("get_combinations" function nil nil [8003 8906])
+            ("make_af_job" function (:arguments 
+              ( ("combinations" variable nil (reparse-symbol function_parameters) [8923 8935])
+                ("name_service" variable nil (reparse-symbol function_parameters) [8937 8949])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [8951 8958])
+                ("af_job" variable nil (reparse-symbol function_parameters) [8960 8966]))              ) nil [8907 11302])
+            ("switch_combinations" function (:arguments 
+              ( ("render_layers" variable nil (reparse-symbol function_parameters) [11327 11340])
+                ("combinations" variable nil (reparse-symbol function_parameters) [11342 11354])
+                ("name_service" variable nil (reparse-symbol function_parameters) [11356 11368])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [11370 11377])
+                ("af_job" variable nil (reparse-symbol function_parameters) [11379 11385]))              ) nil [11303 11925])
+            ("render_combinations" function nil nil [11926 12373]))          
+      :file "nuke_renderlayer_switch.py"
+      :pointmax 12393
+      :fsize 12745
+      :lastmodtime '(22436 34405 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 11033 . 11149) (NEWLINE 11032 . 11033) (COLON 11031 . 11032) (TRY 10849 . 10852) (AS 11027 . 11029) (INDENT_BLOCK 10601 . 10717) (NEWLINE 10600 . 10601) (COLON 10599 . 10600) (TRY 10239 . 10242) (AS 10595 . 10597) (INDENT_BLOCK 10082 . 10198) (NEWLINE 10081 . 10082) (COLON 10080 . 10081) (TRY 9835 . 9838) (AS 10076 . 10078))))
+  :file "!drive_y!S-Team!_9909_APLUS_SUV_POC!04_CGI!REPOSITORY!NUKE!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

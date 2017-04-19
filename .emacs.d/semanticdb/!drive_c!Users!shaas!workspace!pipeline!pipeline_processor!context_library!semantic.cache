@@ -1,0 +1,140 @@
+;; Object context_library/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "context_library/"
+  :tables
+  (list
+    (semanticdb-table "services.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("abc" include nil nil [1 11])
+            ("Queue" include nil nil [12 24])
+            ("context.service" include nil nil [26 55])
+            ("context.stack" include nil nil [56 84])
+            ("pipeline_processor.base" include nil nil [86 124])
+            ("pipeline_processor.messages" include nil nil [125 167])
+            ("ContextLibraryI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("_send_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [252 256])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [258 270])
+                            ("request_id" variable nil (reparse-symbol function_parameters) [272 282])
+                            ("context_layer_id" variable nil (reparse-symbol function_parameters) [284 300])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [302 310]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [212 326]))                  
+                :type "class")
+                nil [169 326])
+            ("ContextLibrary" type
+               (:superclasses ("c_s.Service" "pp_b.GraphProcessorThread" "c_st.Context")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [407 441])
+                    ("__init__" function
+                       (:suite 
+                          ( ("c_s" code nil (reparse-symbol indented_block_body) [646 672])
+                            ("c_st" code nil (reparse-symbol indented_block_body) [681 737])
+                            ("pp_b" code nil (reparse-symbol indented_block_body) [746 960]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [460 464])
+                            ("thread_id" variable nil (reparse-symbol function_parameters) [466 475])
+                            ("library_config" variable nil (reparse-symbol function_parameters) [477 491])
+                            ("pipeline_server_id" variable nil (reparse-symbol function_parameters) [510 528])
+                            ("heartbeat_interval" variable nil (reparse-symbol function_parameters) [530 548])
+                            ("heartbeat_timeout" variable nil (reparse-symbol function_parameters) [550 567])
+                            ("data" variable nil (reparse-symbol function_parameters) [586 590])
+                            ("parent_router_id" variable nil (reparse-symbol function_parameters) [614 630]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [447 961])
+                    ("__hash__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [979 983]))                          )
+                        (reparse-symbol indented_block_body) [966 1016])
+                    ("_make_ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1046 1050]))                          )
+                        (reparse-symbol indented_block_body) [1021 1106])
+                    ("_tear_down_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1137 1141])
+                            ("connection" variable nil (reparse-symbol function_parameters) [1143 1153]))                          )
+                        (reparse-symbol indented_block_body) [1111 1169])
+                    ("ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1207 1211]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1174 1249])
+                    ("process_queue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1286 1290]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1254 1328])
+                    ("_is_local_id" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1350 1354])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [1356 1368]))                          )
+                        (reparse-symbol indented_block_body) [1333 1435])
+                    ("_get_routing_tagers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1464 1468]))                          )
+                        (reparse-symbol indented_block_body) [1440 1498])
+                    ("_get_inventory" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1522 1526]))                          )
+                        (reparse-symbol indented_block_body) [1503 1556])
+                    ("_send_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1577 1581])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [1583 1595])
+                            ("request_id" variable nil (reparse-symbol function_parameters) [1597 1607])
+                            ("context_layer_id" variable nil (reparse-symbol function_parameters) [1609 1625])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [1627 1635]))                          )
+                        (reparse-symbol indented_block_body) [1561 2190])
+                    ("_handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2215 2219])
+                            ("message" variable nil (reparse-symbol function_parameters) [2221 2228])
+                            ("connection" variable nil (reparse-symbol function_parameters) [2230 2240]))                          )
+                        (reparse-symbol indented_block_body) [2195 2414])
+                    ("_poll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2429 2433])
+                            ("timeout" variable nil (reparse-symbol function_parameters) [2435 2442]))                          )
+                        (reparse-symbol indented_block_body) [2419 2674]))                  
+                :type "class")
+                nil [327 2674])
+            ("GraphLibrary" type
+               (:superclasses ("ContextLibrary")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [2743 2773])
+                    ("_get__inventory" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2799 2803]))                          )
+                        (reparse-symbol indented_block_body) [2779 2838]))                  
+                :type "class")
+                nil [2703 2838]))          
+      :file "services.py"
+      :pointmax 2838
+      :fsize 2837
+      :lastmodtime '(22386 36302 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 1860 . 1959) (NEWLINE 1859 . 1860) (COLON 1858 . 1859) (TRY 1646 . 1649) (AS 1854 . 1856) (INDENT_BLOCK 1860 . 1959) (NEWLINE 1859 . 1860) (COLON 1858 . 1859) (TRY 1646 . 1649) (AS 1854 . 1856))))
+  :file "!drive_c!Users!shaas!workspace!pipeline!pipeline_processor!context_library!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

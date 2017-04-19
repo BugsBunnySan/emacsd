@@ -1,0 +1,257 @@
+;; Object daemon/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "daemon/"
+  :tables
+  (list
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package orchestra.daemon.base
+@brief A package that starts up a daemon process (for LINUX only!) The windows equivalent, would
+be a service, however it might be better to convert this into a server process w/o a tty instead.
+
+@author agutsche
+@copyright 2014 Topalsson
+\"\"\"" code nil nil [23 300])
+            ("pickle" include nil nil [301 314])
+            ("pynotify" include nil nil [315 330])
+            ("__all__" variable nil nil [331 343])
+            ("os" include nil nil [345 354])
+            ("sys" include nil nil [355 365])
+            ("platform" include nil nil [366 381])
+            ("daemon" include nil nil [383 415])
+            ("atexit" include nil nil [416 429])
+            ("signal" include nil nil [430 450])
+            ("inspect" include nil nil [451 465])
+            ("argparse" include nil nil [467 482])
+            ("optparse" include nil nil [483 498])
+            ("ConfigParser" include nil nil [499 518])
+            ("yaml" include nil nil [519 530])
+            ("json" include nil nil [531 542])
+            ("colorama" include nil nil [544 559])
+            ("time" include nil nil [592 614])
+            ("orchestra.logging" include nil nil [615 676])
+            ("orchestra.logging.base" include nil nil [677 724])
+            ("ArgDecorator" type
+               (:documentation "A class that decorates methods of classes instead of functions. It can handle decorator
+    level arguments. For more in-depth information about the decorator class it actually returns,
+    see BaseDecorator
+    
+    @note make this and BaseDecorator transparent for custom attributes (like docstring etc.)"
+                :superclasses ("object")
+                :members 
+                  ( ("__new__" function
+                       (:documentation "infuse decorator arguments into the Decorator class and return it instead of this class"
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1089 1092])
+                            ("args" variable nil (reparse-symbol function_parameters) [1094 1099]))                          )
+                        (reparse-symbol indented_block_body) [1077 1495]))                  
+                :type "class")
+                nil [727 1495])
+            ("BaseDecorator" type
+               (:superclasses ("object")
+                :members 
+                  ( ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1544 1548]))                          )
+                        (reparse-symbol indented_block_body) [1529 1564])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1614 1652])
+                            ("self" code nil (reparse-symbol indented_block_body) [1661 1678]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1582 1586])
+                            ("original_method" variable nil (reparse-symbol function_parameters) [1588 1603]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1569 1679])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1697 1701])
+                            ("args" variable nil (reparse-symbol function_parameters) [1703 1708])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1710 1718]))                          )
+                        (reparse-symbol indented_block_body) [1684 1803])
+                    ("call_original" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1826 1830]))                          )
+                        (reparse-symbol indented_block_body) [1808 1981])
+                    ("wrapped" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1998 2002]))                          )
+                        (reparse-symbol indented_block_body) [1986 2041])
+                    ("__get__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2062 2066])
+                            ("instance" variable nil (reparse-symbol function_parameters) [2068 2076])
+                            ("owner" variable nil (reparse-symbol function_parameters) [2078 2083]))                          )
+                        (reparse-symbol indented_block_body) [2050 2173]))                  
+                :type "class")
+                nil [1496 2173])
+            ("signal_handler" function (:arguments 
+              ( ("signal_number" variable nil (reparse-symbol function_parameters) [3590 3603]))              ) nil [3571 3724])
+            ("Message" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [4112 4138]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4081 4085])
+                            ("message_str" variable nil (reparse-symbol function_parameters) [4087 4098]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4068 4139])
+                    ("serialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4233 4237]))                          )
+                        (reparse-symbol indented_block_body) [4219 4274])
+                    ("deserialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4299 4303])
+                            ("message_str" variable nil (reparse-symbol function_parameters) [4305 4316]))                          )
+                        (reparse-symbol indented_block_body) [4283 4360]))                  
+                :type "class")
+                nil [4041 4360])
+            ("client_server_main_loop" function nil nil [4361 4977])
+            ("DaemonMeta" type
+               (:superclasses ("type")
+                :members 
+                  ( ("__new__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [5331 5334])
+                        ("name" variable nil (reparse-symbol function_parameters) [5336 5340])
+                        ("bases" variable nil (reparse-symbol function_parameters) [5342 5347])
+                        ("class_dict" variable nil (reparse-symbol function_parameters) [5349 5359]))                      ) (reparse-symbol indented_block_body) [5319 5538]))                  
+                :type "class")
+                nil [5291 5538])
+            ("Daemon" type
+               (:superclasses ("LoggedClassMixin")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [5947 5973])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [6006 6036])
+                            ("self" code nil (reparse-symbol indented_block_body) [6045 6057]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5991 5995]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5978 6058])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6079 6083])
+                            ("no_daemon" variable nil (reparse-symbol function_parameters) [6085 6094]))                          )
+                        (reparse-symbol indented_block_body) [6071 6639])
+                    ("setup" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6654 6658]))                          )
+                        (reparse-symbol indented_block_body) [6644 6755])
+                    ("start" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6770 6774]))                          )
+                        (reparse-symbol indented_block_body) [6760 6790])
+                    ("shutdown" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7258 7262]))                          )
+                        (reparse-symbol indented_block_body) [7245 7291])
+                    ("_parse_opts" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7313 7317])
+                            ("args" variable nil (reparse-symbol function_parameters) [7319 7324]))                          )
+                        (reparse-symbol indented_block_body) [7297 7340])
+                    ("_parse_config" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7371 7375])
+                            ("args" variable nil (reparse-symbol function_parameters) [7377 7382]))                          )
+                        (reparse-symbol indented_block_body) [7353 7398])
+                    ("_install_exception_handler" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7435 7439]))                          )
+                        (reparse-symbol indented_block_body) [7404 7455])
+                    ("exit_handler" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7477 7481]))                          )
+                        (reparse-symbol indented_block_body) [7460 7497])
+                    ("_install_exit_handler" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7532 7536]))                          )
+                        (reparse-symbol indented_block_body) [7506 7582])
+                    ("_install_signal_handlers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7616 7620]))                          )
+                        (reparse-symbol indented_block_body) [7587 7961]))                  
+                :type "class")
+                nil [5911 7961])
+            ("SystemDaemon" type
+               (:superclasses ("Daemon")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [7994 7998]))                  
+                :type "class")
+                nil [7962 7999])
+            ("UserSessionDaemon" type
+               (:superclasses ("Daemon")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [8037 8041]))                  
+                :type "class")
+                nil [8000 8042])
+            ("MySystemDaemon" type
+               (:superclasses ("SystemDaemon")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [8111 8149])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8158 8179]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8096 8100]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8083 8180])
+                    ("main" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8198 8202]))                          )
+                        (reparse-symbol indented_block_body) [8189 8336])
+                    ("start_schedule" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8395 8399]))                          )
+                        (reparse-symbol indented_block_body) [8376 8745])
+                    ("quit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8792 8796])
+                            ("args" variable nil (reparse-symbol function_parameters) [8798 8803]))                          )
+                        (reparse-symbol indented_block_body) [8783 8910])
+                    ("rehash_daemon" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8971 8975])
+                            ("args" variable nil (reparse-symbol function_parameters) [8977 8982]))                          )
+                        (reparse-symbol indented_block_body) [8953 9033]))                  
+                :type "class")
+                nil [8043 9033]))          
+      :file "base.py"
+      :pointmax 9033
+      :fsize 9032
+      :lastmodtime '(21400 28305 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 6595 . 6639) (NEWLINE 6594 . 6595) (COLON 6593 . 6594) (TRY 6448 . 6451) (AS 6587 . 6589))))
+  :file "!drive_z!orchestra!daemon!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

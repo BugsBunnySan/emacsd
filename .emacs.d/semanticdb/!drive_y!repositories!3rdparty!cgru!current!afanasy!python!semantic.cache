@@ -1,0 +1,1003 @@
+;; Object python/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "python/"
+  :tables
+  (list
+    (semanticdb-table "af.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("json" include nil nil [48 59])
+            ("os" include nil nil [60 69])
+            ("re" include nil nil [70 79])
+            ("sys" include nil nil [80 90])
+            ("time" include nil nil [91 102])
+            ("cgruconfig" include nil nil [104 121])
+            ("cgrupathmap" include nil nil [122 140])
+            ("afnetwork" include nil nil [141 157])
+            ("services" include nil nil [158 173])
+            ("Pathmap" variable nil nil [211 242])
+            ("checkRegExp" function
+               (:documentation "Missing DocString
+
+	:param pattern:
+	:return:
+	"
+                :arguments 
+                  ( ("pattern" variable nil (reparse-symbol function_parameters) [261 268]))                  )
+                nil [245 546])
+            ("checkClass" function
+               (:documentation "Missing DocString
+
+	:param name:
+	:param folder:
+	:return:
+	"
+                :arguments 
+                  ( ("name" variable nil (reparse-symbol function_parameters) [563 567])
+                    ("folder" variable nil (reparse-symbol function_parameters) [569 575]))                  )
+                nil [548 827])
+            ("Task" type
+               (:documentation "Missing DocString
+	"
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [905 923])
+                            ("self" code nil (reparse-symbol indented_block_body) [926 948]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [883 887])
+                            ("taskname" variable nil (reparse-symbol function_parameters) [889 897]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [870 949])
+                    ("setName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [963 967])
+                            ("name" variable nil (reparse-symbol function_parameters) [969 973]))                          
+                        :documentation "Missing DocString
+
+		:param name:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [951 1077])
+                    ("setCommand" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1094 1098])
+                            ("command" variable nil (reparse-symbol function_parameters) [1100 1107])
+                            ("TransferToServer" variable nil (reparse-symbol function_parameters) [1109 1125]))                          
+                        :documentation "Missing DocString
+
+		:param command:
+		:param TransferToServer:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [1079 1314])
+                    ("setFiles" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1329 1333])
+                            ("files" variable nil (reparse-symbol function_parameters) [1335 1340])
+                            ("TransferToServer" variable nil (reparse-symbol function_parameters) [1342 1358]))                          
+                        :documentation "Missing DocString
+
+		:param files:
+		:param TransferToServer:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [1316 1627]))                  
+                :type "class")
+                nil [829 1627])
+            ("Block" type
+               (:documentation "Missing DocString
+	"
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1731 1749])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1752 1781])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1784 1860])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1863 1947])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1950 1978])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1981 1996])
+                            ("if" code nil (reparse-symbol indented_block_body) [1999 2189]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1684 1688])
+                            ("blockname" variable nil (reparse-symbol function_parameters) [1690 1699])
+                            ("service" variable nil (reparse-symbol function_parameters) [1709 1716]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1671 2189])
+                    ("setService" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2206 2210])
+                            ("service" variable nil (reparse-symbol function_parameters) [2212 2219])
+                            ("nocheck" variable nil (reparse-symbol function_parameters) [2221 2228]))                          
+                        :documentation "Missing DocString
+
+		:param service:
+		:param nocheck:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [2191 2607])
+                    ("setParser" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2623 2627])
+                            ("parser" variable nil (reparse-symbol function_parameters) [2629 2635])
+                            ("nocheck" variable nil (reparse-symbol function_parameters) [2637 2644]))                          
+                        :documentation "Missing DocString
+
+		:param parser:
+		:param nocheck:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [2609 2967])
+                    ("setNumeric" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2984 2988])
+                            ("start" variable nil (reparse-symbol function_parameters) [2990 2995])
+                            ("end" variable nil (reparse-symbol function_parameters) [2999 3002])
+                            ("pertask" variable nil (reparse-symbol function_parameters) [3007 3014])
+                            ("increment" variable nil (reparse-symbol function_parameters) [3018 3027]))                          
+                        :documentation "Missing DocString
+
+		:param int start:
+		:param int end:
+		:param int pertask:
+		:param int increment:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [2969 3643])
+                    ("setFramesPerTask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3667 3671])
+                            ("value" variable nil (reparse-symbol function_parameters) [3673 3678]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [3646 3777])
+                    ("setSequential" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3798 3802])
+                            ("value" variable nil (reparse-symbol function_parameters) [3804 3809]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [3780 3903])
+                    ("setCapacity" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3922 3926])
+                            ("capacity" variable nil (reparse-symbol function_parameters) [3928 3936]))                          
+                        :documentation "Missing DocString
+
+		:param capacity:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [3906 4054])
+                    ("setVariableCapacity" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4080 4084])
+                            ("capacity_coeff_min" variable nil (reparse-symbol function_parameters) [4086 4104])
+                            ("capacity_coeff_max" variable nil (reparse-symbol function_parameters) [4106 4124]))                          
+                        :documentation "Missing DocString
+
+		:param capacity_coeff_min:
+		:param capacity_coeff_max:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [4056 4395])
+                    ("setWorkingDirectory" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4421 4425])
+                            ("working_directory" variable nil (reparse-symbol function_parameters) [4427 4444])
+                            ("TransferToServer" variable nil (reparse-symbol function_parameters) [4446 4462]))                          
+                        :documentation "Missing DocString
+
+		:param working_directory:
+		:param TransferToServer:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [4397 4701])
+                    ("setCommand" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4718 4722])
+                            ("command" variable nil (reparse-symbol function_parameters) [4724 4731])
+                            ("prefix" variable nil (reparse-symbol function_parameters) [4733 4739])
+                            ("TransferToServer" variable nil (reparse-symbol function_parameters) [4746 4762]))                          
+                        :documentation "Missing DocString
+
+		:param command:
+		:param prefix:
+		:param TransferToServer:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [4703 5078])
+                    ("setCmdPre" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5094 5098])
+                            ("command_pre" variable nil (reparse-symbol function_parameters) [5100 5111])
+                            ("TransferToServer" variable nil (reparse-symbol function_parameters) [5113 5129]))                          
+                        :documentation "Missing DocString
+
+		:param command_pre:
+		:param TransferToServer:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [5080 5338])
+                    ("setCmdPost" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5355 5359])
+                            ("command_post" variable nil (reparse-symbol function_parameters) [5361 5373])
+                            ("TransferToServer" variable nil (reparse-symbol function_parameters) [5375 5391]))                          
+                        :documentation "Missing DocString
+
+		:param command_post:
+		:param TransferToServer:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [5340 5605])
+                    ("setFiles" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5620 5624])
+                            ("files" variable nil (reparse-symbol function_parameters) [5626 5631])
+                            ("TransferToServer" variable nil (reparse-symbol function_parameters) [5633 5649]))                          
+                        :documentation "Missing DocString
+
+		:param files:
+		:param TransferToServer:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [5607 5918])
+                    ("setName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5932 5936])
+                            ("value" variable nil (reparse-symbol function_parameters) [5938 5943]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [5920 6031])
+                    ("setTasksName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6050 6054])
+                            ("value" variable nil (reparse-symbol function_parameters) [6056 6061]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [6033 6155])
+                    ("setParserCoeff" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6176 6180])
+                            ("value" variable nil (reparse-symbol function_parameters) [6182 6187]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [6157 6283])
+                    ("setErrorsAvoidHost" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6308 6312])
+                            ("value" variable nil (reparse-symbol function_parameters) [6314 6319]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [6285 6420])
+                    ("setErrorsForgiveTime" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6447 6451])
+                            ("value" variable nil (reparse-symbol function_parameters) [6453 6458]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [6422 6561])
+                    ("setErrorsRetries" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6584 6588])
+                            ("value" variable nil (reparse-symbol function_parameters) [6590 6595]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [6563 6693])
+                    ("setErrorsTaskSameHost" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6721 6725])
+                            ("value" variable nil (reparse-symbol function_parameters) [6727 6732]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [6695 6837])
+                    ("setNeedHDD" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6854 6858])
+                            ("value" variable nil (reparse-symbol function_parameters) [6860 6865]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [6839 6957])
+                    ("setNeedMemory" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6977 6981])
+                            ("value" variable nil (reparse-symbol function_parameters) [6983 6988]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [6959 7083])
+                    ("setNeedPower" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7102 7106])
+                            ("value" variable nil (reparse-symbol function_parameters) [7108 7113]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [7085 7207])
+                    ("setNonSequential" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7230 7234])
+                            ("value" variable nil (reparse-symbol function_parameters) [7236 7241]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [7209 7344])
+                    ("setDependSubTask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7367 7371])
+                            ("value" variable nil (reparse-symbol function_parameters) [7373 7378]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [7346 7482])
+                    ("setTasksMaxRunTime" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7507 7511])
+                            ("value" variable nil (reparse-symbol function_parameters) [7513 7518]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [7484 7637])
+                    ("setMaxRunningTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7662 7666])
+                            ("value" variable nil (reparse-symbol function_parameters) [7668 7673]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [7639 7792])
+                    ("setMaxRunTasksPerHost" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7820 7824])
+                            ("value" variable nil (reparse-symbol function_parameters) [7826 7831]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [7794 7959])
+                    ("setHostsMask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7978 7982])
+                            ("value" variable nil (reparse-symbol function_parameters) [7984 7989]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [7961 8109])
+                    ("setHostsMaskExclude" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8135 8139])
+                            ("value" variable nil (reparse-symbol function_parameters) [8141 8146]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [8111 8274])
+                    ("setDependMask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8294 8298])
+                            ("value" variable nil (reparse-symbol function_parameters) [8300 8305]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [8276 8426])
+                    ("setTasksDependMask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8451 8455])
+                            ("value" variable nil (reparse-symbol function_parameters) [8457 8462]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [8428 8589])
+                    ("setNeedProperties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8613 8617])
+                            ("value" variable nil (reparse-symbol function_parameters) [8619 8624]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [8591 8749])
+                    ("setDoPost" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8851 8855])
+                            ("value" variable nil (reparse-symbol function_parameters) [8857 8862]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [8837 8958])
+                    ("setMultiHost" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8977 8981])
+                            ("h_min" variable nil (reparse-symbol function_parameters) [8983 8988])
+                            ("h_max" variable nil (reparse-symbol function_parameters) [8990 8995])
+                            ("h_max_wait" variable nil (reparse-symbol function_parameters) [8997 9007])
+                            ("master_on_slave" variable nil (reparse-symbol function_parameters) [9009 9024])
+                            ("service" variable nil (reparse-symbol function_parameters) [9038 9045])
+                            ("service_wait" variable nil (reparse-symbol function_parameters) [9052 9064]))                          
+                        :documentation "Missing DocString
+
+		:param h_min:
+		:param h_max:
+		:param h_max_wait:
+		:param master_on_slave:
+		:param service:
+		:param service_wait:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [8960 9981])
+                    ("fillTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9997 10001]))                          
+                        :documentation "Missing DocString
+		")
+                        (reparse-symbol indented_block_body) [9983 10150]))                  
+                :type "class")
+                nil [1629 10150])
+            ("Job" type
+               (:documentation "Missing DocString
+
+	:param jobname:
+	:param verbose:
+	"
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [10278 10296])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10299 10327])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10330 10382])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10385 10437])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10440 10494])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10497 10542])
+                            ("self" code nil (reparse-symbol indented_block_body) [10545 10566])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10569 10585]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10240 10244])
+                            ("jobname" variable nil (reparse-symbol function_parameters) [10246 10253])
+                            ("verbose" variable nil (reparse-symbol function_parameters) [10260 10267]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [10227 10586])
+                    ("setName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10600 10604])
+                            ("name" variable nil (reparse-symbol function_parameters) [10606 10610]))                          
+                        :documentation "Missing DocString
+
+		:param name:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [10588 10734])
+                    ("setUserName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10752 10756])
+                            ("username" variable nil (reparse-symbol function_parameters) [10758 10766]))                          
+                        :documentation "Missing DocString
+
+		:param username:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [10736 10919])
+                    ("setPriority" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10937 10941])
+                            ("priority" variable nil (reparse-symbol function_parameters) [10943 10951]))                          
+                        :documentation "Missing DocString
+
+		:param priority:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [10921 11184])
+                    ("setCmdPre" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11200 11204])
+                            ("command" variable nil (reparse-symbol function_parameters) [11206 11213])
+                            ("TransferToServer" variable nil (reparse-symbol function_parameters) [11215 11231]))                          
+                        :documentation "Missing DocString
+
+		:param command:
+		:param TransferToServer:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [11186 11424])
+                    ("setCmdPost" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11441 11445])
+                            ("command" variable nil (reparse-symbol function_parameters) [11447 11454])
+                            ("TransferToServer" variable nil (reparse-symbol function_parameters) [11456 11472]))                          
+                        :documentation "Missing DocString
+
+		:param command:
+		:param TransferToServer:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [11426 11666])
+                    ("setFolder" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11682 11686])
+                            ("i_name" variable nil (reparse-symbol function_parameters) [11688 11694])
+                            ("i_folder" variable nil (reparse-symbol function_parameters) [11696 11704])
+                            ("i_transferToServer" variable nil (reparse-symbol function_parameters) [11706 11724]))                          
+                        :documentation "Missing DocString
+
+		:param i_name:
+		:param i_folder:
+		:param i_transferToServer:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [11668 12014])
+                    ("fillBlocks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12031 12035]))                          
+                        :documentation "Missing DocString
+
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [12016 12197])
+                    ("output" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12210 12214])
+                            ("full" variable nil (reparse-symbol function_parameters) [12216 12220]))                          
+                        :documentation "Missing DocString
+
+		:param full:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [12199 12362])
+                    ("send" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12373 12377])
+                            ("verbose" variable nil (reparse-symbol function_parameters) [12379 12386]))                          
+                        :documentation "Missing DocString
+
+		:param verbose:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [12364 12675])
+                    ("setAnnotation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12695 12699])
+                            ("value" variable nil (reparse-symbol function_parameters) [12701 12706]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [12677 12800])
+                    ("setDescription" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12821 12825])
+                            ("value" variable nil (reparse-symbol function_parameters) [12827 12832]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [12802 12927])
+                    ("setWaitTime" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12945 12949])
+                            ("value" variable nil (reparse-symbol function_parameters) [12951 12956]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [12929 13066])
+                    ("setMaxRunningTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13091 13095])
+                            ("value" variable nil (reparse-symbol function_parameters) [13097 13102]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [13068 13221])
+                    ("setMaxRunTasksPerHost" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13249 13253])
+                            ("value" variable nil (reparse-symbol function_parameters) [13255 13260]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [13223 13388])
+                    ("setHostsMask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13407 13411])
+                            ("value" variable nil (reparse-symbol function_parameters) [13413 13418]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [13390 13538])
+                    ("setHostsMaskExclude" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13564 13568])
+                            ("value" variable nil (reparse-symbol function_parameters) [13570 13575]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [13540 13703])
+                    ("setDependMask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13723 13727])
+                            ("value" variable nil (reparse-symbol function_parameters) [13729 13734]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [13705 13855])
+                    ("setDependMaskGlobal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13881 13885])
+                            ("value" variable nil (reparse-symbol function_parameters) [13887 13892]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [13857 14020])
+                    ("setNeedOS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14036 14040])
+                            ("value" variable nil (reparse-symbol function_parameters) [14042 14047]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [14022 14164])
+                    ("setNeedProperties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14188 14192])
+                            ("value" variable nil (reparse-symbol function_parameters) [14194 14199]))                          
+                        :documentation "Missing DocString
+
+		:param value:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [14166 14324])
+                    ("setNativeOS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14342 14346]))                          
+                        :documentation "Missing DocString
+		")
+                        (reparse-symbol indented_block_body) [14326 14435])
+                    ("setAnyOS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14450 14454]))                          
+                        :documentation "Missing DocString
+		")
+                        (reparse-symbol indented_block_body) [14437 14514])
+                    ("pause" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14526 14530]))                          
+                        :documentation "Missing DocString
+		")
+                        (reparse-symbol indented_block_body) [14516 14592])
+                    ("setPaused" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14608 14612]))                          
+                        :documentation "Missing DocString
+		")
+                        (reparse-symbol indented_block_body) [14594 14674])
+                    ("setOffline" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14691 14695]))                          
+                        :documentation "Missing DocString
+		")
+                        (reparse-symbol indented_block_body) [14676 14757])
+                    ("offline" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14771 14775]))                          
+                        :documentation "Missing DocString
+		")
+                        (reparse-symbol indented_block_body) [14759 14837])
+                    ("offLine" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14851 14855]))                          
+                        :documentation "Missing DocString
+		")
+                        (reparse-symbol indented_block_body) [14839 14917]))                  
+                :type "class")
+                nil [10152 14917])
+            ("Cmd" type
+               (:documentation "Missing DocString
+	"
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [14981 14999])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15002 15054])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15057 15109])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15112 15130]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14972 14976]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [14959 15131])
+                    ("_sendRequest" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15150 15154])
+                            ("verbose" variable nil (reparse-symbol function_parameters) [15156 15163]))                          
+                        :documentation "Missing DocString
+
+		:param bool verbose:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [15133 15547])
+                    ("getJobList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15564 15568])
+                            ("verbose" variable nil (reparse-symbol function_parameters) [15570 15577]))                          
+                        :documentation "Missing DocString
+
+		:param bool verbose:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [15549 15813])
+                    ("deleteJob" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15829 15833])
+                            ("jobName" variable nil (reparse-symbol function_parameters) [15835 15842])
+                            ("verbose" variable nil (reparse-symbol function_parameters) [15844 15851]))                          
+                        :documentation "Missing DocString
+
+		:param str jobName:
+		:param bool verbose:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [15815 16112])
+                    ("getJobInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16129 16133])
+                            ("jobId" variable nil (reparse-symbol function_parameters) [16135 16140])
+                            ("verbose" variable nil (reparse-symbol function_parameters) [16142 16149]))                          
+                        :documentation "Missing DocString
+
+		:param jobId:
+		:param bool verbose:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [16114 16330])
+                    ("renderSetNimby" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16351 16355])
+                            ("text" variable nil (reparse-symbol function_parameters) [16357 16361]))                          
+                        :documentation "Missing DocString
+
+		:param text:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [16332 16589])
+                    ("renderSetNIMBY" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16610 16614])
+                            ("text" variable nil (reparse-symbol function_parameters) [16616 16620]))                          
+                        :documentation "Missing DocString
+
+		:param text:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [16591 16848])
+                    ("renderSetFree" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16868 16872])
+                            ("text" variable nil (reparse-symbol function_parameters) [16874 16878]))                          
+                        :documentation "Missing DocString
+
+		:param text:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [16850 17107])
+                    ("renderEjectTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17130 17134])
+                            ("text" variable nil (reparse-symbol function_parameters) [17136 17140]))                          
+                        :documentation "Missing DocString
+
+		:param text:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [17109 17379])
+                    ("renderEjectNotMyTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17407 17411])
+                            ("text" variable nil (reparse-symbol function_parameters) [17413 17417]))                          
+                        :documentation "Missing DocString
+
+		:param text:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [17381 17664])
+                    ("renderExit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17681 17685])
+                            ("text" variable nil (reparse-symbol function_parameters) [17687 17691]))                          
+                        :documentation "Missing DocString
+
+		:param text:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [17666 17923])
+                    ("monitorExit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17941 17945])
+                            ("text" variable nil (reparse-symbol function_parameters) [17947 17951]))                          
+                        :documentation "Missing DocString
+
+		:param text:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [17925 18237])
+                    ("renderGetList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18257 18261])
+                            ("mask" variable nil (reparse-symbol function_parameters) [18263 18267]))                          
+                        :documentation "Missing DocString
+
+		:param mask:
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [18239 18554])
+                    ("renderGetLocal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18575 18579]))                          
+                        :documentation "Missing DocString
+
+		:return:
+		")
+                        (reparse-symbol indented_block_body) [18556 18680]))                  
+                :type "class")
+                nil [14919 18680]))          
+      :file "af.py"
+      :pointmax 18680
+      :fsize 18679
+      :lastmodtime '(21748 24408 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "afnetwork.py"
+      :file "afnetwork.py"
+      :fsize 2257
+      :lastmodtime '(21748 24408 0 0)))
+  :file "!drive_y!repositories!3rdparty!cgru!current!afanasy!python!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

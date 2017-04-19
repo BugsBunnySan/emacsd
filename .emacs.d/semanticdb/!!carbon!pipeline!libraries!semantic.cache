@@ -1,0 +1,262 @@
+;; Object libraries/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libraries/"
+  :tables
+  (list
+    (semanticdb-table "common.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+The `common` module stores constant variables.
+Some of the will be generated based on the running system,
+others are based on system variables.
+
+.. note::
+    If a system variable is not set, the value will be generated
+    by the data base or by the relative path to this file.
+
+\"\"\"" code nil nil [315 602])
+            ("getpass" include nil nil [604 627])
+            ("sys" include nil nil [604 627])
+            ("os" include nil nil [604 627])
+            ("database" include nil nil [628 712])
+            ("if" code nil nil [788 1204])
+            ("Static" type
+               (:documentation "
+    stores all available constant variables, which are used inside the Pipeline.
+    "
+                :members 
+                  ( ("VERSION" variable nil (reparse-symbol indented_block_body) [1366 1386])
+                    ("PREFIX" variable nil (reparse-symbol indented_block_body) [1495 1575])
+                    ("PY_VERSION" variable nil (reparse-symbol indented_block_body) [1618 1704])
+                    ("PYTHON" variable nil (reparse-symbol indented_block_body) [1741 1769])
+                    ("PLATFORM" variable nil (reparse-symbol indented_block_body) [1924 2027])
+                    ("\"exe\"" code nil (reparse-symbol indented_block_body) [2119 2124])
+                    ("\"bat\"" code nil (reparse-symbol indented_block_body) [2217 2222])
+                    ("APPLICATION" variable nil (reparse-symbol indented_block_body) [2429 2485])
+                    ("APP_VERSION" variable nil (reparse-symbol indented_block_body) [2490 2549])
+                    ("" code nil (reparse-symbol indented_block_body) [2638 2640])
+                    ("OLD_ROOT" variable nil (reparse-symbol indented_block_body) [2729 2786])
+                    ("LIBRARIES" variable nil (reparse-symbol indented_block_body) [2885 2974])
+                    ("ROOT" variable nil (reparse-symbol indented_block_body) [3076 3150])
+                    ("OLD_LIBS" code nil (reparse-symbol indented_block_body) [3191 3230])
+                    ("PROJECT" variable nil (reparse-symbol indented_block_body) [3282 3305])
+                    ("PROJECT_DIR" variable nil (reparse-symbol indented_block_body) [3353 3380])
+                    ("''" code nil (reparse-symbol indented_block_body) [3556 3558])
+                    ("PLUGIN_DIR" variable nil (reparse-symbol indented_block_body) [3648 3699])
+                    ("PLUGIN_VERSION_DIR" variable nil (reparse-symbol indented_block_body) [3764 3826])
+                    ("''" code nil (reparse-symbol indented_block_body) [3994 3996])
+                    ("PROJECT_PLUGIN_VERSION_DIR" variable nil (reparse-symbol indented_block_body) [4096 4174])
+                    ("TASK" variable nil (reparse-symbol indented_block_body) [4223 4242])
+                    ("USER" variable nil (reparse-symbol indented_block_body) [4369 4417])
+                    ("PERMISSIONS" variable nil (reparse-symbol indented_block_body) [4485 4534])
+                    ("TOOLS" variable nil (reparse-symbol indented_block_body) [4661 4737]))                  
+                :type "class")
+                nil [1217 4738])
+            ("USER" variable nil nil [4755 4781])
+            ("VERSION" variable nil nil [4782 4811])
+            ("PREFIX" variable nil nil [4812 4840])
+            ("PY_VERSION" variable nil nil [4841 4873])
+            ("PYTHON" variable nil nil [4874 4902])
+            ("PLATFORM" variable nil nil [4903 4933])
+            ("EXEC_EXT" variable nil nil [4934 4964])
+            ("SHELL_EXT" variable nil nil [4965 4996])
+            ("APPLICATION" variable nil nil [4997 5030])
+            ("APP" variable nil nil [5031 5057])
+            ("APP_VERSION" variable nil nil [5058 5091])
+            ("ARGUMENTS" variable nil nil [5092 5123])
+            ("LIBRARIES" variable nil nil [5124 5155])
+            ("ROOT" variable nil nil [5156 5182])
+            ("USER" variable nil nil [5183 5209])
+            ("PERMISSIONS" variable nil nil [5210 5243])
+            ("TOOLS" variable nil nil [5244 5271])
+            ("TASK" variable nil nil [5272 5298])
+            ("PROJECT" variable nil nil [5299 5328])
+            ("PROJECT_DIR" variable nil nil [5329 5362])
+            ("PROJECT_LIBS" variable nil nil [5363 5397])
+            ("unmakro" function
+               (:documentation "
+    translates a given string with makros. All valid makros are gathered from :class:`Static`.
+
+    :param string: input to translate
+    :type string: str
+    :param APP: ``[optional]`` the current used application name
+    :param APP_VERSION: ``[optional]`` the current used application version (nice name, if valid)
+    :param makros: additional makros, if needed
+    :return: translated string
+    "
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [5411 5417])
+                    ("APP" variable nil (reparse-symbol function_parameters) [5419 5422])
+                    ("APP_VERSION" variable nil (reparse-symbol function_parameters) [5428 5439])
+                    ("makros" variable nil (reparse-symbol function_parameters) [5453 5461]))                  )
+                nil [5399 6242])
+            ("if" code nil nil [6244 6484]))          
+      :file "common.py"
+      :pointmax 6484
+      :fsize 6483
+      :lastmodtime '(22187 19340 0 0)
+      :unmatched-syntax '((NAME 3901 . 3919) (IF 3978 . 3980) (ELSE 3989 . 3993) (NAME 3476 . 3488) (IF 3536 . 3538) (ELSE 3551 . 3555) (NAME 2594 . 2603) (IF 2621 . 2623) (ELSE 2633 . 2637) (NAME 2177 . 2186) (IF 2196 . 2198) (ELSE 2212 . 2216) (NAME 2065 . 2073) (IF 2082 . 2084) (ELSE 2114 . 2118)))
+    (semanticdb-table "menu.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+
+This menu provides cross-application and standalone menu handling.
+For this documentation, the :ref:`menu module of maya<mayaLib.menu>` is used to represent it's
+content.
+
+.. summary::
+
+----
+
+\"\"\"" code nil nil [315 515])
+            ("sys" include nil nil [517 527])
+            ("common" include nil nil [528 558])
+            ("APP" variable nil nil [560 585])
+            ("print" code nil nil [586 611])
+            ("if" code nil nil [686 812])
+            ("print" code nil nil [813 830])
+            ("if" code nil nil [831 1014])
+            ("Menu" type
+               (:documentation "
+    A menu object to create menu entries at any place of the application.
+    "
+                :superclasses ("Menu")
+                :members 
+                  ( ("ITEMS" variable nil (reparse-symbol indented_block_body) [1130 1140])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1191 1234])
+                            ("_registered_menus" code nil (reparse-symbol indented_block_body) [1243 1273]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1159 1163])
+                            ("args" variable nil (reparse-symbol function_parameters) [1165 1170])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1172 1180]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1146 1274]))                  
+                :type "class")
+                nil [1018 1274])
+            ("del" code nil nil [1275 1282])
+            ("Open_MenuItem" type
+               (:documentation "
+
+    "
+                :superclasses ("MenuItem")
+                :members 
+                  ( ("publish" include nil (reparse-symbol indented_block_body) [1336 1363])
+                    ("CALLABLE" variable nil (reparse-symbol indented_block_body) [1368 1388])
+                    ("name" variable nil (reparse-symbol indented_block_body) [1393 1410])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1452 1528]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1429 1433])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1435 1441]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1416 1529]))                  
+                :type "class")
+                nil [1284 1529])
+            ("Save_MenuItem" type
+               (:documentation "
+
+    "
+                :superclasses ("MenuItem")
+                :members 
+                  ( ("publish" include nil (reparse-symbol indented_block_body) [1582 1609])
+                    ("CALLABLE" variable nil (reparse-symbol indented_block_body) [1614 1634])
+                    ("name" variable nil (reparse-symbol indented_block_body) [1639 1656])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1698 1774]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1675 1679])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1681 1687]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1662 1775]))                  
+                :type "class")
+                nil [1530 1775])
+            ("Publish_MenuItem" type
+               (:documentation "
+    Publish MenuItem will execute the publish.Publish.run
+
+
+    "
+                :superclasses ("MenuItem")
+                :members 
+                  ( ("publish" include nil (reparse-symbol indented_block_body) [1890 1917])
+                    ("CALLABLE" variable nil (reparse-symbol indented_block_body) [1922 1942])
+                    ("name" variable nil (reparse-symbol indented_block_body) [1947 1967])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2009 2088]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1986 1990])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1992 1998]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1973 2089]))                  
+                :type "class")
+                nil [1776 2089]))          
+      :file "menu.py"
+      :pointmax 2171
+      :fsize 2170
+      :lastmodtime '(22176 44117 0 0)
+      :unmatched-syntax '((NAME 2149 . 2166) ($EOI 2171 . 2171)))
+    (semanticdb-table "publish.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pyLib.process" include nil nil [315 348])
+            ("Publish" type
+               (:superclasses ("Process")
+                :members 
+                  ( ("database" include nil (reparse-symbol indented_block_body) [378 406])
+                    ("PRE" variable nil (reparse-symbol indented_block_body) [412 421])
+                    ("MAIN" variable nil (reparse-symbol indented_block_body) [426 435])
+                    ("POST" variable nil (reparse-symbol indented_block_body) [440 449])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [494 512]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [468 472])
+                            ("task" variable nil (reparse-symbol function_parameters) [474 478]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [455 513])
+                    ("task" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [541 545]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [518 575])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [588 592])
+                            ("args" variable nil (reparse-symbol function_parameters) [594 599]))                          )
+                        (reparse-symbol indented_block_body) [580 717])
+                    ("perform" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [734 738])
+                            ("args" variable nil (reparse-symbol function_parameters) [740 745]))                          
+                        :documentation "
+        batch process...
+
+        :return:
+        ")
+                        (reparse-symbol indented_block_body) [722 833]))                  
+                :type "class")
+                nil [350 833]))          
+      :file "publish.py"
+      :pointmax 833
+      :fsize 832
+      :lastmodtime '(22165 3501 0 0)
+      :unmatched-syntax nil))
+  :file "!!CARBON!pipeline!libraries!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

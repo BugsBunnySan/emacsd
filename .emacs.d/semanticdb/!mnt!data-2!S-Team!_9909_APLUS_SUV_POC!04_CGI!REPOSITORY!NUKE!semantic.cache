@@ -1,0 +1,276 @@
+;; Object NUKE/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "NUKE/"
+  :tables (list 
+   (semanticdb-table "nuke_renderlayer_switch.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("pprint" include nil nil [110 135])
+            ("os" include nil nil [138 147])
+            ("inspect" include nil nil [148 162])
+            ("re" include nil nil [163 172])
+            ("time" include nil nil [173 184])
+            ("datetime" include nil nil [185 200])
+            ("traceback" include nil nil [201 217])
+            ("yaml" include nil nil [219 230])
+            ("PySide" include nil nil [232 256])
+            ("af" include nil nil [258 267])
+            ("cgruconfig" include nil nil [268 285])
+            ("try" code nil nil [287 325])
+            ("kvstore.kvstore" include nil nil [326 357])
+            ("context.stack" include nil nil [358 386])
+            ("context.specialized" include nil nil [387 421])
+            ("name_service.services" include nil nil [422 458])
+            ("implementations.name_service.yaml" include nil nil [459 499])
+            ("prg_selector_ui" include nil nil [502 524])
+            ("reload" code nil nil [525 548])
+            ("\"\"\"
+import sys
+sys.path.append(r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY')
+sys.path.append(r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY/NUKE')
+sys.path.append(r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY/pipeline')
+sys.path.insert(0, '/mnt/data-1/repositories/3rdparty/cgru/current/afanasy/python')
+sys.path.insert(0, '/mnt/data-1/repositories/3rdparty/cgru/current/lib/python')
+
+import os
+os.environ['PROJECT_ROOT'] = r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC'
+
+import nuke_renderlayer_switch as nrs
+reload(nrs)
+
+# load 3D render layers/update nuke script
+nrs.load_all_renderlayers(r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/999/999_010/__MAIN__/lgt/MAYA/images/v004')
+
+# render all the combinations
+nrs.render_combinations(frame_step=1, batch_size=10)
+
+# load all the nuke renders/udate conforming script
+nrs.load_all_comp_config_renders(r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/000/000_000/__MAIN__/comp/NUKE/output/v002')
+
+# render all combinations of the conforming script
+nrs.render_configs(resolutions=['master', 'web_mp4_4k'])
+
+# (re-)make quicktimes out of rendered conforms
+start_dir = '/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/000/000_000/__MAIN__/comp/NUKE/output/v006'
+# master -> prores no resize, web _mp4-> h264 no resize, web_mp4_k2ng -> h264 1000x468, web_webm -> vp8 no resize, web_mp4_4k -> h264 high quality settings
+resolutions = ['master', 'web_mp4', 'web_mp4_k2ng', 'web_mp4_4k']
+nrs.make_quicktimes(start_dir, resolutions)
+\"\"\"" code nil nil [551 2063])
+            ("\"\"\"
+import sys
+sys.path.append(r'Y:/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY')
+sys.path.append(r'Y:/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY/NUKE')
+sys.path.append(r'Y:/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY/pipeline')
+sys.path.insert(0, '\\\\\\\\CARBON\\\\repositories\\\\3rdparty\\\\cgru\\\\current\\\\afanasy\\\\python')
+sys.path.insert(0, '\\\\\\\\CARBON\\\\repositories\\\\3rdparty\\\\cgru\\\\current\\\\lib\\\\python')
+
+import os
+os.environ['PROJECT_ROOT'] = r'Y:/S-Team/_9909_APLUS_SUV_POC'
+
+import nuke_renderlayer_switch as nrs
+reload(nrs)
+nrs.load_all_renderlayers(r'Y:/S-Team/_9909_APLUS_SUV_POC/04_CGI/999/999_010/__MAIN__/lgt/MAYA/images/v004')
+
+
+nrs.render_combinations()
+\"\"\"" code nil nil [2591 3262])
+            ("\"\"\"
+import sys
+sys.path.insert(0, '/home/shaas/workspace')
+sys.path.append(r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY')
+sys.path.append(r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY/pipeline')
+sys.path.insert(0, '/mnt/data-1/repositories/3rdparty/cgru/current/afanasy/python')
+sys.path.insert(0, '/mnt/data-1/repositories/3rdparty/cgru/current/lib/python')
+
+import os
+os.environ['PROJECT_ROOT'] = r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC'
+
+import nuke_renderlayer_switch as nrs
+reload(nrs)
+\"\"\"" code nil nil [3264 3786])
+            ("\"\"\"
+ns = CONTEXT['config_processing..services.name_service.services.NameServiceI.name_service.name_service.yaml'][0]
+
+ns.match('render.maya.images_versioned_folder', r'Y:\\S-Team\\_9909_APLUS_SUV_POC\\04_CGI\\999\\999_010\\__MAIN__\\lgt\\MAYA\\images\\v004'.replace('\\\\', '/'))
+
+ns.match('project.root', r'Y:/S-Team/_9909_APLUS_SUV_POC')
+\"\"\"" code nil nil [3789 4120])
+            ("\"\"\"
+
+import sys
+sys.path.append(r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY')
+sys.path.append(r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY/NUKE')
+sys.path.append(r'/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/REPOSITORY/pipeline')
+sys.path.insert(0, '/mnt/data-1/repositories/3rdparty/cgru/current/afanasy/python')
+sys.path.insert(0, '/mnt/data-1/repositories/3rdparty/cgru/current/lib/python')
+
+import os
+os.environ['PROJECT_ROOT'] = '/mnt/data-2/S-Team/_9909_APLUS_SUV_POC'
+
+
+start_dir = '/mnt/data-2/S-Team/_9909_APLUS_SUV_POC/04_CGI/000/000_000/__MAIN__/comp/NUKE/output/v006'
+
+import nuke_renderlayer_switch as nrs
+reload(nrs)
+CONTEXT['environment']
+
+
+name_service, path_kv = nrs.setup_batch_context(start_dir)
+
+af_job = nrs.make_quicktimes(start_dir, ['web_k2ng'])
+
+
+af_job.blocks
+\"\"\"" code nil nil [4123 4943])
+            ("PRGSelector" type
+               (:superclasses ("QtGui.QDialog")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [4958 5006])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5016 5059])
+                            ("self" code nil (reparse-symbol indented_block_body) [5068 5090])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5100 5152])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5161 5232])
+                            ("self" code nil (reparse-symbol indented_block_body) [5242 5293])
+                            ("self" code nil (reparse-symbol indented_block_body) [5302 5363])
+                            ("self" code nil (reparse-symbol indented_block_body) [5373 5446])
+                            ("for" code nil (reparse-symbol indented_block_body) [5456 5737])
+                            ("self" code nil (reparse-symbol indented_block_body) [5746 5772])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5782 5809]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4996 5000])
+                            ("combinations" variable nil (reparse-symbol function_parameters) [5002 5014])
+                            ("parent" variable nil (reparse-symbol function_parameters) [5016 5022]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4983 5890])
+                    ("select_all_prgroups" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5920 5924]))                          )
+                        (reparse-symbol indented_block_body) [5896 6122])
+                    ("_get_selected_prgroups" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6154 6158]))                          )
+                        (reparse-symbol indented_block_body) [6127 6472])
+                    ("accept" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6488 6492]))                          )
+                        (reparse-symbol indented_block_body) [6477 6600])
+                    ("reject" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6616 6620]))                          )
+                        (reparse-symbol indented_block_body) [6605 6703]))                  
+                :type "class")
+                nil [4945 6703])
+            ("setup_context" function nil nil [6705 8590])
+            ("switch_input" function
+               (:parent "dummy"
+                :arguments 
+                  ( ("self" variable nil (reparse-symbol function_parameters) [8608 8612]))                  )
+                nil [8591 8813])
+            ("set_all_prs" function (:arguments 
+              ( ("value" variable nil (reparse-symbol function_parameters) [8830 8835]))              ) nil [8814 9014])
+            ("setup_renderlayer_group" function (:arguments 
+              ( ("render_layer" variable nil (reparse-symbol function_parameters) [9043 9055])
+                ("render_layer_folder" variable nil (reparse-symbol function_parameters) [9057 9076])
+                ("name_service" variable nil (reparse-symbol function_parameters) [9078 9090])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [9092 9099]))              ) nil [9015 13442])
+            ("load_all_renderlayers" function (:arguments 
+              ( ("render_output_folder" variable nil (reparse-symbol function_parameters) [13469 13489]))              ) nil [13443 14041])
+            ("get_combinations" function nil nil [14042 14945])
+            ("make_af_job" function (:arguments 
+              ( ("combinations" variable nil (reparse-symbol function_parameters) [14962 14974])
+                ("name_service" variable nil (reparse-symbol function_parameters) [14976 14988])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [14990 14997])
+                ("af_job" variable nil (reparse-symbol function_parameters) [14999 15005])
+                ("frame_step" variable nil (reparse-symbol function_parameters) [15007 15017])
+                ("batch_size" variable nil (reparse-symbol function_parameters) [15019 15029]))              ) nil [14946 18040])
+            ("switch_combinations" function (:arguments 
+              ( ("render_layers" variable nil (reparse-symbol function_parameters) [18065 18078])
+                ("combinations" variable nil (reparse-symbol function_parameters) [18080 18092])
+                ("name_service" variable nil (reparse-symbol function_parameters) [18094 18106])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [18108 18115])
+                ("af_job" variable nil (reparse-symbol function_parameters) [18117 18123])
+                ("frame_step" variable nil (reparse-symbol function_parameters) [18125 18135])
+                ("batch_size" variable nil (reparse-symbol function_parameters) [18137 18147]))              ) nil [18041 18847])
+            ("render_combinations" function (:arguments 
+              ( ("paused" variable nil (reparse-symbol function_parameters) [18873 18879])
+                ("frame_step" variable nil (reparse-symbol function_parameters) [18887 18897])
+                ("batch_size" variable nil (reparse-symbol function_parameters) [18901 18911]))              ) nil [18849 19705])
+            ("switch_config_render_input" function
+               (:parent "dummy"
+                :arguments 
+                  ( ("self" variable nil (reparse-symbol function_parameters) [19835 19839]))                  )
+                nil [19804 20058])
+            ("switch_config_render_control" function
+               (:parent "dummy"
+                :arguments 
+                  ( ("self" variable nil (reparse-symbol function_parameters) [20092 20096]))                  )
+                nil [20059 20599])
+            ("setup_comp_config_render_group" function (:arguments 
+              ( ("main_control_group" variable nil (reparse-symbol function_parameters) [20636 20654])
+                ("render_output_folder" variable nil (reparse-symbol function_parameters) [20656 20676])
+                ("name_service" variable nil (reparse-symbol function_parameters) [20678 20690])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [20692 20699]))              ) nil [20601 25348])
+            ("load_all_comp_config_renders" function (:arguments 
+              ( ("render_output_folder" variable nil (reparse-symbol function_parameters) [25382 25402]))              ) nil [25349 25937])
+            ("get_configs" function (:arguments 
+              ( ("control_group" variable nil (reparse-symbol function_parameters) [25954 25967]))              ) nil [25938 26325])
+            ("setup_batch_context" function (:arguments 
+              ( ("start_dir" variable nil (reparse-symbol function_parameters) [26350 26359]))              ) nil [26326 28075])
+            ("get_conforms" function (:arguments 
+              ( ("start_dir" variable nil (reparse-symbol function_parameters) [28093 28102])
+                ("name_service" variable nil (reparse-symbol function_parameters) [28104 28116])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [28118 28125]))              ) nil [28076 28388])
+            ("make_quicktimes" function (:arguments 
+              ( ("start_dir" variable nil (reparse-symbol function_parameters) [28409 28418])
+                ("resolutions" variable nil (reparse-symbol function_parameters) [28420 28431])
+                ("paused" variable nil (reparse-symbol function_parameters) [28433 28439]))              ) nil [28389 29778])
+            ("make_conform_quicktime_block" function (:arguments 
+              ( ("cwd" variable nil (reparse-symbol function_parameters) [29812 29815])
+                ("conform" variable nil (reparse-symbol function_parameters) [29817 29824])
+                ("IN" variable nil (reparse-symbol function_parameters) [29826 29828])
+                ("OUT" variable nil (reparse-symbol function_parameters) [29830 29833])
+                ("FRAMES" variable nil (reparse-symbol function_parameters) [29835 29841])
+                ("resolution" variable nil (reparse-symbol function_parameters) [29843 29853])
+                ("name_service" variable nil (reparse-symbol function_parameters) [29855 29867])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [29869 29876])
+                ("af_job" variable nil (reparse-symbol function_parameters) [29878 29884])
+                ("depend_block_name" variable nil (reparse-symbol function_parameters) [29886 29903]))              ) nil [29779 30728])
+            ("parse_prstring" function (:arguments 
+              ( ("pr_string" variable nil (reparse-symbol function_parameters) [30748 30757])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [30759 30766]))              ) nil [30729 31152])
+            ("switch_and_render_configs" function (:arguments 
+              ( ("main_control_group" variable nil (reparse-symbol function_parameters) [31183 31201])
+                ("configs" variable nil (reparse-symbol function_parameters) [31203 31210])
+                ("name_service" variable nil (reparse-symbol function_parameters) [31212 31224])
+                ("path_kv" variable nil (reparse-symbol function_parameters) [31226 31233])
+                ("af_job" variable nil (reparse-symbol function_parameters) [31235 31241])
+                ("frame_step" variable nil (reparse-symbol function_parameters) [31243 31253])
+                ("resolutions" variable nil (reparse-symbol function_parameters) [31255 31266]))              ) nil [31153 34969])
+            ("render_configs" function (:arguments 
+              ( ("paused" variable nil (reparse-symbol function_parameters) [34989 34995])
+                ("frame_step" variable nil (reparse-symbol function_parameters) [35003 35013])
+                ("resolutions" variable nil (reparse-symbol function_parameters) [35017 35028])
+                ("depend_mask" variable nil (reparse-symbol function_parameters) [35068 35079]))              ) nil [34970 35867]))          
+    :file "nuke_renderlayer_switch.py"
+    :pointmax 35787
+    :fsize 36875
+    :lastmodtime '(22527 38349 954663 391000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "prg_selector_ui.py"
+    :file "prg_selector_ui.py"
+    :fsize 4062
+    :lastmodtime '(22497 14255 316801 32000)
+    )
+   )
+  :file "!mnt!data-2!S-Team!_9909_APLUS_SUV_POC!04_CGI!REPOSITORY!NUKE!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

@@ -1,0 +1,44 @@
+;; Object ingestion/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ingestion/"
+  :tables
+  (list
+    (semanticdb-table "test_base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("nose" include nil nil [11 22])
+            ("sqlite3" include nil nil [23 37])
+            ("unittest.case" include nil nil [39 73])
+            ("orchestra.core.ingestion.base" include nil nil [74 139])
+            ("SEARCH_DIR" variable nil nil [141 247])
+            ("db_connection" variable nil nil [248 290])
+            ("TestCaseBase" type
+               (:superclasses ("TestCase")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [326 330]))                  
+                :type "class")
+                nil [292 331])
+            ("TestDataSource" type
+               (:superclasses ("TestCaseBase")
+                :members 
+                  ( ("test_story" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [387 391]))                          )
+                        (reparse-symbol indented_block_body) [372 1023])
+                    ("test_questions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1055 1059]))                          )
+                        (reparse-symbol indented_block_body) [1036 1404]))                  
+                :type "class")
+                nil [332 1404]))          
+      :file "test_base.py"
+      :pointmax 1404
+      :fsize 1403
+      :lastmodtime '(21400 28306 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_z!orchestra!tests!core!ingestion!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,110 @@
+;; Object mayaLib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mayaLib/"
+  :tables
+  (list
+    (semanticdb-table "menu.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [314 324])
+            ("baseLib.menu" include nil nil [325 364])
+            ("maya.cmds" include nil nil [366 390])
+            ("Menu" type
+               (:superclasses ("Menu")
+                :members 
+                  ( ("__subMenus" variable nil (reparse-symbol indented_block_body) [416 431])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [589 629]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [450 454])
+                            ("name" variable nil (reparse-symbol function_parameters) [456 460])
+                            ("parent" variable nil (reparse-symbol function_parameters) [462 468]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [437 630])
+                    ("addMenu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [896 900])
+                            ("name" variable nil (reparse-symbol function_parameters) [902 906]))                          
+                        :documentation "
+        Add a sub menu with the given name.
+
+        :param name: name of the sub menu
+        :return: :class:`SubMenu<SubMenu>` (``name``, parent= ``self``)
+        :rtype: :class:`SubMenu object<SubMenu>`
+        ")
+                        (reparse-symbol indented_block_body) [884 1514])
+                    ("create" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1620 1624]))                          )
+                        (reparse-symbol indented_block_body) [1609 1949])
+                    ("perform" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2133 2137]))                          )
+                        (reparse-symbol indented_block_body) [2121 2309]))                  
+                :type "class")
+                nil [394 2309])
+            ("SubMenu" type
+               (:superclasses ("Menu")
+                :members 
+                  ( ("ITEMS" variable nil (reparse-symbol indented_block_body) [2386 2396])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2414 2418]))                          )
+                        (reparse-symbol indented_block_body) [2402 2488])
+                    ("create" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2504 2508]))                          )
+                        (reparse-symbol indented_block_body) [2493 2754])
+                    ("perform" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2771 2775]))                          )
+                        (reparse-symbol indented_block_body) [2759 2817]))                  
+                :type "class")
+                nil [2361 2817])
+            ("MenuItem" type
+               (:documentation "
+    Nothing for now
+    "
+                :superclasses ("MenuItem")
+                :members 
+                  ( ("defferedCreate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2904 2908]))                          )
+                        (reparse-symbol indented_block_body) [2885 2924])
+                    ("defferedCreate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2948 2952]))                          )
+                        (reparse-symbol indented_block_body) [2929 3031])
+                    ("create" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3047 3051]))                          )
+                        (reparse-symbol indented_block_body) [3036 3573]))                  
+                :type "class")
+                nil [2818 3573]))          
+      :file "menu.py"
+      :pointmax 3625
+      :fsize 3624
+      :lastmodtime '(22176 51521 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 313
+      :fsize 312
+      :lastmodtime '(22163 51470 0 0)
+      :unmatched-syntax nil))
+  :file "!!CARBON!pipeline!libraries!mayaLib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

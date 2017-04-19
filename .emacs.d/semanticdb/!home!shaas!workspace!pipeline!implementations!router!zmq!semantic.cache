@@ -1,0 +1,254 @@
+;; Object zmq/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "zmq/"
+  :tables (list 
+   (semanticdb-table "services.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("cPickle" include nil nil [1 15])
+            ("traceback" include nil nil [16 32])
+            ("zmq" include nil nil [34 44])
+            ("context.service" include nil nil [46 75])
+            ("pipeline_processor.router.services" include nil nil [77 128])
+            ("pipeline_processor.base" include nil nil [129 167])
+            ("messages" include nil nil [169 184])
+            ("ZMQConnection" type
+               (:superclasses ("pp_b.Connection")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [289 326])
+                            ("self" variable nil (reparse-symbol indented_block_body) [336 357])
+                            ("self" variable nil (reparse-symbol indented_block_body) [367 392])
+                            ("self" variable nil (reparse-symbol indented_block_body) [401 444])
+                            ("self" variable nil (reparse-symbol indented_block_body) [453 476])
+                            ("self" variable nil (reparse-symbol indented_block_body) [485 513]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [241 245])
+                            ("zmq_context" variable nil (reparse-symbol function_parameters) [247 258])
+                            ("protocol" variable nil (reparse-symbol function_parameters) [260 268])
+                            ("zmq_type" variable nil (reparse-symbol function_parameters) [270 278]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [228 514])
+                    ("_url" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [542 546]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [519 647])
+                    ("socket" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [677 681]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [652 712])
+                    ("bind" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [726 730])
+                            ("endpoint" variable nil (reparse-symbol function_parameters) [732 740]))                          )
+                        (reparse-symbol indented_block_body) [717 814])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [831 835])
+                            ("endpoint" variable nil (reparse-symbol function_parameters) [837 845]))                          )
+                        (reparse-symbol indented_block_body) [819 922])
+                    ("_do_put" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [939 943])
+                            ("message" variable nil (reparse-symbol function_parameters) [945 952]))                          )
+                        (reparse-symbol indented_block_body) [927 1289])
+                    ("_do_get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1306 1310])
+                            ("timeout" variable nil (reparse-symbol function_parameters) [1312 1319]))                          )
+                        (reparse-symbol indented_block_body) [1294 1609])
+                    ("disconnect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1629 1633]))                          )
+                        (reparse-symbol indented_block_body) [1614 1679])
+                    ("is_empty" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1697 1701]))                          )
+                        (reparse-symbol indented_block_body) [1684 1760]))                  
+                :type "class")
+                nil [186 1760])
+            ("ZMQPoller" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1818 1844])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1853 1874]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1803 1807]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1790 1875])
+                    ("register" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1893 1897])
+                            ("connection" variable nil (reparse-symbol function_parameters) [1899 1909])
+                            ("zmq_flag" variable nil (reparse-symbol function_parameters) [1911 1919]))                          )
+                        (reparse-symbol indented_block_body) [1880 2037])
+                    ("unregister" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2057 2061])
+                            ("connection" variable nil (reparse-symbol function_parameters) [2063 2073]))                          )
+                        (reparse-symbol indented_block_body) [2042 2294])
+                    ("poll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2308 2312])
+                            ("timeout" variable nil (reparse-symbol function_parameters) [2314 2321]))                          )
+                        (reparse-symbol indented_block_body) [2299 2659]))                  
+                :type "class")
+                nil [1761 2659])
+            ("ZMQRouter" type
+               (:documentation " Pipeline Router thread implementation using ZMQ connections to enable network connections "
+                :superclasses ("pp_r_s.RouterService")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [2805 2823])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [3000 3033])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3042 3068])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3077 3168])
+                            ("super" code nil (reparse-symbol indented_block_body) [3178 3410])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3420 3495])
+                            ("self" code nil (reparse-symbol indented_block_body) [3504 3595])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3605 3668]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2842 2846])
+                            ("thread_id" variable nil (reparse-symbol function_parameters) [2848 2857])
+                            ("routing_config" variable nil (reparse-symbol function_parameters) [2859 2873])
+                            ("pipeline_server_id" variable nil (reparse-symbol function_parameters) [2892 2910])
+                            ("heartbeat_interval" variable nil (reparse-symbol function_parameters) [2912 2930])
+                            ("heartbeat_timeout" variable nil (reparse-symbol function_parameters) [2932 2949])
+                            ("parent_router_id" variable nil (reparse-symbol function_parameters) [2968 2984]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2829 3669])
+                    ("_make_ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3983 3987]))                          
+                        :documentation " since we use ZMQ's polling to wait for messages, our ipc connection needs to be a
+            ZMQ connection as well
+        ")
+                        (reparse-symbol indented_block_body) [3958 4441])
+                    ("_tear_down_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4472 4476])
+                            ("connection" variable nil (reparse-symbol function_parameters) [4478 4488]))                          )
+                        (reparse-symbol indented_block_body) [4446 4567])
+                    ("_make_network_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4601 4605])
+                            ("network_info" variable nil (reparse-symbol function_parameters) [4607 4619]))                          )
+                        (reparse-symbol indented_block_body) [4572 5679])
+                    ("_poll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5694 5698])
+                            ("timeout" variable nil (reparse-symbol function_parameters) [5700 5707]))                          )
+                        (reparse-symbol indented_block_body) [5684 6186])
+                    ("_handle_connection_request" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6237 6241])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [6243 6252])
+                            ("req_connection" variable nil (reparse-symbol function_parameters) [6254 6268]))                          
+                        :documentation " ZMQ/networking specific connection request handling
+
+        Args:
+            router_id (unicode): The id of the remote end router that sent us the
+                connection request
+            req_connection (ZMQConnection): the connection that the request came in through,
+                this is also where we send the reply over
+
+        Returns:
+            (ZMQConnectionAnswer): well, it doesn't return this to the called, but to the
+                connection requester. Grants the connection if we have free ports left,
+                we can bind a ZMQConnection to the port and nothing else goes wrong
+        ")
+                        (reparse-symbol indented_block_body) [6206 7893])
+                    ("_handle_custom_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7940 7944])
+                            ("message" variable nil (reparse-symbol function_parameters) [7946 7953])
+                            ("connection" variable nil (reparse-symbol function_parameters) [7955 7965]))                          )
+                        (reparse-symbol indented_block_body) [7913 8155]))                  
+                :type "class")
+                nil [2660 8155]))          
+    :file "services.py"
+    :pointmax 8155
+    :fsize 8154
+    :lastmodtime '(22766 17863 561821 458000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "messages.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("pipeline_processor.messages" include nil nil [1 43])
+            ("ZMQConnectionRequest" type
+               (:superclasses ("pp_m.Message")
+                :members 
+                  ( ("COMMAND" variable nil (reparse-symbol indented_block_body) [91 118])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [163 222]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [137 141])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [143 152]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [124 223]))                  
+                :type "class")
+                nil [45 223])
+            ("ZMQConnectionAnswer" type
+               (:superclasses ("pp_m.Message")
+                :members 
+                  ( ("COMMAND" variable nil (reparse-symbol indented_block_body) [269 295])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [401 467])
+                            ("self" variable nil (reparse-symbol indented_block_body) [477 509])
+                            ("self" variable nil (reparse-symbol indented_block_body) [518 556])
+                            ("self" variable nil (reparse-symbol indented_block_body) [565 601]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [314 318])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [320 329])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [331 343])
+                            ("request_port" variable nil (reparse-symbol function_parameters) [345 357])
+                            ("request_granted" variable nil (reparse-symbol function_parameters) [359 374])
+                            ("answer_message" variable nil (reparse-symbol function_parameters) [376 390]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [301 602]))                  
+                :type "class")
+                nil [224 602]))          
+    :file "messages.py"
+    :pointmax 602
+    :fsize 601
+    :lastmodtime '(22498 51702 326977 811000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!shaas!workspace!pipeline!implementations!router!zmq!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

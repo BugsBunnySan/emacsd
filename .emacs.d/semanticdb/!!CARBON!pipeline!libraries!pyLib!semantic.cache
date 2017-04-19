@@ -1,0 +1,112 @@
+;; Object pyLib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pyLib/"
+  :tables
+  (list
+    (semanticdb-table "process.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "process.py"
+      :pointmax 5217
+      :fsize 5216
+      :lastmodtime '(22193 52438 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "environment.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "environment.py"
+      :pointmax 332
+      :fsize 331
+      :lastmodtime '(22159 56149 0 0)
+      :unmatched-syntax '(($EOI 332 . 332)))
+    (semanticdb-table "error.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("warnings" include nil nil [315 330])
+            ("_oneLine_format" function (:arguments 
+              ( ("message" variable nil (reparse-symbol function_parameters) [351 358])
+                ("category" variable nil (reparse-symbol function_parameters) [360 368])
+                ("filename" variable nil (reparse-symbol function_parameters) [370 378])
+                ("lineno" variable nil (reparse-symbol function_parameters) [380 386])
+                ("file" variable nil (reparse-symbol function_parameters) [388 392])
+                ("line" variable nil (reparse-symbol function_parameters) [399 403]))              ) nil [331 489])
+            ("warnings" variable nil nil [490 530])
+            ("warning" variable nil nil [559 582]))          
+      :file "error.py"
+      :pointmax 583
+      :fsize 582
+      :lastmodtime '(22166 30060 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "inifile.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. summary::
+
+----
+\"\"\"" code nil nil [314 340])
+            ("try" code nil nil [342 499])
+            ("open" type
+               (:superclasses ("_ConfigParser")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("_ConfigParser" code nil (reparse-symbol indented_block_body) [570 598])
+                            ("try" code nil (reparse-symbol indented_block_body) [607 734]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [544 548])
+                            ("file_path" variable nil (reparse-symbol function_parameters) [550 559]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [531 734])
+                    ("__enter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [753 757]))                          )
+                        (reparse-symbol indented_block_body) [739 780])
+                    ("__exit__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [798 802])
+                            ("args" variable nil (reparse-symbol function_parameters) [804 809]))                          )
+                        (reparse-symbol indented_block_body) [785 825]))                  
+                :type "class")
+                nil [500 825])
+            ("read" function
+               (:documentation "
+    Read an `ini`-file and get it's content as a dictionary.
+
+    **Example:**
+
+    The example `ini`-file ('example.ini') looks like the following:
+
+    .. code-block:: ini
+
+        [section01]
+        year=2016
+        number=28
+        string=\"Hello World\"
+
+    To get it's content, use :func:`read()`
+
+    >>> from inifile import read
+    ... read('example.ini')
+    {'section01': {'number': '28', 'string': '\"Hello World\"', 'year': '2016'}}
+
+    :param file_path: file path to the `ini`-file
+
+    :return: content of `ini`-file
+    :rtype: dict
+    "
+                :arguments 
+                  ( ("file_path" variable nil (reparse-symbol function_parameters) [835 844]))                  )
+                nil [826 1811])
+            ("if" code nil nil [1814 2095]))          
+      :file "inifile.py"
+      :pointmax 2096
+      :fsize 2095
+      :lastmodtime '(22178 26480 0 0)
+      :unmatched-syntax nil))
+  :file "!!CARBON!pipeline!libraries!pyLib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

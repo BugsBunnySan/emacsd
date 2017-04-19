@@ -1,0 +1,155 @@
+;; Object demo/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "demo/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(22333 56768 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "transcode.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("sys" include nil nil [11 21])
+            ("threading" include nil nil [22 38])
+            ("actors.services" include nil nil [40 70])
+            ("resources.versioned" include nil nil [72 107])
+            ("FFMPEGActorService" type
+               (:superclasses ("ac_s.ActorService" "threading.Thread")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [176 218])
+                    ("__init__" function
+                       (:suite 
+                          ( ("threading" code nil (reparse-symbol indented_block_body) [293 324])
+                            ("super" code nil (reparse-symbol indented_block_body) [333 414]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [237 241])
+                            ("semaphore" variable nil (reparse-symbol function_parameters) [243 252])
+                            ("node" variable nil (reparse-symbol function_parameters) [254 258])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [260 274])
+                            ("signal" variable nil (reparse-symbol function_parameters) [276 282]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [224 415])
+                    ("act" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [428 432])
+                            ("input_resource" variable nil (reparse-symbol function_parameters) [434 448]))                          )
+                        (reparse-symbol indented_block_body) [420 2095]))                  
+                :type "class")
+                nil [109 2095]))          
+      :file "transcode.py"
+      :pointmax 2095
+      :fsize 2140
+      :lastmodtime '(22333 60569 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "comp.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("threading" include nil nil [1 17])
+            ("sys" include nil nil [18 28])
+            ("subprocess" include nil nil [29 46])
+            ("actors.services" include nil nil [48 78])
+            ("resources.versioned" include nil nil [80 115])
+            ("CompNatronActorService" type
+               (:superclasses ("ac_s.ActorService" "threading.Thread")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [188 225])
+                    ("__init__" function
+                       (:suite 
+                          ( ("threading" code nil (reparse-symbol indented_block_body) [300 331])
+                            ("super" code nil (reparse-symbol indented_block_body) [340 425]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [244 248])
+                            ("semaphore" variable nil (reparse-symbol function_parameters) [250 259])
+                            ("node" variable nil (reparse-symbol function_parameters) [261 265])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [267 281])
+                            ("signal" variable nil (reparse-symbol function_parameters) [283 289]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [231 426])
+                    ("act" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [439 443])
+                            ("input_resources" variable nil (reparse-symbol function_parameters) [445 460]))                          )
+                        (reparse-symbol indented_block_body) [431 3141]))                  
+                :type "class")
+                nil [117 3141]))          
+      :file "comp.py"
+      :pointmax 3141
+      :fsize 3225
+      :lastmodtime '(22333 60846 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "notification.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("threading" include nil nil [1 17])
+            ("PySide" include nil nil [19 51])
+            ("xmpp" include nil nil [53 64])
+            ("actors.services" include nil nil [66 96])
+            ("resources.versioned" include nil nil [98 133])
+            ("NotificationXMPPActorService" type
+               (:superclasses ("ac_s.ActorService" "threading.Thread")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [212 255])
+                    ("__init__" function
+                       (:suite 
+                          ( ("threading" code nil (reparse-symbol indented_block_body) [330 361])
+                            ("super" code nil (reparse-symbol indented_block_body) [370 461]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [274 278])
+                            ("semaphore" variable nil (reparse-symbol function_parameters) [280 289])
+                            ("node" variable nil (reparse-symbol function_parameters) [291 295])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [297 311])
+                            ("signal" variable nil (reparse-symbol function_parameters) [313 319]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [261 462])
+                    ("act" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [475 479])
+                            ("message_text" variable nil (reparse-symbol function_parameters) [481 493]))                          )
+                        (reparse-symbol indented_block_body) [467 1206]))                  
+                :type "class")
+                nil [135 1206])
+            ("NotificationPrintActorService" type
+               (:superclasses ("ac_s.ActorService" "threading.Thread")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [1285 1329])
+                    ("__init__" function
+                       (:suite 
+                          ( ("threading" code nil (reparse-symbol indented_block_body) [1404 1435])
+                            ("super" code nil (reparse-symbol indented_block_body) [1444 1536]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1348 1352])
+                            ("semaphore" variable nil (reparse-symbol function_parameters) [1354 1363])
+                            ("node" variable nil (reparse-symbol function_parameters) [1365 1369])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [1371 1385])
+                            ("signal" variable nil (reparse-symbol function_parameters) [1387 1393]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1335 1537])
+                    ("act" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1550 1554])
+                            ("data" variable nil (reparse-symbol function_parameters) [1556 1560]))                          )
+                        (reparse-symbol indented_block_body) [1542 1865]))                  
+                :type "class")
+                nil [1207 1865]))          
+      :file "notification.py"
+      :pointmax 1865
+      :fsize 1924
+      :lastmodtime '(22333 60503 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!pipeline!implementations!actors!demo!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

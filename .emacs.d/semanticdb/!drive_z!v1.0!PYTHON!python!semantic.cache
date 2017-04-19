@@ -1,0 +1,1124 @@
+;; Object python/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "python/"
+  :tables
+  (list
+    (semanticdb-table "afanasyUI.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 11])
+            ("os" include nil nil [12 21])
+            ("afanasyUtils" include nil nil [22 41])
+            ("ui.utils" include nil nil [42 76])
+            ("reload" code nil nil [77 97])
+            ("operator" include nil nil [98 113])
+            ("datetime" include nil nil [114 129])
+            ("PySide" include nil nil [130 162])
+            ("functools" include nil nil [163 192])
+            ("AfanasyRenderManager" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [270 314])
+                            ("self" variable nil (reparse-symbol indented_block_body) [323 349])
+                            ("self" variable nil (reparse-symbol indented_block_body) [399 420])
+                            ("self" variable nil (reparse-symbol indented_block_body) [429 461])
+                            ("self" code nil (reparse-symbol indented_block_body) [488 518]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [247 251])
+                            ("window" variable nil (reparse-symbol function_parameters) [253 259]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [234 519])
+                    ("initUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [551 555])
+                            ("window" variable nil (reparse-symbol function_parameters) [557 563]))                          )
+                        (reparse-symbol indented_block_body) [540 1229])
+                    ("slaveDock" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1265 1269])
+                            ("window" variable nil (reparse-symbol function_parameters) [1271 1277]))                          )
+                        (reparse-symbol indented_block_body) [1251 10198])
+                    ("updateSlaveDock" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10240 10244])
+                            ("window" variable nil (reparse-symbol function_parameters) [10246 10252]))                          
+                        :documentation "#Needs work doesnt Kill Timer after UI Kill
+        timer = QtCore.QTimer(window)
+        timer.timeout.connect(self.fillSlaveDock)
+        timer.start(300000)")
+                        (reparse-symbol indented_block_body) [10220 10429])
+                    ("fillSlaveDock" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10460 10464]))                          )
+                        (reparse-symbol indented_block_body) [10442 15643])
+                    ("cleanSlaveDock" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15684 15688]))                          )
+                        (reparse-symbol indented_block_body) [15665 15793])
+                    ("getSlaveStatus" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15825 15829])
+                            ("slave" variable nil (reparse-symbol function_parameters) [15831 15836])
+                            ("numR" variable nil (reparse-symbol function_parameters) [15838 15842])
+                            ("numI" variable nil (reparse-symbol function_parameters) [15844 15848])
+                            ("numO" variable nil (reparse-symbol function_parameters) [15850 15854]))                          )
+                        (reparse-symbol indented_block_body) [15806 16500])
+                    ("getSlaveUserInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16534 16538])
+                            ("slave" variable nil (reparse-symbol function_parameters) [16540 16545]))                          )
+                        (reparse-symbol indented_block_body) [16513 16697])
+                    ("getSlaveCapacity" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16727 16731])
+                            ("slave" variable nil (reparse-symbol function_parameters) [16733 16738]))                          )
+                        (reparse-symbol indented_block_body) [16706 16996])
+                    ("getSlaveCapacityString" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17045 17049])
+                            ("slave" variable nil (reparse-symbol function_parameters) [17051 17056]))                          )
+                        (reparse-symbol indented_block_body) [17018 17558])
+                    ("getSlaveOS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17582 17586])
+                            ("slave" variable nil (reparse-symbol function_parameters) [17588 17593]))                          )
+                        (reparse-symbol indented_block_body) [17567 17760])
+                    ("getSlaveLaunchTime" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17792 17796])
+                            ("slave" variable nil (reparse-symbol function_parameters) [17798 17803]))                          )
+                        (reparse-symbol indented_block_body) [17769 17965])
+                    ("getSlaveIdleTime" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17999 18003])
+                            ("slave" variable nil (reparse-symbol function_parameters) [18005 18010]))                          )
+                        (reparse-symbol indented_block_body) [17978 18087])
+                    ("showSlavePopUpMenu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18149 18153])
+                            ("pos" variable nil (reparse-symbol function_parameters) [18155 18158]))                          )
+                        (reparse-symbol indented_block_body) [18126 21126])
+                    ("slaveInfoUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21155 21159])
+                            ("hostName" variable nil (reparse-symbol function_parameters) [21161 21169]))                          )
+                        (reparse-symbol indented_block_body) [21139 52130])
+                    ("slaveUpdateParameters" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [52178 52182]))                          )
+                        (reparse-symbol indented_block_body) [52152 52642])
+                    ("slaveLogsUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [52689 52693])
+                            ("hostname" variable nil (reparse-symbol function_parameters) [52695 52703]))                          )
+                        (reparse-symbol indented_block_body) [52673 52733])
+                    ("slaveSetFree" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [52763 52767])
+                            ("hostname" variable nil (reparse-symbol function_parameters) [52769 52777]))                          )
+                        (reparse-symbol indented_block_body) [52746 52833])
+                    ("slaveSetNIMBY" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [52860 52864])
+                            ("hostname" variable nil (reparse-symbol function_parameters) [52866 52874]))                          )
+                        (reparse-symbol indented_block_body) [52842 52931])
+                    ("slaveEnable" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [52960 52964])
+                            ("hostname" variable nil (reparse-symbol function_parameters) [52966 52974]))                          )
+                        (reparse-symbol indented_block_body) [52944 53006])
+                    ("slaveDisable" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [53032 53036])
+                            ("hostname" variable nil (reparse-symbol function_parameters) [53038 53046]))                          )
+                        (reparse-symbol indented_block_body) [53015 53079])
+                    ("slaveEjectAllTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [53115 53119])
+                            ("hostname" variable nil (reparse-symbol function_parameters) [53121 53129]))                          )
+                        (reparse-symbol indented_block_body) [53092 53188])
+                    ("slaveEjectNotMyTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [53226 53230])
+                            ("hostname" variable nil (reparse-symbol function_parameters) [53232 53240]))                          )
+                        (reparse-symbol indented_block_body) [53201 53304])
+                    ("filterData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [53386 53390])
+                            ("dictlist" variable nil (reparse-symbol function_parameters) [53392 53400])
+                            ("key" variable nil (reparse-symbol function_parameters) [53402 53405])
+                            ("value" variable nil (reparse-symbol function_parameters) [53407 53412]))                          )
+                        (reparse-symbol indented_block_body) [53371 53488])
+                    ("checkValueMax" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [53515 53519])
+                            ("valueMaxList" variable nil (reparse-symbol function_parameters) [53521 53533]))                          )
+                        (reparse-symbol indented_block_body) [53497 53704])
+                    ("closeWindow" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [53742 53746])
+                            ("window" variable nil (reparse-symbol function_parameters) [53748 53754]))                          )
+                        (reparse-symbol indented_block_body) [53726 53780]))                  
+                :type "class")
+                nil [194 53780])
+            ("if" code nil nil [53798 54260])
+            ("launchUI" function nil nil [54265 54365]))          
+      :file "afanasyUI.py"
+      :pointmax 54365
+      :fsize 54364
+      :lastmodtime '(21364 51627 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "afanasyUtils.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("cgruconfig" include nil nil [1 18])
+            ("afnetwork" include nil nil [19 35])
+            ("json" include nil nil [36 47])
+            ("GetAF" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [87 105])
+                            ("self" variable nil (reparse-symbol indented_block_body) [108 160])
+                            ("self" variable nil (reparse-symbol indented_block_body) [163 215])
+                            ("self" variable nil (reparse-symbol indented_block_body) [221 239])
+                            ("self" variable nil (reparse-symbol indented_block_body) [245 267])
+                            ("userList" variable nil (reparse-symbol indented_block_body) [270 298])
+                            ("for" code nil (reparse-symbol indented_block_body) [301 367]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [77 81]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [63 367])
+                    ("_sendRequest" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [390 394])
+                            ("verbose" variable nil (reparse-symbol function_parameters) [396 403]))                          )
+                        (reparse-symbol indented_block_body) [373 703])
+                    ("getJobList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [721 725])
+                            ("user" variable nil (reparse-symbol function_parameters) [727 731])
+                            ("verbose" variable nil (reparse-symbol function_parameters) [738 745])
+                            ("mask" variable nil (reparse-symbol function_parameters) [754 758]))                          )
+                        (reparse-symbol indented_block_body) [705 1112])
+                    ("deleteJob" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1129 1133])
+                            ("jobName" variable nil (reparse-symbol function_parameters) [1135 1142])
+                            ("verbose" variable nil (reparse-symbol function_parameters) [1144 1151]))                          )
+                        (reparse-symbol indented_block_body) [1115 1327])
+                    ("getJobInfo" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1344 1348])
+                            ("jobId" variable nil (reparse-symbol function_parameters) [1350 1355]))                          )
+                        (reparse-symbol indented_block_body) [1329 1448])
+                    ("renderSetNimby" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1470 1474])
+                            ("hostName" variable nil (reparse-symbol function_parameters) [1476 1484]))                          )
+                        (reparse-symbol indented_block_body) [1450 1636])
+                    ("renderSetNIMBY" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1658 1662])
+                            ("hostName" variable nil (reparse-symbol function_parameters) [1664 1672]))                          )
+                        (reparse-symbol indented_block_body) [1638 1824])
+                    ("renderSetFree" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1845 1849])
+                            ("hostName" variable nil (reparse-symbol function_parameters) [1851 1859]))                          )
+                        (reparse-symbol indented_block_body) [1826 2012])
+                    ("renderSetParameters" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2041 2045])
+                            ("hostName" variable nil (reparse-symbol function_parameters) [2047 2055])
+                            ("priority" variable nil (reparse-symbol function_parameters) [2057 2065])
+                            ("maxTasks" variable nil (reparse-symbol function_parameters) [2072 2080])
+                            ("capacity" variable nil (reparse-symbol function_parameters) [2087 2095])
+                            ("annotation" variable nil (reparse-symbol function_parameters) [2102 2112]))                          )
+                        (reparse-symbol indented_block_body) [2016 2526])
+                    ("renderEjectTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2550 2554])
+                            ("hostName" variable nil (reparse-symbol function_parameters) [2556 2564]))                          )
+                        (reparse-symbol indented_block_body) [2528 2727])
+                    ("renderEjectNotMyTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2756 2760])
+                            ("hostName" variable nil (reparse-symbol function_parameters) [2762 2770]))                          )
+                        (reparse-symbol indented_block_body) [2729 2941])
+                    ("renderExit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2959 2963])
+                            ("text" variable nil (reparse-symbol function_parameters) [2965 2969]))                          )
+                        (reparse-symbol indented_block_body) [2943 3144])
+                    ("talkExit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3160 3164])
+                            ("text" variable nil (reparse-symbol function_parameters) [3166 3170]))                          )
+                        (reparse-symbol indented_block_body) [3146 3387])
+                    ("monitorExit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3406 3410])
+                            ("text" variable nil (reparse-symbol function_parameters) [3412 3416]))                          )
+                        (reparse-symbol indented_block_body) [3389 3636])
+                    ("getRenderList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3657 3661])
+                            ("mask" variable nil (reparse-symbol function_parameters) [3663 3667]))                          )
+                        (reparse-symbol indented_block_body) [3638 3889])
+                    ("getRenderResourceList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3919 3923])
+                            ("mask" variable nil (reparse-symbol function_parameters) [3925 3929]))                          )
+                        (reparse-symbol indented_block_body) [3892 4212])
+                    ("getUserList" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4233 4237]))                          )
+                        (reparse-symbol indented_block_body) [4217 4398])
+                    ("monitorJobs" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4417 4421]))                          )
+                        (reparse-symbol indented_block_body) [4401 4639])
+                    ("renderGetLocal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4665 4669]))                          )
+                        (reparse-symbol indented_block_body) [4645 4728]))                  
+                :type "class")
+                nil [49 4728]))          
+      :file "afanasyUtils.py"
+      :pointmax 4743
+      :fsize 4742
+      :lastmodtime '(21364 51627 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "FBI_afanasySubmitter.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("af" include nil nil [1 10])
+            ("os" include nil nil [11 20])
+            ("maya.cmds" include nil nil [22 46])
+            ("renderNodes" variable nil nil [48 249])
+            ("launchRenderslaves" function nil nil [251 1186])
+            ("batch_bakeLightmap" function (:arguments 
+              ( ("projectPath" variable nil (reparse-symbol function_parameters) [1212 1223])
+                ("filePath" variable nil (reparse-symbol function_parameters) [1225 1233])
+                ("bakeList" variable nil (reparse-symbol function_parameters) [1235 1243])
+                ("renderlayer" variable nil (reparse-symbol function_parameters) [1245 1256])
+                ("startFrame" variable nil (reparse-symbol function_parameters) [1258 1268])
+                ("endFrame" variable nil (reparse-symbol function_parameters) [1273 1281]))              ) nil [1188 2336])
+            ("batch_bakeLightmap_inFrames" function (:arguments 
+              ( ("projectPath" variable nil (reparse-symbol function_parameters) [2370 2381])
+                ("filePath" variable nil (reparse-symbol function_parameters) [2383 2391])
+                ("bakeList" variable nil (reparse-symbol function_parameters) [2393 2401])
+                ("renderlayer" variable nil (reparse-symbol function_parameters) [2403 2414])
+                ("bakeLayers_options_dic" variable nil (reparse-symbol function_parameters) [2416 2438])
+                ("keyframe_bakelayers_children" variable nil (reparse-symbol function_parameters) [2440 2468])
+                ("startFrame" variable nil (reparse-symbol function_parameters) [2470 2480])
+                ("endFrame" variable nil (reparse-symbol function_parameters) [2485 2493]))              ) nil [2337 5426])
+            ("syncToLocalVolumes" function nil nil [5431 6663])
+            ("cleanUpLocalVolumes" function nil nil [6668 7570])
+            ("testJob" function nil nil [7575 8692])
+            ("batch_img2tiledexr" function
+               (:documentation "# Get vray version
+    try:
+        VRAY_VERSION = os.environ['VRAY_VERSION']
+    except:
+        VRAY_VERSION = 20004"
+                :arguments 
+                  ( ("convertList" variable nil (reparse-symbol function_parameters) [8718 8729]))                  )
+                nil [8695 9729])
+            ("batch_img2tx" function (:arguments 
+              ( ("convertList" variable nil (reparse-symbol function_parameters) [9751 9762]))              ) nil [9734 10622])
+            ("batchCommand" function (:arguments 
+              ( ("fileName" variable nil (reparse-symbol function_parameters) [10641 10649])
+                ("command" variable nil (reparse-symbol function_parameters) [10652 10659])
+                ("project" variable nil (reparse-symbol function_parameters) [10662 10669])
+                ("jobSuffix" variable nil (reparse-symbol function_parameters) [10672 10681])
+                ("startFrame" variable nil (reparse-symbol function_parameters) [10689 10699])
+                ("endFrame" variable nil (reparse-symbol function_parameters) [10704 10712])
+                ("byFrame" variable nil (reparse-symbol function_parameters) [10716 10723])
+                ("priority" variable nil (reparse-symbol function_parameters) [10728 10736]))              ) nil [10623 11619])
+            ("batchRender" function (:arguments 
+              ( ("fileName" variable nil (reparse-symbol function_parameters) [11637 11645])
+                ("startFrame" variable nil (reparse-symbol function_parameters) [11648 11658])
+                ("endFrame" variable nil (reparse-symbol function_parameters) [11661 11669])
+                ("project" variable nil (reparse-symbol function_parameters) [11672 11679])
+                ("byFrame" variable nil (reparse-symbol function_parameters) [11682 11689])
+                ("framesPerHost" variable nil (reparse-symbol function_parameters) [11694 11707])
+                ("renderOptions" variable nil (reparse-symbol function_parameters) [11712 11725])
+                ("priority" variable nil (reparse-symbol function_parameters) [11731 11739])
+                ("jobSuffix" variable nil (reparse-symbol function_parameters) [11746 11755])
+                ("hostMask" variable nil (reparse-symbol function_parameters) [11761 11769])
+                ("capacity" variable nil (reparse-symbol function_parameters) [11775 11783]))              ) nil [11620 12829])
+            ("'''def batchRender( fileName , renderOptions=\"\" , jobSuffix=\"\"):
+    # Create a job.
+    jobName = os.path.basename( fileName ) + \" ::: \" + jobSuffix #+ \"  \" + command.replace('\\\\' , '' )
+    print \"debug1\"
+    job = af.Job( jobName ) 
+    print \"debug2\"
+
+    job.setNeedOS('')
+    job.setPriority(250)    
+    
+    #AFcmd= 'mayarender ' + encodeString( renderOptions ) + ' -file \"' + fileName + '\"'
+
+    block = af.Block( jobName , 'maya' ) 
+    job.blocks.append(block)
+    
+    workDir=os.getenv('FBI_CURRENT_PROJECT', os.getcwd())
+    block.setWorkingDirectory( workDir ) 
+    
+    block.setCommand( str( AFcmd ) )
+    block.setCapacity( 750 )
+    block.setMaxRunTasksPerHost( 1 )
+    block.setHostsMask(\".*lx.*\")
+    # Set block to numeric type, providing first, last frame , frames per host and stepsize
+    block.setNumeric( 1 , 1 , 1 , 1 )
+
+
+    # Send job to Afanasy server.
+    result=job.send()
+'''" code nil nil [13193 14102])
+            ("setFpr" function (:arguments 
+              ( ("layer" variable nil (reparse-symbol function_parameters) [14117 14122])
+                ("fprIntField" variable nil (reparse-symbol function_parameters) [14125 14136]))              ) nil [14105 14287])
+            ("setCapacity" function (:arguments 
+              ( ("layer" variable nil (reparse-symbol function_parameters) [14305 14310])
+                ("capacityIntField" variable nil (reparse-symbol function_parameters) [14313 14329]))              ) nil [14288 14488])
+            ("setCustomFrameRange" function (:arguments 
+              ( ("layer" variable nil (reparse-symbol function_parameters) [14516 14521])
+                ("crplTextField" variable nil (reparse-symbol function_parameters) [14524 14537]))              ) nil [14491 14664])
+            ("renderLayerManager" function nil nil [14665 16737])
+            ("renderLayerManager2" function nil nil [16739 22441]))          
+      :file "FBI_afanasySubmitter.py"
+      :pointmax 22519
+      :fsize 22403
+      :lastmodtime '(22258 44889 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "FBI_globalClassesAdd.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [286 295])
+            ("shutil" include nil nil [296 309])
+            ("xml.dom.minidom" include nil nil [310 343])
+            ("base" include nil nil [344 377])
+            ("globalAssetTypes" variable nil nil [379 487])
+            ("TaskTypes" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [540 544]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [525 529]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [512 545])
+                    ("shot" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [559 563])
+                            ("application" variable nil (reparse-symbol function_parameters) [566 577]))                          
+                        :documentation "
+        Returns all the possible tasks for a Shot based on Application
+
+        :param application: str
+        :returns: taskList ( list )
+        ")
+                        (reparse-symbol indented_block_body) [549 1233])
+                    ("asset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1257 1261])
+                            ("application" variable nil (reparse-symbol function_parameters) [1264 1275]))                          
+                        :documentation "
+        Returns all the possible tasks for a Asset based on Application
+
+        :param application: str
+        :returns: taskList ( list )
+        ")
+                        (reparse-symbol indented_block_body) [1246 1952]))                  
+                :type "class")
+                nil [489 1952])
+            ("FolderCreation" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2022 2069]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2007 2011]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1994 2070])
+                    ("setUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2094 2098])
+                            ("path" variable nil (reparse-symbol function_parameters) [2100 2104])
+                            ("newName" variable nil (reparse-symbol function_parameters) [2106 2113])
+                            ("folderType" variable nil (reparse-symbol function_parameters) [2115 2125]))                          
+                        :documentation "
+        Create entity folder structure
+
+        :param path: str
+        :param newName: str
+        :param folderType: str ( 'exMain' / 'incMain' )
+        :returns: [ 'Fail' / 'Succes', path ]
+        ")
+                        (reparse-symbol indented_block_body) [2083 2949])
+                    ("tasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2982 2986])
+                            ("path" variable nil (reparse-symbol function_parameters) [2988 2992])
+                            ("task" variable nil (reparse-symbol function_parameters) [2994 2998])
+                            ("application" variable nil (reparse-symbol function_parameters) [3000 3011]))                          
+                        :documentation "
+        Create task folder structure
+
+        :param path: str
+        :param task: str
+        :param application: str
+        ")
+                        (reparse-symbol indented_block_body) [2971 4033])
+                    ("copy" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4049 4053])
+                            ("path" variable nil (reparse-symbol function_parameters) [4055 4059])
+                            ("task" variable nil (reparse-symbol function_parameters) [4061 4065])
+                            ("application" variable nil (reparse-symbol function_parameters) [4067 4078]))                          
+                        :documentation "
+        Copy the workspace.mel master file from the task folder.
+
+        :param path: str
+        :param task: str
+        :param application: str
+        ")
+                        (reparse-symbol indented_block_body) [4039 4395]))                  
+                :type "class")
+                nil [1966 4395])
+            ("SimpleNameAndPath" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [4457 4471])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4480 4494]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4442 4446]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4429 4495])
+                    ("setName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4512 4516])
+                            ("name" variable nil (reparse-symbol function_parameters) [4519 4523]))                          )
+                        (reparse-symbol indented_block_body) [4499 4549])
+                    ("setPath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4566 4570])
+                            ("path" variable nil (reparse-symbol function_parameters) [4573 4577]))                          )
+                        (reparse-symbol indented_block_body) [4553 4603]))                  
+                :type "class")
+                nil [4398 4603])
+            ("SubAsset" type
+               (:superclasses ("SimpleNameAndPath")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("SimpleNameAndPath" code nil (reparse-symbol indented_block_body) [4680 4714]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4665 4669]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4652 4715])
+                    ("getNameSpace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4737 4741]))                          )
+                        (reparse-symbol indented_block_body) [4719 4758]))                  
+                :type "class")
+                nil [4612 4758])
+            ("Asset" type
+               (:superclasses ("SimpleNameAndPath")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("SimpleNameAndPath" code nil (reparse-symbol indented_block_body) [4825 4859])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4876 4893]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4810 4814]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4797 4894])
+                    ("addSubAsset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4915 4919])
+                            ("subAsset" variable nil (reparse-symbol function_parameters) [4922 4930]))                          )
+                        (reparse-symbol indented_block_body) [4898 4976]))                  
+                :type "class")
+                nil [4759 4976])
+            ("AssetType" type
+               (:superclasses ("SimpleNameAndPath")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("SimpleNameAndPath" code nil (reparse-symbol indented_block_body) [5047 5081])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5090 5104]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5032 5036]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5019 5105])
+                    ("addAsset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5123 5127])
+                            ("asset" variable nil (reparse-symbol function_parameters) [5130 5135]))                          )
+                        (reparse-symbol indented_block_body) [5109 5175]))                  
+                :type "class")
+                nil [4977 5175])
+            ("SubAssetG" type
+               (:superclasses ("SimpleNameAndPath")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("SimpleNameAndPath" code nil (reparse-symbol indented_block_body) [5262 5296]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5247 5251]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5234 5297])
+                    ("getNameSpace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5319 5323]))                          )
+                        (reparse-symbol indented_block_body) [5301 5340]))                  
+                :type "class")
+                nil [5193 5340])
+            ("AssetG" type
+               (:superclasses ("SimpleNameAndPath")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("SimpleNameAndPath" code nil (reparse-symbol indented_block_body) [5408 5442])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5459 5477]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5393 5397]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5380 5478])
+                    ("addSubAssetG" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5500 5504])
+                            ("subAssetG" variable nil (reparse-symbol function_parameters) [5507 5516]))                          )
+                        (reparse-symbol indented_block_body) [5482 5564]))                  
+                :type "class")
+                nil [5341 5564])
+            ("AssetTypeG" type
+               (:superclasses ("SimpleNameAndPath")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("SimpleNameAndPath" code nil (reparse-symbol indented_block_body) [5636 5670])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5679 5694]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5621 5625]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5608 5695])
+                    ("addAssetG" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5714 5718])
+                            ("assetG" variable nil (reparse-symbol function_parameters) [5721 5727]))                          )
+                        (reparse-symbol indented_block_body) [5699 5769]))                  
+                :type "class")
+                nil [5565 5769])
+            ("SubShot" type
+               (:superclasses ("SimpleNameAndPath")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("SimpleNameAndPath" code nil (reparse-symbol indented_block_body) [5846 5880]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5831 5835]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5818 5881])
+                    ("getNameSpace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5903 5907]))                          )
+                        (reparse-symbol indented_block_body) [5885 5924]))                  
+                :type "class")
+                nil [5779 5924])
+            ("Shot" type
+               (:superclasses ("SimpleNameAndPath")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("SimpleNameAndPath" code nil (reparse-symbol indented_block_body) [5990 6024])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6033 6049]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5975 5979]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5962 6050])
+                    ("addSubShot" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6070 6074])
+                            ("subAsset" variable nil (reparse-symbol function_parameters) [6077 6085]))                          )
+                        (reparse-symbol indented_block_body) [6054 6130]))                  
+                :type "class")
+                nil [5925 6130])
+            ("Sequence" type
+               (:superclasses ("SimpleNameAndPath")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("SimpleNameAndPath" code nil (reparse-symbol indented_block_body) [6208 6242])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6251 6264]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6193 6197]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6180 6265])
+                    ("addShot" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6282 6286])
+                            ("shot" variable nil (reparse-symbol function_parameters) [6289 6293]))                          )
+                        (reparse-symbol indented_block_body) [6269 6331]))                  
+                :type "class")
+                nil [6139 6331])
+            ("CurrentProject" type
+               (:documentation "
+    This class is used to retreive all the information from the particular project. It uses the *FBI_CURRENT_PROJECT* variable as a base and continues to search for folders. This class also contains function to retrieve this information.
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [6644 6681])
+                            ("try" code nil (reparse-symbol indented_block_body) [6690 7012])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7020 7054])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7101 7118])
+                            ("for" code nil (reparse-symbol indented_block_body) [7127 9051])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9103 9121])
+                            ("for" code nil (reparse-symbol indented_block_body) [9139 11620])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11637 11656])
+                            ("for" code nil (reparse-symbol indented_block_body) [11722 13973]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6629 6633]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6616 13973])
+                    ("getSequenceByName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14003 14007])
+                            ("seqName" variable nil (reparse-symbol function_parameters) [14010 14017]))                          
+                        :documentation "
+        Get Sequence Class object by sequence name.
+
+        :param seqName: str
+        :returns: Sequence ( class ) / None
+        ")
+                        (reparse-symbol indented_block_body) [13980 14268])
+                    ("getShotByName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14296 14300])
+                            ("seqName" variable nil (reparse-symbol function_parameters) [14303 14310])
+                            ("shotName" variable nil (reparse-symbol function_parameters) [14313 14321]))                          
+                        :documentation "
+        Get Shot Class object by sequence and shot name.
+
+        :param seqName: str
+        :param shotName: str
+        :returns: Shot ( class ) / None
+        ")
+                        (reparse-symbol indented_block_body) [14277 14694])
+                    ("getSubShotByName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14721 14725])
+                            ("seqName" variable nil (reparse-symbol function_parameters) [14728 14735])
+                            ("shotName" variable nil (reparse-symbol function_parameters) [14738 14746])
+                            ("subShotName" variable nil (reparse-symbol function_parameters) [14749 14760]))                          
+                        :documentation "
+        Get Sub Shot Class object by sequence, shot and sub shot name.
+
+        :param seqName: str
+        :param shotName: str
+        :param subShotName: str
+        :returns: SubShot ( class ) / None
+        ")
+                        (reparse-symbol indented_block_body) [14699 15214])
+                    ("\"\"\"def getSubShotByNamespace( self , seqName , namespace , subShotName=\"__MAIN__\"):
+        returnSubShotPath = \"\"
+        for assetType in self.assetTypes:
+            for asset in assetType.assets:
+                for subAsset in asset.subAssets:
+                    xmlPath = subAsset.path + \"/info.xml\"
+                    if os.path.exists(xmlPath) and os.path.isfile(xmlPath):
+                        XMLdoc = minidom.parse(xmlPath)
+                        try:
+                            XMLinfo = XMLdoc.getElementsByTagName(\"INFO\")[0]
+                            v = XMLinfo.getAttribute(key)
+                            if v != \"\":
+                                if v == namespace
+                                    returnSubShotPath = subAsset.path
+                        except:
+                            pass
+                        
+        if returnSubShotPath != \"\":
+            return returnSubShotPath
+        else:
+            return None\"\"\"" code nil (reparse-symbol indented_block_body) [15227 16193])
+                    ("getAssetTypeByName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16232 16236])
+                            ("assetTypeName" variable nil (reparse-symbol function_parameters) [16239 16252]))                          
+                        :documentation "
+        Get AssetType Class object by assetType name.
+
+        :param assetTypeName: str
+        :returns: AssetType ( class ) / None
+        ")
+                        (reparse-symbol indented_block_body) [16208 16557])
+                    ("getAssetByName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16603 16607])
+                            ("assetTypeName" variable nil (reparse-symbol function_parameters) [16610 16623])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [16626 16635]))                          
+                        :documentation "
+        Get Asset Class object by assetType and asset name.
+
+        :param assetTypeName: str
+        :param assetName: str
+        :returns: Asset ( class ) / None
+        ")
+                        (reparse-symbol indented_block_body) [16583 17033])
+                    ("getSubAssetByName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17081 17085])
+                            ("assetTypeName" variable nil (reparse-symbol function_parameters) [17088 17101])
+                            ("assetName" variable nil (reparse-symbol function_parameters) [17104 17113])
+                            ("subAssetName" variable nil (reparse-symbol function_parameters) [17116 17128]))                          
+                        :documentation "
+        Get Sub Asset Class object by assetType, asset and sub asset name.
+
+        :param assetTypeName: str
+        :param assetName: str
+        :param subAssetName: str
+        :returns: Asset ( class ) / None
+        ")
+                        (reparse-symbol indented_block_body) [17058 17609])
+                    ("getAssetTypeGByName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17656 17660])
+                            ("assetTypeGName" variable nil (reparse-symbol function_parameters) [17663 17677]))                          
+                        :documentation "
+        Get AssetTypeG Class object by global assetType name.
+
+        :param assetTypeGName: str
+        :returns: AssetTypeG ( class ) / None
+        ")
+                        (reparse-symbol indented_block_body) [17631 18001])
+                    ("getAssetGByName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18048 18052])
+                            ("assetTypeGName" variable nil (reparse-symbol function_parameters) [18055 18069])
+                            ("assetGName" variable nil (reparse-symbol function_parameters) [18072 18082]))                          
+                        :documentation "
+        Get AssetG Class object by global assetType and asset name.
+
+        :param assetTypeGName: str
+        :param assetGName: str
+        :returns: AssetG ( class ) / None
+        ")
+                        (reparse-symbol indented_block_body) [18027 18498])
+                    ("getSubAssetGByName" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18547 18551])
+                            ("assetTypeGName" variable nil (reparse-symbol function_parameters) [18554 18568])
+                            ("assetGName" variable nil (reparse-symbol function_parameters) [18571 18581])
+                            ("subAssetGName" variable nil (reparse-symbol function_parameters) [18584 18597]))                          
+                        :documentation "
+        Get Sub AssetG Class object by global assetType, asset and sub asset name.
+
+        :param assetTypeGName: str
+        :param assetGName: str
+        :param subAssetGName: str
+        :returns: SubAssetG ( class ) / None
+        ")
+                        (reparse-symbol indented_block_body) [18523 19101])
+                    ("getNumberedDirectories" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19134 19138])
+                            ("dir" variable nil (reparse-symbol function_parameters) [19141 19144]))                          
+                        :documentation "
+        List all the numbered directories in a folder.
+
+        :param dir: str
+        :returns: numberedDirectories ( list )
+        ")
+                        (reparse-symbol indented_block_body) [19106 19717])
+                    ("getXmlProperty" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19746 19750])
+                            ("path" variable nil (reparse-symbol function_parameters) [19753 19757])
+                            ("key" variable nil (reparse-symbol function_parameters) [19760 19763]))                          
+                        :documentation "
+        Get XML information.
+
+        :param path: str
+        :param key: str
+        :returns: value ( str ) / None
+        ")
+                        (reparse-symbol indented_block_body) [19726 20396])
+                    ("checkXmlPropertyClashes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20443 20447])
+                            ("key" variable nil (reparse-symbol function_parameters) [20450 20453])
+                            ("value" variable nil (reparse-symbol function_parameters) [20456 20461]))                          
+                        :documentation " 
+        Check for value clashes within the XMLs.
+
+        :returns: 'CLASH' / 'CLEAR'
+        ")
+                        (reparse-symbol indented_block_body) [20414 21384])
+                    ("setXmlProperty" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21413 21417])
+                            ("path" variable nil (reparse-symbol function_parameters) [21420 21424])
+                            ("key" variable nil (reparse-symbol function_parameters) [21427 21430])
+                            ("value" variable nil (reparse-symbol function_parameters) [21433 21438]))                          
+                        :documentation "
+        Set XML information.
+
+        :param path: str
+        :param key: str
+        :param value: str
+        :returns: value ( str ) / None
+        ")
+                        (reparse-symbol indented_block_body) [21393 22222]))                  
+                :type "class")
+                nil [6334 22222])
+            ("UserSettings" type
+               (:documentation "
+    This class is used to store simple information. The *HOME* variable is used to retrieve your home directory, an additional folder *.fbi* is added. In this folder is where all the information is stored.
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("if" code nil (reparse-symbol indented_block_body) [22498 22669])
+                            ("self" code nil (reparse-symbol indented_block_body) [22677 22714])
+                            ("if" code nil (reparse-symbol indented_block_body) [22724 22797]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22483 22487]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [22470 22797])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22828 22832])
+                            ("key" variable nil (reparse-symbol function_parameters) [22835 22838]))                          
+                        :documentation "
+        :param key: str
+        :returns: value ( str )
+        ")
+                        (reparse-symbol indented_block_body) [22819 23171])
+                    ("set" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23189 23193])
+                            ("key" variable nil (reparse-symbol function_parameters) [23196 23199])
+                            ("value" variable nil (reparse-symbol function_parameters) [23202 23207]))                          
+                        :documentation "
+        :param key: str
+        :param value: str
+        ")
+                        (reparse-symbol indented_block_body) [23180 23381]))                  
+                :type "class")
+                nil [22224 23381]))          
+      :file "FBI_globalClassesAdd.py"
+      :pointmax 23381
+      :fsize 23380
+      :lastmodtime '(21787 45922 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.py"
+      :file "base.py"
+      :fsize 1393
+      :lastmodtime '(21798 26902 0 0))
+    (semanticdb-table "calculateAfanasyETA.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("afanasyUtils" include nil nil [1 20])
+            ("time" include nil nil [21 32])
+            ("sys" include nil nil [33 43])
+            ("secsToTime" function (:arguments 
+              ( ("startFrame" variable nil (reparse-symbol function_parameters) [61 71]))              ) nil [45 220])
+            ("server" variable nil nil [221 250])
+            ("if" code nil nil [252 324])
+            ("jobs" variable nil nil [324 366])
+            ("count" variable nil nil [524 533])
+            ("jobsWithNoETA" variable nil nil [534 550])
+            ("jobsDON" variable nil nil [551 560])
+            ("ETA" variable nil nil [561 566])
+            ("averageTaskTimeJob" variable nil nil [567 590])
+            ("for" code nil nil [591 5210])
+            ("operator" include nil nil [5272 5287])
+            ("sorted_averageTaskTimeJob" variable nil nil [5288 5399])
+            ("print" code nil nil [5402 5410])
+            ("print" code nil nil [5411 5567])
+            ("print" code nil nil [5568 5724])
+            ("print" code nil nil [5725 5881])
+            ("for" code nil nil [5882 6014])
+            ("print" code nil nil [6015 6023])
+            ("print" code nil nil [6024 6180])
+            ("print" code nil nil [6181 6337])
+            ("print" code nil nil [6338 6494])
+            ("for" code nil nil [6495 6647])
+            ("print" code nil nil [6648 6656])
+            ("print" code nil nil [6657 6813])
+            ("print" code nil nil [6814 6970])
+            ("print" code nil nil [6971 7127])
+            ("for" code nil nil [7128 7165])
+            ("print" code nil nil [7166 7322])
+            ("print" code nil nil [7323 7479])
+            ("print" code nil nil [7480 7636])
+            ("currentTime" variable nil nil [7639 7671])
+            ("print" code nil nil [7672 7771])
+            ("print" code nil nil [7772 7811])
+            ("print" code nil nil [7812 7856])
+            ("print" code nil nil [7857 7981])
+            ("timeETA" code nil nil [7982 8019])
+            ("print" code nil nil [8020 8118])
+            ("print" code nil nil [8119 8178])
+            ("print" code nil nil [8179 8225])
+            ("\"\"\"
+block:
+{u'p_percentage': 91, u'capacity': 1100, u'name': u'c3DCAMn2:stereoCam_leftShape', u'service': u'maya', u'frames_per_task': 1, u'tasks_num': 29, u'block_num': 6, u'p_progressbar': u'GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGNNNNGGGGGGGGGGGGGGNNNNGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGNNNNGGGGG', u'state': u' RUN', u'flags': 1, u'numeric': True, u'frame_first': 768, u'running_tasks_counter': 3, u'frame_last': 1049, u'p_tasks_run_time': 22715, u'p_tasks_warning': 29, u'frames_inc': 10, u'p_tasks_done': 26, u'job_id': 1424}
+
+\"\"\"" code nil nil [8227 8785]))          
+      :file "calculateAfanasyETA.py"
+      :pointmax 8786
+      :fsize 8785
+      :lastmodtime '(21757 35543 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "FBI_globalVersion.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("re" include nil nil [1 10])
+            ("os" include nil nil [11 20])
+            ("findVersionString" function
+               (:documentation "
+    :param path: str
+    :returns: version ( str ) / None
+    "
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [45 49]))                  )
+                nil [22 339])
+            ("findArtistString" function
+               (:documentation "
+    :param path: str
+    :returns: artist ( str ) / None
+    "
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [366 370]))                  )
+                nil [344 626])
+            ("findVersionInt" function
+               (:documentation "
+    :param path: str
+    :returns: version ( int ) / None
+    "
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [647 651]))                  )
+                nil [627 913])
+            ("findLatest" function
+               (:documentation "
+    :param path: str
+    :returns: highestVersion ( int ) / None
+    "
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [930 934]))                  )
+                nil [914 1942])
+            ("findLatestRootDirectory" function
+               (:documentation "
+    :param path: str
+    :returns: directory ( str ) / None
+    "
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [1972 1976]))                  )
+                nil [1943 2634]))          
+      :file "FBI_globalVersion.py"
+      :pointmax 2634
+      :fsize 2633
+      :lastmodtime '(21364 51627 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_z!v1.0!PYTHON!python!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

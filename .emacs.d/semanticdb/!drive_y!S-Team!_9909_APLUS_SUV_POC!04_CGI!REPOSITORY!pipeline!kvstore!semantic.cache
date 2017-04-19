@@ -1,0 +1,397 @@
+;; Object kvstore/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kvstore/"
+  :tables
+  (list
+    (semanticdb-table "kvstore.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pprint" include nil nil [1 27])
+            ("copy" include nil nil [29 50])
+            ("collections" include nil nil [52 70])
+            ("exceptions" include nil nil [72 89])
+            ("flatten_list" function (:arguments 
+              ( ("l" variable nil (reparse-symbol function_parameters) [108 109])
+                ("ltypes" variable nil (reparse-symbol function_parameters) [111 117]))              ) nil [91 424])
+            ("Property" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [501 517])
+                            ("self" variable nil (reparse-symbol indented_block_body) [526 548]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [466 470])
+                            ("name" variable nil (reparse-symbol function_parameters) [472 476])
+                            ("inherit" variable nil (reparse-symbol function_parameters) [478 485]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [453 549])
+                    ("__eq__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [565 569])
+                            ("other" variable nil (reparse-symbol function_parameters) [571 576]))                          )
+                        (reparse-symbol indented_block_body) [554 716])
+                    ("__hash__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [734 738]))                          )
+                        (reparse-symbol indented_block_body) [721 772])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [789 793]))                          )
+                        (reparse-symbol indented_block_body) [777 876])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [894 898]))                          )
+                        (reparse-symbol indented_block_body) [881 1025]))                  
+                :type "class")
+                nil [425 1025])
+            ("PlaceInfo" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1117 1135])
+                            ("self" code nil (reparse-symbol indented_block_body) [1144 1181])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1190 1204])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1213 1237]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1068 1072])
+                            ("place" variable nil (reparse-symbol function_parameters) [1074 1079])
+                            ("properties" variable nil (reparse-symbol function_parameters) [1081 1091])
+                            ("key" variable nil (reparse-symbol function_parameters) [1093 1096])
+                            ("rest_key" variable nil (reparse-symbol function_parameters) [1098 1106]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1055 1238])
+                    ("resolve_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1261 1265]))                          )
+                        (reparse-symbol indented_block_body) [1243 1336])
+                    ("set_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1355 1359])
+                            ("value" variable nil (reparse-symbol function_parameters) [1361 1366]))                          )
+                        (reparse-symbol indented_block_body) [1341 1433])
+                    ("delete_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1455 1459]))                          )
+                        (reparse-symbol indented_block_body) [1438 1522]))                  
+                :type "class")
+                nil [1026 1522])
+            ("KVStore" type
+               (:superclasses ("collections.MutableMapping")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1668 1685])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1694 1720])
+                            ("self" code nil (reparse-symbol indented_block_body) [1729 1761])
+                            ("self" code nil (reparse-symbol indented_block_body) [1770 1808])
+                            ("self" code nil (reparse-symbol indented_block_body) [1817 1860])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1870 1887])
+                            ("self" code nil (reparse-symbol indented_block_body) [1896 1919])
+                            ("self" code nil (reparse-symbol indented_block_body) [1928 1953]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1583 1587])
+                            ("name" variable nil (reparse-symbol function_parameters) [1589 1593])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [1600 1608])
+                            ("collate_key" variable nil (reparse-symbol function_parameters) [1615 1626])
+                            ("data" variable nil (reparse-symbol function_parameters) [1633 1637])
+                            ("subclass" variable nil (reparse-symbol function_parameters) [1644 1652]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1570 1954])
+                    ("name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1982 1986]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1959 2015])
+                    ("_make_data_store" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2053 2057]))                          )
+                        (reparse-symbol indented_block_body) [2032 2084])
+                    ("clear" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2099 2103]))                          )
+                        (reparse-symbol indented_block_body) [2089 2138])
+                    ("init_from_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2162 2166])
+                            ("data" variable nil (reparse-symbol function_parameters) [2168 2172]))                          )
+                        (reparse-symbol indented_block_body) [2143 2627])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2666 2670]))                          )
+                        (reparse-symbol indented_block_body) [2654 2712])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2730 2734]))                          )
+                        (reparse-symbol indented_block_body) [2717 3100])
+                    ("serialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3118 3122]))                          )
+                        (reparse-symbol indented_block_body) [3104 3164])
+                    ("as_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3181 3185])
+                            ("bake" variable nil (reparse-symbol function_parameters) [3187 3191])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [3198 3215]))                          )
+                        (reparse-symbol indented_block_body) [3169 3747])
+                    ("make_user_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3782 3786])
+                            ("keys" variable nil (reparse-symbol function_parameters) [3788 3793]))                          )
+                        (reparse-symbol indented_block_body) [3764 3913])
+                    ("split_user_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3937 3941])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [3943 3951]))                          )
+                        (reparse-symbol indented_block_body) [3918 4000])
+                    ("_resolve_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4022 4026])
+                            ("key" variable nil (reparse-symbol function_parameters) [4028 4031]))                          )
+                        (reparse-symbol indented_block_body) [4005 4231])
+                    ("resolve_key_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4257 4261])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [4263 4271]))                          )
+                        (reparse-symbol indented_block_body) [4236 4996])
+                    ("_set_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5039 5043])
+                            ("key" variable nil (reparse-symbol function_parameters) [5045 5048])
+                            ("properties" variable nil (reparse-symbol function_parameters) [5050 5060]))                          )
+                        (reparse-symbol indented_block_body) [5019 5307])
+                    ("_retrieve_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5337 5341])
+                            ("key" variable nil (reparse-symbol function_parameters) [5343 5346]))                          )
+                        (reparse-symbol indented_block_body) [5312 5402])
+                    ("_delete_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5430 5434])
+                            ("properties" variable nil (reparse-symbol function_parameters) [5436 5446]))                          )
+                        (reparse-symbol indented_block_body) [5407 5528])
+                    ("_resolve_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5557 5561])
+                            ("key" variable nil (reparse-symbol function_parameters) [5563 5566])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [5568 5585]))                          )
+                        (reparse-symbol indented_block_body) [5533 5897])
+                    ("get_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5921 5925])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [5927 5935]))                          )
+                        (reparse-symbol indented_block_body) [5902 6224])
+                    ("set_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6248 6252])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [6254 6262])
+                            ("properties" variable nil (reparse-symbol function_parameters) [6264 6274]))                          )
+                        (reparse-symbol indented_block_body) [6229 6453])
+                    ("add_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6477 6481])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [6483 6491])
+                            ("properties" variable nil (reparse-symbol function_parameters) [6493 6503]))                          )
+                        (reparse-symbol indented_block_body) [6458 6770])
+                    ("delete_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6797 6801])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [6803 6811])
+                            ("properties" variable nil (reparse-symbol function_parameters) [6813 6823]))                          )
+                        (reparse-symbol indented_block_body) [6775 7091])
+                    ("_retrieve_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7130 7134])
+                            ("key" variable nil (reparse-symbol function_parameters) [7136 7139]))                          )
+                        (reparse-symbol indented_block_body) [7110 7273])
+                    ("_resolve_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7297 7301])
+                            ("key" variable nil (reparse-symbol function_parameters) [7303 7306])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [7308 7325]))                          )
+                        (reparse-symbol indented_block_body) [7278 7551])
+                    ("_set_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7571 7575])
+                            ("key" variable nil (reparse-symbol function_parameters) [7577 7580])
+                            ("value" variable nil (reparse-symbol function_parameters) [7582 7587])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [7589 7606]))                          )
+                        (reparse-symbol indented_block_body) [7556 8191])
+                    ("_delete_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8214 8218])
+                            ("key" variable nil (reparse-symbol function_parameters) [8220 8223])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [8225 8242]))                          )
+                        (reparse-symbol indented_block_body) [8196 8530])
+                    ("_insert_place" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8567 8571])
+                            ("key" variable nil (reparse-symbol function_parameters) [8573 8576])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [8578 8595]))                          )
+                        (reparse-symbol indented_block_body) [8549 8899])
+                    ("_find_places" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8921 8925])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [8927 8935])
+                            ("create" variable nil (reparse-symbol function_parameters) [8937 8943])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [8951 8968]))                          )
+                        (reparse-symbol indented_block_body) [8904 11110])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11155 11159])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [11161 11169]))                          )
+                        (reparse-symbol indented_block_body) [11139 11563])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11584 11588])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [11590 11598])
+                            ("value" variable nil (reparse-symbol function_parameters) [11600 11605]))                          )
+                        (reparse-symbol indented_block_body) [11568 12168])
+                    ("__delitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12189 12193])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [12195 12203]))                          )
+                        (reparse-symbol indented_block_body) [12173 12596])
+                    ("__contains__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12645 12649])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [12651 12659]))                          )
+                        (reparse-symbol indented_block_body) [12628 12711])
+                    ("__iter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12729 12733]))                          )
+                        (reparse-symbol indented_block_body) [12716 12768])
+                    ("__len__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12785 12789]))                          )
+                        (reparse-symbol indented_block_body) [12773 12823])
+                    ("items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12838 12842]))                          )
+                        (reparse-symbol indented_block_body) [12828 12879])
+                    ("keys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12893 12897]))                          )
+                        (reparse-symbol indented_block_body) [12884 12933])
+                    ("values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12949 12953]))                          )
+                        (reparse-symbol indented_block_body) [12938 12991])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13004 13008])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [13010 13018])
+                            ("default" variable nil (reparse-symbol function_parameters) [13020 13027]))                          )
+                        (reparse-symbol indented_block_body) [12996 13138])
+                    ("leaf_items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13190 13194])
+                            ("parent" variable nil (reparse-symbol function_parameters) [13196 13202])
+                            ("parent_key" variable nil (reparse-symbol function_parameters) [13209 13219])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [13226 13243]))                          )
+                        (reparse-symbol indented_block_body) [13175 13998])
+                    ("leaf_keys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14017 14021]))                          )
+                        (reparse-symbol indented_block_body) [14003 14111])
+                    ("leaf_values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14132 14136]))                          )
+                        (reparse-symbol indented_block_body) [14116 14226])
+                    ("make_subkvstore" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14268 14272])
+                            ("name" variable nil (reparse-symbol function_parameters) [14274 14278]))                          )
+                        (reparse-symbol indented_block_body) [14248 14383])
+                    ("find_values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14404 14408])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [14410 14418])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [14420 14437]))                          )
+                        (reparse-symbol indented_block_body) [14388 16248])
+                    ("find_values_in_kvstores" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("user_key" variable nil (reparse-symbol function_parameters) [16299 16307])
+                            ("kvstores" variable nil (reparse-symbol function_parameters) [16309 16317])
+                            ("recurse" variable nil (reparse-symbol function_parameters) [16319 16326])
+                            ("subclass" variable nil (reparse-symbol function_parameters) [16334 16342]))                          
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [16253 16671])
+                    ("lookup_in_kvstores" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("user_key" variable nil (reparse-symbol function_parameters) [16717 16725])
+                            ("kvstores" variable nil (reparse-symbol function_parameters) [16727 16735])
+                            ("collector" variable nil (reparse-symbol function_parameters) [16737 16746]))                          
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [16676 17264]))                  
+                :type "class")
+                nil [1523 17264]))          
+      :file "kvstore.py"
+      :pointmax 17264
+      :fsize 17768
+      :lastmodtime '(22431 19209 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "exceptions.py"
+      :file "exceptions.py"
+      :fsize 166
+      :lastmodtime '(22403 43310 0 0)))
+  :file "!drive_y!S-Team!_9909_APLUS_SUV_POC!04_CGI!REPOSITORY!pipeline!kvstore!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

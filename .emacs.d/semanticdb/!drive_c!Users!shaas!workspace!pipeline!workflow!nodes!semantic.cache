@@ -1,0 +1,442 @@
+;; Object nodes/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "nodes/"
+  :tables
+  (list
+
+
+    (semanticdb-table "resource.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("context.kvstore" include nil nil [1 23])
+            ("reload" code nil nil [24 47])
+            ("VersionedResource" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [173 189])
+                            ("self" variable nil (reparse-symbol indented_block_body) [198 232])
+                            ("self" variable nil (reparse-symbol indented_block_body) [241 255])
+                            ("self" variable nil (reparse-symbol indented_block_body) [264 286])
+                            ("self" variable nil (reparse-symbol indented_block_body) [295 335])
+                            ("if" code nil (reparse-symbol indented_block_body) [344 417]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [99 103])
+                            ("name" variable nil (reparse-symbol function_parameters) [105 109])
+                            ("resource_type" variable nil (reparse-symbol function_parameters) [111 124])
+                            ("version" variable nil (reparse-symbol function_parameters) [126 133])
+                            ("url" variable nil (reparse-symbol function_parameters) [135 138])
+                            ("depends" variable nil (reparse-symbol function_parameters) [140 147])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [154 162]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [86 417])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [434 438]))                          )
+                        (reparse-symbol indented_block_body) [422 787])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [805 809]))                          )
+                        (reparse-symbol indented_block_body) [792 842]))                  
+                :type "class")
+                nil [49 842])
+            ("VersionedSequenceResource" type
+               (:superclasses ("VersionedResource")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1006 1115])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1125 1147])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1156 1180])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1189 1215]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [912 916])
+                            ("name" variable nil (reparse-symbol function_parameters) [918 922])
+                            ("version" variable nil (reparse-symbol function_parameters) [924 931])
+                            ("url" variable nil (reparse-symbol function_parameters) [933 936])
+                            ("depends" variable nil (reparse-symbol function_parameters) [938 945])
+                            ("inframe" variable nil (reparse-symbol function_parameters) [952 959])
+                            ("outframe" variable nil (reparse-symbol function_parameters) [966 974])
+                            ("framerate" variable nil (reparse-symbol function_parameters) [981 990]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [899 1216])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1233 1237]))                          )
+                        (reparse-symbol indented_block_body) [1221 1887])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1905 1909]))                          )
+                        (reparse-symbol indented_block_body) [1892 1942]))                  
+                :type "class")
+                nil [843 1942]))          
+      :file "resource.py"
+      :pointmax 1942
+      :fsize 1982
+      :lastmodtime '(22304 56612 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "resource_tracker.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("process_graph.graph" include nil nil [1 27])
+            ("reload" code nil nil [28 55])
+            ("sqlite3" include nil nil [57 71])
+            ("ResourceTrackerNode" type
+               (:superclasses ("process_graph.graph.Node")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [184 255])
+                            ("self" variable nil (reparse-symbol indented_block_body) [265 311]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [143 147])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [149 156])
+                            ("label" variable nil (reparse-symbol function_parameters) [163 168]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [130 312])
+                    ("get_pickle_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [337 341]))                          )
+                        (reparse-symbol indented_block_body) [317 394])
+                    ("set_pickle_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [419 423])
+                            ("state" variable nil (reparse-symbol function_parameters) [425 430]))                          )
+                        (reparse-symbol indented_block_body) [399 488])
+                    ("insert_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [513 517])
+                            ("resource" variable nil (reparse-symbol function_parameters) [519 527]))                          )
+                        (reparse-symbol indented_block_body) [493 1382]))                  
+                :type "class")
+                nil [73 1382])
+            ("ResourceTrackerHandler" type
+               (:superclasses ("process_graph.graph.SignalHandler")
+                :members 
+                  ( ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1473 1477])
+                            ("signal" variable nil (reparse-symbol function_parameters) [1479 1485]))                          )
+                        (reparse-symbol indented_block_body) [1452 1699]))                  
+                :type "class")
+                nil [1383 1699]))          
+      :file "resource_tracker.py"
+      :pointmax 1699
+      :fsize 1744
+      :lastmodtime '(22307 10947 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "user_interaction.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("process_graph.graph" include nil nil [1 27])
+            ("reload" code nil nil [28 55])
+            ("UserInteractionNode" type
+               (:superclasses ("process_graph.graph.Node")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [168 239])
+                            ("self" variable nil (reparse-symbol indented_block_body) [249 271]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [127 131])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [133 140])
+                            ("label" variable nil (reparse-symbol function_parameters) [147 152]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [114 272])
+                    ("get_pickle_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [297 301]))                          )
+                        (reparse-symbol indented_block_body) [277 349])
+                    ("set_pickle_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [374 378])
+                            ("state" variable nil (reparse-symbol function_parameters) [380 385]))                          )
+                        (reparse-symbol indented_block_body) [354 432]))                  
+                :type "class")
+                nil [57 432])
+            ("UserInteractionCondition" type
+               (:superclasses ("process_graph.graph.Condition")
+                :members 
+                  ( ("matches" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [512 516]))                          )
+                        (reparse-symbol indented_block_body) [500 555])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [577 581]))                          )
+                        (reparse-symbol indented_block_body) [560 747])
+                    ("signal_send" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [768 772])
+                            ("signal" variable nil (reparse-symbol function_parameters) [774 780]))                          )
+                        (reparse-symbol indented_block_body) [752 820]))                  
+                :type "class")
+                nil [433 820])
+            ("UserInteractionSignalHandler" type
+               (:superclasses ("process_graph.graph.SignalHandler")
+                :members 
+                  ( ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [917 921])
+                            ("signal" variable nil (reparse-symbol function_parameters) [923 929])
+                            ("graph_processor" variable nil (reparse-symbol function_parameters) [931 946]))                          )
+                        (reparse-symbol indented_block_body) [896 1206]))                  
+                :type "class")
+                nil [821 1206]))          
+      :file "user_interaction.py"
+      :pointmax 1206
+      :fsize 1238
+      :lastmodtime '(22307 11193 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "version.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("MAJOR" variable nil nil [1 10])
+            ("MINOR" variable nil nil [11 20])
+            ("PATCH" variable nil nil [21 30])
+            ("VERSION" variable nil nil [32 199]))          
+      :file "version.py"
+      :pointmax 200
+      :fsize 206
+      :lastmodtime '(22278 9121 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "version_flare.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("process_graph.graph" include nil nil [1 27])
+            ("reload" code nil nil [28 55])
+            ("SendFlareOnNewVersionNode" type
+               (:superclasses ("process_graph.graph.Node")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [174 251])
+                            ("self" code nil (reparse-symbol indented_block_body) [261 286]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [133 137])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [139 146])
+                            ("label" variable nil (reparse-symbol function_parameters) [153 158]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [120 287])
+                    ("get_pickle_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [312 316]))                          )
+                        (reparse-symbol indented_block_body) [292 376])
+                    ("set_pickle_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [401 405])
+                            ("state" variable nil (reparse-symbol function_parameters) [407 412]))                          )
+                        (reparse-symbol indented_block_body) [381 471]))                  
+                :type "class")
+                nil [57 471])
+            ("SendFlareHandler" type
+               (:superclasses ("process_graph.graph.SignalHandler")
+                :members 
+                  ( ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [556 560])
+                            ("signal" variable nil (reparse-symbol function_parameters) [562 568])
+                            ("graph_processor" variable nil (reparse-symbol function_parameters) [570 585]))                          )
+                        (reparse-symbol indented_block_body) [535 1039]))                  
+                :type "class")
+                nil [472 1039]))          
+      :file "version_flare.py"
+      :pointmax 1039
+      :fsize 1062
+      :lastmodtime '(22307 11234 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(22285 12694 0 0)
+      :unmatched-syntax '((NEWLINE 28 . 29)))
+    (semanticdb-table "user_query.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("collections" include nil nil [1 36])
+            ("process_graph.graph" include nil nil [38 64])
+            ("reload" code nil nil [65 92])
+            ("workflow.graph.services" include nil nil [94 133])
+            ("reload" code nil nil [134 147])
+            ("UserQueryNode" type
+               (:superclasses ("process_graph.graph.Node" "wng_s.WorkflowNodeService")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [227 251])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [311 376])
+                            ("self" code nil (reparse-symbol indented_block_body) [386 405])
+                            ("self" variable nil (reparse-symbol indented_block_body) [415 443])
+                            ("self" variable nil (reparse-symbol indented_block_body) [452 483])
+                            ("self" variable nil (reparse-symbol indented_block_body) [492 520]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [270 274])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [276 283])
+                            ("label" variable nil (reparse-symbol function_parameters) [290 295]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [257 521])
+                    ("put_task" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [539 543])
+                            ("data" variable nil (reparse-symbol function_parameters) [545 549]))                          )
+                        (reparse-symbol indented_block_body) [526 672])
+                    ("start_task" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [692 696])
+                            ("task_id" variable nil (reparse-symbol function_parameters) [698 705]))                          )
+                        (reparse-symbol indented_block_body) [677 845])
+                    ("handled_task" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [867 871])
+                            ("task_id" variable nil (reparse-symbol function_parameters) [873 880]))                          )
+                        (reparse-symbol indented_block_body) [850 1000])
+                    ("get_pickle_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1025 1029]))                          )
+                        (reparse-symbol indented_block_body) [1005 1158])
+                    ("set_pickle_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1183 1187])
+                            ("state" variable nil (reparse-symbol function_parameters) [1189 1194]))                          )
+                        (reparse-symbol indented_block_body) [1163 1320]))                  
+                :type "class")
+                nil [149 1320])
+            ("UserQuerySignalHandler" type
+               (:superclasses ("process_graph.graph.SignalHandler")
+                :members 
+                  ( ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1411 1415])
+                            ("signal" variable nil (reparse-symbol function_parameters) [1417 1423])
+                            ("graph_processor" variable nil (reparse-symbol function_parameters) [1425 1440]))                          )
+                        (reparse-symbol indented_block_body) [1390 1526]))                  
+                :type "class")
+                nil [1321 1526])
+            ("UserAcceptedCondition" type
+               (:superclasses ("process_graph.graph.Condition")
+                :members 
+                  ( ("matches" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1604 1608]))                          )
+                        (reparse-symbol indented_block_body) [1592 1654])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1676 1680]))                          )
+                        (reparse-symbol indented_block_body) [1659 1837]))                  
+                :type "class")
+                nil [1528 1837]))          
+      :file "user_query.py"
+      :pointmax 1837
+      :fsize 1897
+      :lastmodtime '(22307 11207 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "connection.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("process_graph.graph" include nil nil [1 27])
+            ("reload" code nil nil [28 55])
+            ("workflow.graph.services" include nil nil [57 96])
+            ("reload" code nil nil [97 110])
+            ("WorkflowConnection" type
+               (:superclasses ("process_graph.graph.Connection" "wng_s.WorkflowConnectionService")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [207 244]))                  
+                :type "class")
+                nil [112 245])
+            ("WorkflowConnectionZMQ" type
+               (:superclasses ("process_graph.graph.Connection" "wng_s.WorkflowConnectionService")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [344 371])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [588 817])
+                            ("self" variable nil (reparse-symbol indented_block_body) [827 876])
+                            ("self" variable nil (reparse-symbol indented_block_body) [885 930]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [390 394])
+                            ("from_node" variable nil (reparse-symbol function_parameters) [396 405])
+                            ("from_condition" variable nil (reparse-symbol function_parameters) [407 421])
+                            ("to_node" variable nil (reparse-symbol function_parameters) [440 447])
+                            ("to_node_handler" variable nil (reparse-symbol function_parameters) [449 464])
+                            ("from_graph_processor" variable nil (reparse-symbol function_parameters) [483 503])
+                            ("to_graph_processor" variable nil (reparse-symbol function_parameters) [522 540])
+                            ("connection_id" variable nil (reparse-symbol function_parameters) [559 572]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [377 931])
+                    ("make_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [956 960]))                          )
+                        (reparse-symbol indented_block_body) [936 976]))                  
+                :type "class")
+                nil [246 976]))          
+      :file "connection.py"
+      :pointmax 976
+      :unmatched-syntax nil)
+    (semanticdb-table "graph.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("process_graph.graph" include nil nil [1 27])
+            ("reload" code nil nil [28 55])
+            ("workflow.graph.services" include nil nil [57 96])
+            ("reload" code nil nil [97 110])
+            ("workflow.nodes.connection" include nil nil [112 152])
+            ("reload" code nil nil [153 165])
+            ("WorkflowGraph" type
+               (:superclasses ("process_graph.graph.Graph" "wng_s.WorkflowGraphService")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [247 270])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [288 292])
+                            ("condition" variable nil (reparse-symbol function_parameters) [294 303])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [305 319]))                          )
+                        (reparse-symbol indented_block_body) [276 749]))                  
+                :type "class")
+                nil [167 749]))          
+      :file "graph.py"
+      :pointmax 749
+      :fsize 772
+      :lastmodtime '(22303 29360 0 0)
+      :unmatched-syntax nil)
+)
+  :file "!drive_c!Users!shaas!workspace!pipeline!workflow!nodes!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

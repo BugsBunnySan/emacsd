@@ -1,0 +1,157 @@
+;; Object pp_gui/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pp_gui/"
+  :tables
+  (list
+    (semanticdb-table "pp_gui.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("abc" include nil nil [1 11])
+            ("sys" include nil nil [12 22])
+            ("hashlib" include nil nil [23 37])
+            ("PySide" include nil nil [39 71])
+            ("kvstore.kvstore" include nil nil [73 104])
+            ("context.service" include nil nil [106 135])
+            ("context.stack" include nil nil [136 164])
+            ("pipeline_processor.controller" include nil nil [166 210])
+            ("pipeline_processor.router" include nil nil [211 251])
+            ("pipeline_processor.messages" include nil nil [252 294])
+            ("implementations.router.zmq" include nil nil [296 329])
+            ("pp_gui_ui" include nil nil [331 376])
+            ("ServiceThreadGUII" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [422 426]))                  
+                :type "class")
+                nil [378 427])
+            ("QtServiceMeta" type
+               (:superclasses ("QtCore.QObject.__class__" "c_s.ServiceMeta")
+                :members 
+                  ( ("__call__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [509 512])
+                        ("args" variable nil (reparse-symbol function_parameters) [514 519])
+                        ("kwargs" variable nil (reparse-symbol function_parameters) [521 529]))                      ) (reparse-symbol indented_block_body) [496 1600]))                  
+                :type "class")
+                nil [428 1600])
+            ("RouterGUI" type
+               (:superclasses ("QtGui.QWidget" "c_s.Service")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [1650 1679])
+                    ("__implements__" variable nil (reparse-symbol indented_block_body) [1685 1721])
+                    ("service_id" variable nil (reparse-symbol indented_block_body) [1727 1774])
+                    ("__init__" function
+                       (:suite 
+                          ( ("QtGui" code nil (reparse-symbol indented_block_body) [1840 1883])
+                            ("c_s" code nil (reparse-symbol indented_block_body) [1892 1918])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1928 1971]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1793 1797])
+                            ("service_thread_id" variable nil (reparse-symbol function_parameters) [1799 1816])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1818 1824]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1780 1972])
+                    ("_handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1997 2001])
+                            ("message" variable nil (reparse-symbol function_parameters) [2003 2010])
+                            ("connection" variable nil (reparse-symbol function_parameters) [2012 2022]))                          )
+                        (reparse-symbol indented_block_body) [1977 2038]))                  
+                :type "class")
+                nil [1601 2038])
+            ("put_value_in_treemodel" function (:arguments 
+              ( ("name" variable nil (reparse-symbol function_parameters) [2066 2070])
+                ("value" variable nil (reparse-symbol function_parameters) [2072 2077])
+                ("treemodel" variable nil (reparse-symbol function_parameters) [2079 2088])
+                ("parent_idx" variable nil (reparse-symbol function_parameters) [2090 2100]))              ) nil [2039 2790])
+            ("PipelineProcessorGUI" type
+               (:superclasses ("QtGui.QMainWindow" "pp_c.services.Controller")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("QtGui" code nil (reparse-symbol indented_block_body) [3064 3111])
+                            ("pp_c" code nil (reparse-symbol indented_block_body) [3120 3372])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3382 3418])
+                            ("self" code nil (reparse-symbol indented_block_body) [3427 3449])
+                            ("self" code nil (reparse-symbol indented_block_body) [3459 3517])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3527 3570])
+                            ("self" code nil (reparse-symbol indented_block_body) [3580 3683]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2883 2887])
+                            ("thread_id" variable nil (reparse-symbol function_parameters) [2889 2898])
+                            ("service_thread_configs" variable nil (reparse-symbol function_parameters) [2900 2922])
+                            ("pipeline_server_id" variable nil (reparse-symbol function_parameters) [2941 2959])
+                            ("heartbeat_interval" variable nil (reparse-symbol function_parameters) [2961 2979])
+                            ("heartbeat_timeout" variable nil (reparse-symbol function_parameters) [2981 2998])
+                            ("parent_router_id" variable nil (reparse-symbol function_parameters) [3017 3033])
+                            ("parent" variable nil (reparse-symbol function_parameters) [3040 3046]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2870 3682])
+                    ("connect_to_host" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3707 3711]))                          )
+                        (reparse-symbol indented_block_body) [3687 4292])
+                    ("do_shutdown" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4313 4317]))                          )
+                        (reparse-symbol indented_block_body) [4297 4438])
+                    ("_update_service_thread_status" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4477 4481])
+                            ("status" variable nil (reparse-symbol function_parameters) [4483 4489]))                          )
+                        (reparse-symbol indented_block_body) [4443 4603])
+                    ("_handle_notifications" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4860 4864])
+                            ("message" variable nil (reparse-symbol function_parameters) [4866 4873]))                          )
+                        (reparse-symbol indented_block_body) [4834 5704])
+                    ("_handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5729 5733])
+                            ("message" variable nil (reparse-symbol function_parameters) [5735 5742])
+                            ("connection" variable nil (reparse-symbol function_parameters) [5744 5754]))                          )
+                        (reparse-symbol indented_block_body) [5709 6185]))                  
+                :type "class")
+                nil [2792 6185])
+            ("if" code nil nil [6186 6900]))          
+      :file "pp_gui.py"
+      :pointmax 6900
+      :fsize 7077
+      :lastmodtime '(22399 58254 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "pp_gui_ui.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("PySide" include nil nil [240 272])
+            ("Ui_PipelineProcessorGUI" type
+               (:superclasses ("object")
+                :members 
+                  ( ("setupUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [329 333])
+                            ("PipelineProcessorGUI" variable nil (reparse-symbol function_parameters) [335 355]))                          )
+                        (reparse-symbol indented_block_body) [317 4276])
+                    ("retranslateUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4299 4303])
+                            ("PipelineProcessorGUI" variable nil (reparse-symbol function_parameters) [4305 4325]))                          )
+                        (reparse-symbol indented_block_body) [4281 5003]))                  
+                :type "class")
+                nil [274 5003]))          
+      :file "pp_gui_ui.py"
+      :pointmax 5004
+      :fsize 5278
+      :lastmodtime '(22399 58185 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!pipeline_lab!pp_gui!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

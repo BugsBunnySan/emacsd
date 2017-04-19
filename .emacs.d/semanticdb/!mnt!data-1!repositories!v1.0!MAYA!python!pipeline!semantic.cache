@@ -1,0 +1,1064 @@
+;; Object pipeline/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pipeline/"
+  :tables (list 
+   (semanticdb-table "rjSaveLoad.py"
+    :major-mode 'python-mode
+    :tags nil
+    :file "rjSaveLoad.py"
+    :pointmax 193588
+    :fsize 193587
+    :lastmodtime '(22126 41601 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "rjReference.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("maya.cmds" include nil nil [1 25])
+            ("FBI_globalClassesAdd" include nil nil [26 53])
+            ("xml.dom.minidom" include nil nil [54 87])
+            ("pymel.core" include nil nil [89 113])
+            ("pipeline" include nil nil [115 156])
+            ("pipeline" include nil nil [157 196])
+            ("utils" include nil nil [198 227])
+            ("utils" include nil nil [228 255])
+            ("utils" include nil nil [256 282])
+            ("reload" code nil nil [283 299])
+            ("os" include nil nil [301 310])
+            ("ReferenceUI" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [370 427])
+                            ("self" variable nil (reparse-symbol indented_block_body) [436 453]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [348 352]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [335 454])
+                    ("UI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [474 478])
+                            ("path" variable nil (reparse-symbol function_parameters) [480 484]))                          
+                        :documentation "
+	Build the reference UI. Based on the path parsed published files will be found and
+	filtered. If a namespace does not yet exists for this entity a window will pop-up to
+	do so. Based on the published files it will either go the set dress mode or regular mode.
+	The artist can chose what he wants to reference and what needs to be included like the
+	animation and the shading.
+
+	:param path: str
+	")
+                        (reparse-symbol indented_block_body) [467 11470])
+                    ("fillSetDressOverview" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11516 11520]))                          
+                        :documentation "
+	It reads the selected publish file and create an overview all all the assets which are contained in the .setdress file.
+	This information is then put in the UI for viewability by the user.
+	")
+                        (reparse-symbol indented_block_body) [11491 14594])
+                    ("updateRefUITask" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14652 14656])
+                            ("mode" variable nil (reparse-symbol function_parameters) [14658 14662])
+                            ("args" variable nil (reparse-symbol function_parameters) [14664 14669]))                          
+                        :documentation "
+	Reads the current filepath and tries to detect the current task worked on.
+	Depending on this task the build settings change.
+
+	:param mode: str
+	")
+                        (reparse-symbol indented_block_body) [14632 18227])
+                    ("updateRefUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18286 18290])
+                            ("args" variable nil (reparse-symbol function_parameters) [18292 18297]))                          
+                        :documentation "
+	Based on the mode set in the UI it finds and updates the UI based on the published
+	files it finds. It gives the user an clear overview of what is published and what could
+	be currently used in the scene.
+	")
+                        (reparse-symbol indented_block_body) [18270 23162])
+                    ("updateRefUIMode" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23208 23212])
+                            ("args" variable nil (reparse-symbol function_parameters) [23214 23219]))                          
+                        :documentation "
+	Update UI: ( Model Options )
+	")
+                        (reparse-symbol indented_block_body) [23188 26690])
+                    ("updateRefUIModelState" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26750 26754])
+                            ("args" variable nil (reparse-symbol function_parameters) [26756 26761]))                          
+                        :documentation "
+	Update UI: ( Model State )
+	")
+                        (reparse-symbol indented_block_body) [26724 28589])
+                    ("updateRefUISHDState" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28634 28638])
+                            ("args" variable nil (reparse-symbol function_parameters) [28640 28645]))                          
+                        :documentation "
+	Update UI: ( Shading State )
+	")
+                        (reparse-symbol indented_block_body) [28610 30787])
+                    ("updateRefUIVOPState" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30848 30852])
+                            ("args" variable nil (reparse-symbol function_parameters) [30854 30859]))                          
+                        :documentation "
+	Update UI: ( Shading Vop State )
+	")
+                        (reparse-symbol indented_block_body) [30824 31373])
+                    ("updateRefUIASState" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31417 31421])
+                            ("args" variable nil (reparse-symbol function_parameters) [31423 31428]))                          
+                        :documentation "
+	Update UI: ( Shading Assign State )
+	")
+                        (reparse-symbol indented_block_body) [31394 32084])
+                    ("updateRefUIANIMState" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32147 32151])
+                            ("args" variable nil (reparse-symbol function_parameters) [32153 32158]))                          
+                        :documentation "
+	Update UI: ( Anim State )
+	")
+                        (reparse-symbol indented_block_body) [32122 33047])
+                    ("updateRefUILOADState" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33093 33097])
+                            ("args" variable nil (reparse-symbol function_parameters) [33099 33104]))                          
+                        :documentation "
+	Update UI: ( Load State )
+	")
+                        (reparse-symbol indented_block_body) [33068 36001])
+                    ("createReferenceAsset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36040 36044])
+                            ("args" variable nil (reparse-symbol function_parameters) [36046 36051]))                          
+                        :documentation "
+	This function is called to construct the full paths of the files neccessary.
+	")
+                        (reparse-symbol indented_block_body) [36015 37230])
+                    ("createReferenceSetDress" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37271 37275])
+                            ("args" variable nil (reparse-symbol function_parameters) [37277 37282]))                          
+                        :documentation "
+	This function is called to construct the full paths of the files neccessary. And perform the 
+	set dress specific load options.
+	")
+                        (reparse-symbol indented_block_body) [37243 43186])
+                    ("createReferenceReadSettings" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [43252 43256])
+                            ("modelPath" variable nil (reparse-symbol function_parameters) [43258 43267])
+                            ("shadingPath" variable nil (reparse-symbol function_parameters) [43269 43280])
+                            ("animPath" variable nil (reparse-symbol function_parameters) [43282 43290])
+                            ("num" variable nil (reparse-symbol function_parameters) [43292 43295])
+                            ("args" variable nil (reparse-symbol function_parameters) [43299 43304]))                          
+                        :documentation "
+	This function will analize the option and will call the :func:`pipeline.rjReference.ReferenceUI.createRef` function to create 
+	the actuall references.
+
+	:param modelPath: str
+	:param shadingPath: str
+	:param animPath: str
+	:param num: int
+	:returns: returnList ( list )
+	")
+                        (reparse-symbol indented_block_body) [43220 45013])
+                    ("createRef" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [45041 45045])
+                            ("modelPath" variable nil (reparse-symbol function_parameters) [45047 45056])
+                            ("shadingPath" variable nil (reparse-symbol function_parameters) [45058 45069])
+                            ("animPath" variable nil (reparse-symbol function_parameters) [45071 45079])
+                            ("refNum" variable nil (reparse-symbol function_parameters) [45081 45087])
+                            ("loadMode" variable nil (reparse-symbol function_parameters) [45089 45097])
+                            ("namespaceRef" variable nil (reparse-symbol function_parameters) [45099 45111])
+                            ("includeModelB" variable nil (reparse-symbol function_parameters) [45113 45126])
+                            ("includeShadingB" variable nil (reparse-symbol function_parameters) [45128 45143])
+                            ("mergeShadingB" variable nil (reparse-symbol function_parameters) [45145 45158])
+                            ("assignShadingB" variable nil (reparse-symbol function_parameters) [45160 45174])
+                            ("buildRLVOPSB" variable nil (reparse-symbol function_parameters) [45176 45188])
+                            ("prefixB" variable nil (reparse-symbol function_parameters) [45190 45197])
+                            ("rlStateB" variable nil (reparse-symbol function_parameters) [45199 45207])
+                            ("mlStateB" variable nil (reparse-symbol function_parameters) [45209 45217])
+                            ("includeAnimationB" variable nil (reparse-symbol function_parameters) [45219 45236])
+                            ("mergeAnimationB" variable nil (reparse-symbol function_parameters) [45238 45253])
+                            ("assignAnimationB" variable nil (reparse-symbol function_parameters) [45255 45271])
+                            ("num" variable nil (reparse-symbol function_parameters) [45273 45276])
+                            ("newNamespace" variable nil (reparse-symbol function_parameters) [45280 45292])
+                            ("args" variable nil (reparse-symbol function_parameters) [45299 45304]))                          
+                        :documentation "
+	This function will create all the references based on the parsed information.
+
+	:param modelPath: str
+	:param shadingPath: str
+	:param animPath: str
+	:param refNum: int
+	:param loadMode: str
+	:param namespaceRef: str
+	:param includeModelB: boolean
+	:param includeShadingB: boolean
+	:param mergeShadingB: boolean
+	:param assignShadingB: boolean
+	:param buildRLVOPSB: boolean
+	:param prefixB: boolean
+	:param rlStateB: boolean
+	:param mlStateB: boolean
+	:param includeAnimationB: boolean
+	:param mergeAnimationB: boolean
+	:param assignAnimationB: boolean
+	:param num: int
+	:param newNamespace: boolean
+	:returns: namespaceList ( list )
+	")
+                        (reparse-symbol indented_block_body) [45027 51369]))                  
+                :type "class")
+                nil [312 51369]))          
+    :file "rjReference.py"
+    :pointmax 55395
+    :fsize 55389
+    :lastmodtime '(21757 35537 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "rjShaderImportExport.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("FBI_afanasySubmitter" include nil nil [109 136])
+            ("FBI_globalClassesAdd" include nil nil [137 164])
+            ("FBI_shotgunClasses" include nil nil [165 190])
+            ("FBI_globalVersion" include nil nil [191 215])
+            ("utils" include nil nil [218 247])
+            ("base" include nil nil [248 292])
+            ("reload" code nil nil [293 312])
+            ("utils" include nil nil [313 340])
+            ("utils" include nil nil [341 368])
+            ("functools" include nil nil [370 399])
+            ("pymel.core" include nil nil [400 424])
+            ("maya.cmds" include nil nil [425 449])
+            ("maya.mel" include nil nil [450 472])
+            ("datetime" include nil nil [473 488])
+            ("subprocess" include nil nil [489 506])
+            ("os" include nil nil [507 516])
+            ("re" include nil nil [517 526])
+            ("ShaderImportExport" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [577 601])
+                            ("self" variable nil (reparse-symbol indented_block_body) [604 661])
+                            ("self" variable nil (reparse-symbol indented_block_body) [664 719])
+                            ("self" variable nil (reparse-symbol indented_block_body) [722 742])
+                            ("try" code nil (reparse-symbol indented_block_body) [748 819]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [568 572]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [555 819])
+                    ("UI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [828 832])
+                            ("namespace" variable nil (reparse-symbol function_parameters) [834 843])
+                            ("tab" variable nil (reparse-symbol function_parameters) [850 853])
+                            ("args" variable nil (reparse-symbol function_parameters) [857 862]))                          
+                        :documentation "
+		Shading Import / Export UI
+
+		:param namespace: str / None
+		:param tab: int
+		")
+                        (reparse-symbol indented_block_body) [821 4860])
+                    ("radioIncludes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4880 4884])
+                            ("args" variable nil (reparse-symbol function_parameters) [4886 4891]))                          
+                        :documentation "
+		Update UI ( Export Buttons based on Library Mode )
+		")
+                        (reparse-symbol indented_block_body) [4862 6034])
+                    ("getNamespaceFromSelSwitch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6068 6072])
+                            ("args" variable nil (reparse-symbol function_parameters) [6074 6079]))                          
+                        :documentation "
+		Update UI ( Namespace of Selected )
+		")
+                        (reparse-symbol indented_block_body) [6038 6421])
+                    ("failUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6435 6439])
+                            ("args" variable nil (reparse-symbol function_parameters) [6441 6446]))                          
+                        :documentation "
+		Fail UI, the failed connections are processed and an UI is created to give the user an overview of what failed. 
+		This comes in handy for debugging.
+		")
+                        (reparse-symbol indented_block_body) [6424 11677])
+                    ("buildFailUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11700 11704])
+                            ("args" variable nil (reparse-symbol function_parameters) [11706 11711]))                          
+                        :documentation "
+		Fail UI, the failed connections are processed and an UI is created to give the user an overview of what failed. 
+		This comes in handy for debugging.
+		")
+                        (reparse-symbol indented_block_body) [11684 19995])
+                    ("useSelected" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20014 20018])
+                            ("uiName" variable nil (reparse-symbol function_parameters) [20020 20026])
+                            ("args" variable nil (reparse-symbol function_parameters) [20028 20033]))                          
+                        :documentation "
+		Update Fail UI ( Selected )
+
+		:param uiName: str
+		")
+                        (reparse-symbol indented_block_body) [19998 20431])
+                    ("assignShaderFUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20454 20458])
+                            ("i" variable nil (reparse-symbol function_parameters) [20460 20461])
+                            ("args" variable nil (reparse-symbol function_parameters) [20463 20468]))                          
+                        :documentation "
+		This function will try to assign the shading again.
+
+		:param i: str
+		")
+                        (reparse-symbol indented_block_body) [20434 21576])
+                    ("assignShaderPFUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21602 21606])
+                            ("i" variable nil (reparse-symbol function_parameters) [21608 21609])
+                            ("args" variable nil (reparse-symbol function_parameters) [21611 21616]))                          
+                        :documentation "
+		This function will try to assign the shading again ( VRayMeshMaterial ).
+
+		:param i: str
+		")
+                        (reparse-symbol indented_block_body) [21581 22131])
+                    ("assignShaderPOFUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22158 22162])
+                            ("i" variable nil (reparse-symbol function_parameters) [22164 22165])
+                            ("args" variable nil (reparse-symbol function_parameters) [22167 22172]))                          
+                        :documentation "
+		This function will try to assign the shading again ( VRayMeshMaterial - Override ).
+
+		:param i: str
+		")
+                        (reparse-symbol indented_block_body) [22136 22862])
+                    ("assignFurFUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22884 22888])
+                            ("i" variable nil (reparse-symbol function_parameters) [22890 22891])
+                            ("args" variable nil (reparse-symbol function_parameters) [22893 22898]))                          
+                        :documentation "
+		This function will try to assign the fur again.
+
+		:param i: str
+		")
+                        (reparse-symbol indented_block_body) [22867 23315])
+                    ("assignVOPFUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23335 23339])
+                            ("i" variable nil (reparse-symbol function_parameters) [23341 23342])
+                            ("args" variable nil (reparse-symbol function_parameters) [23344 23349]))                          
+                        :documentation "
+		This function will try to assign a member to a vop again.
+
+		:param i: str
+		")
+                        (reparse-symbol indented_block_body) [23318 24062])
+                    ("assignVMLFUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24084 24088])
+                            ("i" variable nil (reparse-symbol function_parameters) [24090 24091])
+                            ("args" variable nil (reparse-symbol function_parameters) [24093 24098]))                          
+                        :documentation "
+		This function will try to assign a VrayMeshLights again.
+
+		:param i: str
+		")
+                        (reparse-symbol indented_block_body) [24067 24573])
+                    ("overrideConnectionFUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24602 24606])
+                            ("l" variable nil (reparse-symbol function_parameters) [24608 24609])
+                            ("args" variable nil (reparse-symbol function_parameters) [24611 24616]))                          
+                        :documentation "
+		This function will try to assign an renderlayer override again ( Connection ).
+
+		:param l: str
+		")
+                        (reparse-symbol indented_block_body) [24576 25398])
+                    ("overrideSetAttrFUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25424 25428])
+                            ("m" variable nil (reparse-symbol function_parameters) [25430 25431])
+                            ("args" variable nil (reparse-symbol function_parameters) [25433 25438]))                          
+                        :documentation "
+		This function will try to assign an renderlayer override again ( Set Attribute ).
+
+		:param m: str
+		")
+                        (reparse-symbol indented_block_body) [25401 26838])
+                    ("vrayOIFUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26855 26859])
+                            ("j" variable nil (reparse-symbol function_parameters) [26861 26862])
+                            ("args" variable nil (reparse-symbol function_parameters) [26864 26869]))                          
+                        :documentation "
+		This function will try to assign an VRayObjectID again.
+
+		:param j: str
+		")
+                        (reparse-symbol indented_block_body) [26841 27311])
+                    ("LPPConstraintFUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27336 27340])
+                            ("k" variable nil (reparse-symbol function_parameters) [27342 27343])
+                            ("args" variable nil (reparse-symbol function_parameters) [27345 27350]))                          
+                        :documentation "
+		This function will try to connect a constraint again.
+
+		:param k: str
+		")
+                        (reparse-symbol indented_block_body) [27315 28189])
+                    ("setUpdaterIm" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28209 28213])
+                            ("args" variable nil (reparse-symbol function_parameters) [28215 28220]))                          
+                        :documentation "
+		Update UI ( Container Import Overview )
+		")
+                        (reparse-symbol indented_block_body) [28192 28550])
+                    ("setUpdaterEx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28574 28578])
+                            ("args" variable nil (reparse-symbol function_parameters) [28580 28585]))                          
+                        :documentation "
+		Update UI ( Container Export Overview )
+		")
+                        (reparse-symbol indented_block_body) [28557 28915])
+                    ("createAddButtonSwitch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28948 28952])
+                            ("args" variable nil (reparse-symbol function_parameters) [28954 28959]))                          
+                        :documentation "
+		OBSOLETE
+		")
+                        (reparse-symbol indented_block_body) [28922 29243])
+                    ("overrideSwitch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29265 29269])
+                            ("args" variable nil (reparse-symbol function_parameters) [29271 29276]))                          
+                        :documentation "
+		Update UI ( Namespace Override Switch )
+		")
+                        (reparse-symbol indented_block_body) [29246 29643])
+                    ("createContainersPre" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29669 29673])
+                            ("args" variable nil (reparse-symbol function_parameters) [29675 29680]))                          
+                        :documentation "
+		This function is the pre command in order to create a container. A precommand exists to read the UI information.
+		:func:`pipeline.rjShaderImportExport.ShaderImportExport.createContainers` is the actuall command that also works without a UI
+		")
+                        (reparse-symbol indented_block_body) [29645 31053])
+                    ("createContainers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31077 31081])
+                            ("sContName" variable nil (reparse-symbol function_parameters) [31083 31092])
+                            ("getMode" variable nil (reparse-symbol function_parameters) [31094 31101])
+                            ("RE" variable nil (reparse-symbol function_parameters) [31103 31105])
+                            ("RLVOPS" variable nil (reparse-symbol function_parameters) [31107 31113])
+                            ("LIGHTS" variable nil (reparse-symbol function_parameters) [31115 31121])
+                            ("args" variable nil (reparse-symbol function_parameters) [31123 31128]))                          
+                        :documentation "
+		Create a Container and tag it so the exporter will know how to handle each of the containers.
+
+		:param sContName: str
+		:param getMode: boolean
+		:param RE: boolean
+		:param RLVOPS: boolean
+		:param LIGHTS: boolean
+		:returns: containerName ( str )
+		")
+                        (reparse-symbol indented_block_body) [31056 33224])
+                    ("deleteContainersPre" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33250 33254])
+                            ("args" variable nil (reparse-symbol function_parameters) [33256 33261]))                          
+                        :documentation "
+		Delete the containers which are selected in the overview in the UI. This is a pre-function to read from the UI.
+		:func:`pipeline.rjShaderImportExport.ShaderImportExport.deleteContainers` is the actuall command that also works without a UI.
+		")
+                        (reparse-symbol indented_block_body) [33226 33775])
+                    ("deleteContainers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33800 33804])
+                            ("checkedContainers" variable nil (reparse-symbol function_parameters) [33806 33823])
+                            ("delRLVL" variable nil (reparse-symbol function_parameters) [33825 33832])
+                            ("delSHD" variable nil (reparse-symbol function_parameters) [33834 33840])
+                            ("args" variable nil (reparse-symbol function_parameters) [33847 33852]))                          
+                        :documentation "
+		Delete Containers
+
+		:param checkContainers: list
+		:param deleteVops: boolean
+		:param deleteShading: boolean
+		")
+                        (reparse-symbol indented_block_body) [33779 37380])
+                    ("checkUsed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37396 37400])
+                            ("checkMode" variable nil (reparse-symbol function_parameters) [37402 37411])
+                            ("check" variable nil (reparse-symbol function_parameters) [37413 37418])
+                            ("namespace" variable nil (reparse-symbol function_parameters) [37420 37429]))                          
+                        :documentation "
+		If the checkMode is 'Used' then it will check of the namespace of the object is the same as the namespace parsed. With any other checkMode this 
+		function will return True.
+
+		:param checkMode: str
+		:param check: str ( Used / All )
+		:param namespace: str
+		:returns: boolean
+		")
+                        (reparse-symbol indented_block_body) [37382 37878])
+                    ("checkOverrides" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37900 37904])
+                            ("shdGrp" variable nil (reparse-symbol function_parameters) [37906 37912]))                          
+                        :documentation "
+		Check the connections of a shadingGroup to a renderlayer to find out of the particular shadingGroup has
+		overrides on different renderlayers. If this is the case then those shadingGroups will be added to the list and also 
+		made able for export.
+
+		:param shadingGroup: str
+		:returns: shadingGroupList ( list )
+		")
+                        (reparse-symbol indented_block_body) [37881 38928])
+                    ("setTags" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38943 38947])
+                            ("shdGrp" variable nil (reparse-symbol function_parameters) [38949 38955])
+                            ("shapeAssignment" variable nil (reparse-symbol function_parameters) [38957 38972])
+                            ("faceAssignment" variable nil (reparse-symbol function_parameters) [38974 38988])
+                            ("subDAssignment" variable nil (reparse-symbol function_parameters) [38990 39004])
+                            ("nurbsAssignment" variable nil (reparse-symbol function_parameters) [39006 39021]))                          
+                        :documentation "
+		This function will tag the shadingGroup with its members based on type. The string is already compiled in another function.
+		This function will just handle the tagging or removing of the tags process.
+
+		:param shadingGroup: str
+		:param shapeAssignment: str
+		:param faceAssignment: str
+		:param subDAssignment: str
+		:param nurbsAssignment: str
+		")
+                        (reparse-symbol indented_block_body) [38931 40942])
+                    ("storeShaderData" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40970 40974])
+                            ("container" variable nil (reparse-symbol function_parameters) [40976 40985])
+                            ("args" variable nil (reparse-symbol function_parameters) [40987 40992]))                          
+                        :documentation "
+		This function will read the export settings from parsed container. It will loop over the shadinggroups and store its members. 
+		It will also process VOPs/Renderlayer/Fur/Mesh Lights/Render Elements and Constraints. All information is stored on either the container or for example the shadingGroup.
+
+		:param container: str
+		")
+                        (reparse-symbol indented_block_body) [40950 65041])
+                    ("storeInContainer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [65071 65075])
+                            ("container" variable nil (reparse-symbol function_parameters) [65077 65086])
+                            ("storeData" variable nil (reparse-symbol function_parameters) [65088 65097]))                          
+                        :documentation "
+		This function will actually put all the nodes inside of the container. After this exception function are ran to make sure
+		that all the information is captured. 
+
+		:param container: str
+		:param storeData: list
+		")
+                        (reparse-symbol indented_block_body) [65050 71387])
+                    ("exportToLibrary" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [72550 72554])
+                            ("args" variable nil (reparse-symbol function_parameters) [72556 72561]))                          
+                        :documentation "
+		OBSOLETE
+		")
+                        (reparse-symbol indented_block_body) [72530 74853])
+                    ("exportShadersPre" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [74883 74887])
+                            ("args" variable nil (reparse-symbol function_parameters) [74889 74894]))                          
+                        :documentation "
+		This is a pre-function for the actual animation export. It will handle the writing of the XML and gathers all the containers which are selected from the UI.
+		:func:`pipeline.rjShaderImportExport.ShaderImportExport.exportShaders` is the actuall command that also works without an UI.
+		")
+                        (reparse-symbol indented_block_body) [74862 75445])
+                    ("exportShaders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [75469 75473])
+                            ("checkedContainers" variable nil (reparse-symbol function_parameters) [75475 75492])
+                            ("UImode" variable nil (reparse-symbol function_parameters) [75494 75500])
+                            ("args" variable nil (reparse-symbol function_parameters) [75508 75513]))                          
+                        :documentation "
+		This function handles the exporting of the shading. It processes the containers based on their options and state within the pipeline.
+		The container is tagged with the scene file information and export selected as an .shd file.
+		
+		:param containers: list
+		:param UImode: boolean
+		:returns: publishedFiles ( list )
+		")
+                        (reparse-symbol indented_block_body) [75451 76507])
+                    ("exportBatchShaders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [76533 76537])
+                            ("exportList" variable nil (reparse-symbol function_parameters) [76539 76549])
+                            ("args" variable nil (reparse-symbol function_parameters) [76551 76556]))                          
+                        :documentation "
+		OUTDATED ( AVOID USAGE )
+		")
+                        (reparse-symbol indented_block_body) [76510 77119])
+                    ("exportBatch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [77138 77142])
+                            ("args" variable nil (reparse-symbol function_parameters) [77144 77149]))                          
+                        :documentation "
+		OUTDATED ( AVOID USAGE )
+		")
+                        (reparse-symbol indented_block_body) [77122 78262])
+                    ("exportShadersProxy" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [78290 78294])
+                            ("getContainers" variable nil (reparse-symbol function_parameters) [78296 78309])
+                            ("args" variable nil (reparse-symbol function_parameters) [78311 78316]))                          
+                        :documentation "
+		This function will construct the proxy command as a string and will send it too the farm.
+		On the farm the proxy will be generated. After the proxy generation is done it will open up the original file
+		and replace the geometry with proxies, the file is then saved in the proxy folder.
+
+		:param containers: list
+		")
+                        (reparse-symbol indented_block_body) [78267 79584])
+                    ("exportShadersProxyBatch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [79617 79621])
+                            ("getContainers" variable nil (reparse-symbol function_parameters) [79623 79636])
+                            ("args" variable nil (reparse-symbol function_parameters) [79638 79643]))                          
+                        :documentation "
+		The container are extracted and the scene is processed too see if it is suitable for proxy generation. If there are objects invisibly the
+		publishing process will fail. After this the material are replaced with a format which can be reconstructed for assignment since the VRayMeshMaterial
+		takes materials instead of shadingGroups. After this the proxies are created and the original geometry will be replaced with the proxies.
+
+		:param containers: list
+		")
+                        (reparse-symbol indented_block_body) [79589 81097])
+                    ("publishXML" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [81122 81126])
+                            ("publishPath" variable nil (reparse-symbol function_parameters) [81128 81139])
+                            ("args" variable nil (reparse-symbol function_parameters) [81141 81146]))                          
+                        :documentation "
+		This function will update the entity XML and Shotgun if a connect can be found. In shotgun a new version will be created and the status 
+		of the entity will be updated.
+
+		:param publishPath: str
+		")
+                        (reparse-symbol indented_block_body) [81107 82256])
+                    ("importShaders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [82277 82281])
+                            ("args" variable nil (reparse-symbol function_parameters) [82283 82288]))                          
+                        :documentation "
+		This function will open up a file browser where you can choose an .shd file to import. The namespace if the object is extracted from the entity xml file.
+		If the namespace is not found a namespace UI will pop-up instead.
+		")
+                        (reparse-symbol indented_block_body) [82259 83288])
+                    ("referenceShaders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [83313 83317])
+                            ("args" variable nil (reparse-symbol function_parameters) [83319 83324]))                          
+                        :documentation "
+		This function will open up a file browser where you can choose an .shd file to reference. The namespace if the object is extracted from the entity xml file.
+		If the namespace is not found a namespace UI will pop-up instead.
+		")
+                        (reparse-symbol indented_block_body) [83292 84358])
+                    ("assignShadersPre" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [84382 84386])
+                            ("args" variable nil (reparse-symbol function_parameters) [84388 84393]))                          
+                        :documentation "
+		This is a pre-function for the actual shading assigning. It will gather all the information from the UI.
+		:func:`pipeline.rjShaderImportExport.ShaderImportExport.assignShaders` is the actuall command that also works without an UI.
+		")
+                        (reparse-symbol indented_block_body) [84361 84911])
+                    ("assignShaders" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [84936 84940])
+                            ("checkedContainers" variable nil (reparse-symbol function_parameters) [84942 84959])
+                            ("overNS" variable nil (reparse-symbol function_parameters) [84961 84967])
+                            ("replaceNSs" variable nil (reparse-symbol function_parameters) [84969 84979])
+                            ("args" variable nil (reparse-symbol function_parameters) [84984 84989]))                          
+                        :documentation "
+		This function handles the assigning of the shading. All the shadingGroups in the selected containers will be processed and will try to be connected.
+		If this fails a fail UI will inform the user that something went wrong.
+
+		:param containers: list
+		:param overNS: boolean
+		:param replaceNS: str
+		")
+                        (reparse-symbol indented_block_body) [84918 99435])
+                    ("buildRenderLayersVOPSPre" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [99470 99474])
+                            ("args" variable nil (reparse-symbol function_parameters) [99476 99481]))                          
+                        :documentation "
+		This is a pre-function for the actual vop/renderlayer generaton. It will gather all the information from the UI.
+		:func:`pipeline.rjShaderImportExport.ShaderImportExport.buildRenderLayersVOPS` is the actuall command that also works without an UI.
+		")
+                        (reparse-symbol indented_block_body) [99441 100228])
+                    ("buildRenderLayersVOPS" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [100258 100262])
+                            ("checkedContainers" variable nil (reparse-symbol function_parameters) [100264 100281])
+                            ("overNS" variable nil (reparse-symbol function_parameters) [100283 100289])
+                            ("replaceNSs" variable nil (reparse-symbol function_parameters) [100291 100301])
+                            ("mode" variable nil (reparse-symbol function_parameters) [100303 100307])
+                            ("buildRL" variable nil (reparse-symbol function_parameters) [100309 100316])
+                            ("buildML" variable nil (reparse-symbol function_parameters) [100323 100330])
+                            ("args" variable nil (reparse-symbol function_parameters) [100337 100342]))                          
+                        :documentation "
+		This function handles the assigning of the shading. All the containers will be processed to gather all the information.
+		From this information the renderlayers / vops and mesh lights are build. If this fails a fail UI will inform the user that something went wrong.
+
+		:param containers: list
+		:param overNS: boolean
+		:param replaceNS: str
+		:param mode: int
+		:param buildRL: boolean
+		:param buildML: boolean
+		")
+                        (reparse-symbol indented_block_body) [100232 122843])
+                    ("getProxy" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [122865 122869]))                          
+                        :documentation "
+		This function will process the vops and its members too see at what highest level proxies can be generated.
+		The rule is that the members that are put in the VOP will never be proxied, this is the user input to controle 
+		the level of proxies. After this all children will be processed to see if it has connections, objectIDs, deformed
+		objects. This way the function will try to generate the least amount of poxies nessecary but at the same time not 
+		destroy a rig.
+
+		:returns: refNode ( str ), completeProxyList ( list ), visibilityClash ( list ), ignoredList ( list ), ignoredObjectList ( list )
+		")
+                        (reparse-symbol indented_block_body) [122852 129238])
+                    ("createProxy" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [129258 129262])
+                            ("filename" variable nil (reparse-symbol function_parameters) [129264 129272])
+                            ("proxyList" variable nil (reparse-symbol function_parameters) [129274 129283]))                          
+                        :documentation "
+		This function will take the information from the :func:`pipeline.rjShaderImportExport.ShaderImportExport.getProxy` function. It will loop over the 
+		proxyList and will generate proxies with the VRay mel commands. Information is generated to be able to delete the meshes and replace it with the proxies later on.
+
+		:param filename: str
+		:param proxyList: list
+		:returns: proxyDir ( str ), proxyInformation ( tuple )
+		")
+                        (reparse-symbol indented_block_body) [129242 132268])
+                    ("replaceProxy" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [132288 132292])
+                            ("filename" variable nil (reparse-symbol function_parameters) [132294 132302])
+                            ("proxyDir" variable nil (reparse-symbol function_parameters) [132304 132312])
+                            ("proxyReplaceList" variable nil (reparse-symbol function_parameters) [132314 132330])
+                            ("ignoreList" variable nil (reparse-symbol function_parameters) [132332 132342])
+                            ("ignoreObjectList" variable nil (reparse-symbol function_parameters) [132344 132360]))                          
+                        :documentation "
+		This function will take all the information from the :func:`pipeline.rjShaderImportExport.ShaderImportExport.getProxy` and :func:`pipeline.rjShaderImportExport.ShaderImportExport.createProxy` functions.
+		To be able to replace the meshes with the proxies. This function will open up the original published model or rig file after the replacing is done it will save it in the proxy folder.
+
+		:param filename: str
+		:param proxyDir: str
+		:param proxyReplaceList: list
+		:param ignoreList: list
+		:param ignoreObjectList: list
+		:returns: proxyFilename ( str ), proxyMeshFullPathList ( list )
+		")
+                        (reparse-symbol indented_block_body) [132271 136619])
+                    ("createAlembic" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [136640 136644])
+                            ("alembicFile" variable nil (reparse-symbol function_parameters) [136646 136657]))                          
+                        :documentation "
+		OBSOLETE
+		")
+                        (reparse-symbol indented_block_body) [136622 137357])
+                    ("replaceMaterials" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [137381 137385]))                          
+                        :documentation "
+		Replace all the materials, this needs to be done so the re-assignment can be done later. VRayMesh materials work with materials and 
+		not with ShadingGroups.
+		")
+                        (reparse-symbol indented_block_body) [137360 137821])
+                    ("matIDCheck" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [137842 137846]))                          )
+                        (reparse-symbol indented_block_body) [137827 140641])
+                    ("sortContainersForPublish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [140702 140706])
+                            ("containerList" variable nil (reparse-symbol function_parameters) [140708 140721]))                          
+                        :documentation "
+		This function will sort all container and will determain in which state of the pipeline it is. Based on this it will determine which function to run.
+
+		:param containers: list
+		:returns: publishedFiles ( list )
+		")
+                        (reparse-symbol indented_block_body) [140673 143027])
+                    ("saveFileForPublish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [143053 143057])
+                            ("container" variable nil (reparse-symbol function_parameters) [143059 143068])
+                            ("delete" variable nil (reparse-symbol function_parameters) [143070 143076]))                          
+                        :documentation "
+		This function will actually save the file. The delete variable will determine if file used the process the information should be deleted ( Farm ).
+
+		:param container: str
+		:returns: publishedFile ( str )
+		")
+                        (reparse-symbol indented_block_body) [143030 144316])
+                    ("removeNamespaces" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [144339 144343])
+                            ("container" variable nil (reparse-symbol function_parameters) [144345 144354])
+                            ("args" variable nil (reparse-symbol function_parameters) [144356 144361]))                          
+                        :documentation "
+		Remove namespace based on the container.
+
+		:param container: str
+		")
+                        (reparse-symbol indented_block_body) [144318 145051])
+                    ("cleanNamespaces" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [145075 145079])
+                            ("namespace" variable nil (reparse-symbol function_parameters) [145081 145090])
+                            ("args" variable nil (reparse-symbol function_parameters) [145092 145097]))                          
+                        :documentation "
+		Clean Namespace
+
+		:param namespace: str
+		")
+                        (reparse-symbol indented_block_body) [145055 145865])
+                    ("deleteShadingBin" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [145890 145894])
+                            ("container" variable nil (reparse-symbol function_parameters) [145896 145905])
+                            ("args" variable nil (reparse-symbol function_parameters) [145907 145912]))                          
+                        :documentation "
+		Delete Shading Bin
+
+		:param container: str
+		")
+                        (reparse-symbol indented_block_body) [145869 146524])
+                    ("rebuildPath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [146547 146551])
+                            ("fullPath" variable nil (reparse-symbol function_parameters) [146553 146561])
+                            ("returnMode" variable nil (reparse-symbol function_parameters) [146563 146573])
+                            ("instanceMode" variable nil (reparse-symbol function_parameters) [146577 146589])
+                            ("args" variable nil (reparse-symbol function_parameters) [146597 146602]))                          
+                        :documentation "
+		This function will loop through a full path of an object untill it finds the lowest single
+		encounter of the object.
+
+		:param fullPath: str
+		:returns: buildPath ( str / None )
+		")
+                        (reparse-symbol indented_block_body) [146531 147373])
+                    ("fillNameContainer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [147398 147402]))                          
+                        :documentation "
+		OBSOLETE
+		")
+                        (reparse-symbol indented_block_body) [147376 147688])
+                    ("returnListConnectionsAttr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [147723 147727])
+                            ("attrList" variable nil (reparse-symbol function_parameters) [147729 147737]))                          )
+                        (reparse-symbol indented_block_body) [147693 147891])
+                    ("returnListConnectionsFull" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [147924 147928])
+                            ("objList" variable nil (reparse-symbol function_parameters) [147930 147937]))                          )
+                        (reparse-symbol indented_block_body) [147894 148049]))                  
+                :type "class")
+                nil [528 148049])
+            ("\"\"\"
+allVops = cmds.ls(type=\"VRayObjectProperties\")
+if allVops:
+    memberList = []
+    for vop in allVops:
+        m = cmds.listConnections(vop, type=\"transform\")
+        if m:
+            memberList.extend(m)
+
+    if memberList:
+        xmin = []
+        ymin = []
+        zmin = []
+        xmax = []
+        ymax = []
+        zmax = []
+
+        for member in memberList:
+            bbox = cmds.xform(member, query=True, ws=True, bb=True)
+
+            xmin.append(bbox[0])
+            ymin.append(bbox[1])
+            zmin.append(bbox[2])
+            xmax.append(bbox[3])
+            ymax.append(bbox[4])
+            zmax.append(bbox[5])
+
+        xmin = min(xmin)
+        ymin = min(ymin)
+        zmin = min(zmin)
+        xmax = max(xmax)
+        ymax = max(ymax)
+        zmax = max(zmax)
+
+   
+        print xmin, ymin, zmin, xmax, ymax, zmax
+
+        centerPivot = [(xmin+xmax)/2, (ymin+ymax)/2, (zmin+zmax)/2]
+        print centerPivot
+
+        if xmax-xmin >= zmax-zmin:
+            extendDistance = ((xmax-xmin)+(ymax-ymin))*1.5
+        else:
+            extendDistance = ((zmax-zmin)+(ymax-ymin))*1.5
+
+        print extendDistance
+
+        turnTableLoc = cmds.spaceLocator(n=\"turnTableRotateLOC\")[0]
+        rotateLoc = cmds.spaceLocator(n=\"cameraRotateLOC\")[0]
+        cam = cmds.camera(n=\"turnTableCamera\")
+
+        cmds.setAttr(rotateLoc + \".translateX\", centerPivot[0])
+        cmds.setAttr(rotateLoc + \".translateY\", centerPivot[1])
+        cmds.setAttr(rotateLoc + \".translateZ\", centerPivot[2])
+
+        cmds.setAttr(turnTableLoc + \".translateX\", centerPivot[0])
+        cmds.setAttr(turnTableLoc + \".translateY\", centerPivot[1])
+        cmds.setAttr(turnTableLoc + \".translateZ\", centerPivot[2])
+
+        cmds.setAttr(cam[0] + \".translateX\", centerPivot[0])
+        cmds.setAttr(cam[0] + \".translateY\", centerPivot[1])
+        cmds.setAttr(cam[0] + \".translateZ\", centerPivot[2] + extendDistance)
+
+        cmds.setAttr(cam[1] + \".farClipPlane\", 1000000)
+
+        cmds.parent(rotateLoc, turnTableLoc)
+        cmds.parent(cam[0], rotateLoc)
+
+        cmds.setAttr(rotateLoc + \".rotateX\", -20)
+        cmds.setKeyframe(turnTableLoc, v=0, at='rotateY', t=1, itt=\"linear\", ott=\"linear\")
+        cmds.setKeyframe(turnTableLoc, v=360, at='rotateY', t=101, itt=\"linear\", ott=\"linear\")
+\"\"\"" code nil nil [148053 150347]))          
+    :file "rjShaderImportExport.py"
+    :pointmax 150348
+    :fsize 150347
+    :lastmodtime '(21941 61824 0 0)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!mnt!data-1!repositories!v1.0!MAYA!python!pipeline!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

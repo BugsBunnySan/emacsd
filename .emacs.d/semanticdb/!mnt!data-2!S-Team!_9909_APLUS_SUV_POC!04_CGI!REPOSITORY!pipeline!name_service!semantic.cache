@@ -1,0 +1,150 @@
+;; Object name_service/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "name_service/"
+  :tables (list 
+   (semanticdb-table "services.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("abc" include nil nil [1 11])
+            ("re" include nil nil [12 21])
+            ("context" include nil nil [23 37])
+            ("context.service" include nil nil [39 68])
+            ("IDGeneratorI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [146 150])
+                            ("obj" variable nil (reparse-symbol function_parameters) [152 155]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [109 171]))                  
+                :type "class")
+                nil [70 171])
+            ("NameServiceI" type
+               (:superclasses ("context.service.Interface")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [283 287]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [260 264])
+                            ("config" variable nil (reparse-symbol function_parameters) [266 272]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [223 288])
+                    ("_resolve_template_references" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [350 354]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [293 370])
+                    ("_load_templates" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [419 423]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [375 439])
+                    ("get_template" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [485 489])
+                            ("template_name" variable nil (reparse-symbol function_parameters) [491 504]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [444 520])
+                    ("get_token" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [563 567])
+                            ("tokent_name" variable nil (reparse-symbol function_parameters) [569 580]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [525 596])
+                    ("resolve" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [637 641])
+                            ("template_name" variable nil (reparse-symbol function_parameters) [643 656])
+                            ("kv" variable nil (reparse-symbol function_parameters) [658 660]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [601 676])
+                    ("match" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [715 719])
+                            ("template_name" variable nil (reparse-symbol function_parameters) [721 734])
+                            ("name" variable nil (reparse-symbol function_parameters) [736 740])
+                            ("kv" variable nil (reparse-symbol function_parameters) [742 744]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [681 765]))                  
+                :type "class")
+                nil [172 765])
+            ("NameService" type
+               (:superclasses ("c_s.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [803 834])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [882 954])
+                            ("self" variable nil (reparse-symbol indented_block_body) [964 997])
+                            ("self" code nil (reparse-symbol indented_block_body) [1007 1029]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [853 857])
+                            ("input_config" variable nil (reparse-symbol function_parameters) [859 871]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [840 1030])
+                    ("_resolve_template_references" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1068 1072])
+                            ("template" variable nil (reparse-symbol function_parameters) [1074 1082]))                          )
+                        (reparse-symbol indented_block_body) [1035 1666])
+                    ("resolve" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1683 1687])
+                            ("template_name" variable nil (reparse-symbol function_parameters) [1689 1702])
+                            ("kv" variable nil (reparse-symbol function_parameters) [1704 1706]))                          )
+                        (reparse-symbol indented_block_body) [1671 1962])
+                    ("match" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1977 1981])
+                            ("template_name" variable nil (reparse-symbol function_parameters) [1983 1996])
+                            ("name" variable nil (reparse-symbol function_parameters) [1998 2002])
+                            ("kv" variable nil (reparse-symbol function_parameters) [2004 2006]))                          )
+                        (reparse-symbol indented_block_body) [1967 2170])
+                    ("get_template" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2192 2196])
+                            ("template_name" variable nil (reparse-symbol function_parameters) [2198 2211]))                          )
+                        (reparse-symbol indented_block_body) [2175 2260])
+                    ("get_token" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2279 2283])
+                            ("token_name" variable nil (reparse-symbol function_parameters) [2285 2295]))                          )
+                        (reparse-symbol indented_block_body) [2265 2453]))                  
+                :type "class")
+                nil [767 2453]))          
+    :file "services.py"
+    :pointmax 2453
+    :fsize 2541
+    :lastmodtime '(22506 29381 186158 577000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!mnt!data-2!S-Team!_9909_APLUS_SUV_POC!04_CGI!REPOSITORY!pipeline!name_service!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

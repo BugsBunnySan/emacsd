@@ -1,0 +1,245 @@
+;; Object actors/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "actors/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("actors" include nil nil [1 14])
+            ("reload" code nil nil [15 29]))          
+      :file "__init__.py"
+      :pointmax 30
+      :fsize 31
+      :lastmodtime '(22279 42919 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "actors.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("abc" include nil nil [1 11])
+            ("os" include nil nil [12 21])
+            ("context.service" include nil nil [23 45])
+            ("reload" code nil nil [46 69])
+            ("process_graph" include nil nil [71 91])
+            ("reload" code nil nil [92 113])
+            ("ActorI" type
+               (:superclasses ("context.service.Interface")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [259 263]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [197 201])
+                            ("node" variable nil (reparse-symbol function_parameters) [203 207])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [209 223])
+                            ("signal" variable nil (reparse-symbol function_parameters) [225 231])
+                            ("graph_processor" variable nil (reparse-symbol function_parameters) [233 248]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [160 264])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [301 305]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [269 321]))                  
+                :type "class")
+                nil [115 321])
+            ("ActorService" type
+               (:superclasses ("context.service.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [371 396])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [477 505])
+                            ("self" variable nil (reparse-symbol indented_block_body) [514 552])
+                            ("self" variable nil (reparse-symbol indented_block_body) [561 591])
+                            ("self" variable nil (reparse-symbol indented_block_body) [600 639]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [415 419])
+                            ("node" variable nil (reparse-symbol function_parameters) [421 425])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [427 441])
+                            ("signal" variable nil (reparse-symbol function_parameters) [443 449])
+                            ("graph_processor" variable nil (reparse-symbol function_parameters) [451 466]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [402 640])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [653 657]))                          )
+                        (reparse-symbol indented_block_body) [645 711]))                  
+                :type "class")
+                nil [322 711])
+            ("ActorSignalHandler" type
+               (:superclasses ("process_graph.graph.SignalHandler")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [824 870])
+                            ("self" variable nil (reparse-symbol indented_block_body) [879 910]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [790 794])
+                            ("node" variable nil (reparse-symbol function_parameters) [796 800])
+                            ("service_ids" variable nil (reparse-symbol function_parameters) [802 813]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [777 911])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [937 941])
+                            ("signal" variable nil (reparse-symbol function_parameters) [943 949])
+                            ("graph_processor" variable nil (reparse-symbol function_parameters) [951 966]))                          )
+                        (reparse-symbol indented_block_body) [916 1144]))                  
+                :type "class")
+                nil [712 1144])
+            ("collections" include nil nil [1172 1190])
+            ("process_graph.graph" include nil nil [1192 1218])
+            ("reload" code nil nil [1219 1246])
+            ("workflow.graph.services" include nil nil [1248 1287])
+            ("reload" code nil nil [1288 1301])
+            ("PathedDataStackNode" type
+               (:superclasses ("process_graph.graph.Node" "wng_s.WorkflowNodeService")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [1387 1417])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1488 1531])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1540 1613])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1622 1696])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1706 1748]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1436 1440])
+                            ("in_template_name" variable nil (reparse-symbol function_parameters) [1442 1458])
+                            ("out_template_name" variable nil (reparse-symbol function_parameters) [1460 1477]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1423 1749])
+                    ("get_next_highest_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1783 1787]))                          )
+                        (reparse-symbol indented_block_body) [1754 2092])
+                    ("get_resource_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2119 2123])
+                            ("kv" variable nil (reparse-symbol function_parameters) [2125 2127]))                          )
+                        (reparse-symbol indented_block_body) [2097 2328])
+                    ("add_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2350 2354])
+                            ("resource" variable nil (reparse-symbol function_parameters) [2356 2364]))                          )
+                        (reparse-symbol indented_block_body) [2333 2419])
+                    ("match" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2434 2438])
+                            ("url" variable nil (reparse-symbol function_parameters) [2440 2443]))                          )
+                        (reparse-symbol indented_block_body) [2424 2634]))                  
+                :type "class")
+                nil [1303 2634])
+            ("NewVersionCondition" type
+               (:superclasses ("process_graph.graph.Condition")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2744 2804])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2814 2838]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2710 2714])
+                            ("node" variable nil (reparse-symbol function_parameters) [2716 2720])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [2722 2733]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2697 2839])
+                    ("_get_unseen_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2868 2872]))                          )
+                        (reparse-symbol indented_block_body) [2844 3140])
+                    ("matches" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3157 3161]))                          )
+                        (reparse-symbol indented_block_body) [3145 3270])
+                    ("_compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3293 3297]))                          )
+                        (reparse-symbol indented_block_body) [3275 3370])
+                    ("signal_send" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3391 3395])
+                            ("signal" variable nil (reparse-symbol function_parameters) [3397 3403]))                          )
+                        (reparse-symbol indented_block_body) [3375 3462]))                  
+                :type "class")
+                nil [2635 3462])
+            ("threading" include nil nil [3491 3507])
+            ("time" include nil nil [3509 3520])
+            ("workflow.nodes.resource" include nil nil [3522 3560])
+            ("reload" code nil nil [3561 3573])
+            ("FFMPEGActorService" type
+               (:superclasses ("ActorService" "threading.Thread")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [3637 3668])
+                    ("__init__" function
+                       (:suite 
+                          ( ("threading" code nil (reparse-symbol indented_block_body) [3749 3780])
+                            ("super" code nil (reparse-symbol indented_block_body) [3789 3876])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3886 3926])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3936 3989])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3998 4056])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4065 4111])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4121 4178])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4188 4243]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3687 3691])
+                            ("node" variable nil (reparse-symbol function_parameters) [3693 3697])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [3699 3713])
+                            ("signal" variable nil (reparse-symbol function_parameters) [3715 3721])
+                            ("graph_processor" variable nil (reparse-symbol function_parameters) [3723 3738]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3674 4244])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4257 4261]))                          )
+                        (reparse-symbol indented_block_body) [4249 5499]))                  
+                :type "class")
+                nil [3575 5499]))          
+      :file "actors.py"
+      :pointmax 5499
+      :fsize 5661
+      :lastmodtime '(22295 41561 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "a_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [1 10])
+            ("context" include nil nil [12 26])
+            ("reload" code nil nil [27 42])
+            ("actors" include nil nil [44 57])
+            ("reload" code nil nil [58 72])
+            ("test_number_one" function (:documentation "
+    n1(data) ]--(newdatacondition)---(actorsignalhandler(ffmpeg threaded))--> n2(patheddata) ]--(newversioncondition)---(versionflarehandler)--> n3(version_flare)
+    ") nil [74 2910])
+            ("test_number_two" function (:documentation "
+    n1(data) ---> n2(patheddata) ---> n3(version_flare)
+    ") nil [2911 5487])
+            ("test_number_three" function nil nil [5488 6175]))          
+      :file "a_test.py"
+      :pointmax 6175
+      :fsize 6335
+      :lastmodtime '(22295 45240 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 6144 . 6175) (NAME 6490 . 6493) ($EOI 6501 . 6501) (STRING_LITERAL 6311 . 6367) (NEWLINE 6368 . 6369) (NAME 6369 . 6379) (NAME 6396 . 6402) (NAME 6403 . 6405) (NUMBER_LITERAL 6406 . 6424) (LT 6426 . 6427) (STRING_LITERAL 6204 . 6245) (NEWLINE 6246 . 6247) (NAME 6247 . 6257) (NAME 6274 . 6280) (NAME 6281 . 6283) (NUMBER_LITERAL 6284 . 6302) (LT 6304 . 6305) (NAME 6140 . 6150) (NAME 6167 . 6173) (NAME 6174 . 6176) (NUMBER_LITERAL 6177 . 6195) (LT 6197 . 6198) (INDENT_BLOCK 5970 . 6140) (NAME 6484 . 6487) ($EOI 6495 . 6495) (STRING_LITERAL 6305 . 6361) (NEWLINE 6362 . 6363) (NAME 6363 . 6373) (NAME 6390 . 6396) (NAME 6397 . 6399) (NUMBER_LITERAL 6400 . 6418) (LT 6420 . 6421) (STRING_LITERAL 6198 . 6239) (NEWLINE 6240 . 6241) (NAME 6241 . 6251) (NAME 6268 . 6274) (NAME 6275 . 6277) (NUMBER_LITERAL 6278 . 6296) (LT 6298 . 6299) (NAME 6134 . 6144) (NAME 6161 . 6167) (NAME 6168 . 6170) (NUMBER_LITERAL 6171 . 6189) (LT 6191 . 6192))))
+  :file "!drive_c!Users!shaas!workspace!pipeline_lab!actors!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

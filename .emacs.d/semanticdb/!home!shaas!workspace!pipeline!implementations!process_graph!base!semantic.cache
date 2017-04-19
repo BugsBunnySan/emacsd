@@ -1,0 +1,189 @@
+;; Object base/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "base/"
+  :tables (list 
+   (semanticdb-table "services.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("pprint" include nil nil [1 27])
+            ("process_graph.graph" include nil nil [29 63])
+            ("DataSignal" type
+               (:superclasses ("pg_g.Signal")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [100 131])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [149 153]))                          )
+                        (reparse-symbol indented_block_body) [137 225])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [243 247]))                          )
+                        (reparse-symbol indented_block_body) [230 280]))                  
+                :type "class")
+                nil [65 280])
+            ("VoidNode" type
+               (:superclasses ("pg_g.Node")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [312 341]))                  
+                :type "class")
+                nil [281 342])
+            ("FalseCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [385 420])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [437 441])
+                            ("node" variable nil (reparse-symbol function_parameters) [443 447])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [449 458]))                          )
+                        (reparse-symbol indented_block_body) [426 482]))                  
+                :type "class")
+                nil [343 482])
+            ("TrueCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [524 558])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [575 579])
+                            ("node" variable nil (reparse-symbol function_parameters) [581 585])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [587 596]))                          )
+                        (reparse-symbol indented_block_body) [564 619]))                  
+                :type "class")
+                nil [483 619])
+            ("DirectConnection" type
+               (:superclasses ("pg_g.Connection")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [665 702]))                  
+                :type "class")
+                nil [620 703])
+            ("RemoteOutConnection" type
+               (:superclasses ("pg_g.Connection")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [753 794])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [939 1150])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1159 1200]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [813 817])
+                            ("from_node_id" variable nil (reparse-symbol function_parameters) [819 831])
+                            ("condition_id" variable nil (reparse-symbol function_parameters) [833 845])
+                            ("graph" variable nil (reparse-symbol function_parameters) [864 869])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [876 883])
+                            ("to_connection_id" variable nil (reparse-symbol function_parameters) [907 923]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [800 1201])
+                    ("set_to_ids" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1221 1225])
+                            ("to_connection_id" variable nil (reparse-symbol function_parameters) [1227 1243]))                          )
+                        (reparse-symbol indented_block_body) [1206 1296])
+                    ("make_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1321 1325])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [1327 1336]))                          )
+                        (reparse-symbol indented_block_body) [1301 1443])
+                    ("send_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1464 1468])
+                            ("signal" variable nil (reparse-symbol function_parameters) [1470 1476])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [1478 1487]))                          )
+                        (reparse-symbol indented_block_body) [1448 1686]))                  
+                :type "class")
+                nil [705 1686])
+            ("RemoteInConnection" type
+               (:superclasses ("pg_g.Connection")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [1734 1774])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1948 2159])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2168 2213])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2222 2265]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1793 1797])
+                            ("to_node_id" variable nil (reparse-symbol function_parameters) [1799 1809])
+                            ("signal_handler_id" variable nil (reparse-symbol function_parameters) [1811 1828])
+                            ("graph" variable nil (reparse-symbol function_parameters) [1847 1852])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [1859 1866])
+                            ("from_connection_id" variable nil (reparse-symbol function_parameters) [1890 1908])
+                            ("from_condition_id" variable nil (reparse-symbol function_parameters) [1915 1932]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1780 2266])
+                    ("set_from_ids" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2288 2292])
+                            ("from_connection_id" variable nil (reparse-symbol function_parameters) [2294 2312])
+                            ("from_condition_id" variable nil (reparse-symbol function_parameters) [2314 2331]))                          )
+                        (reparse-symbol indented_block_body) [2271 2440])
+                    ("make_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2465 2469])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [2471 2480]))                          )
+                        (reparse-symbol indented_block_body) [2445 2726])
+                    ("signal_received" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2751 2755])
+                            ("signal_id" variable nil (reparse-symbol function_parameters) [2757 2766])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [2768 2777])
+                            ("success" variable nil (reparse-symbol function_parameters) [2779 2786]))                          )
+                        (reparse-symbol indented_block_body) [2731 3020])
+                    ("signal_handled" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3044 3048])
+                            ("signal_id" variable nil (reparse-symbol function_parameters) [3050 3059])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3061 3070])
+                            ("success" variable nil (reparse-symbol function_parameters) [3072 3079]))                          )
+                        (reparse-symbol indented_block_body) [3025 3312]))                  
+                :type "class")
+                nil [1687 3312])
+            ("NopSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [3361 3399])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3426 3430])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [3432 3443])
+                            ("signal_data" variable nil (reparse-symbol function_parameters) [3445 3456])
+                            ("node" variable nil (reparse-symbol function_parameters) [3458 3462])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3464 3473]))                          )
+                        (reparse-symbol indented_block_body) [3405 3496]))                  
+                :type "class")
+                nil [3313 3496]))          
+    :file "services.py"
+    :pointmax 3496
+    :fsize 3495
+    :lastmodtime '(22617 21577 633505 10000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "__init__.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("services" include nil nil [1 16]))          
+    :file "__init__.py"
+    :pointmax 17
+    :fsize 16
+    :lastmodtime '(22498 51702 308976 980000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!shaas!workspace!pipeline!implementations!process_graph!base!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

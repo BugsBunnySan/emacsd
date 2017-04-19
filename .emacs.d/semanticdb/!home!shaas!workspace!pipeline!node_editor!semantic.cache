@@ -1,0 +1,1328 @@
+;; Object node_editor/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "node_editor/"
+  :tables (list 
+   (semanticdb-table "__main__.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("sys" include nil nil [1 11])
+            ("PySide" include nil nil [13 37])
+            ("graph" include nil nil [39 51])
+            ("editor" include nil nil [52 65])
+            ("process_graph.graph" include nil nil [67 101])
+            ("process_graph.gui" include nil nil [102 136])
+            ("implementations.name_service.uuid" include nil nil [138 178])
+            ("implementations.process_graph.base" include nil nil [179 220])
+            ("add_demo_graph" function (:arguments 
+              ( ("node_editor" variable nil (reparse-symbol function_parameters) [241 252]))              ) nil [222 890])
+            ("run" function nil nil [891 1052])
+            ("run" code nil nil [1053 1058]))          
+    :file "__main__.py"
+    :pointmax 1059
+    :fsize 1058
+    :lastmodtime '(22747 48757 93326 678000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "graph.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("PySide" include nil nil [1 33])
+            ("kvstore.kvstore" include nil nil [35 66])
+            ("node_props_ui" include nil nil [68 106])
+            ("noodle_props_ui" include nil nil [107 149])
+            ("NodeProps" type
+               (:superclasses ("QtGui.QWidget")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [276 322])
+                            ("self" variable nil (reparse-symbol indented_block_body) [332 363])
+                            ("self" variable nil (reparse-symbol indented_block_body) [372 393])
+                            ("self" variable nil (reparse-symbol indented_block_body) [403 428])
+                            ("self" code nil (reparse-symbol indented_block_body) [437 459])
+                            ("if" code nil (reparse-symbol indented_block_body) [469 555])
+                            ("self" code nil (reparse-symbol indented_block_body) [564 585]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [200 204])
+                            ("editor_node" variable nil (reparse-symbol function_parameters) [206 217])
+                            ("editor" variable nil (reparse-symbol function_parameters) [219 225])
+                            ("parent" variable nil (reparse-symbol function_parameters) [232 238])
+                            ("custom_props_ui" variable nil (reparse-symbol function_parameters) [245 260]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [187 586])
+                    ("editor_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [621 625]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [591 661])
+                    ("item" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [689 693]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [666 729])
+                    ("populate_props" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [753 757]))                          )
+                        (reparse-symbol indented_block_body) [734 821])
+                    ("close_props" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [842 846]))                          )
+                        (reparse-symbol indented_block_body) [826 969])
+                    ("process_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [991 995]))                          )
+                        (reparse-symbol indented_block_body) [974 1051])
+                    ("set_custom_props_ui" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1080 1084])
+                            ("custom_props_ui" variable nil (reparse-symbol function_parameters) [1086 1101]))                          )
+                        (reparse-symbol indented_block_body) [1056 1226])
+                    ("update_props" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1248 1252]))                          )
+                        (reparse-symbol indented_block_body) [1231 1350]))                  
+                :type "class")
+                nil [151 1350])
+            ("NoodleProps" type
+               (:superclasses ("QtGui.QWidget")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1473 1521])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1531 1552])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1561 1582])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1592 1619])
+                            ("self" code nil (reparse-symbol indented_block_body) [1628 1650])
+                            ("if" code nil (reparse-symbol indented_block_body) [1660 1746])
+                            ("self" code nil (reparse-symbol indented_block_body) [1755 1776]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1402 1406])
+                            ("noodle" variable nil (reparse-symbol function_parameters) [1408 1414])
+                            ("editor" variable nil (reparse-symbol function_parameters) [1416 1422])
+                            ("custom_props_ui" variable nil (reparse-symbol function_parameters) [1429 1444])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1451 1457]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1389 1777])
+                    ("noodle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1807 1811]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1782 1842])
+                    ("item" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1870 1874]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1847 1905])
+                    ("populate_props" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1929 1933]))                          )
+                        (reparse-symbol indented_block_body) [1910 2088])
+                    ("close_props" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2109 2113]))                          )
+                        (reparse-symbol indented_block_body) [2093 2231])
+                    ("set_custom_props_ui" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2260 2264])
+                            ("custom_props_ui" variable nil (reparse-symbol function_parameters) [2266 2281]))                          )
+                        (reparse-symbol indented_block_body) [2236 2406])
+                    ("update_props" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2428 2432]))                          )
+                        (reparse-symbol indented_block_body) [2411 2530]))                  
+                :type "class")
+                nil [1351 2530])
+            ("Noodle" type
+               (:superclasses ("QtGui.QGraphicsItem")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2677 2733])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2743 2784])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2793 2818])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2828 2842])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2851 2875])
+                            ("self" code nil (reparse-symbol indented_block_body) [2884 2914])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2923 2971])
+                            ("self" code nil (reparse-symbol indented_block_body) [2980 3019])
+                            ("self" code nil (reparse-symbol indented_block_body) [3029 3049])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3059 3081])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3091 3114])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3123 3150])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3160 3210])
+                            ("self" code nil (reparse-symbol indented_block_body) [3219 3246])
+                            ("if" code nil (reparse-symbol indented_block_body) [3256 3382])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3391 3429])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3438 3474])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3484 3505]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2583 2587])
+                            ("from_editor_node" variable nil (reparse-symbol function_parameters) [2589 2605])
+                            ("to_editor_node" variable nil (reparse-symbol function_parameters) [2607 2621])
+                            ("gui_edge" variable nil (reparse-symbol function_parameters) [2628 2636])
+                            ("parent" variable nil (reparse-symbol function_parameters) [2643 2649])
+                            ("scene" variable nil (reparse-symbol function_parameters) [2656 2661]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2570 3506])
+                    ("from_editor_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3546 3550]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [3511 3591])
+                    ("to_editor_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3629 3633]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [3596 3672])
+                    ("gui_edge" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3704 3708]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [3677 3741])
+                    ("name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3769 3773]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [3746 3974])
+                    ("set_editor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3994 3998])
+                            ("editor" variable nil (reparse-symbol function_parameters) [4000 4006]))                          )
+                        (reparse-symbol indented_block_body) [3979 4039])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4056 4060])
+                            ("to_editor_node" variable nil (reparse-symbol function_parameters) [4062 4076]))                          )
+                        (reparse-symbol indented_block_body) [4044 4162])
+                    ("prepare_removal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4187 4191]))                          )
+                        (reparse-symbol indented_block_body) [4167 4426])
+                    ("open_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4451 4455]))                          )
+                        (reparse-symbol indented_block_body) [4431 4762])
+                    ("close_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4788 4792]))                          )
+                        (reparse-symbol indented_block_body) [4767 4825])
+                    ("set_temp_position" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4852 4856])
+                            ("temp_pos" variable nil (reparse-symbol function_parameters) [4858 4866]))                          )
+                        (reparse-symbol indented_block_body) [4830 4903])
+                    ("get_from_point" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4927 4931])
+                            ("local" variable nil (reparse-symbol function_parameters) [4933 4938]))                          )
+                        (reparse-symbol indented_block_body) [4908 5373])
+                    ("get_to_point" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5395 5399])
+                            ("local" variable nil (reparse-symbol function_parameters) [5401 5406]))                          )
+                        (reparse-symbol indented_block_body) [5378 5879])
+                    ("boundingRect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5901 5905]))                          )
+                        (reparse-symbol indented_block_body) [5884 6005])
+                    ("shape" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6020 6024]))                          )
+                        (reparse-symbol indented_block_body) [6010 6306])
+                    ("get_start_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6330 6334]))                          )
+                        (reparse-symbol indented_block_body) [6311 6357])
+                    ("get_end_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6379 6383]))                          )
+                        (reparse-symbol indented_block_body) [6362 6406])
+                    ("get_noodle_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6431 6435]))                          )
+                        (reparse-symbol indented_block_body) [6411 7155])
+                    ("get_paths" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7174 7178]))                          )
+                        (reparse-symbol indented_block_body) [7160 7825])
+                    ("prepareGeometryChange" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7856 7860]))                          )
+                        (reparse-symbol indented_block_body) [7830 8007])
+                    ("paint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8023 8027])
+                            ("painter" variable nil (reparse-symbol function_parameters) [8029 8036])
+                            ("option" variable nil (reparse-symbol function_parameters) [8038 8044])
+                            ("widget" variable nil (reparse-symbol function_parameters) [8046 8052]))                          )
+                        (reparse-symbol indented_block_body) [8013 8420])
+                    ("unselect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8438 8442]))                          )
+                        (reparse-symbol indented_block_body) [8425 8498])
+                    ("_toggle_selection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8525 8529]))                          )
+                        (reparse-symbol indented_block_body) [8503 8741])
+                    ("mousePressEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8766 8770])
+                            ("event" variable nil (reparse-symbol function_parameters) [8772 8777]))                          )
+                        (reparse-symbol indented_block_body) [8746 8960])
+                    ("mouseDoubleClickEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8991 8995])
+                            ("event" variable nil (reparse-symbol function_parameters) [8997 9002]))                          )
+                        (reparse-symbol indented_block_body) [8965 9040])
+                    ("mouseReleaseEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9067 9071])
+                            ("event" variable nil (reparse-symbol function_parameters) [9073 9078]))                          )
+                        (reparse-symbol indented_block_body) [9045 9246])
+                    ("do_update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9265 9269]))                          )
+                        (reparse-symbol indented_block_body) [9251 9375]))                  
+                :type "class")
+                nil [2531 9375])
+            ("Node" type
+               (:superclasses ("QtGui.QGraphicsItem")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [9501 9555])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9564 9581])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9590 9611])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9620 9645])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9654 9675])
+                            ("self" code nil (reparse-symbol indented_block_body) [9685 9704])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9714 9772])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9781 9846])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9856 9904])
+                            ("self" code nil (reparse-symbol indented_block_body) [9913 9957])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9968 9991])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10000 10021])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10031 10053])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10063 10086])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10095 10118])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10127 10150])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10159 10186])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10196 10217])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10226 10251])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10260 10287])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10296 10334])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10344 10365]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9427 9431])
+                            ("name" variable nil (reparse-symbol function_parameters) [9433 9437])
+                            ("editor" variable nil (reparse-symbol function_parameters) [9439 9445])
+                            ("gui_node" variable nil (reparse-symbol function_parameters) [9452 9460])
+                            ("parent" variable nil (reparse-symbol function_parameters) [9467 9473])
+                            ("scene" variable nil (reparse-symbol function_parameters) [9480 9485]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [9414 10366])
+                    ("name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10394 10398]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [10371 10427])
+                    ("width" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10456 10460]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [10432 10502])
+                    ("height" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10532 10536]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [10507 10579])
+                    ("gui_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10611 10615]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [10584 10648])
+                    ("from_noodles" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10684 10688]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [10653 10734])
+                    ("to_noodles" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10768 10772]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [10739 10816])
+                    ("set_editor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10836 10840])
+                            ("editor" variable nil (reparse-symbol function_parameters) [10842 10848]))                          )
+                        (reparse-symbol indented_block_body) [10821 10881])
+                    ("apply_settings" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10905 10909])
+                            ("settings" variable nil (reparse-symbol function_parameters) [10911 10919]))                          )
+                        (reparse-symbol indented_block_body) [10886 11336])
+                    ("get_settings" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11358 11362]))                          )
+                        (reparse-symbol indented_block_body) [11341 11476])
+                    ("open_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11501 11505]))                          )
+                        (reparse-symbol indented_block_body) [11481 11810])
+                    ("close_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11836 11840]))                          )
+                        (reparse-symbol indented_block_body) [11815 11873])
+                    ("get_closest_point" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11955 11959])
+                            ("point" variable nil (reparse-symbol function_parameters) [11961 11966])
+                            ("local" variable nil (reparse-symbol function_parameters) [11968 11973]))                          )
+                        (reparse-symbol indented_block_body) [11933 13107])
+                    ("get_noodle_connection_pos" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13142 13146])
+                            ("noodle" variable nil (reparse-symbol function_parameters) [13148 13154])
+                            ("local" variable nil (reparse-symbol function_parameters) [13156 13161]))                          )
+                        (reparse-symbol indented_block_body) [13112 13511])
+                    ("boundingRect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13533 13537]))                          )
+                        (reparse-symbol indented_block_body) [13516 13571])
+                    ("paint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13586 13590])
+                            ("painter" variable nil (reparse-symbol function_parameters) [13592 13599])
+                            ("option" variable nil (reparse-symbol function_parameters) [13601 13607])
+                            ("widget" variable nil (reparse-symbol function_parameters) [13609 13615]))                          )
+                        (reparse-symbol indented_block_body) [13576 14263])
+                    ("contains" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14281 14285])
+                            ("point" variable nil (reparse-symbol function_parameters) [14287 14292]))                          )
+                        (reparse-symbol indented_block_body) [14268 14342])
+                    ("_toggle_selection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14369 14373]))                          )
+                        (reparse-symbol indented_block_body) [14347 14587])
+                    ("unselect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14605 14609]))                          )
+                        (reparse-symbol indented_block_body) [14592 14665])
+                    ("mousePressEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14690 14694])
+                            ("event" variable nil (reparse-symbol function_parameters) [14696 14701]))                          )
+                        (reparse-symbol indented_block_body) [14670 15094])
+                    ("mouseMoveEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15118 15122])
+                            ("event" variable nil (reparse-symbol function_parameters) [15124 15129]))                          )
+                        (reparse-symbol indented_block_body) [15099 15881])
+                    ("mouseDoubleClickEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15912 15916])
+                            ("event" variable nil (reparse-symbol function_parameters) [15918 15923]))                          )
+                        (reparse-symbol indented_block_body) [15886 16053])
+                    ("mouseReleaseEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16080 16084])
+                            ("event" variable nil (reparse-symbol function_parameters) [16086 16091]))                          )
+                        (reparse-symbol indented_block_body) [16058 17385])
+                    ("prepare_removal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17410 17414]))                          )
+                        (reparse-symbol indented_block_body) [17390 17781])
+                    ("remove_from_noodle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17809 17813])
+                            ("from_editor_node" variable nil (reparse-symbol function_parameters) [17815 17831])
+                            ("noodle" variable nil (reparse-symbol function_parameters) [17833 17839]))                          )
+                        (reparse-symbol indented_block_body) [17786 18205])
+                    ("remove_to_noodle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18231 18235])
+                            ("to_editor_node" variable nil (reparse-symbol function_parameters) [18237 18251])
+                            ("noodle" variable nil (reparse-symbol function_parameters) [18253 18259]))                          )
+                        (reparse-symbol indented_block_body) [18210 18609])
+                    ("accept_noodle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18632 18636])
+                            ("to_editor_node" variable nil (reparse-symbol function_parameters) [18638 18652])
+                            ("noodle" variable nil (reparse-symbol function_parameters) [18654 18660]))                          )
+                        (reparse-symbol indented_block_body) [18614 18718])
+                    ("accept_noodle_drop_maybe" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18752 18756])
+                            ("from_editor_node" variable nil (reparse-symbol function_parameters) [18758 18774])
+                            ("noodle" variable nil (reparse-symbol function_parameters) [18776 18782]))                          )
+                        (reparse-symbol indented_block_body) [18723 19027])
+                    ("do_update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19046 19050]))                          )
+                        (reparse-symbol indented_block_body) [19032 19156]))                  
+                :type "class")
+                nil [9377 19156])
+            ("NodeGraphicsScene" type
+               (:superclasses ("QtGui.QGraphicsScene")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [19253 19284])
+                            ("del" code nil (reparse-symbol indented_block_body) [19293 19313])
+                            ("if" code nil (reparse-symbol indented_block_body) [19322 19500])
+                            ("super" code nil (reparse-symbol indented_block_body) [19509 19565])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19575 19608])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19618 19642])
+                            ("self" code nil (reparse-symbol indented_block_body) [19652 19705]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19221 19225])
+                            ("args" variable nil (reparse-symbol function_parameters) [19227 19232])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [19234 19242]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [19208 19706])
+                    ("start_noodling" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19730 19734])
+                            ("from_editor_node" variable nil (reparse-symbol function_parameters) [19736 19752]))                          )
+                        (reparse-symbol indented_block_body) [19711 19972])
+                    ("abort_noodling" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19996 20000]))                          )
+                        (reparse-symbol indented_block_body) [19977 20111])
+                    ("accept_noodle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20134 20138])
+                            ("to_editor_node" variable nil (reparse-symbol function_parameters) [20140 20154]))                          )
+                        (reparse-symbol indented_block_body) [20116 20417])
+                    ("add_to_selection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20443 20447])
+                            ("item" variable nil (reparse-symbol function_parameters) [20449 20453]))                          )
+                        (reparse-symbol indented_block_body) [20422 20582])
+                    ("remove_from_selection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20613 20617])
+                            ("item" variable nil (reparse-symbol function_parameters) [20619 20623]))                          )
+                        (reparse-symbol indented_block_body) [20587 20817])
+                    ("_clear_selection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20843 20847]))                          )
+                        (reparse-symbol indented_block_body) [20822 20971])
+                    ("mousePressEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20996 21000])
+                            ("event" variable nil (reparse-symbol function_parameters) [21002 21007]))                          )
+                        (reparse-symbol indented_block_body) [20976 21176])
+                    ("keyPressEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21199 21203])
+                            ("event" variable nil (reparse-symbol function_parameters) [21205 21210]))                          )
+                        (reparse-symbol indented_block_body) [21181 21612]))                  
+                :type "class")
+                nil [19157 21612]))          
+    :file "graph.py"
+    :pointmax 21612
+    :fsize 21611
+    :lastmodtime '(22746 25745 707787 364000)
+    :unmatched-syntax '(($EOI 21612 . 21612))
+    )
+   (semanticdb-table "editor.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("pprint" include nil nil [1 26])
+            ("abc" include nil nil [28 38])
+            ("PySide" include nil nil [40 72])
+            ("yaml" include nil nil [74 85])
+            ("kvstore.kvstore" include nil nil [87 118])
+            ("process_graph.graph" include nil nil [119 153])
+            ("process_graph.gui" include nil nil [154 178])
+            ("node_editor.graph" include nil nil [180 212])
+            ("node_editor_ui" include nil nil [213 253])
+            ("node_editor_node_loader_ui" include nil nil [254 316])
+            ("ProcessingRequest" type
+               (:superclasses ("object")
+                :members 
+                  ( ("COMMAND" variable nil (reparse-symbol indented_block_body) [355 369])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [409 425]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [388 392])
+                            ("node" variable nil (reparse-symbol function_parameters) [394 398]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [375 426]))                  
+                :type "class")
+                nil [318 426])
+            ("NodeEditorUpdatesHandler" type
+               (:superclasses ("QtCore.QObject")
+                :members 
+                  ( ("update_signal" variable nil (reparse-symbol indented_block_body) [479 527])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [575 623])
+                            ("self" variable nil (reparse-symbol indented_block_body) [632 653])
+                            ("self" variable nil (reparse-symbol indented_block_body) [662 678])
+                            ("self" code nil (reparse-symbol indented_block_body) [688 743]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [546 550])
+                            ("editor" variable nil (reparse-symbol function_parameters) [552 558])
+                            ("name" variable nil (reparse-symbol function_parameters) [560 564]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [533 744])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [762 766])
+                            ("request" variable nil (reparse-symbol function_parameters) [768 775]))                          )
+                        (reparse-symbol indented_block_body) [749 819]))                  
+                :type "class")
+                nil [427 819])
+            ("NodeEditorNodeLoader" type
+               (:superclasses ("QtGui.QWidget")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [916 973])
+                            ("self" variable nil (reparse-symbol indented_block_body) [983 1019])
+                            ("self" code nil (reparse-symbol indented_block_body) [1028 1050])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1060 1081])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1091 1141])
+                            ("self" code nil (reparse-symbol indented_block_body) [1151 1196]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [880 884])
+                            ("editor" variable nil (reparse-symbol function_parameters) [886 892])
+                            ("parent" variable nil (reparse-symbol function_parameters) [894 900]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [867 1197])
+                    ("load_nodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1217 1221]))                          )
+                        (reparse-symbol indented_block_body) [1202 1719]))                  
+                :type "class")
+                nil [820 1719])
+            ("NodeEditorGUIItemI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [1866 1870]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1802 1806])
+                            ("data_item" variable nil (reparse-symbol function_parameters) [1808 1817])
+                            ("editor" variable nil (reparse-symbol function_parameters) [1819 1825])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1832 1838])
+                            ("scene" variable nil (reparse-symbol function_parameters) [1845 1850]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1765 1871])
+                    ("_setup_paint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1917 1921]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1876 1937])
+                    ("_do_paint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1980 1984]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1942 2000])
+                    ("contains" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2042 2046])
+                            ("point" variable nil (reparse-symbol function_parameters) [2048 2053]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2005 2069])
+                    ("boundingRect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2115 2119]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2074 2135])
+                    ("_toggle_selection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2186 2190]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2140 2206])
+                    ("mousePressEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2255 2259])
+                            ("event" variable nil (reparse-symbol function_parameters) [2261 2266]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2211 2282])
+                    ("mouseMoveEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2330 2334])
+                            ("event" variable nil (reparse-symbol function_parameters) [2336 2341]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2287 2357])
+                    ("mouseDoubleClickEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2412 2416])
+                            ("event" variable nil (reparse-symbol function_parameters) [2418 2423]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2362 2439])
+                    ("mouseReleaseEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2490 2494])
+                            ("event" variable nil (reparse-symbol function_parameters) [2496 2501]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2444 2517])
+                    ("prepare_removal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2566 2570]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2522 2586])
+                    ("do_update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2629 2633]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2591 2649]))                  
+                :type "class")
+                nil [1720 2649])
+            ("NodeEditorGUIItem" type
+               (:superclasses ("c_s.Service" "QtGui.QGraphicsItem")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [2713 2750])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2833 2860])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2870 2891])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2900 2925])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2935 2957])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2967 2990])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2999 3022])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3031 3058])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3068 3089])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3098 3123])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3132 3159])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3168 3206])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3216 3237]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2769 2773])
+                            ("data_item" variable nil (reparse-symbol function_parameters) [2775 2784])
+                            ("editor" variable nil (reparse-symbol function_parameters) [2786 2792])
+                            ("parent" variable nil (reparse-symbol function_parameters) [2799 2805])
+                            ("scene" variable nil (reparse-symbol function_parameters) [2812 2817]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2756 3238])
+                    ("_setup_paint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3260 3264]))                          )
+                        (reparse-symbol indented_block_body) [3243 3377])
+                    ("_do_paint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3396 3400]))                          )
+                        (reparse-symbol indented_block_body) [3382 3416])
+                    ("paint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3431 3435]))                          )
+                        (reparse-symbol indented_block_body) [3421 3491])
+                    ("contains" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3509 3513])
+                            ("point" variable nil (reparse-symbol function_parameters) [3515 3520]))                          )
+                        (reparse-symbol indented_block_body) [3496 3543])
+                    ("boundingRect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3565 3569]))                          )
+                        (reparse-symbol indented_block_body) [3548 3585]))                  
+                :type "class")
+                nil [2650 3585])
+            ("NodeEditorGUINodeRectangle" type
+               (:superclasses ("NodeEditorGUIItem")
+                :type "class")
+                nil [3586 3712])
+            ("NodeEditorItem" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [3828 3867])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3877 4015])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4024 4162]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3760 3764])
+                            ("data_graph_item" variable nil (reparse-symbol function_parameters) [3766 3781])
+                            ("gui_item_sids" variable nil (reparse-symbol function_parameters) [3783 3796])
+                            ("properties_gui_sids" variable nil (reparse-symbol function_parameters) [3798 3817]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3747 4163])
+                    ("add_to_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4185 4189])
+                            ("scene" variable nil (reparse-symbol function_parameters) [4191 4196]))                          )
+                        (reparse-symbol indented_block_body) [4168 4243]))                  
+                :type "class")
+                nil [3713 4243])
+            ("ProcessGraphHandler" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [4319 4340]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4296 4300])
+                            ("parent" variable nil (reparse-symbol function_parameters) [4302 4308]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4283 4341])
+                    ("new_graph" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4360 4364]))                          )
+                        (reparse-symbol indented_block_body) [4346 5146])
+                    ("iterate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5163 5167])
+                            ("graph" variable nil (reparse-symbol function_parameters) [5169 5174]))                          )
+                        (reparse-symbol indented_block_body) [5151 5324])
+                    ("get_gui_elements" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5350 5354])
+                            ("graph_item" variable nil (reparse-symbol function_parameters) [5356 5366]))                          )
+                        (reparse-symbol indented_block_body) [5329 6037]))                  
+                :type "class")
+                nil [4244 6037])
+            ("NodeEditor" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [6135 6182])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6695 6730])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6740 6766])
+                            ("self" code nil (reparse-symbol indented_block_body) [6775 6797])
+                            ("self" code nil (reparse-symbol indented_block_body) [6807 6873])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6883 6931])
+                            ("self" code nil (reparse-symbol indented_block_body) [6941 6984])
+                            ("self" code nil (reparse-symbol indented_block_body) [6993 7035])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7045 7063]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6092 6096])
+                            ("graph_handler" variable nil (reparse-symbol function_parameters) [6098 6111])
+                            ("parent" variable nil (reparse-symbol function_parameters) [6113 6119]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6079 7064])
+                    ("clear" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7079 7083]))                          )
+                        (reparse-symbol indented_block_body) [7069 7113])
+                    ("load_graph_item" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7138 7142])
+                            ("graph_item" variable nil (reparse-symbol function_parameters) [7144 7154]))                          )
+                        (reparse-symbol indented_block_body) [7118 7398])
+                    ("load_graph" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7418 7422])
+                            ("graph" variable nil (reparse-symbol function_parameters) [7424 7429]))                          )
+                        (reparse-symbol indented_block_body) [7403 7573])
+                    ("new_graph" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7592 7596]))                          )
+                        (reparse-symbol indented_block_body) [7578 7738]))                  
+                :type "class")
+                nil [6038 7738]))          
+    :file "editor.py"
+    :pointmax 7738
+    :fsize 7737
+    :lastmodtime '(22755 37684 440622 922000)
+    :unmatched-syntax '((INDENT_BLOCK 4957 . 5120) (NEWLINE 4956 . 4957) (COLON 4955 . 4956) (TRY 4834 . 4837) (AS 4951 . 4953) ($EOI 7738 . 7738) ($EOI 7751 . 7751))
+    )
+   (semanticdb-table "node_editor_ui.py"
+    :file "node_editor_ui.py"
+    :fsize 7492
+    :lastmodtime '(22747 44828 812208 986000)
+    )
+   (semanticdb-table "node_editor_node_loader_ui.py"
+    :file "node_editor_node_loader_ui.py"
+    :fsize 2066
+    :lastmodtime '(22747 44828 534196 167000)
+    )
+   (semanticdb-table "node_props_ui.py"
+    :file "node_props_ui.py"
+    :fsize 4413
+    :lastmodtime '(22747 44829 46219 774000)
+    )
+   (semanticdb-table "noodle_props_ui.py"
+    :file "noodle_props_ui.py"
+    :fsize 4958
+    :lastmodtime '(22747 44829 277230 425000)
+    )
+   (semanticdb-table "services.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("abc" include nil nil [1 11])
+            ("context.service" include nil nil [13 42])
+            ("GUINodeI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [79 83]))                  
+                :type "class")
+                nil [44 84])
+            ("GUINodePropertiesI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [130 134]))                  
+                :type "class")
+                nil [85 135])
+            ("GUINoodleI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [173 177]))                  
+                :type "class")
+                nil [136 178])
+            ("GUINoodlePropertiesI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [226 230]))                  
+                :type "class")
+                nil [179 231])
+            ("GUINode" type
+               (:superclasses ("c_s.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [266 293]))                  
+                :type "class")
+                nil [234 294])
+            ("GUINodeProperties" type
+               (:superclasses ("c_s.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [337 373]))                  
+                :type "class")
+                nil [295 374])
+            ("GUINoodle" type
+               (:superclasses ("c_s.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [409 438]))                  
+                :type "class")
+                nil [375 439])
+            ("GUINoodleProperties" type
+               (:superclasses ("c_s.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [484 522]))                  
+                :type "class")
+                nil [440 523]))          
+    :file "services.py"
+    :pointmax 523
+    :fsize 522
+    :lastmodtime '(22749 3518 91374 41000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "editor_old.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("pprint" include nil nil [1 26])
+            ("PySide" include nil nil [28 60])
+            ("yaml" include nil nil [62 73])
+            ("kvstore.kvstore" include nil nil [75 106])
+            ("process_graph.graph" include nil nil [107 141])
+            ("process_graph.gui" include nil nil [142 166])
+            ("node_editor.graph" include nil nil [168 192])
+            ("node_editor_ui" include nil nil [193 233])
+            ("node_editor_node_loader_ui" include nil nil [234 296])
+            ("ProcessingRequest" type
+               (:superclasses ("object")
+                :members 
+                  ( ("COMMAND" variable nil (reparse-symbol indented_block_body) [335 349])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [389 405]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [368 372])
+                            ("node" variable nil (reparse-symbol function_parameters) [374 378]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [355 406]))                  
+                :type "class")
+                nil [298 406])
+            ("NodeEditorUpdatesHandler" type
+               (:superclasses ("QtCore.QObject")
+                :members 
+                  ( ("update_signal" variable nil (reparse-symbol indented_block_body) [459 507])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [555 603])
+                            ("self" variable nil (reparse-symbol indented_block_body) [612 633])
+                            ("self" variable nil (reparse-symbol indented_block_body) [642 658])
+                            ("self" code nil (reparse-symbol indented_block_body) [668 723]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [526 530])
+                            ("editor" variable nil (reparse-symbol function_parameters) [532 538])
+                            ("name" variable nil (reparse-symbol function_parameters) [540 544]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [513 724])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [742 746])
+                            ("request" variable nil (reparse-symbol function_parameters) [748 755]))                          )
+                        (reparse-symbol indented_block_body) [729 799]))                  
+                :type "class")
+                nil [407 799])
+            ("NodeEditorNodeLoader" type
+               (:superclasses ("QtGui.QWidget")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [896 953])
+                            ("self" variable nil (reparse-symbol indented_block_body) [963 999])
+                            ("self" code nil (reparse-symbol indented_block_body) [1008 1030])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1040 1061])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1071 1121])
+                            ("self" code nil (reparse-symbol indented_block_body) [1131 1176]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [860 864])
+                            ("editor" variable nil (reparse-symbol function_parameters) [866 872])
+                            ("parent" variable nil (reparse-symbol function_parameters) [874 880]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [847 1177])
+                    ("load_nodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1197 1201]))                          )
+                        (reparse-symbol indented_block_body) [1182 1699]))                  
+                :type "class")
+                nil [800 1699])
+            ("NodeEditorGuiNodeI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [1745 1749]))                  
+                :type "class")
+                nil [1700 1750])
+            ("NodeEditorGuiNode" type
+               (:superclasses ("c_s.Service" "QtGui.QGraphicsItem")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [1814 1851])
+                    ("service_id" variable nil (reparse-symbol indented_block_body) [1856 1886])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1931 1958]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1905 1909])
+                            ("data_node" variable nil (reparse-symbol function_parameters) [1911 1920]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1892 1959]))                  
+                :type "class")
+                nil [1751 1959])
+            ("NodeEditorNode" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2069 2096])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2106 2231])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2240 2371]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2007 2011])
+                            ("data_node" variable nil (reparse-symbol function_parameters) [2013 2022])
+                            ("gui_node_sids" variable nil (reparse-symbol function_parameters) [2024 2037])
+                            ("properties_gui_sids" variable nil (reparse-symbol function_parameters) [2039 2058]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1994 2372]))                  
+                :type "class")
+                nil [1960 2372])
+            ("NodeEditor" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2481 2528])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3041 3098])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3108 3134])
+                            ("self" code nil (reparse-symbol indented_block_body) [3143 3165])
+                            ("self" code nil (reparse-symbol indented_block_body) [3175 3241])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3251 3312])
+                            ("self" code nil (reparse-symbol indented_block_body) [3322 3365])
+                            ("self" code nil (reparse-symbol indented_block_body) [3374 3416])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3426 3478])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3487 3517])
+                            ("self" code nil (reparse-symbol indented_block_body) [3526 3578])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3588 3606])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3615 3659])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3668 3704])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3713 3742])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3751 3782])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3792 3820])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3830 3872]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2427 2431])
+                            ("graph_item_types_mapping" variable nil (reparse-symbol function_parameters) [2433 2457])
+                            ("parent" variable nil (reparse-symbol function_parameters) [2459 2465]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2414 3873])
+                    ("load_graph_settings" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3902 3906]))                          )
+                        (reparse-symbol indented_block_body) [3878 4318])
+                    ("save_graph_settings" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4347 4351]))                          )
+                        (reparse-symbol indented_block_body) [4323 4718])
+                    ("set_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4742 4746])
+                            ("processing" variable nil (reparse-symbol function_parameters) [4748 4758]))                          )
+                        (reparse-symbol indented_block_body) [4723 5042])
+                    ("" code nil (reparse-symbol indented_block_body) [5059 5078])
+                    ("handle_updates" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5102 5106])
+                            ("request" variable nil (reparse-symbol function_parameters) [5108 5115]))                          )
+                        (reparse-symbol indented_block_body) [5083 5530])
+                    ("set_graph_processor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5560 5564])
+                            ("graph_processor" variable nil (reparse-symbol function_parameters) [5566 5581]))                          )
+                        (reparse-symbol indented_block_body) [5536 5947])
+                    ("process_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5969 5973])
+                            ("editor_node" variable nil (reparse-symbol function_parameters) [5975 5986]))                          )
+                        (reparse-symbol indented_block_body) [5952 6107])
+                    ("check_node_exists" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6134 6138])
+                            ("node_label" variable nil (reparse-symbol function_parameters) [6140 6150]))                          )
+                        (reparse-symbol indented_block_body) [6112 6213])
+                    ("load_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6232 6236])
+                            ("node_label" variable nil (reparse-symbol function_parameters) [6238 6248]))                          )
+                        (reparse-symbol indented_block_body) [6218 6770])
+                    ("new_graph" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6789 6793]))                          )
+                        (reparse-symbol indented_block_body) [6775 7496])
+                    ("start_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7522 7526]))                          )
+                        (reparse-symbol indented_block_body) [7501 7578])
+                    ("stop_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7603 7607]))                          )
+                        (reparse-symbol indented_block_body) [7583 7658])
+                    ("update_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7679 7683])
+                            ("node" variable nil (reparse-symbol function_parameters) [7685 7689]))                          )
+                        (reparse-symbol indented_block_body) [7663 7930])
+                    ("get_gui_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7958 7962])
+                            ("connection" variable nil (reparse-symbol function_parameters) [7964 7974]))                          )
+                        (reparse-symbol indented_block_body) [7935 8396])
+                    ("load_node_connections" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8427 8431])
+                            ("editor_node" variable nil (reparse-symbol function_parameters) [8433 8444]))                          )
+                        (reparse-symbol indented_block_body) [8401 10164])
+                    ("load_graph" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10184 10188])
+                            ("graph" variable nil (reparse-symbol function_parameters) [10190 10195]))                          )
+                        (reparse-symbol indented_block_body) [10169 10836])
+                    ("add_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10854 10858])
+                            ("editor_node" variable nil (reparse-symbol function_parameters) [10860 10871]))                          )
+                        (reparse-symbol indented_block_body) [10841 11182])
+                    ("add_noodle" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11202 11206])
+                            ("noodle" variable nil (reparse-symbol function_parameters) [11208 11214]))                          )
+                        (reparse-symbol indented_block_body) [11187 11343])
+                    ("add_item_props" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11367 11371])
+                            ("props_ui" variable nil (reparse-symbol function_parameters) [11373 11381]))                          )
+                        (reparse-symbol indented_block_body) [11348 12612])
+                    ("_get_model_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12680 12684])
+                            ("item" variable nil (reparse-symbol function_parameters) [12686 12690]))                          )
+                        (reparse-symbol indented_block_body) [12661 13039])
+                    ("remove_item_props" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13066 13070])
+                            ("item" variable nil (reparse-symbol function_parameters) [13072 13076]))                          )
+                        (reparse-symbol indented_block_body) [13044 13369])
+                    ("buggy_wheelEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13395 13399])
+                            ("event" variable nil (reparse-symbol function_parameters) [13401 13406]))                          )
+                        (reparse-symbol indented_block_body) [13374 13918]))                  
+                :type "class")
+                nil [2373 13918]))          
+    :file "editor_old.py"
+    :pointmax 13918
+    :fsize 13917
+    :lastmodtime '(22749 1989 313888 0)
+    :unmatched-syntax '((INDENT_BLOCK 7370 . 7496) (NEWLINE 7369 . 7370) (COLON 7368 . 7369) (TRY 7247 . 7250) (AS 7364 . 7366))
+    )
+   )
+  :file "!home!shaas!workspace!pipeline!node_editor!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

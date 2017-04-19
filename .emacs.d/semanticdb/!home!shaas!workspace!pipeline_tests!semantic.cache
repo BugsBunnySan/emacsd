@@ -1,0 +1,424 @@
+;; Object pipeline_tests/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pipeline_tests/"
+  :tables (list 
+   (semanticdb-table "remote_graph_test.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("time" include nil nil [208 219])
+            ("threading" include nil nil [220 236])
+            ("context.stack" include nil nil [238 266])
+            ("process_graph.graph" include nil nil [267 301])
+            ("kvstore.kvstore" include nil nil [302 333])
+            ("name_service.services" include nil nil [334 370])
+            ("pipeline_processor.controller" include nil nil [371 415])
+            ("pipeline_processor.router" include nil nil [416 456])
+            ("pipeline_processor.remote_context" include nil nil [457 506])
+            ("pipeline_processor.context_library" include nil nil [507 557])
+            ("pipeline_processor.evaluator" include nil nil [558 601])
+            ("pipeline_processor.base" include nil nil [602 640])
+            ("pipeline_processor.messages" include nil nil [641 683])
+            ("implementations.name_service.uuid" include nil nil [685 725])
+            ("implementations.router.zmq" include nil nil [726 759])
+            ("implementations.remote_context.threading" include nil nil [760 807])
+            ("implementations.context_library.threading" include nil nil [808 856])
+            ("implementations.evaluator.threading" include nil nil [857 899])
+            ("make_graph" function nil nil [901 2434])
+            ("make_gl" function (:arguments 
+              ( ("hb" variable nil (reparse-symbol function_parameters) [2447 2449])
+                ("hbto" variable nil (reparse-symbol function_parameters) [2451 2455]))              ) nil [2435 3384])
+            ("make_gp" function (:arguments 
+              ( ("hb" variable nil (reparse-symbol function_parameters) [3397 3399])
+                ("hbto" variable nil (reparse-symbol function_parameters) [3401 3405]))              ) nil [3385 4858])
+            ("test_number_one" function nil nil [4859 5630])
+            ("\"\"\"
+
+import remote_graph_test as rgt
+gl, cport = rgt.make_gl(5000, 25000)
+gl.start()
+
+
+import remote_graph_test as rgt
+import pipeline_processor.messages as pp_m
+gp, cport = rgt.make_gp(5000, 25000)
+gp.start()
+connection_request = pp_m.ConnectionRequest(0, 'router', {'server': '127.0.0.1', 'port': 10000}, [])
+gp.ipc_connection.put(connection_request)
+
+\"\"\"" code nil nil [5663 6020]))          
+    :file "remote_graph_test.py"
+    :pointmax 6021
+    :fsize 6020
+    :lastmodtime '(22498 51888 233563 565000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "legacy.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("hashlib" include nil nil [1 15])
+            ("sha256" variable nil nil [17 42])
+            ("max_similarity" variable nil nil [43 62])
+            ("Skill" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [141 158])
+                            ("self" variable nil (reparse-symbol indented_block_body) [167 181])
+                            ("self" code nil (reparse-symbol indented_block_body) [190 209]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [102 106])
+                            ("name" variable nil (reparse-symbol function_parameters) [108 112])
+                            ("level" variable nil (reparse-symbol function_parameters) [114 119])
+                            ("max_level" variable nil (reparse-symbol function_parameters) [121 130]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [89 210])
+                    ("__add__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [227 231])
+                            ("other" variable nil (reparse-symbol function_parameters) [233 238]))                          )
+                        (reparse-symbol indented_block_body) [215 322]))                  
+                :type "class")
+                nil [64 322])
+            ("skils" variable nil nil [323 511])
+            ("Language" type
+               (:superclasses ("object")
+                :members 
+                  ( ("level_up" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [967 971])
+                            ("which" variable nil (reparse-symbol function_parameters) [973 978]))                          )
+                        (reparse-symbol indented_block_body) [954 1034]))                  
+                :type "class")
+                nil [513 1034])
+            ("languages" variable nil nil [1035 1105])
+            ("compare_hashes" function (:arguments 
+              ( ("hash1" variable nil (reparse-symbol function_parameters) [1126 1131])
+                ("hash2" variable nil (reparse-symbol function_parameters) [1133 1138]))              ) nil [1107 1984])
+            ("CodeBlock" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2058 2074])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2084 2112])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2121 2152])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2161 2192])
+                            ("sha256" code nil (reparse-symbol indented_block_body) [2202 2237])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2246 2281])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2291 2311])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2320 2335])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2345 2367])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2376 2398]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2027 2031])
+                            ("name" variable nil (reparse-symbol function_parameters) [2033 2037])
+                            ("language" variable nil (reparse-symbol function_parameters) [2039 2047]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2014 2399])
+                    ("compare_to" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2419 2423])
+                            ("other" variable nil (reparse-symbol function_parameters) [2425 2430]))                          )
+                        (reparse-symbol indented_block_body) [2404 2504])
+                    ("reading_difficulty" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2532 2536])
+                            ("skills" variable nil (reparse-symbol function_parameters) [2538 2544]))                          )
+                        (reparse-symbol indented_block_body) [2509 2749]))                  
+                :type "class")
+                nil [1985 2749])
+            ("Project" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2751 2767])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2777 2801])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2810 2831]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2790 2794])
+                            ("name" variable nil (reparse-symbol function_parameters) [2796 2800]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2777 2892])
+                    ("obfuscation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2915 2919]))                          )
+                        (reparse-symbol indented_block_body) [2899 3053]))                  
+                :type "class")
+                nil [2750 3053])
+            ("Player" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [3054 3070])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3080 3096])
+                            ("for" code nil (reparse-symbol indented_block_body) [3106 3213])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3222 3241])
+                            ("for" code nil (reparse-symbol indented_block_body) [3251 3372])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3381 3408])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3418 3448]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3093 3097])
+                            ("name" variable nil (reparse-symbol function_parameters) [3099 3103]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3080 3509])
+                    ("write_test_code" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3534 3538]))                          )
+                        (reparse-symbol indented_block_body) [3514 4121])
+                    ("jump_to_code" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4862 4866])
+                            ("code_block_name" variable nil (reparse-symbol function_parameters) [4868 4883]))                          )
+                        (reparse-symbol indented_block_body) [4845 5455])
+                    ("refactor_code" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5478 5482]))                          )
+                        (reparse-symbol indented_block_body) [5460 5759]))                  
+                :type "class")
+                nil [3054 5759]))          
+    :file "legacy.py"
+    :pointmax 5759
+    :fsize 5758
+    :lastmodtime '(22501 21113 636056 686000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "remote_context_test.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("time" include nil nil [1 12])
+            ("Queue" include nil nil [13 25])
+            ("threading" include nil nil [26 42])
+            ("datetime" include nil nil [43 58])
+            ("context" include nil nil [60 74])
+            ("context.stack" include nil nil [75 103])
+            ("kvstore.kvstore" include nil nil [105 136])
+            ("pipeline_processor.messages" include nil nil [138 180])
+            ("pipeline_processor.base" include nil nil [181 219])
+            ("pipeline_processor.router" include nil nil [220 260])
+            ("pipeline_processor.controller" include nil nil [261 305])
+            ("pipeline_processor.remote_context" include nil nil [306 355])
+            ("pipeline_processor.context_library" include nil nil [356 406])
+            ("implementations.router.zmq" include nil nil [408 441])
+            ("implementations.remote_context.threading" include nil nil [442 489])
+            ("implementations.context_library.threading" include nil nil [490 538])
+            ("RequesterThread" type
+               (:superclasses ("threading.Thread")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("threading" code nil (reparse-symbol indented_block_body) [639 670])
+                            ("self" variable nil (reparse-symbol indented_block_body) [680 704])
+                            ("cl" variable nil (reparse-symbol indented_block_body) [714 772])
+                            ("cl" variable nil (reparse-symbol indented_block_body) [781 806])
+                            ("self" variable nil (reparse-symbol indented_block_body) [817 876])
+                            ("self" code nil (reparse-symbol indented_block_body) [886 901])
+                            ("while" code nil (reparse-symbol indented_block_body) [910 957])
+                            ("controller_up_message" variable nil (reparse-symbol indented_block_body) [966 1078])
+                            ("self" code nil (reparse-symbol indented_block_body) [1087 1136]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [598 602])
+                            ("cc" variable nil (reparse-symbol function_parameters) [604 606])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [608 616])
+                            ("user_value" variable nil (reparse-symbol function_parameters) [618 628]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [585 1137])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1150 1154]))                          )
+                        (reparse-symbol indented_block_body) [1142 1246]))                  
+                :type "class")
+                nil [540 1246])
+            ("test_number_one" function nil nil [1247 1730])
+            ("test_number_two" function nil nil [1732 4258])
+            ("test_number_three" function nil nil [4259 4417])
+            ("make_cl" function (:arguments 
+              ( ("hb" variable nil (reparse-symbol function_parameters) [4430 4432])
+                ("hbto" variable nil (reparse-symbol function_parameters) [4434 4438]))              ) nil [4418 5371])
+            ("make_rc" function (:arguments 
+              ( ("hb" variable nil (reparse-symbol function_parameters) [5384 5386])
+                ("hbto" variable nil (reparse-symbol function_parameters) [5388 5392]))              ) nil [5372 6489])
+            ("test_number_four" function nil nil [6490 7488])
+            ("test_number_five" function nil nil [7489 10842]))          
+    :file "remote_context_test.py"
+    :pointmax 10842
+    :fsize 10841
+    :lastmodtime '(22523 47637 729213 539000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "ns_test.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("pprint" include nil nil [1 26])
+            ("context.stack" include nil nil [28 56])
+            ("kvstore.kvstore" include nil nil [57 88])
+            ("name_service" include nil nil [89 114])
+            ("name_service.services" include nil nil [115 151])
+            ("implementations.name_service.yaml" include nil nil [153 193])
+            ("test_number_one" function nil nil [195 431])
+            ("test_number_two" function nil nil [432 1062])
+            ("test_number_three" function nil nil [1063 1791])
+            ("test_number_four" function nil nil [1792 2420])
+            ("test_number_five" function nil nil [2421 3015]))          
+    :file "ns_test.py"
+    :pointmax 2919
+    :fsize 3014
+    :lastmodtime '(22524 46021 263721 946000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "regex_test.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("regex" include nil nil [1 13])
+            ("process_graph.visualize" include nil nil [14 52])
+            ("test_number_one" function (:arguments 
+              ( ("regex_string" variable nil (reparse-symbol function_parameters) [74 86]))              ) nil [54 151])
+            ("test_number_two" function (:arguments 
+              ( ("regex_string" variable nil (reparse-symbol function_parameters) [172 184]))              ) nil [152 317]))          
+    :file "regex_test.py"
+    :pointmax 317
+    :fsize 316
+    :lastmodtime '(22538 13050 669278 904000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "name_service_test.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("context.stack" include nil nil [1 29])
+            ("kvstore.kvstore" include nil nil [30 61])
+            ("implementations.name_service.yaml" include nil nil [62 102])
+            ("setup_context" function nil nil [104 366])
+            ("test_number_one" function (:arguments 
+              ( ("name_service" variable nil (reparse-symbol function_parameters) [387 399]))              ) nil [367 933])
+            ("if" code nil nil [934 1030]))          
+    :file "name_service_test.py"
+    :pointmax 1030
+    :fsize 1029
+    :lastmodtime '(22573 37124 766879 236000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "a_test.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("os" include nil nil [1 10])
+            ("context" include nil nil [12 26])
+            ("reload" code nil nil [27 42])
+            ("actors" include nil nil [44 57])
+            ("reload" code nil nil [58 72])
+            ("test_number_one" function (:documentation "
+    n1(data) ]--(newdatacondition)---(actorsignalhandler(ffmpeg threaded))--> n2(patheddata) ]--(newversioncondition)---(versionflarehandler)--> n3(version_flare)
+    ") nil [74 2925])
+            ("test_number_two" function (:documentation "
+    n1(data) ---> n2(patheddata) ---> n3(version_flare)
+    ") nil [2926 5514])
+            ("test_number_three" function nil nil [5515 6223]))          
+    :file "a_test.py"
+    :pointmax 6223
+    :fsize 6222
+    :lastmodtime '(22498 51883 634351 159000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "actors_test.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("context" include nil nil [1 15])
+            ("context.stack" include nil nil [16 44])
+            ("implementations.process_graph.workflow" include nil nil [46 91])
+            ("implementations.process_graph.actors" include nil nil [92 135])
+            ("implementations.actors.demo" include nil nil [136 170])
+            ("implementations.name_service.yaml" include nil nil [171 211])
+            ("process_graph.graph" include nil nil [213 247])
+            ("name_service.services" include nil nil [249 285])
+            ("test_number_one" function (:documentation "
+    n1(data) ---> n2(patheddata) ---> n3(data)
+    ") nil [287 1401]))          
+    :file "actors_test.py"
+    :pointmax 1401
+    :fsize 1400
+    :lastmodtime '(22498 51883 636351 252000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "gds_test.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("sys" include nil nil [1 11])
+            ("PySide" include nil nil [12 36])
+            ("node_editor" include nil nil [38 62])
+            ("workflow.gui_nodes.gui_data_stack" include nil nil [64 114])
+            ("workflow.nodes.data_stack" include nil nil [115 156])
+            ("workflow.nodes.resource" include nil nil [157 195])
+            ("app" variable nil nil [197 231])
+            ("node_editor" variable nil nil [233 269])
+            ("ds_node" variable nil nil [271 306])
+            ("ne_node" variable nil nil [307 349])
+            ("node_editor" code nil nil [350 379])
+            ("resource" variable nil nil [381 440])
+            ("ds_node" code nil nil [441 470])
+            ("ds_node" variable nil nil [472 507])
+            ("ne_node" variable nil nil [508 550])
+            ("node_editor" code nil nil [551 580])
+            ("resource" variable nil nil [582 642])
+            ("ds_node" code nil nil [643 672])
+            ("resource" variable nil nil [673 733])
+            ("ds_node" code nil nil [734 763])
+            ("node_editor" code nil nil [766 784])
+            ("app" code nil nil [785 796]))          
+    :file "gds_test.py"
+    :pointmax 797
+    :fsize 796
+    :lastmodtime '(22498 51885 483436 556000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "router_test.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("context" include nil nil [1 15])
+            ("pipeline_processor.router.services" include nil nil [17 68])
+            ("pipeline_processor.base" include nil nil [69 107])
+            ("pipeline_processor.messages" include nil nil [108 150])
+            ("implementations.router.zmq" include nil nil [152 185])
+            ("init_test" function nil nil [187 292])
+            ("run_router" function (:arguments 
+              ( ("control_port" variable nil (reparse-symbol function_parameters) [308 320])
+                ("controller_id" variable nil (reparse-symbol function_parameters) [322 335]))              ) nil [293 1042])
+            ("run_local_router" function (:arguments 
+              ( ("control_port" variable nil (reparse-symbol function_parameters) [1064 1076])
+                ("controller_id" variable nil (reparse-symbol function_parameters) [1078 1091]))              ) nil [1043 1459])
+            ("test_number_one" function (:arguments 
+              ( ("loc" variable nil (reparse-symbol function_parameters) [1480 1483]))              ) nil [1460 2464]))          
+    :file "router_test.py"
+    :pointmax 2464
+    :fsize 2463
+    :lastmodtime '(22498 51888 235563 658000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "versioning_scheme_test.py"
+    :major-mode 'python-mode
+    :tags nil
+    :file "versioning_scheme_test.py"
+    :pointmax 5704
+    :fsize 5703
+    :lastmodtime '(22711 2151 372330 327000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!shaas!workspace!pipeline_tests!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

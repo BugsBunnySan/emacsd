@@ -1,0 +1,79 @@
+;; Object actors/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "actors/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("services" include nil nil [1 16]))          
+      :file "__init__.py"
+      :pointmax 17
+      :fsize 17
+      :lastmodtime '(22332 28368 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "services.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("threading" include nil nil [1 17])
+            ("process_graph.graph" include nil nil [19 53])
+            ("DummySemaphore" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [129 133]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [102 106])
+                            ("max_actors" variable nil (reparse-symbol function_parameters) [108 118]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [89 134])
+                    ("acquire" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [151 155])
+                            ("blocking" variable nil (reparse-symbol function_parameters) [157 165]))                          )
+                        (reparse-symbol indented_block_body) [139 186])
+                    ("release" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [203 207]))                          )
+                        (reparse-symbol indented_block_body) [191 223]))                  
+                :type "class")
+                nil [55 223])
+            ("ActorSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [372 448])
+                            ("self" variable nil (reparse-symbol indented_block_body) [458 525])
+                            ("if" code nil (reparse-symbol indented_block_body) [535 697]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [287 291])
+                            ("node" variable nil (reparse-symbol function_parameters) [293 297])
+                            ("interface" variable nil (reparse-symbol function_parameters) [299 308])
+                            ("service_ids" variable nil (reparse-symbol function_parameters) [310 321])
+                            ("max_actors" variable nil (reparse-symbol function_parameters) [323 333])
+                            ("graph" variable nil (reparse-symbol function_parameters) [337 342])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [349 356]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [274 697])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [723 727])
+                            ("signal" variable nil (reparse-symbol function_parameters) [729 735]))                          )
+                        (reparse-symbol indented_block_body) [702 985]))                  
+                :type "class")
+                nil [224 985]))          
+      :file "services.py"
+      :pointmax 985
+      :fsize 1017
+      :lastmodtime '(22332 29033 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!pipeline!implementations!process_graph!actors!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

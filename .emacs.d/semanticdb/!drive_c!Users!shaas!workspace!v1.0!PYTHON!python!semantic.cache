@@ -1,0 +1,200 @@
+;; Object python/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "python/"
+  :tables
+  (list
+    (semanticdb-table "FBI_afanasySubmitter.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("af" include nil nil [1 10])
+            ("os" include nil nil [11 20])
+            ("maya.cmds" include nil nil [22 46])
+            ("renderNodes" variable nil nil [48 249])
+            ("launchRenderslaves" function nil nil [251 1186])
+            ("batch_bakeLightmap" function (:arguments 
+              ( ("projectPath" variable nil (reparse-symbol function_parameters) [1212 1223])
+                ("filePath" variable nil (reparse-symbol function_parameters) [1225 1233])
+                ("bakeList" variable nil (reparse-symbol function_parameters) [1235 1243])
+                ("renderlayer" variable nil (reparse-symbol function_parameters) [1245 1256])
+                ("startFrame" variable nil (reparse-symbol function_parameters) [1258 1268])
+                ("endFrame" variable nil (reparse-symbol function_parameters) [1273 1281]))              ) nil [1188 2336])
+            ("batch_bakeLightmap_inFrames" function (:arguments 
+              ( ("projectPath" variable nil (reparse-symbol function_parameters) [2370 2381])
+                ("filePath" variable nil (reparse-symbol function_parameters) [2383 2391])
+                ("bakeList" variable nil (reparse-symbol function_parameters) [2393 2401])
+                ("renderlayer" variable nil (reparse-symbol function_parameters) [2403 2414])
+                ("bakeLayers_options_dic" variable nil (reparse-symbol function_parameters) [2416 2438])
+                ("startFrame" variable nil (reparse-symbol function_parameters) [2440 2450])
+                ("endFrame" variable nil (reparse-symbol function_parameters) [2455 2463]))              ) nil [2337 4091])
+            ("syncToLocalVolumes" function nil nil [4096 5328])
+            ("cleanUpLocalVolumes" function nil nil [5333 6235])
+            ("testJob" function nil nil [6240 7357])
+            ("batch_img2tiledexr" function
+               (:documentation "# Get vray version
+    try:
+        VRAY_VERSION = os.environ['VRAY_VERSION']
+    except:
+        VRAY_VERSION = 20004"
+                :arguments 
+                  ( ("convertList" variable nil (reparse-symbol function_parameters) [7383 7394]))                  )
+                nil [7360 8394])
+            ("batch_img2tx" function (:arguments 
+              ( ("convertList" variable nil (reparse-symbol function_parameters) [8416 8427]))              ) nil [8399 9287])
+            ("batchCommand" function (:arguments 
+              ( ("fileName" variable nil (reparse-symbol function_parameters) [9306 9314])
+                ("command" variable nil (reparse-symbol function_parameters) [9317 9324])
+                ("project" variable nil (reparse-symbol function_parameters) [9327 9334])
+                ("jobSuffix" variable nil (reparse-symbol function_parameters) [9337 9346])
+                ("startFrame" variable nil (reparse-symbol function_parameters) [9354 9364])
+                ("endFrame" variable nil (reparse-symbol function_parameters) [9369 9377])
+                ("byFrame" variable nil (reparse-symbol function_parameters) [9381 9388])
+                ("priority" variable nil (reparse-symbol function_parameters) [9393 9401]))              ) nil [9288 10284])
+            ("batchRender" function (:arguments 
+              ( ("fileName" variable nil (reparse-symbol function_parameters) [10302 10310])
+                ("startFrame" variable nil (reparse-symbol function_parameters) [10313 10323])
+                ("endFrame" variable nil (reparse-symbol function_parameters) [10326 10334])
+                ("project" variable nil (reparse-symbol function_parameters) [10337 10344])
+                ("byFrame" variable nil (reparse-symbol function_parameters) [10347 10354])
+                ("framesPerHost" variable nil (reparse-symbol function_parameters) [10359 10372])
+                ("renderOptions" variable nil (reparse-symbol function_parameters) [10377 10390])
+                ("priority" variable nil (reparse-symbol function_parameters) [10396 10404])
+                ("jobSuffix" variable nil (reparse-symbol function_parameters) [10411 10420])
+                ("hostMask" variable nil (reparse-symbol function_parameters) [10426 10434])
+                ("capacity" variable nil (reparse-symbol function_parameters) [10440 10448]))              ) nil [10285 11494])
+            ("'''def batchRender( fileName , renderOptions=\"\" , jobSuffix=\"\"):
+    # Create a job.
+    jobName = os.path.basename( fileName ) + \" ::: \" + jobSuffix #+ \"  \" + command.replace('\\\\' , '' )
+    print \"debug1\"
+    job = af.Job( jobName ) 
+    print \"debug2\"
+
+    job.setNeedOS('')
+    job.setPriority(250)    
+    
+    #AFcmd= 'mayarender ' + encodeString( renderOptions ) + ' -file \"' + fileName + '\"'
+
+    block = af.Block( jobName , 'maya' ) 
+    job.blocks.append(block)
+    
+    workDir=os.getenv('FBI_CURRENT_PROJECT', os.getcwd())
+    block.setWorkingDirectory( workDir ) 
+    
+    block.setCommand( str( AFcmd ) )
+    block.setCapacity( 750 )
+    block.setMaxRunTasksPerHost( 1 )
+    block.setHostsMask(\".*lx.*\")
+    # Set block to numeric type, providing first, last frame , frames per host and stepsize
+    block.setNumeric( 1 , 1 , 1 , 1 )
+
+
+    # Send job to Afanasy server.
+    result=job.send()
+'''" code nil nil [11858 12767])
+            ("setFpr" function (:arguments 
+              ( ("layer" variable nil (reparse-symbol function_parameters) [12782 12787])
+                ("fprIntField" variable nil (reparse-symbol function_parameters) [12790 12801]))              ) nil [12770 12952])
+            ("setCapacity" function (:arguments 
+              ( ("layer" variable nil (reparse-symbol function_parameters) [12970 12975])
+                ("capacityIntField" variable nil (reparse-symbol function_parameters) [12978 12994]))              ) nil [12953 13153])
+            ("setCustomFrameRange" function (:arguments 
+              ( ("layer" variable nil (reparse-symbol function_parameters) [13181 13186])
+                ("crplTextField" variable nil (reparse-symbol function_parameters) [13189 13202]))              ) nil [13156 13329])
+            ("renderLayerManager" function nil nil [13330 15402])
+            ("renderLayerManager2" function nil nil [15404 21106]))          
+      :file "FBI_afanasySubmitter.py"
+      :pointmax 21184
+      :fsize 21705
+      :lastmodtime '(22257 25212 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "TP_appLauncher.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("time" include nil nil [231 242])
+            ("datetime" include nil nil [243 258])
+            ("base" include nil nil [260 323])
+            ("ui.utils" include nil nil [324 398])
+            ("start" variable nil nil [400 419])
+            ("print" code nil nil [420 459])
+            ("sys" include nil nil [461 471])
+            ("json" include nil nil [472 483])
+            ("os" include nil nil [484 493])
+            ("FBI_globalClassesAdd" include nil nil [495 522])
+            ("PySide" include nil nil [524 556])
+            ("functools" include nil nil [557 586])
+            ("end1" variable nil nil [588 606])
+            ("interval1" code nil nil [607 631])
+            ("print" code nil nil [632 679])
+            ("AppLauncher" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [751 786])
+                            ("self" variable nil (reparse-symbol indented_block_body) [824 931])
+                            ("self" variable nil (reparse-symbol indented_block_body) [944 1010])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1052 1107])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1148 1170])
+                            ("try" code nil (reparse-symbol indented_block_body) [1179 1439])
+                            ("f" variable nil (reparse-symbol indented_block_body) [1476 1531])
+                            ("lines" variable nil (reparse-symbol indented_block_body) [1540 1561])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1570 1602])
+                            ("f" code nil (reparse-symbol indented_block_body) [1611 1620])
+                            ("self" code nil (reparse-symbol indented_block_body) [1646 1659]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [736 740]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [723 1660])
+                    ("initUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1689 1693]))                          )
+                        (reparse-symbol indented_block_body) [1678 16633])
+                    ("refreshDropbox" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16665 16669]))                          )
+                        (reparse-symbol indented_block_body) [16646 17448])
+                    ("launchApp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17485 17489])
+                            ("appName" variable nil (reparse-symbol function_parameters) [17491 17498]))                          )
+                        (reparse-symbol indented_block_body) [17471 18313])
+                    ("setEnvironmentVariables" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18363 18367])
+                            ("projectPath" variable nil (reparse-symbol function_parameters) [18369 18380]))                          )
+                        (reparse-symbol indented_block_body) [18335 19725])
+                    ("readJsonFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19764 19768])
+                            ("openPath" variable nil (reparse-symbol function_parameters) [19770 19778]))                          )
+                        (reparse-symbol indented_block_body) [19747 19970])
+                    ("updateProjectPath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20005 20009]))                          )
+                        (reparse-symbol indented_block_body) [19983 20225]))                  
+                :type "class")
+                nil [681 20225])
+            ("main" function nil nil [20265 20394])
+            ("if" code nil nil [20396 20434]))          
+      :file "TP_appLauncher.py"
+      :pointmax 20435
+      :fsize 20877
+      :lastmodtime '(22257 25212 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.py"
+      :file "base.py"
+      :fsize 1449
+      :lastmodtime '(22257 25212 0 0))
+    (semanticdb-table "FBI_globalClassesAdd.py"
+      :file "FBI_globalClassesAdd.py"
+      :fsize 24032
+      :lastmodtime '(22257 25212 0 0)))
+  :file "!drive_c!Users!shaas!workspace!v1.0!PYTHON!python!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,662 @@
+;; Object tree_parser/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "tree_parser/"
+  :tables
+  (list
+    (semanticdb-table "tree_parser.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__future__" include nil nil [1 38])
+            ("pprint" include nil nil [40 65])
+            ("__all__" variable nil nil [67 121])
+            ("yaml" include nil nil [123 134])
+            ("re" include nil nil [135 144])
+            ("logging" include nil nil [145 159])
+            ("VERSION" variable nil nil [161 178])
+            ("log" variable nil nil [180 213])
+            ("ParseError" type
+               (:documentation " raised when a parse error is encountered "
+                :superclasses ("Exception")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            msg: a string explaining what went wrong
+            node: the node encountered that caused the parse error to occur
+        \"\"\"" code nil (reparse-symbol indented_block_body) [342 500])
+                            ("super" code nil (reparse-symbol indented_block_body) [509 546])
+                            ("self" variable nil (reparse-symbol indented_block_body) [556 573]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [316 320])
+                            ("msg" variable nil (reparse-symbol function_parameters) [322 325])
+                            ("node" variable nil (reparse-symbol function_parameters) [327 331]))                          
+                        :documentation "
+        Args:
+            msg: a string explaining what went wrong
+            node: the node encountered that caused the parse error to occur
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [303 574])
+                    ("node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [602 606]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [579 635]))                  
+                :type "class")
+                nil [216 635])
+            ("ParseConstraintError" type
+               (:documentation " raised when the parser encounters a node that violates a rule constraint,
+    or when a constraint definition is invalid
+    "
+                :superclasses ("ParseError")
+                :type "class")
+                nil [660 837])
+            ("RuleConstraint" type
+               (:documentation " A constraint to be placed on the occurence of rules within another rule "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            constraintDef: a string defining the constraint, either \\d+, or \\d+- or \\d+-\\d+ (min-max, but -max is optional and only min- means at least min times)
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1033 1225])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1234 1249])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1258 1273])
+                            ("self" code nil (reparse-symbol indented_block_body) [1283 1320]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1003 1007])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [1009 1022]))                          
+                        :documentation "
+        Args:
+            constraintDef: a string defining the constraint, either \\d+, or \\d+- or \\d+-\\d+ (min-max, but -max is optional and only min- means at least min times)
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [990 1321])
+                    ("_parse_constraint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1348 1352])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [1354 1367]))                          
+                        :documentation " break a constraint definition into max and min occurences
+        Args:
+            constraintDef: either \\d+, or \\d+- or \\d+-\\d+
+        ")
+                        (reparse-symbol indented_block_body) [1326 2171]))                  
+                :type "class")
+                nil [872 2171])
+            ("Rule" type
+               (:documentation " A Rule leading from a regex pattern to other rules "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            token_type: a string identifying this token
+            pattern: a regular expression string applied to nodes in the scene hierarchy
+            next_rule_defs: list of names of follow up rules, needed during grammar readin
+        \"\"\"" code nil (reparse-symbol indented_block_body) [2352 2617])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2626 2655])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2664 2711])
+                            ("self" code nil (reparse-symbol indented_block_body) [2720 2763])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2772 2793])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2802 2835]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2300 2304])
+                            ("token_type" variable nil (reparse-symbol function_parameters) [2306 2316])
+                            ("pattern" variable nil (reparse-symbol function_parameters) [2318 2325])
+                            ("next_rule_defs" variable nil (reparse-symbol function_parameters) [2327 2341]))                          
+                        :documentation "
+        Args:
+            token_type: a string identifying this token
+            pattern: a regular expression string applied to nodes in the scene hierarchy
+            next_rule_defs: list of names of follow up rules, needed during grammar readin
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2287 2836])
+                    ("token_type" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2870 2874]))                          
+                        :documentation "
+        Returns:
+            str: the token type of this rule
+        ")
+                        (reparse-symbol indented_block_body) [2841 2995])
+                    ("pattern" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3026 3030]))                          
+                        :documentation "
+        Returns:
+            regex: a compiled regular expression
+        ")
+                        (reparse-symbol indented_block_body) [3000 3152])
+                    ("next_rules" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3186 3190]))                          
+                        :documentation "
+        Returns:
+            list: a (possbily empty) list of rules to match next
+        ")
+                        (reparse-symbol indented_block_body) [3157 3331])
+                    ("add_next_rule" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3354 3358])
+                            ("rule" variable nil (reparse-symbol function_parameters) [3360 3364])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [3366 3379]))                          
+                        :documentation " add a rule, and register its constraints
+        Args:
+            rule: a Rule object
+            constraintDef: a constraint definition
+        ")
+                        (reparse-symbol indented_block_body) [3336 3668])
+                    ("check_constraint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3694 3698])
+                            ("matched_node" variable nil (reparse-symbol function_parameters) [3700 3712])
+                            ("token_type" variable nil (reparse-symbol function_parameters) [3714 3724])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [3726 3736])
+                            ("relax" variable nil (reparse-symbol function_parameters) [3738 3743]))                          
+                        :documentation " check the occurence of one token_type underneath a node
+        Args:
+            matched_node: the node underneatch which the occurences are going to be checked
+            token_type: token type indentifier
+            occurences: list of nodes matching token_type that where found beneath matched_node
+            relax: only report errors to log if True, else raise Exception
+        Raises:
+            Exception: when len(occurences) falls outside this rules constraints for token_type
+        ")
+                        (reparse-symbol indented_block_body) [3673 5679])
+                    ("check_constraints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5706 5710])
+                            ("matched_node" variable nil (reparse-symbol function_parameters) [5712 5724])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [5726 5736])
+                            ("relax" variable nil (reparse-symbol function_parameters) [5738 5743]))                          
+                        :documentation " checkd occurences of tokens below a node
+        Args:
+            matched_node: the node underneatch which the occurences are going to be checked
+            occurences: dict mapping token types to lists of nodes that matched them
+            relax: only report errors to log if True, else raise Exception
+        ")
+                        (reparse-symbol indented_block_body) [5684 6292]))                  
+                :type "class")
+                nil [2200 6292])
+            ("Parser" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            actionTable: a dict/OrderedDict of TokenTypes and function to call
+        \"\"\"" code nil (reparse-symbol indented_block_body) [6384 6492])
+                            ("self" code nil (reparse-symbol indented_block_body) [6501 6538]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6351 6355])
+                            ("actionTable" variable nil (reparse-symbol function_parameters) [6357 6368]))                          
+                        :documentation "
+        Args:
+            actionTable: a dict/OrderedDict of TokenTypes and function to call
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6338 6539])
+                    ("parse" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6554 6558])
+                            ("node" variable nil (reparse-symbol function_parameters) [6560 6564])
+                            ("rules" variable nil (reparse-symbol function_parameters) [6566 6571])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [6573 6583])
+                            ("relax" variable nil (reparse-symbol function_parameters) [6590 6595]))                          
+                        :documentation " start parsing the scene from node on, using rules as a starting point
+        Args:
+            node: a hierarchy node, needs to have a .name() and a .getChildren() function
+            rules: a list of Rule objects
+            occurences: a dictionary used to keep track of rule occurences and their constraints, used for recursion
+            relax: only report errors to log if True, else raise Exception
+        Raises:
+            Exception: if no rule in rules matches the node in question
+        ")
+                        (reparse-symbol indented_block_body) [6544 8557]))                  
+                :type "class")
+                nil [6312 8557])
+            ("readGrammar" function
+               (:documentation " read in a grammar from a yaml file, return the rule named as the start rule
+    (the rest of the parse tree should be anchored beneath this rule)
+    Args:
+        grammarFileName: name of a yaml file containing the grammar of a scene
+        startRuleName: the name of the top most rule, this will be the one returned to the user
+        extraTokens: dictionary of extra token -> pattern definitions
+        extraRules: dictionary of extra rule -> rules definitions
+    Returns:
+        Rule: a rule from the grammar matching startRuleName
+    "
+                :arguments 
+                  ( ("grammarFileName" variable nil (reparse-symbol function_parameters) [8595 8610])
+                    ("startRuleName" variable nil (reparse-symbol function_parameters) [8612 8625])
+                    ("extraTokens" variable nil (reparse-symbol function_parameters) [8627 8638])
+                    ("extraRules" variable nil (reparse-symbol function_parameters) [8643 8653]))                  )
+                nil [8579 10209]))          
+      :file "tree_parser.py"
+      :pointmax 10209
+      :fsize 10467
+      :lastmodtime '(22286 12867 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "maya_scene_parser.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__future__" include nil nil [1 38])
+            ("__all__" variable nil nil [40 93])
+            ("os" include nil nil [95 104])
+            ("pymel.core" include nil nil [106 129])
+            ("BBF.Common.Lib.BBF_Validation.SceneParser" include nil nil [131 194])
+            ("__base_dir" variable nil nil [196 269])
+            ("SCENE_TYPES" variable nil nil [334 632])
+            ("SceneNode" type
+               (:documentation " pretend maya scene root node, will have top level Maya transforms as children "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [781 808])
+                            ("self" variable nil (reparse-symbol indented_block_body) [817 856]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [766 770]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [753 857])
+                    ("name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [871 875]))                          )
+                        (reparse-symbol indented_block_body) [862 904])
+                    ("getChildren" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [925 929]))                          )
+                        (reparse-symbol indented_block_body) [909 962]))                  
+                :type "class")
+                nil [634 962])
+            ("get_scene_type_file" function (:arguments 
+              ( ("scene_type" variable nil (reparse-symbol function_parameters) [987 997]))              ) nil [963 1114])
+            ("parse_scene" function
+               (:documentation " parses a maya scene using SceneParser
+    Args:
+        scene_type: Any of the types defined in SCENE_TYPES in this module
+        action_table: dict mapping node-token types to actions (python callables)
+        rootNode: Maya node to start parsing from, defaults to a SceneNode instance if None
+        relax: if True, only report parse errors, else (default) throw an exception
+    "
+                :arguments 
+                  ( ("scene_type" variable nil (reparse-symbol function_parameters) [1131 1141])
+                    ("start_rule_name" variable nil (reparse-symbol function_parameters) [1151 1166])
+                    ("action_table" variable nil (reparse-symbol function_parameters) [1176 1188])
+                    ("rootNode" variable nil (reparse-symbol function_parameters) [1195 1203])
+                    ("relax" variable nil (reparse-symbol function_parameters) [1210 1215]))                  )
+                nil [1115 2186]))          
+      :file "maya_scene_parser.py"
+      :pointmax 2186
+      :fsize 2244
+      :lastmodtime '(22286 13077 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "data_structs.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("FilteredList" type
+               (:documentation " call-able list, adds elements to itself when called "
+                :superclasses ("list")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            args: passed directly to list() initializer
+            kwargs: if it contains 'filter' that will be used as our node filter function
+        \"\"\"" code nil (reparse-symbol indented_block_body) [141 316])
+                            ("super" code nil (reparse-symbol indented_block_body) [325 366])
+                            ("self" variable nil (reparse-symbol indented_block_body) [376 417]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [109 113])
+                            ("args" variable nil (reparse-symbol function_parameters) [115 120])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [122 130]))                          
+                        :documentation "
+        Args:
+            args: passed directly to list() initializer
+            kwargs: if it contains 'filter' that will be used as our node filter function
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [96 418])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [436 440])
+                            ("element" variable nil (reparse-symbol function_parameters) [442 449]))                          )
+                        (reparse-symbol indented_block_body) [423 543]))                  
+                :type "class")
+                nil [2 543])
+            ("DoubleLinkedList" type
+               (:documentation " Double Linked List with data stored in the nodes, supports iteration and list modification "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [755 772])
+                            ("self" variable nil (reparse-symbol indented_block_body) [781 798])
+                            ("self" variable nil (reparse-symbol indented_block_body) [807 831]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [722 726])
+                            ("compare_func" variable nil (reparse-symbol function_parameters) [728 740]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [709 832])
+                    ("head" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [860 864]))                          
+                        :documentation "
+        Returns:
+            data: the data stored in the head of the list
+        Raises:
+            IndexError: if the list is empty
+        ")
+                        (reparse-symbol indented_block_body) [837 1136])
+                    ("tail" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1164 1168]))                          
+                        :documentation "
+        Returns:
+            data: the data sored in the tail of the list
+        Raises:
+            IndexError: if the list is empty
+        ")
+                        (reparse-symbol indented_block_body) [1141 1439])
+                    ("_iter_nodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1460 1464]))                          
+                        :documentation " Iterates through the nodes and yields the nodes ")
+                        (reparse-symbol indented_block_body) [1444 1661])
+                    ("find_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1680 1684])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [1686 1696]))                          
+                        :documentation " search for a node with the search_key contained
+        Args:
+            search_key: the data to search for
+        Returns:
+            node: the node matching search_key
+        Raises:
+            IndexError: if the search_key isn't in the list
+        ")
+                        (reparse-symbol indented_block_body) [1666 2192])
+                    ("find_node_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2215 2219])
+                            ("idx" variable nil (reparse-symbol function_parameters) [2221 2224]))                          )
+                        (reparse-symbol indented_block_body) [2197 2418])
+                    ("find_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2436 2440])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [2442 2452]))                          
+                        :documentation " search for the index of a node by key
+        Args:
+            search_key: identifies the node to search for
+        Returns:
+            int: index of the node matching search_key
+        Raises
+            IndexError: if the search_key isn't in the list
+        ")
+                        (reparse-symbol indented_block_body) [2423 2991])
+                    ("find" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3006 3010])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [3012 3022]))                          
+                        :documentation " search for data stored at search_key (self._cmp(data, search_key) should return 0
+        Args:
+            search_key: look for a node that is identified by search_key
+        Returns:
+            data: data stored in a node that compares equal to search_key using self._cmp
+        ")
+                        (reparse-symbol indented_block_body) [2997 3505])
+                    ("_slice" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3521 3525])
+                            ("start" variable nil (reparse-symbol function_parameters) [3527 3532])
+                            ("stop" variable nil (reparse-symbol function_parameters) [3534 3538])
+                            ("step" variable nil (reparse-symbol function_parameters) [3540 3544]))                          
+                        :documentation " return a new list containing sliced elements
+        Args:
+            start: first contained element
+            stop: first non contained element
+            step: skip ahead this many elements between elements
+        Returns:
+            DoubleLinkedList: a double linked list containing the spliced elements
+        Raises:
+            IndexError: if the start/stop args are out of bound
+        ")
+                        (reparse-symbol indented_block_body) [3510 4563])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4584 4588])
+                            ("idx" variable nil (reparse-symbol function_parameters) [4590 4593]))                          
+                        :documentation " support indexing and slicing
+        Args:
+            idx: either numerical index or slice object
+        Returns:
+            data/DoubleLinkedList: data if idx is numerical, new list if idx is a slice object
+        Raises:
+            IndexError: if idx is out of bounds
+        ")
+                        (reparse-symbol indented_block_body) [4568 5259])
+                    ("__iter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5277 5281]))                          
+                        :documentation " iterate through the list, yielding node data ")
+                        (reparse-symbol indented_block_body) [5264 5480])
+                    ("__reversed__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5502 5506]))                          
+                        :documentation " reverse iterate through the list, yielding node data ")
+                        (reparse-symbol indented_block_body) [5485 5713])
+                    ("__len__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5730 5734]))                          
+                        :documentation "
+        Returns:
+            int: number of nodes in the list
+        ")
+                        (reparse-symbol indented_block_body) [5718 5913])
+                    ("_unlink" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5930 5934])
+                            ("node" variable nil (reparse-symbol function_parameters) [5936 5940]))                          
+                        :documentation " unlinks a node from the list, updating head/tail pointers ")
+                        (reparse-symbol indented_block_body) [5918 6181])
+                    ("prepend" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6198 6202])
+                            ("data" variable nil (reparse-symbol function_parameters) [6204 6208]))                          
+                        :documentation " Prepend a node with data to the list, updates head pointer
+        Args:
+            data: the data to store in the new head of the list
+        ")
+                        (reparse-symbol indented_block_body) [6186 6538])
+                    ("insert" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6554 6558])
+                            ("index" variable nil (reparse-symbol function_parameters) [6560 6565])
+                            ("data" variable nil (reparse-symbol function_parameters) [6567 6571]))                          
+                        :documentation " Insert a node at a given index
+        Args:
+            index: The index at which the new data is inserted
+            data: The data to insert at the index
+        Raises:
+            IndexError: if the index to insert at doesn't exists
+        ")
+                        (reparse-symbol indented_block_body) [6543 6977])
+                    ("append" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6993 6997])
+                            ("data" variable nil (reparse-symbol function_parameters) [6999 7003]))                          
+                        :documentation " Append a node with data to the list, updates head pointer
+        Args:
+            data: the data to store in the new tail of the list
+        ")
+                        (reparse-symbol indented_block_body) [6982 7330])
+                    ("remove" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7346 7350])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [7352 7362]))                          
+                        :documentation " Remove a node containing data from the list
+        Args:
+            search_key: node with this data will be removed
+        Raises:
+            IndexError: if noe node with `data` as data can be found
+        ")
+                        (reparse-symbol indented_block_body) [7335 7789])
+                    ("insert_before" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7812 7816])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [7818 7828])
+                            ("data" variable nil (reparse-symbol function_parameters) [7830 7834]))                          
+                        :documentation " Insert a new node containing data before an existing node
+        Args:
+            search_key: insert before a node containing this data
+            data: the data to insert
+        Raises:
+            IndexError: if the search_key is not found
+        ")
+                        (reparse-symbol indented_block_body) [7794 8366])
+                    ("insert_after" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8388 8392])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [8394 8404])
+                            ("data" variable nil (reparse-symbol function_parameters) [8406 8410]))                          
+                        :documentation " Insert a new node containing data after an existing node
+        Args:
+            search_key: insert after a node containing this data
+            data: the data to insert
+        Raises:
+            IndexError: if the search_key is not found
+        ")
+                        (reparse-symbol indented_block_body) [8371 8939])
+                    ("replace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8956 8960])
+                            ("search_key" variable nil (reparse-symbol function_parameters) [8962 8972])
+                            ("data" variable nil (reparse-symbol function_parameters) [8974 8978]))                          
+                        :documentation " Replace data stored in a node
+        Args:
+            search_key: replace the data stored in a node containing this data
+            data: the data to replace existing data with
+        Raises:
+            IndexError: if the search_key is not found
+        ")
+                        (reparse-symbol indented_block_body) [8944 9538])
+                    ("remove_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9558 9562])
+                            ("idx" variable nil (reparse-symbol function_parameters) [9564 9567]))                          
+                        :documentation " Remove a node at the specified index
+        Args:
+            idx: integer index into the list (doesn't support -1, and such)
+        Raises:
+            IndexError: if idx is outside the list
+        ")
+                        (reparse-symbol indented_block_body) [9543 9864])
+                    ("insert_before_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9891 9895])
+                            ("idx" variable nil (reparse-symbol function_parameters) [9897 9900])
+                            ("data" variable nil (reparse-symbol function_parameters) [9902 9906]))                          
+                        :documentation " Insert a node with data before the specified index
+        Args:
+            idx: where to insert the data
+            data: this data is stored at the index
+        Raises:
+            IndexError: if idx is outside the list
+        ")
+                        (reparse-symbol indented_block_body) [9869 10298])
+                    ("insert_after_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10324 10328])
+                            ("idx" variable nil (reparse-symbol function_parameters) [10330 10333])
+                            ("data" variable nil (reparse-symbol function_parameters) [10335 10339]))                          
+                        :documentation " Insert a node with data after the specified index
+        Args:
+            idx: where to insert the data
+            data: this data is stored at the index
+        Raises:
+            IndexError: if idx is outside the list
+        ")
+                        (reparse-symbol indented_block_body) [10303 10806])
+                    ("replace_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10827 10831])
+                            ("idx" variable nil (reparse-symbol function_parameters) [10833 10836])
+                            ("data" variable nil (reparse-symbol function_parameters) [10838 10842]))                          
+                        :documentation "  Replace data stored in a node
+        Args:
+            idx: idx of the node whose data is to be replaced
+            data: the data to replace existing data with
+        Raises:
+            IndexError: if idx is outside the list
+        ")
+                        (reparse-symbol indented_block_body) [10811 11167]))                  
+                :type "class")
+                nil [570 11167]))          
+      :file "data_structs.py"
+      :pointmax 11167
+      :fsize 11506
+      :lastmodtime '(22286 13294 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!pipeline!tree_parser!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

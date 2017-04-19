@@ -1,0 +1,1030 @@
+;; Object workflow/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "workflow/"
+  :tables (list 
+   (semanticdb-table "multi_data_stack.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("pprint" include nil nil [1 26])
+            ("process_graph.graph" include nil nil [29 63])
+            ("MultiDataStackNode" type
+               (:superclasses ("pg_g.Node")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [106 151])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [241 282])
+                            ("super" code nil (reparse-symbol indented_block_body) [292 375]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [170 174])
+                            ("input_data_names" variable nil (reparse-symbol function_parameters) [176 192])
+                            ("graph" variable nil (reparse-symbol function_parameters) [194 199])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [206 213])
+                            ("label" variable nil (reparse-symbol function_parameters) [220 225]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [157 376])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [404 408])
+                            ("name" variable nil (reparse-symbol function_parameters) [410 414]))                          )
+                        (reparse-symbol indented_block_body) [381 664])
+                    ("input_data_names" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [704 708]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [669 787])
+                    ("nr_items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [805 809])
+                            ("name" variable nil (reparse-symbol function_parameters) [811 815]))                          )
+                        (reparse-symbol indented_block_body) [792 904])
+                    ("add_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [922 926])
+                            ("name" variable nil (reparse-symbol function_parameters) [928 932])
+                            ("data" variable nil (reparse-symbol function_parameters) [934 938]))                          )
+                        (reparse-symbol indented_block_body) [909 1072])
+                    ("get_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1090 1094])
+                            ("name" variable nil (reparse-symbol function_parameters) [1096 1100])
+                            ("idx" variable nil (reparse-symbol function_parameters) [1102 1105]))                          )
+                        (reparse-symbol indented_block_body) [1077 1221]))                  
+                :type "class")
+                nil [65 1221])
+            ("NewMultiDataCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [1647 1695])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1795 1890])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1900 1914])
+                            ("for" code nil (reparse-symbol indented_block_body) [1924 1997]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1714 1718])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [1720 1727])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [1729 1740])
+                            ("input_data_names" variable nil (reparse-symbol function_parameters) [1742 1758])
+                            ("graph" variable nil (reparse-symbol function_parameters) [1760 1765])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [1772 1779]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1701 1997])
+                    ("_next_unsent_idx" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2023 2027])
+                            ("data_name" variable nil (reparse-symbol function_parameters) [2029 2038])
+                            ("node" variable nil (reparse-symbol function_parameters) [2040 2044]))                          )
+                        (reparse-symbol indented_block_body) [2002 2217])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2233 2237])
+                            ("node" variable nil (reparse-symbol function_parameters) [2239 2243])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [2245 2254]))                          )
+                        (reparse-symbol indented_block_body) [2222 2511])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2533 2537])
+                            ("node" variable nil (reparse-symbol function_parameters) [2539 2543])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [2545 2554]))                          )
+                        (reparse-symbol indented_block_body) [2516 2912])
+                    ("data_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2931 2935])
+                            ("data" variable nil (reparse-symbol function_parameters) [2937 2941])
+                            ("node" variable nil (reparse-symbol function_parameters) [2943 2947])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [2949 2958]))                          )
+                        (reparse-symbol indented_block_body) [2917 3042])
+                    ("_serialized_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3068 3072]))                          )
+                        (reparse-symbol indented_block_body) [3047 3224])
+                    ("_unserialize_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3251 3255])
+                            ("serialized" variable nil (reparse-symbol function_parameters) [3257 3267]))                          )
+                        (reparse-symbol indented_block_body) [3229 3382]))                  
+                :type "class")
+                nil [1598 3382])
+            ("CompleteMultiDataCondition" type
+               (:superclasses ("NewMultiDataCondition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [3444 3497])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [3597 3692])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3702 3716])
+                            ("for" code nil (reparse-symbol indented_block_body) [3726 3799]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3516 3520])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [3522 3529])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [3531 3542])
+                            ("input_data_names" variable nil (reparse-symbol function_parameters) [3544 3560])
+                            ("graph" variable nil (reparse-symbol function_parameters) [3562 3567])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [3574 3581]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3503 3799])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3815 3819])
+                            ("node" variable nil (reparse-symbol function_parameters) [3821 3825])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3827 3836]))                          )
+                        (reparse-symbol indented_block_body) [3804 4214]))                  
+                :type "class")
+                nil [3383 4214])
+            ("SynchronizedMultiDataCondition" type
+               (:superclasses ("NewMultiDataCondition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [4280 4337])
+                    ("get_synchronized_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4369 4373])
+                            ("node" variable nil (reparse-symbol function_parameters) [4375 4379]))                          )
+                        (reparse-symbol indented_block_body) [4343 5116])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5132 5136])
+                            ("node" variable nil (reparse-symbol function_parameters) [5138 5142])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [5144 5153]))                          )
+                        (reparse-symbol indented_block_body) [5121 5216])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5238 5242])
+                            ("node" variable nil (reparse-symbol function_parameters) [5244 5248])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [5250 5259]))                          )
+                        (reparse-symbol indented_block_body) [5221 5310]))                  
+                :type "class")
+                nil [4215 5310])
+            ("MultiDataSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [5365 5414])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [5511 5594])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5604 5631]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5433 5437])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [5439 5446])
+                            ("data_name" variable nil (reparse-symbol function_parameters) [5448 5457])
+                            ("graph" variable nil (reparse-symbol function_parameters) [5476 5481])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [5488 5495]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5420 5632])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5658 5662])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [5664 5675])
+                            ("signal_data" variable nil (reparse-symbol function_parameters) [5677 5688])
+                            ("node" variable nil (reparse-symbol function_parameters) [5690 5694])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [5696 5705]))                          )
+                        (reparse-symbol indented_block_body) [5637 5963]))                  
+                :type "class")
+                nil [5311 5963]))          
+    :file "multi_data_stack.py"
+    :pointmax 5963
+    :fsize 5962
+    :lastmodtime '(22498 51702 314977 257000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "data_stack.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("context.stack" include nil nil [1 29])
+            ("process_graph.graph" include nil nil [31 65])
+            ("DataStackNode" type
+               (:superclasses ("pg_g.Node")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [103 142])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [171 175])
+                            ("name" variable nil (reparse-symbol function_parameters) [177 181]))                          )
+                        (reparse-symbol indented_block_body) [148 332])
+                    ("nr_items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [350 354]))                          )
+                        (reparse-symbol indented_block_body) [337 443])
+                    ("add_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [461 465])
+                            ("data" variable nil (reparse-symbol function_parameters) [467 471]))                          )
+                        (reparse-symbol indented_block_body) [448 561])
+                    ("get_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [579 583])
+                            ("idx" variable nil (reparse-symbol function_parameters) [585 588]))                          )
+                        (reparse-symbol indented_block_body) [566 677]))                  
+                :type "class")
+                nil [67 677])
+            ("NewDataCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [1052 1104])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1186 1276])
+                            ("node" variable nil (reparse-symbol indented_block_body) [1286 1328])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1337 1364]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1123 1127])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [1129 1136])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [1138 1149])
+                            ("graph" variable nil (reparse-symbol function_parameters) [1151 1156])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [1163 1170]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1110 1365])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1381 1385])
+                            ("node" variable nil (reparse-symbol function_parameters) [1387 1391])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [1393 1402]))                          )
+                        (reparse-symbol indented_block_body) [1370 1448])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1470 1474])
+                            ("node" variable nil (reparse-symbol function_parameters) [1476 1480])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [1482 1491]))                          )
+                        (reparse-symbol indented_block_body) [1453 1554])
+                    ("data_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1573 1577])
+                            ("data" variable nil (reparse-symbol function_parameters) [1579 1583])
+                            ("node" variable nil (reparse-symbol function_parameters) [1585 1589])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [1591 1600]))                          )
+                        (reparse-symbol indented_block_body) [1559 1626])
+                    ("_serialized_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1652 1656]))                          )
+                        (reparse-symbol indented_block_body) [1631 1803])
+                    ("_unserialize_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1830 1834])
+                            ("serialized" variable nil (reparse-symbol function_parameters) [1836 1846]))                          )
+                        (reparse-symbol indented_block_body) [1808 1956]))                  
+                :type "class")
+                nil [1008 1956])
+            ("DataStackSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [2011 2073])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2100 2104])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [2106 2117])
+                            ("signal_data" variable nil (reparse-symbol function_parameters) [2119 2130])
+                            ("node" variable nil (reparse-symbol function_parameters) [2132 2136])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [2138 2147]))                          )
+                        (reparse-symbol indented_block_body) [2079 2300]))                  
+                :type "class")
+                nil [1957 2300]))          
+    :file "data_stack.py"
+    :pointmax 2300
+    :fsize 2299
+    :lastmodtime '(22498 51702 313977 211000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "pathed_data_stack.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("os.path" include nil nil [1 15])
+            ("collections" include nil nil [16 34])
+            ("process_graph.graph" include nil nil [36 70])
+            ("PathedDataStackNode" type
+               (:superclasses ("pg_g.Node")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [114 160])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [269 310])
+                            ("self" variable nil (reparse-symbol indented_block_body) [319 362])
+                            ("super" code nil (reparse-symbol indented_block_body) [372 456]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [179 183])
+                            ("in_template_name" variable nil (reparse-symbol function_parameters) [185 201])
+                            ("out_template_name" variable nil (reparse-symbol function_parameters) [203 220])
+                            ("graph" variable nil (reparse-symbol function_parameters) [222 227])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [234 241])
+                            ("label" variable nil (reparse-symbol function_parameters) [248 253]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [166 457])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [485 489])
+                            ("name" variable nil (reparse-symbol function_parameters) [491 495]))                          )
+                        (reparse-symbol indented_block_body) [462 1078])
+                    ("in_templates" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1114 1118]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1083 1172])
+                    ("out_templates" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1209 1213]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1177 1268])
+                    ("versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1300 1304]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1273 1354])
+                    ("nr_items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1372 1376]))                          )
+                        (reparse-symbol indented_block_body) [1359 1413])
+                    ("get_next_highest_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1447 1451]))                          )
+                        (reparse-symbol indented_block_body) [1418 1754])
+                    ("get_resource_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1781 1785])
+                            ("kv" variable nil (reparse-symbol function_parameters) [1787 1789]))                          )
+                        (reparse-symbol indented_block_body) [1759 1988])
+                    ("add_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2010 2014])
+                            ("resource" variable nil (reparse-symbol function_parameters) [2016 2024])
+                            ("data_name" variable nil (reparse-symbol function_parameters) [2026 2035]))                          )
+                        (reparse-symbol indented_block_body) [1993 2154])
+                    ("match" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2169 2173])
+                            ("url" variable nil (reparse-symbol function_parameters) [2175 2178]))                          )
+                        (reparse-symbol indented_block_body) [2159 2367]))                  
+                :type "class")
+                nil [72 2367])
+            ("NewPathedVersionCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [3000 3052])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [3134 3233])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3243 3267]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3071 3075])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [3077 3084])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [3086 3097])
+                            ("graph" variable nil (reparse-symbol function_parameters) [3099 3104])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [3111 3118]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3058 3268])
+                    ("_get_unseen_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3297 3301])
+                            ("node" variable nil (reparse-symbol function_parameters) [3303 3307]))                          )
+                        (reparse-symbol indented_block_body) [3273 3568])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3584 3588])
+                            ("node" variable nil (reparse-symbol function_parameters) [3590 3594])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3596 3605]))                          )
+                        (reparse-symbol indented_block_body) [3573 3693])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3715 3719])
+                            ("node" variable nil (reparse-symbol function_parameters) [3721 3725])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3727 3736]))                          )
+                        (reparse-symbol indented_block_body) [3698 3813])
+                    ("data_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3832 3836])
+                            ("data" variable nil (reparse-symbol function_parameters) [3838 3842])
+                            ("node" variable nil (reparse-symbol function_parameters) [3844 3848])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3850 3859]))                          )
+                        (reparse-symbol indented_block_body) [3818 3911])
+                    ("_serialized_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3937 3941]))                          )
+                        (reparse-symbol indented_block_body) [3916 4117])
+                    ("_unserialize_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4144 4148])
+                            ("serialized" variable nil (reparse-symbol function_parameters) [4150 4160]))                          )
+                        (reparse-symbol indented_block_body) [4122 4295]))                  
+                :type "class")
+                nil [2947 4295])
+            ("PathedDataStackSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [4356 4425])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4452 4456])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [4458 4469])
+                            ("signal_data" variable nil (reparse-symbol function_parameters) [4471 4482])
+                            ("node" variable nil (reparse-symbol function_parameters) [4484 4488])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [4490 4499]))                          )
+                        (reparse-symbol indented_block_body) [4431 4656]))                  
+                :type "class")
+                nil [4296 4656]))          
+    :file "pathed_data_stack.py"
+    :pointmax 4656
+    :fsize 4655
+    :lastmodtime '(22592 23056 129660 170000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "nodes.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("threading" include nil nil [1 17])
+            ("kvstore.kvstore" include nil nil [19 50])
+            ("kvstore.specialized" include nil nil [51 86])
+            ("process_graph.graph" include nil nil [87 121])
+            ("name_service.services" include nil nil [122 158])
+            ("KeyedTemplateNode" type
+               (:superclasses ("pg_g.Node")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [200 235])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [322 404])
+                            ("self" variable nil (reparse-symbol indented_block_body) [414 442])
+                            ("self" variable nil (reparse-symbol indented_block_body) [451 484])
+                            ("for" code nil (reparse-symbol indented_block_body) [494 788])
+                            ("self" variable nil (reparse-symbol indented_block_body) [797 827]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [254 258])
+                            ("key_templates" variable nil (reparse-symbol function_parameters) [260 273])
+                            ("graph" variable nil (reparse-symbol function_parameters) [275 280])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [287 294])
+                            ("label" variable nil (reparse-symbol function_parameters) [301 306]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [241 828])
+                    ("keyed_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [848 852])
+                            ("data_key" variable nil (reparse-symbol function_parameters) [854 862]))                          )
+                        (reparse-symbol indented_block_body) [833 901])
+                    ("data_keys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [934 938]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [906 979])
+                    ("get_next_highest_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1013 1017])
+                            ("data_key" variable nil (reparse-symbol function_parameters) [1019 1027]))                          )
+                        (reparse-symbol indented_block_body) [984 1310])
+                    ("store_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1330 1334])
+                            ("data_key" variable nil (reparse-symbol function_parameters) [1336 1344])
+                            ("match_kv" variable nil (reparse-symbol function_parameters) [1346 1354]))                          )
+                        (reparse-symbol indented_block_body) [1315 1741]))                  
+                :type "class")
+                nil [160 1741])
+            ("NewKeyedVersionCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [1794 1846])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1928 2026])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2036 2073]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1865 1869])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [1871 1878])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [1880 1891])
+                            ("graph" variable nil (reparse-symbol function_parameters) [1893 1898])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [1905 1912]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1852 2074])
+                    ("_get_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2101 2105])
+                            ("node" variable nil (reparse-symbol function_parameters) [2107 2111])
+                            ("data_key" variable nil (reparse-symbol function_parameters) [2113 2121]))                          
+                        :documentation " return newest unused *or newest!!* version for data_key in node's data ")
+                        (reparse-symbol indented_block_body) [2079 2516])
+                    ("fetch_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2536 2540])
+                            ("node" variable nil (reparse-symbol function_parameters) [2542 2546])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [2548 2557]))                          )
+                        (reparse-symbol indented_block_body) [2521 3055])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3077 3081])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [3083 3092])
+                            ("node" variable nil (reparse-symbol function_parameters) [3094 3098])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3100 3109]))                          )
+                        (reparse-symbol indented_block_body) [3060 3439])
+                    ("data_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3458 3462])
+                            ("data" variable nil (reparse-symbol function_parameters) [3464 3468])
+                            ("node" variable nil (reparse-symbol function_parameters) [3470 3474])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3476 3485]))                          )
+                        (reparse-symbol indented_block_body) [3444 3614])
+                    ("_serialized_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3640 3644]))                          )
+                        (reparse-symbol indented_block_body) [3619 3819])
+                    ("_unserialize_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3846 3850])
+                            ("serialized" variable nil (reparse-symbol function_parameters) [3852 3862]))                          )
+                        (reparse-symbol indented_block_body) [3824 4000]))                  
+                :type "class")
+                nil [1742 4000])
+            ("AnyNewKeyedVersionCondition" type
+               (:documentation " any data key has an as-yet unused version (but all data keys do have a version) "
+                :superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [4148 4204])
+                    ("_get_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4232 4236])
+                            ("node" variable nil (reparse-symbol function_parameters) [4238 4242])
+                            ("data_key" variable nil (reparse-symbol function_parameters) [4244 4252]))                          )
+                        (reparse-symbol indented_block_body) [4210 4560])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4576 4580])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [4582 4591])
+                            ("node" variable nil (reparse-symbol function_parameters) [4593 4597])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [4599 4608]))                          )
+                        (reparse-symbol indented_block_body) [4565 5084]))                  
+                :type "class")
+                nil [4001 5084])
+            ("AllNewKeyedVersionCondition" type
+               (:documentation " all data keys have an as-yet unused version "
+                :superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [5196 5252])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5269 5273])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [5275 5284])
+                            ("node" variable nil (reparse-symbol function_parameters) [5286 5290])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [5292 5301]))                          )
+                        (reparse-symbol indented_block_body) [5258 5606]))                  
+                :type "class")
+                nil [5085 5606])
+            ("SyncedNewKeyedVersionCondition" type
+               (:documentation " there's an as-yet unused version which is present on all data keys "
+                :superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [5744 5803])
+                    ("_everyone_has_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5835 5839])
+                            ("version" variable nil (reparse-symbol function_parameters) [5841 5848])
+                            ("node" variable nil (reparse-symbol function_parameters) [5850 5854]))                          )
+                        (reparse-symbol indented_block_body) [5809 6074])
+                    ("_check_versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6099 6103])
+                            ("data_key" variable nil (reparse-symbol function_parameters) [6105 6113])
+                            ("node" variable nil (reparse-symbol function_parameters) [6115 6119]))                          )
+                        (reparse-symbol indented_block_body) [6079 6431])
+                    ("data_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6450 6454])
+                            ("data" variable nil (reparse-symbol function_parameters) [6456 6460])
+                            ("node" variable nil (reparse-symbol function_parameters) [6462 6466])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [6468 6477]))                          )
+                        (reparse-symbol indented_block_body) [6436 6543])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6559 6563])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [6565 6574])
+                            ("node" variable nil (reparse-symbol function_parameters) [6576 6580])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [6582 6591]))                          )
+                        (reparse-symbol indented_block_body) [6548 6742])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6764 6768])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [6770 6779])
+                            ("node" variable nil (reparse-symbol function_parameters) [6781 6785])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [6787 6796]))                          )
+                        (reparse-symbol indented_block_body) [6747 7114]))                  
+                :type "class")
+                nil [5607 7114])
+            ("KeyedDataSignal" type
+               (:superclasses ("pg_g.Signal")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [7156 7193])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [7284 7371])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7381 7406]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7212 7216])
+                            ("condition_id" variable nil (reparse-symbol function_parameters) [7218 7230])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [7232 7243])
+                            ("data" variable nil (reparse-symbol function_parameters) [7245 7249])
+                            ("match_kv" variable nil (reparse-symbol function_parameters) [7251 7259])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [7261 7268]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7199 7407])
+                    ("match_kv" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7439 7443]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [7412 7476]))                  
+                :type "class")
+                nil [7116 7476])
+            ("KeyedDataSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [7531 7576])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [7655 7738])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7748 7773]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7595 7599])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [7601 7608])
+                            ("data_key" variable nil (reparse-symbol function_parameters) [7610 7618])
+                            ("graph" variable nil (reparse-symbol function_parameters) [7620 7625])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [7632 7639]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7582 7774])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7800 7804])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [7806 7817])
+                            ("signal_data" variable nil (reparse-symbol function_parameters) [7819 7830])
+                            ("node" variable nil (reparse-symbol function_parameters) [7832 7836])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [7838 7847]))                          )
+                        (reparse-symbol indented_block_body) [7779 7924]))                  
+                :type "class")
+                nil [7477 7924])
+            ("DummySemaphore" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [7999 8003]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7972 7976])
+                            ("max_actors" variable nil (reparse-symbol function_parameters) [7978 7988]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7959 8004])
+                    ("acquire" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8021 8025])
+                            ("blocking" variable nil (reparse-symbol function_parameters) [8027 8035]))                          )
+                        (reparse-symbol indented_block_body) [8009 8056])
+                    ("release" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8073 8077]))                          )
+                        (reparse-symbol indented_block_body) [8061 8093]))                  
+                :type "class")
+                nil [7925 8093])
+            ("KeyedDataActorSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [8153 8204])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [8320 8408])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8418 8443])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8452 8495])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8504 8541])
+                            ("if" code nil (reparse-symbol indented_block_body) [8551 8729]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8223 8227])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [8229 8236])
+                            ("data_key" variable nil (reparse-symbol function_parameters) [8238 8246])
+                            ("actor_service_ids" variable nil (reparse-symbol function_parameters) [8248 8265])
+                            ("max_concurrent" variable nil (reparse-symbol function_parameters) [8267 8281])
+                            ("graph" variable nil (reparse-symbol function_parameters) [8285 8290])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [8297 8304]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8210 8729])
+                    ("data_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8761 8765]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [8734 8798])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8824 8828])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [8830 8841])
+                            ("signal" variable nil (reparse-symbol function_parameters) [8843 8849])
+                            ("node" variable nil (reparse-symbol function_parameters) [8851 8855])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [8857 8866]))                          )
+                        (reparse-symbol indented_block_body) [8803 9177]))                  
+                :type "class")
+                nil [8094 9177])
+            ("KeyedDataActor" type
+               (:superclasses ("pg_g.Actor")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [9216 9252])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [9339 9366])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9375 9398])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9407 9450])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9459 9480])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9489 9522]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9272 9276])
+                            ("semaphore" variable nil (reparse-symbol function_parameters) [9278 9287])
+                            ("node" variable nil (reparse-symbol function_parameters) [9289 9293])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [9295 9309])
+                            ("signal" variable nil (reparse-symbol function_parameters) [9311 9317])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [9319 9328]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [9259 9523])
+                    ("act" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9536 9540]))                          )
+                        (reparse-symbol indented_block_body) [9528 9556]))                  
+                :type "class")
+                nil [9178 9556]))          
+    :file "nodes.py"
+    :pointmax 9556
+    :fsize 9555
+    :lastmodtime '(22618 35695 715274 50000)
+    :unmatched-syntax '((INDENT_BLOCK 9255 . 9556) (NEWLINE 9252 . 9253))
+    )
+   (semanticdb-table "versioned.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("copy" include nil nil [1 22])
+            ("process_graph.graph" include nil nil [24 58])
+            ("name_service.services" include nil nil [59 95])
+            ("kvstore.kvstore" include nil nil [96 127])
+            ("KeyedResourcesSignal" type
+               (:superclasses ("pg_g.Signal")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [174 225])
+                    ("resource_ids" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [248 252]))                          )
+                        (reparse-symbol indented_block_body) [231 293])
+                    ("set_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [315 319])
+                            ("resource" variable nil (reparse-symbol function_parameters) [321 329]))                          )
+                        (reparse-symbol indented_block_body) [298 375])
+                    ("get_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [397 401])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [403 414]))                          )
+                        (reparse-symbol indented_block_body) [380 456])
+                    ("del_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [478 482])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [484 495]))                          )
+                        (reparse-symbol indented_block_body) [461 534]))                  
+                :type "class")
+                nil [129 534])
+            ("VersionedResourceNode" type
+               (:superclasses ("pg_g.Node")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [579 632])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [801 887])
+                            ("self" variable nil (reparse-symbol indented_block_body) [897 946])
+                            ("self" variable nil (reparse-symbol indented_block_body) [955 1004])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1013 1064]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [651 655])
+                            ("default_scheme_sids" variable nil (reparse-symbol function_parameters) [657 676])
+                            ("default_scheme_args" variable nil (reparse-symbol function_parameters) [683 702])
+                            ("default_scheme_kwargs" variable nil (reparse-symbol function_parameters) [709 730])
+                            ("graph" variable nil (reparse-symbol function_parameters) [754 759])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [766 773])
+                            ("label" variable nil (reparse-symbol function_parameters) [780 785]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [638 1065])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1093 1097])
+                            ("name" variable nil (reparse-symbol function_parameters) [1099 1103]))                          )
+                        (reparse-symbol indented_block_body) [1070 1235])
+                    ("register_new_resource_id" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1269 1273])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [1275 1286])
+                            ("scheme_sids" variable nil (reparse-symbol function_parameters) [1288 1299])
+                            ("scheme_args" variable nil (reparse-symbol function_parameters) [1306 1317])
+                            ("scheme_kwargs" variable nil (reparse-symbol function_parameters) [1324 1337]))                          )
+                        (reparse-symbol indented_block_body) [1240 1917])
+                    ("next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1939 1943])
+                            ("resource" variable nil (reparse-symbol function_parameters) [1945 1953]))                          )
+                        (reparse-symbol indented_block_body) [1922 2054])
+                    ("store_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2078 2082])
+                            ("resource" variable nil (reparse-symbol function_parameters) [2084 2092])
+                            ("token_values" variable nil (reparse-symbol function_parameters) [2094 2106]))                          )
+                        (reparse-symbol indented_block_body) [2059 2363])
+                    ("store_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2391 2395])
+                            ("resource" variable nil (reparse-symbol function_parameters) [2397 2405])
+                            ("token_values" variable nil (reparse-symbol function_parameters) [2407 2419]))                          )
+                        (reparse-symbol indented_block_body) [2368 2611])
+                    ("resource_ids" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2633 2637]))                          )
+                        (reparse-symbol indented_block_body) [2616 2702])
+                    ("resource_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2728 2732])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [2734 2745])
+                            ("version" variable nil (reparse-symbol function_parameters) [2747 2754]))                          )
+                        (reparse-symbol indented_block_body) [2707 2846])
+                    ("versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2864 2868])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [2870 2881]))                          )
+                        (reparse-symbol indented_block_body) [2851 2956]))                  
+                :type "class")
+                nil [535 2956])
+            ("NewResourceVersionCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [3012 3072])
+                    ("needs_initialize" variable nil (reparse-symbol indented_block_body) [3077 3100])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3129 3133])
+                            ("name" variable nil (reparse-symbol function_parameters) [3135 3139]))                          )
+                        (reparse-symbol indented_block_body) [3106 3277])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3297 3301])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3303 3312]))                          )
+                        (reparse-symbol indented_block_body) [3282 3861])
+                    ("fetch_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3881 3885])
+                            ("node" variable nil (reparse-symbol function_parameters) [3887 3891])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3893 3902]))                          )
+                        (reparse-symbol indented_block_body) [3866 4520])
+                    ("holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4535 4539])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [4541 4550])
+                            ("node" variable nil (reparse-symbol function_parameters) [4552 4556])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [4558 4567]))                          )
+                        (reparse-symbol indented_block_body) [4525 4601])
+                    ("_make_signal_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4628 4632])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [4634 4645])
+                            ("version" variable nil (reparse-symbol function_parameters) [4647 4654])
+                            ("node" variable nil (reparse-symbol function_parameters) [4656 4660])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [4662 4671]))                          )
+                        (reparse-symbol indented_block_body) [4606 4833])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4855 4859])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [4861 4870])
+                            ("node" variable nil (reparse-symbol function_parameters) [4872 4876])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [4878 4887]))                          )
+                        (reparse-symbol indented_block_body) [4838 5101])
+                    ("data_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5120 5124])
+                            ("signal_data" variable nil (reparse-symbol function_parameters) [5126 5137])
+                            ("node" variable nil (reparse-symbol function_parameters) [5139 5143])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [5145 5154]))                          )
+                        (reparse-symbol indented_block_body) [5106 5302]))                  
+                :type "class")
+                nil [2957 5302])
+            ("PutResourceOnNodeSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [5365 5417])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5444 5448])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [5450 5461])
+                            ("signal" variable nil (reparse-symbol function_parameters) [5463 5469])
+                            ("node" variable nil (reparse-symbol function_parameters) [5471 5475])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [5477 5486]))                          )
+                        (reparse-symbol indented_block_body) [5423 5729]))                  
+                :type "class")
+                nil [5303 5729]))          
+    :file "versioned.py"
+    :pointmax 5729
+    :fsize 5728
+    :lastmodtime '(22712 23381 231309 54000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!shaas!workspace!pipeline!implementations!process_graph!workflow!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

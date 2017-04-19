@@ -1,0 +1,766 @@
+;; Object pipeline_tests/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pipeline_tests/"
+  :tables
+  (list
+    (semanticdb-table "wn_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("process_graph" include nil nil [1 27])
+            ("reload" code nil nil [28 38])
+            ("workflow.nodes" include nil nil [40 67])
+            ("reload" code nil nil [68 78])
+            ("test_number_one" function (:documentation "
+    n1(data) --- n2(data) --- n3(versionflare)
+    ") nil [80 1310])
+            ("test_number_two" function (:documentation "
+              /--------------------\\
+   / n1(data) ---\\              /--- n4(versionflare) ----+
+   | n7(user) ---- n3(combiner) ---- n6(user_interaction) |
+   | n2(data) ---/  |           \\--- n5(data)             |
+   |  |       \\-------------------------------------------+
+   |  |             |
+   |  |             |
+   \\  |/------------+
+     n8(resource_tracker)
+    ") nil [1311 6489])
+            ("test_number_three" function nil nil [6491 6952])
+            ("test_number_four" function (:documentation "
+                       /--------------------- ] --- n6(userquery)
+                       | /------------------- ] ---/
+    n1(data) --- [ --- n2(combiner) --------- ] --- n5(data)
+    n3(data) --- [ --/   \\-- n4(versionflare) ]
+    ") nil [6953 10422])
+            ("test_number_five" function nil nil [10423 16906])
+            ("test_number_six" function nil nil [17041 20571])
+            ("if" code nil nil [20573 20826]))          
+      :file "wn_test.py"
+      :pointmax 20826
+      :fsize 20867
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ns_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pprint" include nil nil [1 26])
+            ("context.kvstore" include nil nil [28 50])
+            ("reload" code nil nil [51 74])
+            ("name_service" include nil nil [76 101])
+            ("reload" code nil nil [102 112])
+            ("name_service.services" include nil nil [114 150])
+            ("reload" code nil nil [151 163])
+            ("test_number_one" function nil nil [165 315])
+            ("test_number_two" function nil nil [316 870])
+            ("test_number_three" function nil nil [871 1529])
+            ("test_number_four" function nil nil [1530 2124]))          
+      :file "ns_test.py"
+      :pointmax 2124
+      :fsize 2123
+      :lastmodtime '(22398 34357 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "actors_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("context" include nil nil [1 15])
+            ("implementations.process_graph.workflow" include nil nil [46 91])
+            ("implementations.process_graph.actors" include nil nil [92 135])
+            ("implementations.actors.demo" include nil nil [136 170])
+            ("implementations.name_service.yaml" include nil nil [171 211])
+            ("process_graph.graph" include nil nil [213 247])
+            ("name_service.services" include nil nil [249 285])
+            ("test_number_one" function (:documentation "
+    n1(data) ---> n2(patheddata) ---> n3(data)
+    ") nil [287 1401]))          
+      :file "actors_test.py"
+      :pointmax 1401
+      :fsize 1400
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ne_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("threading" include nil nil [2 18])
+            ("PySide" include nil nil [20 44])
+            ("workflow.gui_nodes.gui_data_stack" include nil nil [46 97])
+            ("reload" code nil nil [98 113])
+            ("workflow.gui_nodes.gui_multi_data_stack" include nil nil [114 172])
+            ("reload" code nil nil [173 189])
+            ("workflow.gui_nodes.gui_pathed_data_stack" include nil nil [190 249])
+            ("reload" code nil nil [250 266])
+            ("workflow.gui_nodes.gui_user_query_node" include nil nil [267 323])
+            ("reload" code nil nil [324 339])
+            ("workflow.gui_nodes.gui_connection" include nil nil [340 390])
+            ("reload" code nil nil [391 405])
+            ("node_editor" include nil nil [407 425])
+            ("reload" code nil nil [426 445])
+            ("test_number_one" function (:arguments 
+              ( ("gp" variable nil (reparse-symbol function_parameters) [468 470]))              ) nil [448 611])
+            ("test_number_two" function (:arguments 
+              ( ("gp" variable nil (reparse-symbol function_parameters) [632 634]))              ) nil [612 851])
+            ("if" code nil nil [853 959]))          
+      :file "ne_test.py"
+      :pointmax 959
+      :fsize 964
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax '(($EOI 959 . 959)))
+    (semanticdb-table "pg_proxy_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pprint" include nil nil [1 26])
+            ("context" include nil nil [28 42])
+            ("reload" code nil nil [43 58])
+            ("workflow.nodes.data_stack" include nil nil [60 101])
+            ("reload" code nil nil [102 115])
+            ("process_graph" include nil nil [117 143])
+            ("reload" code nil nil [144 154])
+            ("process_graph.services" include nil nil [156 185])
+            ("reload" code nil nil [186 216])
+            ("make_example_graph" function nil nil [218 879])
+            ("run_processor" function (:arguments 
+              ( ("control_port" variable nil (reparse-symbol function_parameters) [898 910])
+                ("updates_port" variable nil (reparse-symbol function_parameters) [912 924])
+                ("request_port_range_start" variable nil (reparse-symbol function_parameters) [926 950])
+                ("request_port_range_end" variable nil (reparse-symbol function_parameters) [952 974])
+                ("graph" variable nil (reparse-symbol function_parameters) [976 981]))              ) nil [880 1325])
+            ("get_proxy" function (:arguments 
+              ( ("control_server" variable nil (reparse-symbol function_parameters) [1340 1354])
+                ("control_socket" variable nil (reparse-symbol function_parameters) [1356 1370]))              ) nil [1326 1624])
+            ("listen" function (:arguments 
+              ( ("port" variable nil (reparse-symbol function_parameters) [1636 1640]))              ) nil [1625 1860])
+            ("connect_control" function (:arguments 
+              ( ("port" variable nil (reparse-symbol function_parameters) [1882 1886]))              ) nil [1862 2040])
+            ("test_number_one" function nil nil [2041 2948])
+            ("test_number_two" function (:arguments 
+              ( ("port" variable nil (reparse-symbol function_parameters) [2969 2973]))              ) nil [2949 3434])
+            ("if" code nil nil [3435 3521]))          
+      :file "pg_proxy_test.py"
+      :pointmax 3521
+      :fsize 3571
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ne_test_main.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("node_editor.__main__" include nil nil [1 28]))          
+      :file "ne_test_main.py"
+      :pointmax 29
+      :fsize 28
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "kv_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pickle" include nil nil [1 14])
+            ("context" include nil nil [16 30])
+            ("kvstore.kvstore" include nil nil [32 63])
+            ("kvstore.exceptions" include nil nil [65 98])
+            ("test_number_one" function (:arguments 
+              ( ("kv" variable nil (reparse-symbol function_parameters) [120 122]))              ) nil [100 1676])
+            ("test_number_three" function nil nil [2198 2992])
+            ("test_number_four" function nil nil [2993 3121])
+            ("test_number_five" function nil nil [3122 4388])
+            ("test_number_six" function nil nil [4389 4852]))          
+      :file "kv_test.py"
+      :pointmax 4852
+      :fsize 4851
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "gds_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 11])
+            ("PySide" include nil nil [12 36])
+            ("node_editor" include nil nil [38 62])
+            ("workflow.gui_nodes.gui_data_stack" include nil nil [64 114])
+            ("workflow.nodes.data_stack" include nil nil [115 156])
+            ("workflow.nodes.resource" include nil nil [157 195])
+            ("app" variable nil nil [197 231])
+            ("node_editor" variable nil nil [233 269])
+            ("ds_node" variable nil nil [271 306])
+            ("ne_node" variable nil nil [307 349])
+            ("node_editor" code nil nil [350 379])
+            ("resource" variable nil nil [381 440])
+            ("ds_node" code nil nil [441 470])
+            ("ds_node" variable nil nil [472 507])
+            ("ne_node" variable nil nil [508 550])
+            ("node_editor" code nil nil [551 580])
+            ("resource" variable nil nil [582 642])
+            ("ds_node" code nil nil [643 672])
+            ("resource" variable nil nil [673 733])
+            ("ds_node" code nil nil [734 763])
+            ("node_editor" code nil nil [766 784])
+            ("app" code nil nil [785 796]))          
+      :file "gds_test.py"
+      :pointmax 797
+      :fsize 796
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "ic_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("zmq" include nil nil [1 11])
+            ("context" include nil nil [13 27])
+            ("reload" code nil nil [28 43])
+            ("process_graph" include nil nil [45 71])
+            ("reload" code nil nil [72 82])
+            ("process_graph.inter_connect" include nil nil [84 127])
+            ("reload" code nil nil [128 141])
+            ("process_graph.services" include nil nil [143 172])
+            ("reload" code nil nil [173 203])
+            ("workflow.nodes.data_stack" include nil nil [205 246])
+            ("workflow.nodes.resource" include nil nil [247 285])
+            ("make_from_graph" function nil nil [288 890])
+            ("make_to_graph" function nil nil [891 1361])
+            ("run_from_processor" function (:arguments 
+              ( ("condition" variable nil (reparse-symbol function_parameters) [1385 1394])
+                ("graph" variable nil (reparse-symbol function_parameters) [1396 1401]))              ) nil [1362 1943])
+            ("run_to_processor" function (:arguments 
+              ( ("signal_handler" variable nil (reparse-symbol function_parameters) [1996 2010])
+                ("graph" variable nil (reparse-symbol function_parameters) [2012 2017]))              ) nil [1975 2689])
+            ("get_proxy" function (:arguments 
+              ( ("control_server" variable nil (reparse-symbol function_parameters) [2704 2718])
+                ("control_socket" variable nil (reparse-symbol function_parameters) [2720 2734]))              ) nil [2690 2988])
+            ("run_from_ne" function nil nil [2989 3446])
+            ("run_to_ne" function nil nil [3447 3901]))          
+      :file "ic_test.py"
+      :pointmax 3901
+      :fsize 3975
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "pg_ser_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pickle" include nil nil [1 14])
+            ("context.kvstore" include nil nil [16 38])
+            ("reload" code nil nil [39 62])
+            ("process_graph.graph" include nil nil [64 98])
+            ("reload" code nil nil [99 111])
+            ("process_graph.services" include nil nil [113 150])
+            ("reload" code nil nil [151 163])
+            ("make_example_graph" function nil nil [165 656])
+            ("test_number_one" function nil nil [657 962])
+            ("test_number_two" function nil nil [963 1379])
+            ("test_number_three" function nil nil [1380 1782])
+            ("test_number_four" function nil nil [1783 2442])
+            ("test_number_five" function nil nil [2443 3179])
+            ("test_number_six" function nil nil [3180 3901]))          
+      :file "pg_ser_test.py"
+      :pointmax 3901
+      :fsize 3912
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax '((DEF 3902 . 3905) ($EOI 3926 . 3926)))
+    (semanticdb-table "pg_signals_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pickle" include nil nil [1 14])
+            ("context.kvstore" include nil nil [16 38])
+            ("reload" code nil nil [39 62])
+            ("process_graph.graph" include nil nil [64 98])
+            ("reload" code nil nil [99 111])
+            ("process_graph.services" include nil nil [113 150])
+            ("reload" code nil nil [151 163])
+            ("FailingSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [238 242])
+                            ("signal" variable nil (reparse-symbol function_parameters) [244 250]))                          )
+                        (reparse-symbol indented_block_body) [217 296]))                  
+                :type "class")
+                nil [165 296])
+            ("TrueCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("matches" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [350 354]))                          )
+                        (reparse-symbol indented_block_body) [338 377]))                  
+                :type "class")
+                nil [297 377])
+            ("SteppingGraphProcessor" type
+               (:superclasses ("pg_s.GraphProcessorService")
+                :members 
+                  ( ("process" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [452 456]))                          )
+                        (reparse-symbol indented_block_body) [440 799]))                  
+                :type "class")
+                nil [378 799])
+            ("make_example_graph" function (:arguments 
+              ( ("success" variable nil (reparse-symbol function_parameters) [824 831]))              ) nil [801 1411])
+            ("test_number_one" function nil nil [1412 1633]))          
+      :file "pg_signals_test.py"
+      :pointmax 1633
+      :fsize 1632
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "stack_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("abc" include nil nil [1 11])
+            ("context" include nil nil [13 27])
+            ("context.stack" include nil nil [29 49])
+            ("test_number_one" function nil nil [51 330])
+            ("test_number_two" function nil nil [331 743])
+            ("TestI" type
+               (:superclasses ("context.service.Interface")
+                :members 
+                  ( ("hello" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [822 826]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [788 842]))                  
+                :type "class")
+                nil [744 842])
+            ("test_number_three" function nil nil [843 3722]))          
+      :file "stack_test.py"
+      :pointmax 3722
+      :fsize 3721
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "router_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("context" include nil nil [1 15])
+            ("graph_processor.router.services" include nil nil [17 65])
+            ("graph_processor.base" include nil nil [66 101])
+            ("graph_processor.messages" include nil nil [102 141])
+            ("implementations.router.zmq" include nil nil [143 176])
+            ("init_test" function nil nil [178 283])
+            ("run_router" function (:arguments 
+              ( ("control_port" variable nil (reparse-symbol function_parameters) [299 311])
+                ("controller_id" variable nil (reparse-symbol function_parameters) [313 326]))              ) nil [284 1033])
+            ("run_local_router" function (:arguments 
+              ( ("control_port" variable nil (reparse-symbol function_parameters) [1055 1067])
+                ("controller_id" variable nil (reparse-symbol function_parameters) [1069 1082]))              ) nil [1034 1450])
+            ("test_number_one" function (:arguments 
+              ( ("loc" variable nil (reparse-symbol function_parameters) [1471 1474]))              ) nil [1451 2455]))          
+      :file "router_test.py"
+      :pointmax 2455
+      :fsize 2463
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "eval_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("Queue" include nil nil [1 13])
+            ("random" include nil nil [14 27])
+            ("time" include nil nil [28 39])
+            ("context" include nil nil [41 55])
+            ("context.stack" include nil nil [56 84])
+            ("kvstore.kvstore" include nil nil [86 117])
+            ("process_graph.graph" include nil nil [119 153])
+            ("name_service.services" include nil nil [155 191])
+            ("resources.versioned" include nil nil [193 226])
+            ("pipeline_processor.evaluator" include nil nil [228 271])
+            ("pipeline_processor.messages" include nil nil [272 314])
+            ("pipeline_processor.base" include nil nil [315 353])
+            ("pipeline_processor.router" include nil nil [354 394])
+            ("pipeline_processor.controller" include nil nil [395 439])
+            ("implementations.name_service.uuid" include nil nil [441 481])
+            ("implementations.evaluator.threading" include nil nil [482 524])
+            ("implementations.router.zmq" include nil nil [525 558])
+            ("implementations.process_graph.workflow" include nil nil [559 604])
+            ("implementations.process_graph.base" include nil nil [605 646])
+            ("implementations.name_service.yaml" include nil nil [647 687])
+            ("FailingSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [741 783])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [810 814])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [816 827])
+                            ("signal_data" variable nil (reparse-symbol function_parameters) [829 840])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [842 851]))                          )
+                        (reparse-symbol indented_block_body) [789 898]))                  
+                :type "class")
+                nil [689 898])
+            ("SteppingEvaluator" type
+               (:superclasses ("pp_e.services.EvaluatorService")
+                :members 
+                  ( ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [968 972]))                          )
+                        (reparse-symbol indented_block_body) [960 1027])
+                    ("step" function nil (reparse-symbol indented_block_body) [1032 1172]))                  
+                :type "class")
+                nil [899 1172])
+            ("make_example_graph" function (:arguments 
+              ( ("success" variable nil (reparse-symbol function_parameters) [1197 1204]))              ) nil [1174 1875])
+            ("make_remote_example_graph" function (:arguments 
+              ( ("success" variable nil (reparse-symbol function_parameters) [1906 1913]))              ) nil [1876 2899])
+            ("test_number_one" function (:documentation "
+    import eval_test as e_t
+    cq, e = e_t.test_number_one()
+    e.queue_node(e._graph.connections[0].from_node.id)
+    e.run()
+    e.run()
+    e.run()
+    ...
+    ") nil [2900 3295])
+            ("test_number_three" function nil nil [3296 3529])
+            ("test_number_two" function nil nil [3530 4421])
+            ("test_number_four" function nil nil [4422 5401])
+            ("make_test_graph_number_five" function (:documentation "
+    data1 -c1--s1\\                            /c4--s4> data4
+                   multi_data1 -c3--s3> data3
+    data2 -c2--s2/              \\             \\c5--s5> multi_data2
+                                 \\-----------------s6/
+
+    => group multi_data1 and data3
+
+    ") nil [5402 7415])
+            ("test_number_five" function (:arguments 
+              ( ("success" variable nil (reparse-symbol function_parameters) [7437 7444]))              ) nil [7416 8596])
+            ("make_overlay_test_graph" function nil nil [8597 9251])
+            ("make_evaluator_pp" function (:arguments 
+              ( ("graph" variable nil (reparse-symbol function_parameters) [9274 9279]))              ) nil [9252 10185])
+            ("test_number_six" function nil nil [10186 10610])
+            ("CombiningPathedDataSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [10675 10751])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [10857 10950])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10960 11006]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10770 10774])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [10776 10783])
+                            ("combined_data__name" variable nil (reparse-symbol function_parameters) [10785 10804])
+                            ("graph" variable nil (reparse-symbol function_parameters) [10823 10828])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [10835 10842]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [10757 11008])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11034 11038])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [11040 11051])
+                            ("signal_data" variable nil (reparse-symbol function_parameters) [11053 11064])
+                            ("node" variable nil (reparse-symbol function_parameters) [11066 11070])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [11072 11081]))                          )
+                        (reparse-symbol indented_block_body) [11013 11264]))                  
+                :type "class")
+                nil [10611 11264])
+            ("make_workflow_test_graph" function (:documentation "
+    data1 ----\\
+              multi_data ----> data3
+    data2 ----/
+    ") nil [11265 12974])
+            ("test_number_seven" function nil nil [13366 14763]))          
+      :file "eval_test.py"
+      :pointmax 14763
+      :fsize 14762
+      :lastmodtime '(22399 37586 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "controller_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("time" include nil nil [1 12])
+            ("random" include nil nil [13 26])
+            ("context" include nil nil [28 53])
+            ("context.stack" include nil nil [54 82])
+            ("kvstore.kvstore" include nil nil [84 115])
+            ("process_graph.graph" include nil nil [117 151])
+            ("name_service.services" include nil nil [153 189])
+            ("graph_processor.evaluator" include nil nil [191 231])
+            ("graph_processor.controller" include nil nil [232 273])
+            ("graph_processor.router" include nil nil [275 312])
+            ("graph_processor.context_library" include nil nil [313 360])
+            ("implementations.evaluator.threading" include nil nil [362 404])
+            ("implementations.router.zmq" include nil nil [405 438])
+            ("implementations.name_service.uuid" include nil nil [440 480])
+            ("FailingSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [555 559])
+                            ("signal" variable nil (reparse-symbol function_parameters) [561 567]))                          )
+                        (reparse-symbol indented_block_body) [534 614]))                  
+                :type "class")
+                nil [482 614])
+            ("TrueCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("matches" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [668 672]))                          )
+                        (reparse-symbol indented_block_body) [656 695])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [717 721]))                          )
+                        (reparse-symbol indented_block_body) [700 751]))                  
+                :type "class")
+                nil [615 751])
+            ("SteppingEvaluator" type
+               (:superclasses ("gp_e.services.EvaluatorService")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [813 836])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [850 854]))                          )
+                        (reparse-symbol indented_block_body) [842 992]))                  
+                :type "class")
+                nil [752 992])
+            ("make_graph_a" function (:arguments 
+              ( ("id_service_ids" variable nil (reparse-symbol function_parameters) [1010 1024]))              ) nil [993 1524])
+            ("make_graph_b" function (:arguments 
+              ( ("id_service_ids" variable nil (reparse-symbol function_parameters) [1542 1556]))              ) nil [1525 2036])
+            ("test_number_one" function (:arguments 
+              ( ("location" variable nil (reparse-symbol function_parameters) [2057 2065])
+                ("control_port" variable nil (reparse-symbol function_parameters) [2067 2079])
+                ("routing_port_range" variable nil (reparse-symbol function_parameters) [2081 2099]))              ) nil [2037 3268])
+            ("if" code nil nil [3294 4237])
+            ("\"\"\"
+import controller_test as ct
+c, g, conidn, condid = ct.test_number_one('b', 20001, range(20100, 20200))
+c.start()
+
+import controller_test as ct
+import name_service.services as ns_s
+import context.stack as c_st
+import graph_processor.messages as gp_m
+
+id_servs = c_st.ServiceSelector(ns_s.IDGeneratorI, ['uuid'])
+c, g, conidn, condid = ct.test_number_one('a', 10001, range(10100, 10200))
+
+con_req = gp_m.ConnectionRequest(c._id, None, {'server': '127.0.0.1', 'port': 20001}, c._evaluator._graph.inventory['item_ids'])
+net_req = gp_m.NetworkControlRequest(c._id, None, con_req)
+
+c.start()
+c.ipc_connection.put(net_req)
+\"\"\"" code nil nil [4238 4862]))          
+      :file "controller_test.py"
+      :pointmax 4863
+      :fsize 4880
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "remote_wn_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("context" include nil nil [1 15])
+            ("context.kvstore" include nil nil [16 46])
+            ("context.stack" include nil nil [47 75])
+            ("context.services" include nil nil [76 106])
+            ("process_graph.graph" include nil nil [108 142])
+            ("process_graph.services" include nil nil [143 180])
+            ("name_service.services" include nil nil [182 218])
+            ("actors.services" include nil nil [220 250])
+            ("resources.versions" include nil nil [252 286])
+            ("implementations.process_graph.workflow" include nil nil [288 346])
+            ("implementations.actors.demo" include nil nil [347 381])
+            ("implementations.name_service.uuid" include nil nil [382 422])
+            ("implementations.name_service.yaml" include nil nil [423 463])
+            ("make_node" function (:arguments 
+              ( ("args" variable nil (reparse-symbol function_parameters) [491 496])
+                ("kwargs" variable nil (reparse-symbol function_parameters) [498 506]))              ) nil [465 663])
+            ("uuid" include nil nil [664 675])
+            ("make_artist_gp" function (:arguments 
+              ( ("control_port" variable nil (reparse-symbol function_parameters) [840 852])
+                ("routing_port_range" variable nil (reparse-symbol function_parameters) [854 872]))              ) nil [821 1687])
+            ("make_ingest_gp" function (:arguments 
+              ( ("control_port" variable nil (reparse-symbol function_parameters) [1707 1719])
+                ("routing_port_range" variable nil (reparse-symbol function_parameters) [1721 1739]))              ) nil [1688 2551])
+            ("make_transcode_gp" function (:arguments 
+              ( ("control_port" variable nil (reparse-symbol function_parameters) [2574 2586])
+                ("routing_port_range" variable nil (reparse-symbol function_parameters) [2588 2606]))              ) nil [2552 3724])
+            ("make_review_gp" function (:arguments 
+              ( ("control_port" variable nil (reparse-symbol function_parameters) [3743 3755])
+                ("routing_port_range" variable nil (reparse-symbol function_parameters) [3757 3775]))              ) nil [3724 4736])
+            ("test_number_one" function nil nil [4737 10070]))          
+      :file "remote_wn_test.py"
+      :pointmax 10204
+      :fsize 10218
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "sub_graph_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("Queue" include nil nil [1 13])
+            ("kvstore.kvstore" include nil nil [15 46])
+            ("context.stack" include nil nil [48 76])
+            ("context.service" include nil nil [77 106])
+            ("process_graph.graph" include nil nil [108 142])
+            ("name_service.services" include nil nil [143 179])
+            ("pipeline_processor.evaluator.services" include nil nil [180 234])
+            ("implementations.evaluator.threading" include nil nil [236 278])
+            ("implementations.name_service.uuid" include nil nil [279 319])
+            ("LabelingIDGenerator" type
+               (:superclasses ("c_s.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [365 401])
+                    ("service_id" variable nil (reparse-symbol indented_block_body) [407 430])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [449 453])
+                            ("obj" variable nil (reparse-symbol function_parameters) [455 458]))                          )
+                        (reparse-symbol indented_block_body) [436 565]))                  
+                :type "class")
+                nil [321 565])
+            ("test_number_one" function (:documentation "
+    data1 -c1--s1\\                            /c4--s4> data4
+                   multi_data1 -c3--s3> data3
+    data2 -c2--s2/              \\             \\c5--s5> multi_data2
+                                 \\-----------------s6/
+
+    => group multi_data1 and data3
+
+    ") nil [566 3903])
+            ("test_number_two" function nil nil [3904 5034]))          
+      :file "sub_graph_test.py"
+      :pointmax 5034
+      :fsize 5033
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "remote_context_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("time" include nil nil [1 12])
+            ("Queue" include nil nil [13 25])
+            ("threading" include nil nil [26 42])
+            ("context" include nil nil [60 74])
+            ("context.stack" include nil nil [75 103])
+            ("kvstore.kvstore" include nil nil [105 136])
+            ("pipeline_processor.messages" include nil nil [138 180])
+            ("pipeline_processor.base" include nil nil [181 219])
+            ("pipeline_processor.router" include nil nil [220 260])
+            ("pipeline_processor.controller" include nil nil [261 305])
+            ("pipeline_processor.remote_context" include nil nil [306 355])
+            ("pipeline_processor.context_library" include nil nil [356 406])
+            ("implementations.router.zmq" include nil nil [408 441])
+            ("implementations.remote_context.threading" include nil nil [442 489])
+            ("implementations.context_library.threading" include nil nil [490 538])
+            ("RequesterThread" type
+               (:superclasses ("threading.Thread")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("threading" code nil (reparse-symbol indented_block_body) [623 654])
+                            ("self" variable nil (reparse-symbol indented_block_body) [664 688])
+                            ("cl" variable nil (reparse-symbol indented_block_body) [698 756])
+                            ("cl" variable nil (reparse-symbol indented_block_body) [765 790])
+                            ("self" variable nil (reparse-symbol indented_block_body) [801 860])
+                            ("self" code nil (reparse-symbol indented_block_body) [870 885])
+                            ("while" code nil (reparse-symbol indented_block_body) [894 941])
+                            ("controller_up_message" variable nil (reparse-symbol indented_block_body) [950 1062])
+                            ("self" code nil (reparse-symbol indented_block_body) [1071 1120]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [598 602])
+                            ("cc" variable nil (reparse-symbol function_parameters) [604 606])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [608 616])
+                            ("user_value" variable nil (reparse-symbol function_parameters) [618 628]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [585 1137])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1150 1154]))                          )
+                        (reparse-symbol indented_block_body) [1142 1246]))                  
+                :type "class")
+                nil [540 1246])
+            ("test_number_one" function nil nil [1247 1730])
+            ("test_number_two" function nil nil [1732 4148])
+            ("test_number_three" function nil nil [4149 4307])
+            ("make_cl" function (:arguments 
+              ( ("hb" variable nil (reparse-symbol function_parameters) [4320 4322])
+                ("hbto" variable nil (reparse-symbol function_parameters) [4324 4328]))              ) nil [4308 5261])
+            ("make_rc" function (:arguments 
+              ( ("hb" variable nil (reparse-symbol function_parameters) [5274 5276])
+                ("hbto" variable nil (reparse-symbol function_parameters) [5278 5282]))              ) nil [5262 6378])
+            ("test_number_four" function nil nil [6379 7375])
+            ("test_number_five" function nil nil [7376 9219]))          
+      :file "remote_context_test.py"
+      :pointmax 9219
+      :fsize 9218
+      :lastmodtime '(22387 48336 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "remote_graph_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("time" include nil nil [208 219])
+            ("threading" include nil nil [220 236])
+            ("context.stack" include nil nil [238 266])
+            ("process_graph.graph" include nil nil [267 301])
+            ("kvstore.kvstore" include nil nil [302 333])
+            ("name_service.services" include nil nil [334 370])
+            ("pipeline_processor.controller" include nil nil [371 415])
+            ("pipeline_processor.router" include nil nil [416 456])
+            ("pipeline_processor.remote_context" include nil nil [457 506])
+            ("pipeline_processor.context_library" include nil nil [507 557])
+            ("pipeline_processor.evaluator" include nil nil [558 601])
+            ("pipeline_processor.base" include nil nil [602 640])
+            ("pipeline_processor.messages" include nil nil [641 683])
+            ("implementations.name_service.uuid" include nil nil [685 725])
+            ("implementations.router.zmq" include nil nil [726 759])
+            ("implementations.remote_context.threading" include nil nil [760 807])
+            ("implementations.context_library.threading" include nil nil [808 856])
+            ("implementations.evaluator.threading" include nil nil [857 899])
+            ("make_graph" function nil nil [901 2434])
+            ("make_gl" function (:arguments 
+              ( ("hb" variable nil (reparse-symbol function_parameters) [2447 2449])
+                ("hbto" variable nil (reparse-symbol function_parameters) [2451 2455]))              ) nil [2435 3384])
+            ("make_gp" function (:arguments 
+              ( ("hb" variable nil (reparse-symbol function_parameters) [3397 3399])
+                ("hbto" variable nil (reparse-symbol function_parameters) [3401 3405]))              ) nil [3385 4858])
+            ("test_number_one" function nil nil [4859 5630])
+            ("\"\"\"
+
+import remote_graph_test as rgt
+gl, cport = rgt.make_gl(5000, 25000)
+gl.start()
+
+
+import remote_graph_test as rgt
+import pipeline_processor.messages as pp_m
+gp, cport = rgt.make_gp(5000, 25000)
+gp.start()
+connection_request = pp_m.ConnectionRequest(0, 'router', {'server': '127.0.0.1', 'port': 10000}, [])
+gp.ipc_connection.put(connection_request)
+
+\"\"\"" code nil nil [5663 6020]))          
+      :file "remote_graph_test.py"
+      :pointmax 6021
+      :fsize 6020
+      :lastmodtime '(22387 39400 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "context_lib_test.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("process_graph.graph" include nil nil [1 35])
+            ("context.stack" include nil nil [36 64])
+            ("graph_processor.messages" include nil nil [65 104])
+            ("kvstore.kvstore" include nil nil [105 136])
+            ("graph_processor.controller" include nil nil [137 178])
+            ("graph_processor.base" include nil nil [179 214])
+            ("graph_processor.remote_context" include nil nil [215 261])
+            ("implementations.evaluator.threading" include nil nil [263 305])
+            ("implementations.router.zmq" include nil nil [306 339])
+            ("implementations.context_library.threading" include nil nil [340 388])
+            ("implementations.name_service.uuid" include nil nil [389 429])
+            ("test_number_one" function nil nil [431 4276]))          
+      :file "context_lib_test.py"
+      :pointmax 4276
+      :fsize 4287
+      :lastmodtime '(22378 46791 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!pipeline_tests!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

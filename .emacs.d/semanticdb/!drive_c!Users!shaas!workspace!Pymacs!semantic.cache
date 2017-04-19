@@ -1,0 +1,41 @@
+;; Object Pymacs/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Pymacs/"
+  :tables
+  (list
+    (semanticdb-table "Makefile"
+      :major-mode 'makefile-gmake-mode
+      :tags 
+        '( ("EMACS" variable (:default-value ("emacs")) nil [178 192])
+            ("PYTHON" variable (:default-value ("python")) nil [192 208])
+            ("RST2LATEX" variable (:default-value ("rst2latex")) nil [208 230])
+            ("PYSETUP" variable (:default-value ("$(PYTHON)" "setup.py")) nil [231 260])
+            ("PPPP" variable (:default-value ("$(PYTHON)" "pppp" "-C" "ppppconfig.py")) nil [260 299])
+            ("pregithub" function (:arguments ("prepare")) nil [300 349])
+            ("all" function (:arguments ("prepare")) nil [300 349])
+            ("check" function (:arguments ("clean-debug")) nil [350 556])
+            ("install" function (:arguments ("prepare")) nil [557 594])
+            ("prepare" function nil nil [595 679])
+            ("clean" function (:arguments ("clean-debug")) nil [680 818])
+            ("clean-debug" function nil nil [819 880])
+            ("pppp.pdf" function (:arguments ("pppp.rst.in")) nil [881 1148])
+            ("pymacs.pdf" function (:arguments ("pymacs.rst.in")) nil [1149 1432])
+            ("site" function (:arguments ("site-all")) nil [1481 1496])
+            ("package_name" variable (:default-value ("Pymacs")) nil [1497 1519])
+            ("margin_color" variable (:default-value ("\"\\#d1b7ff\"")) nil [1519 1545])
+            ("caption_color" variable (:default-value ("\"\\#f1e4eb\"")) nil [1545 1572])
+            ("GOALS" variable (:default-value ("README.html" "contrib" "index.html" "pppp.pdf" "pymacs.pdf")) nil [1573 1632])
+            ("~/etc/mes-sites/site.mk" include nil nil [1633 1665])
+            ("$(htmldir)" function nil nil [1666 1791])
+            ("$(htmldir)" function nil nil [1666 1791])
+            ("$(htmldir)" function (:arguments ("contrib")) nil [1792 1832])
+            ("$(htmldir)" function (:arguments ("pppp.pdf")) nil [1833 1875])
+            ("$(htmldir)" function (:arguments ("pymacs.pdf")) nil [1876 1922]))          
+      :file "Makefile"
+      :pointmax 1929
+      :fsize 2012
+      :lastmodtime '(22266 26059 0 0)
+      :unmatched-syntax '((string 1477 . 1479) (string 1439 . 1476) (IFNEQ 1433 . 1438) (bol 1433 . 1433))))
+  :file "!drive_c!Users!shaas!workspace!Pymacs!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

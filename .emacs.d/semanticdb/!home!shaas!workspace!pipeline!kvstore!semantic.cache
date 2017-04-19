@@ -1,0 +1,1270 @@
+;; Object kvstore/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kvstore/"
+  :tables (list 
+   (semanticdb-table "kvstore.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("pprint" include nil nil [1 27])
+            ("copy" include nil nil [28 49])
+            ("collections" include nil nil [50 68])
+            ("exceptions" include nil nil [70 87])
+            ("Property" type
+               (:documentation " Represents a property of a value in a KVStore "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            name (str): The name of this property
+            inherit (bool): Wether values below the one this property is attached to, inherit the property
+        \"\"\"" code nil (reparse-symbol indented_block_body) [223 409])
+                            ("self" variable nil (reparse-symbol indented_block_body) [418 434])
+                            ("self" variable nil (reparse-symbol indented_block_body) [443 465]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [188 192])
+                            ("name" variable nil (reparse-symbol function_parameters) [194 198])
+                            ("inherit" variable nil (reparse-symbol function_parameters) [200 207]))                          
+                        :documentation "
+        Args:
+            name (str): The name of this property
+            inherit (bool): Wether values below the one this property is attached to, inherit the property
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [175 466])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [988 992]))                          )
+                        (reparse-symbol indented_block_body) [976 1075])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1093 1097]))                          )
+                        (reparse-symbol indented_block_body) [1080 1224]))                  
+                :type "class")
+                nil [89 1224])
+            ("PlaceInfo" type
+               (:documentation " A pointer to a specific place in a (potentially nested) kvstore structure,
+        This helper class makes it easier to handle finding values in kvstore structures,
+        especially with wildcard lookups and finding multiple values
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            place (KVStore): A specific kvstore in a (nested) kvstore structure,
+                that holds the value we're interested in
+            properties (set(Property)): A (potentially empty) set of properties attached to 'place'
+            key (unicode): The key leading from the 'place' directly to the value
+            rest_key (KVStore key): the value we're pointing to could be a kvstore structure itself,
+                this key leads to the leaf value inside that (therefore, this can be NULL, if we're
+                already pointing to the leaf value)
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1553 2155])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2164 2182])
+                            ("self" code nil (reparse-symbol indented_block_body) [2191 2228])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2237 2251])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2260 2284]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1517 1521])
+                            ("place" variable nil (reparse-symbol function_parameters) [1523 1528])
+                            ("properties" variable nil (reparse-symbol function_parameters) [1530 1540])
+                            ("key" variable nil (reparse-symbol function_parameters) [1542 1545])
+                            ("rest_key" variable nil (reparse-symbol function_parameters) [1547 1555]))                          
+                        :documentation "
+        Args:
+            place (KVStore): A specific kvstore in a (nested) kvstore structure,
+                that holds the value we're interested in
+            properties (set(Property)): A (potentially empty) set of properties attached to 'place'
+            key (unicode): The key leading from the 'place' directly to the value
+            rest_key (KVStore key): the value we're pointing to could be a kvstore structure itself,
+                this key leads to the leaf value inside that (therefore, this can be NULL, if we're
+                already pointing to the leaf value)
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1504 2298])
+                    ("resolve_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2321 2325]))                          
+                        :documentation "
+        Returns:
+            <any>: the value our key leads to in our place
+        ")
+                        (reparse-symbol indented_block_body) [2303 2496])
+                    ("set_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2515 2519])
+                            ("value" variable nil (reparse-symbol function_parameters) [2521 2526])
+                            ("raw" variable nil (reparse-symbol function_parameters) [2528 2531]))                          
+                        :documentation "sets the value in our place at key to value, also sets properties and can handle raw values
+
+        Args:
+            value (<any>): the value to set at 'key'
+            raw (bool): set the value as a raw value, that is, don't resolve dict-like structures into new kvstores
+        ")
+                        (reparse-symbol indented_block_body) [2501 2912])
+                    ("delete_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2934 2938]))                          
+                        :documentation " delete the value at 'key', given 'properties'
+
+        Raises:
+            ReadOnlyException: if the properties in 'place' prohibit deleting this value
+        ")
+                        (reparse-symbol indented_block_body) [2917 3177])
+                    ("delete_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3204 3208])
+                            ("properties" variable nil (reparse-symbol function_parameters) [3210 3220]))                          
+                        :documentation " delete properties at 'key'
+
+        Args:
+           properties (set(properties)): The properties to delete attached to 'key' in 'place'
+        ")
+                        (reparse-symbol indented_block_body) [3182 3444]))                  
+                :type "class")
+                nil [1225 3444])
+            ("KVStore" type
+               (:documentation " A Key-Value mapping type; a nested-dictionary with all the bells and whistles and powerful key-path support "
+                :superclasses ("collections.MutableMapping")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\" Args:
+            name (str): The name of this kvstore, can be usefull in specialized kvstores
+            path_sep (str): the separator used by *this* kvstore (note that other kvstores
+                above and below this one in a structure can use different separators,
+                default is '.'
+            collate_key (str): wildcard used by *this* kvstore (note that other kvstores
+                above and below this one in a structure can use different collate keys)
+                can be NULL to disable wildcard lookup, default is '*'
+            data (mapping): if not NULL, use this to initialize the kvstore with data.
+                data needs to support key/value lookups (so, a python dict, or another kvstore,
+                or something like that
+            subclass (type): when inserting a non-leaf key, we create a mapping type instance in our
+                data store. By default we use the our own class, but this can be changed by passing
+                another class
+        \"\"\"" code nil (reparse-symbol indented_block_body) [3692 4711])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4720 4737])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4746 4772])
+                            ("self" code nil (reparse-symbol indented_block_body) [4781 4813])
+                            ("if" code nil (reparse-symbol indented_block_body) [4888 5033])
+                            ("self" code nil (reparse-symbol indented_block_body) [5041 5084])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5094 5111])
+                            ("self" code nil (reparse-symbol indented_block_body) [5120 5143])
+                            ("self" code nil (reparse-symbol indented_block_body) [5152 5177]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3625 3629])
+                            ("name" variable nil (reparse-symbol function_parameters) [3631 3635])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [3642 3650])
+                            ("collate_key" variable nil (reparse-symbol function_parameters) [3657 3668])
+                            ("data" variable nil (reparse-symbol function_parameters) [3675 3679])
+                            ("subclass" variable nil (reparse-symbol function_parameters) [3686 3694]))                          
+                        :documentation " Args:
+            name (str): The name of this kvstore, can be usefull in specialized kvstores
+            path_sep (str): the separator used by *this* kvstore (note that other kvstores
+                above and below this one in a structure can use different separators,
+                default is '.'
+            collate_key (str): wildcard used by *this* kvstore (note that other kvstores
+                above and below this one in a structure can use different collate keys)
+                can be NULL to disable wildcard lookup, default is '*'
+            data (mapping): if not NULL, use this to initialize the kvstore with data.
+                data needs to support key/value lookups (so, a python dict, or another kvstore,
+                or something like that
+            subclass (type): when inserting a non-leaf key, we create a mapping type instance in our
+                data store. By default we use the our own class, but this can be changed by passing
+                another class
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3612 5196])
+                    ("name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5224 5228]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [5201 5257])
+                    ("rename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5273 5277])
+                            ("name" variable nil (reparse-symbol function_parameters) [5279 5283]))                          )
+                        (reparse-symbol indented_block_body) [5262 5312])
+                    ("class_fqn" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self_cls" variable nil (reparse-symbol function_parameters) [5348 5356])
+                            ("cls" variable nil (reparse-symbol function_parameters) [5358 5361]))                          )
+                        (reparse-symbol indented_block_body) [5317 5444])
+                    ("is_instance" function
+                       (:documentation " returns whether an object is of the same type as this class, works across reloads
+
+        Args:
+            obj (object): an instance of some class, which we check against our own class for
+                inheritance
+
+        Returns:
+            bool: True if we are the 'obj'`s class or are somewhere in the 'obj'`s base classes
+        "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [5482 5485])
+                            ("obj" variable nil (reparse-symbol function_parameters) [5487 5490]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [5449 6142])
+                    ("_make_data_store" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6180 6184]))                          
+                        :documentation " initialize the data store of this kvstore. override this method if you want to use
+            a custom data store
+        ")
+                        (reparse-symbol indented_block_body) [6159 6350])
+                    ("clear" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6365 6369]))                          
+                        :documentation " clear the internal data store of this kvstore. by default just creates a new data store,
+            letting python's garbage collector handle the clean up of what we held before
+        ")
+                        (reparse-symbol indented_block_body) [6355 6607])
+                    ("init_from_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6631 6635])
+                            ("data" variable nil (reparse-symbol function_parameters) [6637 6641]))                          
+                        :documentation " initialize the internal data store from 'data'
+
+        Args:
+            data (<many>): can be
+                NULL -> ignore data
+                instance of dict -> insert key/values from data into our internal storage
+                instance of kvstore -> insert key/values from data into our internal storage
+                    also inherits properties (and recurses if there's more kvstores or dicts
+                    below 'data')
+
+        Raises:
+            ValueError: if we don't know how to handle 'data'`s type
+        ")
+                        (reparse-symbol indented_block_body) [6612 7650])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7689 7693]))                          )
+                        (reparse-symbol indented_block_body) [7677 7745])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7763 7767]))                          )
+                        (reparse-symbol indented_block_body) [7750 8251])
+                    ("serialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8270 8274]))                          
+                        :documentation "
+        Returns:
+            a flattened representation of this kvstore and the structure below (if any)
+        ")
+                        (reparse-symbol indented_block_body) [8256 8445])
+                    ("as_dict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8462 8466])
+                            ("bake" variable nil (reparse-symbol function_parameters) [8468 8472])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [8479 8496]))                          
+                        :documentation "return this kvstore and substructure as a flat dictionary
+
+        Args:
+            bake (bool): If True(default), resolves values (for examples, calls any
+                callable values and stores the return value). If False, does a direct
+                lookup into the internal data store
+            parent_properties (set(Property)): as_dict recurses into sub kvstores, passing
+                the properties of the sub kvstores to their as_dict function. When calling
+                this function from outside a kvstore, you can leave it as None, unless
+                you have a need to pass in custom properties
+
+        Returns:
+            a flattened representation of this kvstore and the structure below (if any)
+        ")
+                        (reparse-symbol indented_block_body) [8450 9752])
+                    ("__getstate__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9774 9778]))                          
+                        :documentation " pickle support, returns a representation of this kvstore structure using
+            builtin python objects only
+        ")
+                        (reparse-symbol indented_block_body) [9757 10141])
+                    ("__setstate__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10163 10167])
+                            ("state" variable nil (reparse-symbol function_parameters) [10169 10174]))                          
+                        :documentation " unpickle support
+
+        Args:
+            state (dict): Should have the same structure as the output of __getstate__
+        ")
+                        (reparse-symbol indented_block_body) [10146 10494])
+                    ("make_user_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10529 10533])
+                            ("keys" variable nil (reparse-symbol function_parameters) [10535 10540]))                          
+                        :documentation " given a list of keys, returns a key path string, using our own path separator
+
+        Args:
+            keys (arglist(<any>)): all the non-keyword args to this function
+
+        Returns:
+            unicode: all the 'keys' concatenated using our path separator
+
+        Notes:
+            we don't know what sub kvstores will be using as path separators, which is a problem since,
+            without doing a lookup and potentially creating the path represented by 'keys', we can't
+            find out
+        ")
+                        (reparse-symbol indented_block_body) [10511 11126])
+                    ("user_key_to_string" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11154 11158])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [11160 11168]))                          
+                        :documentation " given a user supplied key (which can be, or have, lists of strings in them),
+            return as a flat string using make_user_key
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+
+        Returns:
+            unicode: a flat unicode string representation of the supplied user key,
+                with the same limitations as 'make_user_key'
+        ")
+                        (reparse-symbol indented_block_body) [11131 11885])
+                    ("split_user_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11909 11913])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [11915 11923])
+                            ("limit" variable nil (reparse-symbol function_parameters) [11925 11930]))                          
+                        :documentation " given our path separator, split the user key into a list of keys
+
+        Args:
+            user_key (str): A key path understandable by this kvstore
+            limit (int): How many times to split the user key
+
+        Returns:
+            list: A list of path component strings
+        ")
+                        (reparse-symbol indented_block_body) [11890 12304])
+                    ("_resolve_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12326 12330])
+                            ("key" variable nil (reparse-symbol function_parameters) [12332 12335]))                          
+                        :documentation " internal method, resolves one key (not a key path), handling collation/wildcards
+
+        Args:
+            key (unicode): a unicode key
+
+        Returns:
+            unicode/list: if the 'key' matches our collate key, returns all our
+                direct internal keys (not recursing down any potential sub structure) as a list,
+                otherwise return the key as it is given
+        ")
+                        (reparse-symbol indented_block_body) [12309 12947])
+                    ("resolve_key_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12973 12977])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [12979 12987]))                          
+                        :documentation " splits a user key path into the first direct key we'll use in our internal datastore
+            and whatever rest path is left, which is kept untouched and (if not empty) handled
+            by sub kvstores
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+
+        Returns:
+            list(unicode, <mixed>): List of the first direct key and the rest of the
+               user_key
+        ")
+                        (reparse-symbol indented_block_body) [12952 14249])
+                    ("_set_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14292 14296])
+                            ("key" variable nil (reparse-symbol function_parameters) [14298 14301])
+                            ("properties" variable nil (reparse-symbol function_parameters) [14303 14313]))                          
+                        :documentation " non-recursive internal method to set the properties for one of our keys
+            (no value needs yet to be stored at that key)
+
+        Args:
+            key (str): a key usable directly in our data store, no key path handling is performed
+            properties (list(Property)): a sequence of Properties to set at 'key' (can be empty,
+            in which case nothing happens)
+        ")
+                        (reparse-symbol indented_block_body) [14272 14994])
+                    ("_retrieve_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15024 15028])
+                            ("key" variable nil (reparse-symbol function_parameters) [15030 15033]))                          
+                        :documentation " non recursive internal method to retrieve the properties stored at one of our keys
+            (no value needs yet to be stored at that key)
+
+        Args:
+            key (str): a key usable directly in our data store, no key path handling is performed
+
+        Returns:
+            set(Property): the properties stored at 'key' (can be an empty set)
+        ")
+                        (reparse-symbol indented_block_body) [14999 15492])
+                    ("_delete_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15520 15524])
+                            ("properties" variable nil (reparse-symbol function_parameters) [15526 15536]))                          
+                        :documentation " removes all properties from all keys we have
+            Todo:
+                 figure out if this intentionally doens't care what key(s) the
+                 properties are stored at
+        ")
+                        (reparse-symbol indented_block_body) [15497 15826])
+                    ("_resolve_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15855 15859])
+                            ("key" variable nil (reparse-symbol function_parameters) [15861 15864])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [15866 15883]))                          
+                        :documentation " return all properties stored for 'key'. This is potentially called from
+            higher up in a kvstore, which is why parent_properties can be passed in,
+            handles property inheritance
+
+        Args:
+            key (str): a key usable directly in our data store, no key path handling is performed
+
+        Returns:
+            set(Property): the properties stored at 'key' (can be an empty set), combined with
+                inheritable parent properties (if any)
+        ")
+                        (reparse-symbol indented_block_body) [15831 16698])
+                    ("get_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16722 16726])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [16728 16736]))                          
+                        :documentation " return all the properties at the leaf key(s) that user key points to, if user_key
+            contains collate keys, the properties of all the leaves at the end of all those
+            paths are collected
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+
+        Returns:
+           set(Property): the properties stored at the leaf key(s) pointed to by user_key
+        ")
+                        (reparse-symbol indented_block_body) [16703 17454])
+                    ("set_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17478 17482])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [17484 17492])
+                            ("properties" variable nil (reparse-symbol function_parameters) [17494 17504]))                          
+                        :documentation " set the properties for the leaf key(s) user_key points to, overwriting any that
+            were already there
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+            properties (set(Property)): the properties to set (can be empty, which would
+                be equivalent to clear_properties)
+        ")
+                        (reparse-symbol indented_block_body) [17459 18050])
+                    ("clear_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18076 18080])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [18082 18090]))                          
+                        :documentation " clear the properties for the leaf(s) key user_key points to
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+        ")
+                        (reparse-symbol indented_block_body) [18055 18438])
+                    ("add_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18462 18466])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [18468 18476])
+                            ("properties" variable nil (reparse-symbol function_parameters) [18478 18488]))                          
+                        :documentation " add properties to the leaf key(s) user_key points to
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+            properties (set(Property)): the properties to add (can be empty, in which
+                case nothing happens)
+        ")
+                        (reparse-symbol indented_block_body) [18443 19069])
+                    ("delete_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19096 19100])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [19102 19110])
+                            ("properties" variable nil (reparse-symbol function_parameters) [19112 19122]))                          
+                        :documentation " delete properties from the leaf key(s) user_key points to
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+            properties (set(Property)): the properties to delete (can be empty, in which
+                case nothing happens)
+        ")
+                        (reparse-symbol indented_block_body) [19074 19745])
+                    ("inherit_properties" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19773 19777])
+                            ("kv" variable nil (reparse-symbol function_parameters) [19779 19781]))                          
+                        :documentation " overwrite the properties in this kvstore with the ones stored in the 'kv' kvstore
+            only overwrites the properties for keys stored in 'kv'
+
+        Args:
+            kv (KVStore): the kvstore to inherit properties from
+        ")
+                        (reparse-symbol indented_block_body) [19750 20259])
+                    ("_retrieve_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20298 20302])
+                            ("key" variable nil (reparse-symbol function_parameters) [20304 20307]))                          
+                        :documentation " non recursive function to retrieve the value stored directly at 'key'
+
+        Args:
+            key (unicode): A key indexing our internal data store
+
+        Returns:
+            <any>: The value stored at 'key' or NULL if 'key' doesn't exist in this kvstore
+        ")
+                        (reparse-symbol indented_block_body) [20278 20727])
+                    ("_resolve_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20751 20755])
+                            ("key" variable nil (reparse-symbol function_parameters) [20757 20760])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [20762 20779]))                          
+                        :documentation " resolve the value stored directly at 'key',
+            handles the 'callable' property
+
+        Args:
+            key (unicode): A key indexing our internal data store
+            parent_properties (set(Property)): The set of properties collected along the
+                key path leading to 'key' (if there was such a key path)
+
+        Returns:
+            <any>: The value stored at 'key' or NULL if 'key' doesn't exist in this kvstore,
+                potentially calls 'value()' if 'callable' is stored as a property on 'key'
+        ")
+                        (reparse-symbol indented_block_body) [20732 21562])
+                    ("_do_set_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21585 21589])
+                            ("key" variable nil (reparse-symbol function_parameters) [21591 21594])
+                            ("value" variable nil (reparse-symbol function_parameters) [21596 21601])
+                            ("properties" variable nil (reparse-symbol function_parameters) [21603 21613])
+                            ("raw" variable nil (reparse-symbol function_parameters) [21615 21618]))                          
+                        :documentation " internal function (i.e. don't call this directly),
+            handles the actual setting and ingesting of dict-like values
+
+        Args:
+            key (unicode): A key indexing our internal data store
+            value (<any>): the value to store at 'key'
+            properties (set(Property)): the set of properties applicable to 'key'
+            raw (bool): If True , skip the usual ingesting of dict-like values (default False)
+        ")
+                        (reparse-symbol indented_block_body) [21567 22792])
+                    ("_set_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22812 22816])
+                            ("key" variable nil (reparse-symbol function_parameters) [22818 22821])
+                            ("value" variable nil (reparse-symbol function_parameters) [22823 22828])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [22830 22847])
+                            ("raw" variable nil (reparse-symbol function_parameters) [22854 22857]))                          
+                        :documentation " non recursive function to set the value at 'key' to 'value', handles 'readonly' property
+
+        Args:
+            key (unicode): A key indexing our internal data store
+            value (<any>): the value to store at 'key', if NULL, this is equivalent to calling del kv[key]
+            parent_properties (set(Property)): The set of properties collected along the
+                key path leading to 'key' (if there was such a key path)
+            raw (bool): If True, skip the usual ingesting of dict-like values (default False)
+
+        Raises:
+            ReadOnlyError: If the 'readonly' property was encountered along the key path leading to 'key'
+                or is stored at 'key' in this kvstore
+        ")
+                        (reparse-symbol indented_block_body) [22797 23990])
+                    ("_delete_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24013 24017])
+                            ("key" variable nil (reparse-symbol function_parameters) [24019 24022])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [24024 24041]))                          
+                        :documentation " non recursive function to delete the value stored at 'key' in this kvstore,
+            it is not an error if 'key' doesn't exist in our internal data store
+
+        Args:
+            key (unicode): A key indexing our internal data store
+
+        Raises:
+            ReadOnlyError: If the 'readonly' property was encountered along the key path leading to 'key'
+                or is stored at 'key' in this kvstore
+        ")
+                        (reparse-symbol indented_block_body) [23995 24769])
+                    ("_insert_place" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24806 24810])
+                            ("key" variable nil (reparse-symbol function_parameters) [24812 24815])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [24817 24834]))                          
+                        :documentation " inserts a kvstore into the current kvstore at 'key', using
+            this kvstores subclass, etc... settings. Primarily used in _find_places when
+            setting a value
+
+        Args:
+            key (unicode): direct key pointing into our internal data storage
+            parent_properties (set(Property)): the properties encountered so far along the
+               key path that led to this kvstore, used to check for 'readonly' properties
+
+        Raises:
+            ReadOnlyError: if the 'readonly' property was encountered along the key path to this
+                kvstore
+        ")
+                        (reparse-symbol indented_block_body) [24788 25750])
+                    ("_find_places" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25772 25776])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [25778 25786])
+                            ("create" variable nil (reparse-symbol function_parameters) [25788 25794])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [25802 25819])
+                            ("collate" variable nil (reparse-symbol function_parameters) [25826 25833]))                          
+                        :documentation " find all the places a user supplied key path points to, can create the key path (e.g. when setting a value)
+            and supports collate/wildcard lookups
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+            create (bool): If True, create any missing/non-existing keys along the key path(s)
+                represented by 'user_key'
+            parent_properties (set(Property)): when called recursively, this collects the properties encountered
+                along the key path represented by 'user_key'
+            collate (bool): records whether a collate key was encountered by a kvstore while travfersing down
+                the key path represented by 'user_key'
+        ")
+                        (reparse-symbol indented_block_body) [25755 28722])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28767 28771])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [28773 28781]))                          
+                        :documentation " kv[user_key] syntax support, supports collate/wildcard lookups
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+
+        Returns:
+            <any>: the value(s) stored at user key, NULL if the user_key doesn't point to anything
+                 in this kvstore, a list of values if collate keys were present in user_key
+        ")
+                        (reparse-symbol indented_block_body) [28751 29585])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29606 29610])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [29612 29620])
+                            ("value" variable nil (reparse-symbol function_parameters) [29622 29627])
+                            ("raw" variable nil (reparse-symbol function_parameters) [29629 29632]))                          
+                        :documentation " kv[user_key] = value support, supports collate/wildcard keys
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+            value (<any>): The value to store at the leaf key(s) user_key points to,
+                if value is NULL, is equivalent to del kv[user_key]
+            raw (bool): If True, don't do the ingest usually done for dict-like values (default False)
+
+        Raises:
+            KeyError: if user_key doesn't match anything (and doesn't contain collate keys)
+        ")
+                        (reparse-symbol indented_block_body) [29590 30831])
+                    ("__delitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30852 30856])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [30858 30866]))                          
+                        :documentation " del kv[user_key] support, however, only deletes the key (and value) at the end of
+            where user_key points to
+
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+
+        Raises:
+            ReadOnlyError: when trying to delete keys that have the 'readonly' property
+
+        Notes:
+            Deleting non existing keys is not treated as an error
+        ")
+                        (reparse-symbol indented_block_body) [30836 31654])
+                    ("set_raw" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31697 31701])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [31703 31711])
+                            ("value" variable nil (reparse-symbol function_parameters) [31713 31718])
+                            ("set_property" variable nil (reparse-symbol function_parameters) [31720 31732]))                          
+                        :documentation " set the value at a key without ingesting dict-like structures into new kvstores, this
+            is useful, for example, for storing existing kvstores in other kvstores
+
+        Args:
+            user_key (<mixed>): A key path understandable by this kvstore
+            value (<any>): the value to set, can be anything (although NULL will just delete the user_key,
+                see also __setitem__)
+            set_property (bool): if True(default), set the 'raw' property on the leaf key user_key points to
+        ")
+                        (reparse-symbol indented_block_body) [31685 32414])
+                    ("__contains__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32463 32467])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [32469 32477]))                          
+                        :documentation " return true if user_key points to a valid place (or places) in this kvstore ")
+                        (reparse-symbol indented_block_body) [32446 32648])
+                    ("__iter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32666 32670]))                          
+                        :documentation " support for key,value in ....
+
+        Note:
+            If you're using a custom internal data storage in a subclass, it's nice to make
+            sure this still works on your storagetype
+        ")
+                        (reparse-symbol indented_block_body) [32653 32920])
+                    ("__len__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32937 32941]))                          
+                        :documentation " support len(kvstore) ")
+                        (reparse-symbol indented_block_body) [32925 33012])
+                    ("items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33027 33031]))                          
+                        :documentation "
+        Returns:
+            list(tuple(key, value)): direct keys and their values from our internal storage
+        ")
+                        (reparse-symbol indented_block_body) [33017 33201])
+                    ("keys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33215 33219]))                          
+                        :documentation "
+        Returns:
+            list: direct keys from out internal storage
+        ")
+                        (reparse-symbol indented_block_body) [33206 33352])
+                    ("values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33368 33372]))                          
+                        :documentation "
+        Returns:
+            list: direct values from out internal storage
+
+        Note:
+            This is the non recursive form, so the values might in turn be or contain kvstores (see also the leaf_foo() functions)
+        ")
+                        (reparse-symbol indented_block_body) [33357 33655])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33668 33672])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [33674 33682])
+                            ("default" variable nil (reparse-symbol function_parameters) [33684 33691]))                          )
+                        (reparse-symbol indented_block_body) [33660 33802])
+                    ("update" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33818 33822])
+                            ("data" variable nil (reparse-symbol function_parameters) [33824 33828]))                          )
+                        (reparse-symbol indented_block_body) [33807 33865])
+                    ("leaf_items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33917 33921])
+                            ("parent" variable nil (reparse-symbol function_parameters) [33923 33929])
+                            ("parent_key" variable nil (reparse-symbol function_parameters) [33936 33946])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [33953 33970])
+                            ("ignore_raw" variable nil (reparse-symbol function_parameters) [33977 33987]))                          
+                        :documentation " returns all the (key, value) pairs stored at the end of key paths in this kvstore and its
+            substructure (if any)
+
+        Args:
+            parent: while recursing down the tree structure, this keeps track of where we came from,
+                so we can build the key path string using the correct path separators (leave this as None
+                when you just want to call this function)
+            parent_key: similar to 'parent', keeps track of the key that led from the parent kvstore to this one
+            parent_properties: similar to 'parent', keeps track of the properties our key had in the parent kvstore
+            ignore_raw: normally, a key that has the 'raw' property set on it is considered to be a leaf, even if
+                the value is another KVStore. This tells the lookup to cross those boundaries
+
+        Returns:
+            list(tuple(leaf_key, leaf_value)): a list of all the key paths to all the values at
+                leaves in the kvstore structure. The leaf_keys will be usuable in the kvstore the lookup started from
+        ")
+                        (reparse-symbol indented_block_body) [33902 35822])
+                    ("leaf_keys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35841 35845])
+                            ("ignore_raw" variable nil (reparse-symbol function_parameters) [35847 35857]))                          
+                        :documentation " uses leaf_items, returns only the keys ")
+                        (reparse-symbol indented_block_body) [35827 36029])
+                    ("leaf_values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36050 36054])
+                            ("ignore_raw" variable nil (reparse-symbol function_parameters) [36056 36066]))                          
+                        :documentation " uses leaf_items, returns only the values ")
+                        (reparse-symbol indented_block_body) [36034 36240])
+                    ("make_subkvstore" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36282 36286])
+                            ("name" variable nil (reparse-symbol function_parameters) [36288 36292]))                          
+                        :documentation " return a kvstore as would be created when, for example, this kvstore would create
+            a sub kvstore to store a value at a key path not terminating at this kvstore itself
+        ")
+                        (reparse-symbol indented_block_body) [36262 36599])
+                    ("find_values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36620 36624])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [36626 36634])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [36636 36653])
+                            ("orig_key" variable nil (reparse-symbol function_parameters) [36660 36668])
+                            ("global_key_path" variable nil (reparse-symbol function_parameters) [36675 36690]))                          
+                        :documentation " Performs key path searching in this kvstore and sub structure, the key path
+            does not have to be anchored at the kvstore where the search begins.
+            (As an analogy, this is like python's 're' regex module's \"search\" and not like \"match\")
+
+        Args:
+            user_key:
+            parent_properties:
+            orig_key:
+            global_key_path:
+
+        Returns:
+            A KVStore, holding all the full paths and their values that where found. Note that the
+            values are not copied or anything, they are the same ones as stored in this kvstore structure
+
+        Note:
+            If the user_key is 'foo.*' and, starting from this kvstore, there are values
+            at 'quaz.foo.bar', 'a.b.foo.baz', 'quaz.foo.wex' the returned KVStore will have
+            the following structure resulting from this lookup:
+            quaz.foo.bar: <value>
+            a.b.foo.baz: <value>
+            quaz.foo.wex: <value>
+
+            If you then use leaf_items on the result, you can very nicely find all the values and where
+            they were stored. The leaf_keys thusly returned should work in this kvstore to retrieve the
+            values as well.
+        ")
+                        (reparse-symbol indented_block_body) [36604 40556])
+                    ("lookup_in_kvstores" function
+                       (:typemodifiers ("static")
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("user_key" variable nil (reparse-symbol function_parameters) [41772 41780])
+                            ("kvstores" variable nil (reparse-symbol function_parameters) [41782 41790])
+                            ("collector" variable nil (reparse-symbol function_parameters) [41792 41801]))                          
+                        :documentation " collects values stored at user_key in a given list of kvstores, if
+            a collector function object is given, this will be called upon to
+            merge the values found.
+
+        Args:
+            user_key (<mixed>): A key path understandable by kvstores in 'kvstores'
+            kvstores (list(KVStore)): a list of kvstores (can be empty, then an empty or NULL result is returned)
+            collector (void func(value, new_value)): a function that directly modifies its
+                first argument, merging in the second argument. An example would be 'list.append'.
+                If None, the first non NULL value found in the list of kvstores is returned.
+
+        Returns:
+            <mixed>: Whatever the outcome of the lookup of the user key path and the collector function is
+
+        Note:
+            No checking is done on what the collector function actually does with its values, as long as it
+            is not None, it is just called with the values collected so far and the new value found...
+        ")
+                        (reparse-symbol indented_block_body) [41731 43372]))                  
+                :type "class")
+                nil [3445 43372]))          
+    :file "kvstore.py"
+    :pointmax 43372
+    :fsize 43371
+    :lastmodtime '(22756 61872 101725 368000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "specialized.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("inspect" include nil nil [71 85])
+            ("copy" include nil nil [86 107])
+            ("kvstore" include nil nil [109 123])
+            ("exceptions" include nil nil [125 142])
+            ("ListKVStore" type
+               (:superclasses ("kvstore.KVStore")
+                :members 
+                  ( ("_make_data_store" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [205 209]))                          )
+                        (reparse-symbol indented_block_body) [184 264])
+                    ("_resolve_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [286 290])
+                            ("key" variable nil (reparse-symbol function_parameters) [292 295]))                          )
+                        (reparse-symbol indented_block_body) [269 408])
+                    ("_create_key_at" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [432 436])
+                            ("key" variable nil (reparse-symbol function_parameters) [438 441])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [443 460])
+                            ("index" variable nil (reparse-symbol function_parameters) [467 472]))                          )
+                        (reparse-symbol indented_block_body) [413 946])
+                    ("_insert_place" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1030 1034])
+                            ("key" variable nil (reparse-symbol function_parameters) [1036 1039])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [1041 1058]))                          )
+                        (reparse-symbol indented_block_body) [1012 1166])
+                    ("_set_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1186 1190])
+                            ("key" variable nil (reparse-symbol function_parameters) [1192 1195])
+                            ("value" variable nil (reparse-symbol function_parameters) [1197 1202])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [1204 1221])
+                            ("index" variable nil (reparse-symbol function_parameters) [1228 1233])
+                            ("raw" variable nil (reparse-symbol function_parameters) [1240 1243]))                          )
+                        (reparse-symbol indented_block_body) [1171 1809])
+                    ("_delete_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1832 1836])
+                            ("key" variable nil (reparse-symbol function_parameters) [1838 1841])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [1843 1860]))                          )
+                        (reparse-symbol indented_block_body) [1814 2195])
+                    ("items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2210 2214]))                          )
+                        (reparse-symbol indented_block_body) [2200 2337])
+                    ("values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2353 2357]))                          )
+                        (reparse-symbol indented_block_body) [2342 2476])
+                    ("keys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2490 2494]))                          )
+                        (reparse-symbol indented_block_body) [2481 2523]))                  
+                :type "class")
+                nil [144 2523])
+            ("collections" include nil nil [2524 2542])
+            ("OrderedKVStore" type
+               (:superclasses ("kvstore.KVStore")
+                :members 
+                  ( ("_make_data_store" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2608 2612]))                          )
+                        (reparse-symbol indented_block_body) [2587 2662]))                  
+                :type "class")
+                nil [2544 2662])
+            ("weakref" include nil nil [2663 2677])
+            ("WeakRefKVStore" type
+               (:superclasses ("kvstore.KVStore")
+                :members 
+                  ( ("_retrieve_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3086 3090])
+                            ("key" variable nil (reparse-symbol function_parameters) [3092 3095]))                          )
+                        (reparse-symbol indented_block_body) [3066 3494])
+                    ("_set_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3514 3518])
+                            ("key" variable nil (reparse-symbol function_parameters) [3520 3523])
+                            ("value" variable nil (reparse-symbol function_parameters) [3525 3530])
+                            ("parent_properties" variable nil (reparse-symbol function_parameters) [3532 3549])
+                            ("raw" variable nil (reparse-symbol function_parameters) [3556 3559]))                          )
+                        (reparse-symbol indented_block_body) [3499 4202]))                  
+                :type "class")
+                nil [2679 4202])
+            ("LockableKVStore" type
+               (:superclasses ("kvstore.KVStore")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("kvstore" code nil (reparse-symbol indented_block_body) [4528 4643])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4653 4683]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4260 4264])
+                            ("name" variable nil (reparse-symbol function_parameters) [4266 4270])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [4277 4285])
+                            ("collate_key" variable nil (reparse-symbol function_parameters) [4292 4303])
+                            ("data" variable nil (reparse-symbol function_parameters) [4310 4314])
+                            ("subclass" variable nil (reparse-symbol function_parameters) [4321 4329]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4247 4501]))                  
+                :type "class")
+                nil [4203 4501]))          
+    :file "specialized.py"
+    :pointmax 4501
+    :fsize 4500
+    :lastmodtime '(22618 46569 770472 220000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "exceptions.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("ReadOnlyError" type
+               (:superclasses ("Exception")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [85 129])
+                            ("self" code nil (reparse-symbol indented_block_body) [139 161]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [50 54])
+                            ("message" variable nil (reparse-symbol function_parameters) [56 63])
+                            ("keys" variable nil (reparse-symbol function_parameters) [65 69]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [37 162]))                  
+                :type "class")
+                nil [1 162]))          
+    :file "exceptions.py"
+    :pointmax 162
+    :fsize 161
+    :lastmodtime '(22498 51718 119707 175000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "__init__.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("__builtin__" include nil nil [1 19])
+            ("NULLMeta" type
+               (:superclasses ("type")
+                :members 
+                  ( ("__new__" function (:arguments 
+                      ( ("mcs" variable nil (reparse-symbol function_parameters) [200 203])
+                        ("name" variable nil (reparse-symbol function_parameters) [205 209])
+                        ("bases" variable nil (reparse-symbol function_parameters) [211 216])
+                        ("attrs" variable nil (reparse-symbol function_parameters) [218 223])
+                        ("kwargs" variable nil (reparse-symbol function_parameters) [225 233]))                      ) (reparse-symbol indented_block_body) [188 408])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [425 429]))                          )
+                        (reparse-symbol indented_block_body) [413 454])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [472 476]))                          )
+                        (reparse-symbol indented_block_body) [459 501])
+                    ("__nonzero__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [522 526]))                          )
+                        (reparse-symbol indented_block_body) [506 550])
+                    ("__setattr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [571 575])
+                            ("name" variable nil (reparse-symbol function_parameters) [577 581])
+                            ("value" variable nil (reparse-symbol function_parameters) [583 588]))                          )
+                        (reparse-symbol indented_block_body) [555 604]))                  
+                :type "class")
+                nil [162 604])
+            ("NULLClass" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [634 658]))                  
+                :type "class")
+                nil [605 659]))          
+    :file "__init__.py"
+    :pointmax 659
+    :fsize 736
+    :lastmodtime '(22756 65357 523424 551000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "stack.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("kvstore" include nil nil [1 24])
+            ("specialized" include nil nil [25 52])
+            ("KVStoreStack" type
+               (:documentation " A stack of KVStores, supports lookups of values as if this were one kvstore,
+        supports iterating over the stack layers "
+                :superclasses ("kv_kv.KVStore")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("subclass" code nil (reparse-symbol indented_block_body) [316 346])
+                            ("super" code nil (reparse-symbol indented_block_body) [356 464])
+                            ("self" variable nil (reparse-symbol indented_block_body) [474 560]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [244 248])
+                            ("name" variable nil (reparse-symbol function_parameters) [250 254])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [261 269])
+                            ("collate_key" variable nil (reparse-symbol function_parameters) [275 286])
+                            ("subclass" variable nil (reparse-symbol function_parameters) [292 300]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [231 561])
+                    ("iter_stack" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [581 585])
+                            ("bottomup" variable nil (reparse-symbol function_parameters) [587 595]))                          )
+                        (reparse-symbol indented_block_body) [566 804])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [821 825]))                          )
+                        (reparse-symbol indented_block_body) [809 952])
+                    ("_get_tos_key" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [974 978]))                          )
+                        (reparse-symbol indented_block_body) [957 1107])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1128 1132])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [1134 1142]))                          )
+                        (reparse-symbol indented_block_body) [1112 1321])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1342 1346])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [1348 1356])
+                            ("value" variable nil (reparse-symbol function_parameters) [1358 1363]))                          )
+                        (reparse-symbol indented_block_body) [1326 1444])
+                    ("__delitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1465 1469])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [1471 1479]))                          )
+                        (reparse-symbol indented_block_body) [1449 1556])
+                    ("set_raw" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1573 1577])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [1579 1587])
+                            ("value" variable nil (reparse-symbol function_parameters) [1589 1594])
+                            ("set_property" variable nil (reparse-symbol function_parameters) [1596 1608]))                          )
+                        (reparse-symbol indented_block_body) [1561 1728])
+                    ("_get_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1748 1752])
+                            ("name" variable nil (reparse-symbol function_parameters) [1754 1758]))                          )
+                        (reparse-symbol indented_block_body) [1733 1983])
+                    ("push_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2003 2007])
+                            ("layer" variable nil (reparse-symbol function_parameters) [2009 2014])
+                            ("index" variable nil (reparse-symbol function_parameters) [2016 2021]))                          )
+                        (reparse-symbol indented_block_body) [1988 2275])
+                    ("push_new_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2299 2303])
+                            ("name" variable nil (reparse-symbol function_parameters) [2305 2309]))                          )
+                        (reparse-symbol indented_block_body) [2280 2464])
+                    ("shim_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2484 2488])
+                            ("layer" variable nil (reparse-symbol function_parameters) [2490 2495]))                          )
+                        (reparse-symbol indented_block_body) [2469 2538])
+                    ("remove_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2560 2564])
+                            ("name" variable nil (reparse-symbol function_parameters) [2566 2570]))                          )
+                        (reparse-symbol indented_block_body) [2543 2700])
+                    ("rename_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2722 2726])
+                            ("old_name" variable nil (reparse-symbol function_parameters) [2728 2736])
+                            ("new_name" variable nil (reparse-symbol function_parameters) [2738 2746]))                          )
+                        (reparse-symbol indented_block_body) [2705 3077])
+                    ("layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3092 3096])
+                            ("name" variable nil (reparse-symbol function_parameters) [3098 3102]))                          )
+                        (reparse-symbol indented_block_body) [3082 3137])
+                    ("lookup" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3153 3157])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [3159 3167])
+                            ("collector" variable nil (reparse-symbol function_parameters) [3169 3178]))                          )
+                        (reparse-symbol indented_block_body) [3142 3323])
+                    ("find_values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3344 3348])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [3350 3358])
+                            ("recurse" variable nil (reparse-symbol function_parameters) [3360 3367])
+                            ("subclass" variable nil (reparse-symbol function_parameters) [3375 3383]))                          )
+                        (reparse-symbol indented_block_body) [3328 3548]))                  
+                :type "class")
+                nil [54 3548]))          
+    :file "stack.py"
+    :pointmax 3548
+    :fsize 3547
+    :lastmodtime '(22756 65421 94355 556000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!shaas!workspace!pipeline!kvstore!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

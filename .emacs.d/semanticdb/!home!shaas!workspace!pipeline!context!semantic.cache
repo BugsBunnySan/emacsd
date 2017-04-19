@@ -1,0 +1,559 @@
+;; Object context/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "context/"
+  :tables (list 
+   (semanticdb-table "stack.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("\"\"\" Implementation of a service/interface/component architecture context stack \"\"\"" code nil nil [1 83])
+            ("sys" include nil nil [84 94])
+            ("kvstore.stack" include nil nil [96 125])
+            ("kvstore.kvstore" include nil nil [126 157])
+            ("kvstore.specialized" include nil nil [158 193])
+            ("get_fqn" function
+               (:documentation " helper function, given a class returns the canonical fully qualified name of that class,
+        should be regardless of how that class was imported
+    "
+                :arguments 
+                  ( ("cls" variable nil (reparse-symbol function_parameters) [207 210]))                  )
+                nil [195 477])
+            ("flatten_list" function
+               (:documentation " helper function that will flatten a nested list into one flat list, its not that
+        useful in a general case as it handles lists only (it doesn't resolve any other iterables)
+
+    Args:
+        l (list/<any>): if a list, recursively flatten it, if anything else, append it to the result
+        flattened (list): If not None(default), append the result of flatteing 'l' to this. if None,
+            create a new empty list (this is a parameter mostly useful in recursing)
+
+    Returns:
+        (list): The result of flattening 'l' and appending it to 'flattened'
+    "
+                :arguments 
+                  ( ("l" variable nil (reparse-symbol function_parameters) [495 496])
+                    ("flattened" variable nil (reparse-symbol function_parameters) [498 507]))                  )
+                nil [478 1308])
+            ("ServiceClassSelector" type
+               (:documentation " A class encapsulating interface, service ids and maximum results in one object,
+        used in searching for services
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            interface (basestring/type): The interface a service should implement
+            service_ids (list(unicode)): The service ids a service should have (default empty list)
+            max_results (int): The maximum number of service classes to return. default 1, use 0 to
+                mean no limit, return everything found
+
+        Returns:
+            list(ServiceClass): A list of the service classes found (can be empty if none where found)
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1494 1981])
+                            ("if" code nil (reparse-symbol indented_block_body) [1990 2129])
+                            ("self" code nil (reparse-symbol indented_block_body) [2137 2173])
+                            ("self" code nil (reparse-symbol indented_block_body) [2182 2227]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1497 1501])
+                            ("interface" variable nil (reparse-symbol function_parameters) [1503 1512])
+                            ("service_ids" variable nil (reparse-symbol function_parameters) [1514 1525])
+                            ("max_results" variable nil (reparse-symbol function_parameters) [1532 1543]))                          
+                        :documentation "
+        Args:
+            interface (basestring/type): The interface a service should implement
+            service_ids (list(unicode)): The service ids a service should have (default empty list)
+            max_results (int): The maximum number of service classes to return. default 1, use 0 to
+                mean no limit, return everything found
+
+        Returns:
+            list(ServiceClass): A list of the service classes found (can be empty if none where found)
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1484 2290])
+                    ("match" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2305 2309])
+                            ("interface_kv" variable nil (reparse-symbol function_parameters) [2311 2323]))                          )
+                        (reparse-symbol indented_block_body) [2295 2747])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2764 2768]))                          )
+                        (reparse-symbol indented_block_body) [2752 3214])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3232 3236]))                          )
+                        (reparse-symbol indented_block_body) [3219 3264]))                  
+                :type "class")
+                nil [1309 3264])
+            ("Context" type
+               (:documentation " A special KVStoreStack capable of registering, finding and instantiating service classes,
+        based on interfaces and service ids
+    "
+                :superclasses ("kv_st.KVStoreStack")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\" the args to this are passed to KVStoreStack directly, only subclass defaults to ContextLayer \"\"\"" code nil (reparse-symbol indented_block_body) [3477 3577])
+                            ("subclass" code nil (reparse-symbol indented_block_body) [3586 3621])
+                            ("super" code nil (reparse-symbol indented_block_body) [3630 3733]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3467 3471])
+                            ("name" variable nil (reparse-symbol function_parameters) [3473 3477])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [3484 3492])
+                            ("collate_key" variable nil (reparse-symbol function_parameters) [3498 3509])
+                            ("subclass" variable nil (reparse-symbol function_parameters) [3515 3523]))                          
+                        :documentation " the args to this are passed to KVStoreStack directly, only subclass defaults to ContextLayer "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3454 3796])
+                    ("register_service_class" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3828 3832])
+                            ("service_class" variable nil (reparse-symbol function_parameters) [3834 3847])
+                            ("interfaces" variable nil (reparse-symbol function_parameters) [3849 3859])
+                            ("layer_name" variable nil (reparse-symbol function_parameters) [3861 3871]))                          
+                        :documentation " register a service class as implementing some interfaces
+
+        Args:
+            service_class (type(Service)): The service class to register
+            interfaces (list(Interface)): List of interfaces to register the service class for
+            layer_name (unicode): By default, register the service_class on the layer on top of the stack,
+                if this is not None, find a layer by this name and register the service class there
+
+        Note:
+            If the service_class doesn't have a service_id attribute, it won't get registered
+        ")
+                        (reparse-symbol indented_block_body) [3801 4662])
+                    ("register_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4688 4692])
+                            ("service" variable nil (reparse-symbol function_parameters) [4694 4701])
+                            ("interfaces" variable nil (reparse-symbol function_parameters) [4703 4713])
+                            ("layer_name" variable nil (reparse-symbol function_parameters) [4715 4725]))                          
+                        :documentation " register an instantiated service for some interfaces
+
+        Args:
+            service (Service): The service to register
+            interfaces (list(Interface)): List of interfaces to register the service for
+            layer_name (unicode): By default, register the service on the layer on top of the stack,
+                if this is not None, find a layer by this name and register the service there
+
+        Note:
+            If the service doesn't have a service_id attribute, it won't get registered
+        ")
+                        (reparse-symbol indented_block_body) [4667 5452])
+                    ("unregister_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5480 5484])
+                            ("service" variable nil (reparse-symbol function_parameters) [5486 5493])
+                            ("layer_name" variable nil (reparse-symbol function_parameters) [5495 5505]))                          
+                        :documentation " unregister a service
+
+        Args:
+            service (Service): The service to unregister
+            layer_name (unicode): By default, unregister the service from the layer on top of the stack,
+                if this is not None, find a layer by this name and unregister the service there
+
+        Note:
+            If the service doesn't have a service_id attribute, it will be ignored
+        ")
+                        (reparse-symbol indented_block_body) [5457 6116])
+                    ("get_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6138 6142])
+                            ("service_class_selector" variable nil (reparse-symbol function_parameters) [6144 6166])
+                            ("interface" variable nil (reparse-symbol function_parameters) [6173 6182])
+                            ("service_ids" variable nil (reparse-symbol function_parameters) [6189 6200])
+                            ("max_results" variable nil (reparse-symbol function_parameters) [6207 6218]))                          
+                        :documentation " find and return services matching interface and service_ids by searching through the whole stack
+
+        Args:
+            service_class_selector (ServiceClassSelector): If this is not None(default), ignore the other arguments,
+                and use this selector directly, otherwise will try to construct a selector by using the other arguments
+            interface (basestring/Interface): If not using the service_class_selector arg, use this interface to look for services
+            service_ids (list(unicode)): If not using the service_class_selector arg, use these service ids to look for services
+            max_results (int): If not using the service_class_selector arg, use this limit on results returned, default 1, use 0
+                to indicate no limit
+
+        Returns:
+            (list(ServiceClass)/ServiceClass): The service class(es) found
+
+        Note:
+            If max_results is 1 (the default), this results the first service found directly, not as a list with one element. However, if the
+            max_results limit is anything other than 1, and there is only one service, it will be returned as a one element list
+        ")
+                        (reparse-symbol indented_block_body) [6121 8196])
+                    ("get_service_classes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8225 8229])
+                            ("service_class_selector" variable nil (reparse-symbol function_parameters) [8231 8253])
+                            ("interface" variable nil (reparse-symbol function_parameters) [8260 8269])
+                            ("service_ids" variable nil (reparse-symbol function_parameters) [8276 8287])
+                            ("max_results" variable nil (reparse-symbol function_parameters) [8294 8305]))                          
+                        :documentation " find and return service classes matching interface and service_ids by searching through the whole stack
+
+        Args:
+            service_class_selector (ServiceClassSelector): If this is not None(default), ignore the other arguments,
+                and use this selector directly, otherwise will try to construct a selector by using the other arguments
+            interface (basestring/Interface): If not using the service_class_selector arg, use this interface to look for services
+            service_ids (list(unicode)): If not using the service_class_selector arg, use these service ids to look for services
+            max_results (int): If not using the service_class_selector arg, use this limit on results returned, default 1, use 0
+                to indicate no limit
+
+        Returns:
+            (list(Service)/Service): The service(s) found
+
+        Note:
+            If max_results is 1 (the default), this results the first service class found directly, not as a list with one element. However, if the
+            max_results limit is anything other than 1, and there is only one service class, it will be returned as a one element list
+        ")
+                        (reparse-symbol indented_block_body) [8201 10410])
+                    ("make_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10433 10437])
+                            ("service_class_selector" variable nil (reparse-symbol function_parameters) [10439 10461])
+                            ("interface" variable nil (reparse-symbol function_parameters) [10468 10477])
+                            ("service_ids" variable nil (reparse-symbol function_parameters) [10484 10495])
+                            ("max_results" variable nil (reparse-symbol function_parameters) [10502 10513])
+                            ("args" variable nil (reparse-symbol function_parameters) [10517 10521])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [10528 10534]))                          
+                        :documentation " find service classes and instantiate them
+
+        Args:
+            service_class_selector (ServiceClassSelector): If this is not None(default), ignore the other arguments,
+                and use this selector directly, otherwise will try to construct a selector by using the other arguments
+            interface (basestring/Interface): If not using the service_class_selector arg, use this interface to look for services
+            service_ids (list(unicode)): If not using the service_class_selector arg, use these service ids to look for services
+            max_results (int): If not using the service_class_selector arg, use this limit on results returned, default 1, use 0
+                to indicate no limit
+            args (list): The list of non-keyword args to pass to the service constructor/initializer (default empty list)
+            kwargs (dict): The dictionary of keyword args to pass to the service constructor/initializer (default empty dict)
+
+        Returns:
+            (list(Service)/Service): The service(s) found
+
+        Note:
+            If max_results is 1 (the default), this results the first service class found directly, not as a list with one element. However, if the
+            max_results limit is anything other than 1, and there is only one service class, it will be returned as a one element list
+        ")
+                        (reparse-symbol indented_block_body) [10415 12846]))                  
+                :type "class")
+                nil [3265 12846])
+            ("ContextLayer" type
+               (:documentation " Specialized KVStore that can act as a layer in a Context, keeping track of service classes/services
+        You can use this directly, but it does make some assumptons based on being called/used by a Context
+        instance so some sanity checks are omitted here
+    "
+                :superclasses ("kv_kv.KVStore")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\" args are passed to KVStore directly, subclass defaults to KVStore as well \"\"\"" code nil (reparse-symbol indented_block_body) [13200 13281])
+                            ("subclass" code nil (reparse-symbol indented_block_body) [13290 13326])
+                            ("super" code nil (reparse-symbol indented_block_body) [13335 13429])
+                            ("if" code nil (reparse-symbol indented_block_body) [13439 13502])
+                            ("if" code nil (reparse-symbol indented_block_body) [13510 13587]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13179 13183])
+                            ("name" variable nil (reparse-symbol function_parameters) [13185 13189])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [13196 13204])
+                            ("collate_key" variable nil (reparse-symbol function_parameters) [13210 13221])
+                            ("data" variable nil (reparse-symbol function_parameters) [13227 13231])
+                            ("subclass" variable nil (reparse-symbol function_parameters) [13238 13246]))                          
+                        :documentation " args are passed to KVStore directly, subclass defaults to KVStore as well "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13166 13649])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13666 13670]))                          )
+                        (reparse-symbol indented_block_body) [13654 13796])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13814 13818]))                          )
+                        (reparse-symbol indented_block_body) [13801 14285])
+                    ("register_service_class" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14317 14321])
+                            ("service_class" variable nil (reparse-symbol function_parameters) [14323 14336])
+                            ("interfaces" variable nil (reparse-symbol function_parameters) [14338 14348]))                          
+                        :documentation " register a service class for a list of interfaces
+
+        Args:
+            service_class (type(Service)): The service class to register
+            interfaces (list(Interface)): The interfaces that the service_class implements
+        ")
+                        (reparse-symbol indented_block_body) [14290 14909])
+                    ("register_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14935 14939])
+                            ("service" variable nil (reparse-symbol function_parameters) [14941 14948])
+                            ("interfaces" variable nil (reparse-symbol function_parameters) [14950 14960]))                          
+                        :documentation " register a service for a list of interfaces
+
+        Args:
+            service (Service): the service to register
+            interfaces (list(Interface)): The interfaces the service implements
+        ")
+                        (reparse-symbol indented_block_body) [14914 15608])
+                    ("unregister_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15636 15640])
+                            ("service" variable nil (reparse-symbol function_parameters) [15642 15649]))                          
+                        :documentation " unregister a service for all the interfaces it implements
+
+        Args:
+            service (Service): the service to unregister
+        ")
+                        (reparse-symbol indented_block_body) [15613 16038])
+                    ("get_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16060 16064])
+                            ("service_selector" variable nil (reparse-symbol function_parameters) [16066 16082]))                          
+                        :documentation " return all services matched by a service selector
+
+        Args:
+            service_selector (ServiceClassSelector): The service class selector used to match services to
+
+        Returns:
+            (list(Services)): The list (potentially empty) of services matched by 'service_selector'
+        ")
+                        (reparse-symbol indented_block_body) [16043 16728])
+                    ("get_service_classes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16757 16761])
+                            ("service_selector" variable nil (reparse-symbol function_parameters) [16763 16779]))                          
+                        :documentation " return all service classes matched by a service selector
+
+        Args:
+            service_selector (ServiceClassSelector): The service class selector used to match service classes to
+
+        Returns:
+            (list(Services)): The list (potentially empty) of service classes matched by 'service_selector'
+        ")
+                        (reparse-symbol indented_block_body) [16733 17481]))                  
+                :type "class")
+                nil [12847 17481]))          
+    :file "stack.py"
+    :pointmax 17481
+    :fsize 17480
+    :lastmodtime '(22774 15102 388489 860000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "service.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("\"\"\" Definition of how Interfaces and Services work and how Services automaticaly register themselves in the CONTEXT
+
+    uses a bit of metaclass kungfu as well as class inspection
+\"\"\"" code nil nil [1 184])
+            ("abc" include nil nil [185 195])
+            ("Interface" type
+               (:documentation " Interface base class, able to have abstract methods/properties
+        Services implement one or more of these Interfaces
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [364 391]))                  
+                :type "class")
+                nil [197 392])
+            ("ServiceMeta" type
+               (:documentation " Metaclass for Services, can have abstract methods and properties (from the Interfaces they implements) "
+                :superclasses ("abc.ABCMeta")
+                :members 
+                  ( ("__new__" function
+                       (:documentation " overrides normal Class object creation. Adds implemented Interfaces to the classes bases, registers the
+            service class in the global CONTEXT
+
+        Args:
+            mcs (MetaClass): This metaclass
+            name (basestring): The name of the Class we're making
+            bases (list(type)): The base classes of the Class we're making
+            attrs (dict): Dict of attributes the Class we're making should have
+
+        Returns:
+            (type(Class)): The created Class object, the actual creation is done by abc.ABCMeta
+        "
+                        :arguments 
+                          ( ("mcs" variable nil (reparse-symbol function_parameters) [556 559])
+                            ("name" variable nil (reparse-symbol function_parameters) [561 565])
+                            ("bases" variable nil (reparse-symbol function_parameters) [567 572])
+                            ("attrs" variable nil (reparse-symbol function_parameters) [574 579]))                          )
+                        (reparse-symbol indented_block_body) [544 1700])
+                    ("__call__" function
+                       (:documentation " hooks in before the class' __init__ is called, to register the instantiated service in the global CONTEXT
+
+        Args:
+            cls (type): The class we're instantiating
+            *args (arglist): The list of non keyword args passed to the __init__ of the class
+            **kwargs (keyword arglist): The dict of keyword args passed to the __init__ of the class
+
+        Returns:
+            (Service): The initialized service object
+
+        Note:
+            There are a couble of special keyword arguments that are used only here and are removed before the kwargs
+            are handed to the service's __init__ method. These are:
+            * __context_stack__ (Context): Use a different context stack to register the service in other than the global CONTEXT
+            * __layer_name__ (unicode): The name of a context stack layer to register the service in other than the TOS
+            * __context_layer__ (ContextLayer): A context layer passed in directly, overrides stack and layer name kwargs and
+                has the service registered in this layer directly
+        "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1718 1721])
+                            ("args" variable nil (reparse-symbol function_parameters) [1723 1728])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1730 1738]))                          )
+                        (reparse-symbol indented_block_body) [1705 3900]))                  
+                :type "class")
+                nil [393 3900])
+            ("Service" type
+               (:documentation " Service baseclass, all the actual magic happens in the metaclass "
+                :superclasses ("object")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [4006 4033])
+                    ("__implements__" variable nil (reparse-symbol indented_block_body) [4039 4058]))                  
+                :type "class")
+                nil [3902 4059]))          
+    :file "service.py"
+    :pointmax 4059
+    :fsize 4058
+    :lastmodtime '(22774 15842 366607 448000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "__init__.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("__builtin__" include nil nil [1 19])
+            ("os" include nil nil [21 30])
+            ("sys" include nil nil [31 41])
+            ("kvstore.kvstore" include nil nil [43 74])
+            ("version" include nil nil [76 90])
+            ("reload" code nil nil [91 106])
+            ("stack" include nil nil [108 120])
+            ("reload" code nil nil [121 134])
+            ("service" include nil nil [136 150])
+            ("reload" code nil nil [151 166])
+            ("if" code nil nil [168 856]))          
+    :file "__init__.py"
+    :pointmax 856
+    :fsize 855
+    :lastmodtime '(22746 30637 833344 124000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "version.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("MAJOR" variable nil nil [1 10])
+            ("MINOR" variable nil nil [11 20])
+            ("PATCH" variable nil nil [21 30])
+            ("VERSION" variable nil nil [32 199]))          
+    :file "version.py"
+    :pointmax 200
+    :fsize 199
+    :lastmodtime '(22506 21005 561597 614000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "specialized.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("os" include nil nil [1 10])
+            ("kvstore.kvstore" include nil nil [12 43])
+            ("stack" include nil nil [45 57])
+            ("EnvironContextLayer" type
+               (:documentation " A context layer encapsulating environment values "
+                :superclasses ("kv_kv.KVStore")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("subclass" code nil (reparse-symbol indented_block_body) [262 298])
+                            ("super" code nil (reparse-symbol indented_block_body) [307 408]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [179 183])
+                            ("name" variable nil (reparse-symbol function_parameters) [185 189])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [196 204])
+                            ("collate_key" variable nil (reparse-symbol function_parameters) [210 221])
+                            ("data" variable nil (reparse-symbol function_parameters) [227 231])
+                            ("subclass" variable nil (reparse-symbol function_parameters) [238 246]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [166 409])
+                    ("_make_data_store" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [435 439]))                          )
+                        (reparse-symbol indented_block_body) [414 474])
+                    ("clear" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [489 493]))                          )
+                        (reparse-symbol indented_block_body) [479 509])
+                    ("resolve_key_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [535 539])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [541 549]))                          
+                        :documentation " no key paths in the environment ")
+                        (reparse-symbol indented_block_body) [514 633])
+                    ("register_service_class" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [665 669])
+                            ("service_class" variable nil (reparse-symbol function_parameters) [671 684])
+                            ("interfaces" variable nil (reparse-symbol function_parameters) [686 696]))                          )
+                        (reparse-symbol indented_block_body) [638 712])
+                    ("register_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [738 742])
+                            ("service" variable nil (reparse-symbol function_parameters) [744 751])
+                            ("interfaces" variable nil (reparse-symbol function_parameters) [753 763]))                          )
+                        (reparse-symbol indented_block_body) [717 779])
+                    ("unregister_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [807 811])
+                            ("service" variable nil (reparse-symbol function_parameters) [813 820]))                          )
+                        (reparse-symbol indented_block_body) [784 836])
+                    ("get_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [858 862])
+                            ("service_selector" variable nil (reparse-symbol function_parameters) [864 880]))                          )
+                        (reparse-symbol indented_block_body) [841 901])
+                    ("get_service_classes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [930 934])
+                            ("service_selector" variable nil (reparse-symbol function_parameters) [936 952]))                          )
+                        (reparse-symbol indented_block_body) [906 973]))                  
+                :type "class")
+                nil [59 973]))          
+    :file "specialized.py"
+    :pointmax 973
+    :fsize 972
+    :lastmodtime '(22774 11362 861074 978000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!shaas!workspace!pipeline!context!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

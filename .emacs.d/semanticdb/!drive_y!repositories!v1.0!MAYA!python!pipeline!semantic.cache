@@ -1,0 +1,314 @@
+;; Object pipeline/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pipeline/"
+  :tables
+  (list
+    (semanticdb-table "rjPublish.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("FBI_afanasySubmitter" include nil nil [13 40])
+            ("FBI_globalClassesAdd" include nil nil [41 68])
+            ("FBI_shotgunClasses" include nil nil [69 94])
+            ("base" include nil nil [95 121])
+            ("reload" code nil nil [122 148])
+            ("FBI_version" include nil nil [150 168])
+            ("pipeline" include nil nil [170 211])
+            ("reload" code nil nil [212 240])
+            ("pipeline" include nil nil [241 280])
+            ("utils" include nil nil [282 308])
+            ("reload" code nil nil [309 325])
+            ("utils" include nil nil [326 352])
+            ("reload" code nil nil [353 369])
+            ("pymel.core" include nil nil [371 395])
+            ("functools" include nil nil [396 425])
+            ("maya.mel" include nil nil [426 448])
+            ("maya.cmds" include nil nil [449 473])
+            ("os" include nil nil [475 484])
+            ("Publish" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [524 581])
+                            ("self" variable nil (reparse-symbol indented_block_body) [584 608])
+                            ("self" variable nil (reparse-symbol indented_block_body) [611 636])
+                            ("try" code nil (reparse-symbol indented_block_body) [639 721]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [515 519]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [502 721])
+                    ("getPublishTasks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [744 748])
+                            ("task" variable nil (reparse-symbol function_parameters) [750 754]))                          
+                        :documentation "
+		This function will return a list of possibly publishing tasks based on the task parsed.
+
+		:param task: str
+		:returns: taskList ( list )
+		")
+                        (reparse-symbol indented_block_body) [724 3889])
+                    ("publishUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3905 3909]))                          
+                        :documentation "
+		This function will determine on which task you are working on. If the task is supported by the pipeline it will create or launch the correct UI.
+		If this isn't the case a warning will be printed.
+		")
+                        (reparse-symbol indented_block_body) [3891 6741])
+                    ("publish" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6755 6759])
+                            ("overrideTask" variable nil (reparse-symbol function_parameters) [6761 6773])
+                            ("args" variable nil (reparse-symbol function_parameters) [6780 6785]))                          
+                        :documentation "
+		This function will process the current file and run the chosen publishing steps it is used for the MDL and RIG tasks.
+		It is also possible to split the model up between a high and a low resolution. This is done by
+		creating to display layers for the high resolution geometry and the low resolution geometry.
+		The display layers should be called 'high' and 'low'. If nothing is specified it will default to 'high'.
+
+		:param overrideTask: None / str
+		:returns: publishedFile ( str )
+		")
+                        (reparse-symbol indented_block_body) [6743 11221])
+                    ("publishBatch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11241 11245])
+                            ("args" variable nil (reparse-symbol function_parameters) [11247 11252]))                          
+                        :documentation "
+		OUTDATED ( DO NOT USE )
+		")
+                        (reparse-symbol indented_block_body) [11224 12767])
+                    ("publishSetD" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12785 12789])
+                            ("args" variable nil (reparse-symbol function_parameters) [12791 12796]))                          
+                        :documentation "
+		This function is used for the SETD task. The information from the UI is processed and
+		the :func:`utils.xmlUtils.publishSceneContent` function is then called to publish the .setdress file.
+		")
+                        (reparse-symbol indented_block_body) [12769 13374])
+                    ("publishSetDBatch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13398 13402])
+                            ("args" variable nil (reparse-symbol function_parameters) [13404 13409]))                          
+                        :documentation "
+		OUTDATED ( DO NOT USE )
+		")
+                        (reparse-symbol indented_block_body) [13377 13457])
+                    ("publishBatchExecute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13484 13488])
+                            ("publishTaskString" variable nil (reparse-symbol function_parameters) [13490 13507])
+                            ("args" variable nil (reparse-symbol function_parameters) [13509 13514]))                          
+                        :documentation "
+		OUTDATED ( DO NOT USE )
+		")
+                        (reparse-symbol indented_block_body) [13460 16809])
+                    ("publishXML" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16828 16832])
+                            ("publishPath" variable nil (reparse-symbol function_parameters) [16834 16845])
+                            ("args" variable nil (reparse-symbol function_parameters) [16847 16852]))                          
+                        :documentation "
+		This function will update the entity XML and Shotgun if a connect can be found. In shotgun a new version will be created and the status
+		of the entity will be updated.
+
+		:param publishPath: str
+		")
+                        (reparse-symbol indented_block_body) [16813 17969])
+                    ("taskDeleteHistory" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17994 17998]))                          )
+                        (reparse-symbol indented_block_body) [17972 18794])
+                    ("taskDeleteAnimation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18820 18824]))                          )
+                        (reparse-symbol indented_block_body) [18796 18937])
+                    ("taskDeleteConstraints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18966 18970]))                          )
+                        (reparse-symbol indented_block_body) [18940 19094])
+                    ("taskDeleteLights" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19117 19121]))                          )
+                        (reparse-symbol indented_block_body) [19096 19438])
+                    ("taskDeleteLightlinks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19465 19469]))                          )
+                        (reparse-symbol indented_block_body) [19440 20383])
+                    ("taskDeleteCameras" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20409 20413]))                          )
+                        (reparse-symbol indented_block_body) [20387 20651])
+                    ("taskAssignInitialShadingGroup" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20688 20692]))                          )
+                        (reparse-symbol indented_block_body) [20654 20868])
+                    ("taskDeleteUnusedNodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20897 20901]))                          )
+                        (reparse-symbol indented_block_body) [20871 20969])
+                    ("taskDeleteUnusedGroups" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20998 21002]))                          )
+                        (reparse-symbol indented_block_body) [20971 21831])
+                    ("taskDeleteNonDefHistory" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21861 21865]))                          )
+                        (reparse-symbol indented_block_body) [21833 22914])
+                    ("taskDeleteNonSetDrivenKeyAnimation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22956 22960]))                          )
+                        (reparse-symbol indented_block_body) [22917 23204])
+                    ("taskDeleteUnloadedReferences" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23240 23244]))                          )
+                        (reparse-symbol indented_block_body) [23207 23472])
+                    ("taskImportReferences" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23500 23504]))                          )
+                        (reparse-symbol indented_block_body) [23475 23837])
+                    ("taskLockReferencesPre" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24033 24037]))                          )
+                        (reparse-symbol indented_block_body) [24007 24634])
+                    ("taskLockReferencesPost" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24663 24667]))                          )
+                        (reparse-symbol indented_block_body) [24636 25844]))                  
+                :type "class")
+                nil [486 25844])
+            ("FXPublish" type
+               (:documentation "
+	OUTDATED ( DO NOT USE )
+	"
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [25588 25645])
+                            ("try" code nil (reparse-symbol indented_block_body) [25648 25730]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25912 25916]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [25899 26063])
+                    ("FXUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26074 26078]))                          )
+                        (reparse-symbol indented_block_body) [26065 27520])
+                    ("updateUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27535 27539])
+                            ("item" variable nil (reparse-symbol function_parameters) [27541 27545]))                          )
+                        (reparse-symbol indented_block_body) [27522 27682])
+                    ("updateContainerUI" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27706 27710])
+                            ("args" variable nil (reparse-symbol function_parameters) [27712 27717]))                          )
+                        (reparse-symbol indented_block_body) [27684 27982])
+                    ("createContainers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28005 28009])
+                            ("args" variable nil (reparse-symbol function_parameters) [28011 28016]))                          )
+                        (reparse-symbol indented_block_body) [27984 28935])
+                    ("deleteContainers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28958 28962])
+                            ("args" variable nil (reparse-symbol function_parameters) [28964 28969]))                          )
+                        (reparse-symbol indented_block_body) [28937 29371])
+                    ("selectContent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29391 29395])
+                            ("args" variable nil (reparse-symbol function_parameters) [29397 29402]))                          )
+                        (reparse-symbol indented_block_body) [29373 29755])
+                    ("createAddButtonSwitch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29783 29787])
+                            ("args" variable nil (reparse-symbol function_parameters) [29789 29794]))                          )
+                        (reparse-symbol indented_block_body) [29757 30069])
+                    ("exportFX" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30084 30088])
+                            ("args" variable nil (reparse-symbol function_parameters) [30090 30095]))                          )
+                        (reparse-symbol indented_block_body) [30071 32052])
+                    ("exportBatchPre" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32073 32077])
+                            ("args" variable nil (reparse-symbol function_parameters) [32079 32084]))                          )
+                        (reparse-symbol indented_block_body) [32054 32193])
+                    ("exportBatch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32211 32215])
+                            ("getContainers" variable nil (reparse-symbol function_parameters) [32217 32230])
+                            ("args" variable nil (reparse-symbol function_parameters) [32232 32237]))                          )
+                        (reparse-symbol indented_block_body) [32195 33320])
+                    ("exportBatchFX" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33340 33344])
+                            ("exportList" variable nil (reparse-symbol function_parameters) [33346 33356])
+                            ("args" variable nil (reparse-symbol function_parameters) [33358 33363]))                          )
+                        (reparse-symbol indented_block_body) [33322 35338])
+                    ("fileNameRename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35359 35363])
+                            ("fileName" variable nil (reparse-symbol function_parameters) [35365 35373]))                          )
+                        (reparse-symbol indented_block_body) [35340 35953])
+                    ("fillNameContainer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35977 35981]))                          )
+                        (reparse-symbol indented_block_body) [35955 36226]))                  
+                :type "class")
+                nil [25846 36226]))          
+      :file "rjPublish.py"
+      :pointmax 36226
+      :fsize 36225
+      :lastmodtime '(22412 60008 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "rjSaveLoad.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "rjSaveLoad.py"
+      :pointmax 182227
+      :fsize 182226
+      :lastmodtime '(22407 37339 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_y!repositories!v1.0!MAYA!python!pipeline!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

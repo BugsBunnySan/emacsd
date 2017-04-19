@@ -1,0 +1,122 @@
+;; Object perforce/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "perforce/"
+  :tables
+  (list
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package orchestra.libs.perforce.perforce.base
+@brief 
+
+@author agutsche
+@copyright 2014 Topalsson
+\"\"\"" code nil nil [21 127])
+            ("__all__" variable nil nil [128 211])
+            ("os" include nil nil [213 222])
+            ("shutil" include nil nil [223 236])
+            ("glob" include nil nil [237 248])
+            ("fnmatch" include nil nil [249 263])
+            ("orchestra.core.logging.base" include nil nil [265 323])
+            ("orchestra.core.utility.base" include nil nil [325 407])
+            ("PERFORCE_SERVER" variable nil nil [460 492])
+            ("PERFORCE_USER" variable nil nil [493 524])
+            ("PERFORCE_PASS" variable nil nil [525 551])
+            ("PERFORCE_CLIENT" variable nil nil [552 592])
+            ("PerforceWorkspace" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("set_logger" code nil (reparse-symbol indented_block_body) [697 713])
+                            ("P4" include nil (reparse-symbol indented_block_body) [722 751])
+                            ("self" variable nil (reparse-symbol indented_block_body) [788 802])
+                            ("self" variable nil (reparse-symbol indented_block_body) [859 889])
+                            ("self" variable nil (reparse-symbol indented_block_body) [898 926])
+                            ("self" variable nil (reparse-symbol indented_block_body) [935 967])
+                            ("self" variable nil (reparse-symbol indented_block_body) [976 1008])
+                            ("try" code nil (reparse-symbol indented_block_body) [1056 1753])
+                            ("self" code nil (reparse-symbol indented_block_body) [1762 1782]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [644 648]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [631 1783])
+                    ("__del__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1800 1804]))                          )
+                        (reparse-symbol indented_block_body) [1788 1880])
+                    ("get_workspaces" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1904 1908]))                          )
+                        (reparse-symbol indented_block_body) [1885 1984])
+                    ("get_workspace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2011 2015])
+                            ("user" variable nil (reparse-symbol function_parameters) [2017 2021])
+                            ("hostname" variable nil (reparse-symbol function_parameters) [2028 2036])
+                            ("stream" variable nil (reparse-symbol function_parameters) [2043 2049]))                          )
+                        (reparse-symbol indented_block_body) [1993 2808])
+                    ("get_rsviz_workspace" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2842 2846])
+                            ("user" variable nil (reparse-symbol function_parameters) [2848 2852])
+                            ("hostname" variable nil (reparse-symbol function_parameters) [2859 2867])
+                            ("stream" variable nil (reparse-symbol function_parameters) [2874 2880]))                          )
+                        (reparse-symbol indented_block_body) [2818 3807])
+                    ("checkout_file" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3830 3834])
+                            ("filename" variable nil (reparse-symbol function_parameters) [3836 3844]))                          )
+                        (reparse-symbol indented_block_body) [3812 4085])
+                    ("add_maps" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4103 4107])
+                            ("src_glob" variable nil (reparse-symbol function_parameters) [4109 4117]))                          )
+                        (reparse-symbol indented_block_body) [4090 4840])
+                    ("add_files" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4871 4875])
+                            ("file_path_mapping_dict" variable nil (reparse-symbol function_parameters) [4877 4899]))                          )
+                        (reparse-symbol indented_block_body) [4857 5200]))                  
+                :type "class")
+                nil [594 5200])
+            ("check_in_files" function
+               (:decorators 
+                  ( ("logged" function (:type "decorator") nil nil))                  
+                :arguments 
+                  ( ("input_files" variable nil (reparse-symbol function_parameters) [5287 5298])
+                    ("output_dir" variable nil (reparse-symbol function_parameters) [5300 5310])
+                    ("exclude_filters" variable nil (reparse-symbol function_parameters) [5312 5327])
+                    ("comment" variable nil (reparse-symbol function_parameters) [5332 5339]))                  )
+                nil [5260 6985])
+            ("checkout_files" function
+               (:decorators 
+                  ( ("logged" function (:type "decorator") nil nil))                  
+                :arguments 
+                  ( ("input_files" variable nil (reparse-symbol function_parameters) [7014 7025])
+                    ("comment" variable nil (reparse-symbol function_parameters) [7027 7034]))                  )
+                nil [6987 7319])
+            ("update_files" function
+               (:decorators 
+                  ( ("logged" function (:type "decorator") nil nil))                  
+                :arguments 
+                  ( ("input_files" variable nil (reparse-symbol function_parameters) [7346 7357])
+                    ("comment" variable nil (reparse-symbol function_parameters) [7359 7366]))                  )
+                nil [7321 8241]))          
+      :file "base.py"
+      :pointmax 8241
+      :fsize 8240
+      :lastmodtime '(21526 43697 0 0)
+      :unmatched-syntax nil))
+  :file "!!CARBON!repositories!orchestra!libs!perforce!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

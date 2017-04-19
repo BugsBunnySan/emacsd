@@ -1,0 +1,139 @@
+;; Object utils/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "utils/"
+  :tables
+  (list
+    (semanticdb-table "utilities.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [12 21])
+            ("datetime" include nil nil [22 37])
+            ("maya.cmds" include nil nil [38 62])
+            ("kickDuplicates" function
+               (:documentation "
+    Remove all duplicate entries from a list.
+
+    :param originalList: list
+    :returns: nonDuplicateList ( list )
+    "
+                :arguments 
+                  ( ("oList" variable nil (reparse-symbol function_parameters) [83 88]))                  )
+                nil [64 320])
+            ("listFilesByDate" function
+               (:documentation "
+	This function loops over all files in the parsed dir and list them based on date.
+
+	:param dirpath: str
+	:returns: fileList ( list )
+	"
+                :arguments 
+                  ( ("dirpath" variable nil (reparse-symbol function_parameters) [341 348]))                  )
+                nil [321 710])
+            ("listAllByDate" function
+               (:documentation "
+	This function loops over all files and folders in the parsed dir and list them based on date.
+
+	:param dirpath: str
+	:returns: folderList ( list )
+	"
+                :arguments 
+                  ( ("dirpath" variable nil (reparse-symbol function_parameters) [729 736]))                  )
+                nil [711 1052])
+            ("listFilesByDateIncTime" function
+               (:documentation "
+	This function loops over all files in the parsed dir and list them based on date, it also includes the timecode in the string.
+
+	:param dirpath: str
+	:returns: folderList ( list )
+	"
+                :arguments 
+                  ( ("dirpath" variable nil (reparse-symbol function_parameters) [1084 1091]))                  )
+                nil [1057 1759])
+            ("getFilesFromPublishRoot" function
+               (:documentation "
+	This function retrieves all the published files based on the path and mode parsed.
+
+	:param path: str
+	:param mode: int ( 1 = High, 2 = Low, 3 = Proxy )
+	:returns: modelFiles ( list), rigFiles ( list), fxFiles ( list), shadingFiles ( list), animationFiles ( list), setDressFiles ( list)
+	"
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [1792 1796])
+                    ("mode" variable nil (reparse-symbol function_parameters) [1798 1802]))                  )
+                nil [1764 4072])
+            ("getFilesFromPublish" function
+               (:documentation "
+	This function retrieves all the published files from a specific folder.
+
+	:param path: str
+	:returns: modelFiles ( list), rigFiles ( list), fxFiles ( list), shadingFiles ( list), animationFiles ( list), setDressFiles ( list)
+	"
+                :arguments 
+                  ( ("publishPath" variable nil (reparse-symbol function_parameters) [4101 4112]))                  )
+                nil [4077 6183])
+            ("rebuildPath" function
+               (:documentation "
+    This function will loop through a full path of an object untill it finds the lowest single
+    encounter of the object.
+
+    :param fullPath: str
+    :returns: buildPath ( str / None )
+    "
+                :arguments 
+                  ( ("fullPath" variable nil (reparse-symbol function_parameters) [6204 6212]))                  )
+                nil [6188 7005])
+            ("convertFPS" function
+               (:documentation "
+    Convert fps to area specific name.
+
+    :param fps: str
+    :returns: returnFps ( str )
+    "
+                :arguments 
+                  ( ("fps" variable nil (reparse-symbol function_parameters) [7021 7024]))                  )
+                nil [7006 7244]))          
+      :file "utilities.py"
+      :pointmax 7244
+      :fsize 7243
+      :lastmodtime '(21757 35538 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "refUtils.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.cmds" include nil nil [1 25])
+            ("FBI_globalClassesAdd" include nil nil [26 53])
+            ("xml.dom.minidom" include nil nil [54 87])
+            ("pymel.core" include nil nil [89 113])
+            ("FBI_globalClassesAdd" include nil nil [115 142])
+            ("pipeline" include nil nil [144 185])
+            ("pipeline" include nil nil [186 225])
+            ("pipeline" include nil nil [226 265])
+            ("utils" include nil nil [267 296])
+            ("utils" include nil nil [297 324])
+            ("refInfo" function (:documentation "
+    Collect all the information about all the refences in the scene.
+
+    :returns: referenceInfo ( list( ref, isLoaded, namespace, filename ) )
+    ") nil [334 1661])
+            ("duplicateRef" function (:documentation "
+    Check if the selected object is referenced. This reference then gets duplicated and the translate, rotate and scale of the original selection object will be 
+    set to the new reference. Ideal for layout.
+    ") nil [1662 3613])
+            ("duplicateSpecialRefUI" function (:documentation "
+    Duplicate Reference Special UI, this makes it possibly to duplicate a reference multiple times along different axis.
+    ") nil [3615 4657])
+            ("duplicateSpecialRef" function
+               (:documentation "
+    Reads the values from the UI and processes them accordingly. Set the attributes on the selected object.
+    "
+                :arguments 
+                  ( ("args" variable nil (reparse-symbol function_parameters) [4682 4687]))                  )
+                nil [4658 7208]))          
+      :file "refUtils.py"
+      :pointmax 7224
+      :fsize 7223
+      :lastmodtime '(21757 35538 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_y!repositories!v1.0!MAYA!python!utils!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

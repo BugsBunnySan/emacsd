@@ -1,0 +1,653 @@
+;; Object maya-otl-sim/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "maya-otl-sim/"
+  :tables
+  (list
+    (semanticdb-table "baking_v2.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.cmds" include nil nil [207 231])
+            ("pymel.code" include nil nil [232 255])
+            ("PySide" include nil nil [257 289])
+            ("sys" include nil nil [290 300])
+            ("os" include nil nil [301 310])
+            ("maya.mel" include nil nil [311 333])
+            ("subprocess" include nil nil [334 351])
+            ("time" include nil nil [352 363])
+            ("platform" include nil nil [364 379])
+            ("re" include nil nil [380 389])
+            ("material_utils" include nil nil [434 467])
+            ("reload" code nil nil [468 484])
+            ("baseUtils" include nil nil [540 556])
+            ("reload" code nil nil [557 574])
+            ("variantManager" include nil nil [575 596])
+            ("reload" code nil nil [597 619])
+            ("combine_turtle_bakelayers" include nil nil [620 674])
+            ("reload" code nil nil [675 701])
+            ("uv_utils" include nil nil [702 717])
+            ("reload" code nil nil [718 734])
+            ("imp" include nil nil [736 746])
+            ("try" code nil nil [747 961])
+            ("if" code nil nil [961 1052])
+            ("main_window" variable nil nil [1053 1071])
+            ("RELEASE_MODE" variable nil nil [1073 1092])
+            ("PREBAKE_CHECK_MODE" variable nil nil [1093 1118])
+            ("tbImageFormat_items" variable nil nil [1121 1245])
+            ("reportDialog" type
+               (:superclasses ("QtGui.QDialog")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1453 1495])
+                            ("layout" variable nil (reparse-symbol indented_block_body) [1504 1536])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1545 1608])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1617 1674])
+                            ("self" code nil (reparse-symbol indented_block_body) [1683 1720])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1729 1764])
+                            ("layout" code nil (reparse-symbol indented_block_body) [1773 1805])
+                            ("layout" code nil (reparse-symbol indented_block_body) [1814 1852])
+                            ("layout" code nil (reparse-symbol indented_block_body) [1861 1892])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1901 2025])
+                            ("layout" code nil (reparse-symbol indented_block_body) [2034 2064])
+                            ("self" code nil (reparse-symbol indented_block_body) [2073 2115])
+                            ("self" code nil (reparse-symbol indented_block_body) [2124 2166])
+                            ("self" code nil (reparse-symbol indented_block_body) [2175 2242]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1423 1427])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1429 1435]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1410 2243])
+                    ("select_list_item_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2473 2477])
+                            ("item" variable nil (reparse-symbol function_parameters) [2479 2483]))                          )
+                        (reparse-symbol indented_block_body) [2447 2698]))                  
+                :type "class")
+                nil [1371 2698])
+            ("BakingWindow" type
+               (:superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [3031 3073])
+                            ("self" code nil (reparse-symbol indented_block_body) [3083 3118])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3128 3167])
+                            ("self" code nil (reparse-symbol indented_block_body) [3177 3212])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3221 3251])
+                            ("self" code nil (reparse-symbol indented_block_body) [3260 3295])
+                            ("self" code nil (reparse-symbol indented_block_body) [3304 3347])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3356 3386])
+                            ("self" code nil (reparse-symbol indented_block_body) [3395 3438])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3447 3475])
+                            ("self" code nil (reparse-symbol indented_block_body) [3484 3525])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3534 3562])
+                            ("self" code nil (reparse-symbol indented_block_body) [3571 3612])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3621 3651])
+                            ("self" code nil (reparse-symbol indented_block_body) [3660 3703])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3712 3740])
+                            ("self" code nil (reparse-symbol indented_block_body) [3749 3790])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3800 3828])
+                            ("self" code nil (reparse-symbol indented_block_body) [3837 3878])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3887 3922])
+                            ("self" code nil (reparse-symbol indented_block_body) [3931 4004])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4014 4079])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4088 4161])
+                            ("self" code nil (reparse-symbol indented_block_body) [4171 4215])
+                            ("self" code nil (reparse-symbol indented_block_body) [4224 4276])
+                            ("self" code nil (reparse-symbol indented_block_body) [4285 4338])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4349 4383])
+                            ("self" code nil (reparse-symbol indented_block_body) [4392 4439])
+                            ("self" code nil (reparse-symbol indented_block_body) [4448 4506])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4515 4573])
+                            ("self" code nil (reparse-symbol indented_block_body) [4582 4615])
+                            ("self" code nil (reparse-symbol indented_block_body) [4624 4676])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4686 4729])
+                            ("self" code nil (reparse-symbol indented_block_body) [4738 4794])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4803 4868])
+                            ("self" code nil (reparse-symbol indented_block_body) [4877 4918])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4927 5013])
+                            ("self" code nil (reparse-symbol indented_block_body) [5022 5075])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5085 5146])
+                            ("self" code nil (reparse-symbol indented_block_body) [5155 5224])
+                            ("self" code nil (reparse-symbol indented_block_body) [5233 5314])
+                            ("self" code nil (reparse-symbol indented_block_body) [5323 5386])
+                            ("self" code nil (reparse-symbol indented_block_body) [5395 5465])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5475 5511])
+                            ("self" code nil (reparse-symbol indented_block_body) [5520 5569])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5578 5635])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5644 5682])
+                            ("self" code nil (reparse-symbol indented_block_body) [5691 5749])
+                            ("self" code nil (reparse-symbol indented_block_body) [5758 5815])
+                            ("self" code nil (reparse-symbol indented_block_body) [5824 5887])
+                            ("self" code nil (reparse-symbol indented_block_body) [5897 5948])
+                            ("self" code nil (reparse-symbol indented_block_body) [5957 6006])
+                            ("self" code nil (reparse-symbol indented_block_body) [6015 6073])
+                            ("self" code nil (reparse-symbol indented_block_body) [6082 6132])
+                            ("self" code nil (reparse-symbol indented_block_body) [6141 6198])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6209 6257])
+                            ("self" code nil (reparse-symbol indented_block_body) [6266 6327])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6336 6404])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6413 6463])
+                            ("self" code nil (reparse-symbol indented_block_body) [6472 6554])
+                            ("self" code nil (reparse-symbol indented_block_body) [6563 6644])
+                            ("self" code nil (reparse-symbol indented_block_body) [6653 6728])
+                            ("self" code nil (reparse-symbol indented_block_body) [6737 6798])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6866 6917])
+                            ("self" code nil (reparse-symbol indented_block_body) [6926 6975])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6985 7029])
+                            ("self" code nil (reparse-symbol indented_block_body) [7038 7095])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7104 7172])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7181 7227])
+                            ("self" code nil (reparse-symbol indented_block_body) [7236 7310])
+                            ("self" code nil (reparse-symbol indented_block_body) [7319 7392])
+                            ("self" code nil (reparse-symbol indented_block_body) [7401 7472])
+                            ("self" code nil (reparse-symbol indented_block_body) [7481 7538])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7602 7663])
+                            ("self" code nil (reparse-symbol indented_block_body) [7672 7726])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7736 7779])
+                            ("self" code nil (reparse-symbol indented_block_body) [7788 7844])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7853 7914])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7923 7968])
+                            ("self" code nil (reparse-symbol indented_block_body) [7977 8049])
+                            ("self" code nil (reparse-symbol indented_block_body) [8058 8129])
+                            ("self" code nil (reparse-symbol indented_block_body) [8138 8208])
+                            ("self" code nil (reparse-symbol indented_block_body) [8217 8273])
+                            ("self" code nil (reparse-symbol indented_block_body) [8282 8324])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8334 8421])
+                            ("self" code nil (reparse-symbol indented_block_body) [8430 8481])
+                            ("self" code nil (reparse-symbol indented_block_body) [8491 8555])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8565 8617])
+                            ("self" code nil (reparse-symbol indented_block_body) [8626 8675])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8686 8727])
+                            ("self" code nil (reparse-symbol indented_block_body) [8736 8790])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8799 8854])
+                            ("self" code nil (reparse-symbol indented_block_body) [8863 8908])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8970 9014])
+                            ("self" code nil (reparse-symbol indented_block_body) [9023 9077])
+                            ("self" code nil (reparse-symbol indented_block_body) [9086 9154])
+                            ("self" code nil (reparse-symbol indented_block_body) [9163 9231])
+                            ("self" code nil (reparse-symbol indented_block_body) [9240 9283])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9293 9327])
+                            ("self" code nil (reparse-symbol indented_block_body) [9336 9383])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9392 9433])
+                            ("self" code nil (reparse-symbol indented_block_body) [9442 9480])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9489 9525])
+                            ("self" code nil (reparse-symbol indented_block_body) [9534 9588])
+                            ("self" code nil (reparse-symbol indented_block_body) [9597 9650])
+                            ("self" code nil (reparse-symbol indented_block_body) [9659 9691])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9701 9735])
+                            ("self" code nil (reparse-symbol indented_block_body) [9744 9791])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9800 9841])
+                            ("self" code nil (reparse-symbol indented_block_body) [9850 9888])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9897 9933])
+                            ("self" code nil (reparse-symbol indented_block_body) [9942 9996])
+                            ("self" code nil (reparse-symbol indented_block_body) [10005 10058])
+                            ("self" code nil (reparse-symbol indented_block_body) [10067 10099])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10109 10147])
+                            ("self" code nil (reparse-symbol indented_block_body) [10156 10207])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10216 10267])
+                            ("self" code nil (reparse-symbol indented_block_body) [10276 10318])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10327 10367])
+                            ("self" code nil (reparse-symbol indented_block_body) [10376 10438])
+                            ("self" code nil (reparse-symbol indented_block_body) [10447 10508])
+                            ("self" code nil (reparse-symbol indented_block_body) [10517 10550])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10560 10597])
+                            ("self" code nil (reparse-symbol indented_block_body) [10606 10656])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10665 10714])
+                            ("self" code nil (reparse-symbol indented_block_body) [10723 10764])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10773 10812])
+                            ("self" code nil (reparse-symbol indented_block_body) [10821 10881])
+                            ("self" code nil (reparse-symbol indented_block_body) [10890 10949])
+                            ("self" code nil (reparse-symbol indented_block_body) [10958 10994])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11004 11041])
+                            ("self" code nil (reparse-symbol indented_block_body) [11050 11100])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11109 11158])
+                            ("self" code nil (reparse-symbol indented_block_body) [11167 11208])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11217 11256])
+                            ("self" code nil (reparse-symbol indented_block_body) [11265 11325])
+                            ("self" code nil (reparse-symbol indented_block_body) [11334 11393])
+                            ("self" code nil (reparse-symbol indented_block_body) [11402 11434])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11444 11480])
+                            ("self" code nil (reparse-symbol indented_block_body) [11489 11538])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11547 11594])
+                            ("self" code nil (reparse-symbol indented_block_body) [11603 11643])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11652 11690])
+                            ("self" code nil (reparse-symbol indented_block_body) [11699 11757])
+                            ("self" code nil (reparse-symbol indented_block_body) [11766 11823])
+                            ("self" code nil (reparse-symbol indented_block_body) [11832 11868])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11878 11920])
+                            ("self" code nil (reparse-symbol indented_block_body) [11929 11984])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11993 12050])
+                            ("self" code nil (reparse-symbol indented_block_body) [12059 12105])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12114 12158])
+                            ("self" code nil (reparse-symbol indented_block_body) [12167 12237])
+                            ("self" code nil (reparse-symbol indented_block_body) [12246 12315])
+                            ("self" code nil (reparse-symbol indented_block_body) [12324 12361])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12371 12409])
+                            ("self" code nil (reparse-symbol indented_block_body) [12418 12469])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12478 12527])
+                            ("self" code nil (reparse-symbol indented_block_body) [12536 12578])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12587 12627])
+                            ("self" code nil (reparse-symbol indented_block_body) [12636 12698])
+                            ("self" code nil (reparse-symbol indented_block_body) [12707 12768])
+                            ("self" code nil (reparse-symbol indented_block_body) [12777 12830])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12840 12873])
+                            ("self" code nil (reparse-symbol indented_block_body) [12882 12928])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12937 12978])
+                            ("self" code nil (reparse-symbol indented_block_body) [12987 13024])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13033 13068])
+                            ("self" code nil (reparse-symbol indented_block_body) [13077 13129])
+                            ("self" code nil (reparse-symbol indented_block_body) [13138 13189])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13199 13261])
+                            ("self" code nil (reparse-symbol indented_block_body) [13270 13313])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13323 13377])
+                            ("self" code nil (reparse-symbol indented_block_body) [13386 13419])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13429 13472])
+                            ("self" code nil (reparse-symbol indented_block_body) [13481 13513])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13523 13577])
+                            ("self" code nil (reparse-symbol indented_block_body) [13586 13624])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13634 13689])
+                            ("self" code nil (reparse-symbol indented_block_body) [13698 13737])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13747 13837])
+                            ("self" code nil (reparse-symbol indented_block_body) [13846 13899])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13909 14003])
+                            ("self" code nil (reparse-symbol indented_block_body) [14012 14067])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14077 14143])
+                            ("self" code nil (reparse-symbol indented_block_body) [14153 14207])
+                            ("self" code nil (reparse-symbol indented_block_body) [14216 14263])
+                            ("self" code nil (reparse-symbol indented_block_body) [14272 14319])
+                            ("self" code nil (reparse-symbol indented_block_body) [14328 14379])
+                            ("self" code nil (reparse-symbol indented_block_body) [14388 14438])
+                            ("self" code nil (reparse-symbol indented_block_body) [14447 14497])
+                            ("self" code nil (reparse-symbol indented_block_body) [14506 14555])
+                            ("self" code nil (reparse-symbol indented_block_body) [14564 14619])
+                            ("self" code nil (reparse-symbol indented_block_body) [14628 14679])
+                            ("self" code nil (reparse-symbol indented_block_body) [14688 14734])
+                            ("self" code nil (reparse-symbol indented_block_body) [14743 14799])
+                            ("self" code nil (reparse-symbol indented_block_body) [14808 14855])
+                            ("self" code nil (reparse-symbol indented_block_body) [14864 14910])
+                            ("self" code nil (reparse-symbol indented_block_body) [14919 14970])
+                            ("self" code nil (reparse-symbol indented_block_body) [14979 15031])
+                            ("self" code nil (reparse-symbol indented_block_body) [15040 15106])
+                            ("self" code nil (reparse-symbol indented_block_body) [15115 15183])
+                            ("self" code nil (reparse-symbol indented_block_body) [15193 15243])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15254 15306])
+                            ("self" code nil (reparse-symbol indented_block_body) [15315 15352])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15362 15419])
+                            ("self" code nil (reparse-symbol indented_block_body) [15428 15467])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15477 15541])
+                            ("self" code nil (reparse-symbol indented_block_body) [15550 15589])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15599 15681])
+                            ("self" code nil (reparse-symbol indented_block_body) [15690 15736])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15802 15881])
+                            ("self" code nil (reparse-symbol indented_block_body) [15890 15932])
+                            ("self" code nil (reparse-symbol indented_block_body) [15941 15983])
+                            ("self" variable nil (reparse-symbol indented_block_body) [15993 16060])
+                            ("self" code nil (reparse-symbol indented_block_body) [16069 16113])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16123 16197])
+                            ("self" code nil (reparse-symbol indented_block_body) [16206 16253])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16263 16341])
+                            ("self" code nil (reparse-symbol indented_block_body) [16350 16399])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16409 16490])
+                            ("self" code nil (reparse-symbol indented_block_body) [16499 16545])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16555 16622])
+                            ("self" code nil (reparse-symbol indented_block_body) [16631 16671])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16681 16764])
+                            ("self" code nil (reparse-symbol indented_block_body) [16773 16822])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16832 16875])
+                            ("self" code nil (reparse-symbol indented_block_body) [16884 16940])
+                            ("self" variable nil (reparse-symbol indented_block_body) [16949 17016])
+                            ("self" code nil (reparse-symbol indented_block_body) [17025 17072])
+                            ("self" variable nil (reparse-symbol indented_block_body) [17081 17126])
+                            ("self" code nil (reparse-symbol indented_block_body) [17135 17180])
+                            ("self" code nil (reparse-symbol indented_block_body) [17189 17261])
+                            ("self" code nil (reparse-symbol indented_block_body) [17270 17341])
+                            ("self" code nil (reparse-symbol indented_block_body) [17350 17388])
+                            ("self" code nil (reparse-symbol indented_block_body) [17397 17467])
+                            ("self" variable nil (reparse-symbol indented_block_body) [17477 17527])
+                            ("self" code nil (reparse-symbol indented_block_body) [17536 17599])
+                            ("self" variable nil (reparse-symbol indented_block_body) [17608 17696])
+                            ("self" code nil (reparse-symbol indented_block_body) [17705 17759])
+                            ("self" variable nil (reparse-symbol indented_block_body) [17768 17820])
+                            ("self" code nil (reparse-symbol indented_block_body) [17829 17881])
+                            ("self" code nil (reparse-symbol indented_block_body) [17890 17976])
+                            ("self" code nil (reparse-symbol indented_block_body) [17985 18070])
+                            ("self" code nil (reparse-symbol indented_block_body) [18079 18156])
+                            ("self" variable nil (reparse-symbol indented_block_body) [18166 18204])
+                            ("self" code nil (reparse-symbol indented_block_body) [18213 18264])
+                            ("self" variable nil (reparse-symbol indented_block_body) [18273 18331])
+                            ("self" variable nil (reparse-symbol indented_block_body) [18340 18380])
+                            ("self" code nil (reparse-symbol indented_block_body) [18389 18429])
+                            ("self" variable nil (reparse-symbol indented_block_body) [18438 18485])
+                            ("self" variable nil (reparse-symbol indented_block_body) [18494 18532])
+                            ("self" code nil (reparse-symbol indented_block_body) [18541 18579])
+                            ("self" code nil (reparse-symbol indented_block_body) [18588 18650])
+                            ("self" code nil (reparse-symbol indented_block_body) [18659 18720])
+                            ("self" code nil (reparse-symbol indented_block_body) [18729 18762])
+                            ("self" code nil (reparse-symbol indented_block_body) [18771 18831])
+                            ("self" code nil (reparse-symbol indented_block_body) [18840 18899])
+                            ("self" code nil (reparse-symbol indented_block_body) [18908 18973])
+                            ("self" variable nil (reparse-symbol indented_block_body) [18983 19019])
+                            ("self" code nil (reparse-symbol indented_block_body) [19028 19077])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19086 19158])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19167 19208])
+                            ("self" code nil (reparse-symbol indented_block_body) [19217 19269])
+                            ("self" code nil (reparse-symbol indented_block_body) [19278 19345])
+                            ("self" code nil (reparse-symbol indented_block_body) [19355 19413])
+                            ("self" code nil (reparse-symbol indented_block_body) [19422 19487])
+                            ("self" code nil (reparse-symbol indented_block_body) [19496 19549])
+                            ("self" code nil (reparse-symbol indented_block_body) [19558 19610])
+                            ("self" code nil (reparse-symbol indented_block_body) [19619 19673])
+                            ("self" code nil (reparse-symbol indented_block_body) [19682 19737])
+                            ("self" code nil (reparse-symbol indented_block_body) [19746 19807])
+                            ("self" code nil (reparse-symbol indented_block_body) [19816 19873])
+                            ("self" code nil (reparse-symbol indented_block_body) [19882 19941])
+                            ("self" code nil (reparse-symbol indented_block_body) [19950 20012])
+                            ("self" code nil (reparse-symbol indented_block_body) [20021 20085])
+                            ("self" code nil (reparse-symbol indented_block_body) [20094 20155])
+                            ("self" code nil (reparse-symbol indented_block_body) [20164 20220])
+                            ("self" code nil (reparse-symbol indented_block_body) [20229 20293])
+                            ("self" code nil (reparse-symbol indented_block_body) [20302 20359])
+                            ("self" code nil (reparse-symbol indented_block_body) [20369 20420])
+                            ("self" variable nil (reparse-symbol indented_block_body) [20431 20474])
+                            ("self" code nil (reparse-symbol indented_block_body) [20483 20539])
+                            ("self" variable nil (reparse-symbol indented_block_body) [20548 20610])
+                            ("self" code nil (reparse-symbol indented_block_body) [20619 20666])
+                            ("self" variable nil (reparse-symbol indented_block_body) [20675 20720])
+                            ("self" code nil (reparse-symbol indented_block_body) [20729 20801])
+                            ("self" code nil (reparse-symbol indented_block_body) [20810 20881])
+                            ("self" code nil (reparse-symbol indented_block_body) [20890 20960])
+                            ("self" variable nil (reparse-symbol indented_block_body) [20970 21045])
+                            ("self" code nil (reparse-symbol indented_block_body) [21054 21102])
+                            ("self" code nil (reparse-symbol indented_block_body) [21112 21168])
+                            ("self" code nil (reparse-symbol indented_block_body) [21177 21238])
+                            ("self" code nil (reparse-symbol indented_block_body) [21249 21292])
+                            ("self" code nil (reparse-symbol indented_block_body) [21301 21346])
+                            ("self" code nil (reparse-symbol indented_block_body) [21355 21398])
+                            ("self" code nil (reparse-symbol indented_block_body) [21407 21450])
+                            ("self" code nil (reparse-symbol indented_block_body) [21459 21504])
+                            ("self" code nil (reparse-symbol indented_block_body) [21513 21556])
+                            ("self" code nil (reparse-symbol indented_block_body) [21600 21666])
+                            ("self" code nil (reparse-symbol indented_block_body) [21675 21725])
+                            ("self" code nil (reparse-symbol indented_block_body) [21734 21803])
+                            ("self" code nil (reparse-symbol indented_block_body) [21812 21861])
+                            ("self" code nil (reparse-symbol indented_block_body) [21870 21919])
+                            ("self" code nil (reparse-symbol indented_block_body) [21928 21982])
+                            ("self" code nil (reparse-symbol indented_block_body) [21991 22047])
+                            ("self" code nil (reparse-symbol indented_block_body) [22057 22109])
+                            ("self" code nil (reparse-symbol indented_block_body) [22118 22180])
+                            ("self" code nil (reparse-symbol indented_block_body) [22189 22250])
+                            ("self" code nil (reparse-symbol indented_block_body) [22259 22313])
+                            ("self" code nil (reparse-symbol indented_block_body) [22322 22386])
+                            ("self" code nil (reparse-symbol indented_block_body) [22395 22450])
+                            ("self" code nil (reparse-symbol indented_block_body) [22460 22530])
+                            ("self" code nil (reparse-symbol indented_block_body) [22539 22607])
+                            ("self" code nil (reparse-symbol indented_block_body) [22617 22679])
+                            ("self" code nil (reparse-symbol indented_block_body) [22688 22748])
+                            ("self" code nil (reparse-symbol indented_block_body) [22757 22815])
+                            ("self" code nil (reparse-symbol indented_block_body) [22824 22872])
+                            ("self" code nil (reparse-symbol indented_block_body) [22881 22959])
+                            ("self" code nil (reparse-symbol indented_block_body) [22968 23032])
+                            ("self" code nil (reparse-symbol indented_block_body) [23041 23123])
+                            ("self" code nil (reparse-symbol indented_block_body) [23132 23200])
+                            ("self" code nil (reparse-symbol indented_block_body) [23209 23267])
+                            ("self" code nil (reparse-symbol indented_block_body) [23277 23351])
+                            ("self" code nil (reparse-symbol indented_block_body) [23360 23422])
+                            ("matutils" code nil (reparse-symbol indented_block_body) [23432 23476])
+                            ("self" variable nil (reparse-symbol indented_block_body) [23486 23516])
+                            ("self" variable nil (reparse-symbol indented_block_body) [23526 23587])
+                            ("self" variable nil (reparse-symbol indented_block_body) [23597 23639]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3003 3007])
+                            ("parent" variable nil (reparse-symbol function_parameters) [3009 3015]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2990 23640])
+                    ("select_list_item" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23787 23791])
+                            ("item" variable nil (reparse-symbol function_parameters) [23793 23797]))                          )
+                        (reparse-symbol indented_block_body) [23766 25906])
+                    ("showQuestion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26371 26375])
+                            ("title" variable nil (reparse-symbol function_parameters) [26377 26382])
+                            ("question" variable nil (reparse-symbol function_parameters) [26384 26392]))                          
+                        :documentation "
+        Show the question message
+        ")
+                        (reparse-symbol indented_block_body) [26354 26776])
+                    ("check" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26911 26915]))                          )
+                        (reparse-symbol indented_block_body) [26901 29364])
+                    ("add_materials_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29519 29523])
+                            ("args" variable nil (reparse-symbol function_parameters) [29525 29530]))                          )
+                        (reparse-symbol indented_block_body) [29493 30765])
+                    ("add_all_materials_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30972 30976]))                          )
+                        (reparse-symbol indented_block_body) [30942 32331])
+                    ("assign_materials_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32486 32490]))                          )
+                        (reparse-symbol indented_block_body) [32457 33169])
+                    ("mat_item_selectionChanged" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33325 33329]))                          )
+                        (reparse-symbol indented_block_body) [33295 34138])
+                    ("close_all_maya_windows" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34292 34296]))                          )
+                        (reparse-symbol indented_block_body) [34265 34661])
+                    ("generate_btn_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34811 34815]))                          )
+                        (reparse-symbol indented_block_body) [34786 37132])
+                    ("uv_layout_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37280 37284]))                          )
+                        (reparse-symbol indented_block_body) [37258 39654])
+                    ("setBakeSetting_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39807 39811]))                          )
+                        (reparse-symbol indented_block_body) [39780 39891])
+                    ("setBakeSetting" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40036 40040])
+                            ("setSettingCurrentBakeLayer" variable nil (reparse-symbol function_parameters) [40042 40068]))                          )
+                        (reparse-symbol indented_block_body) [40017 43281])
+                    ("bake_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [43423 43427]))                          )
+                        (reparse-symbol indented_block_body) [43406 44879])
+                    ("bake" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [45014 45018])
+                            ("doBakeLocaly" variable nil (reparse-symbol function_parameters) [45020 45032])
+                            ("bakingPerCarModel" variable nil (reparse-symbol function_parameters) [45040 45057])
+                            ("group_variants" variable nil (reparse-symbol function_parameters) [45067 45081]))                          )
+                        (reparse-symbol indented_block_body) [45005 51978])
+                    ("baking_all_variants" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [52128 52132])
+                            ("bakelayers" variable nil (reparse-symbol function_parameters) [52134 52144])
+                            ("doBakeLocaly" variable nil (reparse-symbol function_parameters) [52146 52158])
+                            ("max_children_size" variable nil (reparse-symbol function_parameters) [52160 52177])
+                            ("drivingType" variable nil (reparse-symbol function_parameters) [52179 52190])
+                            ("carModel" variable nil (reparse-symbol function_parameters) [52192 52200])
+                            ("group_variants" variable nil (reparse-symbol function_parameters) [52207 52221])
+                            ("progressMultiply" variable nil (reparse-symbol function_parameters) [52228 52244]))                          )
+                        (reparse-symbol indented_block_body) [52104 54287])
+                    ("keyframe_all_variants" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [54439 54443])
+                            ("bakelayers" variable nil (reparse-symbol function_parameters) [54445 54455])
+                            ("max_children_size" variable nil (reparse-symbol function_parameters) [54457 54474])
+                            ("drivingType" variable nil (reparse-symbol function_parameters) [54476 54487])
+                            ("carModel" variable nil (reparse-symbol function_parameters) [54489 54497])
+                            ("group_variants" variable nil (reparse-symbol function_parameters) [54504 54518])
+                            ("progressMultiply" variable nil (reparse-symbol function_parameters) [54525 54541]))                          )
+                        (reparse-symbol indented_block_body) [54413 56634])
+                    ("set_keyframe_current_scene_visibility" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [56802 56806]))                          )
+                        (reparse-symbol indented_block_body) [56760 56938])
+                    ("bake_current_state_locally" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [57258 57262])
+                            ("bakelayers" variable nil (reparse-symbol function_parameters) [57264 57274])
+                            ("outputFileSufix" variable nil (reparse-symbol function_parameters) [57276 57291])
+                            ("progressMultiply" variable nil (reparse-symbol function_parameters) [57293 57309]))                          )
+                        (reparse-symbol indented_block_body) [57227 63321])
+                    ("get_baking_optionsStr_dic" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [63477 63481])
+                            ("bakelayers" variable nil (reparse-symbol function_parameters) [63483 63493]))                          )
+                        (reparse-symbol indented_block_body) [63447 66096])
+                    ("get_baking_options_dic" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [66249 66253])
+                            ("bakelayers" variable nil (reparse-symbol function_parameters) [66255 66265]))                          )
+                        (reparse-symbol indented_block_body) [66222 70045])
+                    ("get_baking_overrideOptionsStr_dic" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [70209 70213])
+                            ("bakelayers" variable nil (reparse-symbol function_parameters) [70215 70225]))                          )
+                        (reparse-symbol indented_block_body) [70171 72077])
+                    ("bake_current_state_inFarm" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [72233 72237])
+                            ("bakelayers" variable nil (reparse-symbol function_parameters) [72239 72249])
+                            ("outputFileSufix" variable nil (reparse-symbol function_parameters) [72251 72266])
+                            ("progressMultiply" variable nil (reparse-symbol function_parameters) [72268 72284])
+                            ("bakeKeyFrames" variable nil (reparse-symbol function_parameters) [72288 72301]))                          )
+                        (reparse-symbol indented_block_body) [72203 73285])
+                    ("prepare_bakelayers_for_baking" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [73445 73449])
+                            ("bakelayers" variable nil (reparse-symbol function_parameters) [73451 73461])
+                            ("outputFileSufix" variable nil (reparse-symbol function_parameters) [73463 73478])
+                            ("doRemoveBakedLayers" variable nil (reparse-symbol function_parameters) [73480 73499])
+                            ("keyframe" variable nil (reparse-symbol function_parameters) [73506 73514]))                          )
+                        (reparse-symbol indented_block_body) [73411 76923])
+                    ("afanasy_submit_current_scene" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [77082 77086])
+                            ("bakeList" variable nil (reparse-symbol function_parameters) [77088 77096])
+                            ("outputFileSufix" variable nil (reparse-symbol function_parameters) [77098 77113])
+                            ("saveOnlyVisible" variable nil (reparse-symbol function_parameters) [77115 77130])
+                            ("bakeKeyframes" variable nil (reparse-symbol function_parameters) [77139 77152]))                          )
+                        (reparse-symbol indented_block_body) [77049 80932])
+                    ("rebake_unbakedParts_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [81090 81094])
+                            ("showConfirmation" variable nil (reparse-symbol function_parameters) [81096 81112]))                          )
+                        (reparse-symbol indented_block_body) [81058 82336])
+                    ("saveScenesPerVariants_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [82546 82550]))                          )
+                        (reparse-symbol indented_block_body) [82512 84497])
+                    ("reset_bake_flags" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [84643 84647]))                          )
+                        (reparse-symbol indented_block_body) [84622 85305])
+                    ("combine_baked_texture_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [85555 85559]))                          )
+                        (reparse-symbol indented_block_body) [85521 85797])
+                    ("update_report_dialog" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [86040 86044])
+                            ("nodes" variable nil (reparse-symbol function_parameters) [86046 86051]))                          )
+                        (reparse-symbol indented_block_body) [86015 86551])
+                    ("get_num_unbaked_nodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [86703 86707]))                          )
+                        (reparse-symbol indented_block_body) [86677 86949])
+                    ("merge_vertices" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [87094 87098])
+                            ("node" variable nil (reparse-symbol function_parameters) [87100 87104])
+                            ("verbose" variable nil (reparse-symbol function_parameters) [87107 87114]))                          )
+                        (reparse-symbol indented_block_body) [87075 87706])
+                    ("merge_vertices_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [87859 87863]))                          )
+                        (reparse-symbol indented_block_body) [87832 88387])
+                    ("merge_uvs_clicked" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [88535 88539]))                          )
+                        (reparse-symbol indented_block_body) [88513 89212]))                  
+                :type "class")
+                nil [2947 89212])
+            ("show" function (:arguments 
+              ( ("resetVariantsState" variable nil (reparse-symbol function_parameters) [89223 89241]))              ) nil [89214 89521])
+            ("if" code nil nil [89574 89612]))          
+      :file "baking_v2.py"
+      :pointmax 89649
+      :fsize 91370
+      :lastmodtime '(22266 27073 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "material_utils.py"
+      :file "material_utils.py"
+      :fsize 13486
+      :lastmodtime '(22266 18070 0 0))
+    (semanticdb-table "combine_turtle_bakelayers.py"
+      :file "combine_turtle_bakelayers.py"
+      :fsize 7208
+      :lastmodtime '(22266 18070 0 0))
+    (semanticdb-table "uv_utils.py"
+      :file "uv_utils.py"
+      :fsize 10180
+      :lastmodtime '(22266 18070 0 0))
+    (semanticdb-table "dingdong.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("dingDong" function nil nil [1 255])
+            ("dingDong" code nil nil [260 270]))          
+      :file "dingdong.py"
+      :pointmax 271
+      :fsize 278
+      :lastmodtime '(22266 18070 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!maya-otl-sim!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

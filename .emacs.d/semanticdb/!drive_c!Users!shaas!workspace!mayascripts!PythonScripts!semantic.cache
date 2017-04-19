@@ -1,0 +1,111 @@
+;; Object PythonScripts/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "PythonScripts/"
+  :tables
+  (list
+    (semanticdb-table "baseUtils.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("maya.cmds" include nil nil [222 246])
+            ("re" include nil nil [247 256])
+            ("createLockFileToAbortScipt" function nil nil [258 554])
+            ("splitParentAndNodeName" function (:arguments 
+              ( ("_nodePath" variable nil (reparse-symbol function_parameters) [635 644]))              ) nil [608 796])
+            ("splitNameID" function (:arguments 
+              ( ("inStr" variable nil (reparse-symbol function_parameters) [866 871])
+                ("splitterExpr" variable nil (reparse-symbol function_parameters) [873 885]))              ) nil [850 974])
+            ("getNodeAttr" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [1115 1123])
+                ("attrName" variable nil (reparse-symbol function_parameters) [1125 1133])
+                ("showWarning" variable nil (reparse-symbol function_parameters) [1135 1146]))              ) nil [1099 1379])
+            ("addNodeAttr" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [1448 1456])
+                ("attrName" variable nil (reparse-symbol function_parameters) [1458 1466])
+                ("attrVal" variable nil (reparse-symbol function_parameters) [1468 1475])
+                ("attrType" variable nil (reparse-symbol function_parameters) [1477 1485])
+                ("keyable" variable nil (reparse-symbol function_parameters) [1487 1494]))              ) nil [1432 1990])
+            ("setNodeAttr" function (:arguments 
+              ( ("nodeName" variable nil (reparse-symbol function_parameters) [2059 2067])
+                ("attrName" variable nil (reparse-symbol function_parameters) [2069 2077])
+                ("attrVal" variable nil (reparse-symbol function_parameters) [2079 2086])
+                ("attrType" variable nil (reparse-symbol function_parameters) [2088 2096])
+                ("showWarning" variable nil (reparse-symbol function_parameters) [2105 2116]))              ) nil [2043 2454])
+            ("'''
+#--------------------------------------------------
+def setNodeAttr(nodeName, attrName, attrVal, isString=False, showWarning=True):
+    attPath = nodeName + '.' + attrName
+    if not cmds.objExists(attPath):
+        if showWarning:
+            cmds.warning('There is no obj in attPath: [%s] '% attPath)
+        return
+
+    if isString:
+        cmds.setAttr(attPath, attrVal, type=\"string\")
+    else:
+        cmds.setAttr(attPath, attrVal)
+'''" code nil nil [2454 2900])
+            ("hasSpecialCharacter" function (:arguments 
+              ( ("_str" variable nil (reparse-symbol function_parameters) [2978 2982]))              ) nil [2954 3129])
+            ("def_specialCharsMap" variable nil nil [3324 3477])
+            ("replaceSpecialCharacter" function (:arguments 
+              ( ("_str" variable nil (reparse-symbol function_parameters) [3506 3510])
+                ("specialCharsMap" variable nil (reparse-symbol function_parameters) [3512 3527]))              ) nil [3478 4077])
+            ("findNodeWithAttribute" function (:arguments 
+              ( ("attrName" variable nil (reparse-symbol function_parameters) [4157 4165])
+                ("attrValue" variable nil (reparse-symbol function_parameters) [4167 4176])
+                ("nodeType" variable nil (reparse-symbol function_parameters) [4178 4186]))              ) nil [4131 4717])
+            ("findNodeWithAttributeInChildNodes" function (:arguments 
+              ( ("parentNode" variable nil (reparse-symbol function_parameters) [4809 4819])
+                ("childNodes" variable nil (reparse-symbol function_parameters) [4821 4831])
+                ("attrName" variable nil (reparse-symbol function_parameters) [4833 4841])
+                ("attrValue" variable nil (reparse-symbol function_parameters) [4843 4852]))              ) nil [4771 5302])
+            ("createDic_Attr_Node" function (:arguments 
+              ( ("attrName" variable nil (reparse-symbol function_parameters) [5479 5487])
+                ("nodesType" variable nil (reparse-symbol function_parameters) [5489 5498]))              ) nil [5455 6056])
+            ("separate_all_polyNodes" function nil nil [6140 6675])
+            ("isNodeVisible" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [6843 6847]))              ) nil [6825 7172])
+            ("isNodeChildOf" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [7243 7247])
+                ("parent" variable nil (reparse-symbol function_parameters) [7249 7255]))              ) nil [7225 7489])
+            ("nodeTransformCompare" function (:arguments 
+              ( ("n1" variable nil (reparse-symbol function_parameters) [7655 7657])
+                ("n2" variable nil (reparse-symbol function_parameters) [7659 7661]))              ) nil [7630 8667])
+            ("resetNodeTransform" function (:arguments 
+              ( ("node" variable nil (reparse-symbol function_parameters) [8781 8785]))              ) nil [8758 9247])
+            ("maya.OpenMaya" include nil nil [9249 9275])
+            ("HashableMObject" type
+               (:documentation "
+    Wrapper class to store MObjects in a dict
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [9400 9414]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9379 9383])
+                            ("obj" variable nil (reparse-symbol function_parameters) [9385 9388]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [9366 9414])
+                    ("__hash__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9432 9436]))                          )
+                        (reparse-symbol indented_block_body) [9419 9492])
+                    ("__eq__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9508 9512])
+                            ("other" variable nil (reparse-symbol function_parameters) [9514 9519]))                          )
+                        (reparse-symbol indented_block_body) [9497 9559]))                  
+                :type "class")
+                nil [9277 9559]))          
+      :file "baseUtils.py"
+      :pointmax 9559
+      :fsize 9837
+      :lastmodtime '(22269 9957 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!mayascripts!PythonScripts!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

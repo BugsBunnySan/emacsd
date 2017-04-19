@@ -1,0 +1,440 @@
+;; Object Simulator/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Simulator/"
+  :tables
+  (list
+    (semanticdb-table "scheduler.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [520 538])
+            ("signal.h" include (:system-flag t) nil [539 558])
+            ("sys/time.h" include (:system-flag t) nil [559 580])
+            ("sys/resource.h" include (:system-flag t) nil [581 606])
+            ("../Main/net_types.h" include nil nil [607 637])
+            ("../Main/names.h" include nil nil [638 664])
+            ("../Main/array_man.h" include nil nil [665 695])
+            ("STEP_REACHED" variable (:constant-flag t) nil [785 797])
+            ("NOFT_REACHED" variable (:constant-flag t) nil [841 853])
+            ("TIME_REACHED" variable (:constant-flag t) nil [897 909])
+            ("BREAK_FCT_TRUE" variable (:constant-flag t) nil [976 990])
+            ("DEPTH_REACHED" variable (:constant-flag t) nil [1035 1048])
+            ("RESULT_REACHED" variable (:constant-flag t) nil [1095 1109])
+            ("STORE_BEGIN_TIME" variable (:constant-flag t) nil [1160 1176])
+            ("STORE_END_TIME" variable (:constant-flag t) nil [1264 1278])
+            ("STORE_TRACE_NOW" variable (:constant-flag t) nil [1364 1379])
+            ("ANIM_TRACE_NOW" variable (:constant-flag t) nil [1451 1465])
+            ("STORE_STAT_NOW" variable (:constant-flag t) nil [1546 1560])
+            ("ANIM_STAT_NOW" variable (:constant-flag t) nil [1635 1648])
+            ("strategy" function
+               (:prototype-flag t
+                :function-pointer t
+                :type "int")
+                nil [1805 1842])
+            ("break_fct" function
+               (:prototype-flag t
+                :function-pointer t
+                :type "int")
+                nil [1843 1881])
+            ("time_reached" function
+               (:prototype-flag t
+                :function-pointer t
+                :type "int")
+                nil [1882 1923])
+            ("tp" variable
+               (:pointer 1
+                :type ("FILE" type (:type "class") nil nil))
+                nil [2005 2031])
+            ("sp" variable
+               (:pointer 1
+                :type ("FILE" type (:type "class") nil nil))
+                nil [2083 2109])
+            ("bp" variable
+               (:pointer 1
+                :type ("FILE" type (:type "class") nil nil))
+                nil [2161 2187])
+            ("emalloc" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :type "char")
+                nil [2320 2354])
+            ("file_open" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :type ("FILE" type (:type "class") nil nil))
+                nil [2395 2431])
+            ("assign_time_fct" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "int")
+                nil [2473 2514])
+            ("fire_sequence" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "int")
+                nil [2551 2590])
+            ("max_sim_time_reached" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "int")
+                nil [2629 2675])
+            ("fprintf_times" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [2707 2746])
+            ("write_state" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [2785 2822])
+            ("init_trace_array" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [2863 2905])
+            ("store_fired" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [2941 2978])
+            ("fprintf_trace_start" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3019 3064])
+            ("fprintf_trace" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3097 3136])
+            ("fprintf_trace_end" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3175 3218])
+            ("init_stat_array" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3253 3294])
+            ("store_initial_marking" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3331 3378])
+            ("store_marking" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3409 3448])
+            ("store_activated" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3487 3528])
+            ("delete_least_activated" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3565 3613])
+            ("fprintf_stat" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3643 3681])
+            ("init_randint" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3721 3759])
+            ("take_first" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "int")
+                nil [3799 3835])
+            ("take_first_after" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "int")
+                nil [3877 3919])
+            ("fire_maximum_trans" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [3955 3999])
+            ("write_reached_mark" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [4033 4077])
+            ("transition" variable
+               (:typemodifiers ("extern")
+                :type ("MAPFI" type (:type "class") nil nil))
+                nil [4111 4144])
+            ("assign_break_fct" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :type "void")
+                nil [4270 4312])
+            ("assign_strategy" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :type "char")
+                nil [4357 4399])
+            ("mark" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("token_type" type (:type "class") nil nil))
+                nil [4525 4555])
+            ("activ" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("block_type" type (:type "class") nil nil))
+                nil [4602 4633])
+            ("par" variable
+               (:typemodifiers ("extern")
+                :type ("para_type" type (:type "class") nil nil))
+                nil [4679 4706])
+            ("Continue_Flag" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [4756 4793])
+            ("last_step" variable
+               (:typemodifiers ("extern")
+                :type "long")
+                nil [4833 4866])
+            ("last_noft" variable
+               (:typemodifiers ("extern")
+                :type "long")
+                nil [4910 4943])
+            ("last_sim_time" variable
+               (:typemodifiers ("extern")
+                :type "long")
+                nil [4987 5024])
+            ("last_real_time" variable
+               (:typemodifiers ("extern")
+                :type "long")
+                nil [5064 5101])
+            ("Trace" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [5140 5169])
+            ("Store_Trace" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [5217 5252])
+            ("Anim_Trace" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [5294 5328])
+            ("Trace_Fired" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [5371 5406])
+            ("Statistics" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [5448 5482])
+            ("Store_Stat" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [5525 5559])
+            ("Anim_Stat" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [5602 5635])
+            ("Exam_Mark" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [5679 5712])
+            ("Exam_Fired" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [5756 5790])
+            ("Exam_Enabled" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [5833 5869])
+            ("ru_begin" variable
+               (:typemodifiers ("extern")
+                :type ("rusage" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5910 5942])
+            ("ru_end" variable
+               (:typemodifiers ("extern")
+                :type ("rusage" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5987 6017])
+            ("tv_begin" variable
+               (:typemodifiers ("extern")
+                :type ("timeval" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6064 6096])
+            ("tv_end" variable
+               (:typemodifiers ("extern")
+                :type ("timeval" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6141 6171])
+            ("tzp_dummy" variable
+               (:typemodifiers ("extern")
+                :type ("timezone" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6218 6251])
+            ("Interrupt" variable
+               (:default-value "FALSE"
+                :type "int")
+                nil [6366 6406])
+            ("Conflict" variable
+               (:default-value "FALSE"
+                :type "int")
+                nil [6444 6483])
+            ("Check_Step" variable
+               (:default-value "FALSE"
+                :type "int")
+                nil [6522 6563])
+            ("Check_Noft" variable
+               (:default-value "FALSE"
+                :type "int")
+                nil [6600 6641])
+            ("Check_Time" variable (:type "int") nil [6678 6711])
+            ("Check_Break_Fct" variable
+               (:default-value "FALSE"
+                :type "int")
+                nil [6756 6802])
+            ("Check_Depth" variable
+               (:default-value "FALSE"
+                :type "int")
+                nil [6834 6876])
+            ("Check_Result" variable
+               (:default-value "FALSE"
+                :type "int")
+                nil [6912 6955])
+            ("Store_Fired" variable (:type "int") nil [6990 7024])
+            ("Maximum_Rule" variable (:type "int") nil [7068 7103])
+            ("Exam_Fire_Seq" variable (:type "int") nil [7156 7192])
+            ("step" variable (:type "long") nil [7244 7271])
+            ("noft" variable (:type "long") nil [7322 7349])
+            ("max_step" variable (:type "long") nil [7400 7431])
+            ("max_noft" variable (:type "long") nil [7478 7509])
+            ("max_sim_time" variable (:type "long") nil [7556 7591])
+            ("max_real_time" variable (:type "long") nil [7634 7670])
+            ("result" variable (:type "long") nil [7712 7741])
+            ("max_result" variable (:type "long") nil [7790 7823])
+            ("stop_reason" variable (:type "int") nil [7868 7902])
+            ("stop_reason_text" variable
+               (:pointer 1
+                :dereference 1
+                :default-value "{
+			\"in case of externa| interrupt\",
+			\"because maximum step number reached\",
+			\"because maximum number of fired transitions reached\",
+			\"because maximum simulation time reached\",
+			\"because maximum running time reached\",
+			\"because break function fulfilled\",
+			\"because a conflict occured\",
+			\"because no transition was activated\",
+			\"because all possible firing sequences were found\",
+			\"because wanted number of firing sequences were found\"
+		      }"
+                :type "char")
+                nil [7946 8496])
+            ("activ_trans" variable
+               (:pointer 1
+                :type ("noat_type" type (:type "class") nil nil))
+                nil [8498 8533])
+            ("activ_trans_cnt" variable (:type "int") nil [8612 8650])
+            ("first_activ_trans_cnt" variable (:type "int") nil [8690 8734])
+            ("first_activ" variable (:type "int") nil [8775 8809])
+            ("step_memory" variable
+               (:pointer 1
+                :type ("step_type" type (:type "class") nil nil))
+                nil [8854 8889])
+            ("set_int_flag" function (:type "void") nil [9460 9504])
+            ("fopen_files" function (:type "void") nil [10247 11300])
+            ("fclose_files" function (:type "void") nil [11659 11834])
+            ("malloc_activ_trans" function
+               (:arguments 
+                  ( ("length" variable (:type "int") nil nil))                  
+                :type "void")
+                nil [12309 12610])
+            ("select_activ_trans" function
+               (:arguments 
+                  ( ("net" variable
+                       (:pointer 1
+                        :type ("mod_net_type" type (:type "class") nil nil))
+                        nil nil))                  
+                :type "void")
+                nil [13258 13855])
+            ("malloc_step_memory" function
+               (:arguments 
+                  ( ("activ_len" variable (:type "int") nil nil)
+                    ("length" variable (:type "int") nil nil))                  
+                :type "void")
+                nil [14436 14712])
+            ("set_stop_reason" function
+               (:arguments 
+                  ( ("act_tra" variable (:type "int") nil nil))                  
+                :type "void")
+                nil [15230 15858])
+            ("forward_simulation" function
+               (:arguments 
+                  ( ("net" variable
+                       (:pointer 1
+                        :type ("mod_net_type" type (:type "class") nil nil))
+                        nil nil))                  
+                :type "void")
+                nil [17234 19043])
+            ("backtrack_simulation" function
+               (:arguments 
+                  ( ("net" variable
+                       (:pointer 1
+                        :type ("mod_net_type" type (:type "class") nil nil))
+                        nil nil))                  
+                :type "void")
+                nil [21046 23048])
+            ("scheduler" function
+               (:arguments 
+                  ( ("net" variable
+                       (:pointer 1
+                        :type ("mod_net_type" type (:type "class") nil nil))
+                        nil nil))                  
+                :type "void")
+                nil [23891 25656]))          
+      :file "scheduler.c"
+      :pointmax 25737
+      :fsize 25736
+      :lastmodtime '(11064 11341 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("STEP_REACHED" . ((semantic-list "(Check_Step && (step >= max_step))" 798 . 832)))
+          ("STORE_STAT_NOW" . ((semantic-list "(Store_Stat && (par.results_at!=0) && ((step%par.results_at)==0))" 1561 . 1626)))
+          ("RESULT_REACHED" . ((semantic-list "(Check_Result && (result >= max_result))" 1110 . 1150)))
+          ("STORE_END_TIME" . 
+              ((symbol "getrusage" 1281 . 1290) (semantic-list "(RUSAGE_SELF,&ru_end)" 1291 . 1312) (punctuation ";" 1312 . 1313) (symbol "gettimeofday" 1320 . 1332) (semantic-list "(&tv_end,&tzp_dummy)" 1333 . 1353) (punctuation ";" 1353 . 1354)))
+          ("TIME_REACHED" . ((semantic-list "(Check_Time && ((step % 1000) == 0) && (*time_reached)())" 910 . 967)))
+          ("BREAK_FCT_TRUE" . ((semantic-list "(Check_Break_Fct && (*break_fct)())" 991 . 1026)))
+          ("STORE_TRACE_NOW" . ((semantic-list "(Store_Trace && (par.trace_at!=0) && ((step%par.trace_at)==0))" 1380 . 1442)))
+          ("STORE_BEGIN_TIME" . 
+              ((symbol "getrusage" 1177 . 1186) (semantic-list "(RUSAGE_SELF,&ru_begin)" 1187 . 1210) (punctuation ";" 1210 . 1211) (symbol "gettimeofday" 1218 . 1230) (semantic-list "(&tv_begin,&tzp_dummy)" 1231 . 1253) (punctuation ";" 1253 . 1254)))
+          ("ANIM_TRACE_NOW" . ((semantic-list "(Anim_Trace && (par.anim_trace_at!=0) && ((step%par.anim_trace_at)==0))" 1466 . 1537)))
+          ("NOFT_REACHED" . ((semantic-list "(Check_Noft && (noft >= max_noft))" 854 . 888)))
+          ("DEPTH_REACHED" . ((semantic-list "(Check_Depth && (depth >= max_depth))" 1049 . 1086)))
+          ("ANIM_STAT_NOW" . ((semantic-list "(Anim_Stat && (par.anim_results_at!=0) && ((step%par.anim_results_at)==0))" 1649 . 1723)))
+          )
+))
+  :file "!drive_c!Users!shaas!workspace!moby!NewCSim!PTNet!_Programs!Simulator!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

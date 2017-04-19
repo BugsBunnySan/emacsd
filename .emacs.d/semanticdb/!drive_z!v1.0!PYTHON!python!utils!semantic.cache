@@ -1,0 +1,192 @@
+;; Object utils/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "utils/"
+  :tables
+  (list
+    (semanticdb-table "utilities.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("os" include nil nil [12 21])
+            ("datetime" include nil nil [22 37])
+            ("maya.cmds" include nil nil [38 62])
+            ("kickDuplicates" function
+               (:documentation "
+    Remove all duplicate entries from a list.
+
+    :param originalList: list
+    :returns: nonDuplicateList ( list )
+    "
+                :arguments 
+                  ( ("oList" variable nil (reparse-symbol function_parameters) [83 88]))                  )
+                nil [64 320])
+            ("listFilesByDate" function
+               (:documentation "
+	This function loops over all files in the parsed dir and list them based on date.
+
+	:param dirpath: str
+	:returns: fileList ( list )
+	"
+                :arguments 
+                  ( ("dirpath" variable nil (reparse-symbol function_parameters) [341 348]))                  )
+                nil [321 710])
+            ("listAllByDate" function
+               (:documentation "
+	This function loops over all files and folders in the parsed dir and list them based on date.
+
+	:param dirpath: str
+	:returns: folderList ( list )
+	"
+                :arguments 
+                  ( ("dirpath" variable nil (reparse-symbol function_parameters) [729 736]))                  )
+                nil [711 1052])
+            ("listFilesByDateIncTime" function
+               (:documentation "
+	This function loops over all files in the parsed dir and list them based on date, it also includes the timecode in the string.
+
+	:param dirpath: str
+	:returns: folderList ( list )
+	"
+                :arguments 
+                  ( ("dirpath" variable nil (reparse-symbol function_parameters) [1084 1091]))                  )
+                nil [1057 1759])
+            ("getFilesFromPublishRoot" function
+               (:documentation "
+	This function retrieves all the published files based on the path and mode parsed.
+
+	:param path: str
+	:param mode: int ( 1 = High, 2 = Low, 3 = Proxy )
+	:returns: modelFiles ( list), rigFiles ( list), fxFiles ( list), shadingFiles ( list), animationFiles ( list), setDressFiles ( list)
+	"
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [1792 1796])
+                    ("mode" variable nil (reparse-symbol function_parameters) [1798 1802]))                  )
+                nil [1764 4072])
+            ("getFilesFromPublish" function
+               (:documentation "
+	This function retrieves all the published files from a specific folder.
+
+	:param path: str
+	:returns: modelFiles ( list), rigFiles ( list), fxFiles ( list), shadingFiles ( list), animationFiles ( list), setDressFiles ( list)
+	"
+                :arguments 
+                  ( ("publishPath" variable nil (reparse-symbol function_parameters) [4101 4112]))                  )
+                nil [4077 6183])
+            ("rebuildPath" function
+               (:documentation "
+    This function will loop through a full path of an object untill it finds the lowest single
+    encounter of the object.
+
+    :param fullPath: str
+    :returns: buildPath ( str / None )
+    "
+                :arguments 
+                  ( ("fullPath" variable nil (reparse-symbol function_parameters) [6204 6212]))                  )
+                nil [6188 7005])
+            ("convertFPS" function
+               (:documentation "
+    Convert fps to area specific name.
+
+    :param fps: str
+    :returns: returnFps ( str )
+    "
+                :arguments 
+                  ( ("fps" variable nil (reparse-symbol function_parameters) [7021 7024]))                  )
+                nil [7006 7244]))          
+      :file "utilities.py"
+      :pointmax 7244
+      :fsize 7243
+      :lastmodtime '(21757 35538 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "rjNamespace.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("FBI_globalClassesAdd" include nil nil [15 42])
+            ("pymel.core" include nil nil [44 68])
+            ("functools" include nil nil [69 98])
+            ("os" include nil nil [99 108])
+            ("setNameSpaceUI" function
+               (:documentation "
+	Open an UI that makes it able to save the namespace in the XML files located at the
+	path parameter.
+
+	:param path: str
+	"
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [130 134])
+                    ("args" variable nil (reparse-symbol function_parameters) [136 141]))                  )
+                nil [111 909])
+            ("setNameSpace" function
+               (:documentation "
+	Read the namespace entry from the UI. Check if it already exists within the project. If it does it will
+	turn the field red. If its ok, namespace will be stored in the xml.
+
+	:param path: str
+	:param TF: textField
+	"
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [928 932])
+                    ("TF" variable nil (reparse-symbol function_parameters) [934 936])
+                    ("args" variable nil (reparse-symbol function_parameters) [938 943]))                  )
+                nil [911 1686])
+            ("namespaceCheck" function
+               (:documentation "
+	Update UI ( Namespace Text Field )
+
+	:param TF: textField
+	"
+                :arguments 
+                  ( ("TF" variable nil (reparse-symbol function_parameters) [1707 1709])
+                    ("args" variable nil (reparse-symbol function_parameters) [1711 1716]))                  )
+                nil [1688 2045])
+            ("updateNamespaceOnDuplicates" function
+               (:documentation "
+	This function will analize the scene and see if the parsed namespace is already in the scene.
+	It will then increment the latest number so you will have a unique namespace.
+
+	:param namespace: str
+	:returns: newNum ( int )
+	"
+                :arguments 
+                  ( ("namespace" variable nil (reparse-symbol function_parameters) [2080 2089])
+                    ("args" variable nil (reparse-symbol function_parameters) [2091 2096]))                  )
+                nil [2048 3265])
+            ("replaceNameSpace" function
+               (:documentation "
+	This function will replace all namespaces contained in the parsed path with the new namespace.
+
+	:param path: str
+	:param namespace: str
+	:returns: newPath ( str )
+	"
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [3288 3292])
+                    ("namespace" variable nil (reparse-symbol function_parameters) [3294 3303]))                  )
+                nil [3267 4206])
+            ("stripNameSpace" function
+               (:documentation "
+	This function will strip all namespaces from a path.
+
+	:param path: str
+	:returns: newPath ( str )
+	"
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [4227 4231]))                  )
+                nil [4208 4446])
+            ("getNamespaceFromSel" function
+               (:documentation "
+	Get the namespaces from a selections.
+
+	:param sample: list
+	:returns: namespaceList ( list )
+	"
+                :arguments 
+                  ( ("sample" variable nil (reparse-symbol function_parameters) [4472 4478]))                  )
+                nil [4448 4937]))          
+      :file "rjNamespace.py"
+      :pointmax 4939
+      :fsize 4938
+      :lastmodtime '(21757 35538 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_z!v1.0!PYTHON!python!utils!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

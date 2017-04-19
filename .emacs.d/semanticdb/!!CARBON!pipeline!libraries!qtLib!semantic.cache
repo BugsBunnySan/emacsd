@@ -1,0 +1,361 @@
+;; Object qtLib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "qtLib/"
+  :tables
+  (list
+    (semanticdb-table "QtUi.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"Load and parent Ui files: L{FindUiObject}, L{GetUiObject}, L{UiMainWindow}, L{ListUiObjects}
+This module is using C{PyQt4}, if the application is not supporting C{PyQt4} it's trying to use C{PySide}.
+
+This module should be used to base a C{UiMainWindow} class, or set it's parent properly in each C{ui.py} module.
+Do not import directly from this module inside an application, use it's equivalent module inside the applicationLib,
+like L{maxLib.ui} -> L{maxLib.ui.UiMainWindow}
+To derive from a different application window as parent,
+use one of the following examples:
+
+
+    1. Example: use this method if you have direct access to the qt system of the app
+        Therefor you need to know the name of the widget you want to parent to.
+        You use function L{ListUiObjects} to get all child widgets of the application:
+
+        >>> from qtLib.QtUi import ListUiObjects
+        ... widgetNames = ListUiObjects()
+
+        2.1 First method:
+
+        >>> from qtLib.QtUi import UiMainWindow, FindUiObject
+        ...
+        ... anyWidget =FindUiObject(\"MainWindow\", False) # You have to know the
+        ...                                              # name of the widget
+        ... class MyUi(UiMainWindow):         # 'UiMainWindow' should get a parent argument
+        ...     def __init__(self):
+        ...         super(MyUi, self).__init__( uiFile=None, parent=anyWidget) # 'uiFIle' is optional
+        ...         #[..]
+
+        2.2 Second method:
+
+        >>> from qtLib.QtUi import FindUiObject
+        ...
+        ... anyUi =FindUiObject(\"MainWindow\") # You have to know the
+        ...                                   # name of the widget
+        ... class MyUi(anyUi):
+        ...     def __init__(self):
+        ...         super(MyUi, self).__init__( uiFile=None) # 'uiFIle' is optional
+        ...         #[..]
+
+    It is mainly recommended that each application lib should get it's own 'ui.py' module.
+    Inside this module there should be an C{UiMainWindow} class which is already predefined
+    with all necessary options to run properly and without any issues inside it's application.
+
+:authors:  I{Michael Loeffler}
+:date: 30/03/2015
+:copyright: S{copy} 03|2015 - Michael Loeffler}
+\"\"\"" code nil nil [346 2564])
+            ("sys" include nil nil [2566 2576])
+            ("qtLib" include nil nil [2578 2609])
+            ("qtLib.QtUiTools" include nil nil [2610 2667])
+            ("common" include nil nil [2668 2700])
+            ("SetAppEvents" function
+               (:documentation "
+    Use this function to perform L{WindowStateChange events<QtCore.QEvent.WindowStateChange>} to each child widget.
+
+    :param applicationObject: The application
+    :type applicationObject: L{QtGui.QApplication}
+    :return: The extended application
+    :rtype: L{QtGui.QApplication}
+    "
+                :arguments 
+                  ( ("applicationObject" variable nil (reparse-symbol function_parameters) [2719 2736]))                  )
+                nil [2702 3519])
+            ("GCProtector" type
+               (:documentation " A simple protector class to make sure that the ui
+    object will not being garbage collected (for PySide)
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("widgets" variable nil (reparse-symbol indented_block_body) [3674 3686]))                  
+                :type "class")
+                nil [3520 3687])
+            ("GetWin32ParentWidget" function
+               (:documentation "
+    Windows specific method to get the proxy window that will 'own' all custom dialogs.  This
+    will be parented to the main 3ds Max application.  Creates the proxy window
+    if it doesn't already exist.
+
+    :param parentHandle: parent window HWND
+    :type parentHandle: HWND
+    :return: QtGui.QWidget
+    :rtype: L{QtGui.QWidget}
+    "
+                :arguments 
+                  ( ("parentHandle" variable nil (reparse-symbol function_parameters) [3713 3725]))                  )
+                nil [3688 5798])
+            ("GetUiObject" function
+               (:documentation "
+    This function returns a class which is inherited from the given widget.
+
+    :param parentWidget: parent widget to be based
+    :type parentWidget: PyQt4/PySide Widget
+    :return: L{UiMainWindow}
+    :rtype: class
+    "
+                :arguments 
+                  ( ("parentWidget" variable nil (reparse-symbol function_parameters) [5815 5827]))                  )
+                nil [5799 7900])
+            ("FindUiObject" function
+               (:documentation "search for a widget with it's name.
+    Returns the first widget which is found with the same name.
+
+    :warning: If multiple widgets have the same name, you will probably get the wrong widget returned.
+    :param widgetTitle: the name of the widget
+    :type widgetTitle: str
+    :param asUiMainWindow: returns C{UiMainWindow} with parent to widget | default: True
+    :type asUiMainWindow: bool
+    :return: widget or L{UiMainWindow}
+    :rtype: QWidget | class L{UiMainWindow}
+    "
+                :arguments 
+                  ( ("widgetTitle" variable nil (reparse-symbol function_parameters) [7918 7929])
+                    ("asUiMainWindow" variable nil (reparse-symbol function_parameters) [7931 7945]))                  )
+                nil [7901 9182])
+            ("ListUiObjects" function (:documentation "
+    Get a list of all widgets of the active application.
+
+    :return: list of widgets
+    :rtype: [QWidgets]
+    ") nil [9183 9654])
+            ("UiMainWindow" type
+               (:documentation "
+    Use this class if you are able to reparent an L{QtGui.QMainWindow} to the given parent argument.
+    This ui class could also be used to setup just a window for an application.
+    It is not needed to parse a ui file in.
+
+        1. Example
+
+        >>> from qtLib.QtUi import UiMainWindow, FindUiObject
+        ... import sys
+        ...
+        ... parentWindow = FindUiObject(\"MainWindow\", False)
+        ...
+        ... class MyGui(UiMainWindow):
+        ...     # Call super and parse the ui file path and the parent widget
+        ...     # as arguments into the super call, if you have to use the constructor
+        ...     def __init__(self, uiFile): # uiFile is optional
+        ...         super(MyGui, self).__init__(uiFile, parent=parentWindow)
+        ...         #[..]
+        ...
+        ... uiFile = r\"~\\ui\\myUiFile.ui\"
+        ... app = QtGui.QApplication(sys.argv)
+        ... win = MyGui(uiFile)
+        ... win.show()
+        ... sys.exit(app.exec_())
+
+    This class makes it very easy to use a ui file as a MainWindow.
+    All widgets and controls of the ui file are stored and access able with C{self} inside the C{MyGui} class.
+    "
+                :superclasses ("QtGui.QMainWindow")
+                :members 
+                  ( ("PARENT" variable nil (reparse-symbol indented_block_body) [10873 10886])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" code nil (reparse-symbol indented_block_body) [11004 11015])
+                            ("super" code nil (reparse-symbol indented_block_body) [11024 11073])
+                            ("if" code nil (reparse-symbol indented_block_body) [11082 11114])
+                            ("GCProtector" code nil (reparse-symbol indented_block_body) [11122 11154])
+                            ("if" code nil (reparse-symbol indented_block_body) [11163 11255])
+                            ("self" code nil (reparse-symbol indented_block_body) [11263 11305]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10904 10908])
+                            ("uiFile" variable nil (reparse-symbol function_parameters) [10910 10916])
+                            ("styleName" variable nil (reparse-symbol function_parameters) [10923 10932])
+                            ("parent" variable nil (reparse-symbol function_parameters) [10951 10957]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [10891 11306])
+                    ("closeEvent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11326 11330])
+                            ("event" variable nil (reparse-symbol function_parameters) [11332 11337]))                          )
+                        (reparse-symbol indented_block_body) [11311 12376]))                  
+                :type "class")
+                nil [9655 12376]))          
+      :file "QtUi.py"
+      :pointmax 12376
+      :fsize 12375
+      :lastmodtime '(22174 7683 0 0)
+      :unmatched-syntax '((NAME 10973 . 10979) (IF 10989 . 10991) (ELSE 10999 . 11003)))
+    (semanticdb-table "QtUiTools.py"
+      :file "QtUiTools.py"
+      :fsize 5217
+      :lastmodtime '(22183 23768 0 0))
+    (semanticdb-table "common.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("EXTENSIONS" type
+               (:members 
+                  ( ("icon" variable nil (reparse-symbol indented_block_body) [372 396])
+                    ("img" variable nil (reparse-symbol indented_block_body) [401 430])
+                    ("render" variable nil (reparse-symbol indented_block_body) [435 475]))                  
+                :type "class")
+                nil [348 476])
+            ("DEFAULT_STYLE" variable nil nil [477 519])
+            ("QT_VERSION" type
+               (:documentation "
+    Set your preferred Qt library.
+    ::
+        QT_VERSION.PyQt4 = True
+        # [..]
+    "
+                :members 
+                  ( ("PyQt5" variable nil (reparse-symbol indented_block_body) [650 664])
+                    ("PyQt4" variable nil (reparse-symbol indented_block_body) [669 683])
+                    ("PySide" variable nil (reparse-symbol indented_block_body) [688 702])
+                    ("CURRENT" variable nil (reparse-symbol indented_block_body) [707 721])
+                    ("active" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [755 758]))                          )
+                        (reparse-symbol indented_block_body) [727 820])
+                    ("current" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [854 857]))                          )
+                        (reparse-symbol indented_block_body) [825 1151]))                  
+                :type "class")
+                nil [521 1151])
+            ("QtModules" type
+               (:superclasses ("object")
+                :members 
+                  ( ("QtCore" variable nil (reparse-symbol indented_block_body) [1181 1197])
+                    ("QtGui" variable nil (reparse-symbol indented_block_body) [1202 1218])
+                    ("Qt" variable nil (reparse-symbol indented_block_body) [1223 1239])
+                    ("uic" variable nil (reparse-symbol indented_block_body) [1244 1260])
+                    ("QtUiTools" variable nil (reparse-symbol indented_block_body) [1265 1281])
+                    ("uiLib" variable nil (reparse-symbol indented_block_body) [1287 1305])
+                    ("IMP_RESULT" variable nil (reparse-symbol indented_block_body) [1310 1325])
+                    ("Import" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1359 1362])
+                            ("module" variable nil (reparse-symbol function_parameters) [1364 1370])
+                            ("modules" variable nil (reparse-symbol function_parameters) [1372 1380]))                          )
+                        (reparse-symbol indented_block_body) [1331 1725])
+                    ("FromModImportAll" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1768 1771])
+                            ("module" variable nil (reparse-symbol function_parameters) [1773 1779])
+                            ("modules" variable nil (reparse-symbol function_parameters) [1781 1789]))                          )
+                        (reparse-symbol indented_block_body) [1730 2150])
+                    ("ImportResult" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [2189 2192]))                          )
+                        (reparse-symbol indented_block_body) [2155 2289])
+                    ("ImportQtCore" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [2328 2331]))                          )
+                        (reparse-symbol indented_block_body) [2294 2454])
+                    ("ImportQtGui" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [2492 2495]))                          )
+                        (reparse-symbol indented_block_body) [2459 3171]))                  
+                :type "class")
+                nil [1152 3171]))          
+      :file "common.py"
+      :pointmax 3171
+      :fsize 3170
+      :lastmodtime '(22174 7683 0 0)
+      :unmatched-syntax '((RETURN 2100 . 2106) (IF 2118 . 2120) (ELSE 2137 . 2141) (RETURN 1675 . 1681) (IF 1693 . 1695) (ELSE 1712 . 1716) (NAME 1014 . 1017) (IF 1030 . 1032) (ELSE 1053 . 1057)))
+    (semanticdb-table "QtGui.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "QtGui.py"
+      :pointmax 96230
+      :fsize 96229
+      :lastmodtime '(22187 13873 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "QtCore.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+The QtCore module contains non-GUI functionality.
+This module contains automatically the default C{QtCore} package which is used in the running environment.
+
+    - To import the module use, for example, the following statement
+      Use **uiLib** to see which Qt library is used
+
+    >>> from qtLib import QtCore
+    ... print QtCore.uiLib         # Returns: 'PyQt5' / 'PyQt4' / or 'PySide'
+    'PySide'
+
+
+----
+
+:ref:`QAbstractAnimation <pyside:QAbstractAnimation>`
+
+:ref:`QAbstractAnimation <pyqt:QAbstractAnimation>`
+
+(`Pyqt <http://pyqt.sourceforge.net/Docs/PyQt4/qtcore.html>`_ , `PySide <hhttp://pyside.github.io/docs/pyside-docs/PySide/QtCore/index.html>`_ , `Qt <http://doc.qt.io/qt-4.8/classes.html>`_)
+
+.. summary::
+
+----
+
+.. note::
+    `PyQt5 (use PyQt4 instead) <http://pyqt.sourceforge.net/Docs/PyQt5/introduction.html#module-PyQt5.QtCore>`_,
+    `PyQt4 <http://pyqt.sourceforge.net/Docs/PyQt4/qtcore.html>`_,
+    `PySide <http://srinikom.github.io/pyside-docs/PySide/QtCore/index.html>`_,
+    `QT4 <http://doc.qt.io/qt-4.8/qtcore-module.html#qtcore>`_
+    `QT5 <http://doc.qt.io/qt-5/qtcore-index.html>`_
+
+----
+
+
+
+\"\"\"" code nil nil [321 1455])
+            ("qtLib.common" include nil nil [1456 1501])
+            ("Slot" variable nil nil [1503 1519])
+            ("Signal" variable nil nil [1520 1536])
+            ("uiLib" variable nil nil [1537 1551])
+            ("VERSION" variable nil nil [1552 1564])
+            ("QT_VERSION" variable nil nil [1565 1582])
+            ("del" code nil nil [3199 3204])
+            ("QCoreApplication" type
+               (:superclasses ("QCoreApplication")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("platform" include nil (reparse-symbol indented_block_body) [3298 3313])
+                            ("if" code nil (reparse-symbol indented_block_body) [3322 3509])
+                            ("del" code nil (reparse-symbol indented_block_body) [3517 3529])
+                            ("super" code nil (reparse-symbol indented_block_body) [3538 3593]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3266 3270])
+                            ("args" variable nil (reparse-symbol function_parameters) [3272 3277])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [3279 3287]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3253 3903]))                  
+                :type "class")
+                nil [3206 3903]))          
+      :file "QtCore.py"
+      :pointmax 3903
+      :fsize 3902
+      :lastmodtime '(22187 13873 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 1992 . 3199) (COLON 1971 . 1972) (TRY 1601 . 1604) (AS 1967 . 1969))))
+  :file "!!CARBON!pipeline!libraries!qtLib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

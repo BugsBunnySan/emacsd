@@ -1,0 +1,929 @@
+;; Object processor/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "processor/"
+  :tables
+  (list
+    (semanticdb-table "processor.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "processor.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(22325 57012 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "_stuff.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("pprint" include nil nil [1 26])
+            ("abc" include nil nil [28 38])
+            ("pickle" include nil nil [39 52])
+            ("threading" include nil nil [53 69])
+            ("uuid" include nil nil [70 81])
+            ("socket" include nil nil [82 95])
+            ("Queue" include nil nil [96 108])
+            ("zmq" include nil nil [110 120])
+            ("context.service" include nil nil [122 144])
+            ("reload" code nil nil [145 168])
+            ("proxy" include nil nil [170 182])
+            ("reload" code nil nil [183 196])
+            ("inter_connect" include nil nil [198 218])
+            ("graph" include nil nil [220 232])
+            ("threading" include nil nil [233 249])
+            ("Queue" include nil nil [250 262])
+            ("uuid" include nil nil [263 274])
+            ("threading" include nil nil [275 291])
+            ("Queue" include nil nil [292 304])
+            ("context.service" include nil nil [306 328])
+            ("services" include nil nil [330 345])
+            ("UUIDIDGenerator" type
+               (:superclasses ("context.service.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [399 439])
+                    ("service_id" variable nil (reparse-symbol indented_block_body) [445 464])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [483 487])
+                            ("obj" variable nil (reparse-symbol function_parameters) [489 492]))                          )
+                        (reparse-symbol indented_block_body) [470 528]))                  
+                :type "class")
+                nil [347 528])
+            ("ProcessingThread" type
+               (:superclasses ("services.ProcessingThreadService" "threading.Thread")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [610 634])
+                    ("__init__" function
+                       (:suite 
+                          ( ("threading" code nil (reparse-symbol indented_block_body) [692 723])
+                            ("services" code nil (reparse-symbol indented_block_body) [732 803]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [653 657])
+                            ("graph" variable nil (reparse-symbol function_parameters) [659 664])
+                            ("processor_queue" variable nil (reparse-symbol function_parameters) [666 681]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [640 804])
+                    ("_make_ipc_queue" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [829 833]))                          )
+                        (reparse-symbol indented_block_body) [809 865]))                  
+                :type "class")
+                nil [530 865])
+            ("GraphProcessorST" type
+               (:superclasses ("GraphProcessorService")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [11665 11701])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [11776 11864])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11874 11903]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11720 11724])
+                            ("graph" variable nil (reparse-symbol function_parameters) [11726 11731])
+                            ("graph_config" variable nil (reparse-symbol function_parameters) [11738 11750])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [11757 11765]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [11707 11904])
+                    ("is_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11941 11945]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [11909 12036])
+                    ("load_graph" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12056 12060])
+                            ("graph_config" variable nil (reparse-symbol function_parameters) [12062 12074]))                          )
+                        (reparse-symbol indented_block_body) [12041 12245])
+                    ("store_graph" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12266 12270])
+                            ("graph_config" variable nil (reparse-symbol function_parameters) [12272 12284]))                          )
+                        (reparse-symbol indented_block_body) [12250 12454])
+                    ("notify_listeners" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12480 12484])
+                            ("request" variable nil (reparse-symbol function_parameters) [12486 12493]))                          )
+                        (reparse-symbol indented_block_body) [12459 12576])
+                    ("start_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12602 12606]))                          )
+                        (reparse-symbol indented_block_body) [12581 13055])
+                    ("process" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13072 13076]))                          )
+                        (reparse-symbol indented_block_body) [13060 13659]))                  
+                :type "class")
+                nil [11614 13659])
+            ("GraphProcessorSTZMQ" type
+               (:superclasses ("GraphProcessorST")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [13711 13745])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [13932 14023])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14033 14065])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14075 14111])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14121 14175])
+                            ("self" code nil (reparse-symbol indented_block_body) [14184 14252])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14261 14315])
+                            ("self" code nil (reparse-symbol indented_block_body) [14324 14392])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14402 14486])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14495 14524])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14567 14593])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14639 14665])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14675 14722])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14732 14755]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13764 13768])
+                            ("control_port" variable nil (reparse-symbol function_parameters) [13770 13782])
+                            ("updates_port" variable nil (reparse-symbol function_parameters) [13784 13796])
+                            ("request_port_range_start" variable nil (reparse-symbol function_parameters) [13815 13839])
+                            ("request_port_range_end" variable nil (reparse-symbol function_parameters) [13841 13863])
+                            ("graph" variable nil (reparse-symbol function_parameters) [13882 13887])
+                            ("graph_config" variable nil (reparse-symbol function_parameters) [13894 13906])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [13913 13921]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13751 14756])
+                    ("notify_listeners" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14782 14786])
+                            ("request" variable nil (reparse-symbol function_parameters) [14788 14795]))                          )
+                        (reparse-symbol indented_block_body) [14761 14846])
+                    ("connect_to_graph_processor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14882 14886])
+                            ("remote_server" variable nil (reparse-symbol function_parameters) [14888 14901])
+                            ("remote_port" variable nil (reparse-symbol function_parameters) [14903 14914]))                          )
+                        (reparse-symbol indented_block_body) [14851 15974])
+                    ("start_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16000 16004]))                          )
+                        (reparse-symbol indented_block_body) [15979 16665])
+                    ("process" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16682 16686]))                          )
+                        (reparse-symbol indented_block_body) [16670 17462])
+                    ("process_signal_request" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17494 17498])
+                            ("request" variable nil (reparse-symbol function_parameters) [17500 17507]))                          )
+                        (reparse-symbol indented_block_body) [17467 18490])
+                    ("handle_msg_ic" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18513 18517])
+                            ("msg" variable nil (reparse-symbol function_parameters) [18519 18522]))                          )
+                        (reparse-symbol indented_block_body) [18495 18965])
+                    ("handle_msg_signal_sending" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19000 19004])
+                            ("msg" variable nil (reparse-symbol function_parameters) [19006 19009]))                          )
+                        (reparse-symbol indented_block_body) [18970 19668])
+                    ("handle_msg_signal_receiving" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19705 19709])
+                            ("msg" variable nil (reparse-symbol function_parameters) [19711 19714]))                          )
+                        (reparse-symbol indented_block_body) [19673 20130])
+                    ("handle_msg_signal_delivered" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20167 20171])
+                            ("msg" variable nil (reparse-symbol function_parameters) [20173 20176]))                          )
+                        (reparse-symbol indented_block_body) [20135 20693])
+                    ("handle_msg_signal_feedback" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20729 20733])
+                            ("msg" variable nil (reparse-symbol function_parameters) [20735 20738]))                          )
+                        (reparse-symbol indented_block_body) [20698 21178])
+                    ("handle_msg_interconnect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21212 21216])
+                            ("msg" variable nil (reparse-symbol function_parameters) [21218 21221]))                          )
+                        (reparse-symbol indented_block_body) [21184 22179])
+                    ("handle_msg_interdisconnect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22215 22219])
+                            ("msg" variable nil (reparse-symbol function_parameters) [22221 22224]))                          )
+                        (reparse-symbol indented_block_body) [22184 22648])
+                    ("handle_msg_connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22676 22680])
+                            ("msg" variable nil (reparse-symbol function_parameters) [22682 22685]))                          )
+                        (reparse-symbol indented_block_body) [22653 23394])
+                    ("handle_msg_disconnect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23425 23429])
+                            ("msg" variable nil (reparse-symbol function_parameters) [23431 23434]))                          )
+                        (reparse-symbol indented_block_body) [23399 23858])
+                    ("handle_msg_process" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23886 23890])
+                            ("msg" variable nil (reparse-symbol function_parameters) [23892 23895]))                          )
+                        (reparse-symbol indented_block_body) [23863 24266])
+                    ("handle_msg_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24291 24295])
+                            ("msg" variable nil (reparse-symbol function_parameters) [24297 24300]))                          )
+                        (reparse-symbol indented_block_body) [24271 24673])
+                    ("handle_msg_rpc" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24697 24701])
+                            ("msg" variable nil (reparse-symbol function_parameters) [24703 24706]))                          )
+                        (reparse-symbol indented_block_body) [24678 25623])
+                    ("handle_msg_attr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25648 25652])
+                            ("msg" variable nil (reparse-symbol function_parameters) [25654 25657]))                          )
+                        (reparse-symbol indented_block_body) [25628 26381])
+                    ("handle_msg_start" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26407 26411])
+                            ("msg" variable nil (reparse-symbol function_parameters) [26413 26416]))                          )
+                        (reparse-symbol indented_block_body) [26386 26451])
+                    ("handle_msg_stop" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26476 26480])
+                            ("msg" variable nil (reparse-symbol function_parameters) [26482 26485]))                          )
+                        (reparse-symbol indented_block_body) [26456 26519])
+                    ("handle_msg_shutdown" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26548 26552])
+                            ("msg" variable nil (reparse-symbol function_parameters) [26554 26557]))                          )
+                        (reparse-symbol indented_block_body) [26524 26640])
+                    ("listen" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26656 26660]))                          )
+                        (reparse-symbol indented_block_body) [26645 28727]))                  
+                :type "class")
+                nil [13662 28727])
+            ("ProxyGraphProcessorSTZMQ" type
+               (:superclasses ("GraphProcessorST")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [28782 28806])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [28870 28942])
+                            ("self" variable nil (reparse-symbol indented_block_body) [28952 28985])
+                            ("self" variable nil (reparse-symbol indented_block_body) [28996 29032])
+                            ("self" variable nil (reparse-symbol indented_block_body) [29042 29098])
+                            ("self" code nil (reparse-symbol indented_block_body) [29107 29214]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28825 28829])
+                            ("control_server" variable nil (reparse-symbol function_parameters) [28831 28845])
+                            ("control_port" variable nil (reparse-symbol function_parameters) [28847 28859]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [28812 29215])
+                    ("__delete__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29235 29239]))                          )
+                        (reparse-symbol indented_block_body) [29220 29268])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29285 29289]))                          )
+                        (reparse-symbol indented_block_body) [29273 29627])
+                    ("disconnect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29647 29651]))                          )
+                        (reparse-symbol indented_block_body) [29632 29832])
+                    ("load_graph" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29852 29856])
+                            ("node_names" variable nil (reparse-symbol function_parameters) [29858 29868]))                          )
+                        (reparse-symbol indented_block_body) [29837 29993])
+                    ("store_graph" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30014 30018]))                          )
+                        (reparse-symbol indented_block_body) [29998 30034])
+                    ("process_request" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30059 30063])
+                            ("request" variable nil (reparse-symbol function_parameters) [30065 30072]))                          )
+                        (reparse-symbol indented_block_body) [30039 30475])
+                    ("start_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30501 30505]))                          )
+                        (reparse-symbol indented_block_body) [30480 30643])
+                    ("get_node_labels" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30668 30672]))                          )
+                        (reparse-symbol indented_block_body) [30648 30943])
+                    ("get_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30961 30965])
+                            ("node_name" variable nil (reparse-symbol function_parameters) [30967 30976]))                          )
+                        (reparse-symbol indented_block_body) [30948 31383])
+                    ("communicate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31404 31408])
+                            ("msg" variable nil (reparse-symbol function_parameters) [31410 31413]))                          )
+                        (reparse-symbol indented_block_body) [31388 31532])
+                    ("pprint" include nil (reparse-symbol indented_block_body) [31538 31564]))                  
+                :type "class")
+                nil [28728 31565])
+            ("zmq" include nil nil [31635 31645])
+            ("context" include nil nil [31647 31661])
+            ("reload" code nil nil [31662 31677])
+            ("graph" include nil nil [31679 31691])
+            ("MESSAGETYPE" type
+               (:superclasses ("object")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [31724 31728]))                  
+                :type "class")
+                nil [31693 31729])
+            ("ProxyMessage" type
+               (:superclasses ("object")
+                :members 
+                  ( ("FAILURE" variable nil (reparse-symbol indented_block_body) [31762 31773])
+                    ("SUCCESS" variable nil (reparse-symbol indented_block_body) [31778 31789])
+                    ("TYPE" variable nil (reparse-symbol indented_block_body) [31795 31806])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [31857 31875])
+                            ("self" variable nil (reparse-symbol indented_block_body) [31884 31906]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31825 31829])
+                            ("args" variable nil (reparse-symbol function_parameters) [31831 31836])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [31838 31846]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [31812 31907])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31924 31928]))                          )
+                        (reparse-symbol indented_block_body) [31912 32149]))                  
+                :type "class")
+                nil [31730 32149])
+            ("ProxyConnectMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [32195 32211])
+                    ("__init__" function
+                       (:suite 
+                          ( ("ProxyMessage" code nil (reparse-symbol indented_block_body) [32276 32320])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32330 32362])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32372 32396])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32405 32431]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32230 32234])
+                            ("connector_id" variable nil (reparse-symbol function_parameters) [32236 32248])
+                            ("args" variable nil (reparse-symbol function_parameters) [32250 32255])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [32257 32265]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [32217 32432]))                  
+                :type "class")
+                nil [32150 32432])
+            ("ProxyDisconnectMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [32481 32500])
+                    ("__init__" function
+                       (:suite 
+                          ( ("ProxyMessage" code nil (reparse-symbol indented_block_body) [32565 32609])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32619 32651]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32519 32523])
+                            ("connector_id" variable nil (reparse-symbol function_parameters) [32525 32537])
+                            ("args" variable nil (reparse-symbol function_parameters) [32539 32544])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [32546 32554]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [32506 32652]))                  
+                :type "class")
+                nil [32433 32652])
+            ("ProxyInterConnectMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [32703 32724])
+                    ("__init__" function
+                       (:suite 
+                          ( ("ProxyMessage" code nil (reparse-symbol indented_block_body) [32799 32843])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32853 32885])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32894 32918])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32928 32958])
+                            ("self" variable nil (reparse-symbol indented_block_body) [32967 32999]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32743 32747])
+                            ("connector_id" variable nil (reparse-symbol function_parameters) [32749 32761])
+                            ("node_ids" variable nil (reparse-symbol function_parameters) [32763 32771])
+                            ("args" variable nil (reparse-symbol function_parameters) [32773 32778])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [32780 32788]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [32730 33000]))                  
+                :type "class")
+                nil [32653 33000])
+            ("ProxyInterDisConnectMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [33054 33078])
+                    ("__init__" function
+                       (:suite 
+                          ( ("ProxyMessage" code nil (reparse-symbol indented_block_body) [33143 33187])
+                            ("self" variable nil (reparse-symbol indented_block_body) [33197 33229]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33097 33101])
+                            ("connector_id" variable nil (reparse-symbol function_parameters) [33103 33115])
+                            ("args" variable nil (reparse-symbol function_parameters) [33117 33122])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [33124 33132]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [33084 33230]))                  
+                :type "class")
+                nil [33001 33230])
+            ("ProxySignalMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [33275 33290])
+                    ("__init__" function
+                       (:suite 
+                          ( ("ProxyMessage" code nil (reparse-symbol indented_block_body) [33364 33408])
+                            ("self" variable nil (reparse-symbol indented_block_body) [33418 33452])
+                            ("self" variable nil (reparse-symbol indented_block_body) [33461 33481]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33309 33313])
+                            ("connection_id" variable nil (reparse-symbol function_parameters) [33315 33328])
+                            ("signal" variable nil (reparse-symbol function_parameters) [33330 33336])
+                            ("args" variable nil (reparse-symbol function_parameters) [33338 33343])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [33345 33353]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [33296 33482]))                  
+                :type "class")
+                nil [33231 33482])
+            ("ProxyProcessMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [33528 33544])
+                    ("__init__" function
+                       (:suite 
+                          ( ("ProxyMessage" code nil (reparse-symbol indented_block_body) [33630 33674])
+                            ("self" variable nil (reparse-symbol indented_block_body) [33684 33706])
+                            ("self" variable nil (reparse-symbol indented_block_body) [33715 33753])
+                            ("self" variable nil (reparse-symbol indented_block_body) [33762 33784]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33563 33567])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [33569 33576])
+                            ("process_item_id" variable nil (reparse-symbol function_parameters) [33578 33593])
+                            ("command" variable nil (reparse-symbol function_parameters) [33595 33602])
+                            ("args" variable nil (reparse-symbol function_parameters) [33604 33609])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [33611 33619]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [33550 33785]))                  
+                :type "class")
+                nil [33483 33785])
+            ("ProxyStartMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [33829 33843]))                  
+                :type "class")
+                nil [33786 33844])
+            ("ProxyStopMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [33887 33900]))                  
+                :type "class")
+                nil [33845 33901])
+            ("ProxyShutdownMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [33948 33965]))                  
+                :type "class")
+                nil [33902 33966])
+            ("ProxyNodeMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [34009 34022])
+                    ("__init__" function
+                       (:suite 
+                          ( ("ProxyMessage" code nil (reparse-symbol indented_block_body) [34084 34128])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34138 34164])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34174 34193])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34202 34224]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34041 34045])
+                            ("node_name" variable nil (reparse-symbol function_parameters) [34047 34056])
+                            ("args" variable nil (reparse-symbol function_parameters) [34058 34063])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [34065 34073]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [34028 34225]))                  
+                :type "class")
+                nil [33967 34225])
+            ("ProxyRpcMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [34267 34279])
+                    ("__init__" function
+                       (:suite 
+                          ( ("ProxyMessage" code nil (reparse-symbol indented_block_body) [34350 34394])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34404 34426])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34435 34461])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34470 34486])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34495 34515])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34525 34543]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34298 34302])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [34304 34311])
+                            ("func_name" variable nil (reparse-symbol function_parameters) [34313 34322])
+                            ("args" variable nil (reparse-symbol function_parameters) [34324 34329])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [34331 34339]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [34285 34544]))                  
+                :type "class")
+                nil [34226 34544])
+            ("ProxyAttrMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [34587 34600])
+                    ("__init__" function
+                       (:suite 
+                          ( ("ProxyMessage" code nil (reparse-symbol indented_block_body) [34671 34715])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34725 34747])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34756 34782])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34792 34810]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34619 34623])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [34625 34632])
+                            ("attr_name" variable nil (reparse-symbol function_parameters) [34634 34643])
+                            ("args" variable nil (reparse-symbol function_parameters) [34645 34650])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [34652 34660]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [34606 34811]))                  
+                :type "class")
+                nil [34545 34811])
+            ("ProxyStopMessage" type
+               (:superclasses ("ProxyMessage")
+                :members 
+                  ( ("TYPE" variable nil (reparse-symbol indented_block_body) [34854 34867]))                  
+                :type "class")
+                nil [34812 34868])
+            ("ProxyFunction" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [34953 34982])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34991 35018]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34915 34919])
+                            ("proxy_node" variable nil (reparse-symbol function_parameters) [34921 34931])
+                            ("func_name" variable nil (reparse-symbol function_parameters) [34933 34942]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [34902 35019])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35037 35041])
+                            ("args" variable nil (reparse-symbol function_parameters) [35043 35048])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [35050 35058]))                          )
+                        (reparse-symbol indented_block_body) [35024 35943]))                  
+                :type "class")
+                nil [34869 35943])
+            ("ProxyNode" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [36052 36071])
+                            ("self" variable nil (reparse-symbol indented_block_body) [36080 36098])
+                            ("self" variable nil (reparse-symbol indented_block_body) [36107 36136])
+                            ("self" variable nil (reparse-symbol indented_block_body) [36145 36196]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35986 35990])
+                            ("label" variable nil (reparse-symbol function_parameters) [35992 35997])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [35999 36006])
+                            ("node_class" variable nil (reparse-symbol function_parameters) [36008 36018])
+                            ("proxy_graph_processor" variable nil (reparse-symbol function_parameters) [36020 36041]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [35973 36197])
+                    ("__getattr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36218 36222])
+                            ("attr" variable nil (reparse-symbol function_parameters) [36224 36228]))                          )
+                        (reparse-symbol indented_block_body) [36202 36565])
+                    ("rpc" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36578 36582])
+                            ("msg" variable nil (reparse-symbol function_parameters) [36584 36587]))                          )
+                        (reparse-symbol indented_block_body) [36570 36672])
+                    ("get_attr" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36690 36694])
+                            ("attr_name" variable nil (reparse-symbol function_parameters) [36696 36705]))                          )
+                        (reparse-symbol indented_block_body) [36677 37280]))                  
+                :type "class")
+                nil [35944 37280])
+            ("ProxyGraph" type
+               (:superclasses ("graph.Graph")
+                :members 
+                  ( ("add_node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37329 37333])
+                            ("name" variable nil (reparse-symbol function_parameters) [37335 37339])
+                            ("node" variable nil (reparse-symbol function_parameters) [37341 37345]))                          )
+                        (reparse-symbol indented_block_body) [37316 37425])
+                    ("group_nodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37446 37450])
+                            ("node_ids" variable nil (reparse-symbol function_parameters) [37452 37460]))                          )
+                        (reparse-symbol indented_block_body) [37430 37476])
+                    ("make_condition" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37500 37504])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [37506 37513])
+                            ("condition_class" variable nil (reparse-symbol function_parameters) [37515 37530])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [37532 37543])
+                            ("args" variable nil (reparse-symbol function_parameters) [37545 37550])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [37552 37560]))                          )
+                        (reparse-symbol indented_block_body) [37481 37576])
+                    ("make_signal_handler" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37605 37609])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [37611 37618])
+                            ("signal_handler_class" variable nil (reparse-symbol function_parameters) [37620 37640])
+                            ("args" variable nil (reparse-symbol function_parameters) [37642 37647])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [37649 37657]))                          )
+                        (reparse-symbol indented_block_body) [37581 37673])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37690 37694])
+                            ("condition" variable nil (reparse-symbol function_parameters) [37696 37705])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [37707 37721]))                          )
+                        (reparse-symbol indented_block_body) [37678 37737])
+                    ("abc" include nil (reparse-symbol indented_block_body) [37743 37753]))                  
+                :type "class")
+                nil [37281 37754])
+            ("threading" include nil nil [37754 37770])
+            ("uuid" include nil nil [37771 37782])
+            ("Queue" include nil nil [37783 37795])
+            ("context.kvstore" include nil nil [37797 37819])
+            ("context.service" include nil nil [37821 37843])
+            ("IDGeneratorI" type
+               (:superclasses ("context.service.Interface")
+                :members 
+                  ( ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37979 37983])
+                            ("obj" variable nil (reparse-symbol function_parameters) [37985 37988]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [37942 38004]))                  
+                :type "class")
+                nil [37891 38004])
+            ("ProcessingThreadI" type
+               (:superclasses ("context.service.Interface")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [38138 38142]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38098 38102])
+                            ("graph" variable nil (reparse-symbol function_parameters) [38104 38109])
+                            ("processing_queue" variable nil (reparse-symbol function_parameters) [38111 38127]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [38061 38143])
+                    ("ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38193 38197]))                          
+                        :decorators 
+                          ( ("abc.abstractproperty" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [38148 38213])
+                    ("_make_ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38267 38271]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [38218 38287])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38324 38328]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [38292 38344])
+                    ("handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38392 38396])
+                            ("message" variable nil (reparse-symbol function_parameters) [38398 38405]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [38349 38421]))                  
+                :type "class")
+                nil [38005 38421])
+            ("GraphProcessorI" type
+               (:superclasses ("context.service.Interface")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [38574 38578]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38513 38517])
+                            ("graph" variable nil (reparse-symbol function_parameters) [38519 38524])
+                            ("processing_selector" variable nil (reparse-symbol function_parameters) [38526 38545])
+                            ("network_selector" variable nil (reparse-symbol function_parameters) [38547 38563]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [38476 38579])
+                    ("_make_ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38633 38637]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [38584 38653])
+                    ("is_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38702 38706]))                          
+                        :decorators 
+                          ( ("abs.abstractproperty" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [38658 38722])
+                    ("start_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38772 38776]))                          
+                        :decorators 
+                          ( ("abs.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [38727 38792])
+                    ("handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [38840 38844])
+                            ("message" variable nil (reparse-symbol function_parameters) [38846 38853]))                          
+                        :decorators 
+                          ( ("abs.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [38797 38869]))                  
+                :type "class")
+                nil [38422 38869])
+            ("ProcessingThreadService" type
+               (:superclasses ("context.service.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [38992 39028])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [39086 39105])
+                            ("self" variable nil (reparse-symbol indented_block_body) [39115 39159])
+                            ("self" variable nil (reparse-symbol indented_block_body) [39169 39219])
+                            ("self" variable nil (reparse-symbol indented_block_body) [39229 39253]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39047 39051])
+                            ("graph" variable nil (reparse-symbol function_parameters) [39053 39058])
+                            ("processor_queue" variable nil (reparse-symbol function_parameters) [39060 39075]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [39034 39254])
+                    ("ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39292 39296]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [39259 39335])
+                    ("_make_ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39365 39369]))                          )
+                        (reparse-symbol indented_block_body) [39340 39392])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39405 39409]))                          )
+                        (reparse-symbol indented_block_body) [39397 39734])
+                    ("handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39758 39762])
+                            ("message" variable nil (reparse-symbol function_parameters) [39764 39771]))                          )
+                        (reparse-symbol indented_block_body) [39739 39787])
+                    ("remote_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39810 39814])
+                            ("signal_message" variable nil (reparse-symbol function_parameters) [39816 39830]))                          )
+                        (reparse-symbol indented_block_body) [39792 39974]))                  
+                :type "class")
+                nil [38932 39974])
+            ("GraphProcessorService" type
+               (:superclasses ("context.service.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [40035 40069])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [40149 40173])
+                            ("self" variable nil (reparse-symbol indented_block_body) [40183 40202])
+                            ("self" variable nil (reparse-symbol indented_block_body) [40212 40262])
+                            ("self" variable nil (reparse-symbol indented_block_body) [40272 40352])
+                            ("self" variable nil (reparse-symbol indented_block_body) [40362 40436]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40088 40092])
+                            ("graph" variable nil (reparse-symbol function_parameters) [40094 40099])
+                            ("processing_selector" variable nil (reparse-symbol function_parameters) [40101 40120])
+                            ("network_selector" variable nil (reparse-symbol function_parameters) [40122 40138]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [40075 40437])
+                    ("is_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40474 40478]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [40442 40513])
+                    ("ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40551 40555]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [40518 40594])
+                    ("_make_ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40624 40628]))                          )
+                        (reparse-symbol indented_block_body) [40599 40651])
+                    ("start_processing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40677 40681]))                          )
+                        (reparse-symbol indented_block_body) [40656 41987])
+                    ("handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [42011 42015])
+                            ("message" variable nil (reparse-symbol function_parameters) [42017 42024]))                          )
+                        (reparse-symbol indented_block_body) [41992 42326]))                  
+                :type "class")
+                nil [39977 42326]))          
+      :file "_stuff.py"
+      :pointmax 42326
+      :fsize 43620
+      :lastmodtime '(22325 56975 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 25519 . 25623) (NEWLINE 25518 . 25519) (COLON 25517 . 25518) (TRY 25352 . 25355) (AS 25513 . 25515) (INDENT_BLOCK 11420 . 11613) (CLASS 866 . 871) (NEWLINE 11385 . 11386) (INDENT_BLOCK 11386 . 11419) (ASSIGN 11358 . 11359) (COLON 11336 . 11337) (WHILE 11326 . 11331) (ASSIGN 11311 . 11312) (COLON 11284 . 11285) (PAREN_BLOCK 11278 . 11284) (DEF 11267 . 11270) (PAREN_BLOCK 11259 . 11261) (COLON 11233 . 11234) (NOT 11213 . 11216) (IF 11210 . 11212) (COLON 11200 . 11201) (PAREN_BLOCK 11194 . 11200) (DEF 11174 . 11177) (PAREN_BLOCK 11154 . 11168) (PAREN_BLOCK 11103 . 11127) (ASSIGN 11084 . 11085) (COLON 11061 . 11062) (PAREN_BLOCK 11055 . 11061) (DEF 11036 . 11039) (PAREN_BLOCK 11010 . 11030) (PAREN_BLOCK 10921 . 10983) (ASSIGN 10896 . 10897) (COLON 10867 . 10868) (PAREN_BLOCK 10842 . 10867) (DEF 10814 . 10817) (NAME 10770 . 10774) (PAREN_BLOCK 10788 . 10808) (ASSIGN 10753 . 10754) (PAREN_BLOCK 10654 . 10718) (ASSIGN 10629 . 10630) (COLON 10600 . 10601) (PAREN_BLOCK 10563 . 10600) (DEF 10534 . 10537) (PAREN_BLOCK 10508 . 10528) (PAREN_BLOCK 10418 . 10481) (ASSIGN 10393 . 10394) (COLON 10364 . 10365) (PAREN_BLOCK 10338 . 10364) (DEF 10309 . 10312) (PAREN_BLOCK 10283 . 10303) (PAREN_BLOCK 10194 . 10256) (ASSIGN 10169 . 10170) (COLON 10140 . 10141) (PAREN_BLOCK 10114 . 10140) (DEF 10087 . 10090) (PASS 10077 . 10081) (COLON 10067 . 10068) (PAREN_BLOCK 10056 . 10067) (DEF 10036 . 10039) (PAREN_BLOCK 10010 . 10030) (PAREN_BLOCK 9904 . 9983) (ASSIGN 9881 . 9882) (COLON 9852 . 9853) (PAREN_BLOCK 9830 . 9852) (DEF 9806 . 9809) (PAREN_BLOCK 9780 . 9800) (PAREN_BLOCK 9709 . 9753) (ASSIGN 9686 . 9687) (COLON 9657 . 9658) (PAREN_BLOCK 9645 . 9657) (DEF 9631 . 9634) (PAREN_BLOCK 9616 . 9625) (COLON 9583 . 9584) (PAREN_BLOCK 9568 . 9583) (DEF 9551 . 9554) (PAREN_BLOCK 9531 . 9545) (PERIOD 9516 . 9517) (BRACK_BLOCK 9493 . 9516) (ASSIGN 9468 . 9469) (COLON 9443 . 9444) (EQ 9399 . 9401) (ELIF 9378 . 9382) (PASS 9365 . 9369) (COLON 9351 . 9352) (EQ 9308 . 9310) (IF 9289 . 9291) (COLON 9279 . 9280) (PAREN_BLOCK 9264 . 9279) (DEF 9238 . 9241) (PAREN_BLOCK 9230 . 9232) (PAREN_BLOCK 9185 . 9204) (PAREN_BLOCK 9141 . 9147) (PAREN_BLOCK 9094 . 9108) (NAME 9040 . 9044) (PAREN_BLOCK 9057 . 9059) (NAME 9011 . 9015) (ASSIGN 9016 . 9017) (ASSIGN 8977 . 8978) (COLON 8951 . 8952) (PAREN_BLOCK 8936 . 8951) (DEF 8917 . 8920) (RETURN 8897 . 8903) (PAREN_BLOCK 8881 . 8887) (ASSIGN 8856 . 8857) (COLON 8834 . 8835) (IF 8820 . 8822) (ASSIGN 8804 . 8805) (COLON 8786 . 8787) (PAREN_BLOCK 8774 . 8786) (DEF 8759 . 8762) (PASS 8749 . 8753) (COLON 8739 . 8740) (PAREN_BLOCK 8733 . 8739) (DEF 8713 . 8716) (BRACK_BLOCK 8692 . 8707) (DEL 8673 . 8676) (COLON 8663 . 8664) (PAREN_BLOCK 8647 . 8663) (DEF 8617 . 8620) (ASSIGN 8601 . 8602) (BRACK_BLOCK 8585 . 8600) (COLON 8560 . 8561) (PAREN_BLOCK 8544 . 8560) (DEF 8517 . 8520) (PASS 8507 . 8511) (COLON 8497 . 8498) (PAREN_BLOCK 8472 . 8497) (DEF 8457 . 8460) (PASS 8447 . 8451) (COLON 8437 . 8438) (PAREN_BLOCK 8412 . 8437) (DEF 8398 . 8401) (PASS 8388 . 8392) (COLON 8378 . 8379) (PAREN_BLOCK 8372 . 8378) (DEF 8355 . 8358) (AT 8341 . 8342) (ASSIGN 8326 . 8327) (COLON 8307 . 8308) (PAREN_BLOCK 8292 . 8307) (DEF 8286 . 8289) (AT 8271 . 8272) (RETURN 8250 . 8256) (COLON 8240 . 8241) (PAREN_BLOCK 8234 . 8240) (DEF 8228 . 8231) (AT 8214 . 8215) (BRACE_BLOCK 8206 . 8208) (ASSIGN 8204 . 8205) (PAREN_BLOCK 8176 . 8178) (ASSIGN 8163 . 8164) (PAREN_BLOCK 8127 . 8133) (ASSIGN 8123 . 8124) (COLON 8100 . 8101) (ELSE 8096 . 8100) (PAREN_BLOCK 8081 . 8087) (ASSIGN 8056 . 8057) (COLON 8033 . 8034) (NOT 8025 . 8028) (IS 8022 . 8024) (IF 8013 . 8015) (NAME 7979 . 7983) (ASSIGN 7996 . 7997) (NAME 7936 . 7940) (ASSIGN 7955 . 7956) (ASSIGN 7919 . 7920) (COLON 7897 . 7898) (PAREN_BLOCK 7850 . 7897) (DEF 7838 . 7841) (BRACK_BLOCK 7815 . 7832) (ASSIGN 7813 . 7814) (COLON 7792 . 7793) (PAREN_BLOCK 7767 . 7792) (CLASS 7740 . 7745) (PASS 7734 . 7738) (COLON 7724 . 7725) (PAREN_BLOCK 7703 . 7724) (DEF 7691 . 7694) (AT 7667 . 7668) (PASS 7657 . 7661) (COLON 7647 . 7648) (PAREN_BLOCK 7641 . 7647) (DEF 7630 . 7633) (AT 7606 . 7607) (PASS 7596 . 7600) (COLON 7586 . 7587) (PAREN_BLOCK 7580 . 7586) (DEF 7560 . 7563) (AT 7536 . 7537) (PASS 7526 . 7530) (COLON 7516 . 7517) (PAREN_BLOCK 7510 . 7516) (DEF 7491 . 7494) (AT 7467 . 7468) (PASS 7457 . 7461) (COLON 7447 . 7448) (PAREN_BLOCK 7425 . 7447) (DEF 7401 . 7404) (AT 7377 . 7378) (PASS 7367 . 7371) (COLON 7357 . 7358) (PAREN_BLOCK 7345 . 7357) (DEF 7331 . 7334) (AT 7307 . 7308) (PASS 7297 . 7301) (COLON 7287 . 7288) (PAREN_BLOCK 7272 . 7287) (DEF 7255 . 7258) (AT 7231 . 7232) (PASS 7221 . 7225) (COLON 7211 . 7212) (PAREN_BLOCK 7196 . 7211) (DEF 7177 . 7180) (AT 7153 . 7154) (PASS 7143 . 7147) (COLON 7133 . 7134) (PAREN_BLOCK 7121 . 7133) (DEF 7106 . 7109) (AT 7082 . 7083) (PASS 7072 . 7076) (COLON 7062 . 7063) (PAREN_BLOCK 7056 . 7062) (DEF 7036 . 7039) (AT 7012 . 7013) (PASS 7002 . 7006) (COLON 6992 . 6993) (PAREN_BLOCK 6976 . 6992) (DEF 6946 . 6949) (AT 6922 . 6923) (PASS 6912 . 6916) (COLON 6902 . 6903) (PAREN_BLOCK 6886 . 6902) (DEF 6859 . 6862) (AT 6835 . 6836) (PASS 6825 . 6829) (COLON 6815 . 6816) (PAREN_BLOCK 6809 . 6815) (DEF 6794 . 6797) (AT 6770 . 6771) (PASS 6760 . 6764) (COLON 6750 . 6751) (PAREN_BLOCK 6744 . 6750) (DEF 6730 . 6733) (AT 6706 . 6707) (PASS 6696 . 6700) (COLON 6686 . 6687) (PAREN_BLOCK 6680 . 6686) (DEF 6663 . 6666) (AT 6637 . 6638) (COLON 6631 . 6632) (PAREN_BLOCK 6604 . 6631) (CLASS 6583 . 6588) (NAME 6553 . 6557) (ASSIGN 6569 . 6570) (ASSIGN 6536 . 6537) (PAREN_BLOCK 6505 . 6514) (PERIOD 6496 . 6497) (PAREN_BLOCK 6465 . 6496) (COLON 6450 . 6451) (PAREN_BLOCK 6415 . 6450) (DEF 6403 . 6406) (STRING_LITERAL 6389 . 6397) (ASSIGN 6387 . 6388) (COLON 6376 . 6377) (PAREN_BLOCK 6357 . 6376) (CLASS 6328 . 6333) (NAME 6310 . 6314) (ASSIGN 6320 . 6321) (ASSIGN 6284 . 6285) (PAREN_BLOCK 6244 . 6253) (PERIOD 6235 . 6236) (PAREN_BLOCK 6206 . 6235) (COLON 6191 . 6192) (PAREN_BLOCK 6153 . 6191) (DEF 6141 . 6144) (STRING_LITERAL 6129 . 6135) (ASSIGN 6127 . 6128) (COLON 6116 . 6117) (PAREN_BLOCK 6097 . 6116) (CLASS 6070 . 6075) (ASSIGN 6059 . 6060) (COLON 6036 . 6037) (PAREN_BLOCK 6021 . 6036) (DEF 6009 . 6012) (NUMBER_LITERAL 6002 . 6003) (ASSIGN 6000 . 6001) (NUMBER_LITERAL 5970 . 5971) (ASSIGN 5968 . 5969) (NUMBER_LITERAL 5938 . 5939) (ASSIGN 5936 . 5937) (NUMBER_LITERAL 5906 . 5907) (ASSIGN 5904 . 5905) (NUMBER_LITERAL 5874 . 5875) (ASSIGN 5872 . 5873) (NUMBER_LITERAL 5842 . 5843) (ASSIGN 5840 . 5841) (NUMBER_LITERAL 5810 . 5811) (ASSIGN 5808 . 5809) (COLON 5778 . 5779) (PAREN_BLOCK 5770 . 5778) (CLASS 5747 . 5752) (PAREN_BLOCK 5726 . 5745) (BRACK_BLOCK 5665 . 5676) (ASSIGN 5643 . 5644) (COLON 5617 . 5618) (PAREN_BLOCK 5592 . 5617) (DEF 5574 . 5577) (PAREN_BLOCK 5546 . 5568) (PAREN_BLOCK 5499 . 5505) (COLON 5456 . 5457) (PAREN_BLOCK 5450 . 5456) (DEF 5431 . 5434) (PAREN_BLOCK 5400 . 5425) (BRACK_BLOCK 5338 . 5349) (ASSIGN 5316 . 5317) (COLON 5290 . 5291) (PAREN_BLOCK 5265 . 5290) (DEF 5245 . 5248) (PAREN_BLOCK 5111 . 5239) (COLON 5076 . 5077) (PAREN_BLOCK 5014 . 5076) (DEF 5002 . 5005) (STRING_LITERAL 4985 . 4996) (ASSIGN 4983 . 4984) (COLON 4972 . 4973) (PAREN_BLOCK 4954 . 4972) (CLASS 4930 . 4935) (PAREN_BLOCK 4907 . 4928) (COLON 4865 . 4866) (PAREN_BLOCK 4840 . 4865) (DEF 4820 . 4823) (PAREN_BLOCK 4800 . 4814) (COLON 4751 . 4752) (PAREN_BLOCK 4720 . 4751) (DEF 4702 . 4705) (PAREN_BLOCK 4690 . 4696) (COLON 4654 . 4655) (PAREN_BLOCK 4648 . 4654) (DEF 4629 . 4632) (PAREN_BLOCK 4499 . 4624) (COLON 4464 . 4465) (PAREN_BLOCK 4422 . 4464) (DEF 4410 . 4413) (STRING_LITERAL 4392 . 4404) (ASSIGN 4390 . 4391) (COLON 4379 . 4380) (PAREN_BLOCK 4361 . 4379) (CLASS 4336 . 4341) (NAME 4300 . 4304) (ASSIGN 4319 . 4320) (ASSIGN 4280 . 4281) (PAREN_BLOCK 4238 . 4255) (PERIOD 4229 . 4230) (PAREN_BLOCK 4186 . 4229) (COLON 4171 . 4172) (PAREN_BLOCK 4122 . 4171) (DEF 4110 . 4113) (STRING_LITERAL 4084 . 4104) (ASSIGN 4082 . 4083) (COLON 4067 . 4068) (PAREN_BLOCK 4046 . 4067) (CLASS 4007 . 4012) (STRING_LITERAL 3975 . 4005) (ASSIGN 3973 . 3974) (COLON 3962 . 3963) (PAREN_BLOCK 3927 . 3962) (CLASS 3880 . 3885) (NAME 3858 . 3862) (ASSIGN 3870 . 3871) (NAME 3815 . 3819) (ASSIGN 3834 . 3835) (ASSIGN 3795 . 3796) (PAREN_BLOCK 3753 . 3770) (PERIOD 3744 . 3745) (PAREN_BLOCK 3701 . 3744) (COLON 3686 . 3687) (PAREN_BLOCK 3629 . 3686) (DEF 3617 . 3620) (STRING_LITERAL 3590 . 3611) (ASSIGN 3588 . 3589) (COLON 3577 . 3578) (PAREN_BLOCK 3556 . 3577) (CLASS 3517 . 3522) (STRING_LITERAL 3496 . 3515) (ASSIGN 3494 . 3495) (COLON 3483 . 3484) (PAREN_BLOCK 3456 . 3483) (CLASS 3416 . 3421) (STRING_LITERAL 3398 . 3414) (ASSIGN 3396 . 3397) (COLON 3385 . 3386) (PAREN_BLOCK 3358 . 3385) (CLASS 3320 . 3325) (NAME 3284 . 3288) (ASSIGN 3303 . 3304) (ASSIGN 3267 . 3268) (PAREN_BLOCK 3228 . 3245) (PERIOD 3219 . 3220) (PAREN_BLOCK 3186 . 3219) (COLON 3171 . 3172) (PAREN_BLOCK 3125 . 3171) (DEF 3113 . 3116) (STRING_LITERAL 3096 . 3107) (ASSIGN 3094 . 3095) (COLON 3083 . 3084) (PAREN_BLOCK 3062 . 3083) (CLASS 3031 . 3036) (NAME 2997 . 3001) (ASSIGN 3023 . 3024) (ASSIGN 2982 . 2983) (BRACK_BLOCK 2944 . 2946) (NAME 2922 . 2926) (ASSIGN 2942 . 2943) (NAME 2890 . 2894) (ASSIGN 2906 . 2907) (NAME 2863 . 2867) (ASSIGN 2875 . 2876) (ASSIGN 2839 . 2840) (COLON 2811 . 2812) (PAREN_BLOCK 2774 . 2811) (DEF 2762 . 2765) (STRING_LITERAL 2744 . 2756) (ASSIGN 2742 . 2743) (COLON 2731 . 2732) (PAREN_BLOCK 2710 . 2731) (CLASS 2678 . 2683) (NUMBER_LITERAL 2675 . 2676) (ASSIGN 2673 . 2674) (NUMBER_LITERAL 2656 . 2657) (ASSIGN 2654 . 2655) (COLON 2637 . 2638) (PAREN_BLOCK 2629 . 2637) (CLASS 2604 . 2609) (PAREN_BLOCK 2587 . 2601) (RETURN 2577 . 2583) (COLON 2567 . 2568) (PAREN_BLOCK 2556 . 2567) (DEF 2544 . 2547) (STRING_LITERAL 2532 . 2538) (ASSIGN 2530 . 2531) (BRACK_BLOCK 2499 . 2513) (ASSIGN 2497 . 2498) (COLON 2476 . 2477) (PAREN_BLOCK 2451 . 2476) (CLASS 2423 . 2428) (PASS 2417 . 2421) (COLON 2407 . 2408) (PAREN_BLOCK 2396 . 2407) (DEF 2384 . 2387) (AT 2360 . 2361) (COLON 2354 . 2355) (PAREN_BLOCK 2327 . 2354) (CLASS 2309 . 2314) (ASSIGN 2300 . 2301) (PAREN_BLOCK 2252 . 2268) (PAREN_BLOCK 2198 . 2214) (COLON 2159 . 2160) (STRING_LITERAL 2152 . 2159) (EQ 2149 . 2151) (IF 2134 . 2136) (COLON 2124 . 2125) (PAREN_BLOCK 2113 . 2124) (DEF 2099 . 2102) (PASS 2089 . 2093) (COLON 2071 . 2072) (ELSE 2067 . 2071) (PAREN_BLOCK 2049 . 2054) (COLON 2016 . 2017) (STRING_LITERAL 2007 . 2016) (EQ 2004 . 2006) (ELIF 1990 . 1994) (PAREN_BLOCK 1972 . 1977) (COLON 1934 . 1935) (STRING_LITERAL 1922 . 1934) (EQ 1919 . 1921) (ELIF 1905 . 1909) (PAREN_BLOCK 1887 . 1892) (COLON 1849 . 1850) (STRING_LITERAL 1840 . 1849) (EQ 1837 . 1839) (IF 1825 . 1827) (PAREN_BLOCK 1809 . 1811) (ASSIGN 1782 . 1783) (COLON 1764 . 1765) (WHILE 1740 . 1745) (NAME 1705 . 1709) (ASSIGN 1724 . 1725) (RETURN 1685 . 1691) (PAREN_BLOCK 1656 . 1672) (COLON 1617 . 1618) (NE 1607 . 1609) (IF 1593 . 1595) (PAREN_BLOCK 1581 . 1583) (ASSIGN 1554 . 1555) (PAREN_BLOCK 1538 . 1540) (PAREN_BLOCK 1498 . 1500) (ASSIGN 1469 . 1470) (PAREN_BLOCK 1415 . 1438) (NAME 1374 . 1378) (ASSIGN 1397 . 1398) (RETURN 1354 . 1360) (COLON 1340 . 1341) (NE 1330 . 1332) (IF 1316 . 1318) (PAREN_BLOCK 1304 . 1306) (ASSIGN 1277 . 1278) (PAREN_BLOCK 1261 . 1263) (PAREN_BLOCK 1221 . 1223) (ASSIGN 1192 . 1193) (PAREN_BLOCK 1125 . 1161) (ASSIGN 1107 . 1108) (COLON 1074 . 1075) (PAREN_BLOCK 1068 . 1074) (DEF 1048 . 1051) (PAREN_BLOCK 1036 . 1042) (NAME 1002 . 1006) (ASSIGN 1011 . 1012) (ASSIGN 985 . 986) (COLON 963 . 964) (PAREN_BLOCK 950 . 963) (DEF 938 . 941) (COLON 932 . 933) (PAREN_BLOCK 924 . 932) (NAME 892 . 900) (CLASS 904 . 909))))
+  :file "!drive_c!Users!shaas!workspace!pipeline_lab!processor!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

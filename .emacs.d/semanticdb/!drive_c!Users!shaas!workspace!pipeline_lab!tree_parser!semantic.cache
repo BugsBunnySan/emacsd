@@ -1,0 +1,267 @@
+;; Object tree_parser/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "tree_parser/"
+  :tables
+  (list
+    (semanticdb-table "tree_parser.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("__future__" include nil nil [1 38])
+            ("pprint" include nil nil [40 65])
+            ("__all__" variable nil nil [67 121])
+            ("yaml" include nil nil [123 134])
+            ("re" include nil nil [135 144])
+            ("logging" include nil nil [145 159])
+            ("VERSION" variable nil nil [161 178])
+            ("log" variable nil nil [180 213])
+            ("ParseError" type
+               (:documentation " raised when a parse error is encountered "
+                :superclasses ("Exception")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            msg: a string explaining what went wrong
+            node: the node encountered that caused the parse error to occur
+        \"\"\"" code nil (reparse-symbol indented_block_body) [342 500])
+                            ("super" code nil (reparse-symbol indented_block_body) [509 546])
+                            ("self" variable nil (reparse-symbol indented_block_body) [556 573]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [316 320])
+                            ("msg" variable nil (reparse-symbol function_parameters) [322 325])
+                            ("node" variable nil (reparse-symbol function_parameters) [327 331]))                          
+                        :documentation "
+        Args:
+            msg: a string explaining what went wrong
+            node: the node encountered that caused the parse error to occur
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [303 574])
+                    ("node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [602 606]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [579 635]))                  
+                :type "class")
+                nil [216 635])
+            ("ParseConstraintError" type
+               (:documentation " raised when the parser encounters a node that violates a rule constraint,
+    or when a constraint definition is invalid
+    "
+                :superclasses ("ParseError")
+                :type "class")
+                nil [660 837])
+            ("RuleConstraint" type
+               (:documentation " A constraint to be placed on the occurence of rules within another rule "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            constraintDef: a string defining the constraint, either \\d+, or \\d+- or \\d+-\\d+ (min-max, but -max is optional and only min- means at least min times)
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1033 1225])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1234 1249])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1258 1273])
+                            ("self" code nil (reparse-symbol indented_block_body) [1283 1320]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1003 1007])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [1009 1022]))                          
+                        :documentation "
+        Args:
+            constraintDef: a string defining the constraint, either \\d+, or \\d+- or \\d+-\\d+ (min-max, but -max is optional and only min- means at least min times)
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [990 1321])
+                    ("_parse_constraint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1348 1352])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [1354 1367]))                          
+                        :documentation " break a constraint definition into max and min occurences
+        Args:
+            constraintDef: either \\d+, or \\d+- or \\d+-\\d+
+        ")
+                        (reparse-symbol indented_block_body) [1326 2171]))                  
+                :type "class")
+                nil [872 2171])
+            ("Rule" type
+               (:documentation " A Rule leading from a regex pattern to other rules "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            token_type: a string identifying this token
+            pattern: a regular expression string applied to nodes in the scene hierarchy
+            next_rule_defs: list of names of follow up rules, needed during grammar readin
+        \"\"\"" code nil (reparse-symbol indented_block_body) [2352 2617])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2626 2655])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2664 2711])
+                            ("self" code nil (reparse-symbol indented_block_body) [2720 2763])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2772 2793])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2802 2835]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2300 2304])
+                            ("token_type" variable nil (reparse-symbol function_parameters) [2306 2316])
+                            ("pattern" variable nil (reparse-symbol function_parameters) [2318 2325])
+                            ("next_rule_defs" variable nil (reparse-symbol function_parameters) [2327 2341]))                          
+                        :documentation "
+        Args:
+            token_type: a string identifying this token
+            pattern: a regular expression string applied to nodes in the scene hierarchy
+            next_rule_defs: list of names of follow up rules, needed during grammar readin
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2287 2836])
+                    ("token_type" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2870 2874]))                          
+                        :documentation "
+        Returns:
+            str: the token type of this rule
+        ")
+                        (reparse-symbol indented_block_body) [2841 2995])
+                    ("pattern" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3026 3030]))                          
+                        :documentation "
+        Returns:
+            regex: a compiled regular expression
+        ")
+                        (reparse-symbol indented_block_body) [3000 3152])
+                    ("next_rules" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3186 3190]))                          
+                        :documentation "
+        Returns:
+            list: a (possbily empty) list of rules to match next
+        ")
+                        (reparse-symbol indented_block_body) [3157 3331])
+                    ("add_next_rule" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3354 3358])
+                            ("rule" variable nil (reparse-symbol function_parameters) [3360 3364])
+                            ("constraintDef" variable nil (reparse-symbol function_parameters) [3366 3379]))                          
+                        :documentation " add a rule, and register its constraints
+        Args:
+            rule: a Rule object
+            constraintDef: a constraint definition
+        ")
+                        (reparse-symbol indented_block_body) [3336 3668])
+                    ("check_constraint" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3694 3698])
+                            ("matched_node" variable nil (reparse-symbol function_parameters) [3700 3712])
+                            ("token_type" variable nil (reparse-symbol function_parameters) [3714 3724])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [3726 3736])
+                            ("relax" variable nil (reparse-symbol function_parameters) [3738 3743]))                          
+                        :documentation " check the occurence of one token_type underneath a node
+        Args:
+            matched_node: the node underneatch which the occurences are going to be checked
+            token_type: token type indentifier
+            occurences: list of nodes matching token_type that where found beneath matched_node
+            relax: only report errors to log if True, else raise Exception
+        Raises:
+            Exception: when len(occurences) falls outside this rules constraints for token_type
+        ")
+                        (reparse-symbol indented_block_body) [3673 5679])
+                    ("check_constraints" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5706 5710])
+                            ("matched_node" variable nil (reparse-symbol function_parameters) [5712 5724])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [5726 5736])
+                            ("relax" variable nil (reparse-symbol function_parameters) [5738 5743]))                          
+                        :documentation " checkd occurences of tokens below a node
+        Args:
+            matched_node: the node underneatch which the occurences are going to be checked
+            occurences: dict mapping token types to lists of nodes that matched them
+            relax: only report errors to log if True, else raise Exception
+        ")
+                        (reparse-symbol indented_block_body) [5684 6292]))                  
+                :type "class")
+                nil [2200 6292])
+            ("Parser" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            actionTable: a dict/OrderedDict of TokenTypes and function to call
+        \"\"\"" code nil (reparse-symbol indented_block_body) [6384 6492])
+                            ("self" code nil (reparse-symbol indented_block_body) [6501 6538]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6351 6355])
+                            ("actionTable" variable nil (reparse-symbol function_parameters) [6357 6368]))                          
+                        :documentation "
+        Args:
+            actionTable: a dict/OrderedDict of TokenTypes and function to call
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6338 6539])
+                    ("parse" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6554 6558])
+                            ("node" variable nil (reparse-symbol function_parameters) [6560 6564])
+                            ("rules" variable nil (reparse-symbol function_parameters) [6566 6571])
+                            ("occurences" variable nil (reparse-symbol function_parameters) [6573 6583])
+                            ("relax" variable nil (reparse-symbol function_parameters) [6590 6595]))                          
+                        :documentation " start parsing the scene from node on, using rules as a starting point
+        Args:
+            node: a hierarchy node, needs to have a .name() and a .getChildren() function
+            rules: a list of Rule objects
+            occurences: a dictionary used to keep track of rule occurences and their constraints, used for recursion
+            relax: only report errors to log if True, else raise Exception
+        Raises:
+            Exception: if no rule in rules matches the node in question
+        ")
+                        (reparse-symbol indented_block_body) [6544 8557]))                  
+                :type "class")
+                nil [6312 8557])
+            ("readGrammar" function
+               (:documentation " read in a grammar from a yaml file, return the rule named as the start rule
+    (the rest of the parse tree should be anchored beneath this rule)
+    Args:
+        grammarFileName: name of a yaml file containing the grammar of a scene
+        startRuleName: the name of the top most rule, this will be the one returned to the user
+        extraTokens: dictionary of extra token -> pattern definitions
+        extraRules: dictionary of extra rule -> rules definitions
+    Returns:
+        Rule: a rule from the grammar matching startRuleName
+    "
+                :arguments 
+                  ( ("grammarFileName" variable nil (reparse-symbol function_parameters) [8595 8610])
+                    ("startRuleName" variable nil (reparse-symbol function_parameters) [8612 8625])
+                    ("extraTokens" variable nil (reparse-symbol function_parameters) [8627 8638])
+                    ("extraRules" variable nil (reparse-symbol function_parameters) [8643 8653]))                  )
+                nil [8579 10209]))          
+      :file "tree_parser.py"
+      :pointmax 10209
+      :fsize 10467
+      :lastmodtime '(22286 12867 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!pipeline_lab!tree_parser!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

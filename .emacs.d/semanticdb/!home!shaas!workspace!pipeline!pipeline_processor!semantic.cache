@@ -1,0 +1,1713 @@
+;; Object pipeline_processor/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pipeline_processor/"
+  :tables (list 
+   (semanticdb-table "base.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("time" include nil nil [1 12])
+            ("abc" include nil nil [13 23])
+            ("threading" include nil nil [24 40])
+            ("Queue" include nil nil [41 53])
+            ("multiprocessing" include nil nil [54 76])
+            ("context.stack" include nil nil [78 106])
+            ("kvstore.kvstore" include nil nil [107 138])
+            ("messages" include nil nil [140 163])
+            ("HeartBeat" type
+               (:documentation " Class capable of keeping track of timeouts of recurring events, such as heartbeats
+        sent and received over a network connection, to keep track of the up/down state of such a connection
+
+
+        Note:
+            for most of the methods, you can pass the current time in as a parameter ('now'),
+            so that if you need to call a few functions on a heartbeat object,
+            they can all refer to the same moment in time (such as a specific event occuring in your application)
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            heartbeat_interval (float): timeinterval (in seconds) after which the next event is expected to occur
+                (such as receving a heartbeat packet through the network, or, vice versa, having to send one over
+                 a connection)
+            heartbeat_timeout (float): After this time (in seconds), give up on the event recurring (e.g. decide that
+                a network connection is down)
+            sent (float): time (in seconds since epoch) when we last sent a heartbeat over the network, if None(default), time since last sent defaults to Infinity
+            received (float): time (in seconds since epoch) when we last received a heartbeat from the network, if None(default), time since last sending defautls to Infinity
+        \"\"\"" code nil (reparse-symbol indented_block_body) [798 1589])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1598 1643])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1652 1695])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1821 1837])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1846 1870])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1959 1992]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [718 722])
+                            ("heartbeat_interval" variable nil (reparse-symbol function_parameters) [724 742])
+                            ("heartbeat_timeout" variable nil (reparse-symbol function_parameters) [744 761])
+                            ("sent" variable nil (reparse-symbol function_parameters) [763 767])
+                            ("received" variable nil (reparse-symbol function_parameters) [774 782]))                          
+                        :documentation "
+        Args:
+            heartbeat_interval (float): timeinterval (in seconds) after which the next event is expected to occur
+                (such as receving a heartbeat packet through the network, or, vice versa, having to send one over
+                 a connection)
+            heartbeat_timeout (float): After this time (in seconds), give up on the event recurring (e.g. decide that
+                a network connection is down)
+            sent (float): time (in seconds since epoch) when we last sent a heartbeat over the network, if None(default), time since last sent defaults to Infinity
+            received (float): time (in seconds since epoch) when we last received a heartbeat from the network, if None(default), time since last sending defautls to Infinity
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [705 1993])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2011 2015]))                          )
+                        (reparse-symbol indented_block_body) [1998 2233])
+                    ("quiet_time" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2253 2257])
+                            ("now" variable nil (reparse-symbol function_parameters) [2259 2262]))                          
+                        :documentation " return the time since we last received an event
+
+        Args:
+            now (float): time in seconds since epoch representing current time, if None(default) defaults to getting the current time
+
+        Returns:
+            (float): The time since we last received an event
+        ")
+                        (reparse-symbol indented_block_body) [2238 2727])
+                    ("pending_interval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2753 2757])
+                            ("now" variable nil (reparse-symbol function_parameters) [2759 2762]))                          
+                        :documentation " return the number of heartbeat intervals that have passed since we last received an event
+
+        Args:
+            now (float): time in seconds since epoch representing current time, if None(default) defaults to getting the current time
+
+        Returns:
+           (int): number of heartbeat intervals that have passed
+        ")
+                        (reparse-symbol indented_block_body) [2732 3216])
+                    ("requested" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3235 3239])
+                            ("now" variable nil (reparse-symbol function_parameters) [3241 3244]))                          
+                        :documentation " keep track of the fact that we requested a new heartbeat at this time
+
+        Args:
+            now (float): time in seconds since epoch representing current time, if None(default) defaults to getting the current time
+        ")
+                        (reparse-symbol indented_block_body) [3221 3620])
+                    ("time_since_last_sent" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3650 3654])
+                            ("now" variable nil (reparse-symbol function_parameters) [3656 3659]))                          
+                        :documentation " return the time in seconds since we last sent a heartbeat
+
+        Args:
+            now (float): time in seconds since epoch representing current time, if None(default) defaults to getting the current time
+
+        Returns:
+            (float): time in seconds since the last heartbeat was sent
+        ")
+                        (reparse-symbol indented_block_body) [3625 4135])
+                    ("state" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4150 4154])
+                            ("now" variable nil (reparse-symbol function_parameters) [4156 4159]))                          
+                        :documentation " return the state of the connection being monitored
+
+        Args:
+            now (float): time in seconds since epoch representing current time, if None(default) defaults to getting the current time
+
+        Returns:
+            (int): An integer corresponding to a process state (see class 'ProcessStates') depending on the various timeouts we keep track of
+        ")
+                        (reparse-symbol indented_block_body) [4140 4982])
+                    ("needs_heartbeat" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5007 5011])
+                            ("now" variable nil (reparse-symbol function_parameters) [5013 5016]))                          
+                        :documentation " return whether we need to sent another heartbeat
+
+        Args:
+            now (float): time in seconds since epoch representing current time, if None(default) defaults to getting the current time
+
+        Returns:
+            (bool): True if we need to send another heartbeat
+        ")
+                        (reparse-symbol indented_block_body) [4987 5404]))                  
+                :type "class")
+                nil [165 5404])
+            ("ProcessStates" type
+               (:documentation " Enumeration of Process states (also used for network connection status "
+                :superclasses ("object")
+                :members 
+                  ( ("STATE_DOWN" code nil (reparse-symbol indented_block_body) [5521 5544])
+                    ("STATE_UNKNOWN" code nil (reparse-symbol indented_block_body) [5549 5572])
+                    ("STATE_PENDING" variable nil (reparse-symbol indented_block_body) [5577 5600])
+                    ("STATE_PRERUN" variable nil (reparse-symbol indented_block_body) [5605 5628])
+                    ("STATE_ALIVE" variable nil (reparse-symbol indented_block_body) [5633 5656]))                  
+                :type "class")
+                nil [5405 5657])
+            ("Connection" type
+               (:documentation " A class representing an abstract network connection dealing with messages/packets
+        (as opposed to a data stream)
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [5824 5851])
+                    ("put" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5864 5868])
+                            ("message" variable nil (reparse-symbol function_parameters) [5870 5877]))                          
+                        :documentation " put a message out over the connection, the message will be timestamped to now
+
+        Args:
+            message (Message): a message that can be put onto a connection, and can accept a 'timestamp' float attribute
+
+        Returns:
+            (bool): True if the message was successfully put onto the connection (this does not imply successful delivery)
+        ")
+                        (reparse-symbol indented_block_body) [5856 6356])
+                    ("_do_put" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6397 6401])
+                            ("message" variable nil (reparse-symbol function_parameters) [6403 6410]))                          
+                        :documentation " subclass overwrite function of how to put a message on the specific network connection implementation
+            the subclass uses
+
+        Args:
+            message (Message): a message that can be put onto a connection, and can accept a 'timestamp' float attribute
+
+        Returns:
+            (bool): True if the message was successfully put onto the connection (this does not imply successful delivery)
+        ")
+                        (reparse-symbol indented_block_body) [6361 6859])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6872 6876])
+                            ("timeout" variable nil (reparse-symbol function_parameters) [6878 6885]))                          
+                        :documentation " get a message from the connection
+
+        Args:
+            timeout (time): After this timeout, abort the message receiving, defaults to None, however
+                how this timeout is handled depends on the specific connection implementation of the subclass
+
+        Returns:
+            (Message): A message, which can be None if the timeout went by without a message being available to receive
+        ")
+                        (reparse-symbol indented_block_body) [6864 7388])
+                    ("is_empty" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8831 8835]))                          
+                        :documentation " subclass implementation specific method, returning True if there's currently no message available
+            note that due to the asyncronous nature of most networks, a message could arrive between someone
+            calling this function and then deciding to do something based on the return value.
+
+        Returns:
+            (bool): True if there's no message currently available
+        ")
+                        (reparse-symbol indented_block_body) [8794 9262]))                  
+                :type "class")
+                nil [5658 9262])
+            ("QueueConnection" type
+               (:documentation " A Connection implementation using multiprocessing's Queue as the connection itself "
+                :superclasses ("Connection")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [9384 9423])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9432 9469]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9410 9414]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [9397 9511])
+                    ("_do_put" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9528 9532])
+                            ("message" variable nil (reparse-symbol function_parameters) [9534 9541]))                          )
+                        (reparse-symbol indented_block_body) [9516 9597])
+                    ("_do_get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9614 9618])
+                            ("timeout" variable nil (reparse-symbol function_parameters) [9620 9627]))                          )
+                        (reparse-symbol indented_block_body) [9602 9683])
+                    ("connect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9700 9704])
+                            ("endpoint" variable nil (reparse-symbol function_parameters) [9706 9714]))                          
+                        :documentation " The Queue doesn't really have a 'connect'/'disconnect' concept,
+            so we do nothing here
+        ")
+                        (reparse-symbol indented_block_body) [9688 9852])
+                    ("disconnect" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9872 9876]))                          
+                        :documentation " The Queue doesn't really have a 'connect'/'disconnect' concept,
+            so we do nothing here
+        ")
+                        (reparse-symbol indented_block_body) [9857 10014])
+                    ("is_empty" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10032 10036]))                          )
+                        (reparse-symbol indented_block_body) [10019 10074]))                  
+                :type "class")
+                nil [9263 10074])
+            ("LifoQueueConnection" type
+               (:documentation " A Connection implementation using a LastIn FirstOut (stack-like) Qeue as the
+        connection itself
+    "
+                :superclasses ("QueueConnection")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [10229 10272])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10281 10312]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10255 10259]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [10242 10354]))                  
+                :type "class")
+                nil [10075 10354])
+            ("PipelineProcessorThread" type
+               (:documentation " Base class for all pipeline processor threads. To facilitate easier inter-thread colaboration,
+        this class already does a lot of things, such as routing, that might be surprising to see at
+        first sight
+    "
+                :superclasses ("threading.Thread")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            thread_id (str): The id by which this thread will be known (note that the id reported will be a routable id,
+                which might be different from just the id)
+            pipeline_server_id (str): The id of the pipeline server under which this thread is grouped
+            heartbeat_interval (float): time interval to sent heartbeats to the controller of this pipeline server and to expect heartbeats back
+            heartbeat_timeout (float): After this timeout, consider the controller as down and deal with that
+            parent_router_id (str): If not NULL(default), then any message aimed at someone we don't directly know is passed on to this router
+            transparent_router (bool): If True, hide the fact that we dealt with a message (i.e. don't put our id as the sender of a message)
+
+        Notes:
+            parent_router_id: For example in a network capable pipeline processor, the controller will have the network router thread as a
+                parent router, so any message aimed at a recipient that is not in the local pipeline processor thread group is handed off to
+                the router thread, who then, hopefully, knows how to send the message on over the network
+        \"\"\"" code nil (reparse-symbol indented_block_body) [10838 12092])
+                            ("threading" code nil (reparse-symbol indented_block_body) [12101 12148])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12158 12212])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12222 12267])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12276 12320])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12330 12371])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12380 12425])
+                            ("self" code nil (reparse-symbol indented_block_body) [12622 12667])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12677 12708])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12718 12745])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12754 12804])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12895 12934])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12944 12981])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12990 13024])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13033 13068])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13104 13145])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13182 13216])
+                            ("self" code nil (reparse-symbol indented_block_body) [13226 13253])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13263 13304])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13313 13334])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13344 13380]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10687 10691])
+                            ("thread_id" variable nil (reparse-symbol function_parameters) [10693 10702])
+                            ("pipeline_server_id" variable nil (reparse-symbol function_parameters) [10704 10722])
+                            ("heartbeat_interval" variable nil (reparse-symbol function_parameters) [10724 10742])
+                            ("heartbeat_timeout" variable nil (reparse-symbol function_parameters) [10744 10761])
+                            ("parent_router_id" variable nil (reparse-symbol function_parameters) [10780 10796])
+                            ("transparent_router" variable nil (reparse-symbol function_parameters) [10803 10821]))                          
+                        :documentation "
+        Args:
+            thread_id (str): The id by which this thread will be known (note that the id reported will be a routable id,
+                which might be different from just the id)
+            pipeline_server_id (str): The id of the pipeline server under which this thread is grouped
+            heartbeat_interval (float): time interval to sent heartbeats to the controller of this pipeline server and to expect heartbeats back
+            heartbeat_timeout (float): After this timeout, consider the controller as down and deal with that
+            parent_router_id (str): If not NULL(default), then any message aimed at someone we don't directly know is passed on to this router
+            transparent_router (bool): If True, hide the fact that we dealt with a message (i.e. don't put our id as the sender of a message)
+
+        Notes:
+            parent_router_id: For example in a network capable pipeline processor, the controller will have the network router thread as a
+                parent router, so any message aimed at a recipient that is not in the local pipeline processor thread group is handed off to
+                the router thread, who then, hopefully, knows how to send the message on over the network
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [10674 13381])
+                    ("id" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13407 13411]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [13386 13438])
+                    ("make_router_id" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13462 13466])
+                            ("ids" variable nil (reparse-symbol function_parameters) [13468 13472]))                          
+                        :documentation " given an (argument) list of ids, make a routable id target of it
+
+        Args:
+            ids (*args): A potentially empty list of arguments that get turned into a routable id
+
+        Returns:
+            (unicode): A routable id
+        ")
+                        (reparse-symbol indented_block_body) [13443 14305])
+                    ("ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14357 14361]))                          
+                        :documentation " return the endpoint of an inter process connection usable to send us messages ")
+                        (reparse-symbol indented_block_body) [14338 14478])
+                    ("_make_ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14533 14537]))                          
+                        :documentation " subclass specififc method to create the inter process conecction to send us messages over ")
+                        (reparse-symbol indented_block_body) [14508 14659])
+                    ("_tear_down_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14715 14719])
+                            ("connection" variable nil (reparse-symbol function_parameters) [14721 14731]))                          
+                        :documentation " subclass specific method to tear down a connection ")
+                        (reparse-symbol indented_block_body) [14689 14814])
+                    ("full_name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14847 14851]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [14819 14991])
+                    ("get_status" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15011 15015]))                          
+                        :documentation " method useful for debugging, returns our whole internal status ")
+                        (reparse-symbol indented_block_body) [14996 15775])
+                    ("_is_local_id" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15837 15841])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [15843 15855]))                          
+                        :documentation " check if a recipient_id is aimed at us
+
+        Args:
+            recipient_id (unicode): an id used as recipient of a message
+
+        Returns:
+            (bool): True if a routable version of 'recipient_id' is aimed at us
+        ")
+                        (reparse-symbol indented_block_body) [15820 16331])
+                    ("can_route_to" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [16353 16357])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [16359 16371]))                          
+                        :documentation " check if we know how to reach a recipient
+
+        Args:
+            recipient_id (unicode): id of a recipient
+
+        Returns:
+            (bool): True if we know how to send messages addressed to 'recipient_id'
+        ")
+                        (reparse-symbol indented_block_body) [16336 16738])
+                    ("_resolve_router" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17441 17445])
+                            ("message" variable nil (reparse-symbol function_parameters) [17447 17454]))                          
+                        :documentation " when we send a message, figure out the next router to send the message to
+
+        Args:
+            message (Message): the message we want to send
+
+        Returns:
+            router_id (unicode): The id of the router to sent the message to next, if the message's recipient_id
+                consists of only one last hop and that hop is us, return NULL to indicate we'll handle the message
+
+        Todo:
+            this and '_resolve_next_hop' are very similar and with a bit more work could propably be merged into one
+        ")
+                        (reparse-symbol indented_block_body) [17421 18618])
+                    ("_resolve_next_hop" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [18645 18649])
+                            ("message" variable nil (reparse-symbol function_parameters) [18651 18658]))                          
+                        :documentation " when we receive a message, figure out the next recipient of the message
+
+        Args:
+            message (Message): the message we received
+
+        Returns:
+            next_hop_id (unicode): The id of who gets this message
+
+        Todo:
+            this and '_resolve_router' are very similar and with a bit more work could probably be merged into one
+        ")
+                        (reparse-symbol indented_block_body) [18623 19852])
+                    ("send_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19874 19878])
+                            ("message" variable nil (reparse-symbol function_parameters) [19880 19887])
+                            ("force" variable nil (reparse-symbol function_parameters) [19889 19894]))                          
+                        :documentation " cause a message to be send to its recipient
+
+        Args:
+            message (Message): the message to send on its way
+            force (bool): If True, send the message even if our information suggests that the recipient isn't alive,
+                this can be useful, e.g. for requesting a heartbeat respones from a recipient we've marked as STATE_PENDING.
+                defaults to False
+
+        Returns:
+            (bool): True if we successfuly sent the message, this can fail for a number of reasons:
+                we don't know how to route to the recipient, the recipient is not marked as alive (and !force) or the connection
+                didn't accept the message for whatever reason
+        ")
+                        (reparse-symbol indented_block_body) [19857 21683])
+                    ("receive_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21708 21712])
+                            ("message" variable nil (reparse-symbol function_parameters) [21714 21721])
+                            ("connection" variable nil (reparse-symbol function_parameters) [21723 21733]))                          
+                        :documentation " handle a message we received (and it wasn't an internal message that's handled by default
+
+        Args:
+            message (Message): the message that came in through one of our connections
+            connection (Connection): the connection over which the message arrived
+
+        Notes:
+            this function can do one of two things with an incoming message:
+            if we're the recipient, pass it on to the _handle_message method,
+            which deals with subclass specific messages. In all other cases, just try to send it on
+            further, meaning all pipeline threads are little bridges/routers in themselves, unless they
+            overwrite this function
+        ")
+                        (reparse-symbol indented_block_body) [21688 23317])
+                    ("register_parent_router" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23373 23377])
+                            ("parent_router_id" variable nil (reparse-symbol function_parameters) [23379 23395])
+                            ("connection" variable nil (reparse-symbol function_parameters) [23397 23407])
+                            ("heartbeat_interval" variable nil (reparse-symbol function_parameters) [23409 23427])
+                            ("heartbeat_timeout" variable nil (reparse-symbol function_parameters) [23434 23451])
+                            ("force" variable nil (reparse-symbol function_parameters) [23458 23463]))                          
+                        :documentation " register a router id and connection as this thread's parent router, meaning it's where we send messages to, that we
+            can't route ourselves (e.g. the controller sends messages to the router thread for recipients across the network)
+        ")
+                        (reparse-symbol indented_block_body) [23346 24021])
+                    ("_register_heartbeat" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24050 24054])
+                            ("heartbeat_id" variable nil (reparse-symbol function_parameters) [24056 24068])
+                            ("heartbeat_interval" variable nil (reparse-symbol function_parameters) [24070 24088])
+                            ("heartbeat_timeout" variable nil (reparse-symbol function_parameters) [24095 24112])
+                            ("force" variable nil (reparse-symbol function_parameters) [24119 24124]))                          
+                        :documentation " register a new heartbeat for a communication partner
+
+        Args:
+            heartbeat_id (unicode): The id of the partner that we want to keep track of
+            heartbeat_interval (float): timeinterval (in seconds) after which we expect to be receving a heartbeat packet
+                through the network, or, vice versa, having to send one to the partner
+            heartbeat_timeout (float): After this time (in seconds), decide that the partner is down (or unreachable)
+            force (bool): If True, replace an existing heartbeat with a newly initialized one (default False)
+        ")
+                        (reparse-symbol indented_block_body) [24026 25343])
+                    ("_register_router" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25369 25373])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [25375 25384])
+                            ("connection" variable nil (reparse-symbol function_parameters) [25386 25396]))                          
+                        :documentation " register a new router and the connection to it
+
+        Args:
+            router_id (unicode): The id of the router to register
+            connection (Connection): The connection over which we can reach the router
+
+        Note:
+            This does not register the recipients the new router is responsible for (see '_register_recipients' for that)
+        ")
+                        (reparse-symbol indented_block_body) [25348 26448])
+                    ("_disconnect_router" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26498 26502])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [26504 26513]))                          
+                        :documentation " remove a router's connection and shutdown that connection
+
+        Args:
+            router_id (unicode): The router that we're saying goodbye to
+
+        Note:
+            This does not unregister the router's recipients (see '_unregister_router_ids' for that)
+        ")
+                        (reparse-symbol indented_block_body) [26475 27163])
+                    ("_register_recipients" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27193 27197])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [27199 27208])
+                            ("inventory" variable nil (reparse-symbol function_parameters) [27210 27219]))                          
+                        :documentation " register a set of recipient ids that are reachable via a given router,
+            and also send any stored message on to those recipients
+
+        Args:
+            router_id (unicode): The router id we're registering recipients for
+            inventory (list(unicode)): list of ids reachable via the given router
+
+        Todo:
+            move the stored message sending to a separate function
+        ")
+                        (reparse-symbol indented_block_body) [27168 27949])
+                    ("_unregister_router_ids" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27981 27985])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [27987 27996]))                          
+                        :documentation " completely clear all recipient ids for a given router
+
+        Args:
+            router_id (unicode): The id of the router we're going to clear recipient ids for
+        ")
+                        (reparse-symbol indented_block_body) [27954 28357])
+                    ("_update_routing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28382 28386])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [28388 28397])
+                            ("inventory" variable nil (reparse-symbol function_parameters) [28399 28408]))                          
+                        :documentation " replace a routers recipient ids with a new set of ids
+        Args:
+            router_id (unicode): The router whose recipient ids we're replacing
+            inventory (list(unicode)): list of recipient ids reachable by the given router
+        ")
+                        (reparse-symbol indented_block_body) [28362 28777])
+                    ("_disconnect_from" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28803 28807])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [28809 28818])
+                            ("send_goodbye" variable nil (reparse-symbol function_parameters) [28820 28832]))                          
+                        :documentation " disconnection procedure for a given router
+
+        Args:
+            router_id (unicode): The router we disconnecting from
+            send_goodby (bool): If True(default) send a goodbye message to the router
+                we're disconnecting from
+        ")
+                        (reparse-symbol indented_block_body) [28782 29342])
+                    ("_get_routing_targets" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29372 29376]))                          
+                        :documentation " return a list of immediate next hops we know how to reach
+
+        Returns:
+            list(unicode): A list of router ids
+
+        Note:
+            do not confuse this with '_get_inventory' which returns the full names of all recipient targets
+        ")
+                        (reparse-symbol indented_block_body) [29347 30008])
+                    ("_get_inventory" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30032 30036]))                          
+                        :documentation " return a list of all the recipients we can reach
+
+        Returns:
+            list(unicode): A list of recipient ids
+
+        Note:
+            do not confuse this with '_get_routing_targets' which returns only the ids of next hop targets
+        ")
+                        (reparse-symbol indented_block_body) [30013 30644])
+                    ("_add_listener" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30667 30671])
+                            ("listener_id" variable nil (reparse-symbol function_parameters) [30673 30684])
+                            ("send_message_commands" variable nil (reparse-symbol function_parameters) [30686 30707])
+                            ("receive_message_commands" variable nil (reparse-symbol function_parameters) [30709 30733]))                          )
+                        (reparse-symbol indented_block_body) [30649 30889])
+                    ("_remove_listener" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30915 30919])
+                            ("listener_id" variable nil (reparse-symbol function_parameters) [30921 30932]))                          )
+                        (reparse-symbol indented_block_body) [30894 30979])
+                    ("_notify_listeners" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31006 31010])
+                            ("com_dir" variable nil (reparse-symbol function_parameters) [31012 31019])
+                            ("message" variable nil (reparse-symbol function_parameters) [31021 31028]))                          )
+                        (reparse-symbol indented_block_body) [30984 31314])
+                    ("_send_heartbeat" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31339 31343])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [31345 31354]))                          
+                        :documentation " send a heartbeat message to a router
+
+        Args:
+            router_id: The id of a router that we know about
+        ")
+                        (reparse-symbol indented_block_body) [31319 31673])
+                    ("_request_heartbeat" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [31701 31705])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [31707 31716]))                          
+                        :documentation " request a heartbeat response from a router
+
+        Args:
+            router_id: The id of a router that we know about
+        ")
+                        (reparse-symbol indented_block_body) [31678 32131])
+                    ("_send_heartbeats" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32157 32161]))                          
+                        :documentation " send out heartbeat messages to all routers that need them, based on our heartbeat_interval/timeout settings
+        ")
+                        (reparse-symbol indented_block_body) [32136 32787])
+                    ("_check_alive" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [32809 32813])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [32815 32824])
+                            ("now" variable nil (reparse-symbol function_parameters) [32826 32829]))                          
+                        :documentation " check if we need to request a heartbeat from a router
+
+        Args:
+            router_id (unicode): The id of a router that we might have to request a heartbeat from
+            now (float): current time in seconds since the epoch, if None current time will be retrieved
+                by the functions called from this one
+
+        Todo:
+            probably best to rename this function into '_request_heartbeat_maybe' or something like that
+        ")
+                        (reparse-symbol indented_block_body) [32792 33530])
+                    ("_check_alives" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33553 33557]))                          
+                        :documentation " check the alive state of all routers we know, using their heartbeats
+
+        Note:
+            this will include the controller thread for threads in a pipeline processor group and
+            all the other threads in that controller's group
+        ")
+                        (reparse-symbol indented_block_body) [33535 34482])
+                    ("_poll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34522 34526])
+                            ("timeout" variable nil (reparse-symbol function_parameters) [34528 34535]))                          
+                        :documentation " subclass specific generator method to poll our connections for messages
+
+        Args:
+            timeout (float): wait at most this many seconds for a message
+
+        Returns:
+            (tuple(message, connection)): if a message was available within the timeout,
+                return it and the connection it was received over, (None, None) else
+        ")
+                        (reparse-symbol indented_block_body) [34512 34928])
+                    ("_shutdown" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34947 34951]))                          
+                        :documentation " signal an end to the polling loop and mark ourselves as down ")
+                        (reparse-symbol indented_block_body) [34933 35108])
+                    ("prerun" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35124 35128]))                          
+                        :documentation " 'boot' procedure for this pipeline processor thread, mostly involves waiting
+            for the controller to let us know everything is good to go
+
+        Returns:
+            (bool): True if everything is good to go, False if something went wrong along the way
+                and we should abort
+        ")
+                        (reparse-symbol indented_block_body) [35113 36847])
+                    ("postrun" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [36864 36868]))                          
+                        :documentation " procedure to shutdown this pipeline thread, for now turn off polling and tell the controller we'll be going
+
+        ")
+                        (reparse-symbol indented_block_body) [36852 37181])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [37194 37198]))                          
+                        :documentation " main function of this pipeline thread, handles triggering boot and shutdown procedure, handles some common/internal
+            messages and causes all unhandled messages to be passed to the subclass' specific message handling function
+        ")
+                        (reparse-symbol indented_block_body) [37186 39570])
+                    ("_handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [39620 39624])
+                            ("message" variable nil (reparse-symbol function_parameters) [39626 39633])
+                            ("connection" variable nil (reparse-symbol function_parameters) [39635 39645]))                          
+                        :documentation " subclass specific function to handle messages addressed to us
+
+        Args:
+            message (Message): the message addressed to us
+            connection (Connection): the connection the message came in over
+
+        Returns:
+            bool: Whether or not we handled the message
+        ")
+                        (reparse-symbol indented_block_body) [39600 39980])
+                    ("_inventory_request" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [40009 40013])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [40015 40027]))                          
+                        :documentation " send a list of all the recipients we are responsible for to a recipient
+
+        Args:
+            recipient_id (unicode): The id of whoever requested our inventory
+        ")
+                        (reparse-symbol indented_block_body) [39986 40469]))                  
+                :type "class")
+                nil [10355 40469]))          
+    :file "base.py"
+    :pointmax 40469
+    :fsize 40468
+    :lastmodtime '(22767 34161 651109 64000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "messages.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("abc" include nil nil [1 11])
+            ("sys" include nil nil [12 22])
+            ("pprint" include nil nil [23 49])
+            ("context.service" include nil nil [51 80])
+            ("\"\"\"
+Messages for the implemented pipeline processor threads. Probably it would be good to separate them out
+into the modules of those individual pipeline processor threads in the future. Since messages to send are
+found by the context/service method, this should be pretty easy to do
+\"\"\"" code nil nil [82 369])
+            ("MessageI" type
+               (:documentation " Interface for messages exchanged between pipeline processor threads "
+                :superclasses ("c_s.Interface")
+                :members 
+                  ( ("__register_as_service__" variable nil (reparse-symbol indented_block_body) [647 678])
+                    ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [761 765]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [721 725])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [727 736])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [738 750]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [684 766])
+                    ("COMMAND" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("abc.abstractproperty" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [809 813]))                          
+                        :documentation " the command that this message represents ")
+                        (reparse-symbol indented_block_body) [771 886]))                  
+                :type "class")
+                nil [371 886])
+            ("Message" type
+               (:documentation " base implementation for messages exchanged between pipeline processor threads "
+                :superclasses ("c_s.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [1009 1036])
+                    ("service_id" variable nil (reparse-symbol indented_block_body) [1041 1061])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            sender_id (unicode): The id of the sender of this message
+            recipient_id (unicode): The id of the recipient of this message
+            heartbeat_id (unicode): If not NULL(the default), use this id in registering heartbeats instead of the 'sender_id'
+            timestamp (float): The timestamp (usually of the send event) of this message
+        \"\"\"" code nil (reparse-symbol indented_block_body) [1088 1479])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1488 1517])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1526 1558])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1567 1599])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1608 1637]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1081 1085])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [1087 1096])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [1098 1110])
+                            ("heartbeat_id" variable nil (reparse-symbol function_parameters) [1112 1124])
+                            ("timestamp" variable nil (reparse-symbol function_parameters) [1131 1140]))                          
+                        :documentation "
+        Args:
+            sender_id (unicode): The id of the sender of this message
+            recipient_id (unicode): The id of the recipient of this message
+            heartbeat_id (unicode): If not NULL(the default), use this id in registering heartbeats instead of the 'sender_id'
+            timestamp (float): The timestamp (usually of the send event) of this message
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1067 1706])
+                    ("COMMAND" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1737 1741]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1711 1775])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1792 1796]))                          )
+                        (reparse-symbol indented_block_body) [1780 1882]))                  
+                :type "class")
+                nil [887 1882])
+            ("random" include nil nil [1900 1913])
+            ("HeartBeat" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [1945 1974])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [956 1012])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1022 1048]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1993 1997])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [1999 2008])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [2010 2022]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1980 2126]))                  
+                :type "class")
+                nil [1915 2126])
+            ("HeartBeatRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [2164 2201]))                  
+                :type "class")
+                nil [2127 2202])
+            ("ShutdownRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [2239 2267]))                  
+                :type "class")
+                nil [2203 2268])
+            ("ServiceThreadRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [2337 2374])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1386 1453])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1463 1509])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1518 1540]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2393 2397])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [2399 2408])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [2410 2422])
+                            ("recipient_thread_id" variable nil (reparse-symbol function_parameters) [2424 2443])
+                            ("request" variable nil (reparse-symbol function_parameters) [2445 2452]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2380 2618]))                  
+                :type "class")
+                nil [2296 2618])
+            ("RunningNotification" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [2659 2696])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1702 1768])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1778 1798])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1807 1833]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2715 2719])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [2721 2730])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [2732 2744])
+                            ("status" variable nil (reparse-symbol function_parameters) [2746 2752])
+                            ("inventory" variable nil (reparse-symbol function_parameters) [2754 2763]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2702 2911]))                  
+                :type "class")
+                nil [2619 2911])
+            ("InventoryRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [2949 2996])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2002 2065])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2074 2126]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3015 3019])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [3021 3030])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [3032 3044])
+                            ("inventory_recipient_id" variable nil (reparse-symbol function_parameters) [3046 3068]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3002 3204]))                  
+                :type "class")
+                nil [2912 3204])
+            ("InventoryMessage" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [3242 3286])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2314 2377])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2386 2412])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2421 2447])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2456 2508]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3305 3309])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [3311 3320])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [3322 3334])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [3336 3345])
+                            ("inventory" variable nil (reparse-symbol function_parameters) [3347 3356])
+                            ("inventory_recipient_id" variable nil (reparse-symbol function_parameters) [3358 3380]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3292 3586]))                  
+                :type "class")
+                nil [3205 3586])
+            ("AddListenerRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [3626 3668])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2664 2729])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2738 2768]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3688 3692])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [3694 3703])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [3705 3717])
+                            ("listener_id" variable nil (reparse-symbol function_parameters) [3719 3730]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3674 3846]))                  
+                :type "class")
+                nil [3587 3846])
+            ("RemoveListenerRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [3889 3934])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2930 2998])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3007 3037]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3954 3958])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [3960 3969])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [3971 3983])
+                            ("listener_id" variable nil (reparse-symbol function_parameters) [3985 3996]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3940 4115]))                  
+                :type "class")
+                nil [3847 4115])
+            ("ListenerNotification" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [4157 4203])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [3194 3261])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3270 3292]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4222 4226])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [4228 4237])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [4239 4251])
+                            ("message" variable nil (reparse-symbol function_parameters) [4253 4260]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4209 4370]))                  
+                :type "class")
+                nil [4116 4370])
+            ("StartupServiceThread" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [4435 4483])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [3483 3550])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3559 3583])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3592 3614]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4502 4506])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [4508 4517])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [4519 4531])
+                            ("selector" variable nil (reparse-symbol function_parameters) [4533 4541])
+                            ("config" variable nil (reparse-symbol function_parameters) [4543 4549]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4489 4692]))                  
+                :type "class")
+                nil [4394 4692])
+            ("ServiceThreadStatusRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [4740 4795]))                  
+                :type "class")
+                nil [4693 4796])
+            ("ServiceThreadStatusNotification" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [4849 4909])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [3899 3977])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3986 4006]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4928 4932])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [4934 4943])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [4945 4957])
+                            ("status" variable nil (reparse-symbol function_parameters) [4959 4965]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4915 5084]))                  
+                :type "class")
+                nil [4797 5084])
+            ("Hello" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [5130 5157])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [4178 4230])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4240 4284])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4293 4336]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5176 5180])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [5182 5191])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [5193 5205])
+                            ("heartbeat_interval" variable nil (reparse-symbol function_parameters) [5207 5225])
+                            ("heartbeat_timeout" variable nil (reparse-symbol function_parameters) [5227 5244]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5163 5414]))                  
+                :type "class")
+                nil [5104 5414])
+            ("Ehllo" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [5441 5468])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [4489 4541])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4551 4595])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4604 4647]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5487 5491])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [5493 5502])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [5504 5516])
+                            ("heartbeat_interval" variable nil (reparse-symbol function_parameters) [5518 5536])
+                            ("heartbeat_timeout" variable nil (reparse-symbol function_parameters) [5538 5555]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5474 5725]))                  
+                :type "class")
+                nil [5415 5725])
+            ("ConnectionRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [5764 5796])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [4807 4871])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4880 4912])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4921 4955]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5815 5819])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [5821 5830])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [5832 5844])
+                            ("network_info" variable nil (reparse-symbol function_parameters) [5846 5858])
+                            ("recipient_ids" variable nil (reparse-symbol function_parameters) [5860 5873]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5802 6033]))                  
+                :type "class")
+                nil [5726 6033])
+            ("RoutingRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [6069 6106]))                  
+                :type "class")
+                nil [6034 6107])
+            ("RoutingInformation" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [6147 6183])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [5206 5271])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5281 5323])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5332 5380]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6202 6206])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [6208 6217])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [6219 6231])
+                            ("add_recipient_ids" variable nil (reparse-symbol function_parameters) [6233 6250])
+                            ("remove_recipient_ids" variable nil (reparse-symbol function_parameters) [6252 6272]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6189 6458]))                  
+                :type "class")
+                nil [6108 6458])
+            ("RoutingNotification" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [6499 6535])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [5570 5636])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5646 5672])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5681 5739])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5748 5782]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6554 6558])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [6560 6569])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [6571 6583])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [6585 6594])
+                            ("notification_recipient_id" variable nil (reparse-symbol function_parameters) [6596 6621])
+                            ("recipient_ids" variable nil (reparse-symbol function_parameters) [6623 6636]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6541 6860]))                  
+                :type "class")
+                nil [6459 6860])
+            ("DisconnectRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [6899 6936])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [5929 5993])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6003 6029]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6955 6959])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [6961 6970])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [6972 6984])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [6986 6995]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6942 7107]))                  
+                :type "class")
+                nil [6861 7107])
+            ("GoodBye" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [7136 7165]))                  
+                :type "class")
+                nil [7108 7166])
+            ("ItemProcessedNotification" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [7235 7274])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [6265 6337])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6346 6368]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7293 7297])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [7299 7308])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [7310 7322])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [7324 7331]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7280 7446]))                  
+                :type "class")
+                nil [7189 7446])
+            ("NodeProcessedNotification" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [7493 7532])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [6523 6595])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6604 6626]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7551 7555])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [7557 7566])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [7568 7580])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [7582 7589]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7538 7704]))                  
+                :type "class")
+                nil [7447 7704])
+            ("ConditionProcessedNotification" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [7756 7800])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [6796 6873])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6882 6914]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7819 7823])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [7825 7834])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [7836 7848])
+                            ("condition_id" variable nil (reparse-symbol function_parameters) [7850 7862]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7806 7992]))                  
+                :type "class")
+                nil [7705 7992])
+            ("SignalHandlerProcessedNotification" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [8048 8097])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [7098 7179])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7188 7230]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8116 8120])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [8122 8131])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [8133 8145])
+                            ("signal_handler_id" variable nil (reparse-symbol function_parameters) [8147 8164]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8103 8308]))                  
+                :type "class")
+                nil [7993 8308])
+            ("SignalSendRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [8347 8383])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [7388 7452])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7461 7481])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7490 7524]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8402 8406])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [8408 8417])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [8419 8431])
+                            ("signal" variable nil (reparse-symbol function_parameters) [8433 8439])
+                            ("connection_id" variable nil (reparse-symbol function_parameters) [8441 8454]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8389 8602]))                  
+                :type "class")
+                nil [8309 8602])
+            ("SignalReceivingRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [8646 8685])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [7690 7759])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7768 7788])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7797 7831]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8704 8708])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [8710 8719])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [8721 8733])
+                            ("signal" variable nil (reparse-symbol function_parameters) [8735 8741])
+                            ("connection_id" variable nil (reparse-symbol function_parameters) [8743 8756]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8691 8909]))                  
+                :type "class")
+                nil [8603 8909])
+            ("SignalDeliveringRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [8954 8993])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [8002 8072])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8081 8101])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8110 8152]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9012 9016])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [9018 9027])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [9029 9041])
+                            ("signal" variable nil (reparse-symbol function_parameters) [9043 9049])
+                            ("signal_handler_id" variable nil (reparse-symbol function_parameters) [9051 9068]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8999 9230]))                  
+                :type "class")
+                nil [8910 9230])
+            ("RouteSignalReceivingRequest" type
+               (:superclasses ("SignalReceivingRequest")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [9294 9339]))                  
+                :type "class")
+                nil [9231 9340])
+            ("SignalStatusMessage" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [9381 9421])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [8459 8525])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8534 8552])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8561 8587])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8596 8630])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8639 8671])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8680 8702]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9440 9444])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [9446 9455])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [9457 9469])
+                            ("stage" variable nil (reparse-symbol function_parameters) [9471 9476])
+                            ("signal_id" variable nil (reparse-symbol function_parameters) [9478 9487])
+                            ("connection_id" variable nil (reparse-symbol function_parameters) [9489 9502])
+                            ("condition_id" variable nil (reparse-symbol function_parameters) [9504 9516])
+                            ("success" variable nil (reparse-symbol function_parameters) [9518 9525]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [9427 9780]))                  
+                :type "class")
+                nil [9341 9780])
+            ("RouteSignalStatusMessage" type
+               (:superclasses ("SignalStatusMessage")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [9838 9884]))                  
+                :type "class")
+                nil [9781 9885])
+            ("NodeProcessingRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [9928 9965])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [8956 9024])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9033 9055]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9984 9988])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [9990 9999])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [10001 10013])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [10015 10022]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [9971 10133]))                  
+                :type "class")
+                nil [9886 10133])
+            ("ConditionProcessingRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [10181 10223])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [9219 9292])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9301 9333]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10242 10246])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [10248 10257])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [10259 10271])
+                            ("condition_id" variable nil (reparse-symbol function_parameters) [10273 10285]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [10229 10411]))                  
+                :type "class")
+                nil [10134 10411])
+            ("SignalHandlerProcessingRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [10463 10510])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [9511 9588])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9597 9639]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10529 10533])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [10535 10544])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [10546 10558])
+                            ("signal_handler_id" variable nil (reparse-symbol function_parameters) [10560 10577]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [10516 10717]))                  
+                :type "class")
+                nil [10412 10717])
+            ("IDRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [10748 10784])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [9789 9845])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9854 9870])
+                            ("self" variable nil (reparse-symbol indented_block_body) [9879 9917]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10803 10807])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [10809 10818])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [10820 10832])
+                            ("item" variable nil (reparse-symbol function_parameters) [10834 10838])
+                            ("id_recipient_id" variable nil (reparse-symbol function_parameters) [10840 10855]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [10790 10995]))                  
+                :type "class")
+                nil [10718 10995])
+            ("IDMessage" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [11026 11063])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [10054 10110])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10119 10141]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11082 11086])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [11088 11097])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [11099 11111])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [11113 11120]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [11069 11219]))                  
+                :type "class")
+                nil [10996 11219])
+            ("RPCRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [11270 11293])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [10307 10364])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10373 10407])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10416 10432])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10441 10461]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11312 11316])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [11318 11327])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [11329 11341])
+                            ("function_name" variable nil (reparse-symbol function_parameters) [11343 11356])
+                            ("args" variable nil (reparse-symbol function_parameters) [11358 11363])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [11365 11373]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [11299 11539]))                  
+                :type "class")
+                nil [11239 11539])
+            ("RPCReply" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [11569 11593])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [10589 10644])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10653 10685]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11612 11616])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [11618 11627])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [11629 11641])
+                            ("return_value" variable nil (reparse-symbol function_parameters) [11643 11655]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [11599 11763]))                  
+                :type "class")
+                nil [11540 11763])
+            ("InvalidateKeysRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [11833 11878])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [10871 10939])
+                            ("self" variable nil (reparse-symbol indented_block_body) [10948 10974]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11897 11901])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [11903 11912])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [11914 11926])
+                            ("user_keys" variable nil (reparse-symbol function_parameters) [11928 11937]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [11884 12052]))                  
+                :type "class")
+                nil [11791 12052])
+            ("MakeContextValueRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [12097 12140])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [11144 11214])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11223 11251])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11260 11284]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12159 12163])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [12165 12174])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [12176 12188])
+                            ("request_id" variable nil (reparse-symbol function_parameters) [12190 12200])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [12202 12210]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [12146 12362]))                  
+                :type "class")
+                nil [12053 12362])
+            ("SyncValuesRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [12401 12442])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [11435 11499])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11508 11534]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12461 12465])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [12467 12476])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [12478 12490])
+                            ("user_keys" variable nil (reparse-symbol function_parameters) [12492 12501]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [12448 12612]))                  
+                :type "class")
+                nil [12363 12612])
+            ("GetContextValueRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [12684 12724])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [11767 11836])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11845 11873])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11882 11922])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11931 11955])
+                            ("self" variable nil (reparse-symbol indented_block_body) [11964 12010]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12743 12747])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [12749 12758])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [12760 12772])
+                            ("request_id" variable nil (reparse-symbol function_parameters) [12774 12784])
+                            ("context_layer_id" variable nil (reparse-symbol function_parameters) [12786 12802])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [12804 12812])
+                            ("accepted_properties" variable nil (reparse-symbol function_parameters) [12814 12833]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [12730 13088]))                  
+                :type "class")
+                nil [12641 13088])
+            ("ReturnContextValueMessage" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [13135 13178])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [12223 12295])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12304 12332])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12341 12359])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12368 12396])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12405 12443])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12452 12486]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13197 13201])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [13203 13212])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [13214 13226])
+                            ("request_id" variable nil (reparse-symbol function_parameters) [13228 13238])
+                            ("value" variable nil (reparse-symbol function_parameters) [13240 13245])
+                            ("properties" variable nil (reparse-symbol function_parameters) [13247 13257])
+                            ("raise_exception" variable nil (reparse-symbol function_parameters) [13259 13274])
+                            ("exception_msg" variable nil (reparse-symbol function_parameters) [13276 13289]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13184 13564]))                  
+                :type "class")
+                nil [13089 13564])
+            ("InvalidateContextLayerKeysRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [13619 13665])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [12676 12756])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12765 12805])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12814 12840]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13684 13688])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [13690 13699])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [13701 13713])
+                            ("context_layer_id" variable nil (reparse-symbol function_parameters) [13715 13731])
+                            ("user_keys" variable nil (reparse-symbol function_parameters) [13733 13742]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13671 13918]))                  
+                :type "class")
+                nil [13565 13918])
+            ("UpdateContextLayerRequest" type
+               (:superclasses ("Message")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [13965 14010])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [13016 13088])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13097 13137])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13146 13162]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14029 14033])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [14035 14044])
+                            ("recipient_id" variable nil (reparse-symbol function_parameters) [14046 14058])
+                            ("context_layer_id" variable nil (reparse-symbol function_parameters) [14060 14076])
+                            ("data" variable nil (reparse-symbol function_parameters) [14078 14082]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [14016 14240]))                  
+                :type "class")
+                nil [13919 14240]))          
+    :file "messages.py"
+    :pointmax 14240
+    :fsize 14239
+    :lastmodtime '(22767 35314 86243 455000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!shaas!workspace!pipeline!pipeline_processor!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

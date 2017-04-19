@@ -1,0 +1,160 @@
+;; Object utility/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "utility/"
+  :tables
+  (list
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+@package utility.base
+@brief 
+
+@author agutsche
+@copyright 2014 Topalsson
+\"\"\"" code nil nil [21 102])
+            ("__all__" variable nil nil [103 327])
+            ("os" include nil nil [329 338])
+            ("sys" include nil nil [339 349])
+            ("logging" include nil nil [350 364])
+            ("inspect" include nil nil [365 379])
+            ("" code nil nil [401 473])
+            ("listify" function
+               (:documentation "embeds any non list/tuple type input into a list of length 1 (strings for instance, are not split into their characters, but remain one string in a list)"
+                :arguments 
+                  ( ("input_data" variable nil (reparse-symbol function_parameters) [502 512]))                  )
+                nil [490 785])
+            ("stringify" function
+               (:documentation "returns the list of input items, where each item is replaced by its string representation"
+                :arguments 
+                  ( ("input_list" variable nil (reparse-symbol function_parameters) [800 810]))                  )
+                nil [786 953])
+            ("LoggedClassMixin" type
+               (:documentation "A mixin class, that automatically adds a class level logger."
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1119 1164])
+                            ("self" code nil (reparse-symbol indented_block_body) [1173 1191]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1097 1101])
+                            ("args" variable nil (reparse-symbol function_parameters) [1103 1108]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1084 1192])
+                    ("_set_logger" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1221 1225]))                          )
+                        (reparse-symbol indented_block_body) [1205 1327]))                  
+                :type "class")
+                nil [977 1327])
+            ("module_logger" function (:documentation "return a module level logger with proper initialization") nil [1328 1560])
+            ("fully_qualified_name" function
+               (:documentation "return the fully qualified name of a class or object instance as a string"
+                :arguments 
+                  ( ("class_or_object" variable nil (reparse-symbol function_parameters) [1619 1634]))                  )
+                nil [1594 2127])
+            ("real_module_name" function
+               (:documentation "
+    Get the module name of any file passed
+
+    This will convert the filename or pathname passed to the python module name, pruning
+    preceding dirnames and file extensions as well as following any symlink to its goal.
+    @param filepath The string designating a file (usually passed as __file__ ) 
+    @return pure module name"
+                :arguments 
+                  ( ("filepath" variable nil (reparse-symbol function_parameters) [2149 2157]))                  )
+                nil [2128 2629])
+            ("_Marker" type
+               (:documentation "This is an abstract _marker which limits the parent in the upwards_base function.
+    
+    It is an abstract class, therefore you should use either one of the subclasses for files
+    or directories instead of this one"
+                :superclasses ("object")
+                :members 
+                  ( ("_trigger" variable nil (reparse-symbol indented_block_body) [2931 2959])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [3008 3032]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2982 2986])
+                            ("input_str" variable nil (reparse-symbol function_parameters) [2988 2997]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2969 3033])
+                    ("__eq__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3048 3052])
+                            ("other_value" variable nil (reparse-symbol function_parameters) [3054 3065]))                          )
+                        (reparse-symbol indented_block_body) [3037 3111])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3127 3131]))                          )
+                        (reparse-symbol indented_block_body) [3115 3162])
+                    ("triggers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3179 3183])
+                            ("path" variable nil (reparse-symbol function_parameters) [3185 3189]))                          )
+                        (reparse-symbol indented_block_body) [3166 3255]))                  
+                :type "class")
+                nil [2675 3255])
+            ("FileMarker" type
+               (:documentation "This class allows upwards_root to distinguish between files and directories."
+                :superclasses ("_Marker")
+                :members 
+                  ( ("_trigger" variable nil (reparse-symbol indented_block_body) [3378 3418]))                  
+                :type "class")
+                nil [3260 3419])
+            ("DirMarker" type
+               (:documentation "This class allows the same distinction as FileMarker between files and dirs."
+                :superclasses ("_Marker")
+                :members 
+                  ( ("_trigger" variable nil (reparse-symbol indented_block_body) [3537 3576]))                  
+                :type "class")
+                nil [3420 3577])
+            ("upwards_base" function
+               (:documentation "Return the path to the repository root.
+
+    This returns the closest parent path, designated by any given marker. no guarantee
+    is made that the parent has no further possible parent. It will not necessarily return 
+    the top-level root.
+    @param from_path Provide a path from which to find the upwards base, defaults to the 
+    current working dir if no path was provided.
+    @param base_marker can be a string with which to match in general, or a _Marker instance which 
+    allows finer distinction between files and directories (i.e. '.git' matches, but only if directory) 
+    @return repository root path"
+                :arguments 
+                  ( ("start_path" variable nil (reparse-symbol function_parameters) [3596 3606])
+                    ("base_marker" variable nil (reparse-symbol function_parameters) [3613 3624]))                  )
+                nil [3579 4835])
+            ("upwards_top" function
+               (:documentation "Return the path to the root package of the provided module."
+                :arguments 
+                  ( ("module_name" variable nil (reparse-symbol function_parameters) [4853 4864]))                  )
+                nil [4837 4969])
+            ("root_package_path" function
+               (:documentation "Return the path to the root package of the provided module.
+    this can be done, by traversing upwards until the top level __init__.py[c|o]
+    is found."
+                :arguments 
+                  ( ("module_name" variable nil (reparse-symbol function_parameters) [5096 5107]))                  )
+                nil [5074 5307])
+            ("bootstrap" function
+               (:documentation "try to find the root from a given path and add it to the pythonpath"
+                :arguments 
+                  ( ("start_path" variable nil (reparse-symbol function_parameters) [5323 5333])
+                    ("import_test_module" variable nil (reparse-symbol function_parameters) [5335 5353]))                  )
+                nil [5309 5741]))          
+      :file "base.py"
+      :pointmax 5741
+      :fsize 5740
+      :lastmodtime '(21586 17967 0 0)
+      :unmatched-syntax nil))
+  :file "!!CARBON!repositories!orchestra!libs!essentials!essentials!utility!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

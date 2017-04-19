@@ -1,0 +1,214 @@
+;; Object remote_context/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "remote_context/"
+  :tables
+  (list
+    (semanticdb-table "services.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("datetime" include nil nil [1 16])
+            ("threading" include nil nil [17 33])
+            ("Queue" include nil nil [34 46])
+            ("context.service" include nil nil [48 77])
+            ("context.stack" include nil nil [78 106])
+            ("kvstore.kvstore" include nil nil [107 138])
+            ("kvstore.exceptions" include nil nil [139 172])
+            ("kvstore.specialized" include nil nil [173 208])
+            ("graph_processor.base" include nil nil [209 244])
+            ("graph_processor.messages" include nil nil [245 284])
+            ("ValueRequest" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [379 407])
+                            ("self" variable nil (reparse-symbol indented_block_body) [416 440])
+                            ("self" variable nil (reparse-symbol indented_block_body) [449 475])
+                            ("self" variable nil (reparse-symbol indented_block_body) [485 523])
+                            ("self" variable nil (reparse-symbol indented_block_body) [533 561])
+                            ("self" variable nil (reparse-symbol indented_block_body) [570 595])
+                            ("self" variable nil (reparse-symbol indented_block_body) [605 622])
+                            ("self" variable nil (reparse-symbol indented_block_body) [631 654]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [331 335])
+                            ("request_id" variable nil (reparse-symbol function_parameters) [337 347])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [349 357])
+                            ("timestamp" variable nil (reparse-symbol function_parameters) [359 368]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [318 655]))                  
+                :type "class")
+                nil [286 655])
+            ("RemoteContextI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("pass" code nil (reparse-symbol indented_block_body) [697 701]))                  
+                :type "class")
+                nil [656 702])
+            ("RemoteContextLayer" type
+               (:superclasses ("c_s.Service" "c_st.ContextLayer" "gp_b.GraphProcessorThread")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [792 825])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1053 1078])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1087 1177])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1186 1281])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1291 1336])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1345 1385])
+                            ("c_st" code nil (reparse-symbol indented_block_body) [1395 1492])
+                            ("c_s" code nil (reparse-symbol indented_block_body) [1501 1527])
+                            ("gp_b" code nil (reparse-symbol indented_block_body) [1536 1646])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1656 1708])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1717 1770])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1780 1810]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [844 848])
+                            ("thread_id" variable nil (reparse-symbol function_parameters) [850 859])
+                            ("config" variable nil (reparse-symbol function_parameters) [861 867])
+                            ("pipeline_server_id" variable nil (reparse-symbol function_parameters) [886 904])
+                            ("heartbeat_interval" variable nil (reparse-symbol function_parameters) [906 924])
+                            ("heartbeat_timeout" variable nil (reparse-symbol function_parameters) [926 943])
+                            ("name" variable nil (reparse-symbol function_parameters) [962 966])
+                            ("parent" variable nil (reparse-symbol function_parameters) [973 979])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [986 994])
+                            ("collate_key" variable nil (reparse-symbol function_parameters) [1000 1011])
+                            ("data" variable nil (reparse-symbol function_parameters) [1017 1021])
+                            ("subclass" variable nil (reparse-symbol function_parameters) [1028 1036]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [831 1811])
+                    ("__hash__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1829 1833]))                          )
+                        (reparse-symbol indented_block_body) [1816 1866])
+                    ("_make_ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1896 1900]))                          )
+                        (reparse-symbol indented_block_body) [1871 1956])
+                    ("_tear_down_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1987 1991])
+                            ("connection" variable nil (reparse-symbol function_parameters) [1993 2003]))                          )
+                        (reparse-symbol indented_block_body) [1961 2019])
+                    ("ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2057 2061]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2024 2099])
+                    ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2135 2139])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [2141 2149])
+                            ("value" variable nil (reparse-symbol function_parameters) [2151 2156]))                          )
+                        (reparse-symbol indented_block_body) [2119 2385])
+                    ("__delitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2406 2410])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [2412 2420]))                          )
+                        (reparse-symbol indented_block_body) [2390 2524])
+                    ("_queue_remote_value_request" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2561 2565])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [2567 2575]))                          )
+                        (reparse-symbol indented_block_body) [2529 3125])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3146 3150])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [3152 3160]))                          )
+                        (reparse-symbol indented_block_body) [3130 4147])
+                    ("register_service_class" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4200 4204])
+                            ("service_class" variable nil (reparse-symbol function_parameters) [4206 4219])
+                            ("interfaces" variable nil (reparse-symbol function_parameters) [4221 4231]))                          )
+                        (reparse-symbol indented_block_body) [4173 4247])
+                    ("register_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4273 4277])
+                            ("service" variable nil (reparse-symbol function_parameters) [4279 4286])
+                            ("interfaces" variable nil (reparse-symbol function_parameters) [4288 4298]))                          )
+                        (reparse-symbol indented_block_body) [4252 4314])
+                    ("unregister_service" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4342 4346])
+                            ("service" variable nil (reparse-symbol function_parameters) [4348 4355]))                          )
+                        (reparse-symbol indented_block_body) [4319 4371])
+                    ("get_services" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4393 4397])
+                            ("service_selector" variable nil (reparse-symbol function_parameters) [4399 4415]))                          )
+                        (reparse-symbol indented_block_body) [4376 4436])
+                    ("get_service_classes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4465 4469])
+                            ("service_selector" variable nil (reparse-symbol function_parameters) [4471 4487]))                          )
+                        (reparse-symbol indented_block_body) [4441 4508])
+                    ("_request_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4560 4564])
+                            ("request_id" variable nil (reparse-symbol function_parameters) [4566 4576])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [4578 4586]))                          )
+                        (reparse-symbol indented_block_body) [4541 4922])
+                    ("_return_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4945 4949])
+                            ("request_id" variable nil (reparse-symbol function_parameters) [4951 4961])
+                            ("value" variable nil (reparse-symbol function_parameters) [4963 4968])
+                            ("raise_exception" variable nil (reparse-symbol function_parameters) [4970 4985])
+                            ("exception_msg" variable nil (reparse-symbol function_parameters) [4987 5000]))                          )
+                        (reparse-symbol indented_block_body) [4927 5427])
+                    ("_invalidate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5448 5452])
+                            ("user_keys" variable nil (reparse-symbol function_parameters) [5454 5463]))                          )
+                        (reparse-symbol indented_block_body) [5432 5795])
+                    ("_handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5820 5824])
+                            ("message" variable nil (reparse-symbol function_parameters) [5826 5833])
+                            ("connection" variable nil (reparse-symbol function_parameters) [5835 5845]))                          )
+                        (reparse-symbol indented_block_body) [5800 6272])
+                    ("_poll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6287 6291])
+                            ("timeout" variable nil (reparse-symbol function_parameters) [6293 6300]))                          )
+                        (reparse-symbol indented_block_body) [6277 6532]))                  
+                :type "class")
+                nil [703 6532]))          
+      :file "services.py"
+      :pointmax 6532
+      :fsize 6717
+      :lastmodtime '(22378 40218 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("services" include nil nil [1 16]))          
+      :file "__init__.py"
+      :pointmax 17
+      :fsize 17
+      :lastmodtime '(22369 21168 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!pipeline!graph_processor!remote_context!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

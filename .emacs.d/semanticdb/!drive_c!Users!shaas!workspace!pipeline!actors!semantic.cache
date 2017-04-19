@@ -1,0 +1,96 @@
+;; Object actors/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "actors/"
+  :tables
+  (list
+    (semanticdb-table "services.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("abc" include nil nil [1 11])
+            ("context.service" include nil nil [13 35])
+            ("reload" code nil nil [36 59])
+            ("ActorI" type
+               (:superclasses ("context.service.Interface")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [199 203]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [143 147])
+                            ("semaphore" variable nil (reparse-symbol function_parameters) [149 158])
+                            ("node" variable nil (reparse-symbol function_parameters) [160 164])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [166 180])
+                            ("signal" variable nil (reparse-symbol function_parameters) [182 188]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [106 204])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [241 245]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [209 261])
+                    ("act" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [298 302])
+                            ("data" variable nil (reparse-symbol function_parameters) [304 308]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [266 324]))                  
+                :type "class")
+                nil [61 324])
+            ("ActorService" type
+               (:superclasses ("context.service.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [374 399])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [474 507])
+                            ("self" variable nil (reparse-symbol indented_block_body) [516 544])
+                            ("self" variable nil (reparse-symbol indented_block_body) [553 591])
+                            ("self" variable nil (reparse-symbol indented_block_body) [600 630]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [418 422])
+                            ("semaphore" variable nil (reparse-symbol function_parameters) [424 433])
+                            ("node" variable nil (reparse-symbol function_parameters) [435 439])
+                            ("signal_handler" variable nil (reparse-symbol function_parameters) [441 455])
+                            ("signal" variable nil (reparse-symbol function_parameters) [457 463]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [405 631])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [644 648]))                          )
+                        (reparse-symbol indented_block_body) [636 826])
+                    ("act" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [839 843])
+                            ("data" variable nil (reparse-symbol function_parameters) [845 849]))                          )
+                        (reparse-symbol indented_block_body) [831 872]))                  
+                :type "class")
+                nil [325 872]))          
+      :file "services.py"
+      :pointmax 872
+      :fsize 906
+      :lastmodtime '(22333 60519 0 0)
+      :unmatched-syntax nil)
+
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("graph" include nil nil [1 13])
+            ("reload" code nil nil [14 27]))          
+      :file "__init__.py"
+      :pointmax 28
+      :fsize 29
+      :lastmodtime '(22295 46838 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!pipeline!actors!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

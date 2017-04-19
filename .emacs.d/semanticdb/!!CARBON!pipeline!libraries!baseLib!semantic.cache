@@ -1,0 +1,265 @@
+;; Object baseLib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "baseLib/"
+  :tables
+  (list
+    (semanticdb-table "__init__.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "__init__.py"
+      :pointmax 315
+      :fsize 314
+      :lastmodtime '(22166 29002 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "menu.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("abc" include nil nil [322 361])
+            ("Menu" type
+               (:documentation "
+    This is the a base Menu. Use it as a base to define `Menu` classes and follow
+     the pipeline restrictions (defined with abstract methods)
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [548 571])
+                    ("__name" variable nil (reparse-symbol indented_block_body) [576 596])
+                    ("__parent" variable nil (reparse-symbol indented_block_body) [601 621])
+                    ("ITEMS" variable nil (reparse-symbol indented_block_body) [671 689])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [742 762])
+                            ("self" variable nil (reparse-symbol indented_block_body) [771 793]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [708 712])
+                            ("name" variable nil (reparse-symbol function_parameters) [714 718])
+                            ("parent" variable nil (reparse-symbol function_parameters) [720 726]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [695 794])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [811 815]))                          )
+                        (reparse-symbol indented_block_body) [799 882])
+                    ("parent" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [912 916]))                          
+                        :documentation "get the parent of this menu
+
+        :return:
+        ")
+                        (reparse-symbol indented_block_body) [887 1017])
+                    ("name" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1045 1049]))                          
+                        :documentation "get the name of this menu
+
+        :return:
+        ")
+                        (reparse-symbol indented_block_body) [1022 1146])
+                    ("create" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("abstractmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1182 1186]))                          
+                        :documentation "
+        will be called by :func:`self.perform<Menu.perform>`
+
+        .. warning::
+            This `methode` is an :ref:`abstractmethod<python:abc.abstractmethod>`
+
+        :return:
+        ")
+                        (reparse-symbol indented_block_body) [1151 1409])
+                    ("perform" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1426 1430]))                          
+                        :documentation "
+        This method is normally called by a :class:`Process<pyLib.process.Process>`.
+
+        In detail, this method will call:
+            * :func:`self.create<Menu.create>` ()
+            * :func:`pyLib.process.perform<pyLib.process.perform>` (:const:`self.ITEMS<Menu.ITEMS>`)
+
+        :return: return of :func:`perform<pyLib.process.perform>`
+        ")
+                        (reparse-symbol indented_block_body) [1414 2231])
+                    ("addMenu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2268 2272]))                          
+                        :decorators 
+                          ( ("abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2236 2288])
+                    ("addSeperator" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2310 2314]))                          
+                        :documentation "
+        adds a seperator as next item into the menu (:const:`self.ITEMS<Menu.ITEMS>` list
+
+        :return:
+        ")
+                        (reparse-symbol indented_block_body) [2293 2462]))                  
+                :type "class")
+                nil [363 2462])
+            ("SubMenu" type
+               (:superclasses ("Menu")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [2488 2511])
+                    ("__parent" variable nil (reparse-symbol indented_block_body) [2516 2531])
+                    ("__name" variable nil (reparse-symbol indented_block_body) [2536 2551])
+                    ("ITEMS" variable nil (reparse-symbol indented_block_body) [2556 2569])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2730 2750])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2759 2781]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2588 2592])
+                            ("name" variable nil (reparse-symbol function_parameters) [2594 2598])
+                            ("parent" variable nil (reparse-symbol function_parameters) [2600 2606]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2575 2782])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2799 2803]))                          )
+                        (reparse-symbol indented_block_body) [2787 2870])
+                    ("parent" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2900 2904]))                          
+                        :documentation "get the parent of this menu
+
+        :return:
+        ")
+                        (reparse-symbol indented_block_body) [2875 3005])
+                    ("name" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3033 3037]))                          
+                        :documentation "get the name of this menu
+
+        :return:
+        ")
+                        (reparse-symbol indented_block_body) [3010 3134])
+                    ("create" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("abstractmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3170 3174]))                          
+                        :documentation "
+        will be called by :func:`self.perform<Menu.perform>`
+
+        .. warning::
+            This `methode` is an :ref:`abstractmethod<python:abc.abstractmethod>`
+
+        :return:
+        ")
+                        (reparse-symbol indented_block_body) [3139 3397])
+                    ("perform" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3414 3418]))                          
+                        :documentation "
+        This method is normally called by a :class:`Process<pyLib.process.Process>`.
+
+        In detail, this method will call:
+            * :func:`self.create<Menu.create>` ()
+            * :func:`pyLib.process.perform<pyLib.process.perform>` (:const:`self.ITEMS<Menu.ITEMS>`)
+
+        :return: return of :func:`perform<pyLib.process.perform>`
+        ")
+                        (reparse-symbol indented_block_body) [3402 3837])
+                    ("addMenu" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3854 3858]))                          )
+                        (reparse-symbol indented_block_body) [3842 3900])
+                    ("addSeperator" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3922 3926]))                          
+                        :documentation "
+        adds a seperator as next item into the menu (:const:`self.ITEMS<Menu.ITEMS>` list
+
+        :return:
+        ")
+                        (reparse-symbol indented_block_body) [3905 4105]))                  
+                :type "class")
+                nil [2463 4105])
+            ("MenuItem" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [4134 4157])
+                    ("name" variable nil (reparse-symbol indented_block_body) [4162 4180])
+                    ("parent" variable nil (reparse-symbol indented_block_body) [4185 4203])
+                    ("CALLABLE" variable nil (reparse-symbol indented_block_body) [4283 4299])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" code nil (reparse-symbol indented_block_body) [4445 4454])
+                            ("self" code nil (reparse-symbol indented_block_body) [4501 4512])
+                            ("self" code nil (reparse-symbol indented_block_body) [4563 4576]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4318 4322])
+                            ("name" variable nil (reparse-symbol function_parameters) [4324 4328])
+                            ("callable" variable nil (reparse-symbol function_parameters) [4335 4343])
+                            ("parent" variable nil (reparse-symbol function_parameters) [4350 4356]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4305 4577])
+                    ("create" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("abstractmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4614 4618]))                          
+                        :documentation "
+        will be called by :func:`self.perform<Menu.perform>`
+
+        .. warning::
+            This `methode` is an :ref:`abstractmethod<python:abc.abstractmethod>`
+
+        :return:
+        ")
+                        (reparse-symbol indented_block_body) [4583 4841])
+                    ("perform" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4858 4862]))                          
+                        :documentation "
+        This method is normally called by a :class:`Process<pyLib.process.Process>`.
+
+        In detail, this method will call:
+            * :func:`self.create<MenuItem.create>` ()
+            * :func:`pyLib.process.perform<pyLib.process.perform>` (:const:`self.CALLABLE<MenuItem.ITEMS>`)
+
+        :return: return of :func:`perform<pyLib.process.perform>`
+        ")
+                        (reparse-symbol indented_block_body) [4846 5309]))                  
+                :type "class")
+                nil [4106 5309])
+            ("if" code nil nil [5311 5354]))          
+      :file "menu.py"
+      :pointmax 5354
+      :fsize 5353
+      :lastmodtime '(22176 51521 0 0)
+      :unmatched-syntax '((NAME 4521 . 4525) (IF 4546 . 4548) (ELSE 4558 . 4562) (NAME 4463 . 4467) (IF 4486 . 4488) (ELSE 4496 . 4500) (NAME 4411 . 4415) (IF 4432 . 4434) (ELSE 4440 . 4444))))
+  :file "!!CARBON!pipeline!libraries!baseLib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

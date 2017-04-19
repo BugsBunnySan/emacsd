@@ -1,0 +1,553 @@
+;; Object normals_stuff/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "normals_stuff/"
+  :tables (list 
+   (semanticdb-table "classify_image.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("\"\"\"
+classify an image or images based on a comparison of the number of white pixels in the RGB channel of an image and
+and the number of white pixels in the alpha channel.
+
+Useful for analysing renders done with 'detect_inverted_normals.py', where the RGB contains an object
+rendered with full bright color and ambient color and the alpha channel contains pixels iff the polyface normal
+points away from the camera
+\"\"\"" code nil nil [23 441])
+            ("sys" include nil nil [443 453])
+            ("os" include nil nil [454 463])
+            ("inspect" include nil nil [464 478])
+            ("threading" include nil nil [479 495])
+            ("multiprocessing" include nil nil [496 518])
+            ("start_dir" variable nil nil [520 605])
+            ("sys" code nil nil [606 658])
+            ("sys" code nil nil [659 713])
+            ("PIL" include nil nil [796 817])
+            ("context.stack" include nil nil [819 847])
+            ("name_service.services" include nil nil [848 884])
+            ("process_graph.graph" include nil nil [885 919])
+            ("process_graph.services" include nil nil [920 957])
+            ("pipeline_processor.controller" include nil nil [958 1002])
+            ("pipeline_processor.router" include nil nil [1003 1043])
+            ("pipeline_processor.evaluator" include nil nil [1044 1087])
+            ("pipeline_processor.messages" include nil nil [1088 1130])
+            ("kvstore.kvstore" include nil nil [1131 1162])
+            ("implementations.name_service.yaml" include nil nil [1164 1204])
+            ("implementations.name_service.uuid" include nil nil [1205 1245])
+            ("implementations.process_graph.base" include nil nil [1246 1287])
+            ("implementations.process_graph.actors" include nil nil [1288 1331])
+            ("implementations.router.zmq" include nil nil [1332 1365])
+            ("implementations.evaluator.threading" include nil nil [1366 1408])
+            ("FileStackNode" type
+               (:superclasses ("pg_g.Node")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [1446 1472])
+                    ("needs_initialize" variable nil (reparse-symbol indented_block_body) [1477 1500])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1622 1692])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1702 1735])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1744 1819])
+                            ("super" code nil (reparse-symbol indented_block_body) [1829 1902]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1519 1523])
+                            ("input_path" variable nil (reparse-symbol function_parameters) [1525 1535])
+                            ("input_template_name" variable nil (reparse-symbol function_parameters) [1537 1556])
+                            ("graph" variable nil (reparse-symbol function_parameters) [1575 1580])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [1587 1594])
+                            ("label" variable nil (reparse-symbol function_parameters) [1601 1606]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1506 1903])
+                    ("_check_filename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1928 1932])
+                            ("file_name" variable nil (reparse-symbol function_parameters) [1934 1943]))                          )
+                        (reparse-symbol indented_block_body) [1908 2032])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2060 2064])
+                            ("name" variable nil (reparse-symbol function_parameters) [2066 2070]))                          )
+                        (reparse-symbol indented_block_body) [2037 2218])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2238 2242])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [2244 2253]))                          )
+                        (reparse-symbol indented_block_body) [2223 2805])
+                    ("init_cursor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2826 2830])
+                            ("cid" variable nil (reparse-symbol function_parameters) [2832 2835]))                          )
+                        (reparse-symbol indented_block_body) [2810 2879])
+                    ("next_filename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2902 2906])
+                            ("cid" variable nil (reparse-symbol function_parameters) [2908 2911]))                          )
+                        (reparse-symbol indented_block_body) [2884 3269]))                  
+                :type "class")
+                nil [1410 3269])
+            ("FileNameSignal" type
+               (:superclasses ("pg_g.Signal")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [3309 3333]))                  
+                :type "class")
+                nil [3270 3334])
+            ("NextFileCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [3380 3406])
+                    ("needs_initialize" variable nil (reparse-symbol indented_block_body) [3411 3434])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3463 3467])
+                            ("name" variable nil (reparse-symbol function_parameters) [3469 3473]))                          )
+                        (reparse-symbol indented_block_body) [3440 3630])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3650 3654])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3656 3665]))                          )
+                        (reparse-symbol indented_block_body) [3635 3793])
+                    ("fetch_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3813 3817])
+                            ("node" variable nil (reparse-symbol function_parameters) [3819 3823])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3825 3834]))                          )
+                        (reparse-symbol indented_block_body) [3798 3881])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3897 3901])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [3903 3912])
+                            ("node" variable nil (reparse-symbol function_parameters) [3914 3918])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [3920 3929]))                          )
+                        (reparse-symbol indented_block_body) [3886 4196]))                  
+                :type "class")
+                nil [3335 4196])
+            ("FileClass" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [4286 4310])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4319 4349])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4358 4390])
+                            ("if" code nil (reparse-symbol indented_block_body) [4400 4556]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4239 4243])
+                            ("path" variable nil (reparse-symbol function_parameters) [4245 4249])
+                            ("obj_pixels" variable nil (reparse-symbol function_parameters) [4251 4261])
+                            ("alpha_pixels" variable nil (reparse-symbol function_parameters) [4263 4275]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4226 4556])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4573 4577]))                          )
+                        (reparse-symbol indented_block_body) [4561 4723])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4741 4745]))                          )
+                        (reparse-symbol indented_block_body) [4728 4773])
+                    ("percentage" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4807 4811]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [4778 4859]))                  
+                :type "class")
+                nil [4197 4859])
+            ("ActorDoneSignal" type
+               (:superclasses ("pg_g.Signal")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [4900 4926]))                  
+                :type "class")
+                nil [4860 4927])
+            ("FileClassificationActor" type
+               (:superclasses ("pg_g.Actor")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [4975 5013])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [5131 5242])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5252 5281])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5290 5319]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5032 5036])
+                            ("signal_handler_id" variable nil (reparse-symbol function_parameters) [5038 5055])
+                            ("actor_id" variable nil (reparse-symbol function_parameters) [5057 5065])
+                            ("signal_id" variable nil (reparse-symbol function_parameters) [5067 5076])
+                            ("input_path" variable nil (reparse-symbol function_parameters) [5078 5088])
+                            ("thresholds" variable nil (reparse-symbol function_parameters) [5090 5100])
+                            ("args" variable nil (reparse-symbol function_parameters) [5102 5106])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [5111 5117]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5019 5320])
+                    ("act" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5333 5337])
+                            ("evaluator_id" variable nil (reparse-symbol function_parameters) [5339 5351])
+                            ("feedback_queue" variable nil (reparse-symbol function_parameters) [5353 5367]))                          )
+                        (reparse-symbol indented_block_body) [5325 5860])
+                    ("check_one_image" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5885 5889])
+                            ("input_path" variable nil (reparse-symbol function_parameters) [5891 5901])
+                            ("threshold_percentage_warn" variable nil (reparse-symbol function_parameters) [5903 5928])
+                            ("threshold_percentage_crit" variable nil (reparse-symbol function_parameters) [5930 5955]))                          
+                        :documentation " check a rendered image and return the calculated pixel counts ")
+                        (reparse-symbol indented_block_body) [5865 7637]))                  
+                :type "class")
+                nil [4928 7637])
+            ("FileClassificationSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [7701 7739])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [7835 7923])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7933 7986])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7995 8030])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8040 8058])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8067 8092]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7758 7762])
+                            ("node_id" variable nil (reparse-symbol function_parameters) [7764 7771])
+                            ("max_actors" variable nil (reparse-symbol function_parameters) [7773 7783])
+                            ("actor_timeout" variable nil (reparse-symbol function_parameters) [7785 7798])
+                            ("graph" variable nil (reparse-symbol function_parameters) [7800 7805])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [7812 7819]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7745 8093])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8121 8125])
+                            ("name" variable nil (reparse-symbol function_parameters) [8127 8131]))                          )
+                        (reparse-symbol indented_block_body) [8098 8506])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8532 8536])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [8538 8549])
+                            ("signal" variable nil (reparse-symbol function_parameters) [8551 8557])
+                            ("node" variable nil (reparse-symbol function_parameters) [8559 8563])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [8565 8574]))                          )
+                        (reparse-symbol indented_block_body) [8511 10904])
+                    ("signal_handled" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10928 10932])
+                            ("signal" variable nil (reparse-symbol function_parameters) [10934 10940])
+                            ("success" variable nil (reparse-symbol function_parameters) [10942 10949]))                          )
+                        (reparse-symbol indented_block_body) [10909 11686])
+                    ("force_done" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11706 11710])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [11712 11721]))                          )
+                        (reparse-symbol indented_block_body) [11691 11906]))                  
+                :type "class")
+                nil [7638 11906])
+            ("FileClassificationNode" type
+               (:superclasses ("pg_g.Node")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [11952 11995])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [12138 12220])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12230 12347])
+                            ("self" variable nil (reparse-symbol indented_block_body) [12356 12374]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12014 12018])
+                            ("threshold_percentage_warn" variable nil (reparse-symbol function_parameters) [12020 12045])
+                            ("threshold_percentage_crit" variable nil (reparse-symbol function_parameters) [12047 12072])
+                            ("graph" variable nil (reparse-symbol function_parameters) [12091 12096])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [12103 12110])
+                            ("label" variable nil (reparse-symbol function_parameters) [12117 12122]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [12001 12375])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12403 12407])
+                            ("name" variable nil (reparse-symbol function_parameters) [12409 12413]))                          )
+                        (reparse-symbol indented_block_body) [12380 12682])
+                    ("get_classification" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12710 12714]))                          )
+                        (reparse-symbol indented_block_body) [12687 12763])
+                    ("get_thresholds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12787 12791]))                          )
+                        (reparse-symbol indented_block_body) [12768 12826])
+                    ("store_file" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12846 12850])
+                            ("file_class" variable nil (reparse-symbol function_parameters) [12852 12862])
+                            ("classification" variable nil (reparse-symbol function_parameters) [12864 12878]))                          )
+                        (reparse-symbol indented_block_body) [12831 13024])
+                    ("set_done" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13042 13046])
+                            ("done" variable nil (reparse-symbol function_parameters) [13048 13052]))                          )
+                        (reparse-symbol indented_block_body) [13029 13134])
+                    ("done" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13162 13166]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [13139 13195]))                  
+                :type "class")
+                nil [11907 13195])
+            ("ClassificationSignal" type
+               (:superclasses ("pg_g.Signal")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [13241 13271]))                  
+                :type "class")
+                nil [13196 13272])
+            ("SendOnDoneCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [13320 13353])
+                    ("fetch_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13374 13378])
+                            ("node" variable nil (reparse-symbol function_parameters) [13380 13384])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [13386 13395]))                          )
+                        (reparse-symbol indented_block_body) [13359 13423])
+                    ("_holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13439 13443])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [13445 13454])
+                            ("node" variable nil (reparse-symbol function_parameters) [13456 13460])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [13462 13471]))                          )
+                        (reparse-symbol indented_block_body) [13428 13499])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13521 13525])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [13527 13536])
+                            ("node" variable nil (reparse-symbol function_parameters) [13538 13542])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [13544 13553]))                          )
+                        (reparse-symbol indented_block_body) [13504 13597])
+                    ("data_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13616 13620])
+                            ("data" variable nil (reparse-symbol function_parameters) [13622 13626])
+                            ("node" variable nil (reparse-symbol function_parameters) [13628 13632])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [13634 13643]))                          )
+                        (reparse-symbol indented_block_body) [13602 13675]))                  
+                :type "class")
+                nil [13273 13675])
+            ("OutputNode" type
+               (:superclasses ("pg_g.Node")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [13709 13740])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [13863 13933])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13943 13982])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13991 14038]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13759 13763])
+                            ("output_path" variable nil (reparse-symbol function_parameters) [13765 13776])
+                            ("input_template_name" variable nil (reparse-symbol function_parameters) [13778 13797])
+                            ("graph" variable nil (reparse-symbol function_parameters) [13816 13821])
+                            ("item_id" variable nil (reparse-symbol function_parameters) [13828 13835])
+                            ("label" variable nil (reparse-symbol function_parameters) [13842 13847]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13746 14039])
+                    ("get_output_filename" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14068 14072]))                          )
+                        (reparse-symbol indented_block_body) [14044 14108])
+                    ("get_input_template_name" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14141 14145]))                          )
+                        (reparse-symbol indented_block_body) [14113 14189]))                  
+                :type "class")
+                nil [13676 14189])
+            ("ClassificationCSVSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [14252 14289])
+                    ("_write_csv_header" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14317 14321])
+                            ("csv_file" variable nil (reparse-symbol function_parameters) [14323 14331]))                          )
+                        (reparse-symbol indented_block_body) [14295 14454])
+                    ("_write_csv_line" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14479 14483])
+                            ("file_class" variable nil (reparse-symbol function_parameters) [14485 14495])
+                            ("classification" variable nil (reparse-symbol function_parameters) [14497 14511])
+                            ("csv_file" variable nil (reparse-symbol function_parameters) [14513 14521])
+                            ("template" variable nil (reparse-symbol function_parameters) [14523 14531]))                          )
+                        (reparse-symbol indented_block_body) [14459 15299])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [15325 15329])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [15331 15342])
+                            ("signal" variable nil (reparse-symbol function_parameters) [15344 15350])
+                            ("node" variable nil (reparse-symbol function_parameters) [15352 15356])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [15358 15367]))                          )
+                        (reparse-symbol indented_block_body) [15304 16226]))                  
+                :type "class")
+                nil [14190 16226])
+            ("make_workflow_graph" function (:arguments 
+              ( ("input_path" variable nil (reparse-symbol function_parameters) [16251 16261])
+                ("output_file_path" variable nil (reparse-symbol function_parameters) [16263 16279])
+                ("threshold_percentage_warn" variable nil (reparse-symbol function_parameters) [16281 16306])
+                ("threshold_percentage_crit" variable nil (reparse-symbol function_parameters) [16308 16333]))              ) nil [16227 17674])
+            ("main" function (:arguments 
+              ( ("argv" variable nil (reparse-symbol function_parameters) [17684 17688]))              ) nil [17675 20207])
+            ("if" code nil nil [20208 20254])
+            ("\"\"\"
+import classify_image as ci
+
+ppc, graph, start_node = ci.main([0, '/carbon/Users/shaas/normals_stuff/check_normals/images/steering_wheel_normals_camera1', '/carbon/Users/shaas/normals_stuff/output.csv', 5, 90])
+
+ev = ppc.service_thread('evaluator.')
+\"\"\"" code nil nil [20256 20513]))          
+    :file "classify_image.py"
+    :pointmax 20514
+    :fsize 20513
+    :lastmodtime '(22746 32844 955540 266000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "detect_inverted_normals.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("\"\"\"
+Render an image for all (non-intermediate, etc...) meshes in a scene, such that
+the mesh is rendered entirely white in RGB and appears in the alpha where the face
+normals of faces that get rendered point away from the camera.
+
+If run through an image analysis checking how much of the object appears in the alpha,
+allows one to tell if there's a problem with the face normals, or not.
+\"\"\"" code nil nil [1 393])
+            ("inspect" include nil nil [394 408])
+            ("os" include nil nil [409 418])
+            ("math" include nil nil [419 430])
+            ("pymel.core" include nil nil [432 455])
+            ("context.stack" include nil nil [457 484])
+            ("name_service.services" include nil nil [485 521])
+            ("implementations.name_service.yaml" include nil nil [522 562])
+            ("create_normals_shader" function (:documentation " creates a lambert shader that will have it's alpha set to 1 for all faces that
+        the camera sees 'from behind' (i.e. the faces normal faces away from the camera)
+    ") nil [564 1156])
+            ("create_camera_rig" function (:documentation " create a camera that is setup for rendering the normals ") nil [1157 1585])
+            ("prepare_render_globals" function (:documentation " prepare the render globals for the normal rendering ") nil [1586 2354])
+            ("prepare_render_mesh" function
+               (:documentation " prepare for rendering a specific mesh "
+                :arguments 
+                  ( ("camera" variable nil (reparse-symbol function_parameters) [2379 2385])
+                    ("mesh" variable nil (reparse-symbol function_parameters) [2387 2391])
+                    ("axis" variable nil (reparse-symbol function_parameters) [2393 2397]))                  )
+                nil [2355 2928])
+            ("prepare_mesh" function
+               (:documentation " prepare a mesh for normal checking rendering "
+                :arguments 
+                  ( ("mesh" variable nil (reparse-symbol function_parameters) [2946 2950])
+                    ("conform_normals" variable nil (reparse-symbol function_parameters) [2952 2967]))                  )
+                nil [2929 3268])
+            ("get_mesh_extents_3D" function
+               (:documentation " get the bounding box information of a mesh in world space "
+                :arguments 
+                  ( ("mesh" variable nil (reparse-symbol function_parameters) [3293 3297]))                  )
+                nil [3269 3722])
+            ("get_mesh_extents" function
+               (:documentation " return a camera position and z-depth that will fit the object comfortably into the camera view "
+                :arguments 
+                  ( ("mesh" variable nil (reparse-symbol function_parameters) [3744 3748])
+                    ("camera_transform" variable nil (reparse-symbol function_parameters) [3750 3766])
+                    ("camera" variable nil (reparse-symbol function_parameters) [3768 3774]))                  )
+                nil [3723 5160])
+            ("prepare_camera" function
+               (:documentation " prepare the camera to render a mesh:
+        - snap position to the center of the mesh
+        - back off enough so the camera can see the whole mesh
+        - rotate to look at the mesh
+    "
+                :arguments 
+                  ( ("camera_transform" variable nil (reparse-symbol function_parameters) [5180 5196])
+                    ("camera" variable nil (reparse-symbol function_parameters) [5198 5204])
+                    ("mesh" variable nil (reparse-symbol function_parameters) [5206 5210])
+                    ("cam_mesh_transform" variable nil (reparse-symbol function_parameters) [5212 5230])
+                    ("axis" variable nil (reparse-symbol function_parameters) [5232 5236]))                  )
+                nil [5161 5791])
+            ("render_normals_check" function
+               (:documentation " render one mesh "
+                :arguments 
+                  ( ("camera" variable nil (reparse-symbol function_parameters) [5817 5823])
+                    ("mesh" variable nil (reparse-symbol function_parameters) [5825 5829]))                  )
+                nil [5792 5932])
+            ("remove_all_shaders" function (:documentation " empty all shading groups, so assigning the normals shader will hopefully succeed ") nil [5933 6266])
+            ("assign_normals_shader" function
+               (:documentation " assign the normal shader to everything
+        note: this, combined with remove_all_shaders, was the only way to get this done reliably
+    "
+                :arguments 
+                  ( ("shading_group" variable nil (reparse-symbol function_parameters) [6293 6306]))                  )
+                nil [6267 6590])
+            ("skip_mesh" function
+               (:documentation " determine whether we need to even look at this mesh "
+                :arguments 
+                  ( ("mesh" variable nil (reparse-symbol function_parameters) [6605 6609]))                  )
+                nil [6591 6788])
+            ("check_one_mesh" function
+               (:documentation " renders three normals checking images (one along each axis) for one mesh "
+                :arguments 
+                  ( ("camera_transform" variable nil (reparse-symbol function_parameters) [6808 6824])
+                    ("camera" variable nil (reparse-symbol function_parameters) [6826 6832])
+                    ("mesh" variable nil (reparse-symbol function_parameters) [6834 6838])
+                    ("conform_normals" variable nil (reparse-symbol function_parameters) [6840 6855]))                  )
+                nil [6789 7359])
+            ("check_normals" function
+               (:documentation " main function, will render a normals checking image for each mesh in the scene
+	this will pretty badly mangle stuff in the scene (like, visibility, shading), so don't
+        do this on a scene you want to keep for anything else
+    "
+                :arguments 
+                  ( ("conform_normals" variable nil (reparse-symbol function_parameters) [7378 7393]))                  )
+                nil [7360 8360]))          
+    :file "detect_inverted_normals.py"
+    :pointmax 8323
+    :fsize 8359
+    :lastmodtime '(22745 11600 54281 750000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!mnt!data-1!Users!shaas!normals_stuff!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

@@ -1,0 +1,221 @@
+;; Object pipeline_objects/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "pipeline_objects/"
+  :tables
+  (list
+    (semanticdb-table "pipeline_object.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("sys" include nil nil [1 11])
+            ("context.stack" include nil nil [13 33])
+            ("context.kvstore" include nil nil [34 56])
+            ("PODB" type
+               (:superclasses ("context.stack.Context")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [197 283])
+                            ("self" code nil (reparse-symbol indented_block_body) [293 320])
+                            ("self" code nil (reparse-symbol indented_block_body) [330 363]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [110 114])
+                            ("podb_info" variable nil (reparse-symbol function_parameters) [116 125])
+                            ("podb_config" variable nil (reparse-symbol function_parameters) [127 138])
+                            ("name" variable nil (reparse-symbol function_parameters) [140 144])
+                            ("config_path_sep" variable nil (reparse-symbol function_parameters) [151 166])
+                            ("init_from" variable nil (reparse-symbol function_parameters) [172 181]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [97 364])
+                    ("_connect_db" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [459 463])
+                            ("podb_info" variable nil (reparse-symbol function_parameters) [465 474]))                          )
+                        (reparse-symbol indented_block_body) [443 490])
+                    ("_read_db_config" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [515 519])
+                            ("podb_config" variable nil (reparse-symbol function_parameters) [521 532]))                          )
+                        (reparse-symbol indented_block_body) [495 548])
+                    ("get_object" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [568 572])
+                            ("po_type" variable nil (reparse-symbol function_parameters) [574 581])
+                            ("po_name" variable nil (reparse-symbol function_parameters) [583 590]))                          )
+                        (reparse-symbol indented_block_body) [553 606]))                  
+                :type "class")
+                nil [58 606])
+            ("PipelineObjectType" type
+               (:superclasses ("context.kvstore.KVStore")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [759 844])
+                            ("self" variable nil (reparse-symbol indented_block_body) [854 871])
+                            ("self" variable nil (reparse-symbol indented_block_body) [880 901])
+                            ("self" variable nil (reparse-symbol indented_block_body) [910 937])
+                            ("self" variable nil (reparse-symbol indented_block_body) [946 963])
+                            ("self" code nil (reparse-symbol indented_block_body) [973 984]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [675 679])
+                            ("podb" variable nil (reparse-symbol function_parameters) [681 685])
+                            ("cursor" variable nil (reparse-symbol function_parameters) [687 693])
+                            ("db_config" variable nil (reparse-symbol function_parameters) [695 704])
+                            ("name" variable nil (reparse-symbol function_parameters) [706 710])
+                            ("parent" variable nil (reparse-symbol function_parameters) [712 718])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [725 733])
+                            ("data" variable nil (reparse-symbol function_parameters) [739 743]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [662 985])
+                    ("__getattr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1006 1010])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [1012 1020]))                          )
+                        (reparse-symbol indented_block_body) [990 1065]))                  
+                :type "class")
+                nil [607 1065])
+            ("POVariantGroup" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1166 1207])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1216 1261]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1113 1117])
+                            ("pipeline_objects" variable nil (reparse-symbol function_parameters) [1119 1135])
+                            ("master_object_name" variable nil (reparse-symbol function_parameters) [1137 1155]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1100 1262]))                  
+                :type "class")
+                nil [1066 1262])
+            ("PipelineObject" type
+               (:superclasses ("context.kvstore.KVStore")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [1411 1492])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1502 1519])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1528 1549])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1558 1585])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1594 1612])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1621 1639])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1648 1675])
+                            ("self" code nil (reparse-symbol indented_block_body) [1685 1696]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1327 1331])
+                            ("podb" variable nil (reparse-symbol function_parameters) [1333 1337])
+                            ("cursor" variable nil (reparse-symbol function_parameters) [1339 1345])
+                            ("db_config" variable nil (reparse-symbol function_parameters) [1347 1356])
+                            ("name" variable nil (reparse-symbol function_parameters) [1358 1362])
+                            ("parent" variable nil (reparse-symbol function_parameters) [1364 1370])
+                            ("path_sep" variable nil (reparse-symbol function_parameters) [1377 1385])
+                            ("data" variable nil (reparse-symbol function_parameters) [1391 1395]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1314 1697])
+                    ("_resolve_key_path" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1724 1728])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [1730 1738]))                          )
+                        (reparse-symbol indented_block_body) [1702 1767])
+                    ("_insert_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1790 1794])
+                            ("key" variable nil (reparse-symbol function_parameters) [1796 1799])
+                            ("value" variable nil (reparse-symbol function_parameters) [1801 1806]))                          )
+                        (reparse-symbol indented_block_body) [1772 1970])
+                    ("_retrieve_value" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1995 1999])
+                            ("key" variable nil (reparse-symbol function_parameters) [2001 2004]))                          )
+                        (reparse-symbol indented_block_body) [1975 2168])
+                    ("_find_place" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2189 2193])
+                            ("key_path" variable nil (reparse-symbol function_parameters) [2195 2203])
+                            ("create" variable nil (reparse-symbol function_parameters) [2205 2211])
+                            ("properties" variable nil (reparse-symbol function_parameters) [2219 2229]))                          )
+                        (reparse-symbol indented_block_body) [2173 2590])
+                    ("__getattr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2611 2615])
+                            ("user_key" variable nil (reparse-symbol function_parameters) [2617 2625]))                          )
+                        (reparse-symbol indented_block_body) [2595 2670])
+                    ("sync" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2684 2688]))                          )
+                        (reparse-symbol indented_block_body) [2675 2736])
+                    ("commit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2752 2756]))                          )
+                        (reparse-symbol indented_block_body) [2741 2807]))                  
+                :type "class")
+                nil [1263 2807])
+            ("sqlite3" include nil nil [2836 2850])
+            ("yaml" include nil nil [2851 2862])
+            ("SQLite3PODB" type
+               (:superclasses ("PODB")
+                :members 
+                  ( ("_connect_db" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2909 2913])
+                            ("podb_info" variable nil (reparse-symbol function_parameters) [2915 2924]))                          )
+                        (reparse-symbol indented_block_body) [2893 2978])
+                    ("_read_db_config" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3003 3007])
+                            ("podb_config" variable nil (reparse-symbol function_parameters) [3009 3020]))                          )
+                        (reparse-symbol indented_block_body) [2983 3085])
+                    ("get_object" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3105 3109])
+                            ("po_type" variable nil (reparse-symbol function_parameters) [3111 3118])
+                            ("po_name" variable nil (reparse-symbol function_parameters) [3120 3127]))                          )
+                        (reparse-symbol indented_block_body) [3090 3407]))                  
+                :type "class")
+                nil [2864 3407])
+            ("SQLite3PipelineObjectType" type
+               (:superclasses ("PipelineObjectType")
+                :members 
+                  ( ("sync" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3474 3478]))                          )
+                        (reparse-symbol indented_block_body) [3465 4064]))                  
+                :type "class")
+                nil [3408 4064])
+            ("SQLite3PipelineObject" type
+               (:superclasses ("PipelineObject")
+                :members 
+                  ( ("sync" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4123 4127]))                          )
+                        (reparse-symbol indented_block_body) [4114 4416]))                  
+                :type "class")
+                nil [4065 4416]))          
+      :file "pipeline_object.py"
+      :pointmax 4416
+      :fsize 4560
+      :lastmodtime '(22275 28277 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!Users!shaas!workspace!pipeline_lab!pipeline_objects!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

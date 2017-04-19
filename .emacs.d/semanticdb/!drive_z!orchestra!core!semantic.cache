@@ -1,0 +1,83 @@
+;; Object core/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "core/"
+  :tables
+  (list
+    (semanticdb-table "pathlib.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "pathlib.py"
+      :pointmax 41487
+      :fsize 41486
+      :lastmodtime '(21400 28305 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "mcls_example.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("types" include nil nil [1 13])
+            ("logging" include nil nil [15 29])
+            ("traceback" include nil nil [31 52])
+            ("sys" include nil nil [31 52])
+            ("log" variable nil nil [322 349])
+            ("log" code nil nil [350 389])
+            ("mydecfunc" function (:arguments 
+              ( ("wrapped_callable" variable nil (reparse-symbol function_parameters) [405 421]))              ) nil [391 652])
+            ("anotherdecfunc" function (:arguments 
+              ( ("wrapped_callable" variable nil (reparse-symbol function_parameters) [673 689]))              ) nil [654 829])
+            ("MyMeta" type
+               (:superclasses ("type")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [907 959])
+                            ("print" code nil (reparse-symbol indented_block_body) [968 994]))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [868 871])
+                            ("name" variable nil (reparse-symbol function_parameters) [873 877])
+                            ("bases" variable nil (reparse-symbol function_parameters) [879 884])
+                            ("dictionary" variable nil (reparse-symbol function_parameters) [886 896]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [855 995])
+                    ("__new__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [1013 1016])
+                        ("name" variable nil (reparse-symbol function_parameters) [1018 1022])
+                        ("bases" variable nil (reparse-symbol function_parameters) [1024 1029])
+                        ("dictionary" variable nil (reparse-symbol function_parameters) [1031 1041]))                      ) (reparse-symbol indented_block_body) [1001 1332]))                  
+                :type "class")
+                nil [831 1332])
+            ("MyClass" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__metaclass__" variable nil (reparse-symbol indented_block_body) [1361 1383])
+                    ("__init__" function
+                       (:suite 
+                          ( ("print" code nil (reparse-symbol indented_block_body) [1417 1441]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1402 1406]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1389 1442])
+                    ("somemeth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1480 1484]))                          
+                        :decorators 
+                          ( ("anotherdecfunc" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1447 1592]))                  
+                :type "class")
+                nil [1334 1592])
+            ("func_that_raises" function nil nil [1595 1669])
+            ("log_uncaught_exceptions" function (:arguments 
+              ( ("exc_class" variable nil (reparse-symbol function_parameters) [1699 1708])
+                ("exc" variable nil (reparse-symbol function_parameters) [1710 1713])
+                ("tb" variable nil (reparse-symbol function_parameters) [1715 1717]))              ) nil [1671 1807])
+            ("sys" variable nil nil [1813 1853])
+            ("if" code nil nil [2095 2209]))          
+      :file "mcls_example.py"
+      :pointmax 2213
+      :fsize 2212
+      :lastmodtime '(21400 28305 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 589 . 616) (NEWLINE 588 . 589) (COLON 587 . 588) (TRY 519 . 522) (AS 583 . 585))))
+  :file "!drive_z!orchestra!core!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

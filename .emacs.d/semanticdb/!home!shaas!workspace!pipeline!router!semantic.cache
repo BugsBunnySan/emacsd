@@ -1,0 +1,371 @@
+;; Object router/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "router/"
+  :tables (list 
+   (semanticdb-table "services.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("abc" include nil nil [1 11])
+            ("threading" include nil nil [12 28])
+            ("context.kvstore" include nil nil [30 52])
+            ("context.service" include nil nil [53 75])
+            ("messages" include nil nil [77 92])
+            ("ConnectionI" type
+               (:superclasses ("context.service.Interface")
+                :members 
+                  ( ("put" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [176 180])
+                            ("message" variable nil (reparse-symbol function_parameters) [182 189]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [144 205])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [242 246]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [210 262]))                  
+                :type "class")
+                nil [94 262])
+            ("NetworkingThreadI" type
+               (:superclasses ("context.service.Interface")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [404 408]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [356 360])
+                            ("controller_id" variable nil (reparse-symbol function_parameters) [362 375])
+                            ("controller_queue" variable nil (reparse-symbol function_parameters) [377 393]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [319 409])
+                    ("ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [459 463]))                          
+                        :decorators 
+                          ( ("abc.abstractproperty" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [414 486])
+                    ("_make_ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [555 559]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [506 575])
+                    ("_make_network_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [633 637])
+                            ("network_info" variable nil (reparse-symbol function_parameters) [639 651]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [580 667])
+                    ("_tear_down_network_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [730 734])
+                            ("connection" variable nil (reparse-symbol function_parameters) [736 746]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [672 762])
+                    ("send_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [808 812])
+                            ("message" variable nil (reparse-symbol function_parameters) [814 821]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [767 837])
+                    ("_register_recipients" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [891 895])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [897 906])
+                            ("recipient_ids" variable nil (reparse-symbol function_parameters) [908 921]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [842 937])
+                    ("_unregister_recipients" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [993 997])
+                            ("recipient_ids" variable nil (reparse-symbol function_parameters) [999 1012]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [942 1028])
+                    ("_unregister_router_ids" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1084 1088])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [1090 1099]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1033 1115])
+                    ("_disconnect_router" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1167 1171])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [1173 1182]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1120 1198])
+                    ("_connect_to" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1259 1263])
+                            ("message" variable nil (reparse-symbol function_parameters) [1265 1272]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1219 1288])
+                    ("_reply_hello" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1334 1338])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [1340 1349])
+                            ("connection" variable nil (reparse-symbol function_parameters) [1351 1361]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1293 1377])
+                    ("_adjust_routing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1426 1430])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [1432 1441])
+                            ("add_ids" variable nil (reparse-symbol function_parameters) [1443 1450])
+                            ("remove_ids" variable nil (reparse-symbol function_parameters) [1457 1467]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1382 1488])
+                    ("_request_routing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1538 1542])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [1544 1553]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1493 1569])
+                    ("_set_routing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1615 1619])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [1621 1630])
+                            ("recipient_ids" variable nil (reparse-symbol function_parameters) [1632 1645]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1574 1661])
+                    ("_disconnect_from" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1711 1715])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [1717 1726]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1666 1742])
+                    ("_shutdown" function (:decorators 
+                      ( ("abc.abstractmethod" function (:type "decorator") nil nil))                      ) (reparse-symbol indented_block_body) [1747 1801])
+                    ("_poll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1855 1859]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1821 1875])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1912 1916]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1880 1932])
+                    ("_handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1981 1985])
+                            ("message" variable nil (reparse-symbol function_parameters) [1987 1994])
+                            ("connection" variable nil (reparse-symbol function_parameters) [1996 2006]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1937 2022])
+                    ("_handle_custom_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2078 2082])
+                            ("message" variable nil (reparse-symbol function_parameters) [2084 2091])
+                            ("connection" variable nil (reparse-symbol function_parameters) [2093 2103]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2027 2119]))                  
+                :type "class")
+                nil [263 2119])
+            ("NetworkingThreadService" type
+               (:superclasses ("context.service.Service" "threading.Thread")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [2199 2235])
+                    ("__init__" function
+                       (:suite 
+                          ( ("threading" code nil (reparse-symbol indented_block_body) [2302 2333])
+                            ("context" code nil (reparse-symbol indented_block_body) [2342 2380])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2390 2425])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2435 2482])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2520 2565])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2609 2671])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2680 2737])
+                            ("self" code nil (reparse-symbol indented_block_body) [2747 2774])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2784 2808]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2254 2258])
+                            ("controller_id" variable nil (reparse-symbol function_parameters) [2260 2273])
+                            ("controller_queue" variable nil (reparse-symbol function_parameters) [2275 2291]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2241 2809])
+                    ("ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2859 2863]))                          
+                        :decorators 
+                          ( ("abc.abstractproperty" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2814 2886])
+                    ("_make_ipc_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2956 2960]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2907 2976])
+                    ("_make_network_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3035 3039])
+                            ("network_info" variable nil (reparse-symbol function_parameters) [3041 3053]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2982 3076])
+                    ("_tear_down_network_connection" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3139 3143])
+                            ("connection" variable nil (reparse-symbol function_parameters) [3145 3155]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [3081 3171])
+                    ("send_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3193 3197])
+                            ("message" variable nil (reparse-symbol function_parameters) [3199 3206]))                          )
+                        (reparse-symbol indented_block_body) [3176 3720])
+                    ("_register_recipients" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3750 3754])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [3756 3765])
+                            ("recipient_ids" variable nil (reparse-symbol function_parameters) [3767 3780]))                          )
+                        (reparse-symbol indented_block_body) [3725 3884])
+                    ("_unregister_recipients" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4029 4033])
+                            ("recipient_ids" variable nil (reparse-symbol function_parameters) [4035 4048]))                          )
+                        (reparse-symbol indented_block_body) [4002 4144])
+                    ("_unregister_router_ids" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4176 4180])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [4182 4191]))                          )
+                        (reparse-symbol indented_block_body) [4149 4448])
+                    ("_disconnect_router" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4476 4480])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [4482 4491]))                          )
+                        (reparse-symbol indented_block_body) [4453 4633])
+                    ("_connect_to" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4670 4674])
+                            ("message" variable nil (reparse-symbol function_parameters) [4676 4683]))                          )
+                        (reparse-symbol indented_block_body) [4654 5361])
+                    ("_reply_hello" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5383 5387])
+                            ("sender_id" variable nil (reparse-symbol function_parameters) [5389 5398])
+                            ("connection" variable nil (reparse-symbol function_parameters) [5400 5410]))                          )
+                        (reparse-symbol indented_block_body) [5366 5658])
+                    ("_adjust_routing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5683 5687])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [5689 5698])
+                            ("add_ids" variable nil (reparse-symbol function_parameters) [5700 5707])
+                            ("remove_ids" variable nil (reparse-symbol function_parameters) [5714 5724]))                          )
+                        (reparse-symbol indented_block_body) [5663 5844])
+                    ("_request_routing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5870 5874])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [5876 5885]))                          )
+                        (reparse-symbol indented_block_body) [5849 6013])
+                    ("_set_routing" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6035 6039])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [6041 6050])
+                            ("recipient_ids" variable nil (reparse-symbol function_parameters) [6052 6065]))                          )
+                        (reparse-symbol indented_block_body) [6018 6227])
+                    ("_disconnect_from" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6253 6257])
+                            ("router_id" variable nil (reparse-symbol function_parameters) [6259 6268]))                          )
+                        (reparse-symbol indented_block_body) [6232 6480])
+                    ("_shutdown" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6499 6503]))                          )
+                        (reparse-symbol indented_block_body) [6485 6641])
+                    ("_poll" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6698 6702]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [6664 6718])
+                    ("run" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6731 6735]))                          )
+                        (reparse-symbol indented_block_body) [6723 7199])
+                    ("_handle_message" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7224 7228])
+                            ("message" variable nil (reparse-symbol function_parameters) [7230 7237])
+                            ("connection" variable nil (reparse-symbol function_parameters) [7239 7249]))                          )
+                        (reparse-symbol indented_block_body) [7204 8503]))                  
+                :type "class")
+                nil [2121 8503]))          
+    :file "services.py"
+    :pointmax 8499
+    :fsize 8502
+    :lastmodtime '(22515 55080 205389 23000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "messages.py"
+    :file "messages.py"
+    :fsize 1987
+    :lastmodtime '(22498 51851 593871 429000)
+    )
+   )
+  :file "!home!shaas!workspace!pipeline!router!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

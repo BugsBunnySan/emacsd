@@ -1,0 +1,866 @@
+;; Object save_scene_workflow/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "save_scene_workflow/"
+  :tables (list 
+   (semanticdb-table "save_scene_workflow.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("abc" include nil nil [1 11])
+            ("threading" include nil nil [12 28])
+            ("sys" include nil nil [29 39])
+            ("time" include nil nil [40 51])
+            ("contextlib" include nil nil [52 69])
+            ("glob" include nil nil [70 91])
+            ("copy" include nil nil [92 123])
+            ("process_graph.graph" include nil nil [125 159])
+            ("kvstore.kvstore" include nil nil [160 191])
+            ("kvstore.specialized" include nil nil [192 227])
+            ("name_service.services" include nil nil [228 264])
+            ("context.service" include nil nil [265 294])
+            ("context.stack" include nil nil [295 323])
+            ("pipeline_processor.controller" include nil nil [324 368])
+            ("pipeline_processor.router" include nil nil [369 409])
+            ("pipeline_processor.context_library" include nil nil [410 460])
+            ("pipeline_processor.remote_context" include nil nil [461 510])
+            ("pipeline_processor.evaluator" include nil nil [511 554])
+            ("implementations.name_service.yaml" include nil nil [556 596])
+            ("implementations.router.zmq" include nil nil [597 630])
+            ("implementations.context_library.threading" include nil nil [631 679])
+            ("implementations.remote_context.threading" include nil nil [680 727])
+            ("implementations.evaluator.threading" include nil nil [728 770])
+            ("implementations.name_service.uuid" include nil nil [771 811])
+            ("implementations.process_graph.base" include nil nil [812 853])
+            ("VersioningServiceI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("_make_data_store" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [945 949]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [900 965])
+                    ("register_new_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1020 1024])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [1026 1037])
+                            ("scheme_service_id" variable nil (reparse-symbol function_parameters) [1039 1056]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [970 1072])
+                    ("versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1114 1118])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [1120 1131]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1077 1147])
+                    ("reserve_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1201 1205])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [1207 1218]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1152 1234])
+                    ("free_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1280 1284])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [1286 1297])
+                            ("version" variable nil (reparse-symbol function_parameters) [1299 1306]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1239 1322])
+                    ("set_version_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1372 1376])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [1378 1389])
+                            ("version" variable nil (reparse-symbol function_parameters) [1391 1398])
+                            ("resource" variable nil (reparse-symbol function_parameters) [1400 1408]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1327 1424]))                  
+                :type "class")
+                nil [855 1424])
+            ("VersioningSchemeI" type
+               (:superclasses ("c_s.Interface")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [1551 1555]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1506 1510])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [1512 1523])
+                            ("args" variable nil (reparse-symbol function_parameters) [1525 1530])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1532 1540]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1469 1556])
+                    ("versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1600 1604]))                          
+                        :decorators 
+                          ( ("abc.abstractproperty" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1561 1620])
+                    ("highest_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1671 1675]))                          
+                        :decorators 
+                          ( ("abc.abstractproperty" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1625 1691])
+                    ("reserve_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1745 1749]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1696 1765])
+                    ("free_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1811 1815])
+                            ("version" variable nil (reparse-symbol function_parameters) [1817 1824]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1770 1840])
+                    ("set_version_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1890 1894])
+                            ("version" variable nil (reparse-symbol function_parameters) [1896 1903])
+                            ("resource" variable nil (reparse-symbol function_parameters) [1905 1913]))                          
+                        :decorators 
+                          ( ("abc.abstractmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1845 1929]))                  
+                :type "class")
+                nil [1425 1929])
+            ("VersioningScheme" type
+               (:superclasses ("c_s.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [1971 2007])
+                    ("__register_as_service__" variable nil (reparse-symbol indented_block_body) [2012 2043])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2107 2138])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2148 2178])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2188 2209])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2218 2248])
+                            ("self" code nil (reparse-symbol indented_block_body) [2257 2284]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2062 2066])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [2068 2079])
+                            ("args" variable nil (reparse-symbol function_parameters) [2081 2086])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [2088 2096]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2049 2285])
+                    ("_initialize_versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2315 2319]))                          )
+                        (reparse-symbol indented_block_body) [2290 2335])
+                    ("versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2367 2371]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2340 2506])
+                    ("reserve_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2536 2540]))                          )
+                        (reparse-symbol indented_block_body) [2511 2563])
+                    ("free_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2585 2589])
+                            ("version" variable nil (reparse-symbol function_parameters) [2591 2598]))                          )
+                        (reparse-symbol indented_block_body) [2568 2637])
+                    ("highest_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2662 2666]))                          )
+                        (reparse-symbol indented_block_body) [2642 2703])
+                    ("set_version_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2729 2733])
+                            ("version" variable nil (reparse-symbol function_parameters) [2735 2742])
+                            ("resource" variable nil (reparse-symbol function_parameters) [2744 2752]))                          )
+                        (reparse-symbol indented_block_body) [2708 2798]))                  
+                :type "class")
+                nil [1930 2798])
+            ("VersioningService" type
+               (:superclasses ("c_s.Service")
+                :members 
+                  ( ("__implements__" variable nil (reparse-symbol indented_block_body) [2841 2878])
+                    ("service_id" variable nil (reparse-symbol indented_block_body) [2883 2917])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" code nil (reparse-symbol indented_block_body) [2951 2974]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2936 2940]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2923 2975])
+                    ("_make_data_store" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3001 3005]))                          )
+                        (reparse-symbol indented_block_body) [2980 3059])
+                    ("register_new_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3090 3094])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [3096 3107])
+                            ("scheme_service_ids" variable nil (reparse-symbol function_parameters) [3109 3127])
+                            ("args" variable nil (reparse-symbol function_parameters) [3129 3134])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [3136 3144]))                          )
+                        (reparse-symbol indented_block_body) [3064 3413])
+                    ("versioning_schemes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3455 3459]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [3418 3515])
+                    ("versioning_scheme" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3542 3546])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [3548 3559]))                          )
+                        (reparse-symbol indented_block_body) [3520 3615])
+                    ("versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3633 3637])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [3639 3650]))                          )
+                        (reparse-symbol indented_block_body) [3620 3715])
+                    ("reserve_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3745 3749])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [3751 3762])
+                            ("args" variable nil (reparse-symbol function_parameters) [3764 3769])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [3771 3779]))                          )
+                        (reparse-symbol indented_block_body) [3720 3873])
+                    ("free_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3895 3899])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [3901 3912])
+                            ("version" variable nil (reparse-symbol function_parameters) [3914 3921])
+                            ("args" variable nil (reparse-symbol function_parameters) [3923 3928])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [3930 3938]))                          )
+                        (reparse-symbol indented_block_body) [3878 4026])
+                    ("set_version_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4052 4056])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [4058 4069])
+                            ("version" variable nil (reparse-symbol function_parameters) [4071 4078])
+                            ("resource" variable nil (reparse-symbol function_parameters) [4080 4088])
+                            ("args" variable nil (reparse-symbol function_parameters) [4090 4095])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [4097 4105]))                          )
+                        (reparse-symbol indented_block_body) [4031 4207]))                  
+                :type "class")
+                nil [2799 4207])
+            ("MUTVersioningScheme" type
+               (:superclasses ("VersioningScheme")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [4257 4311])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [4421 4464])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4473 4516])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4525 4560])
+                            ("print" code nil (reparse-symbol indented_block_body) [4570 4659])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4669 4699])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4709 4779])
+                            ("super" code nil (reparse-symbol indented_block_body) [4789 4843]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4330 4334])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [4336 4347])
+                            ("rid_template_name" variable nil (reparse-symbol function_parameters) [4349 4366])
+                            ("url_template_name" variable nil (reparse-symbol function_parameters) [4368 4385])
+                            ("version_token" variable nil (reparse-symbol function_parameters) [4387 4400]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4317 4844])
+                    ("resources" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5042 5046]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [5014 5088])
+                    ("_initialize_versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5118 5122]))                          )
+                        (reparse-symbol indented_block_body) [5093 6252])
+                    ("_get_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6279 6283]))                          )
+                        (reparse-symbol indented_block_body) [6257 6572])
+                    ("free_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6594 6598])
+                            ("version" variable nil (reparse-symbol function_parameters) [6600 6607]))                          )
+                        (reparse-symbol indented_block_body) [6577 6646])
+                    ("_set_version_reserved" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6677 6681])
+                            ("version" variable nil (reparse-symbol function_parameters) [6683 6690])
+                            ("lease_time" variable nil (reparse-symbol function_parameters) [6692 6702]))                          )
+                        (reparse-symbol indented_block_body) [6651 6802])
+                    ("_check_reserved_versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6836 6840]))                          )
+                        (reparse-symbol indented_block_body) [6807 7132])
+                    ("reserve_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7162 7166])
+                            ("lease_time" variable nil (reparse-symbol function_parameters) [7168 7178]))                          )
+                        (reparse-symbol indented_block_body) [7137 7434])
+                    ("lock_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7492 7496]))                          
+                        :decorators 
+                          ( ("contextlib.contextmanager" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [7439 7676])
+                    ("format_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7700 7704])
+                            ("version" variable nil (reparse-symbol function_parameters) [7706 7713]))                          )
+                        (reparse-symbol indented_block_body) [7681 7876])
+                    ("set_version_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7902 7906])
+                            ("version" variable nil (reparse-symbol function_parameters) [7908 7915])
+                            ("resource" variable nil (reparse-symbol function_parameters) [7917 7925]))                          )
+                        (reparse-symbol indented_block_body) [7881 8221])
+                    ("version_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8247 8251])
+                            ("version" variable nil (reparse-symbol function_parameters) [8253 8260]))                          )
+                        (reparse-symbol indented_block_body) [8226 8302])
+                    ("resolve_template" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8328 8332])
+                            ("values" variable nil (reparse-symbol function_parameters) [8334 8340]))                          )
+                        (reparse-symbol indented_block_body) [8307 8460]))                  
+                :type "class")
+                nil [4208 8460])
+            ("Resource" type
+               (:superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [8403 8432])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8441 8471])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8480 8502])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8511 8537]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8502 8506])
+                            ("process_id" variable nil (reparse-symbol function_parameters) [8508 8518])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [8520 8531])
+                            ("version" variable nil (reparse-symbol function_parameters) [8533 8540])
+                            ("url" variable nil (reparse-symbol function_parameters) [8547 8550]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8489 8701])
+                    ("id" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8727 8731]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [8706 8766]))                  
+                :type "class")
+                nil [8461 8766])
+            ("KeyedResourcesSignal" type
+               (:superclasses ("pg_g.Signal")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [8812 8863])
+                    ("resource_ids" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8886 8890]))                          )
+                        (reparse-symbol indented_block_body) [8869 8931])
+                    ("set_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8953 8957])
+                            ("resource" variable nil (reparse-symbol function_parameters) [8959 8967]))                          )
+                        (reparse-symbol indented_block_body) [8936 9013])
+                    ("get_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9035 9039])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [9041 9052]))                          )
+                        (reparse-symbol indented_block_body) [9018 9094])
+                    ("del_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9116 9120])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [9122 9133]))                          )
+                        (reparse-symbol indented_block_body) [9099 9172]))                  
+                :type "class")
+                nil [8767 9172])
+            ("VersionedResourceNode" type
+               (:superclasses ("pg_g.Node")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [9217 9270])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9299 9303])
+                            ("name" variable nil (reparse-symbol function_parameters) [9305 9309]))                          )
+                        (reparse-symbol indented_block_body) [9276 9441])
+                    ("register_new_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9472 9476])
+                            ("resource" variable nil (reparse-symbol function_parameters) [9478 9486])
+                            ("scheme_sids" variable nil (reparse-symbol function_parameters) [9488 9499])
+                            ("scheme_args" variable nil (reparse-symbol function_parameters) [9501 9512])
+                            ("scheme_kwargs" variable nil (reparse-symbol function_parameters) [9519 9532]))                          )
+                        (reparse-symbol indented_block_body) [9446 10029])
+                    ("next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10051 10055])
+                            ("resource" variable nil (reparse-symbol function_parameters) [10057 10065]))                          )
+                        (reparse-symbol indented_block_body) [10034 10166])
+                    ("store_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10190 10194])
+                            ("resource" variable nil (reparse-symbol function_parameters) [10196 10204])
+                            ("token_values" variable nil (reparse-symbol function_parameters) [10206 10218]))                          )
+                        (reparse-symbol indented_block_body) [10171 10475])
+                    ("store_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10503 10507])
+                            ("resource" variable nil (reparse-symbol function_parameters) [10509 10517])
+                            ("token_values" variable nil (reparse-symbol function_parameters) [10519 10531]))                          )
+                        (reparse-symbol indented_block_body) [10480 10723])
+                    ("resource_ids" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10745 10749]))                          )
+                        (reparse-symbol indented_block_body) [10728 10814])
+                    ("resource_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10840 10844])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [10846 10857])
+                            ("version" variable nil (reparse-symbol function_parameters) [10859 10866]))                          )
+                        (reparse-symbol indented_block_body) [10819 10958])
+                    ("versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10976 10980])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [10982 10993]))                          )
+                        (reparse-symbol indented_block_body) [10963 11068]))                  
+                :type "class")
+                nil [9173 11068])
+            ("NewResourceVersionCondition" type
+               (:superclasses ("pg_g.Condition")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [11124 11184])
+                    ("needs_initialize" variable nil (reparse-symbol indented_block_body) [11189 11212])
+                    ("make_context_layer" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11241 11245])
+                            ("name" variable nil (reparse-symbol function_parameters) [11247 11251]))                          )
+                        (reparse-symbol indented_block_body) [11218 11389])
+                    ("initialize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11409 11413])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [11415 11424]))                          )
+                        (reparse-symbol indented_block_body) [11394 11973])
+                    ("fetch_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11993 11997])
+                            ("node" variable nil (reparse-symbol function_parameters) [11999 12003])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [12005 12014]))                          )
+                        (reparse-symbol indented_block_body) [11978 12631])
+                    ("holds" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12646 12650])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [12652 12661])
+                            ("node" variable nil (reparse-symbol function_parameters) [12663 12667])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [12669 12678]))                          )
+                        (reparse-symbol indented_block_body) [12636 12712])
+                    ("_make_signal_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12739 12743])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [12745 12756])
+                            ("version" variable nil (reparse-symbol function_parameters) [12758 12765])
+                            ("node" variable nil (reparse-symbol function_parameters) [12767 12771])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [12773 12782]))                          )
+                        (reparse-symbol indented_block_body) [12717 12944])
+                    ("compute_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12966 12970])
+                            ("node_data" variable nil (reparse-symbol function_parameters) [12972 12981])
+                            ("node" variable nil (reparse-symbol function_parameters) [12983 12987])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [12989 12998]))                          )
+                        (reparse-symbol indented_block_body) [12949 13212])
+                    ("data_used" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13231 13235])
+                            ("signal_data" variable nil (reparse-symbol function_parameters) [13237 13248])
+                            ("node" variable nil (reparse-symbol function_parameters) [13250 13254])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [13256 13265]))                          )
+                        (reparse-symbol indented_block_body) [13217 13413]))                  
+                :type "class")
+                nil [11069 13413])
+            ("PutResourceOnNodeSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [13476 13528])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13555 13559])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [13561 13572])
+                            ("signal" variable nil (reparse-symbol function_parameters) [13574 13580])
+                            ("node" variable nil (reparse-symbol function_parameters) [13582 13586])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [13588 13597]))                          )
+                        (reparse-symbol indented_block_body) [13534 13793]))                  
+                :type "class")
+                nil [13414 13793])
+            ("main_network_config" variable nil nil [13795 13855])
+            ("resource_id_1" variable nil nil [13856 13895])
+            ("start_main_pipeline_processor" function nil nil [13897 15533])
+            ("start_remote_pp" function (:arguments 
+              ( ("pp_id" variable nil (reparse-symbol function_parameters) [15554 15559]))              ) nil [15534 18327])
+            ("\"\"\"
+import implementations.name_service.yaml
+import name_service.services as ns_s
+
+ns = CONTEXT.make_services(interface=ns_s.NameServiceI, service_ids=['yaml'], args=['../pipeline_lab/save_scene_workflow/names.yml'])
+
+input_values = {'sequence': 'ABC', 'shot': '100', 'version': 5, 'ext': 'ma'}
+
+path = ns.resolve('render.work.path', input_values)
+success, match_values = ns.match('render.work.path', path)
+
+print input_values, path, success, match_values
+
+\"\"\"" code nil nil [18349 18809])
+            ("'''
+import save_scene_workflow as ssw, pickle
+
+import name_service.services as ns_s
+
+ns = CONTEXT.make_services(interface=ns_s.NameServiceI, service_ids=['yaml'], args=['names.yml'])
+
+node = ssw.VersionedResourceNode()
+resource = ssw.Resource(1, ssw.resource_id_1)
+
+node.register_new_resource(resource, ['templated.local'], scheme_args=['tasks.resource', 'render.work.path'])
+
+node.store_next_version(resource, {})
+node.versions(resource)
+print resource.url
+
+node.store_next_version(resource, {})
+node.store_next_version(resource, {'work.ext': 'ma'})
+node.versions(resource)
+print resource.url
+
+'''" code nil nil [18811 19409])
+            ("'''
+import time
+import save_scene_workflow as ssw
+
+success, ppc = ssw.start_remote_pp(2)
+ev = ppc.service_thread('evaluator.')
+
+for i in range(0, 5):
+    ppc.lets_go()
+
+time.sleep(5)
+
+for node_id in ev._graph['nodes'].leaf_keys():
+    with ev.access_graph_item(node_id) as node:
+        vs = node.context['versioning_schemes', ssw.resource_id_1]
+        print '-' * 80
+        print node.id
+        print node.context
+        print node.context._data.keys()
+        for resource in vs.resources:
+            print resource.id, resource.version, resource.url
+        for cond_id in node.conditions:
+            with ev.access_graph_item(cond_id) as cond:
+                print cond.context
+
+for i in range(0, 5):
+    ppc.lets_go()
+
+time.sleep(5)
+
+for node_id in ev._graph['nodes'].leaf_keys():
+    with ev.access_graph_item(node_id) as node:
+        vs = node.context['versioning_schemes', ssw.resource_id_1]
+        print '-' * 80
+        print node.id
+        print node.context
+        print node.context._data.keys()
+        for resource in vs.resources:
+            print resource.id, resource.version, resource.url
+        for cond_id in node.conditions:
+            with ev.access_graph_item(cond_id) as cond:
+                print cond.context
+
+'''" code nil nil [19411 20666])
+            ("RenderingActor" type
+               (:superclasses ("pg_g.Actor")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [20706 20748])
+                    ("act" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20762 20766]))                          )
+                        (reparse-symbol indented_block_body) [20754 20782]))                  
+                :type "class")
+                nil [20668 20782])
+            ("RenderingSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [20837 20888])
+                    ("_do_render" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20909 20913])
+                            ("signal" variable nil (reparse-symbol function_parameters) [20915 20921])
+                            ("version" variable nil (reparse-symbol function_parameters) [20923 20930]))                          )
+                        (reparse-symbol indented_block_body) [20894 20946])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [20972 20976])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [20978 20989])
+                            ("signal" variable nil (reparse-symbol function_parameters) [20991 20997])
+                            ("node" variable nil (reparse-symbol function_parameters) [20999 21003])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [21005 21014]))                          )
+                        (reparse-symbol indented_block_body) [20951 21243]))                  
+                :type "class")
+                nil [20783 21243])
+            ("BurninSignalHandler" type
+               (:superclasses ("pg_g.SignalHandler")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [21295 21346])
+                    ("_do_burnin" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21367 21371])
+                            ("resource" variable nil (reparse-symbol function_parameters) [21373 21381])
+                            ("version" variable nil (reparse-symbol function_parameters) [21383 21390]))                          )
+                        (reparse-symbol indented_block_body) [21352 21456])
+                    ("do_handle_signal" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21482 21486])
+                            ("signal_type" variable nil (reparse-symbol function_parameters) [21488 21499])
+                            ("signal" variable nil (reparse-symbol function_parameters) [21501 21507])
+                            ("node" variable nil (reparse-symbol function_parameters) [21509 21513])
+                            ("evaluator" variable nil (reparse-symbol function_parameters) [21515 21524]))                          )
+                        (reparse-symbol indented_block_body) [21461 21802]))                  
+                :type "class")
+                nil [21244 21802])
+            ("PySide" include nil nil [21804 21836])
+            ("versions_ui" include nil nil [21837 21874])
+            ("versions_ui_css" variable nil nil [21876 22372])
+            ("VersionsUI" type
+               (:superclasses ("QtGui.QWidget")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [22303 22350])
+                            ("self" code nil (reparse-symbol indented_block_body) [22360 22395])
+                            ("self" variable nil (reparse-symbol indented_block_body) [22404 22430])
+                            ("self" code nil (reparse-symbol indented_block_body) [22439 22461])
+                            ("self" variable nil (reparse-symbol indented_block_body) [22471 22520])
+                            ("self" code nil (reparse-symbol indented_block_body) [22529 22580])
+                            ("self" variable nil (reparse-symbol indented_block_body) [22590 22711])
+                            ("self" variable nil (reparse-symbol indented_block_body) [22720 22809])
+                            ("for" code nil (reparse-symbol indented_block_body) [22819 23129])
+                            ("self" code nil (reparse-symbol indented_block_body) [23138 23163])
+                            ("self" code nil (reparse-symbol indented_block_body) [23173 23197]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [22424 22428])
+                            ("resource_ids" variable nil (reparse-symbol function_parameters) [22430 22442])
+                            ("parent" variable nil (reparse-symbol function_parameters) [22444 22450]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [22411 23361])
+                    ("_update_versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [23387 23391])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [23393 23404]))                          )
+                        (reparse-symbol indented_block_body) [23366 24524])
+                    ("_populate_versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [24552 24556]))                          )
+                        (reparse-symbol indented_block_body) [24529 25509])
+                    ("_populate_context" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25536 25540]))                          )
+                        (reparse-symbol indented_block_body) [25514 25730])
+                    ("_selected_resource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [25758 25762]))                          )
+                        (reparse-symbol indented_block_body) [25735 26293])
+                    ("_selected_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26320 26324]))                          )
+                        (reparse-symbol indented_block_body) [26298 26892])
+                    ("do_close" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26910 26914]))                          )
+                        (reparse-symbol indented_block_body) [26897 26938])
+                    ("load_selected_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [26969 26973]))                          )
+                        (reparse-symbol indented_block_body) [26943 27396])
+                    ("save_new_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [27422 27426]))                          )
+                        (reparse-symbol indented_block_body) [27401 28012])
+                    ("save_current_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [28042 28046]))                          )
+                        (reparse-symbol indented_block_body) [28017 28474]))                  
+                :type "class")
+                nil [22374 28474])
+            ("start_versions_ui" function nil nil [28476 29630])
+            ("start_remote_versioning_ui" function (:arguments 
+              ( ("pp_id" variable nil (reparse-symbol function_parameters) [29664 29669]))              ) nil [29633 29759])
+            ("ContextResourceVersioningScheme" type
+               (:superclasses ("VersioningScheme")
+                :members 
+                  ( ("service_id" variable nil (reparse-symbol indented_block_body) [29825 29874])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [29853 29934])
+                            ("self" variable nil (reparse-symbol indented_block_body) [29943 29985])
+                            ("self" variable nil (reparse-symbol indented_block_body) [29994 30041])
+                            ("self" variable nil (reparse-symbol indented_block_body) [30050 30102])
+                            ("self" variable nil (reparse-symbol indented_block_body) [30111 30155])
+                            ("self" variable nil (reparse-symbol indented_block_body) [30165 30254]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29893 29897])
+                            ("versions_context_layer_name" variable nil (reparse-symbol function_parameters) [29899 29926])
+                            ("resource_id" variable nil (reparse-symbol function_parameters) [29928 29939])
+                            ("id_template_name" variable nil (reparse-symbol function_parameters) [29941 29957])
+                            ("storage_template_name" variable nil (reparse-symbol function_parameters) [29959 29980])
+                            ("version_token" variable nil (reparse-symbol function_parameters) [29982 29995]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [29880 30418])
+                    ("versions" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30450 30454]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [30423 30532])
+                    ("reserve_next_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30562 30566]))                          )
+                        (reparse-symbol indented_block_body) [30537 30648])
+                    ("format_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30672 30676])
+                            ("version" variable nil (reparse-symbol function_parameters) [30678 30685]))                          )
+                        (reparse-symbol indented_block_body) [30653 30848])
+                    ("resolve_template" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30874 30878])
+                            ("values" variable nil (reparse-symbol function_parameters) [30880 30886]))                          )
+                        (reparse-symbol indented_block_body) [30853 31088]))                  
+                :type "class")
+                nil [29764 31088])
+            ("if" code nil nil [31124 31501]))          
+    :file "save_scene_workflow.py"
+    :pointmax 31501
+    :fsize 31500
+    :lastmodtime '(22709 44817 272318 605000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "versions_ui.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("PySide" include nil nil [242 274])
+            ("Ui_VersionsUI" type
+               (:superclasses ("object")
+                :members 
+                  ( ("setupUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [321 325])
+                            ("VersionsUI" variable nil (reparse-symbol function_parameters) [327 337]))                          )
+                        (reparse-symbol indented_block_body) [309 3081])
+                    ("retranslateUi" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3104 3108])
+                            ("VersionsUI" variable nil (reparse-symbol function_parameters) [3110 3120]))                          )
+                        (reparse-symbol indented_block_body) [3086 3860]))                  
+                :type "class")
+                nil [276 3860]))          
+    :file "versions_ui.py"
+    :pointmax 3861
+    :fsize 3955
+    :lastmodtime '(22663 22239 553902 843000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!shaas!workspace!pipeline_lab!save_scene_workflow!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

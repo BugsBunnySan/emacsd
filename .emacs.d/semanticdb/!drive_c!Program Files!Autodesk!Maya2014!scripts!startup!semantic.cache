@@ -1,0 +1,144 @@
+;; Object startup/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "startup/"
+  :tables
+  (list
+    (semanticdb-table "deleteIfNotReferenced.mel"
+      :major-mode 'c-mode
+      :tags 
+        '( ("deleteIfNotReferenced" function
+               (:arguments 
+                  ( ("$nodeToDelete" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1641 1663]))                  
+                :type "int")
+                nil [1614 2005]))          
+      :file "deleteIfNotReferenced.mel"
+      :pointmax 2007
+      :fsize 2064
+      :lastmodtime '(21225 42354 0 0)
+      :unmatched-syntax '((symbol 1609 . 1613) (symbol 1602 . 1608)))
+    (semanticdb-table "initHUDScripts.mel"
+      :major-mode 'c-mode
+      :tags 
+        '( ("objectDetailsBackfaces" function (:type ("string" type (:type "class") nil nil)) nil [2216 4670])
+            ("objectDetailsSmoothness" function (:type ("string" type (:type "class") nil nil)) nil [4684 8852])
+            ("objectDetailsInstance" function (:type ("string" type (:type "class") nil nil)) nil [8866 9763])
+            ("objectDetailsDisplayLayer" function (:type ("string" type (:type "class") nil nil)) nil [9777 10697])
+            ("objectDetailsNumberOfSelectedObjects" function (:type "int") nil [10711 10876])
+            ("numberOfParticles" function (:type "int") nil [10883 11231])
+            ("numberOfCurrentParticles" function (:type "int") nil [11238 11615])
+            ("getParticleCount" function (:type ("string" type (:type "class") nil nil)) nil [11629 11734])
+            ("subdDetailsCurrentLevel" function (:type ("string" type (:type "class") nil nil)) nil [11748 12433])
+            ("subdDetailsCurrentMode" function (:type ("string" type (:type "class") nil nil)) nil [12447 13114])
+            ("setObjectDetailsVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [13175 13191]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [13143 14007])
+            ("setPolyCountVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [14044 14060]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [14016 14747])
+            ("setParticleCountVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [14788 14804]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [14756 15171])
+            ("setSubdDetailsVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [15211 15227]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [15181 15572])
+            ("setCameraNamesVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [15612 15628]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [15582 15936])
+            ("setFocalLengthVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [15975 15991]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [15945 16244])
+            ("setFrameRateVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [16281 16297]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [16253 16542])
+            ("setCurrentFrameVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [16582 16598]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [16551 16855])
+            ("setSceneTimecodeVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [16896 16912]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [16864 17173])
+            ("setCurrentContainerVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [17217 17233]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [17182 17506])
+            ("setViewAxisVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [17542 17558]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [17515 17799])
+            ("setFbikDetailsVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [17838 17854]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [17808 18013])
+            ("setHikDetailsVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [18051 18067]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [18022 18233])
+            ("setSelectDetailsVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [18275 18291]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [18243 18673])
+            ("setAnimationDetailsVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [18718 18734]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [18683 19892])
+            ("setToolMessageVisibility" function
+               (:arguments 
+                  ( ("$visibility" variable (:type "int") (reparse-symbol arg-sub-list) [19931 19947]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [19901 20184])
+            ("animationDetailsIKFK" function (:type ("string" type (:type "class") nil nil)) nil [20198 22146])
+            ("animationDetailsCurrentCharacter" function (:type ("string" type (:type "class") nil nil)) nil [22160 22533])
+            ("fbikDetailsKeyType" function (:type ("string" type (:type "class") nil nil)) nil [22547 23110])
+            ("hikDetailsKeyingMode" function (:type ("string" type (:type "class") nil nil)) nil [23124 23714])
+            ("animationDetailsPlaybackSpeed" function (:type ("string" type (:type "class") nil nil)) nil [23728 24941])
+            ("updateCurrentCharacterHUD" function (:type ("proc" type (:type "class") nil nil)) nil [24950 25227])
+            ("updatePlaybackSpeedHUD" function (:type ("proc" type (:type "class") nil nil)) nil [25236 25363])
+            ("updateSubdHUD" function (:type ("proc" type (:type "class") nil nil)) nil [25372 25567])
+            ("updateParticleHUD" function (:type ("proc" type (:type "class") nil nil)) nil [25576 25698])
+            ("setPolyDisplayLimitedToSelected" function (:type ("proc" type (:type "class") nil nil)) nil [25744 25924])
+            ("setPolyDisplayBackCulling" function
+               (:arguments 
+                  ( ("$type" variable (:type "int") (reparse-symbol arg-sub-list) [25964 25974]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [25933 26727])
+            ("updateCullingOptions" function (:type ("proc" type (:type "class") nil nil)) nil [26736 27098])
+            ("setPolygonDisplaySettings" function
+               (:arguments 
+                  ( ("$option" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27138 27153]))                  
+                :type ("proc" type (:type "class") nil nil))
+                nil [27107 30593])
+            ("setVertexSize" function (:type ("proc" type (:type "class") nil nil)) nil [30691 30997])
+            ("setUVSize" function (:type ("proc" type (:type "class") nil nil)) nil [31095 31381])
+            ("setNormalSize" function (:type ("proc" type (:type "class") nil nil)) nil [31479 31787])
+            ("setEdgeWidth" function (:type ("proc" type (:type "class") nil nil)) nil [31885 32186]))          
+      :file "initHUDScripts.mel"
+      :pointmax 32187
+      :fsize 33428
+      :lastmodtime '(21225 42356 0 0)
+      :unmatched-syntax '((symbol 31878 . 31884) (symbol 31472 . 31478) (symbol 31088 . 31094) (symbol 30684 . 30690) (symbol 27100 . 27106) (symbol 26729 . 26735) (symbol 25926 . 25932) (symbol 25737 . 25743) (symbol 25569 . 25575) (symbol 25365 . 25371) (symbol 25229 . 25235) (symbol 24943 . 24949) (symbol 23723 . 23727) (symbol 23716 . 23722) (symbol 23119 . 23123) (symbol 23112 . 23118) (symbol 22542 . 22546) (symbol 22535 . 22541) (symbol 22155 . 22159) (symbol 22148 . 22154) (symbol 20193 . 20197) (symbol 20186 . 20192) (symbol 19894 . 19900) (symbol 18676 . 18682) (symbol 18236 . 18242) (symbol 18015 . 18021) (symbol 17801 . 17807) (symbol 17508 . 17514) (symbol 17175 . 17181) (symbol 16857 . 16863) (symbol 16544 . 16550) (symbol 16246 . 16252) (symbol 15938 . 15944) (symbol 15575 . 15581) (symbol 15174 . 15180) (symbol 14749 . 14755) (symbol 14009 . 14015) (symbol 13136 . 13142) (symbol 12442 . 12446) (symbol 12435 . 12441) (symbol 11743 . 11747) (symbol 11736 . 11742) (symbol 11624 . 11628) (symbol 11617 . 11623) (symbol 11233 . 11237) (symbol 10878 . 10882) (symbol 10706 . 10710) (symbol 10699 . 10705) (symbol 9772 . 9776) (symbol 9765 . 9771) (symbol 8861 . 8865) (symbol 8854 . 8860) (symbol 4679 . 4683) (symbol 4672 . 4678) (symbol 2211 . 2215) (symbol 2204 . 2210))))
+  :file "!drive_c!Program Files!Autodesk!Maya2014!scripts!startup!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

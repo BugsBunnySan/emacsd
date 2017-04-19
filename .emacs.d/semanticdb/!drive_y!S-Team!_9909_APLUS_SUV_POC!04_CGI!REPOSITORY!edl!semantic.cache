@@ -1,0 +1,769 @@
+;; Object edl/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "edl/"
+  :tables
+  (list
+    (semanticdb-table "edl.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: edl
+    :synopsis: EDL class, can parse CMX 3600 files
+
+copyright 2015 Sebastian Haas
+\"\"\"" code nil nil [25 130])
+            ("__all__" variable nil nil [132 149])
+            ("os" include nil nil [151 160])
+            ("pprint" include nil nil [161 195])
+            ("antlr4" include nil nil [197 210])
+            ("base" include nil nil [212 223])
+            ("edlLexer" include nil nil [225 240])
+            ("edlParser" include nil nil [241 257])
+            ("edlListener" include nil nil [258 276])
+            ("get_line_from_file" function
+               (:documentation "return one line from a file
+
+    Args:
+        f: a path to a file
+        linenr: the line to return (1 based index)
+
+    Returns:
+        string: the line from the file
+
+    Raises:
+        IOError: when there's something wrong with f
+        IndexError: if there's not enough lines in f
+    "
+                :arguments 
+                  ( ("f" variable nil (reparse-symbol function_parameters) [301 302])
+                    ("linenr" variable nil (reparse-symbol function_parameters) [304 310]))                  )
+                nil [278 723])
+            ("EDL" type
+               (:documentation "EDL parser/representation, most of the heavy lifting is done by antlr4 through
+       a custom grammer constructed from 'edl.g'
+    "
+                :superclasses ("edlListener.edlListener")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            edl_filename: The filename to an EDL file
+            edl_fps: the fps the edl is in, since EDLs don't carry that information with them
+            resolve_overlaps: whether to resolve disolves and wipes into overlapping timecodes or leaving the events as they are
+        \"\"\"" code nil (reparse-symbol indented_block_body) [982 1288])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1297 1326])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1335 1359])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1368 1409])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1419 1438])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1447 1466])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1476 1504])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1513 1541])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1551 1579])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1589 1610])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1619 1636])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1645 1669])
+                            ("if" code nil (reparse-symbol indented_block_body) [1679 1837]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [920 924])
+                            ("edl_filename" variable nil (reparse-symbol function_parameters) [926 938])
+                            ("edl_fps" variable nil (reparse-symbol function_parameters) [940 947])
+                            ("resolve_overlaps" variable nil (reparse-symbol function_parameters) [949 965]))                          
+                        :documentation "
+        Args:
+            edl_filename: The filename to an EDL file
+            edl_fps: the fps the edl is in, since EDLs don't carry that information with them
+            resolve_overlaps: whether to resolve disolves and wipes into overlapping timecodes or leaving the events as they are
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [907 1837])
+                    ("fps" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1864 1868]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1842 1899])
+                    ("src_duration" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1935 1939]))                          
+                        :documentation "
+        Returns:
+            int: the number of source frames used in this EDL overall
+        ")
+                        (reparse-symbol indented_block_body) [1904 2352])
+                    ("dst_duration" function
+                       (:parent "dummy"
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2388 2392]))                          
+                        :documentation "
+        Returns:
+            int: the number of edit frames this EDL is long
+        ")
+                        (reparse-symbol indented_block_body) [2357 2795])
+                    ("next_ev_number" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2819 2823]))                          
+                        :documentation "
+        Returns:
+           int: the next available number for an EDL event
+        ")
+                        (reparse-symbol indented_block_body) [2800 2962])
+                    ("add_event" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2981 2985])
+                            ("ev" variable nil (reparse-symbol function_parameters) [2987 2989]))                          
+                        :documentation " adds an event to the EDL and increments the event number
+
+        Args:
+            ev: the event to add
+        ")
+                        (reparse-symbol indented_block_body) [2967 3242])
+                    ("_process_from_clips" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3271 3275]))                          
+                        :documentation " processes all the 'FROM CLIP NAME' comments,
+            making a list of all the clips used in the EDL and
+            making a lookup table to remember which events used which clips
+        ")
+                        (reparse-symbol indented_block_body) [3247 3924])
+                    ("parse_edl" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3943 3947]))                          
+                        :documentation " main entry point to parse the EDL file we're representing
+        ")
+                        (reparse-symbol indented_block_body) [3929 4403])
+                    ("write_out" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4422 4426])
+                            ("f" variable nil (reparse-symbol function_parameters) [4428 4429])
+                            ("regen_ev_nrs" variable nil (reparse-symbol function_parameters) [4431 4443])
+                            ("ev_filter" variable nil (reparse-symbol function_parameters) [4450 4459]))                          
+                        :documentation " writes out the EDL into a file like stream
+        Args:
+            f: a file like object supporting a 'write' method
+            regen_ev_nrs: ignore existing event numbers and replace them with a running count
+        ")
+                        (reparse-symbol indented_block_body) [4408 5171])
+                    ("enterEveryRule" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5196 5200])
+                            ("ctx" variable nil (reparse-symbol function_parameters) [5202 5205]))                          
+                        :documentation " antlr4 overloaded method, called whenever a grammer rule is entered
+        Args:
+            ctx: antlr4 parsing context
+        ")
+                        (reparse-symbol indented_block_body) [5177 6309])
+                    ("exitEveryRule" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6332 6336])
+                            ("ctx" variable nil (reparse-symbol function_parameters) [6338 6341]))                          
+                        :documentation " antlr4 overloaded method, called whenever a grammer rule is exited
+        Args:
+            ctx: antlr4 parsing context
+        ")
+                        (reparse-symbol indented_block_body) [6314 6805])
+                    ("_do_exitEveryRule" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6832 6836])
+                            ("ctx" variable nil (reparse-symbol function_parameters) [6838 6841]))                          
+                        :documentation " main parsing function
+        Args:
+            ctx: antlr4 parsing context
+        ")
+                        (reparse-symbol indented_block_body) [6810 8991]))                  
+                :type "class")
+                nil [724 8991]))          
+      :file "edl.py"
+      :pointmax 9008
+      :fsize 9262
+      :lastmodtime '(22412 47617 0 0)
+      :unmatched-syntax '((INDENT_BLOCK 6573 . 6805) (NEWLINE 6572 . 6573) (COLON 6571 . 6572) (TRY 6497 . 6500) (AS 6567 . 6569)))
+    (semanticdb-table "base.py"
+      :major-mode 'python-mode
+      :tags 
+        '( ("\"\"\"
+.. module:: edl.base
+    :synopsis: base classes that make up EDLs and some utilities
+
+copyright 2015 Sebastian Haas
+\"\"\"" code nil nil [25 149])
+            ("__all__" variable nil nil [151 220])
+            ("hhmmss" function
+               (:documentation " convert seconds into hours, minutes and seconds
+
+    Args:
+        seconds: number representing seconds
+
+    Returns:
+        dictionary: HH: hours, MM: minutes, SS: seconds
+    "
+                :arguments 
+                  ( ("seconds" variable nil (reparse-symbol function_parameters) [233 240]))                  )
+                nil [222 626])
+            ("TCFPS" type
+               (:documentation " Time Code aware frames per second, can handle drop frames "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            fps: frames per second
+            drop_frame: whether we're dropping frames cause we don't know how to count
+        \"\"\"" code nil (reparse-symbol indented_block_body) [773 924])
+                            ("self" variable nil (reparse-symbol indented_block_body) [934 949])
+                            ("self" variable nil (reparse-symbol indented_block_body) [958 987])
+                            ("if" code nil (reparse-symbol indented_block_body) [996 1142]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [735 739])
+                            ("fps" variable nil (reparse-symbol function_parameters) [741 744])
+                            ("drop_frame" variable nil (reparse-symbol function_parameters) [746 756]))                          
+                        :documentation "
+        Args:
+            fps: frames per second
+            drop_frame: whether we're dropping frames cause we don't know how to count
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [722 1142])
+                    ("fps" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1169 1173]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1147 1201])
+                    ("drop_frame" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1235 1239]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1206 1274])
+                    ("frame_duration" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1312 1316]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1279 1355])
+                    ("hhmmssff" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1373 1377])
+                            ("frames" variable nil (reparse-symbol function_parameters) [1379 1385]))                          
+                        :documentation " returns frames as a time code string
+
+        Args:
+            frames: an integer count of frames
+
+        Returns:
+            dictionary: :func:`hhmmss` plus FF: subsecond frames
+        ")
+                        (reparse-symbol indented_block_body) [1360 1839])
+                    ("validate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1857 1861])
+                            ("tc_str" variable nil (reparse-symbol function_parameters) [1863 1869]))                          
+                        :documentation " validates a time code string against the fps setting we represent
+
+        Args:
+            tc_str: a string representing a timecode of the form HH:MM:SS:FF
+
+        Returns:
+            array: list of errors found in the time code string, empty if it's all ok
+        ")
+                        (reparse-symbol indented_block_body) [1844 2615])
+                    ("count_dropped_frames" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2645 2649])
+                            ("frames" variable nil (reparse-symbol function_parameters) [2651 2657]))                          
+                        :documentation " count frames we didn't count cause they drank too much when they designed ntsc
+
+        Args:
+            frames: integer count of frames
+
+        Returns:
+            int: how many frames will be skipped
+        ")
+                        (reparse-symbol indented_block_body) [2620 3356])
+                    ("tc_duration" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3377 3381])
+                            ("tc_str" variable nil (reparse-symbol function_parameters) [3383 3389]))                          
+                        :documentation " given a timecode string, return how many frames it represents
+
+        Args:
+            tc_str: a timecode string of the form HH:MM:SS:FF
+
+        Returns:
+            int: how many frames are represented by the timecode, minus drop frames if we're
+               representing a timecode with drop frames
+
+        Raises:
+            ValueError: if the time code doesn't validate against our settings :func:`.validate`
+        ")
+                        (reparse-symbol indented_block_body) [3361 4251])
+                    ("frames_to_tc" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4273 4277])
+                            ("frames" variable nil (reparse-symbol function_parameters) [4279 4285]))                          
+                        :documentation " returns a timecode dictionary representing some number of frames
+
+        Args:
+            frames: integer representing some number of frames
+
+        Returns:
+            dictionary: :func:`.hhmmssff` plus MS: miliseconds the FF part represents
+        ")
+                        (reparse-symbol indented_block_body) [4256 4675])
+                    ("__eq__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4691 4695])
+                            ("other" variable nil (reparse-symbol function_parameters) [4697 4702]))                          
+                        :documentation " magic method comparing us to another TCFPS instance ")
+                        (reparse-symbol indented_block_body) [4680 4854])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4871 4875]))                          )
+                        (reparse-symbol indented_block_body) [4859 4952]))                  
+                :type "class")
+                nil [627 4952])
+            ("TimeCode" type
+               (:documentation " Class encapsulating a number of frames and the FPS they should be running at,
+        can handle drop frames
+    "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [5153 5182])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5191 5215])
+                            ("self" variable nil (reparse-symbol indented_block_body) [5225 5275]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5119 5123])
+                            ("tc_frames" variable nil (reparse-symbol function_parameters) [5125 5134])
+                            ("tc_fps" variable nil (reparse-symbol function_parameters) [5136 5142]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [5106 5276])
+                    ("frames" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5306 5310]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [5281 5341])
+                    ("fps" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5368 5372]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [5346 5403])
+                    ("tc" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5429 5433]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [5408 5460])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5477 5481]))                          )
+                        (reparse-symbol indented_block_body) [5465 5556])
+                    ("__sub__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5573 5577])
+                            ("other" variable nil (reparse-symbol function_parameters) [5579 5584]))                          
+                        :documentation "magic method supporting subtraction operator
+        Args:
+            other: another TimeCode
+
+        Returns:
+            TimeCode: a TimeCode object representing the difference between us and the other TimeCode
+
+        Raises:
+            TypeError: if the other's fps is different from outs
+        ")
+                        (reparse-symbol indented_block_body) [5561 6088])
+                    ("__add__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6105 6109])
+                            ("other" variable nil (reparse-symbol function_parameters) [6111 6116]))                          
+                        :documentation "magic method supporting addition operator
+        Args:
+            other: another TimeCode
+
+        Returns:
+            TimeCode: a TimeCode object representing the addition between us and the other TimeCode
+
+        Raises:
+            TypeError: if the other's fps is different from outs
+        ")
+                        (reparse-symbol indented_block_body) [6093 6615])
+                    ("__abs__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6632 6636]))                          
+                        :documentation "magic method returning the absolute of our frames
+
+        Returns:
+            TimeCode: Timecode with the same magnitute of frames as us
+        ")
+                        (reparse-symbol indented_block_body) [6620 6853]))                  
+                :type "class")
+                nil [4953 6853])
+            ("TimeCodeTC" type
+               (:documentation "TimeCode subclass which also holds the timecode dictionary of the frames
+    "
+                :superclasses ("TimeCode")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [7079 7100])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7109 7130])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7140 7193])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7202 7256]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7010 7014])
+                            ("tc_str" variable nil (reparse-symbol function_parameters) [7016 7022])
+                            ("tc_fps" variable nil (reparse-symbol function_parameters) [7024 7030]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6997 7257]))                  
+                :type "class")
+                nil [6877 7257])
+            ("TimeSpan" type
+               (:documentation "Class representing a duration between to TimeCodes, OUT inclusive"
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [7430 7447])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7456 7474]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7400 7404])
+                            ("ts_in" variable nil (reparse-symbol function_parameters) [7406 7411])
+                            ("ts_out" variable nil (reparse-symbol function_parameters) [7413 7419]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7387 7475])
+                    ("duration" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7507 7511]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [7480 7550])
+                    ("IN" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7576 7580]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [7555 7607])
+                    ("OUT" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7634 7638]))                          
+                        :decorators 
+                          ( ("property" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [7612 7666])
+                    ("__contains__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7688 7692])
+                            ("frame" variable nil (reparse-symbol function_parameters) [7694 7699]))                          
+                        :documentation " magic method for the 'in' operation
+        Args:
+            frame: frame number to check for
+
+        Returns:
+            bool: True if frame falls between our IN and OUT point, False else
+        ")
+                        (reparse-symbol indented_block_body) [7671 7978]))                  
+                :type "class")
+                nil [7283 7978])
+            ("Event" type
+               (:documentation "Class representing an EDL event"
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            ev_edl: the EDL we're a part of
+            ev_nr: the number we have in the EDL
+            ev_channel: the channel we're in in the EDL
+            ev_type: the type of EDL event we are
+        \"\"\"" code nil (reparse-symbol indented_block_body) [8167 8395])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8404 8428])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8437 8465])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8474 8502])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8511 8536])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8545 8570])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8580 8617])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8627 8647])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8656 8676])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8686 8703])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8713 8729])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8738 8754])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8764 8805])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8814 8855])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8864 8905])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8914 8955]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8081 8085])
+                            ("ev_edl" variable nil (reparse-symbol function_parameters) [8087 8093])
+                            ("ev_nr" variable nil (reparse-symbol function_parameters) [8095 8100])
+                            ("ev_channel" variable nil (reparse-symbol function_parameters) [8102 8112])
+                            ("ev_type" variable nil (reparse-symbol function_parameters) [8114 8121])
+                            ("ev_spec" variable nil (reparse-symbol function_parameters) [8123 8130])
+                            ("previous_event" variable nil (reparse-symbol function_parameters) [8137 8151]))                          
+                        :documentation "
+        Args:
+            ev_edl: the EDL we're a part of
+            ev_nr: the number we have in the EDL
+            ev_channel: the channel we're in in the EDL
+            ev_type: the type of EDL event we are
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [8068 8956])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8973 8977]))                          )
+                        (reparse-symbol indented_block_body) [8961 10006])
+                    ("process_timecodes" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10033 10037]))                          
+                        :documentation " helper method filling src and destination duration attributes ")
+                        (reparse-symbol indented_block_body) [10011 10232])
+                    ("process_previous_event" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10264 10268]))                          )
+                        (reparse-symbol indented_block_body) [10237 11753])
+                    ("set_reel" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11771 11775])
+                            ("ev_reel" variable nil (reparse-symbol function_parameters) [11777 11784]))                          )
+                        (reparse-symbol indented_block_body) [11758 11816])
+                    ("set_srcin" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11834 11838])
+                            ("tc_str" variable nil (reparse-symbol function_parameters) [11840 11846]))                          )
+                        (reparse-symbol indented_block_body) [11820 11905])
+                    ("set_srcout" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [11924 11928])
+                            ("tc_str" variable nil (reparse-symbol function_parameters) [11930 11936]))                          )
+                        (reparse-symbol indented_block_body) [11909 11996])
+                    ("set_dstin" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12014 12018])
+                            ("tc_str" variable nil (reparse-symbol function_parameters) [12020 12026]))                          )
+                        (reparse-symbol indented_block_body) [12000 12085])
+                    ("set_dstout" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12104 12108])
+                            ("tc_str" variable nil (reparse-symbol function_parameters) [12110 12116]))                          )
+                        (reparse-symbol indented_block_body) [12089 12176])
+                    ("src_to_dst" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12196 12200])
+                            ("frame" variable nil (reparse-symbol function_parameters) [12202 12207]))                          
+                        :documentation " returns the edit timecode of a source frame, does not take motion into account
+
+        Args:
+            frame: a frame number
+
+        Returns:
+            TimeCode: a TimeCode instance representing the edit timecode of the source frame
+
+        Raises:
+            KeyError: if the frame is not in our source duration
+        ")
+                        (reparse-symbol indented_block_body) [12181 12698])
+                    ("dst_to_src" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [12718 12722])
+                            ("frame" variable nil (reparse-symbol function_parameters) [12724 12729]))                          
+                        :documentation " returns the source timecode of an edit frame, does not take motion into account
+
+        Args:
+            frame: a frame number
+
+        Returns:
+            TimeCode: a TimeCode instance representing the source timecode of the edit frame
+
+        Raises:
+            KeyError: if the frame is not in our edit duration
+        ")
+                        (reparse-symbol indented_block_body) [12703 13219])
+                    ("add_comment" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13240 13244])
+                            ("comment" variable nil (reparse-symbol function_parameters) [13246 13253]))                          )
+                        (reparse-symbol indented_block_body) [13224 13308])
+                    ("add_modifier" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13330 13334])
+                            ("modifier" variable nil (reparse-symbol function_parameters) [13336 13344]))                          )
+                        (reparse-symbol indented_block_body) [13313 13388]))                  
+                :type "class")
+                nil [8001 13388])
+            ("Clip" type
+               (:documentation " Class representing a clip used in an edl, keeps track of events usage this clip "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Args:
+            clip_name: the name of the clip used
+            edl: the edl the clip is used in
+        \"\"\"" code nil (reparse-symbol indented_block_body) [13569 13692])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13701 13728])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13737 13758])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13768 13788])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13797 13844])
+                            ("self" variable nil (reparse-symbol indented_block_body) [13853 13900]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13538 13542])
+                            ("clip_name" variable nil (reparse-symbol function_parameters) [13544 13553])
+                            ("edl" variable nil (reparse-symbol function_parameters) [13555 13558]))                          
+                        :documentation "
+        Args:
+            clip_name: the name of the clip used
+            edl: the edl the clip is used in
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [13525 13901])
+                    ("add_event" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [13920 13924])
+                            ("ev" variable nil (reparse-symbol function_parameters) [13926 13928]))                          
+                        :documentation " add an event that uses this clip, record its duration
+        Args:
+            ev: an Event instance
+        ")
+                        (reparse-symbol indented_block_body) [13906 14200]))                  
+                :type "class")
+                nil [13409 14200])
+            ("Comment" type
+               (:documentation " EDL Event comment, mostly geared towards FROM/TO CLIP NAME style comments "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [14383 14399])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14408 14426]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14346 14350])
+                            ("key" variable nil (reparse-symbol function_parameters) [14352 14355])
+                            ("value" variable nil (reparse-symbol function_parameters) [14362 14367]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [14333 14427]))                  
+                :type "class")
+                nil [14220 14427])
+            ("Motion" type
+               (:documentation " EDL Event motion (M2), meaning speed up/down/reverse "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [14572 14587])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14597 14613])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14622 14643])
+                            ("self" variable nil (reparse-symbol indented_block_body) [14706 14746]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14552 14556])
+                            ("edl" variable nil (reparse-symbol function_parameters) [14558 14561]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [14539 14747])
+                    ("set_reel" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14765 14769])
+                            ("reel" variable nil (reparse-symbol function_parameters) [14771 14775]))                          )
+                        (reparse-symbol indented_block_body) [14752 14804])
+                    ("set_speed" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14823 14827])
+                            ("speed" variable nil (reparse-symbol function_parameters) [14829 14834]))                          )
+                        (reparse-symbol indented_block_body) [14809 14865])
+                    ("set_srcin" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14884 14888])
+                            ("tc_str" variable nil (reparse-symbol function_parameters) [14890 14896]))                          )
+                        (reparse-symbol indented_block_body) [14870 14955])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [14972 14976]))                          )
+                        (reparse-symbol indented_block_body) [14960 15184]))                  
+                :type "class")
+                nil [14448 15184]))          
+      :file "base.py"
+      :pointmax 15203
+      :fsize 15682
+      :lastmodtime '(22412 47353 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "edlLexer.py"
+      :file "edlLexer.py"
+      :fsize 5576
+      :lastmodtime '(22403 49001 0 0))
+    (semanticdb-table "edlParser.py"
+      :file "edlParser.py"
+      :fsize 47696
+      :lastmodtime '(22403 49001 0 0))
+    (semanticdb-table "edlListener.py"
+      :file "edlListener.py"
+      :fsize 5464
+      :lastmodtime '(22403 49001 0 0)))
+  :file "!drive_y!S-Team!_9909_APLUS_SUV_POC!04_CGI!REPOSITORY!edl!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

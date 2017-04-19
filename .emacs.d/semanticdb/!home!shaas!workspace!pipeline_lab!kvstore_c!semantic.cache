@@ -1,0 +1,152 @@
+;; Object kvstore_c/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kvstore_c/"
+  :tables (list 
+   (semanticdb-table "kvstore.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("Python.h" include (:system-flag t) nil [1 20])
+            ("kvstore_sayhello" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [57 72])
+                    ("args" variable
+                       (:pointer 1
+                        :type ("PyObject" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [73 88]))                  
+                :type ("PyObject" type (:type "class") nil nil))
+                nil [22 228])
+            ("KVStoreMethods" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("PyMethodDef" type (:type "class") nil nil))
+                nil [230 399])
+            ("initkvstore" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [428 433]))                  
+                :type ("PyMODINIT_FUNC" type (:type "class") nil nil))
+                nil [401 490]))          
+    :file "kvstore.c"
+    :pointmax 511
+    :fsize 490
+    :lastmodtime '(22764 61737 454960 294000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "Makefile"
+    :major-mode 'makefile-gmake-mode
+    :tags 
+        '( ("CC" variable (:default-value ("gcc")) nil [1 8])
+            ("CFLAGS" variable (:default-value ("-Wall" "-O2" "-c" "-fPIC")) nil [8 34])
+            ("INCLUDE" variable (:default-value ("-I/usr/include/python2.7")) nil [34 67])
+            ("LD" variable (:default-value ("gcc")) nil [68 75])
+            ("LDFLAGS" variable (:default-value ("-shared")) nil [75 91])
+            ("LIBS" variable (:default-value ("-lpython2.7")) nil [91 108])
+            (".PHONY" function (:arguments ("all")) nil [109 121])
+            ("%.o" function (:arguments ("%.c")) nil [122 169])
+            ("%.so" function (:arguments ("%.o")) nil [170 215]))          
+    :file "Makefile"
+    :pointmax 232
+    :fsize 231
+    :lastmodtime '(22764 61780 342937 692000)
+    :unmatched-syntax '((symbol 221 . 231) (punctuation 219 . 220) (symbol 216 . 219) (bol 216 . 216))
+    )
+   (semanticdb-table "kvstore.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("NULL" variable (:constant-flag t) nil [9 13])
+            ("KVStore" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [34 45])
+                    ("path_sep" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [47 62])
+                    ("collate_key" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [64 82])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [84 95])
+                    ("subclass" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [97 112])
+                    ("public" label nil (reparse-symbol classsubparts) [113 120])
+                    ("KVStore" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [131 138])
+                            ("" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [139 146])
+                            ("" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [147 154])
+                            ("" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [155 162])
+                            ("" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [163 170]))                          
+                        :type ("KVStore" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [122 171]))                  
+                :type "class")
+                nil [17 174])
+            ("KVStore" function
+               (:constructor-flag t
+                :parent "KVStore"
+                :arguments 
+                  ( ("_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [193 205])
+                    ("_path_sep" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [206 222])
+                    ("_collate_key" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [223 242])
+                    ("_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [243 255])
+                    ("_subclass" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [256 272]))                  
+                :type ("KVStore" type (:type "class") nil nil))
+                nil [176 588]))          
+    :file "kvstore.cpp"
+    :pointmax 595
+    :fsize 588
+    :lastmodtime '(22764 63413 114218 335000)
+    :unmatched-syntax 'nil
+    :lexical-table 
+        '(("NULL" . ((number "0" 14 . 15)))
+          )
+
+    )
+   )
+  :file "!home!shaas!workspace!pipeline_lab!kvstore_c!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

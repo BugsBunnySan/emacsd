@@ -8,13 +8,21 @@
  '(nxml-child-indent 4)
  '(nxml-slash-auto-complete-flag t)
  '(py-load-pymacs-p nil)
- '(pymacs-python-command "c:/Python27/python.exe")
- '(python-shell-interpreter "c:/Python27/Scripts/ipython.exe")
+ '(pymacs-python-command "/usr/bin/python")
+ '(python-shell-interpreter "/usr/bin/python")
  '(scroll-bar-mode (quote right))
  '(show-paren-mode t)
  '(slime-backend "/usr/share/common-lisp/source/swank/swank-loader.lisp")
  '(tool-bar-mode nil)
- '(w32-get-true-file-attributes nil t))
+ '(w32-get-true-file-attributes nil t)
+ '(yas-trigger-key "<C-tab>"))
+
+;; topalsson customizations
+;; web proxies
+(setq url-proxy-services '(("no_proxy" . "muc.topalsson.de")
+                           ("http" . "192.168.70.253:800")
+			   ("https" . "192.168.70.253:800")))
+(setq exec-path (append exec-path '("C:/Users/shaas/AppData/Roaming/bin")))
 
 ;; markdown mode
 (add-to-list 'load-path "~/.emacs.d/els")
@@ -32,6 +40,10 @@
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
+;; antlr mode
+(autoload 'antlr-v4-mode "antlr-mode" nil t)
+(push '("\\.g4\\'" . antlr-v4-mode) auto-mode-alist)
 
 ;; cmake mode
 (autoload 'cmake-mode "cmake-mode" "cmake editing mode." t)
@@ -74,12 +86,6 @@
 (load "~/.emacs.d/els/color-theme-molokai.el")
 (color-theme-hober)
 
-;; autocomplete
-(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
-
 ;; folding
 (load "~/.emacs.d/els/jfold-mode-1.0.0.el")
 (require 'jfold-mode)
@@ -90,6 +96,8 @@
 (setq-default inhibit-startup-message t)
 (defvar backup-dir (concat (user-login-name) "/tmp/"))
 (setq backup-directory-alist (list (cons "." backup-dir)))
+(add-to-list 'default-frame-alist '(height . 70))
+(add-to-list 'default-frame-alist '(width . 150))
 
 ;; tune the mouse wheel
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
@@ -125,10 +133,32 @@
 
 (put 'upcase-region 'disabled nil)
 
+
+;; yasnippet
 (add-to-list 'load-path
 	     "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
+(define-key yas-minor-mode-map "\t" nil)
+(define-key yas-minor-mode-map [(tab)] nil)
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-expand)
+
+
+;; autocomplete
+(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+(setq ac-ignore-case nil)
+;;(define-key ac-menu-map (kbd "<tab>") 'ac-complete)
+;;(define-key ac-menu-map (kbd "TAB") 'ac-complete)
+;;(define-key ac-menu-map "\t" 'ac-complete)
+;;(define-key ac-menu-map (kbd "RET") nil)
+;;(define-key ac-menu-map (kbd "<ret>") nil)
+(define-key ac-completing-map (kbd "RET") nil)
+(define-key ac-completing-map (kbd "<ret>") nil)
 
 ;; ropemacs
 (defun load-ropemacs()
@@ -139,6 +169,8 @@
   )
 
 (global-set-key (kbd "C-x p l") 'load-ropemacs)
+(setq ropemacs-guess-project t)
+(setq ropemacs-enable-autoimport t)
 
 ;; smex
 ;;(global-set-key (kbd "M-x") 'smex)
