@@ -1,3 +1,10 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -8,8 +15,8 @@
  '(nxml-child-indent 4)
  '(nxml-slash-auto-complete-flag t)
  '(py-load-pymacs-p nil)
- '(pymacs-python-command "/usr/bin/python")
- '(python-shell-interpreter "/usr/bin/python")
+ '(pymacs-python-command "C:/Python27/python.exe")
+ '(python-shell-interpreter "C:/Python27/python.exe")
  '(scroll-bar-mode (quote right))
  '(show-paren-mode t)
  '(slime-backend "/usr/share/common-lisp/source/swank/swank-loader.lisp")
@@ -17,11 +24,8 @@
  '(w32-get-true-file-attributes nil t)
  '(yas-trigger-key "<C-tab>"))
 
-;; topalsson customizations
-;; web proxies
-(setq url-proxy-services '(("no_proxy" . "muc.topalsson.de")
-                           ("http" . "192.168.70.253:800")
-			   ("https" . "192.168.70.253:800")))
+;;(setq debug-on-error t)
+
 (setq exec-path (append exec-path '("C:/Users/shaas/AppData/Roaming/bin")))
 
 ;; markdown mode

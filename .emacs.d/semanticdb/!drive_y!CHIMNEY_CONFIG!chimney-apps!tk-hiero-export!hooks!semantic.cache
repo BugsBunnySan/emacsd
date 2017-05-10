@@ -1,0 +1,37 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("tank" include nil nil [448 469])
+            ("HieroGetExtraPublishData" type
+               (:documentation " Get a data dictionary for a PublishedFile to be updated in Shotgun. "
+                :superclasses ("Hook")
+                :members 
+                  ( ("execute" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [606 610])
+                            ("task" variable nil (reparse-symbol function_parameters) [612 616])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [618 626]))                          
+                        :documentation "
+        :param task: The Hiero Task that is currently being processed
+        Return the dictionary to update the data for the PublishedFile in Shotgun
+        or None if there is no extra information to publish.
+
+        The track item associated with this task can be accessed via task._item.
+        ")
+                        (reparse-symbol indented_block_body) [594 1003]))                  
+                :type "class")
+                nil [472 1003]))          
+      :file "hiero_get_extra_publish_data.py"
+      :pointmax 1003
+      :fsize 1002
+      :lastmodtime '(21621 47768 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_y!CHIMNEY_CONFIG!chimney-apps!tk-hiero-export!hooks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
