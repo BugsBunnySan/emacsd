@@ -14,6 +14,9 @@
  '(column-number-mode t)
  '(nxml-child-indent 4)
  '(nxml-slash-auto-complete-flag t)
+ '(package-selected-packages
+   (quote
+    (auto-complete yasnippet smex python-magic pylint polymode outline-magic org nyan-mode magit hideshowvis helm gandalf-theme electric-spacing drag-stuff dos color-theme anything)))
  '(py-load-pymacs-p nil)
  '(pymacs-python-command "C:/Python27/python.exe")
  '(python-shell-interpreter "C:/Python27/python.exe")
