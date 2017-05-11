@@ -20,6 +20,7 @@
  '(py-load-pymacs-p nil)
  '(pymacs-python-command "C:/Python27/python.exe")
  '(python-shell-interpreter "C:/Python27/python.exe")
+ '(python-shell-unbuffered nil) ;; makes python-shell-foo not complain on windows
  '(scroll-bar-mode (quote right))
  '(show-paren-mode t)
  '(slime-backend "/usr/share/common-lisp/source/swank/swank-loader.lisp")
